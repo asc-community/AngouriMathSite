@@ -1,0 +1,14 @@
+.singleton p {
+    margin-block-end: 0;
+}
+
+body {
+
+    background-image: url("../img/mbackground.png");
+}
+
+.angouri-bulge {
+    padding: 5vw;
+    color: white;
+    background-color: rgba(33, 0, 33, 0.8);
+}
