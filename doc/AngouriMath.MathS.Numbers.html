@@ -1,0 +1,553 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class MathS.Numbers
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class MathS.Numbers
+   ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="AngouriMath.MathS.Numbers">
+  
+  
+  <h1 id="AngouriMath_MathS_Numbers" data-uid="AngouriMath.MathS.Numbers" class="text-break">Class MathS.Numbers
+  </h1>
+  <div class="markdown level0 summary"><p>All operations for <see cref="!:Number"></see> and its derived classes are available from here.</p>
+<p>These methods represent the only possible way to explicitly create numeric instances.
+It will automatically downcast the result for you,
+so <pre><code>Number.Create(1.0);</code></pre> is an <see cref="!:Integer"></see>.
+To avoid it, you may temporarily disable it</p>
+<pre><code> MathS.Settings.DowncastingEnabled.As(false, () =>
+{
+   var yourNum = Number.Create(1.0);
+});</code></pre>
+<p>and the result will be a <see cref="!:Real"></see>.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">MathS.Numbers</span></div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="AngouriMath.html">AngouriMath</a></h6>
+  <h6><strong>Assembly</strong>: AngouriMath.dll</h6>
+  <h5 id="AngouriMath_MathS_Numbers_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class Numbers : object</code></pre>
+  </div>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="AngouriMath_MathS_Numbers_Create_" data-uid="AngouriMath.MathS.Numbers.Create*"></a>
+  <h4 id="AngouriMath_MathS_Numbers_Create_EDecimal_" data-uid="AngouriMath.MathS.Numbers.Create(EDecimal)">Create(EDecimal)</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of <see cref="!:Real"></see> from an <see cref="!:EDecimal"></see></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Real Create(EDecimal value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EDecimal</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>A value of type <see cref="!:EDecimal"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Real</span></td>
+        <td><p>The resulting <see cref="!:Real"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="AngouriMath_MathS_Numbers_Create_" data-uid="AngouriMath.MathS.Numbers.Create*"></a>
+  <h4 id="AngouriMath_MathS_Numbers_Create_EDecimal_EDecimal_" data-uid="AngouriMath.MathS.Numbers.Create(EDecimal,EDecimal)">Create(EDecimal, EDecimal)</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of <see cref="!:Complex"></see> from two <see cref="!:EDecimal"></see>s</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Complex Create(EDecimal re, EDecimal im)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EDecimal</span></td>
+        <td><span class="parametername">re</span></td>
+        <td><p>Real part of the desired <see cref="!:Complex"></see> of type <see cref="!:EDecimal"></see></p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">EDecimal</span></td>
+        <td><span class="parametername">im</span></td>
+        <td><p>Imaginary part of the desired <see cref="!:Complex"></see> of type <see cref="!:EDecimal"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Complex</span></td>
+        <td><p>The resulting <see cref="!:Complex"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="AngouriMath_MathS_Numbers_Create_" data-uid="AngouriMath.MathS.Numbers.Create*"></a>
+  <h4 id="AngouriMath_MathS_Numbers_Create_EInteger_" data-uid="AngouriMath.MathS.Numbers.Create(EInteger)">Create(EInteger)</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of <see cref="!:Integer"></see> from an <see cref="!:EInteger"></see></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Integer Create(EInteger value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EInteger</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>A value of type <see cref="!:EInteger"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Integer</span></td>
+        <td><p>The resulting <see cref="!:Integer"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="AngouriMath_MathS_Numbers_Create_" data-uid="AngouriMath.MathS.Numbers.Create*"></a>
+  <h4 id="AngouriMath_MathS_Numbers_Create_ERational_" data-uid="AngouriMath.MathS.Numbers.Create(ERational)">Create(ERational)</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of <see cref="!:Rational"></see> from an <see cref="!:ERational"></see></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rational Create(ERational rational)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">ERational</span></td>
+        <td><span class="parametername">rational</span></td>
+        <td><p>A value of type <see cref="!:ERational"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rational</span></td>
+        <td><p>The resulting <see cref="!:Rational"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="AngouriMath_MathS_Numbers_Create_" data-uid="AngouriMath.MathS.Numbers.Create*"></a>
+  <h4 id="AngouriMath_MathS_Numbers_Create_System_Double_" data-uid="AngouriMath.MathS.Numbers.Create(System.Double)">Create(Double)</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of <see cref="!:Real"></see> from a <see cref="!:System.Double"></see></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Real Create(double value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Double</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>A value of type <see cref="!:System.Double"></see> (64-bit floating-point number)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Real</span></td>
+        <td><p>The resulting <see cref="!:Real"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="AngouriMath_MathS_Numbers_Create_" data-uid="AngouriMath.MathS.Numbers.Create*"></a>
+  <h4 id="AngouriMath_MathS_Numbers_Create_System_Int32_" data-uid="AngouriMath.MathS.Numbers.Create(System.Int32)">Create(Int32)</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of <see cref="!:Integer"></see> from an <see cref="!:System.Int32"></see></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Integer Create(int value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>A value of type <see cref="!:System.Int32"></see> (signed 32-bit integer)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Integer</span></td>
+        <td><p>The resulting <see cref="!:Integer"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="AngouriMath_MathS_Numbers_Create_" data-uid="AngouriMath.MathS.Numbers.Create*"></a>
+  <h4 id="AngouriMath_MathS_Numbers_Create_System_Int64_" data-uid="AngouriMath.MathS.Numbers.Create(System.Int64)">Create(Int64)</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of <see cref="!:Integer"></see> from a <see cref="!:System.Int64"></see></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Integer Create(long value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int64</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>A value of type <see cref="!:System.Int64"></see> (signed 64-bit integer)</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Integer</span></td>
+        <td><p>The resulting <see cref="!:Integer"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="AngouriMath_MathS_Numbers_Create_" data-uid="AngouriMath.MathS.Numbers.Create*"></a>
+  <h4 id="AngouriMath_MathS_Numbers_Create_System_Numerics_Complex_" data-uid="AngouriMath.MathS.Numbers.Create(System.Numerics.Complex)">Create(Numerics.Complex)</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of <see cref="!:Complex"></see> from a <see cref="!:System.Numerics.Complex"></see></p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Complex Create(Numerics.Complex value)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Numerics.Complex</span></td>
+        <td><span class="parametername">value</span></td>
+        <td><p>A value of type <see cref="!:System.Numerics.Complex"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Complex</span></td>
+        <td><p>The resulting <see cref="!:Complex"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="AngouriMath_MathS_Numbers_CreateRational_" data-uid="AngouriMath.MathS.Numbers.CreateRational*"></a>
+  <h4 id="AngouriMath_MathS_Numbers_CreateRational_EInteger_EInteger_" data-uid="AngouriMath.MathS.Numbers.CreateRational(EInteger,EInteger)">CreateRational(EInteger, EInteger)</h4>
+  <div class="markdown level1 summary"><p>Creates an instance of <see cref="!:Rational"></see> from two <see cref="!:EInteger"></see>s</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Rational CreateRational(EInteger numerator, EInteger denominator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">EInteger</span></td>
+        <td><span class="parametername">numerator</span></td>
+        <td><p>Numerator of type <see cref="!:EInteger"></see></p>
+</td>
+      </tr>
+      <tr>
+        <td><span class="xref">EInteger</span></td>
+        <td><span class="parametername">denominator</span></td>
+        <td><p>Denominator of type <see cref="!:EInteger"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">Rational</span></td>
+        <td><p>The resulting <see cref="!:Rational"></see></p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

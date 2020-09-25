@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Namespace AngouriMath
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Namespace AngouriMath
+   ">
+    <meta name="generator" content="docfx 2.56.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="AngouriMath">
+  
+  <h1 id="AngouriMath" data-uid="AngouriMath" class="text-break">Namespace AngouriMath
+  </h1>
+  <div class="markdown level0 summary"></div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="markdown level0 remarks"></div>
+    <h3 id="classes">Classes
+  </h3>
+      <h4><a class="xref" href="AngouriMath.Boolean.html">Boolean</a></h4>
+      <section></section>
+      <h4><a class="xref" href="AngouriMath.Compute.html">Compute</a></h4>
+      <section><p>Implements necessary functions for symbolic computation of limits, derivatives and integrals</p>
+</section>
+      <h4><a class="xref" href="AngouriMath.DecimalConst.html">DecimalConst</a></h4>
+      <section></section>
+      <h4><a class="xref" href="AngouriMath.Interval.html">Interval</a></h4>
+      <section></section>
+      <h4><a class="xref" href="AngouriMath.MathS.html">MathS</a></h4>
+      <section><p>Use functions from this class</p>
+</section>
+      <h4><a class="xref" href="AngouriMath.MathS.Matrices.html">MathS.Matrices</a></h4>
+      <section><p>Classes and functions related to matrices are defined here</p>
+</section>
+      <h4><a class="xref" href="AngouriMath.MathS.Numbers.html">MathS.Numbers</a></h4>
+      <section><p>All operations for <see cref="!:Number"></see> and its derived classes are available from here.</p>
+<p>These methods represent the only possible way to explicitly create numeric instances.
+It will automatically downcast the result for you,
+so <pre><code>Number.Create(1.0);</code></pre> is an <see cref="!:Integer"></see>.
+To avoid it, you may temporarily disable it</p>
+<pre><code> MathS.Settings.DowncastingEnabled.As(false, () =>
+{
+   var yourNum = Number.Create(1.0);
+});</code></pre>
+<p>and the result will be a <see cref="!:Real"></see>.</p>
+</section>
+      <h4><a class="xref" href="AngouriMath.MathS.Settings.html">MathS.Settings</a></h4>
+      <section><p>A couple of settings allowing you to set some preferences for AM's algorithms
+To use these settings the syntax is</p>
+<pre><code>MathS.Settings.SomeSetting.As(5 /* Here you set a value to the setting */, () => { ... /* your code */ });</code></pre>
+</section>
+      <h4><a class="xref" href="AngouriMath.MathS.Settings.Setting-1.html">MathS.Settings.Setting&lt;T&gt;</a></h4>
+      <section></section>
+      <h4><a class="xref" href="AngouriMath.OneElementPiece.html">OneElementPiece</a></h4>
+      <section></section>
+      <h4><a class="xref" href="AngouriMath.SetPiece.html">SetPiece</a></h4>
+      <section></section>
+      <h4><a class="xref" href="AngouriMath.Sets.html">Sets</a></h4>
+      <section></section>
+      <h4><a class="xref" href="AngouriMath.SySyn.html">SySyn</a></h4>
+      <section><p>Sympy - is a super-powerful library for algebra cumputation,
+multi-variable expressions, physics, matrices, etc.
+But it is only available for python. If you need the same syntax for C#,
+this module is for you.</p>
+</section>
+    <h3 id="structs">Structs
+  </h3>
+      <h4><a class="xref" href="AngouriMath.EntityTensorWrapperOperations.html">EntityTensorWrapperOperations</a></h4>
+      <section></section>
+    <h3 id="enums">Enums
+  </h3>
+      <h4><a class="xref" href="AngouriMath.MathS.Inequality.html">MathS.Inequality</a></h4>
+      <section></section>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

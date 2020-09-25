@@ -1,48 +1,64 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Angouri Math</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Main | AngouriMath</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-            <li class="ml-2 nav-item active">
-                <a class="nav-link" href="#"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
+
+<div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar">
+        <div class="custom-menu">
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            </button>
+        </div>
+        <ul class="list-unstyled components mb-5">
+            <li class="active">
+                <a href="#"><span class="fa fa-home mr-3"></span> Home</a>
             </li>
-            <li class="ml-2 nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-book"></i> Documentation</a>
+            <li>
+                <a href="#"><span class="fas fa-book mr-3"></span> Documentation</a>
             </li>
-            <li class="ml-2 nav-item">
-                <a class="nav-link" href="https://github.com/asc-community/AngouriMath"><i class="fab fa-github"></i>
+            <li>
+                <a class="nav-link" href="https://github.com/asc-community/AngouriMath"><span
+                        class="fab fa-github mr-3"></span>
                     GitHub</a>
             </li>
         </ul>
-    </div>
-</nav>
 
-<div class="container-fluid" id="wrapper">
-    <div class="container text-center" id="main">
-        <img class="img-responsive" height="300" width="300"
-             src="img/icon.png" alt="Angouri Math logo">
-        <h1>AngouriMath</h1>
-        <div class="singleton">
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content" class="p-4 p-md-5 pt-5">
+        <div class="container text-center">
+            <div class="logo-wrapper">
+            </div>
+            <img class="img-responsive" height="300" width="300"
+                 src="img/icon.png" alt="Angouri Math logo">
+            <h1 class="epic">AngouriMath</h1>
+            <hr/>
+        </div>
+
+        <div class="container singleton text-center">
             <p>AngouriMath is a cross-platform open-source library that enables to work with non-linear multi-variable
                 expressions.</p>
             <p>Written in C#. Free and distributed under MIT license. Raised by community, hence, any contribution
                 is welcomed.</p>
         </div>
+
     </div>
 </div>
 
 <script src="https://kit.fontawesome.com/965b80248c.js" crossorigin="anonymous"></script>
-<script src="js/bootstrap.js"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
