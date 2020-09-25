@@ -3,12 +3,18 @@
 }
 
 body {
-
-    background-image: url("../img/mbackground.png");
+    overflow: hidden;
+    border: 0;
+    padding: 0;
 }
 
-.angouri-bulge {
-    padding: 5vw;
+#wrapper {
+    background-image: url("https://math.unc.edu/files/2014/12/header-image2-1500x500_c.png");
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+#main {
     color: white;
-    background-color: rgba(33, 0, 33, 0.8);
 }
