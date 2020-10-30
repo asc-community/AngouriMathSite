@@ -12,117 +12,221 @@
     <link rel="stylesheet" href="styles/custom.css">
 </head>
 <body>
-<div class="wrapper d-flex align-items-stretch">
-    <nav id="sidebar" class="active">
-        <div class="custom-menu">
-            <button type="button" id="sidebarCollapse" class="btn btn-primary">
-            </button>
-        </div>
-        <ul class="list-unstyled components mb-5">
-            <li class="active">
-                <a href="/"><span class="fa fa-home mr-3"></span> Home</a>
-            </li>
-            <li>
-                <a href="demo"><span class="fas fa-gamepad mr-3"></span> Demo</a>
-            </li>
-            <li>
-                <a href="doc"><span class="fas fa-book mr-3"></span> Documentation</a>
-            </li>
-            <li>
-                <a class="nav-link" href="https://github.com/asc-community/AngouriMath">
-                    <span class="fab fa-github mr-3"></span>
-                    GitHub
+    <div class="wrapper d-flex align-items-stretch">
+        <nav id="sidebar" class="active">
+            <div class="custom-menu">
+                <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                </button>
+            </div>
+            <ul class="list-unstyled components mb-5">
+                <li class="active">
+                    <a href="/"><span class="fa fa-home mr-3"></span> Home</a>
+                </li>
+                <li>
+                    <a href="demo"><span class="fas fa-gamepad mr-3"></span> Demo</a>
+                </li>
+                <li>
+                    <a href="doc"><span class="fas fa-book mr-3"></span> Documentation</a>
+                </li>
+                <li>
+                    <a class="nav-link" href="https://github.com/asc-community/AngouriMath">
+                        <span class="fab fa-github mr-3"></span>
+                        GitHub
+                    </a>
+                </li>
+            </ul>
+
+        </nav>
+
+        <!-- Page Content  -->
+        <div id="content" class="p-4 p-md-5 pt-5">
+            <div class="container text-center">
+                <div class="logo-wrapper"></div>
+                <img style="max-height: 45vh; margin-top: 5vh; max-width: 25vw" class="img-responsive" src="img/icon.png"
+                     alt="Angouri Math logo" />
+                <h1 class="epic">AngouriMath</h1>
+            </div>
+
+            <div class="container singleton text-center slogan" style="margin-top: -10px;">
+                <p>New, leading symbolic algebra library in .NET. Everything one would need.</p>
+                <a href="https://github.com/asc-community/AngouriMath">
+                    <img src="https://img.shields.io/badge/Repo-GitHub-brightgreen" />
                 </a>
-            </li>
-        </ul>
+                <a href="https://www.nuget.org/packages/AngouriMath">
+                    <img src="https://img.shields.io/nuget/vpre/AngouriMath?color=blue&label=NuGet" />
+                </a>
+                <a href="https://discord.gg/YWJEX7a">
+                    <img src="https://img.shields.io/discord/642350046213439489?color=orange&label=Discord" />
+                </a>
+                <a href="https://github.com/asc-community/AngouriMath/blob/master/LICENSE.md">
+                    <img src="https://img.shields.io/github/license/AngouriSoft/MathS?color=purple" />
+                </a>
+            </div>
 
-    </nav>
-
-    <!-- Page Content  -->
-    <div id="content" class="p-4 p-md-5 pt-5">
-        <div class="container text-center">
-            <div class="logo-wrapper"></div>
-            <img style="max-height: 45vh; margin-top: 5vh; max-width: 25vw" class="img-responsive" src="img/icon.png"
-                 alt="Angouri Math logo"/>
-            <h1 class="epic">AngouriMath</h1>
-        </div>
-
-        <div class="container singleton text-center slogan" style="margin-top: -10px;">
-            <p>New, leading symbolic algebra library in .NET. Everything one would need.</p>
-            <img src="https://github.com/asc-community/AngouriMath/workflows/Test/badge.svg"/>
-            <a href="https://codecov.io/gh/asc-community/AngouriMath"><img
-                    src="https://codecov.io/gh/asc-community/AngouriMath/branch/master/graph/badge.svg?token=XaA0JGyNrS"/></a>
-            <a href="https://www.nuget.org/packages/AngouriMath"><img
-                    src="https://img.shields.io/nuget/vpre/AngouriMath?color=blue&label=NuGet"/></a>
-            <a href="https://discord.gg/YWJEX7a"><img
-                    src="https://img.shields.io/discord/642350046213439489?color=orange&label=Discord"/></a>
-            <a href="https://github.com/asc-community/AngouriMath/blob/master/LICENSE.md"><img
-                    src="https://img.shields.io/github/license/AngouriSoft/MathS?color=purple"/></a>
-        </div>
-
-        <div class="container normal-text mt-5">
-            <div class="row">
-                <div class="col-md-6 card">
-                    <div class="card-body">
-                        <h3>What is this about?</h3>
-                        <p>
-                            AngouriMath is an open source symbolic algebra library. That is, via AngouriMath, you can
-                            automatically solve equations, systems of equations, work with sets, differentiate, parse
-                            from string, and try many other features.
-                        </p>
-                        <p>
-                            It is not a CAS, so you can use it in any your project by installing it from <a
-                                href="https://www.nuget.org/packages/AngouriMath">NuGet</a>. AngouriMath can be used in
-                            calculators, algebra systems, educational/quiz apps, graphics, TeX rendering applications,
-                            etc.
-                        </p>
-                        <p>
-                            It is free to use even in commercial projects. We work on it a lot, so your requests on <a
-                                href="https://github.com/asc-community/AngouriMath/issues">issues</a> are likely to be
-                            considered within a few hours.
-                        </p>
+            <div class="container normal-text mt-5">
+                <div class="row">
+                    <div class="col-md-6 card">
+                        <div class="card-body">
+                            <h3>What is this about?</h3>
+                            <p>
+                                AngouriMath is an open source symbolic algebra library. That is, via AngouriMath, you can
+                                automatically solve equations, systems of equations, work with sets, differentiate, parse
+                                from string, and try many other features.
+                            </p>
+                            <p>
+                                It is not a CAS, so you can use it in any your project by installing it from <a href="https://www.nuget.org/packages/AngouriMath">NuGet</a>. AngouriMath can be used in
+                                calculators, algebra systems, educational/quiz apps, graphics, TeX rendering applications,
+                                etc.
+                            </p>
+                            <p>
+                                It is free to use even in commercial projects. We work on it a lot, so your requests on <a href="https://github.com/asc-community/AngouriMath/issues">issues</a> are likely to be
+                                considered within a few hours.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 card">
+                        <div class="card-body">
+                            <h3>What can we do?</h3>
+                            <ul>
+                                <li><a href="#parse">Parsing from string</a></li>
+                                <li><a href="#eval">Evaluation</a></li>
+                                <li><a href="#solver">Solving</a></li>
+                                <li><a href="#calc">Calculus</a></li>
+                                <li><a href="#bool">Boolean algebra</a></li>
+                                <li><a href="#latex">LaTeX</a></li>
+                            </ul>
+                            <i>...and more</i>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-6">
-                    <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/fcWJFX"
-                            frameborder="0"></iframe>
+                <div class="row">
+                    <a id="parse"></a>
+                    <div class="col-md-6 card">
+                        <div class="card-body">
+                            <h4>Let's parse from string!</h4>
+                            <p>
+                                AngouriMath allows to parse an expression from a string in runtime.
+                                Not only that, it allows to use some pretty syntax, for example,
+                                you may omit the multiplication operator or powers.
+                            </p>
+                            <p>
+                                Many
+                                mathematical objects may be parsed from a syntax which you normally
+                                write outside of algebra systems!
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <iframe width="100%" height="300" src="https://dotnetfiddle.net/Widget/Ti2yWF" frameborder="0"></iframe>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-md-6">
-                    <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/fcWJFX"
-                            frameborder="0"></iframe>
+                <div class="row">
+                    <a id="eval"></a>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/a7k6ck" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-md-6 card">
+                        <div class="card-body">
+                            <h4>Evaluate &amp; Simplify</h4>
+                            <p>
+                                Of course, you can evaluate expressions here to a number, boolean,
+                                or other types depending on your expression. As well as for many
+                                other functions, this is available as a method of Entity or
+                                as an extension.
+                            </p>
+                            <p>
+                                You can also simplify symbolic expressions even if they are not evaluable
+                                to a number. Just run the Simplify method. If you need a custom simplification
+                                criterion for the simplifier to follow (e. g. you hate complex numbers),
+                                you may set it in the runtime settings.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 card">
-                    <div class="card-body">
-                        <h3>What is this about?</h3>
-                        <p>
-                            AngouriMath is an open source symbolic algebra library. That is, via AngouriMath, you can
-                            automatically solve equations, systems of equations, work with sets, differentiate, parse
-                            from string, and try many other features.
-                        </p>
-                        <p>
-                            It is not a CAS, so you can use it in any your project by installing it from <a
-                                href="https://www.nuget.org/packages/AngouriMath">NuGet</a>. AngouriMath can be used in
-                            calculators, algebra systems, educational/quiz apps, graphics, TeX rendering applications,
-                            etc.
-                        </p>
-                        <p>
-                            It is free to use even in commercial projects. We work on it a lot, so your requests on <a
-                                href="https://github.com/asc-community/AngouriMath/issues">issues</a> are likely to be
-                            considered within a few hours.
-                        </p>
+                <div class="row">
+                    <a id="solver"></a>
+                    <div class="col-md-6 card">
+                        <div class="card-body">
+                            <h4>Solving equations</h4>
+                            <p>
+                                Text
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            Demo
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <a id="calc"></a>
+                    <div class="col-md-6 card">
+                        <div class="card-body">
+                            <h4>Header</h4>
+                            <p>
+                                Text
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            Demo
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <a id="bool"></a>
+                    <div class="col-md-6 card">
+                        <div class="card-body">
+                            <h4>Header</h4>
+                            <p>
+                                Text
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            Demo
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <a id="latex"></a>
+                    <div class="col-md-6 card">
+                        <div class="card-body">
+                            <h4>Header</h4>
+                            <p>
+                                Text
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card-body">
+                            Demo
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<script src="https://kit.fontawesome.com/965b80248c.js" crossorigin="anonymous"></script>
-<script src="js/jquery.min.js"></script>
-<script src="js/popper.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/main.js"></script>
+    <script src="https://kit.fontawesome.com/965b80248c.js" crossorigin="anonymous"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
+
+<!--
+
+Credits:
+
+We thank Pixapopz from Pixabay for the background image.
+
+-->
