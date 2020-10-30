@@ -126,7 +126,7 @@
                     <a id="eval"></a>
                     <div class="col-md-6">
                         <div class="card-body">
-                            <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/a7k6ck" frameborder="0"></iframe>
+                            <iframe width="100%" height="460" src="https://dotnetfiddle.net/Widget/a7k6ck" frameborder="0"></iframe>
                         </div>
                     </div>
                     <div class="col-md-6 card">
@@ -167,23 +167,32 @@
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
-                            <iframe width="100%" height="475" src="https://dotnetfiddle.net/Widget/RxiAs7" frameborder="0"></iframe>
+                            <iframe width="100%" height="375" src="https://dotnetfiddle.net/Widget/RxiAs7" frameborder="0"></iframe>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <a id="calc"></a>
-                    <div class="col-md-6 card">
-                        <div class="card-body">
-                            <h4>Header</h4>
-                            <p>
-                                Text
-                            </p>
-                        </div>
-                    </div>
                     <div class="col-md-6">
                         <div class="card-body">
-                            Demo
+                            <iframe width="100%" height="400" src="https://dotnetfiddle.net/Widget/yvpsSx" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-md-6 card">
+                        <div class="card-body">
+                            <h4>Differentiation, Integration, Limits</h4>
+                            <p>
+                                We can analytically find a derivative, integral, and limit over a variable.
+                            </p>
+                            <p>
+                                Integration and differentiation is performed via .Integrate and .Differentiate
+                                respectively, and the only argument is the variable.
+                            </p>
+                            <p>
+                                Limit takes the variable and the destination (where the variable tends),
+                                but it <i>might</i> also take the side from which the variable approaches
+                                the destination.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -191,31 +200,41 @@
                     <a id="bool"></a>
                     <div class="col-md-6 card">
                         <div class="card-body">
-                            <h4>Header</h4>
+                            <h4>Boolean algebra</h4>
                             <p>
-                                Text
+                                As it could have been already noticed, you can work with boolean
+                                operators and variables in AngouriMath.
+                            </p>
+                            <p>
+                                Operators are similar to the syntax in python, such that
+                                "or", "and", "not". Also, there's "xor" and "implies".
                             </p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="card-body">
-                            Demo
+                            <iframe width="100%" height="375" src="https://dotnetfiddle.net/Widget/tdgfGc" frameborder="0"></iframe>
                         </div>
                     </div>
                 </div>
                 <div class="row">
                     <a id="latex"></a>
-                    <div class="col-md-6 card">
-                        <div class="card-body">
-                            <h4>Header</h4>
-                            <p>
-                                Text
-                            </p>
-                        </div>
-                    </div>
                     <div class="col-md-6">
                         <div class="card-body">
-                            Demo
+                            <iframe width="100%" height="275" src="https://dotnetfiddle.net/Widget/V3Pk4s" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                    <div class="col-md-6 card">
+                        <div class="card-body">
+                            <h4>LaTeX</h4>
+                            <p>
+                                LaTeX is a popular format for mathematical formulas. For example,
+                                could be rendered like this:
+                                "\sqrt{x} + \int{\sin(x)}dx - \lim_{x \to 0}{y \over f(x)}"
+                                \[
+                                \sqrt{x} + \int{\sin(x)}dx - \lim_{x \to 0}{y \over f(x)}
+                                \]
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -228,6 +247,10 @@
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
+
+    <!--LaTeX-->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>
 
