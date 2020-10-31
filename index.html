@@ -12,245 +12,264 @@
     <link rel="stylesheet" href="styles/custom.css">
 </head>
 <body>
-    <div class="wrapper d-flex align-items-stretch">
-        <nav id="sidebar" class="active">
-            <div class="custom-menu">
-                <button type="button" id="sidebarCollapse" class="btn btn-primary">
-                </button>
+<div class="wrapper d-flex align-items-stretch">
+    <nav id="sidebar" class="active">
+        <div class="custom-menu">
+            <button type="button" id="sidebarCollapse" class="btn btn-primary">
+            </button>
+        </div>
+        <ul class="list-unstyled components mb-5">
+            <li class="active">
+                <a href="/"><span class="fa fa-home mr-3"></span> Home</a>
+            </li>
+            <li>
+                <a href="demo"><span class="fas fa-gamepad mr-3"></span> Demo</a>
+            </li>
+            <li>
+                <a href="doc"><span class="fas fa-book mr-3"></span> Documentation</a>
+            </li>
+            <li>
+                <a class="nav-link" href="https://github.com/asc-community/AngouriMath">
+                    <span class="fab fa-github mr-3"></span>
+                    GitHub
+                </a>
+            </li>
+        </ul>
+
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content" class="p-4 p-md-5 pt-5">
+        <div class="container text-center">
+            <div class="logo-wrapper"></div>
+            <img style="max-height: 45vh; margin-top: 5vh; max-width: 25vw" class="img-responsive" src="img/icon.png"
+                 alt="Angouri Math logo"/>
+            <h1 class="epic">AngouriMath</h1>
+        </div>
+
+        <div class="container singleton text-center slogan" style="margin-top: -10px;">
+            <p>New, leading symbolic algebra library in .NET. Everything one would need.</p>
+            <a href="https://github.com/asc-community/AngouriMath">
+                <img src="https://img.shields.io/badge/Repo-GitHub-brightgreen"/>
+            </a>
+            <a href="https://www.nuget.org/packages/AngouriMath">
+                <img src="https://img.shields.io/nuget/vpre/AngouriMath?color=blue&label=NuGet"/>
+            </a>
+            <a href="https://discord.gg/YWJEX7a">
+                <img src="https://img.shields.io/discord/642350046213439489?color=orange&label=Discord"/>
+            </a>
+            <a href="https://github.com/asc-community/AngouriMath/blob/master/LICENSE.md">
+                <img src="https://img.shields.io/github/license/AngouriSoft/MathS?color=purple"/>
+            </a>
+        </div>
+
+        <div class="container normal-text mt-5" style="max-width: 70vw">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h3>What is this about?</h3>
+                        <hr/>
+                        <p>
+                            AngouriMath is an open source symbolic algebra library. That is, via AngouriMath, you can
+                            automatically solve equations, systems of equations, work with sets, differentiate, parse
+                            from string, and try many other features.
+                        </p>
+                        <p>
+                            It is not a CAS, so you can use it in any your project by installing it from <a
+                                href="https://www.nuget.org/packages/AngouriMath">NuGet</a>. AngouriMath can be used in
+                            calculators, algebra systems, educational/quiz apps, graphics, TeX rendering applications,
+                            etc.
+                        </p>
+                        <p>
+                            It is free to use even in commercial projects. We work on it a lot, so your requests on <a
+                                href="https://github.com/asc-community/AngouriMath/issues">issues</a> are likely to be
+                            considered within a few hours.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-1"></div>
+                <div class="col-md-4 text-center">
+                    <div class="card-body">
+                        <h3>What can we do?</h3>
+                        <div class="list-group list-group-flush">
+                            <a href="#parse" class="btn list-group-item list-group-item-action">Parsing from string</a>
+                            <a href="#eval" class="btn list-group-item list-group-item-action">Evaluation</a>
+                            <a href="#solver" class="btn list-group-item list-group-item-action">Solving</a>
+                            <a href="#calc" class="btn list-group-item list-group-item-action">Calculus</a>
+                            <a href="#bool" class="btn list-group-item list-group-item-action">Boolean algebra</a>
+                            <a href="#latex" class="btn list-group-item list-group-item-action">LaTeX</a>
+                        </div>
+                        <i>...and more</i>
+                    </div>
+                </div>
+                <div class="col-md-1"></div>
+
             </div>
-            <ul class="list-unstyled components mb-5">
-                <li class="active">
-                    <a href="/"><span class="fa fa-home mr-3"></span> Home</a>
-                </li>
-                <li>
-                    <a href="demo"><span class="fas fa-gamepad mr-3"></span> Demo</a>
-                </li>
-                <li>
-                    <a href="doc"><span class="fas fa-book mr-3"></span> Documentation</a>
-                </li>
-                <li>
-                    <a class="nav-link" href="https://github.com/asc-community/AngouriMath">
-                        <span class="fab fa-github mr-3"></span>
-                        GitHub
-                    </a>
-                </li>
-            </ul>
-
-        </nav>
-
-        <!-- Page Content  -->
-        <div id="content" class="p-4 p-md-5 pt-5">
-            <div class="container text-center">
-                <div class="logo-wrapper"></div>
-                <img style="max-height: 45vh; margin-top: 5vh; max-width: 25vw" class="img-responsive" src="img/icon.png"
-                     alt="Angouri Math logo" />
-                <h1 class="epic">AngouriMath</h1>
+            <div class="row mt-5">
+                <a id="parse"></a>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h4>Let's parse from string!</h4>
+                        <hr/>
+                        <p>
+                            AngouriMath allows to parse an expression from a string in runtime.
+                            Not only that, it allows to use some pretty syntax, for example,
+                            you may omit the multiplication operator or powers.
+                        </p>
+                        <p>
+                            Many
+                            mathematical objects may be parsed from a syntax which you normally
+                            write outside of algebra systems!
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <iframe width="100%" height="300" src="https://dotnetfiddle.net/Widget/Ti2yWF"
+                                frameborder="0"></iframe>
+                    </div>
+                </div>
             </div>
-
-            <div class="container singleton text-center slogan" style="margin-top: -10px;">
-                <p>New, leading symbolic algebra library in .NET. Everything one would need.</p>
-                <a href="https://github.com/asc-community/AngouriMath">
-                    <img src="https://img.shields.io/badge/Repo-GitHub-brightgreen" />
-                </a>
-                <a href="https://www.nuget.org/packages/AngouriMath">
-                    <img src="https://img.shields.io/nuget/vpre/AngouriMath?color=blue&label=NuGet" />
-                </a>
-                <a href="https://discord.gg/YWJEX7a">
-                    <img src="https://img.shields.io/discord/642350046213439489?color=orange&label=Discord" />
-                </a>
-                <a href="https://github.com/asc-community/AngouriMath/blob/master/LICENSE.md">
-                    <img src="https://img.shields.io/github/license/AngouriSoft/MathS?color=purple" />
-                </a>
+            <div class="row mt-5">
+                <a id="eval"></a>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <iframe width="100%" height="460" src="https://dotnetfiddle.net/Widget/a7k6ck"
+                                frameborder="0"></iframe>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h4>Evaluate &amp; Simplify</h4>
+                        <hr/>
+                        <p>
+                            Of course, you can evaluate expressions here to a number, boolean,
+                            or other types depending on your expression. As well as for many
+                            other functions, this is available as a method of Entity or
+                            as an extension.
+                        </p>
+                        <p>
+                            You can also simplify symbolic expressions even if they are not evaluable
+                            to a number. Just run the Simplify method. If you need a custom simplification
+                            criterion for the simplifier to follow (e. g. you hate complex numbers),
+                            you may set it in the runtime settings.
+                        </p>
+                    </div>
+                </div>
             </div>
-
-            <div class="container normal-text mt-5">
-                <div class="row">
-                    <div class="col-md-6 card">
-                        <div class="card-body">
-                            <h3>What is this about?</h3>
-                            <p>
-                                AngouriMath is an open source symbolic algebra library. That is, via AngouriMath, you can
-                                automatically solve equations, systems of equations, work with sets, differentiate, parse
-                                from string, and try many other features.
-                            </p>
-                            <p>
-                                It is not a CAS, so you can use it in any your project by installing it from <a href="https://www.nuget.org/packages/AngouriMath">NuGet</a>. AngouriMath can be used in
-                                calculators, algebra systems, educational/quiz apps, graphics, TeX rendering applications,
-                                etc.
-                            </p>
-                            <p>
-                                It is free to use even in commercial projects. We work on it a lot, so your requests on <a href="https://github.com/asc-community/AngouriMath/issues">issues</a> are likely to be
-                                considered within a few hours.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6 card">
-                        <div class="card-body">
-                            <h3>What can we do?</h3>
-                            <ul>
-                                <li><a href="#parse">Parsing from string</a></li>
-                                <li><a href="#eval">Evaluation</a></li>
-                                <li><a href="#solver">Solving</a></li>
-                                <li><a href="#calc">Calculus</a></li>
-                                <li><a href="#bool">Boolean algebra</a></li>
-                                <li><a href="#latex">LaTeX</a></li>
-                            </ul>
-                            <i>...and more</i>
-                        </div>
+            <div class="row mt-5">
+                <a id="solver"></a>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h4>Solving equations</h4>
+                        <hr/>
+                        <p>
+                            AM allows to solve equations, inequalities, so-called statements,
+                            systems of equations, inequalities, unions of equations, etc.
+                            All you need to use it to know a fairly simple syntax.
+                        </p>
+                        <p>
+                            But first, let me define word Statement. We call a Statement an expression
+                            that is true for some values of variables, or false for some other.
+                            For example, "x + 2 > 0" is a Statement which is true for some x and false
+                            for others.
+                        </p>
                     </div>
                 </div>
-                <div class="row">
-                    <a id="parse"></a>
-                    <div class="col-md-6 card">
-                        <div class="card-body">
-                            <h4>Let's parse from string!</h4>
-                            <p>
-                                AngouriMath allows to parse an expression from a string in runtime.
-                                Not only that, it allows to use some pretty syntax, for example,
-                                you may omit the multiplication operator or powers.
-                            </p>
-                            <p>
-                                Many
-                                mathematical objects may be parsed from a syntax which you normally
-                                write outside of algebra systems!
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card-body">
-                            <iframe width="100%" height="300" src="https://dotnetfiddle.net/Widget/Ti2yWF" frameborder="0"></iframe>
-                        </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <iframe width="100%" height="375" src="https://dotnetfiddle.net/Widget/RxiAs7"
+                                frameborder="0"></iframe>
                     </div>
                 </div>
-                <div class="row">
-                    <a id="eval"></a>
-                    <div class="col-md-6">
-                        <div class="card-body">
-                            <iframe width="100%" height="460" src="https://dotnetfiddle.net/Widget/a7k6ck" frameborder="0"></iframe>
-                        </div>
-                    </div>
-                    <div class="col-md-6 card">
-                        <div class="card-body">
-                            <h4>Evaluate &amp; Simplify</h4>
-                            <p>
-                                Of course, you can evaluate expressions here to a number, boolean,
-                                or other types depending on your expression. As well as for many
-                                other functions, this is available as a method of Entity or
-                                as an extension.
-                            </p>
-                            <p>
-                                You can also simplify symbolic expressions even if they are not evaluable
-                                to a number. Just run the Simplify method. If you need a custom simplification
-                                criterion for the simplifier to follow (e. g. you hate complex numbers),
-                                you may set it in the runtime settings.
-                            </p>
-                        </div>
+            </div>
+            <div class="row mt-5">
+                <a id="calc"></a>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <iframe width="100%" height="400" src="https://dotnetfiddle.net/Widget/yvpsSx"
+                                frameborder="0"></iframe>
                     </div>
                 </div>
-                <div class="row">
-                    <a id="solver"></a>
-                    <div class="col-md-6 card">
-                        <div class="card-body">
-                            <h4>Solving equations</h4>
-                            <p>
-                                AM allows to solve equations, inequalities, so-called statements,
-                                systems of equations, inequalities, unions of equations, etc.
-                                All you need to use it to know a fairly simple syntax.
-                            </p>
-                            <p>
-                                But first, let me define word Statement. We call a Statement an expression
-                                that is true for some values of variables, or false for some other.
-                                For example, "x + 2 > 0" is a Statement which is true for some x and false
-                                for others.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card-body">
-                            <iframe width="100%" height="375" src="https://dotnetfiddle.net/Widget/RxiAs7" frameborder="0"></iframe>
-                        </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h4>Differentiation, Integration, Limits</h4>
+                        <hr/>
+                        <p>
+                            We can analytically find a derivative, integral, and limit over a variable.
+                        </p>
+                        <p>
+                            Integration and differentiation is performed via .Integrate and .Differentiate
+                            respectively, and the only argument is the variable.
+                        </p>
+                        <p>
+                            Limit takes the variable and the destination (where the variable tends),
+                            but it <i>might</i> also take the side from which the variable approaches
+                            the destination.
+                        </p>
                     </div>
                 </div>
-                <div class="row">
-                    <a id="calc"></a>
-                    <div class="col-md-6">
-                        <div class="card-body">
-                            <iframe width="100%" height="400" src="https://dotnetfiddle.net/Widget/yvpsSx" frameborder="0"></iframe>
-                        </div>
-                    </div>
-                    <div class="col-md-6 card">
-                        <div class="card-body">
-                            <h4>Differentiation, Integration, Limits</h4>
-                            <p>
-                                We can analytically find a derivative, integral, and limit over a variable.
-                            </p>
-                            <p>
-                                Integration and differentiation is performed via .Integrate and .Differentiate
-                                respectively, and the only argument is the variable.
-                            </p>
-                            <p>
-                                Limit takes the variable and the destination (where the variable tends),
-                                but it <i>might</i> also take the side from which the variable approaches
-                                the destination.
-                            </p>
-                        </div>
+            </div>
+            <div class="row">
+                <a id="bool"></a>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h4>Boolean algebra</h4>
+                        <hr/>
+                        <p>
+                            As it could have been already noticed, you can work with boolean
+                            operators and variables in AngouriMath.
+                        </p>
+                        <p>
+                            Operators are similar to the syntax in python, such that
+                            "or", "and", "not". Also, there's "xor" and "implies".
+                        </p>
                     </div>
                 </div>
-                <div class="row">
-                    <a id="bool"></a>
-                    <div class="col-md-6 card">
-                        <div class="card-body">
-                            <h4>Boolean algebra</h4>
-                            <p>
-                                As it could have been already noticed, you can work with boolean
-                                operators and variables in AngouriMath.
-                            </p>
-                            <p>
-                                Operators are similar to the syntax in python, such that
-                                "or", "and", "not". Also, there's "xor" and "implies".
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="card-body">
-                            <iframe width="100%" height="375" src="https://dotnetfiddle.net/Widget/tdgfGc" frameborder="0"></iframe>
-                        </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <iframe width="100%" height="375" src="https://dotnetfiddle.net/Widget/tdgfGc"
+                                frameborder="0"></iframe>
                     </div>
                 </div>
-                <div class="row">
-                    <a id="latex"></a>
-                    <div class="col-md-6">
-                        <div class="card-body">
-                            <iframe width="100%" height="275" src="https://dotnetfiddle.net/Widget/V3Pk4s" frameborder="0"></iframe>
-                        </div>
+            </div>
+            <div class="row">
+                <a id="latex"></a>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <iframe width="100%" height="275" src="https://dotnetfiddle.net/Widget/V3Pk4s"
+                                frameborder="0"></iframe>
                     </div>
-                    <div class="col-md-6 card">
-                        <div class="card-body">
-                            <h4>LaTeX</h4>
-                            <p>
-                                LaTeX is a popular format for mathematical formulas. For example,
-                                could be rendered like this:
-                                "\sqrt{x} + \int{\sin(x)}dx - \lim_{x \to 0}{y \over f(x)}"
-                                \[
-                                \sqrt{x} + \int{\sin(x)}dx - \lim_{x \to 0}{y \over f(x)}
-                                \]
-                            </p>
-                        </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card-body">
+                        <h4>LaTeX</h4>
+                        <hr/>
+                        <p>
+                            LaTeX is a popular format for mathematical formulas. For example,
+                            could be rendered like this:
+                            "\sqrt{x} + \int{\sin(x)}dx - \lim_{x \to 0}{y \over f(x)}"
+                            \[
+                            \sqrt{x} + \int{\sin(x)}dx - \lim_{x \to 0}{y \over f(x)}
+                            \]
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
-    <script src="https://kit.fontawesome.com/965b80248c.js" crossorigin="anonymous"></script>
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+<script src="https://kit.fontawesome.com/965b80248c.js" crossorigin="anonymous"></script>
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
 
-    <!--LaTeX-->
-    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<!--LaTeX-->
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>
 
