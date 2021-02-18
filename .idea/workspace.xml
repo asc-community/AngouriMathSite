@@ -19,44 +19,11 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d5200a10-b81d-42f0-be3b-61374baa7c6c" name="Default Changelist" comment="">
+    <list default="true" id="d5200a10-b81d-42f0-be3b-61374baa7c6c" name="Default Changelist" comment="Compile everything">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Boolean.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Boolean.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Compute.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Compute.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Core.ApproachFrom.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Core.ApproachFrom.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Core.Domain.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Core.Domain.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Core.EquationSystem.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Core.EquationSystem.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Core.Exceptions.AngouriBugException.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Core.Exceptions.AngouriBugException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Core.Exceptions.FunctionArgumentCountException.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Core.Exceptions.FunctionArgumentCountException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Core.Exceptions.MathSException.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Core.Exceptions.MathSException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Core.Exceptions.ParseException.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Core.Exceptions.ParseException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Core.Exceptions.TreeException.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Core.Exceptions.TreeException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Core.Exceptions.UncompilableNodeException.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Core.Exceptions.UncompilableNodeException.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Core.Exceptions.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Core.Exceptions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Core.FastExpression.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Core.FastExpression.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Core.ILatexiseable.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Core.ILatexiseable.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Core.Priority.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Core.Priority.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Core.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Core.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.DecimalConst.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.DecimalConst.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.EntityTensorWrapperOperations.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.EntityTensorWrapperOperations.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Extensions.AngouriMathExtensions.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Extensions.AngouriMathExtensions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Extensions.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Extensions.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Interval.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Interval.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.MathS.Inequality.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.MathS.Inequality.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.MathS.Matrices.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.MathS.Matrices.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.MathS.Numbers.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.MathS.Numbers.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.MathS.Settings.Setting-1.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.MathS.Settings.Setting-1.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.MathS.Settings.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.MathS.Settings.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.MathS.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.MathS.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.OneElementPiece.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.OneElementPiece.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.SetPiece.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.SetPiece.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.Sets.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.Sets.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.SySyn.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.SySyn.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/AngouriMath.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/AngouriMath.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/System.Runtime.CompilerServices.IsExternalInit.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/System.Runtime.CompilerServices.IsExternalInit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/System.Runtime.CompilerServices.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/System.Runtime.CompilerServices.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/doc/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/doc/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/styles/search-worker.js" beforeDir="false" afterPath="$PROJECT_DIR$/styles/search-worker.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/styles/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/styles/style.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,6 +56,7 @@
     <property name="dart.analysis.tool.window.visible" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/doc" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -117,8 +85,18 @@
       <workItem from="1601664365338" duration="2026000" />
       <workItem from="1601837186555" duration="621000" />
       <workItem from="1601842550745" duration="1144000" />
-      <workItem from="1602697254753" duration="2198000" />
+      <workItem from="1602697254753" duration="3032000" />
+      <workItem from="1602746244281" duration="204000" />
+      <workItem from="1603988111107" duration="2331000" />
     </task>
+    <task id="LOCAL-00001" summary="Compile everything">
+      <created>1602744091903</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1602744091903</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +114,15 @@
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Compile everything" />
+    <option name="LAST_COMMIT_MESSAGE" value="Compile everything" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603988691327">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="690" y="272" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1603988691327" />
     <state x="820" y="423" key="Github.ShareDialog" timestamp="1600841617410">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -145,9 +131,13 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="748" y="230" key="Github.UntrackedFilesDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1600841652575" />
-    <state x="777" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601017408173">
+    <state x="-1368" y="258" key="Vcs.Push.Dialog.v2" timestamp="1602744094566">
+      <screen x="-1920" y="0" width="1920" height="1050" />
+    </state>
+    <state x="-1368" y="258" key="Vcs.Push.Dialog.v2/-1920.0.1920.1050/0.0.1920.1050@-1920.0.1920.1050" timestamp="1602744094566" />
+    <state x="777" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1603988169362">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="777" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1601017408173" />
+    <state x="777" y="439" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1603988169362" />
   </component>
 </project>
