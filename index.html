@@ -25,22 +25,39 @@
 
 <body class="main">
 
+<div class="head-of-page">
 <div class="centered">
-<img src="img/icon.png" width="150wh"/>
+<img class="logo" src="img/icon.png" width="150wh"/>
 <h1>AngouriMath</h1>
-<p style="color: gray">New, leading symbolic algebra library in .NET</p>
-<hr>
+<p class="slogan" style="color: gray">New, leading symbolic algebra library in .NET</p>
 </div>
 
-<div class="centered">
+<!--For pc-->
+<div class="centered link-block pc">
+<hr>
 <a class="active-link" href="/">Home</a> ·
 <a href="/demo">Try</a> ·
 <a href="/why">Use</a> ·
 <a href="https://angouri.org">Angouri.org</a> ·
 <a href="https://github.com/asc-community/AngouriMath">GitHub</a>
 </div>
+<!--End-->
 
-<hr>
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a class="active-link" href="/">Home</a>
+<a href="/demo">Try</a>
+<a href="/why">Use</a>
+<a href="https://angouri.org">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath">GitHub</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<hr class="pc">
 <h3 class="centered"><a name="about" href="#about" class="anchor">What is this about?</a></h3>
 <hr/>
 <p>
@@ -72,12 +89,15 @@
 <a href="https://codecov.io/gh/asc-community/AngouriMath"><img alt="Codecov" src="https://img.shields.io/codecov/c/gh/asc-community/AngouriMath?color=orange&label=Coverage&logo=codecov&style=flat-square"></a>
 <a href="https://www.nuget.org/packages/AngouriMath"><img alt="Nuget (with prereleases)" src="https://img.shields.io/nuget/vpre/AngouriMath?color=blue&label=NuGet&logo=nuget&style=flat-square"></a>
 <a href="https://www.nuget.org/packages/AngouriMath"><img alt="Nuget" src="https://img.shields.io/nuget/dt/AngouriMath?color=darkblue&label=Downloads&style=flat-square"></a>
+<a href="https://github.com/asc-community/AngouriMath"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/asc-community/AngouriMath?label=Stars&style=social"></a>
 <a href="https://discord.gg/YWJEX7a"><img alt="Discord" src="https://img.shields.io/discord/642350046213439489?color=purple&label=Discord&logo=discord&style=flat-square"></a>
 </div>
 </div>
 
 <hr>
-<div class="centered">
+
+<!--For PC-->
+<div class="centered pc">
 <a href="#parse">Parsing from string</a> ·
 <a href="#eval">Evaluation</a> ·
 <a href="#solver">Solving</a> ·
@@ -88,7 +108,22 @@
 <a href="#inter">F# &amp; Jupyter</a> ·
 <a href="#multi">Multithreading</a>
 </div>
-<hr>
+<!---->
+
+<!--For mobiles-->
+<div class="centered phone link-block-mob">
+<a href="#parse">Parsing from string</a>
+<a href="#eval">Evaluation</a>
+<a href="#solver">Solving</a>
+<a href="#calc">Calculus</a>
+<a href="#bool">Boolean algebra</a>
+<a href="#latex">LaTeX</a>
+<a href="#inter">F# &amp; Jupyter</a>
+<a href="#multi">Multithreading</a>
+</div>
+<!--End-->
+
+<hr class="pc">
 
 <!--Parsing from string-->
 <div class="block">

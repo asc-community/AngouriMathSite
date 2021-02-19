@@ -8,8 +8,18 @@
     margin-top: 3vh;
 }
 
+/* With class Phone it will only be so on mobile devices */
 .phone {
     display: none;
+}
+
+/* With class PC it will be only applied to PC */
+.pc {
+    
+}
+
+summary {
+    outline: none;
 }
 
 @media (max-width: 1000px)
@@ -29,6 +39,33 @@
     
     .phone {
         display: block;
+    }
+    
+    .pc {
+        display: none;
+    }
+    
+    .head-of-page {
+        font-size: 25pt;
+    }
+    
+    .link-block-mob {
+        display: block;
+    }
+    
+    .link-block-mob a {
+        display: block;
+        border-bottom: solid 1px gray;
+        font-size: 30pt;
+        padding: 15px;
+    }
+    
+    .logo {
+        width: 250px;
+    }
+    
+    .slogan {
+        display: none;
     }
 }
 
