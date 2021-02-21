@@ -1,0 +1,64 @@
+@media (prefers-color-scheme: light) {
+    .main {
+        color: #474747;
+        background-color: white;
+    }
+    
+    a {
+        color: purple;
+    }
+    
+    a:hover {
+        color: red;
+    }
+    
+    .code {
+        background-color: #EAEAEA;
+        border: solid #EAEAEA;
+    }
+    
+    .anchor {
+        color: #474747;
+    }
+    
+    .active-link {
+        color: #474747;
+    }
+
+    .active-link:hover {
+        color: #474747;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .main {
+        color: #A7A7A7;
+        background-color: #1F1F1F;
+    }
+    
+    a {
+        color: pink;
+    }
+    
+    a:hover {
+        color: white;
+    }
+    
+    .code {
+        background-color: #5A5A5A;
+        border: solid #5A5A5A;
+        color: darkgray;
+    }
+    
+    .anchor {
+        color: #A7A7A7;
+    }
+    
+    .active-link {
+        color: #A7A7A7;
+    }
+
+    .active-link:hover {
+        color: #A7A7A7;
+    }   
+}
