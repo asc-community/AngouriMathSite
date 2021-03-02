@@ -16,6 +16,19 @@
     
 }
 
+pre {
+    font-size: 14pt;
+    background-color: #EAEAEA;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.warning {
+    background-color: #FFBABA;
+    padding: 10px;
+    border-radius: 8px;
+}
+
 summary {
     outline: none;
 }
