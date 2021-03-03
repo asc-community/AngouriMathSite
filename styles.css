@@ -23,6 +23,15 @@ pre {
     border-radius: 8px;
 }
 
+.cw {
+    background: #EAEAEA;
+    font-size: 14pt;
+    padding: 2px;
+    padding-right: 3px;
+    padding-left: 3px;
+    border-radius: 1px;
+}
+
 .warning {
     background-color: #FFBABA;
     padding: 10px;
