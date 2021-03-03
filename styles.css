@@ -18,13 +18,11 @@
 
 pre {
     font-size: 14pt;
-    background-color: #EAEAEA;
     padding: 10px;
     border-radius: 8px;
 }
 
 .cw {
-    background: #EAEAEA;
     font-size: 14pt;
     padding: 2px;
     padding-right: 3px;
@@ -33,7 +31,6 @@ pre {
 }
 
 .warning {
-    background-color: #FFBABA;
     padding: 10px;
     border-radius: 8px;
 }

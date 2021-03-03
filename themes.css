@@ -28,6 +28,18 @@
     .active-link:hover {
         color: #474747;
     }
+	
+	pre {
+		background-color: #F0F0F0;
+	}
+	
+	.cw {
+		background: #F0F0F0;
+	}
+	
+	.warning {
+		background-color: #FFBABA;
+	}
 }
 
 @media (prefers-color-scheme: dark) {
@@ -61,4 +73,16 @@
     .active-link:hover {
         color: #A7A7A7;
     }   
+	
+	pre {
+		background-color: #1D2127;
+	}
+	
+	.cw {
+		background: #1D2127;
+	}
+	
+	.warning {
+		background-color: #5F2525;
+	}
 }

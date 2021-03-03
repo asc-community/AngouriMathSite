@@ -377,9 +377,9 @@ were reconsidered and rewritten.
 <h3>General structure</h3><p>
 
 Now there's no operator's name. Moreover, there's no operator anymore. There are records for each separate
-logical action, be than a sum operator or sine function. They all are inside `Entity`'s naming.
+logical action, be than a sum operator or sine function. They all are inside <text class="cw">Entity</text>'s naming.
 </p><p>
-Active functions like renamed `Differentiate`, `Integrate`, and `Limit` now return an expression after `InnerSimplified`
+Active functions like renamed <text class="cw">Differentiate</text>, <text class="cw">Integrate</text>, and <text class="cw">Limit</text> now return an expression after <text class="cw">InnerSimplified</text>
 being applied. A lot of methods are now properties.
 </p><p>
 ToSymPy fixed, as well as many other bugs. Solvers and simplificators improved.
@@ -394,18 +394,18 @@ How the math of AM is improved.
 
 Are now available as nodes with the obvious syntax and their synonyms.
 </p><p>
-Secant: `sec(x)`
+Secant: <text class="cw">sec(x)</text>
 </p><p>
-Cosecant: `cosec(x)`, `csc(x)`
+Cosecant: <text class="cw">cosec(x)</text>, <text class="cw">csc(x)</text>
 </p><p>
-Arcsecant: `asec(x)`, `arcsec(x)`
+Arcsecant: <text class="cw">asec(x)</text>, <text class="cw">arcsec(x)</text>
 </p><p>
-Arccosecant: `acsc(x)`, `acosec(x)`, `arccosec(x)`
+Arccosecant: <text class="cw">acsc(x)</text>, <text class="cw">acosec(x)</text>, <text class="cw">arccosec(x)</text>
 </p><p>
 <br>
 </p></p><h4>Hyberbolic trigonometric functions</h4><p>
 
-All trigonometric functions (sin, cos, ..., arcsecant) now have their "-h" pair. For example, `sinh`, `cosh`, etc.
+All trigonometric functions (sin, cos, ..., arcsecant) now have their "-h" pair. For example, <text class="cw">sinh</text>, <text class="cw">cosh</text>, etc.
 They are not nodes, but they are parseable and available in AngouriMath.FSharp and AngouriMath.Interactive as well.
 
 <br><br>
@@ -415,69 +415,69 @@ Abs always returns a real non-negative number for a numerical argument. Signum a
 number such that its absolute value is 1 for a numerical argument. One exception for signum is 0:
 for 0 it returns 0. Phi returns an integer (where Phi is the Euler's totient function).
 </p><p>
-Syntax for abs: `abs(x)`, `(|x|)`
+Syntax for abs: <text class="cw">abs(x)</text>, <text class="cw">(|x|)</text>
 </p><p>
-Syntax for signum: `sgn(x)`, `signum(x)`, `sign(x)`
+Syntax for signum: <text class="cw">sgn(x)</text>, <text class="cw">signum(x)</text>, <text class="cw">sign(x)</text>
 </p><p>
-Syntax for phi: `phi(x)`
+Syntax for phi: <text class="cw">phi(x)</text>
 
 <br><br>
 </p><h4>Domains</h4><p>
 
-Now every node is constrained within a domain. This init-get-only property is called `Codomain`. You can
+Now every node is constrained within a domain. This init-get-only property is called <text class="cw">Codomain</text>. You can
 set this codomain for every node in a given expression. If a numerical value is outside of the codomain,
-`Eval` will return `NaN`, and `Simplify` would not take any additional actions, leaving node as it is.
+<text class="cw">Eval</text> will return <text class="cw">NaN</text>, and <text class="cw">Simplify</text> would not take any additional actions, leaving node as it is.
 </p><p>
-Syntax: `domain(x, ZZ)`, `domain(x, QQ)`, ...
+Syntax: <text class="cw">domain(x, ZZ)</text>, <text class="cw">domain(x, QQ)</text>, ...
 </p><p>
-Note: since domain is not a node, it is true that `domain(x, RR) = domain(domain(x, RR), RR)`
+Note: since domain is not a node, it is true that <text class="cw">domain(x, RR) = domain(domain(x, RR), RR)</text>
 
 <br><br>
 </p><h4>Boolean algebra</h4><p>
 
-Now there are many boolean operators added and they are nodes. Instead of `Eval` we now see
-`EvalNumerical` and `EvalBoolean`. Likewise, instead of `Evaluable` we see `EvaluableNumerical`
-and `EvaluableBoolean`.
+Now there are many boolean operators added and they are nodes. Instead of <text class="cw">Eval</text> we now see
+<text class="cw">EvalNumerical</text> and <text class="cw">EvalBoolean</text>. Likewise, instead of <text class="cw">Evaluable</text> we see <text class="cw">EvaluableNumerical</text>
+and <text class="cw">EvaluableBoolean</text>.
 </p><p>
-Available operators and their syntaxes: `not`, `or`, `xor`, `and`, `implies`
+Available operators and their syntaxes: <text class="cw">not</text>, <text class="cw">or</text>, <text class="cw">xor</text>, <text class="cw">and</text>, <text class="cw">implies</text>
 </p><p>
-Syntax of boolean constants: `false`, `true`
+Syntax of boolean constants: <text class="cw">false</text>, <text class="cw">true</text>
 
 <br><br>
 </p><h4>Equality and inequality nodes</h4><p>
 
-Those return a `Boolean` when simplified. Inequality nodes result in `NaN` if evaluating on two 
+Those return a <text class="cw">Boolean</text> when simplified. Inequality nodes result in <text class="cw">NaN</text> if evaluating on two 
 numerical non-real values. 
 </p><p>
-Syntax for equal, greater, less, greater or equal, less or equal: `=`, `>`, `<`, `>=`, `<=`
+Syntax for equal, greater, less, greater or equal, less or equal: <text class="cw">=</text>, <text class="cw">></text>, <text class="cw"><</text>, <text class="cw">>=</text>, <text class="cw"><=</text>
 </p><p>
 There's also compositional syntax separately for inequalities and inequalities, e. g.
-`x < a < 4` <=> `x < a and a < 4` and `x = a = b` <=> `x = a and a = b`. Although you cannot mix
-the two, that is, `x < a = c` is `(x < a) = c` (i. e. the fact whether `x` is less than `a`
-is equivalent to `c`)
+<text class="cw">x < a < 4</text> <=> <text class="cw">x < a and a < 4</text> and <text class="cw">x = a = b</text> <=> <text class="cw">x = a and a = b</text>. Although you cannot mix
+the two, that is, <text class="cw">x < a = c</text> is <text class="cw">(x < a) = c</text> (i. e. the fact whether <text class="cw">x</text> is less than <text class="cw">a</text>
+is equivalent to <text class="cw">c</text>)
 
 <br><br>
 </p><h4>Sets</h4><p>
 
-Sets are now entities. There're `FiniteSet` (which you can iterate over), 
-`Interval` (from one number to another one. Only reals are now supported),
-`SpecialSet` (something like domain. Its only parameter is of `Domain` type),
-`ConditionalSet` (for all values in its domain it is true if and only if the
+Sets are now entities. There're <text class="cw">FiniteSet</text> (which you can iterate over), 
+<text class="cw">Interval</text> (from one number to another one. Only reals are now supported),
+<text class="cw">SpecialSet</text> (something like domain. Its only parameter is of <text class="cw">Domain</text> type),
+<text class="cw">ConditionalSet</text> (for all values in its domain it is true if and only if the
 value satisfies the CSet's predicate).
 </p><p>
-Syntax for finite set: `{ 1, 2, 3 }`
+Syntax for finite set: <text class="cw">{ 1, 2, 3 }</text>
 </p><p>
-Syntax for interval: `('[' | '(') left ';' right (']' | ')')`. So the square bracket means it's closed, 
-the parenthesis means it's open. For example, `[3; 5)` means it is closed on the left end and open on 
+Syntax for interval: <text class="cw">('[' | '(') left ';' right (']' | ')')</text>. So the square bracket means it's closed, 
+the parenthesis means it's open. For example, <text class="cw">[3; 5)</text> means it is closed on the left end and open on 
 the right one.
 </p><p>
-Syntax for SpecialSet: `CC`, `RR`, `ZZ`, `QQ`
+Syntax for SpecialSet: <text class="cw">CC</text>, <text class="cw">RR</text>, <text class="cw">ZZ</text>, <text class="cw">QQ</text>
 </p><p>
-Syntax for ConditionalSet: `{ x : predicate(x) }` where predicate is a statement, e. g.
-`{ x | x > 0 and (y implies x = 0) }`
+Syntax for ConditionalSet: <text class="cw">{ x : predicate(x) }</text> where predicate is a statement, e. g.
+<text class="cw">{ x | x > 0 and (y implies x = 0) }</text>
 </p><p>
-The `in` statement allows to verify whether an element belongs to a set. E. g.
-`2 in { 2, 3 }`
+The <text class="cw">in</text> statement allows to verify whether an element belongs to a set. E. g.
+<text class="cw">2 in { 2, 3 }</text>
 
 <br><br>
 </p><h4>Limits improved</h4><p>
@@ -489,13 +489,13 @@ remarkable limits and a few more. L'Hopital's rule added as well.
 </p><h4>Provided</h4><p>
 
 Provided is a node, which turns into NaN if the predicate is false, turns into Expression if the predicate is true. For example,
-you may write `5 + (a provided b)`. As so, it remains unchanged, but if you subsisute true instead of b, you will get
-`5 + (a provided true)` -> `5 + a`. The whole expression will turn into NaN if any provided's predicate is false.
+you may write <text class="cw">5 + (a provided b)</text>. As so, it remains unchanged, but if you subsisute true instead of b, you will get
+<text class="cw">5 + (a provided true)</text> -> <text class="cw">5 + a</text>. The whole expression will turn into NaN if any provided's predicate is false.
 </p><p>
-Exception: when a provided is in a finite set. Then, `(a provided b) in A` <=> `(a in A) = b`, that is, if a provided turns
+Exception: when a provided is in a finite set. Then, <text class="cw">(a provided b) in A</text> <=> <text class="cw">(a in A) = b</text>, that is, if a provided turns
 into undefined, it's excluded from the finite set.
 </p><p>
-Syntax: `a provided b`. It has the lowest priority, so `a + b \/ c provided f and h = i` is the same as `(a + b \/ c) provided (f and h = i)`
+Syntax: <text class="cw">a provided b</text>. It has the lowest priority, so <text class="cw">a + b \/ c provided f and h = i</text> is the same as <text class="cw">(a + b \/ c) provided (f and h = i)</text>
 
 <br><br>
 </p><h4>Piecewise</h4><p>
@@ -519,8 +519,8 @@ For the classical math one, piecewise turns into some case if this case's condit
 In AM's definition, piecewise turns into some case if this case's condition is true and all those *before* the considered
 case are false.
 </p><p>
-Syntax: `piecewise(a provided b, c provided d, ...)` if no otherwise case provided.
-`piecewise(a provided b, c provided d, ..., e)` for `e` as the otherwise case.
+Syntax: <text class="cw">piecewise(a provided b, c provided d, ...)</text> if no otherwise case provided.
+<text class="cw">piecewise(a provided b, c provided d, ..., e)</text> for <text class="cw">e</text> as the otherwise case.
 </p>
 
 
@@ -532,7 +532,7 @@ Features, related to industrial integration, production, researches. Usually, im
 <br><br>
 </p><h4>Ultimate exception class added</h4><p>
 
-It is called `AngouriMathBaseException`, so that you can catch all exceptions thrown by AngouriMath by catching just one.
+It is called <text class="cw">AngouriMathBaseException</text>, so that you can catch all exceptions thrown by AngouriMath by catching just one.
 
 <br><br>
 </p><h4>Performance improved</h4><p>
@@ -553,7 +553,7 @@ Now you can work in Jypyter with expressions being rendered directly to the outp
 <br><br>
 </p><h4>Multithreading</h4><p>
 
-Some methods like `Solve` and `Simplify` might take up to infinitely much time. Now, you can kill hung tasks.
+Some methods like <text class="cw">Solve</text> and <text class="cw">Simplify</text> might take up to infinitely much time. Now, you can kill hung tasks.
 
 <br><br>
 </p><h4>New settings</h4><p>
@@ -564,9 +564,9 @@ Now, you don't have to pass a lambda. Instead, use syntax
 // do what is needed
 </code></pre>
 
-`Set` generates a disposable struct, which, when disposed, rolls back the setting at the end of the scope.
-It is not recommended to dispose it your own, just let runtime do its job. The `As`, `Global`, 
-and `RollBackToDefault` are marked as `obsolete` and not recommended to use anymore.
+<text class="cw">Set</text> generates a disposable struct, which, when disposed, rolls back the setting at the end of the scope.
+It is not recommended to dispose it your own, just let runtime do its job. The <text class="cw">As</text>, <text class="cw">Global</text>, 
+and <text class="cw">RollBackToDefault</text> are marked as <text class="cw">obsolete</text> and not recommended to use anymore.
 
 </p>
 
