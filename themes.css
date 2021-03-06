@@ -1,5 +1,5 @@
 @media (prefers-color-scheme: light) {
-    .main {
+    body {
         color: #474747;
         background-color: white;
     }
@@ -43,7 +43,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-    .main {
+    body {
         color: #A7A7A7;
         background-color: #0D1117;
     }

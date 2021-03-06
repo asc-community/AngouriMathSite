@@ -1,9 +1,45 @@
+body {
+	font-family: monospace;
+    font-size: 16pt;
+}
+
 .main {
     width: 44%;
-    margin-left: 28%;
-    font-family: monospace;
-    font-size: 16pt;
-    margin-top: 3vh;
+    margin-top: 10vh;
+	margin-left: 28%;
+}
+
+.nav-left {
+	width: 15%;
+	position: fixed;
+	top: 0;
+	margin-left: 10%;
+	padding-right: 1.5%;
+	height: 60vh;
+	margin-top: 5vh;
+}
+
+.nav-left ul {
+	list-style: none;
+	padding: 0;
+	
+}
+
+.nav-left li {
+	list-style: none;
+	padding-bottom: 0.5vh;
+	padding-top: 0.5vh;
+	/*border-bottom: 1px solid #AAAAAA;*/
+	margin-left: 3vh;
+}
+
+.nav-top {
+	display: flex;
+	margin-left: 5vh;
+}
+
+.slogan {
+	font-size: 14pt;
 }
 
 /* With class Phone it will only be so on mobile devices */
@@ -34,6 +70,7 @@ pre {
     padding: 10px;
     border-radius: 8px;
 }
+
 
 summary {
     outline: none;
@@ -79,10 +116,6 @@ summary {
     
     .logo {
         width: 250px;
-    }
-    
-    .slogan {
-        display: none;
     }
 }
 
