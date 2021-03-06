@@ -76,7 +76,7 @@ summary {
     outline: none;
 }
 
-@media (max-width: 1000px)
+@media (max-width: 1099px)
 {
     .main {
         width: 70%;
@@ -117,6 +117,22 @@ summary {
     .logo {
         width: 250px;
     }
+}
+
+@media (min-width: 1100px)
+{
+@media (max-width: 1600px)
+{
+	.nav-left {
+		width: 26%;
+		margin-left: 10%;
+	}
+	
+	.main {
+		margin-left: 35%;
+		width: 56%;
+	}
+}
 }
 
 a {
