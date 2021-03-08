@@ -33,7 +33,7 @@ foreach (var file in Files.GatherFilesFromDir(dirName))
     newContent = PathUp(newContent, relativeName, "themes.css");
     newContent = PathUp(newContent, relativeName, "styles.css");
     newContent = PathUp(newContent, relativeName, "img/icon_cropped.png");
-    newContent = newContent.Replace($"<!--active_{relativePathName}--><a ", "<a class=\"active-link\" ");
+    newContent = newContent.Replace($"li><!--active_{relativePathName}-->", "li class=\"active-link\">");
 
     var newFilePath = Path.Combine(rootName, relativeName);
     Console.WriteLine($"Read from  {file}");

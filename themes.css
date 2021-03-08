@@ -21,11 +21,11 @@
         color: #474747;
     }
     
-    .active-link {
+    .active-link a {
         color: #A7A7A7;
     }
 
-    .active-link:hover {
+    .active-link:hover a {
         color: #A7A7A7;
     }
 	
@@ -70,11 +70,11 @@
         color: #A7A7A7;
     }
     
-    .active-link {
+    .active-link a {
         color: #A7A7A7;
     }
 
-    .active-link:hover {
+    .active-link:hover a {
         color: #A7A7A7;
     }   
 	

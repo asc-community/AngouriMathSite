@@ -1,5 +1,5 @@
 body {
-	font-family: monospace;
+    font-family: "Overpass Mono";
     font-size: 16pt;
 }
 
@@ -20,15 +20,14 @@ body {
 }
 
 .nav-left ul {
-	list-style: none;
+	list-style: square;
 	padding: 0;
 	
 }
 
 .nav-left li {
-	list-style: none;
-	margin-bottom: 2vh;
-	margin-top: 2vh;
+	margin-bottom: 1vh;
+	margin-top: 1vh;
     padding-left: 1vh;
 	margin-left: 3vh;
 }
