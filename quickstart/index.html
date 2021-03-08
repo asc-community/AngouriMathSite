@@ -3,8 +3,8 @@
 <head>
     <title>AngouriMath</title>    
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/themes.css">
+	<link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../themes.css">
     <!-- Yandex.Metrika counter -->
 <script type="text/javascript" >
    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -34,7 +34,7 @@
 <div>
 
 <div class="centered">
-<img class="logo pc" src="/img/icon_cropped.png" width="120wh" height="120wh"/>
+<img class="logo pc" src="../img/icon_cropped.png" width="120wh" height="120wh"/>
 </div>
 
 <h3>AngouriMath</h3>
@@ -46,7 +46,7 @@
 
 <ul>
     <li><!--active_--><a href="/">Home page</a>                                              </li>
-    <li><!--active_quickstart--><a href="/quickstart">Quick start</a>                                                    </li>
+    <li><a class="active-link" href="/quickstart">Quick start</a>                                                    </li>
     <li><!--active_whatsnew--><a href="/whatsnew">What's new</a>                                                    </li>
     <li><!--active_demo--><a href="/demo">Try online</a>                                                               </li>
     <li><!--active_why--><a href="/why">Where can be used</a>                                                                </li>
@@ -63,7 +63,7 @@
 
 <!--Head of page for mobiles-->
 <div class="centered phone">
-<img class="logo" src="/img/icon_cropped.png" width="100wh"/>
+<img class="logo" src="../img/icon_cropped.png" width="100wh"/>
 <h2>AngouriMath</h2>
 </div>
 <!--End-->
@@ -87,3 +87,68 @@
 </div>
 
 <!--Top end-->
+
+<h2 class="centered">Quick start</h2>
+<h3>Via NuGet</h3>
+<p>
+    The package is freely available on <a href="https://www.nuget.org/packages/AngouriMath">NuGet.org</a>, 
+    here are a few instructions how to use NuGet:
+    <ul>
+    <li>
+        <a href="https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio">Visual Studio</a>
+    </li>
+    <li>
+        <a href="https://www.jetbrains.com/help/rider/Using_NuGet.html#finding">JB Rider</a>
+    </li>
+    </ul>
+
+    AngouriMath targets <a href="https://docs.microsoft.com/en-us/dotnet/standard/net-standard">netstandard2.0</a>, which implies that it will work for almost any target.
+
+    <br><br>
+    <div class="attention importance">
+        <b>IMPORTANT</b><br>
+        It is recommended to include prereleases to install the last version, even if it is
+        a pre-release one.
+    </div>
+</p>
+<br>
+<h3>Via Git modules</h3>
+<p>
+    You may want to avoid using NuGet for your environment. Another reason, you do not want
+    until a new version is released to try all the new features. Then you can use AngouriMath
+    as a submodule for your git repository.
+    <pre><code>git submodule add https://github.com/asc-community/AngouriMath</code></pre>
+</p>
+<br>
+<h3>Hello, world!</h3>
+<p>
+    To verify you have everything installed correctly, let us write a simple program, computing
+    a derivative:
+    <pre><code>using AngouriMath;
+using System;
+Entity expr = "x + sin(y x)";
+Console.WriteLine(expr);
+Console.WriteLine(expr.Differentiate("x"));</code></pre>
+</p>
+<br>
+<h3>In trouble?</h3>
+<p>
+    If have any issues with using AngouriMath, feel free to create an issue
+    in <a href="https://github.com/asc-community/AngouriMath/issues">the page of issues</a>.
+</p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+Angouri 2019-2021
+</div>
+</body>
+
+
+
+
+</html>

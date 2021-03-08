@@ -5,7 +5,7 @@
     }
     
     a {
-        color: purple;
+        color: #BB0099;
     }
     
     a:hover {
@@ -22,11 +22,11 @@
     }
     
     .active-link {
-        color: #474747;
+        color: #A7A7A7;
     }
 
     .active-link:hover {
-        color: #474747;
+        color: #A7A7A7;
     }
 	
 	pre {
@@ -40,6 +40,10 @@
 	.warning {
 		background-color: #FFBABA;
 	}
+
+    .importance {
+        background-color: #BAFFBA;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -85,4 +89,12 @@
 	.warning {
 		background-color: #5F2525;
 	}
+
+    .importance {
+        background-color: #152F15;
+    }
+
+    hr {
+        border-color: #5D6167;
+    }
 }

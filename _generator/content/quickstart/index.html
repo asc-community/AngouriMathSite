@@ -1,0 +1,48 @@
+<h2 class="centered">Quick start</h2>
+<h3>Via NuGet</h3>
+<p>
+    The package is freely available on <a href="https://www.nuget.org/packages/AngouriMath">NuGet.org</a>, 
+    here are a few instructions how to use NuGet:
+    <ul>
+    <li>
+        <a href="https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio">Visual Studio</a>
+    </li>
+    <li>
+        <a href="https://www.jetbrains.com/help/rider/Using_NuGet.html#finding">JB Rider</a>
+    </li>
+    </ul>
+
+    AngouriMath targets <a href="https://docs.microsoft.com/en-us/dotnet/standard/net-standard">netstandard2.0</a>, which implies that it will work for almost any target.
+
+    <br><br>
+    <div class="attention importance">
+        <b>IMPORTANT</b><br>
+        It is recommended to include prereleases to install the last version, even if it is
+        a pre-release one.
+    </div>
+</p>
+<br>
+<h3>Via Git modules</h3>
+<p>
+    You may want to avoid using NuGet for your environment. Another reason, you do not want
+    until a new version is released to try all the new features. Then you can use AngouriMath
+    as a submodule for your git repository.
+    <pre><code>git submodule add https://github.com/asc-community/AngouriMath</code></pre>
+</p>
+<br>
+<h3>Hello, world!</h3>
+<p>
+    To verify you have everything installed correctly, let us write a simple program, computing
+    a derivative:
+    <pre><code>using AngouriMath;
+using System;
+Entity expr = "x + sin(y x)";
+Console.WriteLine(expr);
+Console.WriteLine(expr.Differentiate("x"));</code></pre>
+</p>
+<br>
+<h3>In trouble?</h3>
+<p>
+    If have any issues with using AngouriMath, feel free to create an issue
+    in <a href="https://github.com/asc-community/AngouriMath/issues">the page of issues</a>.
+</p>
