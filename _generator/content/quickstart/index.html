@@ -1,15 +1,27 @@
 <h2 class="centered">Quick start</h2>
 <hr>
-<h3>Via NuGet</h3>
+<br>
+<h3>Via NuGet for C# and F#</h3>
 <p>
-    The package is freely available on <a href="https://www.nuget.org/packages/AngouriMath">NuGet.org</a>, 
-    here are a few instructions how to use NuGet:
+    <details><summary>How to install from NuGet?</summary>
+    Here are a few instructions how to use NuGet:
     <ul>
     <li>
         <a href="https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio">Visual Studio</a>
     </li>
     <li>
         <a href="https://www.jetbrains.com/help/rider/Using_NuGet.html#finding">JB Rider</a>
+    </li>
+    </ul>
+    </details>
+    <br>
+    Packages you may want to install:
+    <ul>
+    <li>
+        <a href="https://www.nuget.org/packages/AngouriMath">AngouriMath</a> (for C#)
+    </li>
+    <li>
+        <a href="https://www.nuget.org/packages/AngouriMath.FSharp/">AngouriMath.FSharp</a> (for F# and C#)
     </li>
     </ul>
 
@@ -22,6 +34,22 @@
         a pre-release one.
     </div>
 </p>
+
+<br>
+<h3>Via NuGet for Interactive and Jupyter</h3>
+<p>
+    The package to install is here:
+    <ul>
+    <li>
+        <a href="https://www.nuget.org/packages/AngouriMath.Interactive">AngouriMath.Interactive</a> (for Jupyter)
+    </li>
+    </ul>
+    To install it, we recommend .NET Interactive's syntax, as follows:
+    <pre><code>#r "nuget:AngouriMath.Interactive, *-*"
+Interactive.magic();</code></pre>
+    The second line binds the LaTeX rendering to <text class="cw">ILatexiseable</text>.
+</p>
+
 <br>
 <h3>Via Git modules</h3>
 <p>
@@ -35,11 +63,26 @@
 <p>
     To verify you have everything installed correctly, let us write a simple program, computing
     a derivative:
+    <h5>C# code:</h5>
     <pre><code>using AngouriMath;
 using System;
 Entity expr = "x + sin(y x)";
 Console.WriteLine(expr);
 Console.WriteLine(expr.Differentiate("x"));</code></pre>
+    <h5>F# code:</h5>
+    <pre><code>open Core
+open Functions
+let expr = parse "x + sin(y x)"
+printf "%O" expr
+printf "\n"
+printf "%O" (differentiate "x" expr)</code></pre>
+    <h5>Jupyter</h5>
+    <pre><code>#r "nuget:AngouriMath.Interactive, *-*"
+Interactive.magic();
+open Core
+open Functions
+let expr = parse "x + sin(y x)"
+differentiate "x" expr</code></pre>
 </p>
 <br>
 <h3>In trouble?</h3>
