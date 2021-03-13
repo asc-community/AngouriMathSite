@@ -20,9 +20,14 @@ var files = Directory.GetFiles(dirName);
 var top = File.ReadAllText(Path.Combine(dirName, "_templates", "top.html"));
 var bottom = File.ReadAllText(Path.Combine(dirName, "_templates", "bottom.html"));
 
-foreach (var file in Files.GatherFilesFromDir(dirName))
+var id = 0;
+var allFiles = Files.GatherFilesFromDir(dirName);
+foreach (var file in allFiles)
 {
+    id++;
     if (file.Contains("_templates"))
+        continue;
+    if (!file.EndsWith(".html"))
         continue;
     var content = File.ReadAllText(file);
     var relativeName = file.Substring(dirName.Length + 1);
@@ -34,10 +39,14 @@ foreach (var file in Files.GatherFilesFromDir(dirName))
     newContent = PathUp(newContent, relativeName, "styles.css");
     newContent = PathUp(newContent, relativeName, "img/icon_cropped.png");
     newContent = newContent.Replace($"li><!--active_{relativePathName}-->", "li class=\"active-link\">");
+    newContent = newContent.Replace("<tbody>", "<pre>");
 
     var newFilePath = Path.Combine(rootName, relativeName);
-    Console.WriteLine($"Read from  {file}");
-    Console.WriteLine($"Writing to {newFilePath}");
+    var n = $"[{id} / {allFiles.Count()}]";
+    Console.WriteLine($"{n} Read from  {file}");
+    Console.WriteLine($"{n} Writing to {newFilePath}");
+
+    Directory.CreateDirectory(Path.GetDirectoryName(newFilePath));
     File.WriteAllText(newFilePath, newContent);
 }
 
