@@ -45,5 +45,6 @@ public sealed class PageSaver : IPageSave
         var finalPath = Path.Combine(@"D:\main\vs_prj\AngouriMath\AngouriMathSite\_generator\content\docs", path);
         Directory.CreateDirectory(Path.GetDirectoryName(finalPath));
         File.WriteAllText(finalPath, text);
+        Console.WriteLine($"Writing to {finalPath}");
     }
 }

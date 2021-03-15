@@ -1,17 +1,17 @@
-<h2 class="centered">Setting`1</h2><hr/><p><a href="../AngouriMath.Convenience.html"><< Back to list of classes</a></p><p>Let us see all the members of the class or record Setting`1</p><p><ul><li><p>Method AngouriMath.Convenience.Setting`1.As(`0,System.Action)</p><p><summary>
+<h2 class="centered">Setting`1</h2><hr/><p><a href="../AngouriMath.Convenience.html"><< Back to list of classes</a></p><p>Let us see all the members of the class or record Setting`1</p><p><ul><li><p>Method As((`0,System.Action)</p><p><summary>
             For example,
             <code>
             using var _ = MathS.Settings.Precision.Set(100);
             // your code here
-            </code></summary><param name="value">New value that will be automatically reverted after action is done</param><param name="action">What should be done under this setting</param></p></li><li><p>Method AngouriMath.Convenience.Setting`1.op_Implicit(AngouriMath.Convenience.Setting{`0})~`0</p><p><summary>
-            An implicit operator so that one does not have to call <see cref="P:AngouriMath.Convenience.Setting`1.Value" /></summary><param name="s">The setting</param></p></li><li><p>Method AngouriMath.Convenience.Setting`1.RollBackToDefault</p><p><summary>
+            </code></summary><param name="value">New value that will be automatically reverted after action is done</param><param name="action">What should be done under this setting</param></p></li><li><p>Method op_Implicit(AngouriMath.Convenience.Setting{(AngouriMath.Convenience.Setting{`0})~`0</p><p><summary>
+            An implicit operator so that one does not have to call <see cref="P:AngouriMath.Convenience.Setting`1.Value" /></summary><param name="s">The setting</param></p></li><li><p>Method RollBackToDefault</p><p><summary>
             Use it in case if you need to cancel any adjustments of the setting
             and rollback to the one predefined in <see cref="T:AngouriMath.MathS" />.
             It does not roll back to the previous value. Instead, it sets the 
             value which is defined right after <see cref="T:AngouriMath.MathS" /> is
             initialized. If you need recoverable settings (aka local),
             use method <see cref="M:AngouriMath.Convenience.Setting`1.As(`0,System.Action)" />.
-            </summary></p></li><li><p>Method AngouriMath.Convenience.Setting`1.ToString</p><p><summary>
+            </summary></p></li><li><p>Method ToString</p><p><summary>
             Overriden ToString so that one could see the value of the setting
             (if overriden)
             </summary></p></li></ul></p>

@@ -59,8 +59,13 @@ namespace OutputDocsParser
                     nspace.Classes.Select(
                         cls
                             => 
-                                DescriptionFromXml(cls.Description) +
+                                (cls.Members.Count() > 0
+                                ?
                                 a($"{nspace.Name}/{cls.Name}.html", cls.Name)
+                                :
+                                cls.Name
+                                ) + 
+                                DescriptionFromXml(cls.Description)
                     )
                 )
             );
@@ -82,15 +87,35 @@ namespace OutputDocsParser
                             => member switch
                             {
                                 DocMethod method =>
+                                    method.Overloads.Count() == 1 
+
+                                    ?
+
                                     p(
-                                        $"Method {method.Name}"
+                                        $"Method {method.Name + method.Overloads.First().Parameters}"
                                     ) +
-                                    p(method.Description),
+                                    p(DescriptionFromXml(method.Overloads.First().Description))
+
+                                    :
+
+                                    p(
+                                        $"Method {method.Name} and its overloads"
+                                    ) +
+
+                                    ul(
+                                        method.Overloads.Select(
+                                            overload =>
+                                                p($"{method.Name}{overload.Parameters}") +
+                                                p(DescriptionFromXml(overload.Description))
+                                        )
+                                    )
+
+                                ,
                                 DocProperty property =>
                                     p(
                                         $"Property {property.Name}"
                                     ) +
-                                    p(property.Description),
+                                    p(DescriptionFromXml(property.Description)),
                                 _ => throw new Exception()
                             }
                     )
