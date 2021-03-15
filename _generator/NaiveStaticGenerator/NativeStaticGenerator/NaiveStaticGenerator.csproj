@@ -10,7 +10,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Yadg.NET\Yadg.NET\Yadg.NET.csproj" />
+    <ProjectReference Include="..\..\..\..\..\Yadg.NET\Yadg.NET\Yadg.NET.csproj" />
   </ItemGroup>
 
 </Project>
