@@ -48,7 +48,7 @@
 <ul>
     <li><!--active_--><a href="/">Home page</a>                                              </li>
     <li><!--active_quickstart--><a href="/quickstart">Quick start</a>                                                    </li>
-    <li><!--active_docs--><a href="/docs/namespaces.html">Documentation</a>                                                    </li>
+    <li><!--active_docs--><a href="/docs/namespaces.html">Almanac</a>                                                    </li>
     <li><!--active_whatsnew--><a href="/whatsnew">What's new</a>                                                    </li>
     <li><!--active_demo--><a href="/demo">Try online</a>                                                               </li>
     <li><!--active_why--><a href="/why">Where can be used</a>                                                                </li>
@@ -75,7 +75,7 @@
 <div class="centered link-block-mob">
 <a href="/">Home</a>
 <a href="/quickstart">Quick start</a>
-<a href="/docs/namespaces.html">Documentation</a>
+<a href="/docs/namespaces.html">Almanac</a>
 <a href="/whatsnew">What's new</a>
 <a href="/demo">Try</a>
 <a href="/why">Use</a>
@@ -92,19 +92,39 @@
 
 <!--Top end-->
 
-<h2 class="centered">Variable</h2><hr/><p><a href="../AngouriMath.Entity.html"><< Back to list of classes</a></p><p>Let us see all the members of the class or record Variable</p><p><ul><li><p>Method CreateRandom(AngouriMath.Entity)</p><p><summary>
+<h2 class="yadg-h2 centered">Variable</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Entity.html">&#8592; Back to list of classes</a></p><h3 class="yadg-h3 ">Description</h3><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Variable node. It only has a name.
+            Construct a <a href="../AngouriMath.Entity/Variable.html">Variable</a> with an implicit conversion from <a href="../System/String.html">String</a>.
+            
+            </div><h3 class="yadg-h3 ">Members</h3><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member"><a name='Codomain'></a><p class="yadg-p ">Property Codomain</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='CreateRandom'></a><p class="yadg-p ">Method CreateRandom(AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Used for cases, when the variable should be valid, yet should have no intersection with those existing in the expression
-            </summary></p></li><li><p>Method CreateUnique(AngouriMath.Entity,System.String)</p><p><summary>
-            Finds next var index name that is unused in <paramref name="expr" /> starting with 1, e. g.
+            </div></p></li><li class="yadg-li yadg-member"><a name='CreateTemp'></a><p class="yadg-p ">Method CreateTemp(System.Collections.Generic.IEnumerable{AngouriMath.Entity.Variable})</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>Creates a temporary variable like %1, %2 and %3 that is not in <paramref name="existingVars"/></div><remarks>
+            This is intended for variables not visible to the user.
+            For visible variables, use <a href="../AngouriMath.Entity/Variable.html#CreateUnique">CreateUnique(AngouriMath.Entity,System.String)</a> instead.
+            </remarks></p></li><li class="yadg-li yadg-member"><a name='CreateUnique'></a><p class="yadg-p ">Method CreateUnique(AngouriMath.Entity,System.String)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Finds next var index name that is unused in <paramref name="expr"/> starting with 1, e. g.
             x + n_0 + n_a + n_3 + n_1
             will find n_2
-            </summary><remarks>
+            </div><remarks>
             This is intended for variables visible to the user.
-            For non-visible variables, use <see cref="M:AngouriMath.Entity.Variable.CreateTemp(System.Collections.Generic.IEnumerable{AngouriMath.Entity.Variable})" /> instead.
-            </remarks></p></li><li><p>Method InitDirectChildren</p><p><inheritdoc /></p></li><li><p>Method InnerDifferentiate(AngouriMath.Entity.Variable)</p><p><inheritdoc /></p></li><li><p>Method InnerSimplify</p><p><inheritdoc /></p></li><li><p>Method Latexise</p><p><summary>
+            For non-visible variables, use <a href="../AngouriMath.Entity/Variable.html#CreateTemp">CreateTemp(System.Collections.Generic.IEnumerable{AngouriMath.Entity.Variable})</a> instead.
+            </remarks></p></li><li class="yadg-li yadg-member"><a name='Deconstruct'></a><p class="yadg-p ">Method Deconstruct(System.String@)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Deconstructs Variable as follows
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">name</strong></h4><div class="yadg-div yadg-param">To where the result is put</div></p></li><li class="yadg-li yadg-member"><a name='GetHashCode'></a><p class="yadg-p ">Method GetHashCode</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='InitDirectChildren'></a><p class="yadg-p ">Method InitDirectChildren</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='InnerDifferentiate'></a><p class="yadg-p ">Method InnerDifferentiate(AngouriMath.Entity.Variable)</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='InnerEval'></a><p class="yadg-p ">Method InnerEval</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='InnerSimplify'></a><p class="yadg-p ">Method InnerSimplify</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='Latexise'></a><p class="yadg-p ">Method Latexise</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Returns latexised const if it is possible to latexise it,
             or its original name otherwise
-            </summary></p></li><li><p>Method ToString</p><p><inheritdoc /></p></li></ul></p>
+            </div></p></li><li class="yadg-li yadg-member"><a name='Name'></a><p class="yadg-p ">Property Name</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            The name of the variable as a string
+            </div></p></li><li class="yadg-li yadg-member"><a name='op_Implicit'></a><p class="yadg-p ">Method op_Implicit(System.String)~AngouriMath.Entity.Variable</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Converts from string to specifically variable
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">expr</strong></h4><div class="yadg-div yadg-param">Its future name</div></p></li><li class="yadg-li yadg-member"><a name='Replace'></a><p class="yadg-p ">Method Replace(System.Func{AngouriMath.Entity,AngouriMath.Entity})</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='SplitIndex'></a><p class="yadg-p ">Method SplitIndex</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Extracts this <a href="../AngouriMath.Entity/Variable.html">Variable</a>'s name and index
+            from its <a href="../AngouriMath.Entity/Variable.html#Name">Name</a> (e. g. "qua" or "phi_3" or "qu_q")
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
+            If this contains _ and valid name and index, returns a pair of
+            (<a href="../System/String.html">String</a> Prefix, <a href="../System/String.html">String</a> Index),
+            <see langword="null"/> otherwise
+            </div></p></li><li class="yadg-li yadg-member"><a name='Stringize'></a><p class="yadg-p ">Method Stringize</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='ToString'></a><p class="yadg-p ">Method ToString</p><p class="yadg-p "><inheritdoc /></p></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

@@ -48,7 +48,7 @@
 <ul>
     <li><!--active_--><a href="/">Home page</a>                                              </li>
     <li><!--active_quickstart--><a href="/quickstart">Quick start</a>                                                    </li>
-    <li><!--active_docs--><a href="/docs/namespaces.html">Documentation</a>                                                    </li>
+    <li><!--active_docs--><a href="/docs/namespaces.html">Almanac</a>                                                    </li>
     <li><!--active_whatsnew--><a href="/whatsnew">What's new</a>                                                    </li>
     <li><!--active_demo--><a href="/demo">Try online</a>                                                               </li>
     <li><!--active_why--><a href="/why">Where can be used</a>                                                                </li>
@@ -75,7 +75,7 @@
 <div class="centered link-block-mob">
 <a href="/">Home</a>
 <a href="/quickstart">Quick start</a>
-<a href="/docs/namespaces.html">Documentation</a>
+<a href="/docs/namespaces.html">Almanac</a>
 <a href="/whatsnew">What's new</a>
 <a href="/demo">Try</a>
 <a href="/why">Use</a>
@@ -92,19 +92,36 @@
 
 <!--Top end-->
 
-<h2 class="centered">Complex</h2><hr/><p><a href="../AngouriMath.Entity.Number.html"><< Back to list of classes</a></p><p>Let us see all the members of the class or record Complex</p><p><ul><li><p>Method Abs</p><p><summary>The magnitude of this <see cref="T:AngouriMath.Entity.Number.Complex" />.</summary><returns>
+<h2 class="yadg-h2 centered">Complex</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Entity.Number.html">&#8592; Back to list of classes</a></p><h3 class="yadg-h3 ">Description</h3><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Extension for <a href="../AngouriMath.Entity.Number/Real.html">Real</a><a href="https://en.wikipedia.org/wiki/Complex_number">https://en.wikipedia.org/wiki/Complex_number</a></div><h3 class="yadg-h3 ">Members</h3><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member"><a name='#ctor'></a><p class="yadg-p ">Method #ctor(AngouriMath.Entity.Number.Real,AngouriMath.Entity.Number.Real)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Constructor does not downcast automatically. Use <a href="../AngouriMath.Entity.Number/Complex.html#Create">Create(AngouriMath.Entity.Number.Real,AngouriMath.Entity.Number.Real)</a> for automatic downcasting
+            </div></p></li><li class="yadg-li yadg-member"><a name='Abs'></a><p class="yadg-p ">Method Abs</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>The magnitude of this <a href="../AngouriMath.Entity.Number/Complex.html">Complex</a>.</div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
             Returns the absolute value of this complex number, to be precise,
             if this = a + ib, this.Abs() -&gt; sqrt(a^2 + b^2)
-            </returns></p></li><li><p>Method Create(AngouriMath.Entity.Number.Real,AngouriMath.Entity.Number.Real)</p><p><summary>
+            </div></p></li><li class="yadg-li yadg-member"><a name='Codomain'></a><p class="yadg-p ">Property Codomain</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='Conjugate'></a><p class="yadg-p ">Method Conjugate</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>Returns conjugate of a complex number. Given this = a + ib, Conjugate() -&gt; a - ib</div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>Conjugate of the number</div></p></li><li class="yadg-li yadg-member"><a name='Create'></a><p class="yadg-p ">Method Create and its overloads</p><ul class="yadg-ul "><li class="yadg-li "><p class="yadg-p ">Create(AngouriMath.Entity.Number.Real,AngouriMath.Entity.Number.Real)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Creates an instance of Complex
-            </summary></p></li><li><p>Method CreatePolar(PeterO.Numbers.EDecimal,PeterO.Numbers.EDecimal)</p><p><summary>
+            </div></p></li><li class="yadg-li "><p class="yadg-p ">Create(PeterO.Numbers.EDecimal,PeterO.Numbers.EDecimal)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Creates an instance of Complex
+            </div></p></li></ul></li><li class="yadg-li yadg-member"><a name='CreatePolar'></a><p class="yadg-p ">Method CreatePolar(PeterO.Numbers.EDecimal,PeterO.Numbers.EDecimal)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Creates a normal complex from its polar representation
-            </summary></p></li><li><p>Method Deconstruct(AngouriMath.Entity.Number.Real@,AngouriMath.Entity.Number.Real@)</p><p><summary>
+            </div></p></li><li class="yadg-li yadg-member"><a name='Deconstruct'></a><p class="yadg-p ">Method Deconstruct(AngouriMath.Entity.Number.Real@,AngouriMath.Entity.Number.Real@)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Deconstructs as record
-            </summary></p></li><li><p>Method Latexise</p><p><inheritdoc /></p></li><li><p>Method ToString</p><p><inheritdoc /></p></li><li><p>Method TryParse(System.String,AngouriMath.Entity.Number.Complex@)</p><p><summary>Tries to parse a <see cref="T:AngouriMath.Entity.Number.Complex" /> from <see cref="T:System.String" /></summary><param name="source"></param><param name="dst">
+            </div></p></li><li class="yadg-li yadg-member"><a name='ImaginaryPart'></a><p class="yadg-p ">Property ImaginaryPart</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Imaginary part of a complex number
+            </div></p></li><li class="yadg-li yadg-member"><a name='IsExact'></a><p class="yadg-p ">Property IsExact</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='IsNaN'></a><p class="yadg-p ">Property IsNaN</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Checks whether the given number is undefined
+            </div></p></li><li class="yadg-li yadg-member"><a name='IsZero'></a><p class="yadg-p ">Property IsZero</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Checks if both parts equal 0
+            </div></p></li><li class="yadg-li yadg-member"><a name='Latexise'></a><p class="yadg-p ">Method Latexise</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='Parse'></a><p class="yadg-p ">Method Parse(System.String)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>Parses a <a href="../System/String.html">String</a> into <a href="../AngouriMath.Entity.Number/Complex.html">Complex</a></div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'><a href="../AngouriMath.Entity.Number/Complex.html">Complex</a></div><exception cref="T:AngouriMath.Core.Exceptions.ParseException">Thrown when <paramref name="source"/> cannot be parsed.</exception></p></li><li class="yadg-li yadg-member"><a name='Phase'></a><p class="yadg-p ">Method Phase</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            The phase of a complex number (aka angle)
+            </div></p></li><li class="yadg-li yadg-member"><a name='RealPart'></a><p class="yadg-p ">Property RealPart</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Real part of a complex number
+            </div></p></li><li class="yadg-li yadg-member"><a name='Stringize'></a><p class="yadg-p ">Method Stringize</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='ThisIsFinite'></a><p class="yadg-p ">Property ThisIsFinite</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='ToNumerics'></a><p class="yadg-p ">Method ToNumerics</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Convers the Complex to its of the system module Numerics
+            </div></p></li><li class="yadg-li yadg-member"><a name='ToString'></a><p class="yadg-p ">Method ToString</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='TryParse'></a><p class="yadg-p ">Method TryParse(System.String,AngouriMath.Entity.Number.Complex@)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>Tries to parse a <a href="../AngouriMath.Entity.Number/Complex.html">Complex</a> from <a href="../System/String.html">String</a></div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">source</strong></h4><div class="yadg-div yadg-param"></div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">dst</strong></h4><div class="yadg-div yadg-param">
             The result will be written to this variable only if parsing was successful,
             if it was not, do not access this variable
-            </param><returns>If parsing was successful - <see langword="true" />, <see langword="false" /> otherwise</returns></p></li></ul></p>
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>If parsing was successful - <see langword="true"/>, <see langword="false"/> otherwise</div></p></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

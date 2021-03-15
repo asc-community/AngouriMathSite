@@ -1,1 +1,7 @@
-<h2 class="centered">AutoBackRollableTemporarySettingUnit</h2><hr/><p><a href="../AngouriMath.Convenience.Setting`1.html"><< Back to list of classes</a></p><p>Let us see all the members of the class or record AutoBackRollableTemporarySettingUnit</p><p><ul><li><p>Method Dispose</p><p><inheritdoc /></p></li></ul></p>
+<h2 class="yadg-h2 centered">AutoBackRollableTemporarySettingUnit</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Convenience.Setting`1.html">&#8592; Back to list of classes</a></p><h3 class="yadg-h3 ">Description</h3><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            This tiny struct is needed to be under `using` operator, so that your settings
+            are automatically rolled back on the end of your method
+            <code>
+            using var _ = MathS.Settings.SomeSetting.Set(4);
+            // do something, once the method is ended, the setting is automatically returned to the initial statement
+            </code></div><h3 class="yadg-h3 ">Members</h3><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member"><a name='Dispose'></a><p class="yadg-p ">Method Dispose</p><p class="yadg-p "><inheritdoc /></p></li></ul></p>

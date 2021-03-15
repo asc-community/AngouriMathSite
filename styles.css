@@ -1,6 +1,7 @@
 body {
     font-family: "Overpass Mono";
     font-size: 14pt;
+    overflow-x: hidden;
 }
 
 .main {
@@ -22,7 +23,6 @@ body {
 .nav-left ul {
 	list-style: square;
 	padding: 0;
-	
 }
 
 .nav-left li {
@@ -156,4 +156,22 @@ a {
     padding: 15px;
     margin: 5px;
     border-radius: 5px;
+}
+
+
+
+
+
+
+/* Yadg docs style*/
+
+.yadg-class {
+    margin: 3vh;
+    border-top: 1px solid black;
+    padding: 1.2vh;
+}
+
+.yadg-ul {
+    padding: 0;
+    list-style: none;
 }

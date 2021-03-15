@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using YadgNet;
 
-
 /*
 Console.WriteLine(
     new DescriptionFromXmlBuilder(@"
@@ -19,30 +18,38 @@ Is a special case of logarithm where the base equals
 
 return;
 */
+GeneratePagesFromDocs();
+GenerateFinalWebsite();
 
-new WebsiteBuilder(
-    new PageSaver(@"D:\main\vs_prj\AngouriMath\tests\MyDocsTestDest")
-)
+
+static void GeneratePagesFromDocs()
 {
-    MainPageName = "AngouriMath Almanac"
+    new WebsiteBuilder(
+        // new PageSaver(@"D:\main\vs_prj\AngouriMath\tests\MyDocsTestDest")
+        new PageSaver(@"D:\main\vs_prj\AngouriMath\AngouriMathSite\_generator\content\docs")
+    )
+    {
+        MainPageName = "AngouriMath Almanac",
+        MainPageDescription = @"
+Welcome to the storage of documentation for 
+all public methods, properties and fields for AngouriMath!
+Please, consider these pages as those made for reference for particular members,
+ it is not a guideline, manual, or tutorial.
+"
+    }
+    .Build(
+        DocsParser.Parse(
+            @"D:\main\vs_prj\AngouriMath\AngouriMath\Sources\AngouriMath\bin\Release\netstandard2.0\AngouriMath.xml"
+        ).Build()
+    );
 }
-.Build(
-    DocsParser.Parse(
-        @"D:\main\vs_prj\AngouriMath\AngouriMath\Sources\AngouriMath\bin\Release\netstandard2.0\AngouriMath.xml"
-    ).Build()
-);
-
 
 
 
 static void GenerateFinalWebsite()
 {
     var contentName =
-        Path.GetDirectoryName(
-            Path.GetDirectoryName(
-                Path.GetDirectoryName(
-                    Path.GetDirectoryName(
-                        Directory.GetCurrentDirectory()))));
+        @"D:\main\vs_prj\AngouriMath\AngouriMathSite\_generator";
 
     var rootName = Path.GetDirectoryName(contentName);
 
@@ -50,7 +57,7 @@ static void GenerateFinalWebsite()
 
     Console.WriteLine(dirName);
     var files = Directory.GetFiles(dirName);
-
+    
     var top = File.ReadAllText(Path.Combine(dirName, "_templates", "top.html"));
     var bottom = File.ReadAllText(Path.Combine(dirName, "_templates", "bottom.html"));
 

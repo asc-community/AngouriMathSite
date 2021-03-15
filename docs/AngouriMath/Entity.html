@@ -48,7 +48,7 @@
 <ul>
     <li><!--active_--><a href="/">Home page</a>                                              </li>
     <li><!--active_quickstart--><a href="/quickstart">Quick start</a>                                                    </li>
-    <li><!--active_docs--><a href="/docs/namespaces.html">Documentation</a>                                                    </li>
+    <li><!--active_docs--><a href="/docs/namespaces.html">Almanac</a>                                                    </li>
     <li><!--active_whatsnew--><a href="/whatsnew">What's new</a>                                                    </li>
     <li><!--active_demo--><a href="/demo">Try online</a>                                                               </li>
     <li><!--active_why--><a href="/why">Where can be used</a>                                                                </li>
@@ -75,7 +75,7 @@
 <div class="centered link-block-mob">
 <a href="/">Home</a>
 <a href="/quickstart">Quick start</a>
-<a href="/docs/namespaces.html">Documentation</a>
+<a href="/docs/namespaces.html">Almanac</a>
 <a href="/whatsnew">What's new</a>
 <a href="/demo">Try</a>
 <a href="/why">Use</a>
@@ -92,150 +92,294 @@
 
 <!--Top end-->
 
-<h2 class="centered">Entity</h2><hr/><p><a href="../AngouriMath.html"><< Back to list of classes</a></p><p>Let us see all the members of the class or record Entity</p><p><ul><li><p>Method Abs</p><p><summary><see cref="M:AngouriMath.MathS.Abs(AngouriMath.Entity)" /></summary></p></li><li><p>Method Arcsec</p><p><summary><see cref="M:AngouriMath.MathS.Arcsec(AngouriMath.Entity)" /></summary></p></li><li><p>Method Arcsin</p><p><summary><see cref="M:AngouriMath.MathS.Arcsin(AngouriMath.Entity)" /></summary></p></li><li><p>Method Arctan</p><p><summary><see cref="M:AngouriMath.MathS.Arctan(AngouriMath.Entity)" /></summary></p></li><li><p>Method Choice(AngouriMath.Functions.TreeAnalyzer.SortLevel,System.String,System.String,System.String)</p><p><summary>
+<h2 class="yadg-h2 centered">Entity</h2><hr/><p class="yadg-p "><a href="../AngouriMath.html">&#8592; Back to list of classes</a></p><h3 class="yadg-h3 ">Description</h3><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            This is the main class in AngouriMath.
+            Every node, expression, or number is an <a href="../AngouriMath/Entity.html">Entity</a>.
+            However, you cannot create an instance of this class, look for the nested classes instead.
+            </div><h3 class="yadg-h3 ">Members</h3><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member"><a name='Abs'></a><p class="yadg-p ">Method Abs</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><a href="../AngouriMath/MathS.html#Abs">Abs(AngouriMath.Entity)</a></div></p></li><li class="yadg-li yadg-member"><a name='Alternate'></a><p class="yadg-p ">Method Alternate(System.Int32)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>Finds all alternative forms of an expression sorted by their complexity</div></p></li><li class="yadg-li yadg-member"><a name='Arccos'></a><p class="yadg-p ">Method Arccos</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><a href="../AngouriMath/MathS.html#Arccos">Arccos(AngouriMath.Entity)</a></div></p></li><li class="yadg-li yadg-member"><a name='Arccosec'></a><p class="yadg-p ">Method Arccosec</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><a href="../AngouriMath/MathS.html#Arccosec">Arccosec(AngouriMath.Entity)</a></div></p></li><li class="yadg-li yadg-member"><a name='Arccotan'></a><p class="yadg-p ">Method Arccotan</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><a href="../AngouriMath/MathS.html#Arccotan">Arccotan(AngouriMath.Entity)</a></div></p></li><li class="yadg-li yadg-member"><a name='Arcsec'></a><p class="yadg-p ">Method Arcsec</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><a href="../AngouriMath/MathS.html#Arcsec">Arcsec(AngouriMath.Entity)</a></div></p></li><li class="yadg-li yadg-member"><a name='Arcsin'></a><p class="yadg-p ">Method Arcsin</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><a href="../AngouriMath/MathS.html#Arcsin">Arcsin(AngouriMath.Entity)</a></div></p></li><li class="yadg-li yadg-member"><a name='Arctan'></a><p class="yadg-p ">Method Arctan</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><a href="../AngouriMath/MathS.html#Arctan">Arctan(AngouriMath.Entity)</a></div></p></li><li class="yadg-li yadg-member"><a name='Choice'></a><p class="yadg-p ">Method Choice and its overloads</p><ul class="yadg-ul "><li class="yadg-li "><p class="yadg-p ">Choice(AngouriMath.Functions.TreeAnalyzer.SortLevel,System.String,System.String,System.String)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Returns the correct way for sort string
-            </summary><param name="level">The level at which we are sorting</param><param name="highLevel">The most general way (that is, the least uniqueness of the string)</param><param name="middleLevel">The one in between (for example, for grouping some functions)</param><param name="lowLevel">The most unique string id</param></p></li><li><p>Method Compile and its overloads</p><ul><li><p>Compile(AngouriMath.Core.Compilation.IntoLinq.CompilationProtocol,System.Type,System.Collections.Generic.IEnumerable{System.ValueTuple{System.Type,AngouriMath.Entity.Variable}})</p><p><summary>
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">level</strong></h4><div class="yadg-div yadg-param">The level at which we are sorting</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">highLevel</strong></h4><div class="yadg-div yadg-param">The most general way (that is, the least uniqueness of the string)</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">middleLevel</strong></h4><div class="yadg-div yadg-param">The one in between (for example, for grouping some functions)</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">lowLevel</strong></h4><div class="yadg-div yadg-param">The most unique string id</div></p></li><li class="yadg-li "><p class="yadg-p ">Choice(AngouriMath.Functions.TreeAnalyzer.SortLevel,System.String,System.String)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Returns the correct way for sort string
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">level</strong></h4><div class="yadg-div yadg-param">The level at which we are sorting</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">highLevel</strong></h4><div class="yadg-div yadg-param">The most general way (that is, the least uniqueness of the string)</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">lowLevel</strong></h4><div class="yadg-div yadg-param">The most unique string id</div></p></li></ul></li><li class="yadg-li yadg-member"><a name='Codomain'></a><p class="yadg-p ">Property Codomain</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Coomain of an expression
+            If its node value is outside of the domain,
+            it's converted to NaN
+            </div></p></li><li class="yadg-li yadg-member"><a name='Compile'></a><p class="yadg-p ">Method Compile and its overloads</p><ul class="yadg-ul "><li class="yadg-li "><p class="yadg-p ">Compile(AngouriMath.Core.Compilation.IntoLinq.CompilationProtocol,System.Type,System.Collections.Generic.IEnumerable{System.ValueTuple{System.Type,AngouriMath.Entity.Variable}})</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Compiles a given expression into a native lambda
-            </summary><typeparam name="TDelegate">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TDelegate</strong></h4><div class="yadg-div yadg-typeparam">
             The type of your delegate to convert to
-            </typeparam><param name="protocol">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">protocol</strong></h4><div class="yadg-div yadg-param">
             This is a protocol, according to which all nodes get compiled. Use this
             if you want to use the compilation for types different from those standard
-            </param><param name="returnType">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">returnType</strong></h4><div class="yadg-div yadg-param">
             The type to which the resulting type will be casted
-            </param><param name="typesAndNames">
-            An <see cref="T:System.Collections.IEnumerable" /> of pairs, where the first element is the type of your argument,
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">typesAndNames</strong></h4><div class="yadg-div yadg-param">
+            An <a href="../System.Collections/IEnumerable.html">IEnumerable</a> of pairs, where the first element is the type of your argument,
             and the second one is the corresponding variable from the expression
-            </param><returns>
-            Returnes a natively compiled expression of type <typeparamref name="TDelegate" /></returns></p></li><li><p>Compile(AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable)</p><p><summary>
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
+            Returnes a natively compiled expression of type <typeparamref name="TDelegate"/></div></p></li><li class="yadg-li "><p class="yadg-p ">Compile(AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Compiles a given expression into a native lambda. We use the default protocol.
             If you plan using non-standard types, consider passing a compilation protocol
-            </summary><typeparam name="TIn1">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn1</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 1
-            </typeparam><typeparam name="TIn2">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn2</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 2
-            </typeparam><typeparam name="TIn3">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn3</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 3
-            </typeparam><typeparam name="TIn4">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn4</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 4
-            </typeparam><typeparam name="TIn5">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn5</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 5
-            </typeparam><typeparam name="TIn6">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn6</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 6
-            </typeparam><typeparam name="TIn7">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn7</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 7
-            </typeparam><typeparam name="TIn8">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn8</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 8
-            </typeparam><typeparam name="TOut">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TOut</strong></h4><div class="yadg-div yadg-typeparam">
             The return type
-            </typeparam><param name="var1">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var1</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 1
-            </param><param name="var2">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var2</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 2
-            </param><param name="var3">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var3</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 3
-            </param><param name="var4">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var4</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 4
-            </param><param name="var5">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var5</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 5
-            </param><param name="var6">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var6</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 6
-            </param><param name="var7">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var7</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 7
-            </param><param name="var8">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var8</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 8
-            </param><returns>
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
             Returns a natively-compiled delegate
-            </returns></p></li><li><p>Compile(AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable)</p><p><summary>
+            </div></p></li><li class="yadg-li "><p class="yadg-p ">Compile(AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Compiles a given expression into a native lambda. We use the default protocol.
             If you plan using non-standard types, consider passing a compilation protocol
-            </summary><typeparam name="TIn1">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn1</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 1
-            </typeparam><typeparam name="TIn2">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn2</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 2
-            </typeparam><typeparam name="TIn3">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn3</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 3
-            </typeparam><typeparam name="TIn4">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn4</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 4
-            </typeparam><typeparam name="TIn5">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn5</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 5
-            </typeparam><typeparam name="TIn6">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn6</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 6
-            </typeparam><typeparam name="TOut">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn7</strong></h4><div class="yadg-div yadg-typeparam">
+            The type of the passed argument number 7
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TOut</strong></h4><div class="yadg-div yadg-typeparam">
             The return type
-            </typeparam><param name="var1">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var1</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 1
-            </param><param name="var2">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var2</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 2
-            </param><param name="var3">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var3</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 3
-            </param><param name="var4">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var4</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 4
-            </param><param name="var5">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var5</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 5
-            </param><param name="var6">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var6</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 6
-            </param><returns>
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var7</strong></h4><div class="yadg-div yadg-param">
+            The variable corresponding to the function's argument number 7
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
             Returns a natively-compiled delegate
-            </returns></p></li><li><p>Compile(AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable)</p><p><summary>
+            </div></p></li><li class="yadg-li "><p class="yadg-p ">Compile(AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Compiles a given expression into a native lambda. We use the default protocol.
             If you plan using non-standard types, consider passing a compilation protocol
-            </summary><typeparam name="TIn1">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn1</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 1
-            </typeparam><typeparam name="TIn2">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn2</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 2
-            </typeparam><typeparam name="TIn3">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn3</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 3
-            </typeparam><typeparam name="TIn4">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn4</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 4
-            </typeparam><typeparam name="TOut">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn5</strong></h4><div class="yadg-div yadg-typeparam">
+            The type of the passed argument number 5
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn6</strong></h4><div class="yadg-div yadg-typeparam">
+            The type of the passed argument number 6
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TOut</strong></h4><div class="yadg-div yadg-typeparam">
             The return type
-            </typeparam><param name="var1">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var1</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 1
-            </param><param name="var2">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var2</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 2
-            </param><param name="var3">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var3</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 3
-            </param><param name="var4">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var4</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 4
-            </param><returns>
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var5</strong></h4><div class="yadg-div yadg-param">
+            The variable corresponding to the function's argument number 5
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var6</strong></h4><div class="yadg-div yadg-param">
+            The variable corresponding to the function's argument number 6
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
             Returns a natively-compiled delegate
-            </returns></p></li><li><p>Compile(AngouriMath.Entity.Variable,AngouriMath.Entity.Variable)</p><p><summary>
+            </div></p></li><li class="yadg-li "><p class="yadg-p ">Compile(AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Compiles a given expression into a native lambda. We use the default protocol.
             If you plan using non-standard types, consider passing a compilation protocol
-            </summary><typeparam name="TIn1">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn1</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 1
-            </typeparam><typeparam name="TIn2">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn2</strong></h4><div class="yadg-div yadg-typeparam">
             The type of the passed argument number 2
-            </typeparam><typeparam name="TOut">
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn3</strong></h4><div class="yadg-div yadg-typeparam">
+            The type of the passed argument number 3
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn4</strong></h4><div class="yadg-div yadg-typeparam">
+            The type of the passed argument number 4
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn5</strong></h4><div class="yadg-div yadg-typeparam">
+            The type of the passed argument number 5
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TOut</strong></h4><div class="yadg-div yadg-typeparam">
             The return type
-            </typeparam><param name="var1">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var1</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 1
-            </param><param name="var2">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var2</strong></h4><div class="yadg-div yadg-param">
             The variable corresponding to the function's argument number 2
-            </param><returns>
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var3</strong></h4><div class="yadg-div yadg-param">
+            The variable corresponding to the function's argument number 3
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var4</strong></h4><div class="yadg-div yadg-param">
+            The variable corresponding to the function's argument number 4
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var5</strong></h4><div class="yadg-div yadg-param">
+            The variable corresponding to the function's argument number 5
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
             Returns a natively-compiled delegate
-            </returns></p></li><li><p>Compile(AngouriMath.Entity.Variable[])</p><p><summary>
+            </div></p></li><li class="yadg-li "><p class="yadg-p ">Compile(AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Compiles a given expression into a native lambda. We use the default protocol.
+            If you plan using non-standard types, consider passing a compilation protocol
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn1</strong></h4><div class="yadg-div yadg-typeparam">
+            The type of the passed argument number 1
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn2</strong></h4><div class="yadg-div yadg-typeparam">
+            The type of the passed argument number 2
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn3</strong></h4><div class="yadg-div yadg-typeparam">
+            The type of the passed argument number 3
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn4</strong></h4><div class="yadg-div yadg-typeparam">
+            The type of the passed argument number 4
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TOut</strong></h4><div class="yadg-div yadg-typeparam">
+            The return type
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var1</strong></h4><div class="yadg-div yadg-param">
+            The variable corresponding to the function's argument number 1
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var2</strong></h4><div class="yadg-div yadg-param">
+            The variable corresponding to the function's argument number 2
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var3</strong></h4><div class="yadg-div yadg-param">
+            The variable corresponding to the function's argument number 3
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var4</strong></h4><div class="yadg-div yadg-param">
+            The variable corresponding to the function's argument number 4
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
+            Returns a natively-compiled delegate
+            </div></p></li><li class="yadg-li "><p class="yadg-p ">Compile(AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Compiles a given expression into a native lambda. We use the default protocol.
+            If you plan using non-standard types, consider passing a compilation protocol
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn1</strong></h4><div class="yadg-div yadg-typeparam">
+            The type of the passed argument number 1
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn2</strong></h4><div class="yadg-div yadg-typeparam">
+            The type of the passed argument number 2
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn3</strong></h4><div class="yadg-div yadg-typeparam">
+            The type of the passed argument number 3
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TOut</strong></h4><div class="yadg-div yadg-typeparam">
+            The return type
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var1</strong></h4><div class="yadg-div yadg-param">
+            The variable corresponding to the function's argument number 1
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var2</strong></h4><div class="yadg-div yadg-param">
+            The variable corresponding to the function's argument number 2
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var3</strong></h4><div class="yadg-div yadg-param">
+            The variable corresponding to the function's argument number 3
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
+            Returns a natively-compiled delegate
+            </div></p></li><li class="yadg-li "><p class="yadg-p ">Compile(AngouriMath.Entity.Variable,AngouriMath.Entity.Variable)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Compiles a given expression into a native lambda. We use the default protocol.
+            If you plan using non-standard types, consider passing a compilation protocol
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn1</strong></h4><div class="yadg-div yadg-typeparam">
+            The type of the passed argument number 1
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn2</strong></h4><div class="yadg-div yadg-typeparam">
+            The type of the passed argument number 2
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TOut</strong></h4><div class="yadg-div yadg-typeparam">
+            The return type
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var1</strong></h4><div class="yadg-div yadg-param">
+            The variable corresponding to the function's argument number 1
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var2</strong></h4><div class="yadg-div yadg-param">
+            The variable corresponding to the function's argument number 2
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
+            Returns a natively-compiled delegate
+            </div></p></li><li class="yadg-li "><p class="yadg-p ">Compile(AngouriMath.Entity.Variable)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Compiles a given expression into a native lambda. We use the default protocol.
+            If you plan using non-standard types, consider passing a compilation protocol
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TIn1</strong></h4><div class="yadg-div yadg-typeparam">
+            The type of the passed argument number 1
+            </div><h4 class="yadg-h4 ">Type parameter <strong class="yadg-strong ">TOut</strong></h4><div class="yadg-div yadg-typeparam">
+            The return type
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var1</strong></h4><div class="yadg-div yadg-param">
+            The variable corresponding to the function's argument number 1
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
+            Returns a natively-compiled delegate
+            </div></p></li><li class="yadg-li "><p class="yadg-p ">Compile(AngouriMath.Entity.Variable[])</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Compile function so you can evaluate numerical value 15x faster,
             than subsitution
-            </summary><param name="variables">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">variables</strong></h4><div class="yadg-div yadg-param">
             List string names of variables in the same order as you will list them when evaluating.
-            Constants, i.e. <see cref="F:AngouriMath.MathS.pi" /> and <see cref="F:AngouriMath.MathS.e" /> will be ignored.
-            </param><returns></returns></p></li></ul></li><li><p>Method Differentiate(AngouriMath.Entity.Variable)</p><p><summary>
+            Constants, i.e. <a href="../AngouriMath/MathS.html#pi">pi</a> and <a href="../AngouriMath/MathS.html#e">e</a> will be ignored.
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'></div></p></li><li class="yadg-li "><p class="yadg-p ">Compile(System.String[])</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Compile function so you can evaluate numerical value 15x faster,
+            than subsitution
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">variables</strong></h4><div class="yadg-div yadg-param">
+            List string names of variables in the same order as you will list them when evaluating.
+            Constants, i.e. <a href="../AngouriMath/MathS.html#pi">pi</a> and <a href="../AngouriMath/MathS.html#e">e</a> will be ignored.
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'></div></p></li></ul></li><li class="yadg-li yadg-member"><a name='Complexity'></a><p class="yadg-p ">Property Complexity</p><p class="yadg-p "><value>Number of nodes in tree</value></p></li><li class="yadg-li yadg-member"><a name='ComputeLimitDivideEtImpera'></a><p class="yadg-p ">Method ComputeLimitDivideEtImpera(AngouriMath.Entity.Variable,AngouriMath.Entity,AngouriMath.Core.ApproachFrom)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><a href="https://en.wikipedia.org/wiki/Divide_and_rule">https://en.wikipedia.org/wiki/Divide_and_rule</a>
+            Divide and rule (Latin: divide et impera), or divide and conquer,
+            in politics and sociology is gaining and maintaining power by
+            breaking up larger concentrations of power into pieces that
+            individually have less power than the one implementing the strategy.
+            
+            In computer science, divide and conquer is an algorithm design paradigm
+            based on multi-branched recursion. A divide-and-conquer algorithm works
+            by recursively breaking down a problem into two or more sub-problems of
+            the same or related type, until these become simple enough to be solved
+            directly. The solutions to the sub-problems are then combined to give a
+            solution to the original problem.
+            </div></p></li><li class="yadg-li yadg-member"><a name='ContainsNode'></a><p class="yadg-p ">Method ContainsNode(AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>Checks if <paramref name="x"/> is a subnode inside this <a href="../AngouriMath/Entity.html">Entity</a> tree.
+            Optimized for <a href="../AngouriMath.Entity/Variable.html">Variable</a>.</div></p></li><li class="yadg-li yadg-member"><a name='Cos'></a><p class="yadg-p ">Method Cos</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><a href="../AngouriMath/MathS.html#Cos">Cos(AngouriMath.Entity)</a></div></p></li><li class="yadg-li yadg-member"><a name='Cosec'></a><p class="yadg-p ">Method Cosec</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><a href="../AngouriMath/MathS.html#Cosec">Cosec(AngouriMath.Entity)</a></div></p></li><li class="yadg-li yadg-member"><a name='Cotan'></a><p class="yadg-p ">Method Cotan</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><a href="../AngouriMath/MathS.html#Cotan">Cotan(AngouriMath.Entity)</a></div></p></li><li class="yadg-li yadg-member"><a name='Derive'></a><p class="yadg-p ">Method Derive and its overloads</p><ul class="yadg-ul "><li class="yadg-li "><p class="yadg-p ">Derive(AngouriMath.Entity.Variable,PeterO.Numbers.EInteger)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>Derives over <paramref name="x"/><paramref name="power"/> times</div></p></li><li class="yadg-li "><p class="yadg-p ">Derive(AngouriMath.Entity.Variable)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Finds the symbolical derivative of the given expression
-            </summary><param name="variable">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">variable</strong></h4><div class="yadg-div yadg-param">
             Over which variable to find the derivative
-            </param><returns>
-            The derived expression which might contain <see cref="T:AngouriMath.Entity.Derivativef" /> nodes,
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
+            The derived expression which might contain <a href="../AngouriMath.Entity/Derivativef.html">Derivativef</a> nodes,
             or the initial one
-            </returns></p></li><li><p>Method EvalNumerical</p><p><summary>
+            </div></p></li></ul></li><li class="yadg-li yadg-member"><a name='Differentiate'></a><p class="yadg-p ">Method Differentiate(AngouriMath.Entity.Variable)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Finds the symbolical derivative of the given expression
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">variable</strong></h4><div class="yadg-div yadg-param">
+            Over which variable to find the derivative
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
+            The derived expression which might contain <a href="../AngouriMath.Entity/Derivativef.html">Derivativef</a> nodes,
+            or the initial one
+            </div></p></li><li class="yadg-li yadg-member"><a name='DirectChildren'></a><p class="yadg-p ">Property DirectChildren</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Represents all direct children of a node
+            </div></p></li><li class="yadg-li yadg-member"><a name='EntityInBounds'></a><p class="yadg-p ">Method EntityInBounds(AngouriMath.Entity,AngouriMath.Entity.Number.Complex,AngouriMath.Entity.Number.Complex)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Returns true if <paramref name="a"/> is inside a rect with corners <paramref name="from"/>
+            and <paramref name="to"/>, OR <paramref name="a"/> is an unevaluable expression
+            </div></p></li><li class="yadg-li yadg-member"><a name='Equalizes'></a><p class="yadg-p ">Method Equalizes(AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>A node</div></p></li><li class="yadg-li yadg-member"><a name='EvalBoolean'></a><p class="yadg-p ">Method EvalBoolean</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Evaluates a given expression to one boolean or throws exception
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'><a href="../AngouriMath.Entity/Boolean.html">Boolean</a></div><exception cref="T:AngouriMath.Core.Exceptions.CannotEvalException">
+            Thrown when this entity cannot be represented as a simple boolean.
+            <a href="../AngouriMath/Entity.html#EvalBoolean">EvalBoolean</a> should be used to check beforehand.
+            </exception></p></li><li class="yadg-li yadg-member"><a name='Evaled'></a><p class="yadg-p ">Property Evaled</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Represents the evaluated value of the given expression
+            Unlike the result of <a href="../AngouriMath/Entity.html#EvalNumerical">EvalNumerical</a>,
+            <a href="../AngouriMath/Entity.html#EvalBoolean">EvalBoolean</a> and <a href="../AngouriMath/Entity.html#EvalTensor">EvalTensor</a>,
+            this is not constrained by any type
+            (cached value)
+            </div></p></li><li class="yadg-li yadg-member"><a name='EvalNumerical'></a><p class="yadg-p ">Method EvalNumerical</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Evaluates a given expression to one number or throws exception
-            </summary><returns><see cref="T:AngouriMath.Entity.Number.Complex" /> since new version
-            </returns><exception cref="T:AngouriMath.Core.Exceptions.CannotEvalException">
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'><a href="../AngouriMath.Entity.Number/Complex.html">Complex</a> since new version
+            </div><exception cref="T:AngouriMath.Core.Exceptions.CannotEvalException">
             Thrown when this entity cannot be represented as a simple number.
-            <see cref="P:AngouriMath.Entity.EvaluableNumerical" /> should be used to check beforehand.
-            </exception></p></li><li><p>Method EvalTensor</p><p><summary>
-            Evaluates the entire expression into a <see cref="T:AngouriMath.Entity.Tensor" /> if possible
+            <a href="../AngouriMath/Entity.html#EvaluableNumerical">EvaluableNumerical</a> should be used to check beforehand.
+            </exception></p></li><li class="yadg-li yadg-member"><a name='EvalTensor'></a><p class="yadg-p ">Method EvalTensor</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Evaluates the entire expression into a <a href="../AngouriMath.Entity/Tensor.html">Tensor</a> if possible
             ( x y ) + 1 =&gt; ( x+1 y+1 )
             
             ( 1 2 ) + ( 3 4 ) =&gt; ( 4 6 ) vectors pointwise
@@ -245,93 +389,184 @@
                           ( 5 ))
                           
             ( 1 2 ) x ( 1 3 ) =&gt; ( 1 6 ) Vectors pointwise
-            </summary><exception cref="T:AngouriMath.Core.Exceptions.CannotEvalException">
-            Thrown when this entity cannot be represented as a <see cref="T:AngouriMath.Entity.Tensor" />.
-            <see cref="P:AngouriMath.Entity.IsTensoric" /> should be used to check beforehand.
-            </exception></p></li><li><p>Method Expand(System.Int32)</p><p><summary>
+            </div><exception cref="T:AngouriMath.Core.Exceptions.CannotEvalException">
+            Thrown when this entity cannot be represented as a <a href="../AngouriMath.Entity/Tensor.html">Tensor</a>.
+            <a href="../AngouriMath/Entity.html#IsTensoric">IsTensoric</a> should be used to check beforehand.
+            </exception></p></li><li class="yadg-li yadg-member"><a name='EvaluableBoolean'></a><p class="yadg-p ">Property EvaluableBoolean</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Use this to verify whether it is safe to call <a href="../AngouriMath/Entity.html#EvalBoolean">EvalBoolean</a></div></p></li><li class="yadg-li yadg-member"><a name='EvaluableNumerical'></a><p class="yadg-p ">Property EvaluableNumerical</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Use this to verify whether it is safe to call <a href="../AngouriMath/Entity.html#EvalNumerical">EvalNumerical</a></div></p></li><li class="yadg-li yadg-member"><a name='Expand'></a><p class="yadg-p ">Method Expand(System.Int32)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Expands an equation trying to eliminate all the parentheses ( e. g. 2 * (x + 3) = 2 * x + 2 * 3 )
-            </summary><param name="level">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">level</strong></h4><div class="yadg-div yadg-param">
             The number of iterations (increase this argument in case if some parentheses remain)
-            </param><returns>
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
             An expanded Entity if it wasn't too complicated,
             current entity otherwise
-            To change the limit use <see cref="P:AngouriMath.MathS.Settings.MaxExpansionTermCount" /></returns></p></li><li><p>Method ExpandOnTwoArguments(AngouriMath.Entity,AngouriMath.Entity,System.Func{AngouriMath.Entity,AngouriMath.Entity,AngouriMath.Entity},System.Func{AngouriMath.Entity,AngouriMath.Entity,AngouriMath.Entity,AngouriMath.Entity},System.Boolean)</p><p><summary>
+            To change the limit use <a href="../AngouriMath.MathS/Settings.html#MaxExpansionTermCount">MaxExpansionTermCount</a></div></p></li><li class="yadg-li yadg-member"><a name='ExpandOnTwoArguments'></a><p class="yadg-p ">Method ExpandOnTwoArguments(AngouriMath.Entity,AngouriMath.Entity,System.Func{AngouriMath.Entity,AngouriMath.Entity,AngouriMath.Entity},System.Func{AngouriMath.Entity,AngouriMath.Entity,AngouriMath.Entity,AngouriMath.Entity},System.Boolean)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             For two-argument nodes
             Used in InnerSimplify and InnerEval
             Allows to avoid looking over all the combinations with piecewise, tensor, finiteset
-            </summary><param name="left">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">left</strong></h4><div class="yadg-div yadg-param">
             Left argument
-            </param><param name="right">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">right</strong></h4><div class="yadg-div yadg-param">
             Right argument
-            </param><param name="operation">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">operation</strong></h4><div class="yadg-div yadg-param">
             That is the main switch for the types. It must return null if no suitable couple of types is found,
             so that the method could move on to the matrix choice
-            </param><param name="defaultCtor">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">defaultCtor</strong></h4><div class="yadg-div yadg-param">
             If no suitable case in switch found, it should return the default node, for example, for sum it would be
-            <code>(a, b) =&gt; a + b</code></param><param name="checkIfExactEvaled">
+            <code>(a, b) =&gt; a + b</code></div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">checkIfExactEvaled</strong></h4><div class="yadg-div yadg-param">
             Check if the number is exact and, if so, return it.
-            </param></p></li><li><p>Method Factorial</p><p><summary><see cref="M:AngouriMath.MathS.Factorial(AngouriMath.Entity)" /></summary></p></li><li><p>Method Implies(AngouriMath.Entity)</p><p><returns>A node</returns></p></li><li><p>Method In(AngouriMath.Entity)</p><p><summary>
+            </div></p></li><li class="yadg-li yadg-member"><a name='Factorial'></a><p class="yadg-p ">Method Factorial</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><a href="../AngouriMath/MathS.html#Factorial">Factorial(AngouriMath.Entity)</a></div></p></li><li class="yadg-li yadg-member"><a name='Factorize'></a><p class="yadg-p ">Method Factorize(System.Int32)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Factorizes an equation trying to eliminate as many power-uses as possible ( e.g. x * 3 + x * y = x * (3 + y) )
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">level</strong></h4><div class="yadg-div yadg-param">
+            The number of iterations (increase this argument if some factor operations are still available)
+            </div></p></li><li class="yadg-li yadg-member"><a name='Implies'></a><p class="yadg-p ">Method Implies(AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>A node</div></p></li><li class="yadg-li yadg-member"><a name='In'></a><p class="yadg-p ">Method In(AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Creates a node of whether the given element is an element of the given set
-            </summary><returns>A node</returns></p></li><li><p>Method InitDirectChildren</p><p><inheritdoc /></p></li><li><p>Method InnerDifferentiate(AngouriMath.Entity.Variable)</p><p><summary>
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>A node</div></p></li><li class="yadg-li yadg-member"><a name='InitDirectChildren'></a><p class="yadg-p ">Method InitDirectChildren</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='InnerCompile'></a><p class="yadg-p ">Method InnerCompile(AngouriMath.Core.FastExpression.Compiler)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Recursive compilation that pushes intructions to the stack (<a href="../AngouriMath.Core.FastExpression/Compiler.html#Instructions">Instructions</a>)
+            </div></p></li><li class="yadg-li yadg-member"><a name='InnerDifferentiate'></a><p class="yadg-p ">Method InnerDifferentiate(AngouriMath.Entity.Variable)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Internal differentiation function
-            </summary><param name="variable">To derive over</param><returns>The differentiated expressoin or the Derivative node</returns></p></li><li><p>Method InnerEval</p><p><summary>
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">variable</strong></h4><div class="yadg-div yadg-param">To derive over</div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>The differentiated expressoin or the Derivative node</div></p></li><li class="yadg-li yadg-member"><a name='InnerEval'></a><p class="yadg-p ">Method InnerEval</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             This should NOT be called inside itself
-            </summary></p></li><li><p>Method Integrate(AngouriMath.Entity.Variable)</p><p><summary>
+            </div></p></li><li class="yadg-li yadg-member"><a name='InnerEvalWithCheck'></a><p class="yadg-p ">Method InnerEvalWithCheck</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Make sure you call this function inside of <a href="../AngouriMath/Entity.html#InnerEval">InnerEval</a></div></p></li><li class="yadg-li yadg-member"><a name='InnerSimplified'></a><p class="yadg-p ">Property InnerSimplified</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            This is the result of naive simplifications. In other 
+            symbolic algebra systems it is called "Automatic simplification"
+            </div></p></li><li class="yadg-li yadg-member"><a name='InnerSimplify'></a><p class="yadg-p ">Method InnerSimplify</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            This should NOT be called inside itself
+            </div></p></li><li class="yadg-li yadg-member"><a name='InnerSimplifyWithCheck'></a><p class="yadg-p ">Method InnerSimplifyWithCheck</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Make sure you call this function inside of <a href="../AngouriMath/Entity.html#InnerSimplify">InnerSimplify</a></div></p></li><li class="yadg-li yadg-member"><a name='Integrate'></a><p class="yadg-p ">Method Integrate(AngouriMath.Entity.Variable)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Integrates the given expression over the `x` variable, if can.
-            May return an unresolved <see cref="T:AngouriMath.Entity.Integralf" /> node.
-            </summary><param name="x">Over which to integrate</param><returns>
+            May return an unresolved <a href="../AngouriMath.Entity/Integralf.html">Integralf</a> node.
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">x</strong></h4><div class="yadg-div yadg-param">Over which to integrate</div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
             An integrated expression. It might remain the same,
             it might have no integrals, and it might be transformed so that
             only a few nodes have unresolved integrals.
-            </returns></p></li><li><p>Method InvertNode(AngouriMath.Entity,AngouriMath.Entity)</p><p><summary>Use <see cref="M:AngouriMath.Entity.Invert(AngouriMath.Entity,AngouriMath.Entity)" /> instead which auto-simplifies <paramref name="value" /></summary></p></li><li><p>Method Latexise</p><p><summary>Returns the expression in LaTeX (for example, a / b -&gt; \frac{a}{b})</summary></p></li><li><p>Method Limit(AngouriMath.Entity.Variable,AngouriMath.Entity)</p><p><summary>
+            </div></p></li><li class="yadg-li yadg-member"><a name='Intersect'></a><p class="yadg-p ">Method Intersect(AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Creates a node of intersection of two nodes (sets)
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>A new node</div></p></li><li class="yadg-li yadg-member"><a name='Invert'></a><p class="yadg-p ">Method Invert(AngouriMath.Entity,AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><para>This <a href="../AngouriMath/Entity.html">Entity</a> MUST contain exactly ONE occurance of <paramref name="x"/>,
+            otherwise this function won't work correctly.</para>
+            
+            This function inverts an expression and returns a <a href="../AngouriMath.Entity/Set.html">Set</a>. Here, a represents <paramref name="value"/>.
+            <list type="table"><item>x^2 = a ⇒ x = { sqrt(a), -sqrt(a) }</item><item>sin(x) = a ⇒ x = { arcsin(a) + 2 pi n, pi - arcsin(a) + 2 pi n }</item></list></div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>A set of possible roots of the expression.</div></p></li><li class="yadg-li yadg-member"><a name='InvertNode'></a><p class="yadg-p ">Method InvertNode(AngouriMath.Entity,AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>Use <a href="../AngouriMath/Entity.html#Invert">Invert(AngouriMath.Entity,AngouriMath.Entity)</a> instead which auto-simplifies <paramref name="value"/></div></p></li><li class="yadg-li yadg-member"><a name='IsConstant'></a><p class="yadg-p ">Property IsConstant</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Determines whether a given element can be unambiguously used as a number or boolean
+            </div></p></li><li class="yadg-li yadg-member"><a name='IsConstantLeaf'></a><p class="yadg-p ">Property IsConstantLeaf</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Checks whether the given expression is a finite constant leaf
+            </div></p></li><li class="yadg-li yadg-member"><a name='IsFinite'></a><p class="yadg-p ">Property IsFinite</p><p class="yadg-p "><value>
+            Whether both parts of the complex number are finite
+            meaning that it could be safely used for calculations
+            </value></p></li><li class="yadg-li yadg-member"><a name='IsSymbolic'></a><p class="yadg-p ">Property IsSymbolic</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>Checks whether the given expression contains variable</div></p></li><li class="yadg-li yadg-member"><a name='IsTensoric'></a><p class="yadg-p ">Property IsTensoric</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Whether the expression can be collapsed to a tensor
+            </div></p></li><li class="yadg-li yadg-member"><a name='Latexise'></a><p class="yadg-p ">Method Latexise and its overloads</p><ul class="yadg-ul "><li class="yadg-li "><p class="yadg-p ">Latexise</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>Returns the expression in LaTeX (for example, a / b -&gt; \frac{a}{b})</div></p></li><li class="yadg-li "><p class="yadg-p ">Latexise(System.Boolean)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>Returns the expression in LaTeX (for example, a / b -&gt; \frac{a}{b})</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">parenthesesRequired</strong></h4><div class="yadg-div yadg-param">Whether to wrap it with parentheses</div></p></li></ul></li><li class="yadg-li yadg-member"><a name='Limit'></a><p class="yadg-p ">Method Limit and its overloads</p><ul class="yadg-ul "><li class="yadg-li "><p class="yadg-p ">Limit(AngouriMath.Entity.Variable,AngouriMath.Entity,AngouriMath.Core.ApproachFrom)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Finds the limit of the given expression over the given variable
-            </summary><param name="x">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">x</strong></h4><div class="yadg-div yadg-param">
             The variable to be approaching
-            </param><param name="destination">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">destination</strong></h4><div class="yadg-div yadg-param">
+            A value where the variable approaches. It might be a symbolic
+            expression, a finite number, or an infinite number, for example,
+            "sqrt(x2 + x) / (3x + 3)".Limit("x", "+oo", ApproachFrom.BothSides)
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">side</strong></h4><div class="yadg-div yadg-param">
+            From where to approach it: from the left, from the right,
+            or BothSides, implying that if limits from either are not
+            equal, there is no limit
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
+            A result or the <a href="../AngouriMath.Entity/Limitf.html">Limitf</a> node if the limit
+            cannot be determined
+            </div></p></li><li class="yadg-li "><p class="yadg-p ">Limit(AngouriMath.Entity.Variable,AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Finds the limit of the given expression over the given variable
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">x</strong></h4><div class="yadg-div yadg-param">
+            The variable to be approaching
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">destination</strong></h4><div class="yadg-div yadg-param">
             A value where the variable approaches. It might be a symbolic
             expression, a finite number, or an infinite number, for example,
             "sqrt(x2 + x) / (3x + 3)".Limit("x", "+oo")
-            </param><returns>
-            A result or the <see cref="T:AngouriMath.Entity.Limitf" /> node if the limit
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
+            A result or the <a href="../AngouriMath.Entity/Limitf.html">Limitf</a> node if the limit
             cannot be determined
-            </returns></p></li><li><p>Method op_Addition(AngouriMath.Entity,AngouriMath.Entity)</p><p><summary>
+            </div></p></li></ul></li><li class="yadg-li yadg-member"><a name='Log'></a><p class="yadg-p ">Method Log(AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><a href="../AngouriMath/MathS.html#Log">Log(AngouriMath.Entity,AngouriMath.Entity)</a></div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">x</strong></h4><div class="yadg-div yadg-param">Antilogarithm (value)</div></p></li><li class="yadg-li yadg-member"><a name='Nodes'></a><p class="yadg-p ">Property Nodes</p><p class="yadg-p "><remarks>A depth-first enumeration is required by
+            <a href="../AngouriMath.Functions/TreeAnalyzer.html#GetMinimumSubtree">GetMinimumSubtree(AngouriMath.Entity,AngouriMath.Entity.Variable)</a></remarks></p></li><li class="yadg-li yadg-member"><a name='op_Addition'></a><p class="yadg-p ">Method op_Addition(AngouriMath.Entity,AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Hangs two nodes to a Sum node (i. e. building an expression)
-            </summary><param name="augend">The left node to add</param><param name="addend">The right node to add</param></p></li><li><p>Method op_BitwiseAnd(AngouriMath.Entity,AngouriMath.Entity)</p><p><returns>A node</returns></p></li><li><p>Method op_ExclusiveOr(AngouriMath.Entity,AngouriMath.Entity)</p><p><summary>
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">augend</strong></h4><div class="yadg-div yadg-param">The left node to add</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">addend</strong></h4><div class="yadg-div yadg-param">The right node to add</div></p></li><li class="yadg-li yadg-member"><a name='op_BitwiseAnd'></a><p class="yadg-p ">Method op_BitwiseAnd(AngouriMath.Entity,AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>A node</div></p></li><li class="yadg-li yadg-member"><a name='op_BitwiseOr'></a><p class="yadg-p ">Method op_BitwiseOr(AngouriMath.Entity,AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>A node</div></p></li><li class="yadg-li yadg-member"><a name='op_Division'></a><p class="yadg-p ">Method op_Division(AngouriMath.Entity,AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Hangs two nodes to a Div node (i. e. building an expression)
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">dividend</strong></h4><div class="yadg-div yadg-param">The left node to add</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">divisor</strong></h4><div class="yadg-div yadg-param">The right node to add</div></p></li><li class="yadg-li yadg-member"><a name='op_ExclusiveOr'></a><p class="yadg-p ">Method op_ExclusiveOr(AngouriMath.Entity,AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             This is an exclusive OR operator. Shouldn't be confused with power!
-            </summary><returns>A node</returns></p></li><li><p>Method op_GreaterThan(AngouriMath.Entity,AngouriMath.Entity)</p><p><returns>A node</returns></p></li><li><p>Method op_GreaterThanOrEqual(AngouriMath.Entity,AngouriMath.Entity)</p><p><returns>A node</returns></p></li><li><p>Method op_Implicit and its overloads</p><ul><li><p>op_Implicit(System.Boolean)~AngouriMath.Entity</p><p><returns>A node</returns></p></li><li><p>op_Implicit(System.String)~AngouriMath.Entity</p><p><summary>
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>A node</div></p></li><li class="yadg-li yadg-member"><a name='op_GreaterThan'></a><p class="yadg-p ">Method op_GreaterThan(AngouriMath.Entity,AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>A node</div></p></li><li class="yadg-li yadg-member"><a name='op_GreaterThanOrEqual'></a><p class="yadg-p ">Method op_GreaterThanOrEqual(AngouriMath.Entity,AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>A node</div></p></li><li class="yadg-li yadg-member"><a name='op_Implicit'></a><p class="yadg-p ">Method op_Implicit and its overloads</p><ul class="yadg-ul "><li class="yadg-li "><p class="yadg-p ">op_Implicit(System.Boolean)~AngouriMath.Entity</p><p class="yadg-p "><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>A node</div></p></li><li class="yadg-li "><p class="yadg-p ">op_Implicit(System.String)~AngouriMath.Entity</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Implicit conversation from string to Entity
-            </summary><param name="expr">The source from which to parse</param></p></li></ul></li><li><p>Method op_Multiply(AngouriMath.Entity,AngouriMath.Entity)</p><p><summary>
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">expr</strong></h4><div class="yadg-div yadg-param">The source from which to parse</div></p></li></ul></li><li class="yadg-li yadg-member"><a name='op_LessThan'></a><p class="yadg-p ">Method op_LessThan(AngouriMath.Entity,AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>A node</div></p></li><li class="yadg-li yadg-member"><a name='op_LessThanOrEqual'></a><p class="yadg-p ">Method op_LessThanOrEqual(AngouriMath.Entity,AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>A node</div></p></li><li class="yadg-li yadg-member"><a name='op_LogicalNot'></a><p class="yadg-p ">Method op_LogicalNot(AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>A node</div></p></li><li class="yadg-li yadg-member"><a name='op_Multiply'></a><p class="yadg-p ">Method op_Multiply(AngouriMath.Entity,AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Hangs two nodes to a Mul node (i. e. building an expression)
-            </summary><param name="multiplier">The left node to add</param><param name="multiplicand">The right node to add</param></p></li><li><p>Method op_Subtraction(AngouriMath.Entity,AngouriMath.Entity)</p><p><summary>
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">multiplier</strong></h4><div class="yadg-div yadg-param">The left node to add</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">multiplicand</strong></h4><div class="yadg-div yadg-param">The right node to add</div></p></li><li class="yadg-li yadg-member"><a name='op_Subtraction'></a><p class="yadg-p ">Method op_Subtraction(AngouriMath.Entity,AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Hangs two nodes to a Minus node (i. e. building an expression)
-            </summary><param name="subtrahend">The left node to add</param><param name="minuend">The right node to add</param></p></li><li><p>Method Pow(AngouriMath.Entity)</p><p><summary><see cref="M:AngouriMath.MathS.Pow(AngouriMath.Entity,AngouriMath.Entity)" /></summary><param name="n">Power</param></p></li><li><p>Method Sec</p><p><summary><see cref="M:AngouriMath.MathS.Sec(AngouriMath.Entity)" /></summary></p></li><li><p>Method SetSubtract(AngouriMath.Entity)</p><p><summary>
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">subtrahend</strong></h4><div class="yadg-div yadg-param">The left node to add</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">minuend</strong></h4><div class="yadg-div yadg-param">The right node to add</div></p></li><li class="yadg-li yadg-member"><a name='op_UnaryNegation'></a><p class="yadg-p ">Method op_UnaryNegation(AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Multiplies the only argument by -1
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>Mul node of -1 and the only argument</div></p></li><li class="yadg-li yadg-member"><a name='op_UnaryPlus'></a><p class="yadg-p ">Method op_UnaryPlus(AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Does not do anything until an unary plus node added
+            </div></p></li><li class="yadg-li yadg-member"><a name='Pow'></a><p class="yadg-p ">Method Pow(AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><a href="../AngouriMath/MathS.html#Pow">Pow(AngouriMath.Entity,AngouriMath.Entity)</a></div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">n</strong></h4><div class="yadg-div yadg-param">Power</div></p></li><li class="yadg-li yadg-member"><a name='Provided'></a><p class="yadg-p ">Method Provided(AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Creates a node of a expression assuming some condition
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">that</strong></h4><div class="yadg-div yadg-param"></div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'></div></p></li><li class="yadg-li yadg-member"><a name='Replace'></a><p class="yadg-p ">Method Replace(System.Func{AngouriMath.Entity,AngouriMath.Entity})</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Applies the given function to every node starting from the leaves
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">func</strong></h4><div class="yadg-div yadg-param">
+            The delegate that takes the current node as an argument and replaces the current node
+            with the result of the delegate
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>Processed expression</div></p></li><li class="yadg-li yadg-member"><a name='Sec'></a><p class="yadg-p ">Method Sec</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><a href="../AngouriMath/MathS.html#Sec">Sec(AngouriMath.Entity)</a></div></p></li><li class="yadg-li yadg-member"><a name='SetSubtract'></a><p class="yadg-p ">Method SetSubtract(AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Creates a new node of set difference of two nodes (sets)
-            </summary><returns>A new node</returns></p></li><li><p>Method Simplify(System.Int32)</p><p><summary>
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>A new node</div></p></li><li class="yadg-li yadg-member"><a name='Signum'></a><p class="yadg-p ">Method Signum</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><a href="../AngouriMath/MathS.html#Signum">Signum(AngouriMath.Entity)</a></div></p></li><li class="yadg-li yadg-member"><a name='SimplifiedRate'></a><p class="yadg-p ">Property SimplifiedRate</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Shows how simple the given expression is. The lower - the simpler the expression is.
+            You might need it to pick the best expression to represent something. Unlike 
+            <a href="../AngouriMath/Entity.html#Complexity">Complexity</a>, which shows the number of nodes, <a href="../AngouriMath/Entity.html#SimplifiedRate">SimplifiedRate</a> 
+            shows how convenient it is to view the expression. This depends on 
+            <a href="../AngouriMath.MathS/Settings.html#ComplexityCriteria">ComplexityCriteria</a> which can be changed by user.
+            </div></p></li><li class="yadg-li yadg-member"><a name='Simplify'></a><p class="yadg-p ">Method Simplify(System.Int32)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Simplifies an equation ( e.g. (x - y) * (x + y) -&gt; x^2 - y^2, but 3 * x + y * x = (3 + y) * x )
-            </summary><param name="level">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">level</strong></h4><div class="yadg-div yadg-param">
             Increase this argument if you think the equation should be simplified better
-            </param><returns></returns></p></li><li><p>Method Sin</p><p><summary><see cref="M:AngouriMath.MathS.Sin(AngouriMath.Entity)" /></summary></p></li><li><p>Method SolveEquation(AngouriMath.Entity.Variable)</p><p><summary>
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'></div></p></li><li class="yadg-li yadg-member"><a name='Sin'></a><p class="yadg-p ">Method Sin</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><a href="../AngouriMath/MathS.html#Sin">Sin(AngouriMath.Entity)</a></div></p></li><li class="yadg-li yadg-member"><a name='Solve'></a><p class="yadg-p ">Method Solve(AngouriMath.Entity.Variable)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Solves a <a href="../AngouriMath.Entity/Statement.html">Statement</a>
+            Statement is an Entity such that its value is true for
+            any x in X, where X is the result of this method.
+            See more about <a href="../AngouriMath.Entity/Set.html">Set</a></div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">var</strong></h4><div class="yadg-div yadg-param">Over which variable to solve</div></p></li><li class="yadg-li yadg-member"><a name='SolveBoolean'></a><p class="yadg-p ">Method SolveBoolean(AngouriMath.Entity.Variable)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Solves the given equation over <paramref name="x"/>
+            symbolically
+            </div></p></li><li class="yadg-li yadg-member"><a name='SolveEquation'></a><p class="yadg-p ">Method SolveEquation(AngouriMath.Entity.Variable)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Attempt to find analytical roots of a custom equation.
             It solves the given expression assuming that it is
             equal to zero. No need to make it equal to 0 yourself;
             however, if you prefer so, consider using the .Solve()
             method instead
-            </summary><param name="x">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">x</strong></h4><div class="yadg-div yadg-param">
             The variable over which to solve the equation
-            </param><example><code>
+            </div><example><code>
             Entity expr = "x + 8 - 4";
             Console.WriteLine(expr.SolveEquation("x"));
             </code>
             Will print "{ -4 }"
-            </example><returns>
-            Returns <see cref="T:AngouriMath.Entity.Set" /></returns></p></li><li><p>Method SolveNt(AngouriMath.Entity.Variable)</p><p><summary>
+            </example><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
+            Returns <a href="../AngouriMath.Entity/Set.html">Set</a></div></p></li><li class="yadg-li yadg-member"><a name='SolveNt'></a><p class="yadg-p ">Method SolveNt(AngouriMath.Entity.Variable)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Searches for numerical solutions via Newton's method
-            <a href="https://en.wikipedia.org/wiki/Newton%27s_method" />
-            To change parameters see <see cref="P:AngouriMath.MathS.Settings.NewtonSolver" /></summary></p></li><li><p>Method SortHash(AngouriMath.Functions.TreeAnalyzer.SortLevel)</p><p><summary>Hash that is convenient to sort with</summary></p></li><li><p>Method Stringize</p><p><summary>
+            <a href="https://en.wikipedia.org/wiki/Newton%27s_method">https://en.wikipedia.org/wiki/Newton%27s_method</a>
+            To change parameters see <a href="../AngouriMath.MathS/Settings.html#NewtonSolver">NewtonSolver</a></div></p></li><li class="yadg-li yadg-member"><a name='SortHash'></a><p class="yadg-p ">Method SortHash(AngouriMath.Functions.TreeAnalyzer.SortLevel)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>Hash that is convenient to sort with</div></p></li><li class="yadg-li yadg-member"><a name='Stringize'></a><p class="yadg-p ">Method Stringize and its overloads</p><ul class="yadg-ul "><li class="yadg-li "><p class="yadg-p ">Stringize</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Converts an expression into a string
-            </summary></p></li><li><p>Method Substitute(AngouriMath.Entity,AngouriMath.Entity)</p><p><summary>Replaces all <param name="x" /> with <param name="value" /></summary></p></li><li><p>Method Tan</p><p><summary><see cref="M:AngouriMath.MathS.Tan(AngouriMath.Entity)" /></summary></p></li><li><p>Method ToSymPy</p><p><summary>Generates Python code that you can use with sympy</summary></p></li><li><p>Method Unite(AngouriMath.Entity)</p><p><summary>
+            </div></p></li><li class="yadg-li "><p class="yadg-p ">Stringize(System.Boolean)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Converts an expression into a string
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">parenthesesRequired</strong></h4><div class="yadg-div yadg-param">Whether to wrap with '(' and ')'</div></p></li></ul></li><li class="yadg-li yadg-member"><a name='Substitute'></a><p class="yadg-p ">Method Substitute and its overloads</p><ul class="yadg-ul "><li class="yadg-li "><p class="yadg-p ">Substitute(AngouriMath.Entity,AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>Replaces all <param name="x"/> with <param name="value"/></div></p></li><li class="yadg-li "><p class="yadg-p ">Substitute(System.Collections.Generic.IReadOnlyDictionary{``0,``1})</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>Replaces all <param name="replacements"/></div></p></li></ul></li><li class="yadg-li yadg-member"><a name='Tan'></a><p class="yadg-p ">Method Tan</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><a href="../AngouriMath/MathS.html#Tan">Tan(AngouriMath.Entity)</a></div></p></li><li class="yadg-li yadg-member"><a name='ThisIsFinite'></a><p class="yadg-p ">Property ThisIsFinite</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Not NaN and not infinity
+            </div></p></li><li class="yadg-li yadg-member"><a name='ToSymPy'></a><p class="yadg-p ">Method ToSymPy and its overloads</p><ul class="yadg-ul "><li class="yadg-li "><p class="yadg-p ">ToSymPy</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>Generates Python code that you can use with sympy</div></p></li><li class="yadg-li "><p class="yadg-p ">ToSymPy(System.Boolean)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Generates python code without any additional symbols that can be run in SymPy
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">parenthesesRequired</strong></h4><div class="yadg-div yadg-param">
+            Whether to wrap it with parentheses
+            Usually depends on its parental nodes
+            </div></p></li></ul></li><li class="yadg-li yadg-member"><a name='Unite'></a><p class="yadg-p ">Method Unite(AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Creates a node of union of two nodes (sets)
-            </summary><returns>A new node</returns></p></li></ul></p>
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>A new node</div></p></li><li class="yadg-li yadg-member"><a name='Vars'></a><p class="yadg-p ">Property Vars</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Set of unique variables, for example 
+            it extracts <c>`x`</c>, <c>`goose`</c> from <c>(x + 2 * goose) - pi * x</c></div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
+            Set of unique variables excluding mathematical constants
+            such as <a href="../AngouriMath/MathS.html#pi">pi</a> and <a href="../AngouriMath/MathS.html#e">e</a></div></p></li><li class="yadg-li yadg-member"><a name='VarsAndConsts'></a><p class="yadg-p ">Property VarsAndConsts</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Set of unique variables, for example 
+            it extracts <c>`x`</c>, <c>`goose`</c>, <c>`pi`</c> from <c>(x + 2 * goose) - pi * x</c></div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>
+            Set of unique variables and mathematical constants
+            such as <a href="../AngouriMath/MathS.html#pi">pi</a> and <a href="../AngouriMath/MathS.html#e">e</a></div></p></li><li class="yadg-li yadg-member"><a name='WithCodomain'></a><p class="yadg-p ">Method WithCodomain(AngouriMath.Core.Domain)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Returns this node with the specified codomain
+            </div></p></li><li class="yadg-li yadg-member"><a name='Xor'></a><p class="yadg-p ">Method Xor(AngouriMath.Entity)</p><p class="yadg-p "><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>A node</div></p></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

@@ -48,7 +48,7 @@
 <ul>
     <li><!--active_--><a href="/">Home page</a>                                              </li>
     <li><!--active_quickstart--><a href="/quickstart">Quick start</a>                                                    </li>
-    <li><!--active_docs--><a href="/docs/namespaces.html">Documentation</a>                                                    </li>
+    <li><!--active_docs--><a href="/docs/namespaces.html">Almanac</a>                                                    </li>
     <li><!--active_whatsnew--><a href="/whatsnew">What's new</a>                                                    </li>
     <li><!--active_demo--><a href="/demo">Try online</a>                                                               </li>
     <li><!--active_why--><a href="/why">Where can be used</a>                                                                </li>
@@ -75,7 +75,7 @@
 <div class="centered link-block-mob">
 <a href="/">Home</a>
 <a href="/quickstart">Quick start</a>
-<a href="/docs/namespaces.html">Documentation</a>
+<a href="/docs/namespaces.html">Almanac</a>
 <a href="/whatsnew">What's new</a>
 <a href="/demo">Try</a>
 <a href="/why">Use</a>
@@ -92,15 +92,23 @@
 
 <!--Top end-->
 
-<h2 class="centered">Utils</h2><hr/><p><a href="../AngouriMath.MathS.html"><< Back to list of classes</a></p><p>Let us see all the members of the class or record Utils</p><p><ul><li><p>Method TryGetPolynomial(AngouriMath.Entity,AngouriMath.Entity.Variable,System.Collections.Generic.Dictionary{PeterO.Numbers.EInteger,AngouriMath.Entity}@)</p><p><summary>
+<h2 class="yadg-h2 centered">Utils</h2><hr/><p class="yadg-p "><a href="../AngouriMath.MathS.html">&#8592; Back to list of classes</a></p><h3 class="yadg-h3 ">Description</h3><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Some additional functions that would be barely
+            ever used by the user, but kept for "just in case" as public
+            </div><h3 class="yadg-h3 ">Members</h3><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member"><a name='SmartExpandOver'></a><p class="yadg-p ">Method SmartExpandOver(AngouriMath.Entity,AngouriMath.Entity.Variable)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Performs the expansion operation over the given variable
+            </div></p></li><li class="yadg-li yadg-member"><a name='TryGetPolyLinear'></a><p class="yadg-p ">Method TryGetPolyLinear(AngouriMath.Entity,AngouriMath.Entity.Variable,AngouriMath.Entity@,AngouriMath.Entity@)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Extracts the linear coefficient and the bias over a variable
+            a x + b
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">expr</strong></h4><div class="yadg-div yadg-param">From which to extract the linear function</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">variable</strong></h4><div class="yadg-div yadg-param">Over which to extract</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">a</strong></h4><div class="yadg-div yadg-param">The linear coefficient</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">b</strong></h4><div class="yadg-div yadg-param">The bias</div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>Whether the extract was successful</div></p></li><li class="yadg-li yadg-member"><a name='TryGetPolynomial'></a><p class="yadg-p ">Method TryGetPolynomial(AngouriMath.Entity,AngouriMath.Entity.Variable,System.Collections.Generic.Dictionary{PeterO.Numbers.EInteger,AngouriMath.Entity}@)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Extracts a polynomial with integer powers
-            </summary><param name="expr">From which to extract the polynomial</param><param name="variable">Over which variable to extract the polynomial</param><param name="dst">
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">expr</strong></h4><div class="yadg-div yadg-param">From which to extract the polynomial</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">variable</strong></h4><div class="yadg-div yadg-param">Over which variable to extract the polynomial</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">dst</strong></h4><div class="yadg-div yadg-param">
             Where to put the dictionary, whose keys
             are powers, and values - coefficients
-            </param><returns>Whether the input expression is a valid polynomial</returns></p></li><li><p>Method TryGetPolyQuadratic(AngouriMath.Entity,AngouriMath.Entity.Variable,AngouriMath.Entity@,AngouriMath.Entity@,AngouriMath.Entity@)</p><p><summary>
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>Whether the input expression is a valid polynomial</div></p></li><li class="yadg-li yadg-member"><a name='TryGetPolyQuadratic'></a><p class="yadg-p ">Method TryGetPolyQuadratic(AngouriMath.Entity,AngouriMath.Entity.Variable,AngouriMath.Entity@,AngouriMath.Entity@,AngouriMath.Entity@)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Extracts the quadratic coefficient, linear coefficient and the bias over a variable
             a x ^ 2 + b x + c
-            </summary><param name="expr">From which to extract the quadratic function</param><param name="variable">Over which to extract</param><param name="a">The quadratic coefficient</param><param name="b">The linear coefficient</param><param name="c">The bias</param><returns>Whether the extract was successful</returns></p></li></ul></p>
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">expr</strong></h4><div class="yadg-div yadg-param">From which to extract the quadratic function</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">variable</strong></h4><div class="yadg-div yadg-param">Over which to extract</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">a</strong></h4><div class="yadg-div yadg-param">The quadratic coefficient</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">b</strong></h4><div class="yadg-div yadg-param">The linear coefficient</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">c</strong></h4><div class="yadg-div yadg-param">The bias</div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>Whether the extract was successful</div></p></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

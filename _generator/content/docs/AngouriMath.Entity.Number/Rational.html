@@ -1,3 +1,30 @@
-<h2 class="centered">Rational</h2><hr/><p><a href="../AngouriMath.Entity.Number.html"><< Back to list of classes</a></p><p>Let us see all the members of the class or record Rational</p><p><ul><li><p>Method Abs</p><p><inheritdoc /></p></li><li><p>Method Create(PeterO.Numbers.EInteger,PeterO.Numbers.EInteger)</p><p><summary>
+<h2 class="yadg-h2 centered">Rational</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Entity.Number.html">&#8592; Back to list of classes</a></p><h3 class="yadg-h3 ">Description</h3><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            The denominator cannot be zero as the resulting value will not be a rational
+            </div><h3 class="yadg-h3 ">Members</h3><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member"><a name='#ctor'></a><p class="yadg-p ">Method #ctor(PeterO.Numbers.ERational)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Constructor does not downcast automatically.
+            Use <a href="../AngouriMath.Entity.Number/Rational.html#Create">Create(PeterO.Numbers.EInteger,PeterO.Numbers.EInteger)</a> or <a href="../AngouriMath.Entity.Number/Rational.html#Create">Create(PeterO.Numbers.ERational)</a> for automatic downcasting.
+            </div></p></li><li class="yadg-li yadg-member"><a name='Abs'></a><p class="yadg-p ">Method Abs</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='Codomain'></a><p class="yadg-p ">Property Codomain</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='Create'></a><p class="yadg-p ">Method Create and its overloads</p><ul class="yadg-ul "><li class="yadg-li "><p class="yadg-p ">Create(PeterO.Numbers.EInteger,PeterO.Numbers.EInteger)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Creates an instance of Rational number of two integers
-            </summary></p></li><li><p>Method Latexise</p><p><inheritdoc /></p></li><li><p>Method ToString</p><p><inheritdoc /></p></li></ul></p>
+            </div></p></li><li class="yadg-li "><p class="yadg-p ">Create(PeterO.Numbers.ERational)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Creates an instance of Rational number
+            </div><exception cref="T:AngouriMath.Core.Exceptions.InvalidNumberException">Thrown if </exception></p></li></ul></li><li class="yadg-li yadg-member"><a name='Denominator'></a><p class="yadg-p ">Property Denominator</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            A getter for the denominator
+            </div></p></li><li class="yadg-li yadg-member"><a name='ERational'></a><p class="yadg-p ">Property ERational</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            The PeterO number representation in rational
+            </div></p></li><li class="yadg-li yadg-member"><a name='FindRational'></a><p class="yadg-p ">Method FindRational(PeterO.Numbers.EDecimal,System.Int32)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Tries to find a pair of two <a href="../AngouriMath.Entity.Number/Integer.html">Integer</a>s
+            (which are components that make up a <a href="../AngouriMath.Entity.Number/Rational.html">Rational</a>)
+            so that its rational value is equal to <paramref name="num"/>.
+            To set some options for this function, you can use
+            <a href="../AngouriMath.MathS/Settings.html#MaxAbsNumeratorOrDenominatorValue">MaxAbsNumeratorOrDenominatorValue</a>
+            to limit the absolute value of both denominator and numerator.
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">num</strong></h4><div class="yadg-div yadg-param">
+            e.g. 1.5m -&gt; 3/2
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">iterCount</strong></h4><div class="yadg-div yadg-param">
+            Number of iterations allowed to be spent for searching the rational.
+            A higher value indicates a higher probability that it will find a <a href="../AngouriMath.Entity.Number/Rational.html">Rational</a>.
+            Defaults to <a href="../AngouriMath.MathS/Settings.html#FloatToRationalIterCount">FloatToRationalIterCount</a>.
+            </div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'><a href="../AngouriMath.Entity.Number/Rational.html">Rational</a> if found, <see langword="null"/> otherwise.
+            </div></p></li><li class="yadg-li yadg-member"><a name='IsExact'></a><p class="yadg-p ">Property IsExact</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='Latexise'></a><p class="yadg-p ">Method Latexise</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='Numerator'></a><p class="yadg-p ">Property Numerator</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            A getter for the numerator
+            </div></p></li><li class="yadg-li yadg-member"><a name='Stringize'></a><p class="yadg-p ">Method Stringize</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='ToString'></a><p class="yadg-p ">Method ToString</p><p class="yadg-p "><inheritdoc /></p></li></ul></p>

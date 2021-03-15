@@ -48,7 +48,7 @@
 <ul>
     <li><!--active_--><a href="/">Home page</a>                                              </li>
     <li><!--active_quickstart--><a href="/quickstart">Quick start</a>                                                    </li>
-    <li><!--active_docs--><a href="/docs/namespaces.html">Documentation</a>                                                    </li>
+    <li><!--active_docs--><a href="/docs/namespaces.html">Almanac</a>                                                    </li>
     <li><!--active_whatsnew--><a href="/whatsnew">What's new</a>                                                    </li>
     <li><!--active_demo--><a href="/demo">Try online</a>                                                               </li>
     <li><!--active_why--><a href="/why">Where can be used</a>                                                                </li>
@@ -75,7 +75,7 @@
 <div class="centered link-block-mob">
 <a href="/">Home</a>
 <a href="/quickstart">Quick start</a>
-<a href="/docs/namespaces.html">Documentation</a>
+<a href="/docs/namespaces.html">Almanac</a>
 <a href="/whatsnew">What's new</a>
 <a href="/demo">Try</a>
 <a href="/why">Use</a>
@@ -92,11 +92,21 @@
 
 <!--Top end-->
 
-<h2 class="centered">EquationSystem</h2><hr/><p><a href="../AngouriMath.Core.html"><< Back to list of classes</a></p><p>Let us see all the members of the class or record EquationSystem</p><p><ul><li><p>Method #ctor(AngouriMath.Entity[])</p><p><summary>After having created a system of equations, you may solve or latexise it</summary><param name="equations">An arbitrary number of equations</param></p></li><li><p>Method Solve(System.ReadOnlySpan{AngouriMath.Entity.Variable})</p><p><summary>
+<h2 class="yadg-h2 centered">EquationSystem</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Core.html">&#8592; Back to list of classes</a></p><h3 class="yadg-h3 ">Description</h3><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            A class for systems of equations
+            Is not part of AM's ecosystem,
+            that is, it is not an Entity, just an intermediate
+            class
+            </div><h3 class="yadg-h3 ">Members</h3><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member"><a name='#ctor'></a><p class="yadg-p ">Method #ctor and its overloads</p><ul class="yadg-ul "><li class="yadg-li "><p class="yadg-p ">#ctor(AngouriMath.Entity[])</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>After having created a system of equations, you may solve or latexise it</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">equations</strong></h4><div class="yadg-div yadg-param">An arbitrary number of equations</div></p></li><li class="yadg-li "><p class="yadg-p ">#ctor(System.Collections.Generic.IEnumerable{AngouriMath.Entity})</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>After having created a system of equations, you may solve or latexise it</div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">equations</strong></h4><div class="yadg-div yadg-param">
+            Any <a href="../System.Collections.Generic/IEnumerable`1.html">IEnumerable`1</a> parameter, such as <a href="../System.Collections.Generic/List`1.html">List`1</a> or <a href="../System/Array.html">Array</a></div></p></li></ul></li><li class="yadg-li yadg-member"><a name='Latexise'></a><p class="yadg-p ">Method Latexise</p><p class="yadg-p "><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>Latexised version of the system</div></p></li><li class="yadg-li yadg-member"><a name='Solve'></a><p class="yadg-p ">Method Solve and its overloads</p><ul class="yadg-ul "><li class="yadg-li "><p class="yadg-p ">Solve(AngouriMath.Entity.Variable[])</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Returns a solution matrix
             The first axis of the matrix corresponds to the number of solutions,
             the second one corresponds to the number of variables.
-            </summary><param name="vars">Number of variables must match number of equations</param></p></li><li><p>Method ToString</p><p><inheritdoc /></p></li></ul></p>
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">vars</strong></h4><div class="yadg-div yadg-param">Number of variables must match number of equations</div></p></li><li class="yadg-li "><p class="yadg-p ">Solve(System.ReadOnlySpan{AngouriMath.Entity.Variable})</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Returns a solution matrix
+            The first axis of the matrix corresponds to the number of solutions,
+            the second one corresponds to the number of variables.
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">vars</strong></h4><div class="yadg-div yadg-param">Number of variables must match number of equations</div></p></li></ul></li><li class="yadg-li yadg-member"><a name='ToString'></a><p class="yadg-p ">Method ToString</p><p class="yadg-p "><inheritdoc /></p></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

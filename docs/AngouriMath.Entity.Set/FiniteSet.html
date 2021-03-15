@@ -48,7 +48,7 @@
 <ul>
     <li><!--active_--><a href="/">Home page</a>                                              </li>
     <li><!--active_quickstart--><a href="/quickstart">Quick start</a>                                                    </li>
-    <li><!--active_docs--><a href="/docs/namespaces.html">Documentation</a>                                                    </li>
+    <li><!--active_docs--><a href="/docs/namespaces.html">Almanac</a>                                                    </li>
     <li><!--active_whatsnew--><a href="/whatsnew">What's new</a>                                                    </li>
     <li><!--active_demo--><a href="/demo">Try online</a>                                                               </li>
     <li><!--active_why--><a href="/why">Where can be used</a>                                                                </li>
@@ -75,7 +75,7 @@
 <div class="centered link-block-mob">
 <a href="/">Home</a>
 <a href="/quickstart">Quick start</a>
-<a href="/docs/namespaces.html">Documentation</a>
+<a href="/docs/namespaces.html">Almanac</a>
 <a href="/whatsnew">What's new</a>
 <a href="/demo">Try</a>
 <a href="/why">Use</a>
@@ -92,15 +92,34 @@
 
 <!--Top end-->
 
-<h2 class="centered">FiniteSet</h2><hr/><p><a href="../AngouriMath.Entity.Set.html"><< Back to list of classes</a></p><p>Let us see all the members of the class or record FiniteSet</p><p><ul><li><p>Method #ctor(AngouriMath.Entity[])</p><p><summary>
+<h2 class="yadg-h2 centered">FiniteSet</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Entity.Set.html">&#8592; Back to list of classes</a></p><h3 class="yadg-h3 ">Description</h3><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            A finite set is a set whose elements can be counted and enumerated
+            </div><h3 class="yadg-h3 ">Members</h3><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member"><a name='#ctor'></a><p class="yadg-p ">Method #ctor and its overloads</p><ul class="yadg-ul "><li class="yadg-li "><p class="yadg-p ">#ctor(AngouriMath.Entity[])</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Constructor of a finite set
-            Use <see cref="F:AngouriMath.Entity.Set.Empty" /> to create an empty set
-            </summary></p></li><li><p>Method Equals(AngouriMath.Entity.Set.FiniteSet)</p><p><summary>
+            Use <a href="../AngouriMath.Entity/Set.html#Empty">Empty</a> to create an empty set
+            </div></p></li><li class="yadg-li "><p class="yadg-p ">#ctor(System.Collections.Generic.IEnumerable{AngouriMath.Entity})</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Constructor of a finite set
+            Use <a href="../AngouriMath.Entity/Set.html#Empty">Empty</a> to create an empty set
+            </div></p></li></ul></li><li class="yadg-li yadg-member"><a name='Apply'></a><p class="yadg-p ">Method Apply(System.Func{AngouriMath.Entity,AngouriMath.Entity})</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Applies a function to every element of a set
+            and returns a set
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">func</strong></h4><div class="yadg-div yadg-param">What we do with each element?</div></p></li><li class="yadg-li yadg-member"><a name='Codomain'></a><p class="yadg-p ">Property Codomain</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='Count'></a><p class="yadg-p ">Property Count</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'> Represents number of entities in the current set </div></p></li><li class="yadg-li yadg-member"><a name='Deconstruct'></a><p class="yadg-p ">Method Deconstruct(System.Collections.Generic.IEnumerable{AngouriMath.Entity}@)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Deconstructs as record
+            </div></p></li><li class="yadg-li yadg-member"><a name='Elements'></a><p class="yadg-p ">Property Elements</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            The IEnumerable of elements of a finite set
+            Which is readonly
+            </div></p></li><li class="yadg-li yadg-member"><a name='Equals'></a><p class="yadg-p ">Method Equals(AngouriMath.Entity.Set.FiniteSet)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Checks that two FiniteSets are equal
             If one is not FiniteSet, the method returns false
-            </summary></p></li><li><p>Method InitDirectChildren</p><p><inheritdoc /></p></li><li><p>Method InnerEval</p><p><inheritdoc /></p></li><li><p>Method Latexise</p><p><inheritdoc /></p></li><li><p>Method Replace(System.Func{AngouriMath.Entity,AngouriMath.Entity})</p><p><inheritdoc /></p></li><li><p>Method ToString</p><p><inheritdoc /></p></li><li><p>Method TryContains(AngouriMath.Entity,System.Boolean@)</p><p><inheritdoc /></p></li><li><p>Method TryIsSubsetOf(AngouriMath.Entity.Set.FiniteSet,System.Boolean@)</p><p><summary>
+            </div></p></li><li class="yadg-li yadg-member"><a name='Filter'></a><p class="yadg-p ">Method Filter(AngouriMath.Entity,AngouriMath.Entity.Variable)</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='GetEnumerator'></a><p class="yadg-p ">Method GetEnumerator</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Used for enumerating. Use "foreach" for iterating over elements
+            </div></p></li><li class="yadg-li yadg-member"><a name='GetHashCode'></a><p class="yadg-p ">Method GetHashCode</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='GetPowerSet'></a><p class="yadg-p ">Method GetPowerSet</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Finds such a set that only contains all subsets of the given set
+            </div></p></li><li class="yadg-li yadg-member"><a name='InitDirectChildren'></a><p class="yadg-p ">Method InitDirectChildren</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='InnerEval'></a><p class="yadg-p ">Method InnerEval</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='InnerSimplify'></a><p class="yadg-p ">Method InnerSimplify</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='IsSetEmpty'></a><p class="yadg-p ">Property IsSetEmpty</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='IsSetFinite'></a><p class="yadg-p ">Property IsSetFinite</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='Latexise'></a><p class="yadg-p ">Method Latexise</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='op_Implicit'></a><p class="yadg-p ">Method op_Implicit(System.String)~AngouriMath.Entity.Set.FiniteSet</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Converts from string to specifically finite set
+            </div><h4 class="yadg-h4 ">Parameter <strong class="yadg-strong ">expr</strong></h4><div class="yadg-div yadg-param">From where to parse</div></p></li><li class="yadg-li yadg-member"><a name='Replace'></a><p class="yadg-p ">Method Replace(System.Func{AngouriMath.Entity,AngouriMath.Entity})</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='Stringize'></a><p class="yadg-p ">Method Stringize</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='Substitute'></a><p class="yadg-p ">Method Substitute(AngouriMath.Entity,AngouriMath.Entity)</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='ToString'></a><p class="yadg-p ">Method ToString</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='TryContains'></a><p class="yadg-p ">Method TryContains(AngouriMath.Entity,System.Boolean@)</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member"><a name='TryIsSubsetOf'></a><p class="yadg-p ">Method TryIsSubsetOf(AngouriMath.Entity.Set.FiniteSet,System.Boolean@)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Safely checks whether this is a subset of the argument,
-            if successful, returns true AND stores the result in <paramref name="isSub" /></summary><returns>Whether it is possible to determine</returns></p></li></ul></p>
+            if successful, returns true AND stores the result in <paramref name="isSub"/></div><h4 class="yadg-h4 ">Returns</h4><div class='yadg-returns'>Whether it is possible to determine</div></p></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

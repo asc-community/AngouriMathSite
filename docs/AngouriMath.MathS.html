@@ -48,7 +48,7 @@
 <ul>
     <li><!--active_--><a href="/">Home page</a>                                              </li>
     <li><!--active_quickstart--><a href="/quickstart">Quick start</a>                                                    </li>
-    <li class="active-link"><a href="/docs/namespaces.html">Documentation</a>                                                    </li>
+    <li class="active-link"><a href="/docs/namespaces.html">Almanac</a>                                                    </li>
     <li><!--active_whatsnew--><a href="/whatsnew">What's new</a>                                                    </li>
     <li><!--active_demo--><a href="/demo">Try online</a>                                                               </li>
     <li><!--active_why--><a href="/why">Where can be used</a>                                                                </li>
@@ -75,7 +75,7 @@
 <div class="centered link-block-mob">
 <a href="/">Home</a>
 <a href="/quickstart">Quick start</a>
-<a href="/docs/namespaces.html">Documentation</a>
+<a href="/docs/namespaces.html">Almanac</a>
 <a href="/whatsnew">What's new</a>
 <a href="/demo">Try</a>
 <a href="/why">Use</a>
@@ -92,29 +92,52 @@
 
 <!--Top end-->
 
-<h2 class="centered">AngouriMath.MathS</h2><hr/><p><a href="namespaces.html"><< Back to list of namespaces</a></p><p>Classes within the AngouriMath.MathS namespace</p><p><ul><li><a href="AngouriMath.MathS/AllowNewton.html">AllowNewton</a></li><li><a href="AngouriMath.MathS/Boolean.html">Boolean</a></li><li><a href="AngouriMath.MathS/Compute.html">Compute</a><summary>
+<h2 class="yadg-h2 centered">AngouriMath.MathS</h2><hr/><p class="yadg-p "><a href="namespaces.html">&#8592; Back to list of namespaces</a></p><p class="yadg-p ">Classes within the AngouriMath.MathS namespace</p><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-class"><a href="AngouriMath.MathS/Boolean.html">Boolean</a><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Some operations on booleans are stored here
+            </div></li><li class="yadg-li yadg-class"><a href="AngouriMath.MathS/Compute.html">Compute</a><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Implements necessary functions for symbolic computation of limits, derivatives and integrals
-            </summary></li><li>DecimalConst<summary>Some non-symbolic constants</summary></li><li><a href="AngouriMath.MathS/DecimalPrecisionContext.html">DecimalPrecisionContext</a></li><li><a href="AngouriMath.MathS/e.html">e</a></li><li><a href="AngouriMath.MathS/Empty.html">Empty</a></li><li><a href="AngouriMath.MathS/FloatToRationalIterCount.html">FloatToRationalIterCount</a></li><li><a href="AngouriMath.MathS/Hyperbolic.html">Hyperbolic</a><summary>
+            </div></li><li class="yadg-li yadg-class"><a href="AngouriMath.MathS/DecimalConst.html">DecimalConst</a><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>Some non-symbolic constants</div></li><li class="yadg-li yadg-class"><a href="AngouriMath.MathS/Diagnostic.html">Diagnostic</a><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            This class is used for diagnostic and debug of the library itself.
+            Usually, you do not want to use it in production code.
+            </div></li><li class="yadg-li yadg-class"><a href="AngouriMath.MathS/Hyperbolic.html">Hyperbolic</a><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Represents a few hyperbolic functions
-            </summary></li><li><a href="AngouriMath.MathS/Matrices.html">Matrices</a><summary>Classes and functions related to matrices are defined here</summary></li><li>Multithreading<summary>
+            </div></li><li class="yadg-li yadg-class"><a href="AngouriMath.MathS/Matrices.html">Matrices</a><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>Classes and functions related to matrices are defined here</div></li><li class="yadg-li yadg-class"><a href="AngouriMath.MathS/Multithreading.html">Multithreading</a><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             A few functions convenient to use in industrial projects
             to keep the system more reliable and distribute computations
             to other threads
-            </summary></li><li><a href="AngouriMath.MathS/NewtonSolver.html">NewtonSolver</a></li><li><a href="AngouriMath.MathS/Numbers.html">Numbers</a><summary><para>All operations for <see cref="T:AngouriMath.Entity.Number" /> and its derived classes are available from here.</para>
+            </div></li><li class="yadg-li yadg-class"><a href="AngouriMath.MathS/Numbers.html">Numbers</a><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'><para>All operations for <a href="AngouriMath.Entity/Number.html">Number</a> and its derived classes are available from here.</para>
             
              These methods represent the only possible way to explicitly create numeric instances.
              It will automatically downcast the result for you,
-             so <code>Number.Create(1.0);</code> is an <see cref="T:AngouriMath.Entity.Number.Integer" />.
+             so <code>Number.Create(1.0);</code> is an <a href="AngouriMath.Entity.Number/Integer.html">Integer</a>.
              To avoid it, you may temporarily disable it
              <code>
              using var _ = MathS.Settings.DowncastingEnabled.Set(false);
              var yourNum = Number.Create(1.0);
              </code>
-             and the result will be a <see cref="T:AngouriMath.Entity.Number.Real" />.
-             </summary></li><li><a href="AngouriMath.MathS/NumberTheory.html">NumberTheory</a></li><li><a href="AngouriMath.MathS/OutputExplicit.html">OutputExplicit</a></li><li><a href="AngouriMath.MathS/PrecisionErrorCommon.html">PrecisionErrorCommon</a></li><li><a href="AngouriMath.MathS/R.html">R</a></li><li><a href="AngouriMath.MathS/Series.html">Series</a></li><li><a href="AngouriMath.MathS/Sets.html">Sets</a></li><li><a href="AngouriMath.MathS/UnsafeAndInternal.html">UnsafeAndInternal</a></li><li><a href="AngouriMath.MathS/Utils.html">Utils</a><summary>
+             and the result will be a <a href="AngouriMath.Entity.Number/Real.html">Real</a>.
+             </div></li><li class="yadg-li yadg-class"><a href="AngouriMath.MathS/NumberTheory.html">NumberTheory</a><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>Use it in order to explore further number theory</div></li><li class="yadg-li yadg-class"><a href="AngouriMath.MathS/Series.html">Series</a><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            That is a collection of some series, expressed in a symbolic form
+            </div></li><li class="yadg-li yadg-class"><a href="AngouriMath.MathS/Sets.html">Sets</a><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            Functions and classes related to sets defined here
+            
+            Class <a href="AngouriMath.Entity/Set.html">Set</a> defines true mathematical sets
+            It supports intersection, union, subtraction
+                        
+            <a href="AngouriMath.Entity/Set.html">Set</a></div></li><li class="yadg-li yadg-class"><a href="AngouriMath.MathS/Settings.html">Settings</a><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            A couple of settings allowing you to set some preferences for AM's algorithms
+            To use these settings the syntax is
+            <code>
+            using var _ = MathS.Settings.SomeSetting.Set(5 /* Here you set a value to the setting */);
+            // here you write your code normally
+            </code></div></li><li class="yadg-li yadg-class"><a href="AngouriMath.MathS/UnsafeAndInternal.html">UnsafeAndInternal</a><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
+            You may need it to manually manage some issues.
+            Although those functions might be used inside the library
+            only, the user may want to use them for some reason
+            </div></li><li class="yadg-li yadg-class"><a href="AngouriMath.MathS/Utils.html">Utils</a><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
             Some additional functions that would be barely
             ever used by the user, but kept for "just in case" as public
-            </summary></li><li><a href="AngouriMath.MathS/Z.html">Z</a></li></ul></p>
+            </div></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
