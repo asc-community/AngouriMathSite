@@ -1,0 +1,11 @@
+<h2 class="centered">EquationSolver</h2><hr/><p><a href="../AngouriMath.Functions.Algebra.html"><< Back to list of classes</a></p><p>Let us see all the members of the class or record EquationSolver</p><p><ul><li><p>Method AngouriMath.Functions.Algebra.EquationSolver.SolveSystem(System.Collections.Generic.IEnumerable{AngouriMath.Entity},System.ReadOnlySpan{AngouriMath.Entity.Variable})</p><p><summary>
+            Solves a system of equations by solving one after another with substitution, e.g. <br />
+            let { x - y + a = 0, y + 2a = 0 } be a system of equations for variables { x, y } <br />
+            Then we first find y from the first equation, <br />
+            y = x + a <br />
+            then we substitute it to all others <br />
+            x + a + 2a = 0 <br />
+            then we find x <br />
+            x = -3a <br />
+            Then we substitute back <br />
+            y = -3a + a = -2a <br /></summary></p></li></ul></p>

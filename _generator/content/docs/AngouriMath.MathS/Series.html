@@ -1,0 +1,22 @@
+<h2 class="centered">Series</h2><hr/><p><a href="../AngouriMath.MathS.html"><< Back to list of classes</a></p><p>Let us see all the members of the class or record Series</p><p><ul><li><p>Method AngouriMath.MathS.Series.TaylorExpansionTerms(AngouriMath.Entity,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity)</p><p><summary>
+            Finds the symbolic expression of terms of the Taylor expansion of the given function,
+            https://en.wikipedia.org/wiki/Taylor_series
+            
+            Do NOT call ToArray() or anything like this on the result of this method. It is 
+            infinite iterator. To get a finite result as in a sum of finite number of terms,
+            call TaylorExpansion
+            </summary><param name="expr">
+            The function, to find Taylor expansion of
+            </param><param name="exprVariable">
+            The variable of this function
+            (e. g. if you have expr = Sin("t"), then you may want to use "t" for this argument)
+            </param><param name="polyVariable">
+            The variable over which you want to see the series
+            (e. g. if you want to see the result as f(...) + f(...) * x / ... + f(...) * x^2 / ...,
+            then you may want to use "x" for this argument)
+            </param><param name="point">
+            The point to differentiate the function at. If it equals 0, you will get
+            Maclaurin series.
+            </param><returns>
+            An infinite iterator over the terms of Taylor series of the given expression.
+            </returns></p></li></ul></p>

@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(72666283, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/72666283" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+<img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul>
+    <li><!--active_--><a href="/">Home page</a>                                              </li>
+    <li><!--active_quickstart--><a href="/quickstart">Quick start</a>                                                    </li>
+    <li><!--active_docs--><a href="/docs/namespaces.html">Documentation</a>                                                    </li>
+    <li><!--active_whatsnew--><a href="/whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo--><a href="/demo">Try online</a>                                                               </li>
+    <li><!--active_why--><a href="/why">Where can be used</a>                                                                </li>
+    <li><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub repository</a>     </li>
+    <li><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><a href="https://www.patreon.com/AngouriMath" target="_blank">Donate</a></li>
+    <li><a href="/#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="/">Home</a>
+<a href="/quickstart">Quick start</a>
+<a href="/docs/namespaces.html">Documentation</a>
+<a href="/whatsnew">What's new</a>
+<a href="/demo">Try</a>
+<a href="/why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank">Donate</a>
+<a href="/#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="centered">Entity</h2><hr/><p><a href="../AngouriMath.html"><< Back to list of classes</a></p><p>Let us see all the members of the class or record Entity</p><p><ul><li><p>Method AngouriMath.Entity.Abs</p><p><summary><see cref="M:AngouriMath.MathS.Abs(AngouriMath.Entity)" /></summary></p></li><li><p>Method AngouriMath.Entity.Arcsec</p><p><summary><see cref="M:AngouriMath.MathS.Arcsec(AngouriMath.Entity)" /></summary></p></li><li><p>Method AngouriMath.Entity.Arcsin</p><p><summary><see cref="M:AngouriMath.MathS.Arcsin(AngouriMath.Entity)" /></summary></p></li><li><p>Method AngouriMath.Entity.Arctan</p><p><summary><see cref="M:AngouriMath.MathS.Arctan(AngouriMath.Entity)" /></summary></p></li><li><p>Method AngouriMath.Entity.Choice(AngouriMath.Functions.TreeAnalyzer.SortLevel,System.String,System.String,System.String)</p><p><summary>
+            Returns the correct way for sort string
+            </summary><param name="level">The level at which we are sorting</param><param name="highLevel">The most general way (that is, the least uniqueness of the string)</param><param name="middleLevel">The one in between (for example, for grouping some functions)</param><param name="lowLevel">The most unique string id</param></p></li><li><p>Method AngouriMath.Entity.Compile(AngouriMath.Entity.Variable[])</p><p><summary>
+            Compile function so you can evaluate numerical value 15x faster,
+            than subsitution
+            </summary><param name="variables">
+            List string names of variables in the same order as you will list them when evaluating.
+            Constants, i.e. <see cref="F:AngouriMath.MathS.pi" /> and <see cref="F:AngouriMath.MathS.e" /> will be ignored.
+            </param><returns></returns></p></li><li><p>Method AngouriMath.Entity.Compile``1(AngouriMath.Core.Compilation.IntoLinq.CompilationProtocol,System.Type,System.Collections.Generic.IEnumerable{System.ValueTuple{System.Type,AngouriMath.Entity.Variable}})</p><p><summary>
+            Compiles a given expression into a native lambda
+            </summary><typeparam name="TDelegate">
+            The type of your delegate to convert to
+            </typeparam><param name="protocol">
+            This is a protocol, according to which all nodes get compiled. Use this
+            if you want to use the compilation for types different from those standard
+            </param><param name="returnType">
+            The type to which the resulting type will be casted
+            </param><param name="typesAndNames">
+            An <see cref="T:System.Collections.IEnumerable" /> of pairs, where the first element is the type of your argument,
+            and the second one is the corresponding variable from the expression
+            </param><returns>
+            Returnes a natively compiled expression of type <typeparamref name="TDelegate" /></returns></p></li><li><p>Method AngouriMath.Entity.Compile``3(AngouriMath.Entity.Variable,AngouriMath.Entity.Variable)</p><p><summary>
+            Compiles a given expression into a native lambda. We use the default protocol.
+            If you plan using non-standard types, consider passing a compilation protocol
+            </summary><typeparam name="TIn1">
+            The type of the passed argument number 1
+            </typeparam><typeparam name="TIn2">
+            The type of the passed argument number 2
+            </typeparam><typeparam name="TOut">
+            The return type
+            </typeparam><param name="var1">
+            The variable corresponding to the function's argument number 1
+            </param><param name="var2">
+            The variable corresponding to the function's argument number 2
+            </param><returns>
+            Returns a natively-compiled delegate
+            </returns></p></li><li><p>Method AngouriMath.Entity.Compile``5(AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable)</p><p><summary>
+            Compiles a given expression into a native lambda. We use the default protocol.
+            If you plan using non-standard types, consider passing a compilation protocol
+            </summary><typeparam name="TIn1">
+            The type of the passed argument number 1
+            </typeparam><typeparam name="TIn2">
+            The type of the passed argument number 2
+            </typeparam><typeparam name="TIn3">
+            The type of the passed argument number 3
+            </typeparam><typeparam name="TIn4">
+            The type of the passed argument number 4
+            </typeparam><typeparam name="TOut">
+            The return type
+            </typeparam><param name="var1">
+            The variable corresponding to the function's argument number 1
+            </param><param name="var2">
+            The variable corresponding to the function's argument number 2
+            </param><param name="var3">
+            The variable corresponding to the function's argument number 3
+            </param><param name="var4">
+            The variable corresponding to the function's argument number 4
+            </param><returns>
+            Returns a natively-compiled delegate
+            </returns></p></li><li><p>Method AngouriMath.Entity.Compile``7(AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable)</p><p><summary>
+            Compiles a given expression into a native lambda. We use the default protocol.
+            If you plan using non-standard types, consider passing a compilation protocol
+            </summary><typeparam name="TIn1">
+            The type of the passed argument number 1
+            </typeparam><typeparam name="TIn2">
+            The type of the passed argument number 2
+            </typeparam><typeparam name="TIn3">
+            The type of the passed argument number 3
+            </typeparam><typeparam name="TIn4">
+            The type of the passed argument number 4
+            </typeparam><typeparam name="TIn5">
+            The type of the passed argument number 5
+            </typeparam><typeparam name="TIn6">
+            The type of the passed argument number 6
+            </typeparam><typeparam name="TOut">
+            The return type
+            </typeparam><param name="var1">
+            The variable corresponding to the function's argument number 1
+            </param><param name="var2">
+            The variable corresponding to the function's argument number 2
+            </param><param name="var3">
+            The variable corresponding to the function's argument number 3
+            </param><param name="var4">
+            The variable corresponding to the function's argument number 4
+            </param><param name="var5">
+            The variable corresponding to the function's argument number 5
+            </param><param name="var6">
+            The variable corresponding to the function's argument number 6
+            </param><returns>
+            Returns a natively-compiled delegate
+            </returns></p></li><li><p>Method AngouriMath.Entity.Compile``9(AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable,AngouriMath.Entity.Variable)</p><p><summary>
+            Compiles a given expression into a native lambda. We use the default protocol.
+            If you plan using non-standard types, consider passing a compilation protocol
+            </summary><typeparam name="TIn1">
+            The type of the passed argument number 1
+            </typeparam><typeparam name="TIn2">
+            The type of the passed argument number 2
+            </typeparam><typeparam name="TIn3">
+            The type of the passed argument number 3
+            </typeparam><typeparam name="TIn4">
+            The type of the passed argument number 4
+            </typeparam><typeparam name="TIn5">
+            The type of the passed argument number 5
+            </typeparam><typeparam name="TIn6">
+            The type of the passed argument number 6
+            </typeparam><typeparam name="TIn7">
+            The type of the passed argument number 7
+            </typeparam><typeparam name="TIn8">
+            The type of the passed argument number 8
+            </typeparam><typeparam name="TOut">
+            The return type
+            </typeparam><param name="var1">
+            The variable corresponding to the function's argument number 1
+            </param><param name="var2">
+            The variable corresponding to the function's argument number 2
+            </param><param name="var3">
+            The variable corresponding to the function's argument number 3
+            </param><param name="var4">
+            The variable corresponding to the function's argument number 4
+            </param><param name="var5">
+            The variable corresponding to the function's argument number 5
+            </param><param name="var6">
+            The variable corresponding to the function's argument number 6
+            </param><param name="var7">
+            The variable corresponding to the function's argument number 7
+            </param><param name="var8">
+            The variable corresponding to the function's argument number 8
+            </param><returns>
+            Returns a natively-compiled delegate
+            </returns></p></li><li><p>Method AngouriMath.Entity.Differentiate(AngouriMath.Entity.Variable)</p><p><summary>
+            Finds the symbolical derivative of the given expression
+            </summary><param name="variable">
+            Over which variable to find the derivative
+            </param><returns>
+            The derived expression which might contain <see cref="T:AngouriMath.Entity.Derivativef" /> nodes,
+            or the initial one
+            </returns></p></li><li><p>Method AngouriMath.Entity.EvalNumerical</p><p><summary>
+            Evaluates a given expression to one number or throws exception
+            </summary><returns><see cref="T:AngouriMath.Entity.Number.Complex" /> since new version
+            </returns><exception cref="T:AngouriMath.Core.Exceptions.CannotEvalException">
+            Thrown when this entity cannot be represented as a simple number.
+            <see cref="P:AngouriMath.Entity.EvaluableNumerical" /> should be used to check beforehand.
+            </exception></p></li><li><p>Method AngouriMath.Entity.EvalTensor</p><p><summary>
+            Evaluates the entire expression into a <see cref="T:AngouriMath.Entity.Tensor" /> if possible
+            ( x y ) + 1 =&gt; ( x+1 y+1 )
+            
+            ( 1 2 ) + ( 3 4 ) =&gt; ( 4 6 ) vectors pointwise
+            
+                         (( 3 )
+            (( 1 2 3 )) x ( 4 ) =&gt; (( 26 )) Matrices dot product
+                          ( 5 ))
+                          
+            ( 1 2 ) x ( 1 3 ) =&gt; ( 1 6 ) Vectors pointwise
+            </summary><exception cref="T:AngouriMath.Core.Exceptions.CannotEvalException">
+            Thrown when this entity cannot be represented as a <see cref="T:AngouriMath.Entity.Tensor" />.
+            <see cref="P:AngouriMath.Entity.IsTensoric" /> should be used to check beforehand.
+            </exception></p></li><li><p>Method AngouriMath.Entity.Expand(System.Int32)</p><p><summary>
+            Expands an equation trying to eliminate all the parentheses ( e. g. 2 * (x + 3) = 2 * x + 2 * 3 )
+            </summary><param name="level">
+            The number of iterations (increase this argument in case if some parentheses remain)
+            </param><returns>
+            An expanded Entity if it wasn't too complicated,
+            current entity otherwise
+            To change the limit use <see cref="P:AngouriMath.MathS.Settings.MaxExpansionTermCount" /></returns></p></li><li><p>Method AngouriMath.Entity.ExpandOnTwoArguments(AngouriMath.Entity,AngouriMath.Entity,System.Func{AngouriMath.Entity,AngouriMath.Entity,AngouriMath.Entity},System.Func{AngouriMath.Entity,AngouriMath.Entity,AngouriMath.Entity,AngouriMath.Entity},System.Boolean)</p><p><summary>
+            For two-argument nodes
+            Used in InnerSimplify and InnerEval
+            Allows to avoid looking over all the combinations with piecewise, tensor, finiteset
+            </summary><param name="left">
+            Left argument
+            </param><param name="right">
+            Right argument
+            </param><param name="operation">
+            That is the main switch for the types. It must return null if no suitable couple of types is found,
+            so that the method could move on to the matrix choice
+            </param><param name="defaultCtor">
+            If no suitable case in switch found, it should return the default node, for example, for sum it would be
+            <code>(a, b) =&gt; a + b</code></param><param name="checkIfExactEvaled">
+            Check if the number is exact and, if so, return it.
+            </param></p></li><li><p>Method AngouriMath.Entity.Factorial</p><p><summary><see cref="M:AngouriMath.MathS.Factorial(AngouriMath.Entity)" /></summary></p></li><li><p>Method AngouriMath.Entity.Implies(AngouriMath.Entity)</p><p><returns>A node</returns></p></li><li><p>Method AngouriMath.Entity.In(AngouriMath.Entity)</p><p><summary>
+            Creates a node of whether the given element is an element of the given set
+            </summary><returns>A node</returns></p></li><li><p>Method AngouriMath.Entity.InitDirectChildren</p><p><inheritdoc /></p></li><li><p>Method AngouriMath.Entity.InnerDifferentiate(AngouriMath.Entity.Variable)</p><p><summary>
+            Internal differentiation function
+            </summary><param name="variable">To derive over</param><returns>The differentiated expressoin or the Derivative node</returns></p></li><li><p>Method AngouriMath.Entity.InnerEval</p><p><summary>
+            This should NOT be called inside itself
+            </summary></p></li><li><p>Method AngouriMath.Entity.Integrate(AngouriMath.Entity.Variable)</p><p><summary>
+            Integrates the given expression over the `x` variable, if can.
+            May return an unresolved <see cref="T:AngouriMath.Entity.Integralf" /> node.
+            </summary><param name="x">Over which to integrate</param><returns>
+            An integrated expression. It might remain the same,
+            it might have no integrals, and it might be transformed so that
+            only a few nodes have unresolved integrals.
+            </returns></p></li><li><p>Method AngouriMath.Entity.InvertNode(AngouriMath.Entity,AngouriMath.Entity)</p><p><summary>Use <see cref="M:AngouriMath.Entity.Invert(AngouriMath.Entity,AngouriMath.Entity)" /> instead which auto-simplifies <paramref name="value" /></summary></p></li><li><p>Method AngouriMath.Entity.Latexise</p><p><summary>Returns the expression in LaTeX (for example, a / b -&gt; \frac{a}{b})</summary></p></li><li><p>Method AngouriMath.Entity.Limit(AngouriMath.Entity.Variable,AngouriMath.Entity)</p><p><summary>
+            Finds the limit of the given expression over the given variable
+            </summary><param name="x">
+            The variable to be approaching
+            </param><param name="destination">
+            A value where the variable approaches. It might be a symbolic
+            expression, a finite number, or an infinite number, for example,
+            "sqrt(x2 + x) / (3x + 3)".Limit("x", "+oo")
+            </param><returns>
+            A result or the <see cref="T:AngouriMath.Entity.Limitf" /> node if the limit
+            cannot be determined
+            </returns></p></li><li><p>Method AngouriMath.Entity.op_Addition(AngouriMath.Entity,AngouriMath.Entity)</p><p><summary>
+            Hangs two nodes to a Sum node (i. e. building an expression)
+            </summary><param name="augend">The left node to add</param><param name="addend">The right node to add</param></p></li><li><p>Method AngouriMath.Entity.op_BitwiseAnd(AngouriMath.Entity,AngouriMath.Entity)</p><p><returns>A node</returns></p></li><li><p>Method AngouriMath.Entity.op_ExclusiveOr(AngouriMath.Entity,AngouriMath.Entity)</p><p><summary>
+            This is an exclusive OR operator. Shouldn't be confused with power!
+            </summary><returns>A node</returns></p></li><li><p>Method AngouriMath.Entity.op_GreaterThan(AngouriMath.Entity,AngouriMath.Entity)</p><p><returns>A node</returns></p></li><li><p>Method AngouriMath.Entity.op_GreaterThanOrEqual(AngouriMath.Entity,AngouriMath.Entity)</p><p><returns>A node</returns></p></li><li><p>Method AngouriMath.Entity.op_Implicit(System.Boolean)~AngouriMath.Entity</p><p><returns>A node</returns></p></li><li><p>Method AngouriMath.Entity.op_Implicit(System.String)~AngouriMath.Entity</p><p><summary>
+            Implicit conversation from string to Entity
+            </summary><param name="expr">The source from which to parse</param></p></li><li><p>Method AngouriMath.Entity.op_Multiply(AngouriMath.Entity,AngouriMath.Entity)</p><p><summary>
+            Hangs two nodes to a Mul node (i. e. building an expression)
+            </summary><param name="multiplier">The left node to add</param><param name="multiplicand">The right node to add</param></p></li><li><p>Method AngouriMath.Entity.op_Subtraction(AngouriMath.Entity,AngouriMath.Entity)</p><p><summary>
+            Hangs two nodes to a Minus node (i. e. building an expression)
+            </summary><param name="subtrahend">The left node to add</param><param name="minuend">The right node to add</param></p></li><li><p>Method AngouriMath.Entity.Pow(AngouriMath.Entity)</p><p><summary><see cref="M:AngouriMath.MathS.Pow(AngouriMath.Entity,AngouriMath.Entity)" /></summary><param name="n">Power</param></p></li><li><p>Method AngouriMath.Entity.Sec</p><p><summary><see cref="M:AngouriMath.MathS.Sec(AngouriMath.Entity)" /></summary></p></li><li><p>Method AngouriMath.Entity.SetSubtract(AngouriMath.Entity)</p><p><summary>
+            Creates a new node of set difference of two nodes (sets)
+            </summary><returns>A new node</returns></p></li><li><p>Method AngouriMath.Entity.Simplify(System.Int32)</p><p><summary>
+            Simplifies an equation ( e.g. (x - y) * (x + y) -&gt; x^2 - y^2, but 3 * x + y * x = (3 + y) * x )
+            </summary><param name="level">
+            Increase this argument if you think the equation should be simplified better
+            </param><returns></returns></p></li><li><p>Method AngouriMath.Entity.Sin</p><p><summary><see cref="M:AngouriMath.MathS.Sin(AngouriMath.Entity)" /></summary></p></li><li><p>Method AngouriMath.Entity.SolveEquation(AngouriMath.Entity.Variable)</p><p><summary>
+            Attempt to find analytical roots of a custom equation.
+            It solves the given expression assuming that it is
+            equal to zero. No need to make it equal to 0 yourself;
+            however, if you prefer so, consider using the .Solve()
+            method instead
+            </summary><param name="x">
+            The variable over which to solve the equation
+            </param><example><code>
+            Entity expr = "x + 8 - 4";
+            Console.WriteLine(expr.SolveEquation("x"));
+            </code>
+            Will print "{ -4 }"
+            </example><returns>
+            Returns <see cref="T:AngouriMath.Entity.Set" /></returns></p></li><li><p>Method AngouriMath.Entity.SolveNt(AngouriMath.Entity.Variable)</p><p><summary>
+            Searches for numerical solutions via Newton's method
+            <a href="https://en.wikipedia.org/wiki/Newton%27s_method" />
+            To change parameters see <see cref="P:AngouriMath.MathS.Settings.NewtonSolver" /></summary></p></li><li><p>Method AngouriMath.Entity.SortHash(AngouriMath.Functions.TreeAnalyzer.SortLevel)</p><p><summary>Hash that is convenient to sort with</summary></p></li><li><p>Method AngouriMath.Entity.Stringize</p><p><summary>
+            Converts an expression into a string
+            </summary></p></li><li><p>Method AngouriMath.Entity.Substitute(AngouriMath.Entity,AngouriMath.Entity)</p><p><summary>Replaces all <param name="x" /> with <param name="value" /></summary></p></li><li><p>Method AngouriMath.Entity.Tan</p><p><summary><see cref="M:AngouriMath.MathS.Tan(AngouriMath.Entity)" /></summary></p></li><li><p>Method AngouriMath.Entity.ToSymPy</p><p><summary>Generates Python code that you can use with sympy</summary></p></li><li><p>Method AngouriMath.Entity.Unite(AngouriMath.Entity)</p><p><summary>
+            Creates a node of union of two nodes (sets)
+            </summary><returns>A new node</returns></p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+Angouri 2019-2021
+</div>
+</body>
+
+
+
+
+</html>

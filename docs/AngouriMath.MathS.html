@@ -92,7 +92,29 @@
 
 <!--Top end-->
 
-<h2 class="centered">AngouriMath Almanac</h2><hr/><p>Here we describe all the namespaces and outer classes within the assembly</p><p><ul><li><a href="AngouriMath.html">AngouriMath</a></li><li><a href="AngouriMath.Convenience.html">AngouriMath.Convenience</a></li><li><a href="AngouriMath.Convenience.Setting`1.html">AngouriMath.Convenience.Setting`1</a></li><li><a href="AngouriMath.Core.html">AngouriMath.Core</a></li><li><a href="AngouriMath.Core.Antlr.html">AngouriMath.Core.Antlr</a></li><li><a href="AngouriMath.Core.Compilation.IntoLinq.html">AngouriMath.Core.Compilation.IntoLinq</a></li><li><a href="AngouriMath.Core.Exceptions.html">AngouriMath.Core.Exceptions</a></li><li><a href="AngouriMath.Core.FastExpression.html">AngouriMath.Core.FastExpression</a></li><li><a href="AngouriMath.Entity.html">AngouriMath.Entity</a></li><li><a href="AngouriMath.Entity.Number.html">AngouriMath.Entity.Number</a></li><li><a href="AngouriMath.Entity.Set.html">AngouriMath.Entity.Set</a></li><li><a href="AngouriMath.Entity.Set.SpecialSet.html">AngouriMath.Entity.Set.SpecialSet</a></li><li><a href="AngouriMath.Extensions.html">AngouriMath.Extensions</a></li><li><a href="AngouriMath.Functions.html">AngouriMath.Functions</a></li><li><a href="AngouriMath.Functions.Algebra.html">AngouriMath.Functions.Algebra</a></li><li><a href="AngouriMath.Functions.Algebra.AnalyticalSolving.html">AngouriMath.Functions.Algebra.AnalyticalSolving</a></li><li><a href="AngouriMath.Functions.Boolean.html">AngouriMath.Functions.Boolean</a></li><li><a href="AngouriMath.MathS.html">AngouriMath.MathS</a></li><li><a href="AngouriMath.MathS.Diagnostic.html">AngouriMath.MathS.Diagnostic</a></li><li><a href="AngouriMath.MathS.Settings.html">AngouriMath.MathS.Settings</a></li><li><a href="System.Runtime.CompilerServices.html">System.Runtime.CompilerServices</a></li></ul></p>
+<h2 class="centered">AngouriMath.MathS</h2><hr/><p><a href="namespaces.html"><< Back to list of namespaces</a></p><p>Classes within the AngouriMath.MathS namespace</p><p><ul><li><a href="AngouriMath.MathS/Boolean.html">Boolean</a></li><li><summary>
+            Implements necessary functions for symbolic computation of limits, derivatives and integrals
+            </summary><a href="AngouriMath.MathS/Compute.html">Compute</a></li><li><summary>Some non-symbolic constants</summary><a href="AngouriMath.MathS/DecimalConst.html">DecimalConst</a></li><li><summary>
+            Represents a few hyperbolic functions
+            </summary><a href="AngouriMath.MathS/Hyperbolic.html">Hyperbolic</a></li><li><summary>Classes and functions related to matrices are defined here</summary><a href="AngouriMath.MathS/Matrices.html">Matrices</a></li><li><summary>
+            A few functions convenient to use in industrial projects
+            to keep the system more reliable and distribute computations
+            to other threads
+            </summary><a href="AngouriMath.MathS/Multithreading.html">Multithreading</a></li><li><summary><para>All operations for <see cref="T:AngouriMath.Entity.Number" /> and its derived classes are available from here.</para>
+            
+             These methods represent the only possible way to explicitly create numeric instances.
+             It will automatically downcast the result for you,
+             so <code>Number.Create(1.0);</code> is an <see cref="T:AngouriMath.Entity.Number.Integer" />.
+             To avoid it, you may temporarily disable it
+             <code>
+             using var _ = MathS.Settings.DowncastingEnabled.Set(false);
+             var yourNum = Number.Create(1.0);
+             </code>
+             and the result will be a <see cref="T:AngouriMath.Entity.Number.Real" />.
+             </summary><a href="AngouriMath.MathS/Numbers.html">Numbers</a></li><li><a href="AngouriMath.MathS/NumberTheory.html">NumberTheory</a></li><li><a href="AngouriMath.MathS/Series.html">Series</a></li><li><a href="AngouriMath.MathS/Sets.html">Sets</a></li><li><a href="AngouriMath.MathS/UnsafeAndInternal.html">UnsafeAndInternal</a></li><li><summary>
+            Some additional functions that would be barely
+            ever used by the user, but kept for "just in case" as public
+            </summary><a href="AngouriMath.MathS/Utils.html">Utils</a></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

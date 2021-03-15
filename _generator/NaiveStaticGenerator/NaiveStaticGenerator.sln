@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NaiveStaticGenerator", "NaiveStaticGenerator.csproj", "{7C61D144-8DBE-483D-8601-3C5FE0737849}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NaiveStaticGenerator", "NaiveStaticGenerator.csproj", "{7C61D144-8DBE-483D-8601-3C5FE0737849}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OutputDocsParser", "..\OutputDocsParser\OutputDocsParser.csproj", "{8E7BB452-BB8E-4451-86CE-6A7FE965526A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{7C61D144-8DBE-483D-8601-3C5FE0737849}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C61D144-8DBE-483D-8601-3C5FE0737849}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C61D144-8DBE-483D-8601-3C5FE0737849}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E7BB452-BB8E-4451-86CE-6A7FE965526A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E7BB452-BB8E-4451-86CE-6A7FE965526A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E7BB452-BB8E-4451-86CE-6A7FE965526A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E7BB452-BB8E-4451-86CE-6A7FE965526A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
