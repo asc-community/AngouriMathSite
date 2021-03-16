@@ -44,6 +44,14 @@
     .importance {
         background-color: #BAFFBA;
     }
+
+    .yadg-list {
+        border-top-color: #A7A7A7;
+    }
+
+    .yadg-list-2 {
+        border-top-color: #A7A7A7;
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -96,5 +104,13 @@
 
     hr {
         border-color: #5D6167;
+    }
+
+    .yadg-list {
+        border-top-color: #5D6167;
+    }
+
+    .yadg-list-2 {
+        border-top-color: #5D6167;
     }
 }
