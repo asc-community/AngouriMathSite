@@ -48,7 +48,7 @@
 <ul>
     <li><!--active_--><a href="/">Home page</a>                                              </li>
     <li><!--active_quickstart--><a href="/quickstart">Quick start</a>                                                    </li>
-    <li><!--active_docs--><a href="/docs/namespaces.html">Almanac</a>                                                    </li>
+    <li class="active-link"><a href="/docs/namespaces.html">Almanac</a>                                                    </li>
     <li><!--active_whatsnew--><a href="/whatsnew">What's new</a>                                                    </li>
     <li><!--active_demo--><a href="/demo">Try online</a>                                                               </li>
     <li><!--active_why--><a href="/why">Where can be used</a>                                                                </li>
@@ -92,22 +92,7 @@
 
 <!--Top end-->
 
-<h2 class="yadg-h2 centered">CommonDenominatorSolver</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Functions.Algebra.AnalyticalSolving.html">&#8592; Back to list of classes</a></p><h3 class="yadg-h3 ">Description</h3><h3 class="yadg-h3 ">Members</h3><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member"><a name='FindFractions'></a><p class="yadg-p ">Method FindFractions(AngouriMath.Entity,AngouriMath.Entity.Variable)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
-            All constants, no matter multiplied or divided, are numerator's coefficients:
-            2 * x / 3 =&gt; num: 2 / 3
-            
-            All entities that contain x and have a real negative power are denominator's multipliers
-            2 / (x + 3) =&gt; den: [x + 3]
-            2 / ((x^(-1) + 3) * (x2 + 1)) =&gt; den: [x^(-1) + 3, x2 + 1]
-            
-            All entities that have complex power are considered as product of an entity with a real power
-            and an entity whole power's real part is 0
-            x ^ (-1 + 2i) =&gt; num: x ^ (2i), den: [x]
-            x ^ (3 - 2i) =&gt; num: x ^ (3 - 2i), den: []
-            </div></p></li><li class="yadg-li yadg-member"><a name='TrySolveGCD'></a><p class="yadg-p ">Method TrySolveGCD(AngouriMath.Entity,AngouriMath.Entity.Variable,AngouriMath.Entity.Set@)</p><p class="yadg-p "><h4 class="yadg-h4 ">Summary</h4><div class='yadg-summary'>
-            Finds the best common denominator, multiplies the whole expression by that, and
-            tries solving if the found denominator is not 1
-            </div></p></li></ul></p>
+<h2 class="yadg-h2 centered">CommonDenominatorSolver</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Functions.Algebra.AnalyticalSolving.html">&#8592; Back to list of classes</a></p><h3 class="yadg-h3 ">Description</h3><h3 class="yadg-h3 ">Members</h3><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><a name='FindFractions'></a><p class="yadg-p "><h3 class="yadg-h3 ">FindFractions(AngouriMath.Entity, AngouriMath.Entity.Variable)</h3> Method</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'            All constants, no matter multiplied or divided, are numerator's coefficients:<br>            2 * x / 3 =&gt; num: 2 / 3<br>            <br>            All entities that contain x and have a real negative power are denominator's multipliers<br>            2 / (x + 3) =&gt; den: [x + 3]<br>            2 / ((x^(-1) + 3) * (x2 + 1)) =&gt; den: [x^(-1) + 3, x2 + 1]<br>            <br>            All entities that have complex power are considered as product of an entity with a real power<br>            and an entity whole power's real part is 0<br>            x ^ (-1 + 2i) =&gt; num: x ^ (2i), den: [x]<br>            x ^ (3 - 2i) =&gt; num: x ^ (3 - 2i), den: []<br>            </div></p></li><li class="yadg-li yadg-member yadg-list"><a name='TrySolveGCD'></a><p class="yadg-p "><h3 class="yadg-h3 ">TrySolveGCD(AngouriMath.Entity, AngouriMath.Entity.Variable, AngouriMath.Entity.Set@)</h3> Method</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'            Finds the best common denominator, multiplies the whole expression by that, and<br>            tries solving if the found denominator is not 1<br>            </div></p></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

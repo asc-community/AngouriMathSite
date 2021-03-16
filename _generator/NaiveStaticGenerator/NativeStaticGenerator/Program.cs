@@ -7,17 +7,29 @@ using YadgNet;
 /*
 Console.WriteLine(
     new DescriptionFromXmlBuilder(@"
-<summary>
-Is a special case of logarithm where the base equals
-<a href=""https://en.wikipedia.org/wiki/E_(mathematical_constant)"">e</a>:
-<a href=""https://en.wikipedia.org/wiki/Natural_logarithm""/>
-</summary>
-<param name=""a"">Argument node of which natural logarithm will be taken</param>
-<returns>Logarithm node with base equal to e</returns>
-").Build());
+            <summary>
+            Attempt to find analytical roots of a custom equation.
+            It solves the given expression assuming that it is
+            equal to zero. No need to make it equal to 0 yourself;
+            however, if you prefer so, consider using the .Solve()
+            method instead
+            </summary>
+            <param name=""x"">
+            The variable over which to solve the equation
+            </param>
+            <example><code>
+            Entity expr = ""x + 8 - 4"";
+            Console.WriteLine(expr.SolveEquation(""x""));
+            </code>
+            Will print ""{ -4 }""
+            </example>
+            <returns>
+            Returns <see cref=""T:AngouriMath.Entity.Set""/>
+            </returns>
+", "").Build());
 
-return;
-*/
+return;*/
+
 GeneratePagesFromDocs();
 GenerateFinalWebsite();
 
@@ -30,11 +42,11 @@ static void GeneratePagesFromDocs()
     )
     {
         MainPageName = "AngouriMath Almanac",
-        MainPageDescription = @"
+        MainPageDescription = @"<p>
 Welcome to the storage of documentation for 
-all public methods, properties and fields for AngouriMath!
+all public methods, properties and fields for AngouriMath!</p><p>
 Please, consider these pages as those made for reference for particular members,
- it is not a guideline, manual, or tutorial.
+ it is not a guideline, manual, or tutorial.</p>
 "
     }
     .Build(
@@ -80,6 +92,8 @@ static void GenerateFinalWebsite()
         newContent = PathUp(newContent, relativeName, "styles.css");
         newContent = PathUp(newContent, relativeName, "img/icon_cropped.png");
         newContent = newContent.Replace($"li><!--active_{relativePathName}-->", "li class=\"active-link\">");
+        if (relativeName.Contains("docs"))
+            newContent = newContent.Replace($"li><!--active_docs-->", "li class=\"active-link\">");
         newContent = newContent.Replace("<tbody>", "<pre>");
 
         var newFilePath = Path.Combine(rootName, relativeName);

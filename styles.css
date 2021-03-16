@@ -165,8 +165,14 @@ a {
 
 /* Yadg docs style*/
 
-.yadg-class {
-    margin: 3vh;
+.yadg-list {
+    margin-top: 3vh;
+    border-top: 1px solid black;
+    padding: 1.2vh;
+}
+
+.yadg-list-2 {
+    margin-top: 3vh;
     border-top: 1px solid black;
     padding: 1.2vh;
 }
