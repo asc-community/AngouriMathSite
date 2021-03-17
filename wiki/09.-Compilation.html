@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(72666283, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/72666283" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+<img class="logo pc" src="../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul>
+    <li><!--active_--><a href="/">Home page</a>                                              </li>
+    <li><!--active_quickstart--><a href="/quickstart">Quick start</a>                                                    </li>
+    <li class="active-link"><a href="/wiki">Wiki</a>                                                               </li>
+    <li><!--active_docs--><a href="/docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_whatsnew--><a href="/whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo--><a href="/demo">Try online</a>                                                               </li>
+    <li><!--active_why--><a href="/why">Where can be used</a>                                                                </li>
+    <li><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub repository</a>     </li>
+    <li><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><a href="https://www.patreon.com/AngouriMath" target="_blank">Donate</a></li>
+    <li><a href="/#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="/">Home</a>
+<a href="/quickstart">Quick start</a>
+<a href="/wiki">Wiki</a>
+<a href="/docs/namespaces.html">Almanac</a>
+<a href="/whatsnew">What's new</a>
+<a href="/demo">Try</a>
+<a href="/why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank">Donate</a>
+<a href="/#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class='centered'>Compilation</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>We will consider ways to improve the performance of computations via compiling functions.<br><br><h2>Compilation into a native delegate</h2><br><br>Here we will consider a bunch of methods, which all are overloads of one: <text class='cw'>Compile</text>.
+This method compiles a given symbolic expression into a native delegate, which then
+can be executed with a very high speed. This time, we first consider the way
+you highly likely need it to be compiled.
+Let us start with a simple example:
+<pre><code>Entity expr = "sin(x)";
+Func<float, float> mySin = expr.Compile<float, float>("x");
+Console.WriteLine(mySin(4.2f));</code></pre>
+Output:
+<pre><code>-0.87157565</code></pre>
+The variable <text class='cw'>mySin</text> has type <text class='cw'>Func<float, float></text>. Its type parameters accurately correspond
+to the type parameters of method <text class='cw'>Compile</text>. Let us consider a more complicated example:
+<pre><code>Entity expr = "sqrt(sin(x) + 3)";
+var f = expr.Compile<float, float>("x");
+Console.WriteLine(f(4.2f));</code></pre>
+Output:
+<pre><code>1.458912</code></pre>
+The number <text class='cw'>3</text>, although integer, is upcasted to <text class='cw'>float</text> automatically. But if only you passed
+an integer as type params, <text class='cw'>sin</text> will return an <text class='cw'>int</text> as well. Example:
+<pre><code>Entity expr = "sqrt(sin(x) + 3)";
+var f = expr.Compile<int, int>("x");
+Console.WriteLine(f(4));</code></pre>
+Output:
+<pre><code>1</code></pre><br><br>You can also pass multiple parameters, as well as multiple parameters of different types. Example:
+<pre><code>Entity expr = "sin(x) + y";
+var f = expr.Compile<float, double, float>("x", "y");
+Console.WriteLine(f(4.3f, 7.8d));</code></pre>
+Output:
+<pre><code>6.883834</code></pre><br><br>The supported types are: <text class='cw'>int</text>, <text class='cw'>long</text>, <text class='cw'>float</text>, <text class='cw'>double</text>, <text class='cw'>Complex</text>, <text class='cw'>BigInteger</text>. Let us consider
+an example, where <text class='cw'>int</text> is upcasted to a <text class='cw'>Complex</text>:
+<pre><code>Entity expr = "x + y";
+var f = expr.Compile<Complex, int, Complex>("x", "y");
+Console.WriteLine(f(new(4, 5), 5));</code></pre>
+Output:
+<pre><code>(9, 5)</code></pre><br><br>You can pass up to 8 type parameters excluding the one for output.<br><br>Extensions include the same set of methods, but for string.<br><br>If needed to pass more than 8 parameters, or other types than the ones listed, or 
+custom rules for types, consider declaring your own <text class='cw'>CompilationProtocol</text>.<br><br><h2>CompilationProtocol</h2><br><br>Since <a href="https://habr.com/en/post/546926/">the way</a> AM compiles an expression is through
+Linq.Expression, it requires provided rules for constants to be converted into a constant, 
+unary/binary/n-ary nodes to be converted into calls or operators.<br><br>That is why AM has class <text class='cw'>CompilationProtocol</text> which defines a number of rules for every such
+operation.<br><br>Its property <text class='cw'>ConstantConverter</text> is responsible for converting a given constant
+expression of type <text class='cw'>Entity</text> into a Linq.Expression.<br><br><text class='cw'>BinaryNodeConverter</text> takes two arguments of type <text class='cw'>Linq.Expression</text> and one argument of type
+<text class='cw'>Entity</text>. Although allowed, it is not recommended to rely on the third argument's value. Instead,
+we encourage to use it as a type holder and switch over it when looking for a good node. For example,
+that is a fragment of code for this ruleset:
+<pre><code>...
+return typeHolder switch
+{
+	Sumf => Expression.Add(left, right),
+	Minusf => Expression.Subtract(left, right),
+	Mulf => Expression.Multiply(left, right),
+	Divf => Expression.Divide(left, right),
+...</code></pre><br><br>Same way it is recommended to define <text class='cw'>UnaryNodeConverter</text> and <text class='cw'>AnyArgumentConverter</text> (the latter
+for n-ary nodes).<br><br>Now, after you defined your own compilation protocol, you need to pass your delegate and parameters
+of the final function:
+<pre><code>Entity expr = "x + y";
+var f = expr.Compile<Func<float, float, float>>(
+        new(), typeof(float), 
+        new[] { (typeof(float), Var("x")), (typeof(float), Var("y")) }
+        );
+Console.WriteLine(f(4, 5));</code></pre>
+Here we use <text class='cw'>new()</text> instead of an instance of <text class='cw'>CompilationProtocol</text>, but instead of it a custom
+protocol can be passed.<br><br>
+<h2>Compilation into FastExpression</h2><br><br>It is highly recommend to compile a given expression the way it is described above.<br><br><text class='cw'>FastExpression</text> is a special type. It contains instructions for every node and works as a stack
+machine. When compiled into it, it translates a given expression into a number of instructions, 
+which are then sequentially executed.<br><br>It does not accept any arguments, as it unconditionally work with <text class='cw'>Complex</text>. Example:
+<pre><code>Entity expr = "x + y";
+var f = expr.Compile("x", "y");
+Console.WriteLine(f.Call(4, 5));</code></pre>
+Output:
+<pre><code>(9, 0)</code></pre><br><br>It is not as fast and flexible as <text class='cw'>Compile<></text>.
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+2019-2021 <a href="https://angouri.org">Angouri</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMath">GitHub of the project</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">GitHub of the site</a>
+</div>
+</body>
+
+
+
+
+</html>

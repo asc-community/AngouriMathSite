@@ -1,8 +1,12 @@
 ﻿using NaiveStaticGenerator;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using YadgNet;
+
+const string GENERATOR_PATH = @"D:\main\vs_prj\AngouriMath\AngouriMathSite\_generator";
 
 /*
 Console.WriteLine(
@@ -30,8 +34,94 @@ Console.WriteLine(
 
 return;*/
 
+GenerateWikiToPages();
 GeneratePagesFromDocs();
 GenerateFinalWebsite();
+
+
+static void GenerateWikiToPages()
+{
+    var contentFolder = Path.Combine(GENERATOR_PATH, "content");
+    var allFiles = Directory.GetFiles(Path.Combine(contentFolder, "_wiki"));
+    var destFolder = Path.Combine(contentFolder, "wiki");
+    Directory.CreateDirectory(destFolder);
+    var links = new List<(string url, string name)>();
+
+    foreach (var file in allFiles)
+    {
+        var fileName = Path.GetFileName(file);
+        var destPath = Path.Combine(destFolder, fileName);
+        if (file.ToLower().EndsWith(".png"))
+        {
+            Console.WriteLine($"W: Image {file} copied");
+            var newDest = Path.Combine(Path.GetDirectoryName(GENERATOR_PATH), "wiki", Path.GetFileName(file));
+            if (File.Exists(newDest))
+                File.Delete(newDest);
+            File.Copy(file, newDest);
+        }
+        else if (file.EndsWith(".md"))
+        {
+            var nameOnly = fileName[..(fileName.Length - 3)];
+            if (nameOnly.StartsWith("_"))
+                continue;
+
+            var rawTitle = nameOnly[(nameOnly.IndexOf('-') + 1)..];
+            var title = rawTitle.Replace('-', ' ');
+
+            var altName = destPath[..(destPath.Length - 2)] + "html";
+            links.Add((url: nameOnly + ".html", name: title));
+            Console.WriteLine($"W: {file} processing");
+            File.WriteAllText(
+                altName,
+                MdToHtml(File.ReadAllText(file), title)
+            );
+            Console.WriteLine($"W: Written to {altName}");
+        }
+    }
+
+
+
+    var sb = new StringBuilder(File.ReadAllText(Path.Combine(contentFolder, "_templates", "wiki.html")));
+    sb.Append("<ul>");
+    foreach (var (url, name) in links)
+        sb.Append($"<li><a href='{url}'>{name}</a></li>");
+    sb.Append("</ul>");
+    sb.Append("<hr>");
+    sb.Append($"Last update: [{DateTime.Now.ToUniversalTime()} UTC]");
+    File.WriteAllText(Path.Combine(contentFolder, "wiki", "index.html"), sb.ToString());
+
+
+    static string MdToHtml(string md, string title)
+    {
+        // 
+        var sb = new StringBuilder();
+        sb.Append($"<h2 class='centered'>{title}</h2><hr>");
+        sb.Append("<p><a href='index.html'>&#8592; Back to the main page</a></p>");
+        sb.Append($"{md}");
+        sb.Replace("\r", "");
+        sb.Replace("\n\n", "<br><br>");
+        sb.Replace("<img ", "<img style='width: 100%'");
+        return 
+            Wrap("`", "`", "<text class='cw'>", "</text>",
+                Wrap("```", "```", "<pre><code>", "</code></pre>",
+                    Wrap("```cs", "```", "<pre><code>", "</code></pre>",
+                        Wrap("```fs", "```", "<pre><code>", "</code></pre>",
+                            sb.ToString()
+                        )
+                    )
+                )
+            );
+
+        static string Wrap(string before, string after, string newBefore, string newAfter, string src)
+        {
+            var unjailed = DescriptionFromXmlBuilder.Unjail(before, after, src);
+            if (unjailed is not { } notNull)
+                return src;
+            var (inside, first, last) = notNull;
+            return src[..first] + newBefore + inside.Trim() + newAfter + Wrap(before, after, newBefore, newAfter, src[last..]);
+        }
+    }
+}
 
 
 static void GeneratePagesFromDocs()
@@ -60,8 +150,7 @@ Please, consider these pages as those made for reference for particular members,
 
 static void GenerateFinalWebsite()
 {
-    var contentName =
-        @"D:\main\vs_prj\AngouriMath\AngouriMathSite\_generator";
+    var contentName = GENERATOR_PATH;
 
     var rootName = Path.GetDirectoryName(contentName);
 
@@ -78,7 +167,7 @@ static void GenerateFinalWebsite()
     foreach (var file in allFiles)
     {
         id++;
-        if (file.Contains("_templates"))
+        if (file.StartsWith("_"))
             continue;
         if (!file.EndsWith(".html"))
             continue;

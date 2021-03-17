@@ -1,0 +1,39 @@
+<h2 class='centered'>Simplification</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Here we alternate the given expression into different possible forms.<br><br><h2>Alternate</h2><br><br>The main method for Simplification is method <text class='cw'>Alternate</text>. It finds alternative
+forms of the given expression and returns a sorted IEnumerable, from the simplest
+to the most complicated. Example:
+<pre><code>Entity expr = "sin(x / a) + cos(3) + sqrt(e - x)";
+foreach (var alt in expr.Alternate(5))
+    Console.WriteLine(alt);</code></pre>
+Output:
+<pre><code>sin(x / a) + cos(3) + sqrt(e - x)
+cos(3) + sin(x / a) + sqrt(e - x)
+sin(x / a) + cos(3) + sqrt(e - x)
+cos(3) + sin(1 / a * x) + sqrt(e + -x)</code></pre>	
+The only argument of this method is responsible for the number of iterations
+the simplification will go through.<br><br>The measure of the complexity of an expression is <text class='cw'>Entity</text>'s property <text class='cw'>SimplifiedRate</text>.
+It has a type of <text class='cw'>double</text>. The higher its value is, the more complicated the expression
+is. That is the number by which method <text class='cw'>Alternate</text> sorts expressions. Example:
+<pre><code>Entity expr = "sin(x / a) + cos(3) + sqrt(e - x)";
+foreach (var alt in expr.Alternate(5))
+    Console.WriteLine(alt.SimplifiedRate);</code></pre>
+Output:
+<pre><code>37
+37
+37
+49</code></pre>
+The user's algorithms should not rely on the number, produced by <text class='cw'>SimplifiedRate</text>, as
+it might vary from version to version.<br><br>Method <text class='cw'>Simplify</text> simply returns the first expression of all those returned
+by <text class='cw'>Alternate</text>, that is, the one with the lowest <text class='cw'>SimplifiedRate</text>.<br><br><h2>Critera of complexity and other methods</h2><br><br>To change the critera by which an expression's complexity is computed, you may want
+to change setting <text class='cw'>MathS.Settings.ComplexityCriteria</text> (dicussed in further chapters).
+The higher value for the given expression you return - the worse it appears for the AM's
+simplification algorithm.<br><br><text class='cw'>Simplify</text> is an active and expensive operation. <text class='cw'>Entity</text> has also property <text class='cw'>InnerSimplified</text>,
+which is usually called as "automatic simplification". Since there exists no automatic
+simplification in AM, you can address this property to get a naively simplified result.
+For example, it will cancel out zeros in sums, ones in products, and other basic operations.
+Example:
+<pre><code>Entity expr1 = "a + 0";
+Console.WriteLine(expr1.InnerSimplified); // a
+Entity expr2 = "sin(x)2 + cos(x)2";
+Console.WriteLine(expr2.InnerSimplified); // sin(x) ^ 2 + cos(x) ^ 2</code></pre>
+As it could be seen, it will not simplify cases which require applying patterns.
+To simplify the latter case, call <text class='cw'>Simplify</text>.<br><br>Same way as with <text class='cw'>Evaled</text>, consider <text class='cw'>InnerSimplified</text> as a free-to-call property.<br><br>Extension: <text class='cw'>string.Simplify()</text>.
