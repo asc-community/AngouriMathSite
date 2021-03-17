@@ -1,3 +1,6 @@
 [submodule "_generator/NaiveStaticGenerator/Yadg.NET"]
 	path = _generator/NaiveStaticGenerator/Yadg.NET
 	url = https://github.com/WhiteBlackGoose/Yadg.NET
+[submodule "_generator/content/_wiki"]
+	path = _generator/content/_wiki
+	url = https://github.com/asc-community/AngouriMath.wiki.git
