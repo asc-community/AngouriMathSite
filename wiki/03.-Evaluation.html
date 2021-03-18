@@ -113,7 +113,7 @@ Console.WriteLine(expr2.EvalNumerical()); // throws, as the result is not a numb
 Entity expr3 = "true implies b";
 Console.WriteLine(expr3.EvalBoolean()); // throws, as "b" is unknown</code></pre><br><br>Properties <text class='cw'>EvaluableBoolean</text> and <text class='cw'>EvaluableNumerical</text> show whether the expression
 can be expressed as a single boolean or a single numerical value. For example,
-do not call <text class='cw'>EvalNumerical()</text> if <text class='cw'>EvaluableNumerical</text> is false.<br><br>Once evaluated, the result might be converted to a privitive via explicit cast.
+do not call <text class='cw'>EvalNumerical()</text> if <text class='cw'>EvaluableNumerical</text> is false.<br><br>Once evaluated, the result might be converted into a primitive via explicit cast.
 Example:
 <pre><code>Entity expr = "3 / 5";
 double evalDouble = (double)expr.EvalNumerical();
@@ -130,7 +130,7 @@ If a number cannot be converted into the given primitive, a <text class='cw'>Num
 will be thrown. Example:
 <pre><code>Entity expr = "3 / 5 + i";
 double evalDouble = (double)expr.EvalNumerical(); // throws NumberCastException</code></pre><br><br>However, if you do not need the final number, but instead, the "most" evaluated
-expresion, you may address property <text class='cw'>Evaled</text>. Example:
+expression, you may address property <text class='cw'>Evaled</text>. Example:
 <pre><code>Entity expr = "2 + 3";
 Console.WriteLine(expr.Evaled);
 Entity expr2 = "2 + 3 + a";
