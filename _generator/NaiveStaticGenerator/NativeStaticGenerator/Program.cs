@@ -69,7 +69,7 @@ static void GenerateWikiToPages()
             var title = rawTitle.Replace('-', ' ');
 
             var altName = destPath[..(destPath.Length - 2)] + "html";
-            links.Add((url: nameOnly + ".html", name: title));
+            links.Add((url: nameOnly.Replace("#", "%23") + ".html", name: title));
             Console.WriteLine($"W: {file} processing");
             File.WriteAllText(
                 altName,
@@ -82,7 +82,7 @@ static void GenerateWikiToPages()
 
 
     var sb = new StringBuilder(File.ReadAllText(Path.Combine(contentFolder, "_templates", "wiki.html")));
-    sb.Append("<ul>");
+    sb.Append("<ul class='wiki-ul-main'>");
     foreach (var (url, name) in links)
         sb.Append($"<li><a href='{url}'>{name}</a></li>");
     sb.Append("</ul>");

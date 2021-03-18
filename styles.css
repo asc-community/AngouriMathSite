@@ -180,3 +180,13 @@ a {
     padding: 0;
     list-style: none;
 }
+
+
+.wiki-ul-main {
+    list-style-type: upper-roman;
+    margin-left: 10vh;
+}
+
+.wiki-ul-main li {
+    margin-top: 1vh;
+}
