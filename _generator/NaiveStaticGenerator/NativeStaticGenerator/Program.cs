@@ -167,7 +167,7 @@ static void GenerateFinalWebsite()
     foreach (var file in allFiles)
     {
         id++;
-        if (file.StartsWith("_"))
+        if (file.Contains("_templates") || file.Contains("_wiki"))
             continue;
         if (!file.EndsWith(".html"))
             continue;
