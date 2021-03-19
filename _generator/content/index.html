@@ -2,10 +2,12 @@
 <h2 class="centered"><a name="about" href="#about" class="anchor">What is AngouriMath?</a></h2>
 <hr/>
 <p>
-    AngouriMath is an open source symbolic algebra library. That is, via AngouriMath, you can
-    automatically <a href="/wiki/07.-Solvers.html">solve</a> equations, 
-    systems of equations, work with sets, <a href="/wiki/05.-Differentiation.html">differentiate</a>,
-    <a href="/wiki/01.-Expressions.html">parse</a> from string, <a href="/wiki/09.-Compilation.html">compile expressions</a>.
+    AngouriMath is an <a href="https://github.com/asc-community/AngouriMath">open-source</a>
+    symbolic algebra library. That is, via AngouriMath, you can automatically 
+    <a href="wiki/07.-Solvers.html">solve</a> equations, systems of equations, work with sets, 
+    <a href="wiki/05.-Differentiation.html">differentiate</a>, <a href="wiki/01.-Expressions.html#parse">parse</a> from string, 
+    <a href="wiki/01.-Expressions.html#latex">print</a> latex from an expression, <a href="wiki/09.-Compilation.html">compile expressions</a>,
+    <a href="wiki/08.-Limits.html">find</a> limits, work in <a href="wiki/14.-Jupyter.html">Jupyter</a>, and many more!
 </p>
 <p>
     It is not a CAS, so you can use it in any your project by installing it from <a
@@ -19,6 +21,11 @@
     considered within a few hours. The project is developed by <a href="https://angouri.org">Angouri</a> and outside contributors.
 </p>
 
+<div class="centered">
+    <a href="quickstart/index.html"><b>[ Get started ]</b></a>
+</div>
+<br>
+<hr class="pc">
 <div class="badges">
 <div class="centered pc">
 <a class="github-button" href="https://github.com/asc-community/AngouriMath" data-color-scheme="no-preference: dark; light: light; dark: dark;" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star asc-community/AngouriMath on GitHub">Star</a>
@@ -34,252 +41,7 @@
 </div>
 </div>
 
-<!--For mobiles-->
-<div class="centered phone link-block-mob">
-<a href="#parse">Parsing from string</a>
-<a href="#eval">Evaluation</a>
-<a href="#solver">Solving</a>
-<a href="#calc">Calculus</a>
-<a href="#bool">Boolean algebra</a>
-<a href="#latex">LaTeX</a>
-<a href="#compilation">Compilation</a> 
-<a href="#inter">F# &amp; Jupyter</a>
-<a href="#multi">Multithreading</a>
-</div>
-<!--End-->
-
-<br>
 <hr class="pc">
-<div class="pc centered">
-  <a href="#parse">Parsing from string</a>
-∙ <a href="#eval">Evaluation</a>          
-∙ <a href="#solver">Solving</a>           
-∙ <a href="#calc">Calculus</a>            
-∙ <a href="#latex">LaTeX</a>
-<br><a href="#bool">Boolean algebra</a>     
-∙ <a href="#compilation">Compilation</a>              
-∙ <a href="#inter">F# &amp; Jupyter</a>   
-∙ <a href="#multi">Multithreading</a>    
-</div>
-<hr class="pc">
-
-<!--Parsing from string-->
-<div class="block">
-
-<h3 class="centered"><a name="parse" href="#parse" class="anchor">Parsing from string</a></h3>
-<hr>
-<p>
-    AngouriMath allows to parse an expression from a string in runtime.
-    Not only that, it allows to use some pretty syntax, for example,
-    you may omit the multiplication operator or powers.
-</p>
-<p>
-    Many
-    mathematical objects may be parsed from a syntax which you normally
-    write outside of algebra systems!
-</p>
-<details><summary>Try it here!</summary>
-<iframe width="100%" height="300" src="https://dotnetfiddle.net/Widget/kvrlt2"
-                                frameborder="0"></iframe>
-</details>
-</div>
-
-
-<!--Evaluate &amp; Simplify-->
-<div class="block">
-<h3 class="centered"><a name="eval" href="#eval" class="anchor">Evaluate &amp; Simplify</a></h3>
-<hr>
-<p>
-    Of course, you can evaluate expressions here to a number, boolean,
-    or other types depending on your expression. As well as for many
-    other functions, this is available as a method of Entity or
-    as an extension.
-</p>
-<p>
-    You can also simplify symbolic expressions even if they are not evaluable
-    to a number. Just run the Simplify method. If you need a custom simplification
-    criterion for the simplifier to follow (e. g. you hate complex numbers),
-    you may set it in the runtime settings.
-</p>
-<details><summary>Try it here!</summary>
-<iframe width="100%" height="460" src="https://dotnetfiddle.net/Widget/a7k6ck"
-                                frameborder="0"></iframe>
-								
-</details>
-</div>
-
-
-
-<!--Solving equations-->
-<div class="block">
-<h3 class="centered"><a name="solver" href="#solver" class="anchor">Solving equations</a></h3>
-<hr>
-<p>
-    AM allows to solve equations, inequalities, so-called statements,
-    systems of equations, inequalities, unions of equations, etc.
-    All you need to use it to know a fairly simple syntax.
-</p>
-<p>
-    But first, let me define word Statement. We call a Statement an expression
-    that is true for some values of variables, or false for some other.
-    For example, "x + 2 > 0" is a Statement which is true for some x and false
-    for others.
-</p>
-<details><summary>Try it here!</summary>
-<iframe width="100%" height="375" src="https://dotnetfiddle.net/Widget/RxiAs7"
-                                frameborder="0"></iframe>
-</details>
-</div>
-
-
-
-<!--Differentiation, Integration, Limits-->
-<div class="block">
-<h3 class="centered"><a name="calc" href="#calc" class="anchor">Calculus</a></h3>
-<hr>
-<p>
-    We can analytically find a derivative, integral, and limit over a variable.
-</p>
-<p>
-    Integration and differentiation is performed via .Integrate and .Differentiate
-    respectively, and the only argument is the variable.
-</p>
-<p>
-    Limit takes the variable and the destination (where the variable tends),
-    but it <i>might</i> also take the side from which the variable approaches
-    the destination.
-</p>
-<details><summary>Try it here!</summary>
-<iframe width="100%" height="400" src="https://dotnetfiddle.net/Widget/yvpsSx"
-                                frameborder="0"></iframe>
-</details>
-</div>
-
-
-
-<!--Boolean algebra-->
-<div class="block">
-<h3 class="centered"><a name="bool" href="#bool" class="anchor">Boolean algebra</a></h3>
-<hr>
-<p>
-    As it could have been already noticed, you can work with boolean
-    operators and variables in AngouriMath.
-</p>
-<p>
-    Operators are similar to the syntax in python, such that
-    "or", "and", "not". Also, there's "xor" and "implies".
-</p>
-<details><summary>Try it here!</summary>
-<iframe width="100%" height="375" src="https://dotnetfiddle.net/Widget/tdgfGc"
-                                frameborder="0"></iframe>
-</details>
-</div>
-
-
-
-<!--LaTeX-->
-<div class="block">
-<h3 class="centered"><a name="latex" href="#latex" class="anchor">LaTeX</a></h3>
-<hr>
-<p>
-    LaTeX is a popular format for mathematical formulas. For example,
-    could be rendered like this:
-    "\sqrt{x} + \int{\sin(x)}dx - \lim_{x \to 0}{y \over f(x)}"
-    \[
-    \sqrt{x} + \int{\sin(x)}dx - \lim_{x \to 0}{y \over f(x)}
-    \]
-</p>
-<details><summary>Try it here!</summary>
-<iframe width="100%" height="275" src="https://dotnetfiddle.net/Widget/V3Pk4s"
-                                frameborder="0"></iframe>
-</details>
-</div>
-
-<!--Compilation-->
-<div class="block">
-<h3 class="centered"><a name="compilation" href="#compilation" class="anchor">Compilation</a></h3>
-<hr>
-<p>
-    With the version 1.3, you can compile expressions into native delegates. Not only that you
-    can compile those with numerical types, but you can also compile them into predicates with the
-    bool return type (if your expression involves conditions).
-</p>
-<details><summary>Try it here!</summary>
-<iframe width="100%" height="275" src="https://dotnetfiddle.net/Widget/bZ5wkz"
-                                frameborder="0"></iframe>
-</details>
-</div>
-
-
-<!--F# &amp; Jupyter-->
-<div class="block">
-<h3 class="centered"><a name="inter" href="#inter" class="anchor">F# &amp; Jupyter</a></h3>
-<hr>
-<p>
-    F# is a great functional language, which might be convenient for research and 
-    scripting. Install AngouriMath.Interactive so that you can use it from both
-    F# scripts and Jupyter Notebook.
-</p>
-<img src="https://github.com/asc-community/AngouriMath/raw/master/.github/additional/readme/interactive.PNG" width="100%">
-
-<details><summary>Instruction</summary>
-If you already installed <a href="https://jupyter.org/install">Jupyter</a> and 
-<a href="https://github.com/dotnet/interactive/blob/main/docs/NotebooksLocalExperience.md">Interactive</a>
-for it, install <a href="https://www.nuget.org/packages/AngouriMath.Interactive">package</a>
-by copying this to your first cell:
-<br>
-<br>
-<div class="code">
-#r "nuget:AngouriMath.Interactive, *-*"
-<br>
-Interactive.magic();
-</div>
-
-</details>
-
-</div>
-
-<div class="block">
-<h3 class="centered"><a name="whatsnew" href="#whatsnew" class="anchor">What's new</a></h3>
-<hr>
-This section has migrated to a <a href="/whatsnew">separate page</a>
-</div>
-
-<!--Multithreading-->
-<div class="block">
-<h3 class="centered"><a name="multi" href="#multi" class="anchor">Multithreading</a></h3>
-<hr>
-<p>
-    You are guaranteed that all functions in AM run in one thread. It is also guaranteed that you can safely run multiple functions from AM in different threads, that is, all static variables and lazy properties are thread-safe.
-</p>
-<p>
-    There is also support of cancellation a task. However, to avoid injecting the cancellation token argument into all methods, we use AsyncLocal<T> instead. That is why instead of passing your token to all methods what you need is to pass it once to the MathS Multithreading SetLocalCancellationToken (CancellationToken) method.
-</p>
-<details><summary>Example</summary>
-
-<pre><code>var cancellationTokenSource = new CancellationTokenSource();
-
-// That goes instead of passing your token to methods
-MathS.Multithreading.SetLocalCancellationToken(
-    cancellationTokenSource.Token);
-    
-// Then you normally run your task
-var currTask = Task.Run(() => InputText.Text.Solve("x"),
-    cancellationTokenSource.Token);
-    
-try
-{
-    await currTask;
-    LabelState.Text = currTask.Result.ToString();
-}
-catch (OperationCanceledException)
-{
-    LabelState.Text = "Operation canceled";
-}
-</code></pre>
-
-</details>
-</div>
 
 
 
@@ -291,10 +53,10 @@ catch (OperationCanceledException)
 <hr>
 <p>
     The project is licensed under <a href="https://github.com/asc-community/AngouriMath/blob/master/LICENSE.md">MIT license</a>.
-    You can use AngouriMath in open-source, closed, free, and commercial projects with no restrictopns.
+    You can use AngouriMath in open-source, closed, free, and commercial projects with no restrictions.
 </p>
 <p>
-    But we appreciate your mention of AngouriMath in your product.
+    But we appreciate your mention of AngouriMath in your project.
 </p>
 </div>
 
@@ -320,6 +82,9 @@ catch (OperationCanceledException)
     </ul>
     So that we can see what you are working on and could help or correct if you are doing something
     wrong.
+</p>
+<p>
+    If in doubts or trouble, do not hesitate to ask questions!
 </p>
 <div class="phone">
     <a href="https://github.com/asc-community/AngouriMath"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/asc-community/AngouriMath?label=Stars&style=social"></a>
