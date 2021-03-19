@@ -194,3 +194,17 @@ a {
 .wiki-ul-main li {
     margin-top: 1vh;
 }
+
+.wiki-main-image-container {
+    margin-right: 10vh;
+    text-align: right;
+}
+
+.wiki-main-image {
+    
+    width: 40vh;
+}
+
+.wiki-main-page-container {
+    
+}

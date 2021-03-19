@@ -88,6 +88,7 @@ static void GenerateWikiToPages()
     sb.Append("</ul>");
     sb.Append("<hr>");
     sb.Append($"Last update: [{DateTime.Now.ToUniversalTime()} UTC]");
+    sb.Append("</div>"); // this tag is opened in the template
     File.WriteAllText(Path.Combine(contentFolder, "wiki", "index.html"), sb.ToString());
 
 
