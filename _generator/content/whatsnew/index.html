@@ -13,6 +13,13 @@
         </li>
         <li>
             <text class="cw">Latexise</text> does not produce "\times" anymore (nothing or \cdot instead).
+            It also now produces correct code in case when a variable has an index (both variable and
+            index are latexised properly).
+        </li>
+        <li>
+            Tensors completely reconsidered. No more vectors or tensors. There are only matrices. Moreover,
+            operators now, instead of being elementwise, are now matrix-meaningful. A vector is considered
+            a one-column matrix. A lot of methods of matrices are now exposed. 
         </li>
     </ul>
 </p>
