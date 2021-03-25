@@ -95,18 +95,15 @@
 
 <!--Top end-->
 
-<h2 class="centered">Welcome to AngouriMath Wiki!</h2>
-<hr>
-<p>
-    This set of pages might be considered as a guideline to most popular functions and methods
-    of the library. It is duplicated on the <a href="https://github.com/asc-community/AngouriMath/wiki/">repo's Wiki</a>
-    as well.
-</p>
+<h2 class='centered'>Exceptions</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Here we will cover using AngouriMath in real projects, where it is important to provide safety and security.<br><br><h2>Exceptions</h2><br><br>Every exception thrown by AngouriMath is derived from <text class='cw'>AngouriMathBaseException</text>. Although we still
+recommend catching particular exceptions rather than catching this one, it is important to be able
+to catch all exceptions thrown by a library.<br><br><text class='cw'>AngouriBugException</text> is thrown when an internal error occured in AngouriMath. It is almost certainly
+that the error happened on AM's side, so we ask you to report about it to the official repository if it
+happens. It will help us fix it quickly and release an update sooner.<br><br><text class='cw'>FutureReleaseException</text> is thrown when the required feature is not implemented yet. If you encoutered
+this exception, make sure that you are on the latest version. If you are, probably it only remains to
+wait for the feature. Nonetheless, feel free to make a feature request to let us know that it is needed.<br><br>All exceptions are documented, so if encountered an unknown one, we recommend you checking it on the
+Almanac or documentation in-code.
 
-<div class="wiki-main-page-container">
-
-<!--The list of links is generated automatically-->
-<ul class='wiki-ul-main'><li><a href='01.-Expressions.html'>Expressions</a></li><li><a href='02.-Basic-operations.html'>Basic operations</a></li><li><a href='03.-Evaluation.html'>Evaluation</a></li><li><a href='04.-Simplification.html'>Simplification</a></li><li><a href='05.-Differentiation.html'>Differentiation</a></li><li><a href='06.-Integration.html'>Integration</a></li><li><a href='07.-Solvers.html'>Solvers</a></li><li><a href='08.-Limits.html'>Limits</a></li><li><a href='09.-Compilation.html'>Compilation</a></li><li><a href='10.-Matrices.html'>Matrices</a></li><li><a href='11.-Exceptions.html'>Exceptions</a></li><li><a href='12.-Multithreading.html'>Multithreading</a></li><li><a href='13.-Settings.html'>Settings</a></li><li><a href='14.-F%23-language.html'>F# language</a></li><li><a href='15.-Jupyter.html'>Jupyter</a></li></ul><hr>Last update: [25.03.2021 11:03:24 UTC]</div>
 <!--Bottom begin-->
 
 <br><br><br><br>

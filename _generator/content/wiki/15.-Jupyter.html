@@ -1,0 +1,6 @@
+<h2 class='centered'>Jupyter</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Here we will cover usage of the library for research purposes.<br><br><h2>Installation</h2><br><br>Thanks to <a href="https://github.com/dotnet/interactive">dotnet/interactive</a>, AM
+is now convenient to use in Jupyter notebooks. Provided that you already installed
+both Jupyter and dotnet/interactive, this is the way you enable Jupyter's features
+for AM:<br><br><pre><code>#r "nuget:AngouriMath.Interactive, *-*"
+Interactive.magic();</code></pre><br><br><text class='cw'>Interactive.magic()</text> will bind the LaTeX renderer from MathJax to any type inherited
+from <text class='cw'>ILatexiseable</text>.<br><br><img style='width: 100%'src="int.PNG"/><br><br>It is highly likely that there will be more features specific for Jupyter in AM.

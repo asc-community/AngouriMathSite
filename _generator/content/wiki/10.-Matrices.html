@@ -1,0 +1,195 @@
+<h2 class='centered'>Matrices</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>In this page, we show the usage and API for matrices and vectors.<br><br><h2>Creating a matrix, vector, row vector</h2><br><br>First of all, a vector is a one-column matrix. A row vector is a one-row matrix. Let us create a matrix:
+<pre><code>var m = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2, 3 },
+        { 4, 5, 6 }
+    });</code></pre>
+It has two rows and three columns. You can access them by normal indexing, where the first index
+is the number of row, and the second one is the number of column:
+<pre><code>Console.WriteLine(m[0, 2]); // prints the second element of the zero-th row</code></pre>
+Output:
+<pre><code>3</code></pre><br><br>Let us print a matrix:
+<pre><code>Console.WriteLine(m);</code></pre>
+Output:
+<pre><code>[[1, 2, 3], [4, 5, 6]]</code></pre><br><br>Similar to it, we can create a matrix from string:
+<pre><code>Matrix m = "[ [ 1, 2, 3 ], [ 4, 5, 6 ] ]";
+Console.WriteLine(m);</code></pre>
+Output:
+<pre><code>[[1, 2, 3], [4, 5, 6]]</code></pre><br><br>We can also create vectors.
+<pre><code>var v = MathS.Vector(1, 2, 3, 4);
+Console.WriteLine(v);</code></pre>
+Output:
+<pre><code>[1, 2, 3, 4]</code></pre><br><br>This creates a column vector. We can verify it by addressing <text class='cw'>RowCount</text> and <text class='cw'>ColumnCount</text> properties of 
+the vector:
+<pre><code>Console.WriteLine(v.RowCount + " " + v.ColumnCount);</code></pre>
+Output:
+<pre><code>4 1</code></pre><br><br>That is, 4 rows and 1 column.<br><br>There is overloaded <text class='cw'>ToString</text>, which allows to print a matrix in a more convenient
+way:
+<pre><code>var m = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2, 3 },
+        { 4, 5, 6 }
+    });
+Console.WriteLine(m.ToString(multilineFormat: true));</code></pre>
+Output:
+<pre><code>Matrix[2 x 3]
+1   2   3
+4   5   6</code></pre><br><br><h2>Basic operations and properties</h2><br><br>Like it has been discussed already, you can check the number of rows and columns of a matrix
+with properties <text class='cw'>RowCount</text> and <text class='cw'>ColumnCount</text>. You can also read the value, that is located
+by the specified row index and column index.<br><br>But there is also one-argument indexing: it is
+relevant in case you want to get the row of your matrix. It also will return a single element
+if your matrix is vector. Example:
+<pre><code>var m = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2, 3 },
+        { 4, 5, 6 }
+    });
+Console.WriteLine("The first row: " + m[0].ToString());
+Console.WriteLine("The second row: " + m[1].ToString());
+var v = MathS.Vector(1, 2, 3, 4, 5);
+Console.WriteLine("The third element: " + v[2].ToString());
+Console.WriteLine("The last element: " + v[4].ToString());</code></pre>
+Output:
+<pre><code>The first row: [[1, 2, 3]]
+The second row: [[4, 5, 6]]
+The third element: 3
+The last element: 5</code></pre><br><br>If you queried for a row, a row vector will be returned (a matrix with one row).<br><br>You can also work with a transposed matrix. Every matrix has its transposed, accessible
+by <text class='cw'>.T</text>. It will return your matrix with swapped columns and rows. Example:
+<pre><code><br><br>var m = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2, 3 },
+        { 4, 5, 6 }
+    });
+Console.WriteLine(m.ToString(multilineFormat: true));
+Console.WriteLine(m.T.ToString(multilineFormat: true)); // transposed version</code></pre>
+Output:
+<pre><code>Matrix[2 x 3]
+1   2   3
+4   5   6
+Matrix[3 x 2]
+1   4
+2   5
+3   6</code></pre><br><br>
+<h2>Creating modified versions of matrices</h2><br><br>For the declarative style sake, there is no way to modify an existing matrix,
+but it is possible to get an existing matrix with some elements changed.<br><br>That is how you change a single element in a matrix:
+<pre><code>var m = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2, 3 },
+        { 4, 5, 6 }
+    });
+var modified = m.WithElement(0, 2, 66);
+Console.WriteLine(modified.ToString(multilineFormat: true));</code></pre>
+Output:
+<pre><code>Matrix[2 x 3]
+1    2    66
+4    5    6</code></pre>
+<text class='cw'>WithElement</text> changes one element, located at the specified pair of indices.<br><br>It is also overloaded for vectors and row vectors:
+<pre><code>var v = MathS.ZeroVector(size: 10).T;
+var modified = v.WithElement(4, 66).WithElement(6, 44);
+Console.WriteLine(modified.ToString(multilineFormat: true));</code></pre>
+Output:
+<pre><code>Matrix[1 x 10]
+0    0    0    0    66   0    44   0    0    0</code></pre><br><br>You can replace entire rows or columns in matrices with <text class='cw'>WithRow</text> and <text class='cw'>WithColumn</text>:
+<pre><code>var m = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2, 3 },
+        { 4, 5, 6 }
+    });
+var modified = m.WithRow(0, "[10, 20, 30]T");
+Console.WriteLine(modified.ToString(multilineFormat: true));</code></pre>
+Output:
+<pre><code>Matrix[2 x 3]
+10   20   30
+4    5    6</code></pre><br><br>Note, that in the fifth line we passed a transposed vector, that is, a row vector. Similar way, we can
+get a modified version with a column replaced:
+<pre><code>var m = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2, 3 },
+        { 4, 5, 6 }
+    });
+var modified = m.WithColumn(2, "[30, 60]");
+Console.WriteLine(modified.ToString(multilineFormat: true));</code></pre>
+Output:
+<pre><code>Matrix[2 x 3]
+1    2    30
+4    5    60</code></pre><br><br>Finally, you can create a modified version with a more advanced modifier via <text class='cw'>With</text>:
+<pre><code>var m = MathS.ZeroMatrix(6).With
+    ((r, c, e) => (r, c, e) switch
+    {
+        (_, 0, _) => 1,
+        ( >= 1 and <= 4, >= 1 and <= 3, _) => 2,
+        ( >= 1 and <= 4, > 3, _) => 3,
+        (5, 5, _) => 4,
+        _ => e
+    });
+Console.WriteLine(m.ToString(multilineFormat: true));</code></pre>
+Output:
+<pre><code>Matrix[6 x 6]
+1   0   0   0   0   0
+1   2   2   2   3   3
+1   2   2   2   3   3
+1   2   2   2   3   3
+1   2   2   2   3   3
+1   0   0   0   0   4</code></pre><br><br>Here is a detailed explanation of this code:
+<pre><code>var m = MathS.ZeroMatrix(6).With
+    ((r, c, e) => (r, c, e) switch
+    {
+		// any row, in the column number 0
+        (_, 0, _) => 1,
+		
+		// rows with indicies between 1 and 4, 
+		// and columns between 1 and 3
+        ( >= 1 and <= 4, >= 1 and <= 3, _) => 2,
+		
+		// rows between 1 and 4, all columns after 3
+        ( >= 1 and <= 4, > 3, _) => 3,
+		
+		// the [5, 5]-th element to be set to 4
+        (5, 5, _) => 4,
+        _ => e
+    });</code></pre><br><br><h2>Mathematical operations</h2><br><br>Multiplication of matrices is performed according to
+<a href="https://en.wikipedia.org/wiki/Matrix_multiplication">standards</a>. A vector is 
+a one-column vector. In case of axes mismatch, either no multiplication happens,
+or an exception is thrown.<br><br>Addition and subtraction happen pointwise. In case of axes mismatch, either no operation happens,
+or an exception is thrown.<br><br>Division requires same-size square matrices as operands. It will first find the inverse of the right
+operand. If either of criterion is not met, either no divison happens, or an exception is thrown.<br><br>Example of multiplication:
+<pre><code>var m = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2 },
+        { 3, 4 },
+        { 5, 6 }
+    });
+var v = MathS.Vector(10, 20);
+Console.WriteLine(m * v);</code></pre>
+Output:
+<pre><code>[50, 110, 170]</code></pre><br><br>Subtraction:
+<pre><code>var m = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2 },
+        { 3, 4 },
+        { 5, 6 }
+    });<br><br>var m1 = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2 },
+        { 3, 4 },
+        { 5, 10 }
+    });<br><br>Console.WriteLine((m1 - m).ToString(multilineFormat: true));</code></pre>
+Output:
+<pre><code>Matrix[3 x 2]
+0   0
+0   0
+0   4</code></pre><br><br>If you add, multiply or subtract a scalar, you may need to apply <text class='cw'>InnerSimplifed</text> or <text class='cw'>Evaled</text> properties.
+If your matrix collapses to 1x1, it will be interpreted as a scalar. For example:
+<pre><code>var v = MathS.Vector(1, 2, 3);
+Console.WriteLine(v.T * v);
+Console.WriteLine((v.T * v).GetType());
+Console.WriteLine((v.T * v).InnerSimplified.GetType());</code></pre>
+Output:
+<pre><code>[14]
+AngouriMath.Entity+Matrix
+AngouriMath.Entity+Number+Integer</code></pre><br><br>Applying <text class='cw'>Abs</text> onto a vector will compute its absolute length, as a sum of squares of its elements:
+<pre><code>Console.WriteLine("(| [ a, b, c ] |)".Simplify());
+Console.WriteLine("(| [ 2, 3, 6 ] |)".EvalNumerical());</code></pre>
+Output:
+<pre><code>sqrt(a ^ 2 + b ^ 2 + c ^ 2)
+7</code></pre><br><br><text class='cw'>ComputeInverse()</text>: tries to compute inverse. May throw an exception.<br><br><text class='cw'>Pow(int)</text>: computes the binary power of a matrix. May throw an exception.<br><br><text class='cw'>AsScalar()</text>: if a matrix is 1x1, it takes its only element. Otherwise, an exception is thrown.<br><br><text class='cw'>Determinant</text>: the determinant of the matrix.<br><br><text class='cw'>MainDiagonal</text>: the vector of elements from the main diagonal.<br><br><text class='cw'>Trace</text>: the sum of the elements in the main diagonal.
