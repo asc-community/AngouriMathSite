@@ -201,10 +201,13 @@ a {
 }
 
 .wiki-main-image {
-    
     width: 40vh;
 }
 
 .wiki-main-page-container {
     
+}
+
+.whatsnew-page li {
+    margin-top: 1vh;
 }

@@ -100,10 +100,10 @@ for the F# language. This makes it easier to use the library for projects, writt
 F#. Example:
 <pre><code>open Functions
 open AngouriMath
-open Core<br><br>printfn "%O" (as_number "2 + 3")
-printfn "%O" (differentiate "x" "x2 + a x")
-printfn "%O" (integrate "x" "x2 + e")
-printfn "%O" (limit "x" "0" "sin(a x) / x")</code></pre>
+open Core<br><br>printfn "%O" (asNumber "2 + 3")
+printfn "%O" (<text class='cw'></text>dy/dx<text class='cw'></text> "x2 + a x")
+printfn "%O" (<text class='cw'></text>int [dx]<text class='cw'></text> "x2 + e")
+printfn "%O" (<text class='cw'></text>lim x->0<text class='cw'></text> "sin(a x) / x")</code></pre>
 Output:
 <pre><code>5
 2 * x + a

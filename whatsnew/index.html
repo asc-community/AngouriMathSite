@@ -96,15 +96,26 @@
 <!--Top end-->
 
 <!--What's new-->
-<div class="block">
+<div class="block whatsnew-page">
 <h2 class="centered">What's new</h2>
 <hr>
-<details><summary><strong>1.3-preview.2 (under development)</strong></summary>
+<details><summary><strong>1.3 (under development...)</strong></summary>
+The release date: TBD.
+<h4>Breaking changes</h4>
 <p>
+    Kernel: no more <text class='cw'>Tensor</text>, we only work with <text class='cw'>Matrix</text> now.
+</p>
+<p>
+    F# and Jupyter: some operators were removed, all functions were renamed
+    to <text class='cw'>camelCase</text> and declaratively.
+</p>
+... to be continued
+</details>
+<br>
+<details><summary><strong>1.3-preview.2</strong></summary>
+<p>
+    <strong>Kernel functional and C#:</strong>
     <ul>
-        <li>
-            C++ wrapper <i>(under consideration)</i>.
-        </li>
         <li>
             Upcasts added to compilation, as well as many overloads and extension methods.
         </li>
@@ -117,6 +128,18 @@
             Tensors completely reconsidered. No more vectors or tensors. There are only matrices. Moreover,
             operators now, instead of being elementwise, are now matrix-meaningful. A vector is considered
             a one-column matrix. A lot of methods of matrices are now exposed. 
+        </li>
+    </ul>
+    <strong>Wrappers</strong>
+    <ul>
+        <li>
+            C++ wrapper (under development): parsing, to string, latex, basic calculus, solvers, properties
+            are exposed.
+        </li>
+        <li>
+            F# wrapper significantly improved. Matrices, settings, intervals were added. Naming was
+            reconsidered in favor of declarative programming. It also now has the same versioning
+            as the kernel package.
         </li>
     </ul>
 </p>
@@ -140,9 +163,7 @@
 </details>
 <br>
 
-<details open><summary><strong>1.2</strong></summary>
-<h3>1.2 Release</h3>
-
+<details><summary><strong>1.2</strong></summary>
 <p>
 1.2 brings us incredibly many features, completely reconsidering all patterns. Number of nodes was doubled, 
 a lot of syntax related to solvers, building an expression tree, performance improved.
