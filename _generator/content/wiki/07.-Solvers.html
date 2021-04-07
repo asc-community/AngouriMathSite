@@ -24,7 +24,19 @@ Entity expr2 = "2x2 - 3 > 0 or x > 0";
 Console.WriteLine(expr2.Solve("x").Simplify());</code></pre>
 Output:
 <pre><code>((-oo; -sqrt(24) / 4) \/ (sqrt(24) / 4; +oo)) /\ (0; +oo)
-(-oo; -sqrt(24) / 4) \/ (sqrt(24) / 4; +oo) \/ (0; +oo)</code></pre><br><br>Extension: <text class='cw'>string.Solve(Variable)</text>.<br><br><h2>Solving system of equations</h2><br><br>Every equation of the system should be written as a simple equation
+(-oo; -sqrt(24) / 4) \/ (sqrt(24) / 4; +oo) \/ (0; +oo)</code></pre><br><br>Extension: <text class='cw'>string.Solve(Variable)</text>.<br><br>
+The returned value is a <text class='cw'>Set</text>, which could be of four types: <text class='cw'>FiniteSet</text>, <text class='cw'>Interval</text>, <text class='cw'>SpecialSet</text>, <text class='cw'>ConditionalSet</text>. Let us consider
+a basic example:
+<pre><code>Entity expr = "a x2 + b x + c = 0";
+var solutions = expr.Solve("x");
+if (solutions is Entity.Set.FiniteSet finiteSet)
+{
+    foreach (var root in finiteSet)
+        Console.WriteLine($"Root: {root}");
+}</code></pre>
+Output:
+<pre><code>Root: (-b - sqrt(b ^ 2 - 4 * a * c)) / (2 * a)
+Root: (-b + sqrt(b ^ 2 - 4 * a * c)) / (2 * a)</code></pre><br><br><h2>Solving system of equations</h2><br><br>Every equation of the system should be written as a simple equation
 (as in the first part of the article). The method of <text class='cw'>MathS</text> named <text class='cw'>Equations</text>:
 <pre><code>var system = Equations(
     "x2 + a y3",
