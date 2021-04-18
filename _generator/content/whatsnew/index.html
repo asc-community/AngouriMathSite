@@ -15,6 +15,16 @@ The release date: TBD.
 ... to be continued
 </details>
 <br>
+<details><summary><strong>1.3-preview.4 (under development)</strong></summary>
+    <br>
+    <strong>Kernel functional and C#:</strong>
+    <ul>
+        <li>
+            Gradual quota-bounded computation principle for `Simplify`.
+        </li>
+    </ul>
+</details>
+<br>
 <details><summary><strong>1.3-preview.3 (under development)</strong></summary>
     <br>
     <strong>Kernel functional and C#:</strong>
@@ -23,7 +33,14 @@ The release date: TBD.
             Max term count increased by a lot. No power limit in the expansion algorithm.
         </li>
         <li>
-            Gradual quota-bounded computation principle for `Simplify`.
+            Parentheses fixed in LaTeX for negative number cases (and negation sign).
+        </li>
+        <li>
+            A couple of bugs related to matrices fixed. `ReducedRowEchelonForm` and `Rank` added, `GaussianEliminated` replaced with
+            `RowEchelonForm` (here we stick to the definition which implies that leading elements can differ from ones).
+        </li>
+        <li>
+            Piecewise now works correctly for cases when a node is applied to a whole piecewise.
         </li>
     </ul>
 </details>
