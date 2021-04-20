@@ -36,11 +36,28 @@ The release date: TBD.
             Parentheses fixed in LaTeX for negative number cases (and negation sign).
         </li>
         <li>
-            A couple of bugs related to matrices fixed. `ReducedRowEchelonForm` and `Rank` added, `GaussianEliminated` replaced with
-            `RowEchelonForm` (here we stick to the definition which implies that leading elements can differ from ones).
+            A couple of bugs related to matrices fixed. <text class="cw">ReducedRowEchelonForm</text> and <text class="cw">Rank</text>
+            added, <text class="cw">GaussianEliminated</text> replaced with
+            <text class="cw">RowEchelonForm</text> (here we stick to the definition which implies that leading elements can differ from ones).
         </li>
         <li>
             Piecewise now works correctly for cases when a node is applied to a whole piecewise.
+        </li>
+    </ul>
+    <strong>F# and Interactive:</strong>
+    <ul>
+        <li>
+            All modules are moved to the <text class="cw">AngouriMath.FSharp</text> namespace. For 
+            <text class="cw">Interactive</text>, there is now namespace <text class="cw">Interactive</text>.
+            There is also no need to call magic commands to bind latex to rendering.
+        </li>
+        <li>
+            Overload for <text class="cw">**</text> added as a power operator.
+        </li>
+        <li>
+            <text class="cw">Interactive.AggressiveOperators</text> module allows for arithmetic operators overloaded
+            for a pair of object and object. The reason is to avoid using additional methods to parse an expression while
+            performing some computations. 
         </li>
     </ul>
 </details>
