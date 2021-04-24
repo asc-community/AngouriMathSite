@@ -159,9 +159,7 @@ also need to address the following resources:
     </li>
     </ul>
     To install it, we recommend .NET Interactive's syntax, as follows:
-    <pre><code>#r "nuget:AngouriMath.Interactive, *-*"
-Interactive.magic();</code></pre>
-    The second line binds the LaTeX rendering to <text class="cw">ILatexiseable</text>.
+    <pre><code>#r "nuget:AngouriMath.Interactive, *-*"</code></pre>
 </p>
 
 
@@ -196,7 +194,6 @@ printf "\n"
 printf "%O" (differentiate "x" expr)</code></pre>
     <h5>Jupyter:</h5>
     <pre><code>#r "nuget:AngouriMath.Interactive, *-*"
-Interactive.magic();
 open Core
 open Functions
 let expr = parse "x + sin(y x)"
