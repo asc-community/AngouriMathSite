@@ -25,13 +25,25 @@ The release date: TBD.
         <li>
             Implicit operators improved (one for BigInteger added).
         </li>
+        <li>
+            An important bug related to determinant fixed (determinant, which
+            works via Gaussian elimination, did not take into account the number
+            of swaps performed by the algorithm).
+        </li>
     </ul>
     <strong>F# and Interactive:</strong>
     <ul>
         <li>
-            <i>(Under consideration)</i> There are now matrix operators, which unconditionally return a matrix.
+            There are now matrix operators, which unconditionally return a matrix.
             Here is the list of them: <text class="cw">|+</text>, <text class="cw">|-</text>, <text class="cw">|*</text>,
             <text class="cw">|/</text>, <text class="cw">|**</text>.
+        </li>
+        <li>
+            Functions det, inverse, adjugate added for matices.
+        </li>
+        <li>
+            Now there are also operators less, greater, less or equal, greater or equal
+            which create entities.
         </li>
     </ul>
 </details>
