@@ -117,15 +117,19 @@ The release date: TBD.
     <strong>Kernel functional and C#:</strong>
     <ul>
         <li>
-            Gradual quota-bounded computation principle for `Simplify`.
-        </li>
-        <li>
             Implicit operators improved (one for BigInteger added).
         </li>
         <li>
             An important bug related to determinant fixed (determinant, which
             works via Gaussian elimination, did not take into account the number
             of swaps performed by the algorithm).
+        </li>
+        <li>
+            Inverse and Adjugate are now properties. They do not throw exceptions.
+            Instead, if they cannot be evaluated, a null is returned.
+        </li>
+        <li>
+            No matrix division allowed anymore.
         </li>
     </ul>
     <strong>F# and Interactive:</strong>
