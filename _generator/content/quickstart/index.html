@@ -12,7 +12,7 @@ also need to address the following resources:
 <br>
 <br>
 <a name="installation"></a>
-<h3 class="centered">Install for C# and F#</h3>
+<h3 class="centered"><a name="dotnet" href="#dotnet" class="anchor">Install for C# and F#</a></h3>
 <hr>
 <p>
     <details><summary>How to install from NuGet?</summary>
@@ -49,7 +49,7 @@ also need to address the following resources:
 
 <br>
 <br>
-<h3 class="centered">Install for Jupyter</h3>
+<h3 class="centered"><a name="jupyter" href="#jupyter" class="anchor">Install for Jupyter</a></h3>
 <hr>
 <p>
     First, make sure to have installed Interactive for .NET: follow the instructions from
@@ -68,10 +68,10 @@ also need to address the following resources:
 
 <br>
 <br>
-<h3 class="centered">Install for C++ (experimental)</h3>
+<h3 class="centered"><a name="cpp" href="#cpp" class="anchor">Install for C++ (experimental)</a></h3>
 <hr>
 <p>
-    Consuming from C++ is available for CMake.<br>
+    Consuming from C++ is available for CMake.<br><br>
     1. Here you need to add a language requirement:
     <pre><code>set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)</code></pre>
@@ -85,6 +85,7 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(AngouriMath)</code></pre>
     3. Add this function (which copies the lib to the executable) after you add an executable:
     <pre><code>angourimath_to_executable(${YOUR_EXECUTABLE_NAME})</code></pre>
+    See the example <a href="https://github.com/asc-community/AngouriMathLab/blob/85410c4663ecea0acc04bf1ef0367eec709480b3/CMakeLists.txt">example</a>.
 </p>
 
 
