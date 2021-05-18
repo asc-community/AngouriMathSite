@@ -142,6 +142,12 @@ also need to address the following resources:
         It is recommended to include prereleases to install the last version, even if it is
         a pre-release one.
     </div>
+    <br><br>
+    If you want to use the last version, pushed to master, you will need to add MyGet as a nuget package source:
+    <pre><code>https://www.myget.org/F/angourimath/api/v3/index.json</code></pre>
+    Here is what you can add to your nuget.config file:
+    <pre><code>&lt;add key="myget" value="https://www.myget.org/F/angourimath/api/v3/index.json" /&gt;</code></pre>
+    Now, all latest versions are under 0.0.0-* pattern.
 </p>
 
 <br>
@@ -160,6 +166,9 @@ also need to address the following resources:
     </ul>
     To install it, we recommend .NET Interactive's syntax, as follows:
     <pre><code>#r "nuget:AngouriMath.Interactive, *-*"</code></pre>
+    If you want to install the last vesion, pushed to master, you can install it in the following way:
+    <pre><code>#i "https://www.myget.org/F/angourimath/api/v3/index.json"
+#r "nuget:AngouriMath.Interactive, 0.0.0-*"</pre></code>
 </p>
 
 
