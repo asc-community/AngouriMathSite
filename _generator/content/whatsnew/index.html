@@ -3,22 +3,111 @@
 <h2 class="centered">What's new</h2>
 <hr>
 <details><summary><strong>1.3 (under development)</strong></summary>
-The release date: TBD.
-<h4>Breaking changes</h4>
 <p>
-    Kernel: no more <text class='cw'>Tensor</text>, we only work with <text class='cw'>Matrix</text> now.
-</p>
-<p>
-    F# and Jupyter: some operators were removed, all functions were renamed
-    to <text class='cw'>camelCase</text> and declaratively.
-</p>
-... to be continued
-</details>
-<br>
-<details><summary><strong>1.3-preview.5 (under development)</strong></summary>
-    <br>
+    <strong>Kernel functional and C#:</strong>
+    <ul>
+        <li>
+            No more <text class='cw'>Tensor</text>, we only work with <text class='cw'>Matrix</text> now.
+        </li>
+        <li>
+            A few synonyms added for hyperbolic functions.
+        </li>
+        <li>
+            Greek and cyrillic latters are now parsable. Symbols \n and \s are now ignored by the parser.
+        </li>
+        <li>
+            Limits improved.
+        </li>
+        <li>
+            Upcasts added to compilation, as well as many overloads and extension methods.
+        </li>
+        <li>
+            <text class="cw">Latexise</text> does not produce "\times" anymore (nothing or \cdot instead).
+            It also now produces correct code in case when a variable has an index (both variable and
+            index are latexised properly).
+        </li>
+        <li>
+            Tensors completely reconsidered. No more vectors or tensors. There are only matrices. Moreover,
+            operators now, instead of being elementwise, are now matrix-meaningful. A vector is considered
+            a one-column matrix. A lot of methods of matrices are now exposed. 
+        </li>
+        <li>
+            Max term count increased by a lot. No power limit in the expansion algorithm.
+        </li>
+        <li>
+            Parentheses fixed in LaTeX for negative number cases (and negation sign).
+        </li>
+        <li>
+            A couple of bugs related to matrices fixed. <text class="cw">ReducedRowEchelonForm</text> and <text class="cw">Rank</text>
+            added, <text class="cw">GaussianEliminated</text> replaced with
+            <text class="cw">RowEchelonForm</text> (here we stick to the definition which implies that leading elements can differ from ones).
+        </li>
+        <li>
+            Piecewise now works correctly for cases when a node is applied to a whole piecewise.
+        </li>
+        <li>
+            Implicit operators improved (one for BigInteger added).
+        </li>
+        <li>
+            An important bug related to determinant fixed (determinant, which
+            works via Gaussian elimination, did not take into account the number
+            of swaps performed by the algorithm).
+        </li>
+        <li>
+            Inverse and Adjugate are now properties. They do not throw exceptions.
+            Instead, if they cannot be evaluated, a null is returned.
+        </li>
+        <li>
+            No matrix division allowed anymore.
+        </li>
+        <li>
+            Taylor expansion of functions of several variables added: <text class="cw">MultivariableTaylorExpansionTerms</text>
+            (infinite generator of terms), <text class="cw">MultivariableTaylorExpansion</text> (returns an expression).
+        </li>
+        <li>
+            Added a lot of number-theory related methds, mostly in the UnsafeAndInternal and ExperimentalFeatures categories.
+            Added methods: <text class="cw">SymbolicFormOfSine</text>, <text class="cw">SymbolicFormOfCosine</text>,
+            <text class="cw">ExpandSineOfSum</text>, <text class="cw">ExpandConsineOfSum</text>, 
+            <text class="cw">ExpandSineArgumentMultiplied</text>, <text class="cw">ExpandCosineArgumentMultiplied</text>,
+            <text class="cw">GetSineOfHalvedAngle</text>, <text class="cw">GetCosineOfHalvedAngle</text>, 
+            <text class="cw">DecomposeRational</text>, <text class="cw">GetSineOfHalvedAngle</text>     
+        </li>
+        <li>
+            <text class="cw">SymbolicFormOfSine</text> and <text class="cw">SymbolicFormOfCosine</text> exposed in
+            <text class="cw">MathS.Compute</text>. Use them to find the exact form of sines beyond basic table
+            values like pi/3, pi/6, etc. These algorithms can decompose <text class="cw">sin(17/42 pi)</text> into
+            the exact analytical form with roots and arithmetical operations only. They return null if cannot
+            expand a sine or cosine into an exact form.
+        </li>
+    </ul>
     <strong>F# and Interactive:</strong>
     <ul>
+        <li>
+            F# wrapper significantly improved. Matrices, settings, intervals were added. Naming was
+            reconsidered in favor of declarative programming. It also now has the same versioning
+            as the kernel package.
+        </li>
+        <li>
+            All modules are moved to the <text class="cw">AngouriMath.FSharp</text> namespace. For 
+            <text class="cw">Interactive</text>, there is now namespace <text class="cw">Interactive</text>.
+            There is also no need to call magic commands to bind latex to rendering.
+        </li>
+        <li>
+            Overload for <text class="cw">**</text> added as a power operator.
+        </li>
+        <li>
+            <text class="cw">Interactive.AggressiveOperators</text> module allows for arithmetic operators overloaded
+            for a pair of object and object. The reason is to avoid using additional methods to parse an expression while
+            performing some computations. 
+        </li>
+        <li>
+            There are now matrix operators, which unconditionally return a matrix.
+            Here is the list of them: <text class="cw">|+</text>, <text class="cw">|-</text>, <text class="cw">|*</text>,
+            <text class="cw">|/</text>, <text class="cw">|**</text>. Module: <text class="cw">AngouriMath.FSharp.MatrixOperators</text>.
+        </li>
+        <li>
+            There is also function <text class="cw">asMatrix</text>.
+        </li>
         <li>
             Now there are also operators less, greater, less or equal, greater or equal
             which create entities.
@@ -30,6 +119,20 @@ The release date: TBD.
             Conjugate of a complex is now a property.
         </li>
     </ul>
+    <strong>C++ Wrapper:</strong>
+    <ul>
+        <li>
+            Parsing, to string, latex, basic calculus, solvers, properties are exposed.
+        </li>
+        <li>
+            Visit the <a href="https://github.com/asc-community/AngouriMathLab/tree/cpp-sample">lab</a> to see samples.
+        </li>
+        <li>
+            See the <a href="https://am.angouri.org/quickstart/#cpp">instructions</a> how to get it, if you want to participate
+            in the project or experiment with that.
+        </li>
+    </ul>
+</p>
 </details>
 <br>
 <details><summary><strong>1.3-preview.4</strong></summary>
