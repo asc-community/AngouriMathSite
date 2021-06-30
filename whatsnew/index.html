@@ -129,6 +129,9 @@
             a one-column matrix. A lot of methods of matrices are now exposed. 
         </li>
         <li>
+            Rank of a matrix, Reduced row echelon form added.
+        </li>
+        <li>
             Max term count increased by a lot. No power limit in the expansion algorithm.
         </li>
         <li>
@@ -176,6 +179,29 @@
             the exact analytical form with roots and arithmetical operations only. They return null if cannot
             expand a sine or cosine into an exact form.
         </li>
+        <li>
+            Explicit parsing is now allowed with <text class="cw">MathS.ExplicitParsingOnly<text class="cw">, so that
+            omitted operators are not inserted automatically.
+        </li>
+        <li>
+            <text class="cw">MathS.Parse</text> returns an Either of a successfully parsed entity or 
+            a failure of a few possible reasons of parsing failure. Close to some advanced Result type.
+        </li>
+        <li>
+            Bugs related to
+            <ul>
+                <li>
+                    imprecise computing of corner cases of tangent
+                </li>
+                <li>
+                    allocations on accessing a property
+                </li>
+                <li>
+                    integral of a piecewise
+                </li>
+            </ul>
+            are fixed.
+        </li>
     </ul>
     <strong>F# and Interactive:</strong>
     <ul>
@@ -193,14 +219,20 @@
             Overload for <text class="cw">**</text> added as a power operator.
         </li>
         <li>
+            Overload for <text class="cw">***.</text> added as a tensor multiplication.
+        </li>
+        <li>
+            Overload for <text class="cw">****.</text> added as a tensor power.
+        </li>
+        <li>
             <text class="cw">Interactive.AggressiveOperators</text> module allows for arithmetic operators overloaded
             for a pair of object and object. The reason is to avoid using additional methods to parse an expression while
             performing some computations. 
         </li>
         <li>
             There are now matrix operators, which unconditionally return a matrix.
-            Here is the list of them: <text class="cw">|+</text>, <text class="cw">|-</text>, <text class="cw">|*</text>,
-            <text class="cw">|/</text>, <text class="cw">|**</text>. Module: <text class="cw">AngouriMath.FSharp.MatrixOperators</text>.
+            Here is the list of them: <text class="cw">+.</text>, <text class="cw">-.</text>, <text class="cw">*.</text>,
+            <text class="cw">/.</text>, <text class="cw">**.</text>. Module: <text class="cw">AngouriMath.FSharp.MatrixOperators</text>.
         </li>
         <li>
             There is also function <text class="cw">asMatrix</text>.
@@ -215,6 +247,13 @@
         <li>
             Conjugate of a complex is now a property.
         </li>
+        <li>
+            All node-creating functions now apply InnerSimplified automatically, unless explicitly specified
+            otherwise.
+        </li>
+        <li>
+            Functions to compile expressions added.
+        </li>
     </ul>
     <strong>C++ Wrapper:</strong>
     <ul>
@@ -227,6 +266,14 @@
         <li>
             See the <a href="https://am.angouri.org/quickstart/#cpp">instructions</a> how to get it, if you want to participate
             in the project or experiment with that.
+        </li>
+    </ul>
+    <strong>Other:</strong>
+    <ul>
+        <li>
+            Honk# is shipped with AngouriMath instead of FieldCache and a few other packages. Not only
+            some internal functions of AM are rewritten in it, but AM adopts fluent style of using it
+            natively, for example, by having API exposing Either (anonymous type union).
         </li>
     </ul>
 </p>
