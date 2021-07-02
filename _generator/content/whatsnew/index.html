@@ -178,6 +178,11 @@
             some internal functions of AM are rewritten in it, but AM adopts fluent style of using it
             natively, for example, by having API exposing Either (anonymous type union).
         </li>
+        <li>
+            AngouriMath now multitargets netstandard2.1 (which does not require System.Memory dependency) and
+            .NET Framework 4.7.2 (which also loads such dependencies as System.Numerics), so now it should be
+            more convenient to use from legacy apps.
+        </li>
     </ul>
 </p>
 </details>
