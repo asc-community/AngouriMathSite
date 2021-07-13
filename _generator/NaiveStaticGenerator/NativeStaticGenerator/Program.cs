@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using YadgNet;
 
-var GeneratorPath = GetNearestRoot(Directory.GetCurrentDirectory());
+var GeneratorPath = GetNearestRoot("_generator", Directory.GetCurrentDirectory());
 
 /*
 Console.WriteLine(
@@ -39,7 +39,7 @@ GeneratePagesFromDocs();
 GenerateFinalWebsite();
 
 static string GetNearestRoot(string name, string current)
-    => Directory.GetFileName(current) == name ? current : GetNearestRoot(name, Directory.GetDirectoryName(current));
+    => Path.GetFileName(current) == name ? current : GetNearestRoot(name, Path.GetDirectoryName(current));
 
 static void GenerateWikiToPages()
 {
