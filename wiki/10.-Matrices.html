@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(72666283, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/72666283" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+<img class="logo pc" src="img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="/" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="/quickstart">Quick start</a>                                                    </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="/wiki">Wiki</a>                                                               </li>
+    <li><!--active_docs-->      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="/docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="/whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="/demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank">Donate</a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="/#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="/">Home</a>
+<a href="/quickstart">Quick start</a>
+<a href="/wiki">Wiki</a>
+<a href="/docs/namespaces.html">Almanac</a>
+<a href="/whatsnew">What's new</a>
+<a href="/demo">Try</a>
+<a href="/why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank">Donate</a>
+<a href="/#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class='centered'>Matrices</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>In this page, we show the usage and API for matrices and vectors.<br><br><h2>Creating a matrix, vector, row vector</h2><br><br>First of all, a vector is a one-column matrix. A row vector is a one-row matrix. Let us create a matrix:
+<pre><code>var m = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2, 3 },
+        { 4, 5, 6 }
+    });</code></pre>
+It has two rows and three columns. You can access them by normal indexing, where the first index
+is the number of row, and the second one is the number of column:
+<pre><code>Console.WriteLine(m[0, 2]); // prints the second element of the zero-th row</code></pre>
+Output:
+<pre><code>3</code></pre><br><br>Let us print a matrix:
+<pre><code>Console.WriteLine(m);</code></pre>
+Output:
+<pre><code>[[1, 2, 3], [4, 5, 6]]</code></pre><br><br>Similar to it, we can create a matrix from string:
+<pre><code>Matrix m = "[ [ 1, 2, 3 ], [ 4, 5, 6 ] ]";
+Console.WriteLine(m);</code></pre>
+Output:
+<pre><code>[[1, 2, 3], [4, 5, 6]]</code></pre><br><br>We can also create vectors.
+<pre><code>var v = MathS.Vector(1, 2, 3, 4);
+Console.WriteLine(v);</code></pre>
+Output:
+<pre><code>[1, 2, 3, 4]</code></pre><br><br>This creates a column vector. We can verify it by addressing <text class='cw'>RowCount</text> and <text class='cw'>ColumnCount</text> properties of 
+the vector:
+<pre><code>Console.WriteLine(v.RowCount + " " + v.ColumnCount);</code></pre>
+Output:
+<pre><code>4 1</code></pre><br><br>That is, 4 rows and 1 column.<br><br>There is overloaded <text class='cw'>ToString</text>, which allows to print a matrix in a more convenient
+way:
+<pre><code>var m = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2, 3 },
+        { 4, 5, 6 }
+    });
+Console.WriteLine(m.ToString(multilineFormat: true));</code></pre>
+Output:
+<pre><code>Matrix[2 x 3]
+1   2   3
+4   5   6</code></pre><br><br><h2>Basic operations and properties</h2><br><br>Like it has been discussed already, you can check the number of rows and columns of a matrix
+with properties <text class='cw'>RowCount</text> and <text class='cw'>ColumnCount</text>. You can also read the value, that is located
+by the specified row index and column index.<br><br>But there is also one-argument indexing: it is
+relevant in case you want to get the row of your matrix. It also will return a single element
+if your matrix is vector. Example:
+<pre><code>var m = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2, 3 },
+        { 4, 5, 6 }
+    });
+Console.WriteLine("The first row: " + m[0].ToString());
+Console.WriteLine("The second row: " + m[1].ToString());
+var v = MathS.Vector(1, 2, 3, 4, 5);
+Console.WriteLine("The third element: " + v[2].ToString());
+Console.WriteLine("The last element: " + v[4].ToString());</code></pre>
+Output:
+<pre><code>The first row: [[1, 2, 3]]
+The second row: [[4, 5, 6]]
+The third element: 3
+The last element: 5</code></pre><br><br>If you queried for a row, a row vector will be returned (a matrix with one row).<br><br>You can also work with a transposed matrix. Every matrix has its transposed, accessible
+by <text class='cw'>.T</text>. It will return your matrix with swapped columns and rows. Example:
+<pre><code><br><br>var m = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2, 3 },
+        { 4, 5, 6 }
+    });
+Console.WriteLine(m.ToString(multilineFormat: true));
+Console.WriteLine(m.T.ToString(multilineFormat: true)); // transposed version</code></pre>
+Output:
+<pre><code>Matrix[2 x 3]
+1   2   3
+4   5   6
+Matrix[3 x 2]
+1   4
+2   5
+3   6</code></pre><br><br>
+<h2>Creating modified versions of matrices</h2><br><br>For the declarative style sake, there is no way to modify an existing matrix,
+but it is possible to get an existing matrix with some elements changed.<br><br>That is how you change a single element in a matrix:
+<pre><code>var m = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2, 3 },
+        { 4, 5, 6 }
+    });
+var modified = m.WithElement(0, 2, 66);
+Console.WriteLine(modified.ToString(multilineFormat: true));</code></pre>
+Output:
+<pre><code>Matrix[2 x 3]
+1    2    66
+4    5    6</code></pre>
+<text class='cw'>WithElement</text> changes one element, located at the specified pair of indices.<br><br>It is also overloaded for vectors and row vectors:
+<pre><code>var v = MathS.ZeroVector(size: 10).T;
+var modified = v.WithElement(4, 66).WithElement(6, 44);
+Console.WriteLine(modified.ToString(multilineFormat: true));</code></pre>
+Output:
+<pre><code>Matrix[1 x 10]
+0    0    0    0    66   0    44   0    0    0</code></pre><br><br>You can replace entire rows or columns in matrices with <text class='cw'>WithRow</text> and <text class='cw'>WithColumn</text>:
+<pre><code>var m = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2, 3 },
+        { 4, 5, 6 }
+    });
+var modified = m.WithRow(0, "[10, 20, 30]T");
+Console.WriteLine(modified.ToString(multilineFormat: true));</code></pre>
+Output:
+<pre><code>Matrix[2 x 3]
+10   20   30
+4    5    6</code></pre><br><br>Note, that in the fifth line we passed a transposed vector, that is, a row vector. Similar way, we can
+get a modified version with a column replaced:
+<pre><code>var m = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2, 3 },
+        { 4, 5, 6 }
+    });
+var modified = m.WithColumn(2, "[30, 60]");
+Console.WriteLine(modified.ToString(multilineFormat: true));</code></pre>
+Output:
+<pre><code>Matrix[2 x 3]
+1    2    30
+4    5    60</code></pre><br><br>Finally, you can create a modified version with a more advanced modifier via <text class='cw'>With</text>:
+<pre><code>var m = MathS.ZeroMatrix(6).With
+    ((r, c, e) => (r, c, e) switch
+    {
+        (_, 0, _) => 1,
+        ( >= 1 and <= 4, >= 1 and <= 3, _) => 2,
+        ( >= 1 and <= 4, > 3, _) => 3,
+        (5, 5, _) => 4,
+        _ => e
+    });
+Console.WriteLine(m.ToString(multilineFormat: true));</code></pre>
+Output:
+<pre><code>Matrix[6 x 6]
+1   0   0   0   0   0
+1   2   2   2   3   3
+1   2   2   2   3   3
+1   2   2   2   3   3
+1   2   2   2   3   3
+1   0   0   0   0   4</code></pre><br><br>Here is a detailed explanation of this code:
+<pre><code>var m = MathS.ZeroMatrix(6).With
+    ((r, c, e) => (r, c, e) switch
+    {
+		// any row, in the column number 0
+        (_, 0, _) => 1,
+		
+		// rows with indicies between 1 and 4, 
+		// and columns between 1 and 3
+        ( >= 1 and <= 4, >= 1 and <= 3, _) => 2,
+		
+		// rows between 1 and 4, all columns after 3
+        ( >= 1 and <= 4, > 3, _) => 3,
+		
+		// the [5, 5]-th element to be set to 4
+        (5, 5, _) => 4,
+        _ => e
+    });</code></pre><br><br><h2>Mathematical operations</h2><br><br>Multiplication of matrices is performed according to
+<a href="https://en.wikipedia.org/wiki/Matrix_multiplication">standards</a>. A vector is 
+a one-column vector. In case of axes mismatch, either no multiplication happens,
+or an exception is thrown.<br><br>Addition and subtraction happen pointwise. In case of axes mismatch, either no operation happens,
+or an exception is thrown.<br><br>Division requires same-size square matrices as operands. It will first find the inverse of the right
+operand. If either of criterion is not met, either no divison happens, or an exception is thrown.<br><br>Example of multiplication:
+<pre><code>var m = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2 },
+        { 3, 4 },
+        { 5, 6 }
+    });
+var v = MathS.Vector(10, 20);
+Console.WriteLine(m * v);</code></pre>
+Output:
+<pre><code>[50, 110, 170]</code></pre><br><br>Subtraction:
+<pre><code>var m = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2 },
+        { 3, 4 },
+        { 5, 6 }
+    });<br><br>var m1 = MathS.Matrix(new Entity[,]
+    {
+        { 1, 2 },
+        { 3, 4 },
+        { 5, 10 }
+    });<br><br>Console.WriteLine((m1 - m).ToString(multilineFormat: true));</code></pre>
+Output:
+<pre><code>Matrix[3 x 2]
+0   0
+0   0
+0   4</code></pre><br><br>If you add, multiply or subtract a scalar, you may need to apply <text class='cw'>InnerSimplifed</text> or <text class='cw'>Evaled</text> properties.
+If your matrix collapses to 1x1, it will be interpreted as a scalar. For example:
+<pre><code>var v = MathS.Vector(1, 2, 3);
+Console.WriteLine(v.T * v);
+Console.WriteLine((v.T * v).GetType());
+Console.WriteLine((v.T * v).InnerSimplified.GetType());</code></pre>
+Output:
+<pre><code>[14]
+AngouriMath.Entity+Matrix
+AngouriMath.Entity+Number+Integer</code></pre><br><br>Applying <text class='cw'>Abs</text> onto a vector will compute its absolute length, as a sum of squares of its elements:
+<pre><code>Console.WriteLine("(| [ a, b, c ] |)".Simplify());
+Console.WriteLine("(| [ 2, 3, 6 ] |)".EvalNumerical());</code></pre>
+Output:
+<pre><code>sqrt(a ^ 2 + b ^ 2 + c ^ 2)
+7</code></pre><br><br><text class='cw'>ComputeInverse()</text>: tries to compute inverse. May throw an exception.<br><br><text class='cw'>Pow(int)</text>: computes the binary power of a matrix. May throw an exception.<br><br><text class='cw'>AsScalar()</text>: if a matrix is 1x1, it takes its only element. Otherwise, an exception is thrown.<br><br><text class='cw'>Determinant</text>: the determinant of the matrix.<br><br><text class='cw'>MainDiagonal</text>: the vector of elements from the main diagonal.<br><br><text class='cw'>Trace</text>: the sum of the elements in the main diagonal.
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+2019-2021 <a href="https://angouri.org">Angouri</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a>
+</div>
+</body>
+
+
+
+
+</html>
