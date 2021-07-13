@@ -20,6 +20,7 @@ GenerateWikiToPages();
 GeneratePagesFromDocs();
 GenerateFinalWebsite();
 CopyWikiImagesToFinalWebsite();
+CopyCssFilesToFinalWebsite();
 
 
 static string GetNearestRoot(string name, string current)
@@ -188,50 +189,57 @@ void GenerateFinalWebsite()
                 ).Select(c => "../")) + subPath);
 }
 
+// Source:
+// https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-copy-directories
+static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs, Func<string, bool> fileToCopy)
+{
+    // Get the subdirectories for the specified directory.
+    DirectoryInfo dir = new DirectoryInfo(sourceDirName);
+
+    if (!dir.Exists)
+    {
+        throw new DirectoryNotFoundException(
+            "Source directory does not exist or could not be found: "
+            + sourceDirName);
+    }
+
+    DirectoryInfo[] dirs = dir.GetDirectories();
+
+    // If the destination directory doesn't exist, create it.       
+    Directory.CreateDirectory(destDirName);
+
+    // Get the files in the directory and copy them to the new location.
+    FileInfo[] files = dir.GetFiles();
+    foreach (FileInfo file in files)
+    {
+        if (!fileToCopy(file.Name))
+            continue;
+        string tempPath = Path.Combine(destDirName, file.Name);
+        file.CopyTo(tempPath, false);
+    }
+
+    // If copying subdirectories, copy them and their contents to new location.
+    if (copySubDirs)
+    {
+        foreach (DirectoryInfo subdir in dirs)
+        {
+            string tempPath = Path.Combine(destDirName, subdir.Name);
+            DirectoryCopy(subdir.FullName, tempPath, copySubDirs, fileToCopy);
+        }
+    }
+}
 
 void CopyWikiImagesToFinalWebsite()
 {
     var root = Path.GetDirectoryName(GeneratorPath);
     var wikiImgPath = Path.Combine(root, "wiki");
     var wikiDestination = Path.Combine(root, GeneratedPath, "wiki");
-    DirectoryCopy(wikiImgPath, wikiDestination, copySubDirs: false);
+    DirectoryCopy(wikiImgPath, wikiDestination, copySubDirs: false, _ => true);    
+}
 
-
-    // Source:
-    // https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-copy-directories
-    static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
-    {
-        // Get the subdirectories for the specified directory.
-        DirectoryInfo dir = new DirectoryInfo(sourceDirName);
-
-        if (!dir.Exists)
-        {
-            throw new DirectoryNotFoundException(
-                "Source directory does not exist or could not be found: "
-                + sourceDirName);
-        }
-
-        DirectoryInfo[] dirs = dir.GetDirectories();
-
-        // If the destination directory doesn't exist, create it.       
-        Directory.CreateDirectory(destDirName);
-
-        // Get the files in the directory and copy them to the new location.
-        FileInfo[] files = dir.GetFiles();
-        foreach (FileInfo file in files)
-        {
-            string tempPath = Path.Combine(destDirName, file.Name);
-            file.CopyTo(tempPath, false);
-        }
-
-        // If copying subdirectories, copy them and their contents to new location.
-        if (copySubDirs)
-        {
-            foreach (DirectoryInfo subdir in dirs)
-            {
-                string tempPath = Path.Combine(destDirName, subdir.Name);
-                DirectoryCopy(subdir.FullName, tempPath, copySubDirs);
-            }
-        }
-    }
+void CopyCssFilesToFinalWebsite()
+{
+    var root = Path.GetDirectoryName(GeneratorPath);
+    var destination = Path.Combine(root, GeneratedPath);
+    DirectoryCopy(root, destination, copySubDirs: false, f => Path.GetExtension(f) is ".css");
 }
