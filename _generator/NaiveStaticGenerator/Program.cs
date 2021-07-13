@@ -13,6 +13,7 @@ using System.Linq;
 #pragma warning restore CS0105 // Using directive appeared previously in this namespace
 
 var GeneratorPath = GetNearestRoot("_generator", Directory.GetCurrentDirectory());
+const string GeneratedPath = "generated";
 
 
 GenerateWikiToPages();
@@ -137,7 +138,7 @@ void GenerateFinalWebsite()
 {
     var contentName = GeneratorPath;
 
-    var rootName = Path.Combine(Path.GetDirectoryName(contentName), "docs");
+    var rootName = Path.Combine(Path.GetDirectoryName(contentName), GeneratedPath);
 
     var dirName = Path.Combine(contentName, "content");
 
@@ -192,7 +193,7 @@ void CopyWikiImagesToFinalWebsite()
 {
     var root = Path.GetDirectoryName(GeneratorPath);
     var wikiImgPath = Path.Combine(root, "wiki");
-    var wikiDestination = Path.Combine(root, "docs", "wiki");
+    var wikiDestination = Path.Combine(root, GeneratedPath, "wiki");
     DirectoryCopy(wikiImgPath, wikiDestination, copySubDirs: false);
 
 
