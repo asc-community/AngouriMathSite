@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(72666283, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/72666283" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+<img class="logo pc" src="../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="/" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="/quickstart">Quick start</a>                                                    </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="/wiki">Wiki</a>                                                               </li>
+    <li><!--active_docs-->      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="/docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="/whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="/demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank">Donate</a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="/#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="/">Home</a>
+<a href="/quickstart">Quick start</a>
+<a href="/wiki">Wiki</a>
+<a href="/docs/namespaces.html">Almanac</a>
+<a href="/whatsnew">What's new</a>
+<a href="/demo">Try</a>
+<a href="/why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank">Donate</a>
+<a href="/#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class='centered'>Expressions</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Any expression in AngouriMath is a tree. It may include numbers, variables, operators, functions, vectors, and more.
+The main class, representing the library, is called <text class='cw'>Entity</text>. It is an abstract record, so every expression is a derived
+type of <text class='cw'>Entity</text>.<br><br><h2>The very basics of creating an expression</h2><br><br>Include the main namespace of the library:
+using AngouriMath;
+Now, let us create a simple arithmetic expression. <br><br>
+To build a tree we use overriden operators, for example,
+<pre><code>var x = MathS.Var("x");
+var y = MathS.Var("y");
+var expr = x + 4 * MathS.Sin(x / y);</code></pre>
+<text class='cw'>expr</text> has the type of <text class='cw'>Entity.Sumf</text>, which is a derived type of <text class='cw'>Entity</text>.<br><br>Now, let us see a shorter way of doing the same thing:
+<pre><code>using static AngouriMath.MathS;
+using static AngouriMath.Entity;<br><br>Variable x = "x";  // implicit conversation
+Variable y = "y";
+var expr = x + 4 * Sin(x / y);</code></pre>
+The first two <text class='cw'>using</text>s are implied by default in all other code snippets provided in Wiki.<br><br>AngouriMath internally uses <a href="https://github.com/peteroupc/Numbers">PeterO.Numbers</a>, so here
+are how numbers in AM could be created:
+<pre><code>using static AngouriMath.Entity.Number;
+using PeterO.Numbers;<br><br>var a01 = Integer.Create(3);
+var a02 = Integer.Create(EInteger.FromInt32(3));
+var a03 = Rational.Create(3.4);
+var a04 = Rational.Create(ERational.FromDouble(3.4));
+var a05 = Real.Create(1.3234m);
+var a06 = Real.Create(EDecimal.FromDouble(3.4535));
+var a07 = Complex.Create(32.4m, 434);
+var a08 = Complex.Create(EDecimal.FromDecimal(32.4m), EDecimal.FromInt32(434));</code></pre><br><br><h2>Easy way to create an expression</h2><br><br>Now, let us shorten the creation of an expression and parse it from an expression. Here are two
+lines of the equivalent code:
+<pre><code>Entity a = "x^2 + x + 4 / 5 + sqrt(5)";
+var a = FromString("x^2 + x + 4 / 5 + sqrt(5)");</code></pre>
+In some cases we can omit operators, for example, here are equivalent lines:
+<pre><code>Entity a = "x2 + 4y";
+Entity a = "x^2 + 4*y";</code></pre><br><br>Most operators and functions have a fixed number of arguments, for instance, plus operator cannot have three or more arguments. Here are
+two lines of the equivalent code:
+<pre><code>Entity a = "x + 2";
+Entity b = "y";
+var theirSum1 = new Sumf(a, b);
+var theirSum2 = a + b;</code></pre><br><br>In most code snippets in the rest of the wiki we will use implicit conversations in most cases.<br><br><h2>Variable substitution</h2><br><br>To substitute a particular value instead of a variable, use method <text class='cw'>Substitute</text>:
+<pre><code>Entity expr = "x + 2";
+var newExpr = expr.Substitute("x", 3);</code></pre>
+It is the same as
+<pre><code>Entity newExpr = "3 + 2";</code></pre><br><br>It does not change the initial expression. Moreover, all subtypes of <text class='cw'>Entity</text> are immutable and cannot be changed by any method or function.
+This allows to safely pass any expression to any functions being sure that it will not change. As a result, any operation will create a
+new expression.<br><br><h2>Nodes and pattern matching</h2><br><br><text class='cw'>Nodes</text> is a property of every expression. This property contains all possible subnodes of a node including itself. Let us consider an example:
+<pre><code>Entity expr = "a * x + 2";
+foreach (var subExpr in expr.Nodes)
+    Console.WriteLine(subExpr);</code></pre>
+The output will be the following:
+<pre><code>a * x + 2
+a * x
+a
+x
+2</code></pre><br><br>We can also analyze a given expression through patterns. Let us implement a naive differentiating:
+<pre><code>static Entity Diff(Entity expr, Variable var)
+    => expr switch
+    {
+        Variable sameVar when sameVar == var => 1,
+        Variable otherVar => 0,
+        Number => 0,
+        Sumf(var left, var right) => Diff(left, var) + Diff(right, var),
+        Mulf(var left, var right) => Diff(left, var) * right + Diff(right, var) * left,
+        Sinf(var arg) => Cos(arg) * Diff(arg, var),
+        _ => throw new Exception()
+    };</code></pre>
+Thanks to C#9's pattern matching, now we can this easily switch over different types of an expression.
+Let us run the given function:
+<pre><code>Console.WriteLine(Diff("a x + 3sin(x + c)", "x"));</code></pre>
+The output will be the following:
+<pre><code>0 * x + 1 * a + 0 * sin(x + c) + cos(x + c) * (1 + 0) * 3</code></pre>
+When building an expression, no automatic simplification occurs.
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+2019-2021 <a href="https://angouri.org">Angouri</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a>
+</div>
+</body>
+
+
+
+
+</html>
