@@ -5,12 +5,8 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <DocumentationFile></DocumentationFile>
-  </PropertyGroup>
-
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\..\Yadg.NET\Yadg.NET\Yadg.NET.csproj" />
+    <ProjectReference Include="..\..\Yadg.NET\Yadg.NET\Yadg.NET.csproj" />
   </ItemGroup>
 
 </Project>
