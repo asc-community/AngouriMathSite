@@ -1,0 +1,1 @@
+Follow changes <a href="./Sources/AngouriMath/Docs/WhatsNew">here</a>

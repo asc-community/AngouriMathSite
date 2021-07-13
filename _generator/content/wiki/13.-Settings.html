@@ -1,0 +1,27 @@
+<h2 class='centered'>Settings</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Here we will cover the way you can manipulate global settings of the library.<br><br><h2>Introduction</h2><br><br>There are a lot of points at which we cannot trust our choice, and you might want
+to change the behaviour. That is why we introduced global settings. There is no need
+to create additional files, and those settings are static properties.<br><br>The settings are, although static, thread-safe. Every setting is set for one thread only
+(via <text class='cw'>[ThreadStatic]</text>), so setting in one thread will not affect the same setting in another
+thread.<br><br><h2>Using Settings</h2><br><br>Let us consider a particular example. When AM cannot solve an equation analytically, it would
+apply numerical methods to solve it, for example, that of Newton.
+Example:
+<pre><code>Entity expr = "x + sin(x) = 0";
+Console.WriteLine(expr.Solve("x"));</code></pre>
+Will print:
+<pre><code>{ 10.712... + 3.103...i, ... }</code></pre>
+(Major share of the result was omitted under "...")<br><br>This equation does not have a elementary roots (except for 0). We want to restrict it to solving
+only analytically, and if it cannot solve it so, it should not apply Newton's method. Let us
+set this setting:
+<pre><code>using var _ = MathS.Settings.AllowNewton.Set(false);<br><br>Entity expr = "x + sin(x) = 0";
+Console.WriteLine(expr.Solve("x"));</code></pre>
+Output:
+<pre><code>{  }</code></pre><br><br>As it can be seen, it does not apply the Newton's method when solving, even if no analytical 
+solution was found.<br><br>Summing up, the syntax has two options.<br><br>The first one is more convenient:
+<pre><code>using var _ = MathS.Settings.SomeSetting.Set(SomeValue);
+// code</code></pre><br><br>The second one might be useful for parts, when the setting should be reverted before the method ends:
+<pre><code>using (var _ = MathS.Settings.SomeSetting.Set(SomeValue))
+{
+    // code
+}</code></pre><br><br><h2>Explanation</h2><br><br>This <text class='cw'>using var _ =</text> syntactical detail might not be appealing, but it allows to revert the value of
+the setting back to normal at the end of the scope. Make sure that you write exactly like this, otherwise
+the value will not be reverted back and you might get undesired results.

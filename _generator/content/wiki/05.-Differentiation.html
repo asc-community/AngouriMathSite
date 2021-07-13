@@ -1,0 +1,32 @@
+<h2 class='centered'>Differentiation</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Analytical differentation is available in AngouriMath.<br><br><h2>Differentiation</h2><br><br>This is fairly simple process of analytical computations of a derivative of an
+expression over one variable. To perform it, call method <text class='cw'>Differentiate</text>. Example:
+<pre><code>Entity expr = "a x ^ 2 + b sin(x) + c";
+Console.WriteLine(expr.Differentiate("x"));</code></pre>
+Output:
+<pre><code>2 * x * a + cos(x) * b</code></pre><br><br>If no derivative can be found, it will return node <text class='cw'>Entity.Derivativef</text>. It might
+happen if the differentiated expression is not numerical, for example:
+<pre><code>Entity expr = "a and x";
+Console.WriteLine(expr.Differentiate("x"));</code></pre>
+Output:
+<pre><code>derivative(a and x, x)</code></pre>
+It will also happen with subexpressions when they cannot be evaluated. For example,
+<pre><code>Entity expr = "{ 1, 2 } + sin(x)";
+Console.WriteLine(expr.Differentiate("x"));</code></pre>
+Output:
+<pre><code>derivative({ 1, 2 }, x) + cos(x)</code></pre><br><br>You can also use this node in your expressions, and if the first argument of this node
+is a numerical node, then <text class='cw'>InnerSimplified</text> and <text class='cw'>Simplify</text> will execute differentiation.
+Example:
+<pre><code>Entity expr = "x derivative(sin(x) + a x, x) + 16";
+Console.WriteLine(expr.Simplify());</code></pre>
+Output:
+<pre><code>16 + (cos(x) + a) * x</code></pre><br><br>You can also pass the third argument. It reflects the number of sequential differentiation
+of the same expression. Example:
+<pre><code>Entity expr = "derivative(sin(x), x, 2)";
+Console.WriteLine(expr.Simplify());
+Entity expr2 = "derivative(derivative(sin(x), x), x)";
+Console.WriteLine(expr2.Simplify().InnerSimplified);</code></pre>
+Output:
+<pre><code>-sin(x)
+-sin(x)</code></pre>
+In other words, <text class='cw'>derivative(sin(x), x, 2)</text> is the second derivative of sin(x) or derivative of sin(x)
+of order 2.<br><br>Extension: <text class='cw'>string.Differentiate(Variable)</text>.

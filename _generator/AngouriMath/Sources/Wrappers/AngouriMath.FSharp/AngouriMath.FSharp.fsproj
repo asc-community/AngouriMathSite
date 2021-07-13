@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+	<SignAssembly>true</SignAssembly>
+	<AssemblyOriginatorKeyFile>fsharp.key</AssemblyOriginatorKeyFile>
+	<Description>F# wrapper for some functions from AngouriMath. https://am.angouri.org/quickstart/index.html</Description>
+	<Copyright>Angouri 2019-2021</Copyright>
+	<PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+	<PackageProjectUrl>https://am.angouri.org</PackageProjectUrl>
+	<PackageIcon>icon.png</PackageIcon>
+	<RepositoryUrl>https://github.com/asc-community/AngouriMath</RepositoryUrl>
+	<PackageTags>fsharp, math, calculus, symbolic algebra, computer algebra, latex</PackageTags>
+	<PackageReleaseNotes>https://am.angouri.org/whatsnew</PackageReleaseNotes>
+	<Version>1.3.0</Version>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+	<Authors>WhiteBlackGoose</Authors>
+	<Company>Angouri</Company>
+	<RepositoryType>public</RepositoryType>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netstandard2.0\AngouriMath.FSharp.XML</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netstandard2.0\AngouriMath.FSharp.XML</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Core.fs" />
+    <Compile Include="Functions.fs" />
+    <Compile Include="Compilation.fs" />
+    <Compile Include="Constants.fs" />
+    <Compile Include="Shortcuts.fs" />
+    <Compile Include="Matrices.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="icon.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AngouriMath" Version="1.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Update="FSharp.Core" Version="5.0.0" />
+  </ItemGroup>
+
+</Project>
