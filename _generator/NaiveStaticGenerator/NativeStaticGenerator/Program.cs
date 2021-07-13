@@ -41,7 +41,7 @@ GenerateFinalWebsite();
 static string GetNearestRoot(string name, string current)
     => Path.GetFileName(current) == name ? current : GetNearestRoot(name, Path.GetDirectoryName(current));
 
-static void GenerateWikiToPages()
+void GenerateWikiToPages()
 {
     var contentFolder = Path.Combine(GeneratorPath, "content");
     var allFiles = Directory.GetFiles(Path.Combine(contentFolder, "_wiki"));
@@ -127,7 +127,7 @@ static void GenerateWikiToPages()
 }
 
 
-static void GeneratePagesFromDocs()
+void GeneratePagesFromDocs()
 {
     new WebsiteBuilder(
         new PageSaver(Path.Combine(GeneratorPath, "content", "docs"))
@@ -150,9 +150,9 @@ Please, consider these pages as those made for reference for particular members,
 
 
 
-static void GenerateFinalWebsite()
+void GenerateFinalWebsite()
 {
-    var contentName = GENERATOR_PATH;
+    var contentName = GeneratorPath;
 
     var rootName = Path.GetDirectoryName(contentName);
 
