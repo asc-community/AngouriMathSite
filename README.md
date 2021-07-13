@@ -22,6 +22,10 @@ dotnet build -c release
 Next, run the generator:
 ```
 cd _generator/NaiveStaticGenerator
-dotnet run -c release
+dotnet run -c debug
 ```
 Done, all files are generated in the root of the repository. 
+
+Note that it's necessary in the last step to build it with debug mode. In release mode
+it has css files being referenced to the root (with `/`), but there's relative path
+for debug mode (so that it could be used locally).

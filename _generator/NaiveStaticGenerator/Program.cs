@@ -167,9 +167,12 @@ void GenerateFinalWebsite()
 
         var newContent = top + "\n" + content + "\n" + bottom;
 
+        #if DEBUG
         newContent = PathUp(newContent, relativeName, "themes.css");
         newContent = PathUp(newContent, relativeName, "styles.css");
         newContent = PathUp(newContent, relativeName, "img/icon_cropped.png");
+        #endif
+
         newContent = newContent.Replace($"li><!--active_{relativePathName}-->", "li class=\"active-link\">");
         if (relativeName.Contains("docs"))
             newContent = newContent.Replace($"li><!--active_docs-->", "li class=\"active-link\">");
