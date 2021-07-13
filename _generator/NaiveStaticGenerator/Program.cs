@@ -21,6 +21,7 @@ GeneratePagesFromDocs();
 GenerateFinalWebsite();
 CopyWikiImagesToFinalWebsite();
 CopyCssFilesToFinalWebsite();
+CopyImgFolderToFinalWebsite();
 
 
 static string GetNearestRoot(string name, string current)
@@ -215,7 +216,7 @@ static void DirectoryCopy(string sourceDirName, string destDirName, bool copySub
         if (!fileToCopy(file.Name))
             continue;
         string tempPath = Path.Combine(destDirName, file.Name);
-        file.CopyTo(tempPath, false);
+        file.CopyTo(tempPath, true);
     }
 
     // If copying subdirectories, copy them and their contents to new location.
@@ -242,4 +243,11 @@ void CopyCssFilesToFinalWebsite()
     var root = Path.GetDirectoryName(GeneratorPath);
     var destination = Path.Combine(root, GeneratedPath);
     DirectoryCopy(root, destination, copySubDirs: false, f => Path.GetExtension(f) is ".css");
+}
+
+void CopyImgFolderToFinalWebsite()
+{
+    var root = Path.GetDirectoryName(GeneratorPath);
+    var destination = Path.Combine(root, GeneratedPath, "img");
+    DirectoryCopy(Path.Combine(root, "img"), destination, copySubDirs: false, _ => true);
 }
