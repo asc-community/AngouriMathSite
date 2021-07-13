@@ -2,6 +2,15 @@
 using System.Text;
 using YadgNet;
 
+// Those are in global usings in .NET 6 preview 7+, but by the moment
+// of writing this code, the GitHub Actions CI only supported .NET 6
+// preview 5, which yet didn't have global usings for system namespaces.
+#pragma warning disable CS0105 // Using directive appeared previously in this namespace
+using System;
+using System.Collections.Generic;
+using System.IO;
+#pragma warning restore CS0105 // Using directive appeared previously in this namespace
+
 var GeneratorPath = GetNearestRoot("_generator", Directory.GetCurrentDirectory());
 
 
