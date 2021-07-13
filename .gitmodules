@@ -7,3 +7,6 @@
 [submodule "_generator/AngouriMath"]
 	path = _generator/AngouriMath
 	url = https://github.com/asc-community/AngouriMath
+[submodule "_generator/Yadg.NET"]
+	path = _generator/Yadg.NET
+	url = https://github.com/WhiteBlackGoose/Yadg.NET
