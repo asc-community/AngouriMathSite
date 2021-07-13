@@ -4,3 +4,6 @@
 [submodule "_generator/content/_wiki"]
 	path = _generator/content/_wiki
 	url = https://github.com/asc-community/AngouriMath.wiki.git
+[submodule "_generator/AngouriMath"]
+	path = _generator/AngouriMath
+	url = https://github.com/asc-community/AngouriMath
