@@ -28,7 +28,7 @@ jobs:
       
     - name: Run Generator
       run: |
-        cd _generator/NaiveStaticGenerator/NativeStaticGenerator
+        cd _generator/NaiveStaticGenerator
         dotnet run -c release
       
     - uses: JamesIves/github-pages-deploy-action@4.1.4
