@@ -22,12 +22,12 @@ jobs:
         include-prerelease: true
       
     - name: Build AngouriMath
-      runs: |
+      run: |
         cd _generator/AngouriMath/Sources/AngouriMath
         dotnet build -c release
       
     - name: Run Generator
-      runs: |
+      run: |
         cd _generator/NaiveStaticGenerator/NaiveStaticGenerator
         dotnet run -c release
       
