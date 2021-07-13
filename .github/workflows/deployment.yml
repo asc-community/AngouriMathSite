@@ -1,0 +1,38 @@
+name: Website deployment
+
+on:
+  push:
+    branches:
+      - master
+  work-dispatch:
+
+jobs:
+  deployment:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+      with:
+        submodules: recursive
+      
+    - name: Get .NET 6
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x'
+        include-prerelease: true
+      
+    - name: Build AngouriMath
+      runs: |
+        cd _generator/AngouriMath/Sources/AngouriMath
+        dotnet build -c release
+      
+    - name: Run Generator
+      runs: |
+        cd _generator/NaiveStaticGenerator/NaiveStaticGenerator
+        dotnet run -c release
+      
+    - uses: JamesIves/github-pages-deploy-action@4.1.4
+      name: Publish on Github Pages
+      with:
+        branch: gh-pages
+        folder: .
