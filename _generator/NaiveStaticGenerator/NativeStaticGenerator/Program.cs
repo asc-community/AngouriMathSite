@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using YadgNet;
 
-const string GENERATOR_PATH = @"D:\main\vs_prj\AngouriMath\AngouriMathSite\_generator";
+var GeneratorPath = GetNearestRoot(Directory.GetCurrentDirectory());
 
 /*
 Console.WriteLine(
@@ -38,10 +38,12 @@ GenerateWikiToPages();
 GeneratePagesFromDocs();
 GenerateFinalWebsite();
 
+static string GetNearestRoot(string name, string current)
+    => Directory.GetFileName(current) == name ? current : GetNearestRoot(name, Directory.GetDirectoryName(current));
 
 static void GenerateWikiToPages()
 {
-    var contentFolder = Path.Combine(GENERATOR_PATH, "content");
+    var contentFolder = Path.Combine(GeneratorPath, "content");
     var allFiles = Directory.GetFiles(Path.Combine(contentFolder, "_wiki"));
     var destFolder = Path.Combine(contentFolder, "wiki");
     Directory.CreateDirectory(destFolder);
@@ -54,7 +56,7 @@ static void GenerateWikiToPages()
         if (file.ToLower().EndsWith(".png"))
         {
             Console.WriteLine($"W: Image {file} copied");
-            var newDest = Path.Combine(Path.GetDirectoryName(GENERATOR_PATH), "wiki", Path.GetFileName(file));
+            var newDest = Path.Combine(Path.GetDirectoryName(GeneratorPath), "wiki", Path.GetFileName(file));
             if (File.Exists(newDest))
                 File.Delete(newDest);
             File.Copy(file, newDest);
@@ -128,8 +130,7 @@ static void GenerateWikiToPages()
 static void GeneratePagesFromDocs()
 {
     new WebsiteBuilder(
-        // new PageSaver(@"D:\main\vs_prj\AngouriMath\tests\MyDocsTestDest")
-        new PageSaver(@"D:\main\vs_prj\AngouriMath\AngouriMathSite\_generator\content\docs")
+        new PageSaver(Path.Combine(GeneratorPath, "content", "docs"))
     )
     {
         MainPageName = "AngouriMath Almanac",
@@ -142,7 +143,7 @@ Please, consider these pages as those made for reference for particular members,
     }
     .Build(
         DocsParser.Parse(
-            @"D:\main\vs_prj\AngouriMath\AngouriMath\Sources\AngouriMath\bin\Release\netstandard2.0\AngouriMath.xml"
+            Path.Combine(GeneratorPath, "..", "AngouriMath", "Sources", "AngouriMath", "bin", "release", "netstandard2.0", "AngouriMath.xml")
         ).Build()
     );
 }
