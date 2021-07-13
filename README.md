@@ -21,7 +21,7 @@ dotnet build -c release
 ```
 Next, run the generator:
 ```
-cd _generator/NaiveStaticGenerator/NativeStaticGenerator
+cd _generator/NaiveStaticGenerator
 dotnet run -c release
 ```
 Done, all files are generated in the root of the repository. 
