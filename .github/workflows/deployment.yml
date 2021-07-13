@@ -35,4 +35,4 @@ jobs:
       name: Publish on Github Pages
       with:
         branch: gh-pages
-        folder: ./docs
+        folder: ./generated
