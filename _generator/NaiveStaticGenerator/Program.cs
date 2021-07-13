@@ -1,42 +1,15 @@
 ﻿using NaiveStaticGenerator;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using System.Text;
 using YadgNet;
 
 var GeneratorPath = GetNearestRoot("_generator", Directory.GetCurrentDirectory());
 
-/*
-Console.WriteLine(
-    new DescriptionFromXmlBuilder(@"
-            <summary>
-            Attempt to find analytical roots of a custom equation.
-            It solves the given expression assuming that it is
-            equal to zero. No need to make it equal to 0 yourself;
-            however, if you prefer so, consider using the .Solve()
-            method instead
-            </summary>
-            <param name=""x"">
-            The variable over which to solve the equation
-            </param>
-            <example><code>
-            Entity expr = ""x + 8 - 4"";
-            Console.WriteLine(expr.SolveEquation(""x""));
-            </code>
-            Will print ""{ -4 }""
-            </example>
-            <returns>
-            Returns <see cref=""T:AngouriMath.Entity.Set""/>
-            </returns>
-", "").Build());
-
-return;*/
 
 GenerateWikiToPages();
 GeneratePagesFromDocs();
 GenerateFinalWebsite();
+CopyWikiImagesToFinalWebsite();
+
 
 static string GetNearestRoot(string name, string current)
     => Path.GetFileName(current) == name ? current : GetNearestRoot(name, Path.GetDirectoryName(current));
@@ -154,7 +127,7 @@ void GenerateFinalWebsite()
 {
     var contentName = GeneratorPath;
 
-    var rootName = Path.GetDirectoryName(contentName);
+    var rootName = Path.Combine(Path.GetDirectoryName(contentName), "docs");
 
     var dirName = Path.Combine(contentName, "content");
 
@@ -202,4 +175,52 @@ void GenerateFinalWebsite()
             string.Join("",
                 Enumerable.Range(0, relativeName.Count(c => c == '\\')
                 ).Select(c => "../")) + subPath);
+}
+
+
+void CopyWikiImagesToFinalWebsite()
+{
+    var root = Path.GetDirectoryName(GeneratorPath);
+    var wikiImgPath = Path.Combine(root, "wiki");
+    var wikiDestination = Path.Combine(root, "docs", "wiki");
+    DirectoryCopy(wikiImgPath, wikiDestination, copySubDirs: false);
+
+
+    // Source:
+    // https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-copy-directories
+    static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs)
+    {
+        // Get the subdirectories for the specified directory.
+        DirectoryInfo dir = new DirectoryInfo(sourceDirName);
+
+        if (!dir.Exists)
+        {
+            throw new DirectoryNotFoundException(
+                "Source directory does not exist or could not be found: "
+                + sourceDirName);
+        }
+
+        DirectoryInfo[] dirs = dir.GetDirectories();
+
+        // If the destination directory doesn't exist, create it.       
+        Directory.CreateDirectory(destDirName);
+
+        // Get the files in the directory and copy them to the new location.
+        FileInfo[] files = dir.GetFiles();
+        foreach (FileInfo file in files)
+        {
+            string tempPath = Path.Combine(destDirName, file.Name);
+            file.CopyTo(tempPath, false);
+        }
+
+        // If copying subdirectories, copy them and their contents to new location.
+        if (copySubDirs)
+        {
+            foreach (DirectoryInfo subdir in dirs)
+            {
+                string tempPath = Path.Combine(destDirName, subdir.Name);
+                DirectoryCopy(subdir.FullName, tempPath, copySubDirs);
+            }
+        }
+    }
 }

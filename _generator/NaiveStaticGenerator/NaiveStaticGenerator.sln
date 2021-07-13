@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.31019.35
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31423.177
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NaiveStaticGenerator", "NaiveStaticGenerator.csproj", "{7C61D144-8DBE-483D-8601-3C5FE0737849}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yadg.NET", "..\..\..\..\..\Yadg.NET\Yadg.NET\Yadg.NET.csproj", "{D115BDDE-B81F-4679-AAE8-E14775E2E4C7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Yadg.NET", "..\Yadg.NET\Yadg.NET\Yadg.NET.csproj", "{7F810BC9-FE50-42BD-A9C4-9013B6E586F3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{7C61D144-8DBE-483D-8601-3C5FE0737849}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7C61D144-8DBE-483D-8601-3C5FE0737849}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7C61D144-8DBE-483D-8601-3C5FE0737849}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D115BDDE-B81F-4679-AAE8-E14775E2E4C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D115BDDE-B81F-4679-AAE8-E14775E2E4C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D115BDDE-B81F-4679-AAE8-E14775E2E4C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D115BDDE-B81F-4679-AAE8-E14775E2E4C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F810BC9-FE50-42BD-A9C4-9013B6E586F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F810BC9-FE50-42BD-A9C4-9013B6E586F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F810BC9-FE50-42BD-A9C4-9013B6E586F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F810BC9-FE50-42BD-A9C4-9013B6E586F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
