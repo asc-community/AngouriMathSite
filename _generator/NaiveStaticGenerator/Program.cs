@@ -18,11 +18,13 @@ const string GeneratedPath = "generated";
 
 GenerateWikiToPages();
 GeneratePagesFromDocs();
+
 GenerateFinalWebsite();
+
 CopyWikiImagesToFinalWebsite();
 CopyCssFilesToFinalWebsite();
 CopyImgFolderToFinalWebsite();
-
+CopyCName();
 
 static string GetNearestRoot(string name, string current)
     => Path.GetFileName(current) == name ? current : GetNearestRoot(name, Path.GetDirectoryName(current));
@@ -250,4 +252,10 @@ void CopyImgFolderToFinalWebsite()
     var root = Path.GetDirectoryName(GeneratorPath);
     var destination = Path.Combine(root, GeneratedPath, "img");
     DirectoryCopy(Path.Combine(root, "img"), destination, copySubDirs: false, _ => true);
+}
+
+void CopyCName()
+{
+    var root = Path.GetDirectoryName(GeneratorPath);
+    File.Copy(Path.Combine(root, "CNAME"), Path.Combine(root, GeneratedPath, "CNAME"), true);
 }
