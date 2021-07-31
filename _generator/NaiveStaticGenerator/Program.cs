@@ -77,7 +77,7 @@ void GenerateWikiToPages()
         sb.Append($"<li><a href='{url}'>{name}</a></li>");
     sb.Append("</ul>");
     sb.Append("<hr>");
-    sb.Append($"Last update: [{DateTime.Now.ToUniversalTime().ToString("yyyy-MM-dd mm:hh")} UTC]");
+    sb.Append($"Last update: [{DateTime.Now.ToUniversalTime().ToString("yyyy-MM-dd HH:mm")} UTC]");
     sb.Append("</div>"); // this tag is opened in the template
     File.WriteAllText(Path.Combine(contentFolder, "wiki", "index.html"), sb.ToString());
 
