@@ -12,8 +12,6 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2
-      with:
-        submodules: recursive
       
     - name: Get .NET 6
       uses: actions/setup-dotnet@v1
@@ -21,10 +19,20 @@ jobs:
         dotnet-version: '6.0.x'
         include-prerelease: true
       
-    - name: Build AngouriMath
+    - name: Clone AngouriMath (1/3)
       run: |
-        cd _generator/AngouriMath/Sources/AngouriMath
-        dotnet build -c release
+        cd _generator
+        git clone https://github.com/asc-community/AngouriMath AngouriMath
+      
+    - name: Clone Yadg.NET (2/3)
+      run: |
+        cd _generator
+        git clone https://github.com/WhiteBlackGoose/Yadg.NET Yadg.NET
+      
+    - name: Clone Wiki (3/3)
+      run: |
+        cd _generator/content
+        git clone https://github.com/asc-community/AngouriMath.wiki.git wiki
       
     - name: Run Generator
       run: |
