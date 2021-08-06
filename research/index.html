@@ -95,10 +95,101 @@
 
 <!--Top end-->
 
-<h2 class="centered"><a name="research" href="#research" class="anchor">AngouriMath for research</a></h2>
+<h2 class="centered"><a name="research" href="#research" class="anchor">AngouriMath with F# for Research</a></h2>
+
+<hr />
+
+<style>
+    .bigimg {
+        width: 80%;
+        margin-left: 10%;
+    }
+    .avgimg {
+        width: 50%;
+        margin-left: 25%;
+    }
+</style>
+
+<img class="bigimg" src="https://user-images.githubusercontent.com/31178401/128502152-4df565a3-519a-41e6-824f-de44d049df91.gif" />
 
 <p>
-  soon...
+    AngouriMath.Interactive is suited for interactive computations and research, as it exposes a good amount of F# API.
+    Basic functions include simplification, differentiation, latexisation (getting a LaTeX string from an expression), as
+    well as solving equations, integrations, systems, working with vectors and matrices, etc.
+</p>
+
+<p>
+    Its main usage is notebooks, which are usable from <a href="https://jupyter.org/">Jupyter</a> and 
+    <a href="https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.dotnet-interactive-vscode">Visual Studio Code
+    notebooks extension</a>. See <a href="https://github.com/dotnet/interactive">dotnet/interactive</a> to get notebooks working for you too.
+</p>
+
+<hr>
+
+<h3 class="centered"><a name="starting" href="#starting" class="anchor">Getting started</a></h3>
+
+<hr>
+
+<p>
+    To get AngouriMath in your notebook, install it by running a so-called magic command:
+    <pre><code>#r "nuget:AngouriMath.Interactive,*-*"</code></pre>
+</p>
+
+<p>
+    Now, let's run a hello world:
+    <pre><code>open AngouriMath.FSharp.Functions
+let x = symbol "x"
+let a = symbol "a"
+let expr = sin x + a
+expr
+</code></pre>
+    <img class="avgimg" src="https://user-images.githubusercontent.com/31178401/128538783-522a22d3-ab2d-4009-b73e-60bf15ed885a.png" />
+</p>
+
+<p>
+    Let's find a derivative and integral over x, and their simplified versions:
+    <pre><code>derivative x expr + integral x expr</code></pre>
+    <pre><code>derivative x expr + integral x expr |> simplified</code></pre>
+    <img class="bigimg" src="https://user-images.githubusercontent.com/31178401/128539266-a6c2157b-5072-4a64-9bcd-972ced944bf8.png" />
+</p>
+
+<p>
+    Now, let's construct something more complex. For example, an equation:
+    <pre><code>let Omega_lambda = symbol "Omega_lambda"
+let Omega_1 = symbol "Omega_1"
+let eq = equality Omega_1 (sin Omega_lambda + sin (parsed 2 * Omega_lambda))
+eq</code></pre>
+    <img class="bigimg" src="https://user-images.githubusercontent.com/31178401/128541799-38f22e17-69dd-49a0-bf21-b5eeaa117295.png" />
+</p>
+
+<p>
+    Let's find the solutions over Omega_lambda:
+    <pre><code>let roots = solutions Omega_lambda eq
+roots</code></pre>
+    <img class="bigimg" src="https://user-images.githubusercontent.com/31178401/128542006-a829ef0d-f8e1-4a87-90de-89e6c23f6589.png" />
+</p>
+
+<p>
+    This is a set of roots, which is too huge for a screenshot. The only variable is Omega_1, so let's substitute it with a numeric
+    value and evaluate the roots, showing them line by line with the default precision:
+    <pre><code>open AngouriMath
+roots <|- (Omega_1, 0.3) |> evaled :?> Entity.Set.FiniteSet |> Seq.map (fun el -> el.ToString()) |> String.concat "\n"</code></pre>
+    <img class="bigimg" src="https://user-images.githubusercontent.com/31178401/128542319-63f00725-85bd-46d0-a4ad-fbd817874eb3.png" />
+</p>
+
+<hr>
+
+<h3 class="centered"><a name="visualization" href="#visualization" class="anchor">Visualization</a></h3>
+
+<hr>
+
+With the help of great plotting library <a href="https://github.com/plotly/Plotly.NET">Plotly.NET</a>, it is possible to visualize
+functions over two and three variables.
+
+<img class="bigimg" src="https://raw.githubusercontent.com/asc-community/AngouriMath/33aa985750dc9e6195fb7776006dba4d0e98b314/.github/additional/readme/vscnotebook.gif">
+
+<p>
+    Now, let's do some basic plotting. 
 </p>
 
 <!--Bottom begin-->
