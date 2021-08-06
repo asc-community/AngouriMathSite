@@ -52,6 +52,7 @@
     <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="/quickstart">Quick start</a>                                                    </li>
     <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="/wiki">Wiki</a>                                                               </li>
     <li><!--active_docs-->      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="/docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="/research">Research</a>
     <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="/whatsnew">What's new</a>                                                    </li>
     <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="/demo">Try online</a>                                                               </li>
     <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
@@ -110,7 +111,7 @@
     }
 </style>
 
-<img class="bigimg" src="https://user-images.githubusercontent.com/31178401/128502152-4df565a3-519a-41e6-824f-de44d049df91.gif" />
+<img class="bigimg" src="https://user-images.githubusercontent.com/31178401/128546739-f6bb078e-988d-4105-848e-f514f4e2e7fd.gif" />
 
 <p>
     AngouriMath.Interactive is suited for interactive computations and research, as it exposes a good amount of F# API.
@@ -183,13 +184,28 @@ roots <|- (Omega_1, 0.3) |> evaled :?> Entity.Set.FiniteSet |> Seq.map (fun el -
 
 <hr>
 
-With the help of great plotting library <a href="https://github.com/plotly/Plotly.NET">Plotly.NET</a>, it is possible to visualize
-functions over two and three variables.
+<p>
+    With the help of great plotting library <a href="https://github.com/plotly/Plotly.NET">Plotly.NET</a>, it is possible to visualize
+    functions over two and three variables.
+</p>
 
 <img class="bigimg" src="https://raw.githubusercontent.com/asc-community/AngouriMath/33aa985750dc9e6195fb7776006dba4d0e98b314/.github/additional/readme/vscnotebook.gif">
 
 <p>
-    Now, let's do some basic plotting. 
+    Now, let's do some basic plotting. There is a few functions in the AngouriMath.Interactive namespace. 
+    Plot.linear and Plot.scatter visualizes single-variable functions:
+    <pre><code>open AngouriMath.Interactive
+Plot.linear [ 0.0..0.01..3. ] "sin(x) + sin(2x) + sin(3x) + sin(4x)" </code></pre>
+    <img class="avgimg" src="https://user-images.githubusercontent.com/31178401/128545928-7d61d546-de7a-4438-8e44-7fa79140e917.png" />
+</p>
+
+<p>
+    Now, let's display a surface, descriped by a function of two variables:
+    <pre><code>let f1 = parsed "sin(x) + sin(2x) + sin(3x) + sin(4x) + sin(5x)"
+let f2 = parsed "cos(y) + sin(2y) + cos(3y) + sin(4y) + cos(5y)"
+let z = f1 * f2
+Plot.surface [ 0.0..0.01..3.5 ] [ 0.0..0.02..3.5 ] z</code></pre>
+    <img class="avgimg" src="https://user-images.githubusercontent.com/31178401/128546575-a56c8fab-0946-40eb-b9c8-28ebeb2d69ac.png" />
 </p>
 
 <!--Bottom begin-->
