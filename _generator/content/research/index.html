@@ -79,6 +79,7 @@ roots</code></pre>
     This is a set of roots, which is too huge for a screenshot. The only variable is Omega_1, so let's substitute it with a numeric
     value and evaluate the roots, showing them line by line with the default precision:
     <pre><code>open AngouriMath
+open AngouriMath.FSharp.Shortcuts
 roots <|- (Omega_1, 0.3) |> evaled :?> Entity.Set.FiniteSet
 |> Seq.map (fun el -> el.ToString()) |> String.concat "\n"</code></pre>
     <img class="bigimg" src="https://user-images.githubusercontent.com/31178401/128542319-63f00725-85bd-46d0-a4ad-fbd817874eb3.png" />
