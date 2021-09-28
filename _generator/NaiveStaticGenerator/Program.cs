@@ -117,9 +117,8 @@ void GenerateWikiToPages()
 
 void GeneratePagesFromDocs()
 {
-    new WebsiteBuilder(
-        new PageSaver(Path.Combine(GeneratorPath, "content", "docs"))
-    )
+    var saver = new PageSaverAndCounter(Path.Combine(GeneratorPath, "content", "docs"));
+    new WebsiteBuilder(saver)
     {
         MainPageName = "AngouriMath Almanac",
         MainPageDescription = @"<p>
@@ -134,6 +133,7 @@ Please, consider these pages as those made for reference for particular members,
             Path.Combine(GeneratorPath, "AngouriMath", "Sources", "AngouriMath", "AngouriMath", "bin", "release", "netstandard2.0", "AngouriMath.xml")
         ).Build()
     );
+    Console.WriteLine($"The number of generated doc pages: {saver.PageSavedCount}");
 }
 
 
@@ -261,4 +261,24 @@ void CopyCName()
 {
     var root = Path.GetDirectoryName(GeneratorPath);
     File.Copy(Path.Combine(root, "CNAME"), Path.Combine(root, GeneratedPath, "CNAME"), true);
+}
+
+
+public sealed class PageSaverAndCounter : IPageSave
+{
+    private readonly string rootPath;
+    
+    public int PageSavedCount { get; private set; } = 0;
+    
+    public PageSaver(string path)
+        => this.rootPath = path;
+        
+    public void Save(string path, string text)
+    {
+        var finalPath = Path.Combine(rootPath, path) ?? throw new NullReferenceException();
+        Directory.CreateDirectory(Path.GetDirectoryName(finalPath) ?? throw new NullReferenceException());
+        File.WriteAllText(finalPath, text);
+        Console.WriteLine($"Writing to {finalPath}");
+        PageSavedCount++;
+    }
 }
