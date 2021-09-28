@@ -131,7 +131,7 @@ Please, consider these pages as those made for reference for particular members,
     }
     .Build(
         DocsParser.Parse(
-            Path.Combine(GeneratorPath, "AngouriMath", "Sources", "AngouriMath", "bin", "release", "netstandard2.0", "AngouriMath.xml")
+            Path.Combine(GeneratorPath, "AngouriMath", "Sources", "AngouriMath", "AngouriMath", "bin", "release", "netstandard2.0", "AngouriMath.xml")
         ).Build()
     );
 }
