@@ -35,23 +35,23 @@ THIS IS A TEMPLATE {
 -->
     
     
-<details><summary><strong>1.4-preview.2 (under development)</strong></summary>
+<details><summary><strong>1.4-preview.2</strong></summary>
 <p>
     <strong>Kernel functional and C#:</strong>
     <ul>
         <li>
-            Application. It is a node, which represents one expression applied to another one.
+            Application. It is a node, which represents one expression applied to another one. No parser support yet.
         </li>
         <li>
             Built-in functions will now be simplified from application of an expression applied to a known variable, for example,
-            x applied to sin is sin of x.
+            x applied to sin is sin of x. No parser support yet.
         </li>
         <li>
             Lambda. This node represents an abstraction working similarly to that in lambda calculus. It has one parameter, and when
-            an expression is applied, this parameter is substituted with this expression.
+            an expression is applied, this parameter is substituted with this expression. No parser support yet.
         </li>
         <li>
-            Imprecise equality API added. Now two expressions can be compared up to an error.
+            Imprecise equality API added <b>but not implemented</b>.
         </li>
         <li>
             Bugs fixed. NaN is now returned when comparing NaN and a number with inequality signs.
@@ -64,6 +64,18 @@ THIS IS A TEMPLATE {
         </li>
         <li>
             Entity, Complex, Real, Rational and Integer implement generic math from .NET 6.
+        </li>
+    </ul>
+    <strong>Terminal:</strong>
+    <ul>
+        <li>
+            Fixed bug when crashed on too small sizes.
+        </li>
+        <li>
+            Reduced the API calls to OS-unsupported API.
+        </li>
+        <li>
+            The terminal is now available as a .NET global tool, see <a href="https://www.nuget.org/packages/AngouriMath.Terminal">NuGet</a>.
         </li>
     </ul>
 </p>
