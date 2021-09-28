@@ -270,7 +270,7 @@ public sealed class PageSaverAndCounter : IPageSave
     
     public int PageSavedCount { get; private set; } = 0;
     
-    public PageSaver(string path)
+    public PageSaverAndCounter(string path)
         => this.rootPath = path;
         
     public void Save(string path, string text)
