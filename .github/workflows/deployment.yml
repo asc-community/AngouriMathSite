@@ -36,8 +36,8 @@ jobs:
       
     - name: Build AngouriMath
       run: |
-        cd _generator/AngouriMath/Sources/AngouriMath
-        dotnet build AngouriMath.csproj -c release  
+        cd _generator/AngouriMath/Sources/AngouriMath/AngouriMath
+        dotnet build -c release  
     
     - name: Run Generator
       run: |
