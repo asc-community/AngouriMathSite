@@ -17,3 +17,7 @@ cd AngouriMathSite
 ```
 
 For now, you will need to reproduce steps from CI to build it locally. At some point there will be a build script.
+
+### Other info
+
+Yandex.Metrica counter is now [public](https://metrica.yandex.com/stat/traffic?group=month&period=year&accuracy=1&id=72666283).
