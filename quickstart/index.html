@@ -161,7 +161,12 @@ also need to address the following resources:
     <pre><code>https://www.myget.org/F/angourimath/api/v3/index.json</code></pre>
     Here is what you can add to your nuget.config file:
     <pre><code>&lt;add key="myget" value="https://www.myget.org/F/angourimath/api/v3/index.json" /&gt;</code></pre>
-    Now, all latest versions are under 0.0.0-* pattern.
+    Now, all latest versions are under 0.0.0-* pattern. <b>Alternatively</b>, run
+    <pre><code>dotnet new nugetconfig
+    dotnet nuget add source https://www.myget.org/F/angourimath/api/v3/index.json
+    dotnet add package AngouriMath -v 0.0.0-*</code></pre>
+    Make sure to fix a concrete version to guarantee deterministic build.
+    
 </p>
 
 <br>
@@ -254,6 +259,7 @@ std::cout << expr.Differentiate("x");</code></pre>
     The full documentation is in the <a href="/docs/namespaces.html">almanac</a>. The repository
     (with the source code) is on <a href="https://github.com/asc-community/AngouriMath">GitHub</a>.
 </p>
+
 <!--Bottom begin-->
 
 <br><br><br><br>
