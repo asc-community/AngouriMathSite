@@ -163,9 +163,14 @@ void GenerateFinalWebsite()
             continue;
         var content = File.ReadAllText(file);
         var relativeName = file.Substring(dirName.Length + 1);
-        var relativePathName = Path.GetDirectoryName(relativeName).Replace('\\', '_');
+        var relativePathName = Path.GetDirectoryName(relativeName)
+            .Replace('\\', '_')
+            .Replace('/', '_');
 
-        var newContent = top + "\n" + content + "\n" + bottom;
+        var relativeNameSimple = relativeName.Replace(".html", "");
+
+        var localTop = top.Replace("##page_title##", $"AngouriMath | {relativeNameSimple}");
+        var newContent = localTop + "\n" + content + "\n" + bottom;
 
         #if DEBUG
         newContent = PathUp(newContent, relativeName, "themes.css");

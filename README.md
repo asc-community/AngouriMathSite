@@ -16,7 +16,20 @@ git clone https://github.com/asc-community/AngouriMathSite
 cd AngouriMathSite
 ```
 
-For now, you will need to reproduce steps from CI to build it locally. At some point there will be a build script.
+Now run
+```
+./init.sh
+```
+
+Once it's finished, you can generate the website by running
+```
+./run.sh
+```
+
+Or, to make it open automatically,
+```
+./runAndOpen.sh
+```
 
 ### Other info
 
