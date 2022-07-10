@@ -161,11 +161,10 @@ also need to address the following resources:
     <pre><code>https://www.myget.org/F/angourimath/api/v3/index.json</code></pre>
     Here is what you can add to your nuget.config file:
     <pre><code>&lt;add key="myget" value="https://www.myget.org/F/angourimath/api/v3/index.json" /&gt;</code></pre>
-    Now, all latest versions are under 0.0.0-* pattern. <b>Alternatively</b>, run
+    <b>Alternatively</b>, run
     <pre><code>dotnet new nugetconfig
-    dotnet nuget add source https://www.myget.org/F/angourimath/api/v3/index.json
-    dotnet add package AngouriMath -v 0.0.0-*</code></pre>
-    Make sure to fix a concrete version to guarantee deterministic build.
+dotnet nuget add source https://www.myget.org/F/angourimath/api/v3/index.json
+dotnet add package AngouriMath --prerelease</code></pre>
     
 </p>
 
@@ -187,7 +186,7 @@ also need to address the following resources:
     <pre><code>#r "nuget:AngouriMath.Interactive, *-*"</code></pre>
     If you want to install the last vesion, pushed to master, you can install it in the following way:
     <pre><code>#i "https://www.myget.org/F/angourimath/api/v3/index.json"
-#r "nuget:AngouriMath.Interactive, 0.0.0-*"</pre></code>
+#r "nuget:AngouriMath.Interactive, *-*"</pre></code>
 </p>
 
 
