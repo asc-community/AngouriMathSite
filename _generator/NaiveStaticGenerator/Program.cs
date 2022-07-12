@@ -172,11 +172,11 @@ void GenerateFinalWebsite()
         var localTop = top.Replace("##page_title##", $"AngouriMath | {relativeNameSimple}");
         var newContent = localTop + "\n" + content + "\n" + bottom;
 
-        #if DEBUG
-        newContent = PathUp(newContent, relativeName, "themes.css");
-        newContent = PathUp(newContent, relativeName, "styles.css");
-        newContent = PathUp(newContent, relativeName, "img/icon_cropped.png");
-        #endif
+       //  #if DEBUG
+       //  newContent = PathUp(newContent, relativeName, "themes.css");
+       //  newContent = PathUp(newContent, relativeName, "styles.css");
+       //  newContent = PathUp(newContent, relativeName, "img/icon_cropped.png");
+       //  #endif
 
         newContent = newContent.Replace($"li><!--active_{relativePathName}-->", "li class=\"active-link\">");
         if (relativeName.Contains("docs"))
