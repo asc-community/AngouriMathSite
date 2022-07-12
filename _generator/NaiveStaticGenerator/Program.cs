@@ -73,7 +73,7 @@ void GenerateWikiToPages()
 
     var sb = new StringBuilder(File.ReadAllText(Path.Combine(contentFolder, "_templates", "wiki.html")));
     sb.Append("<ul class='wiki-ul-main'>");
-    foreach (var (url, name) in links)
+    foreach (var (url, name) in links.OrderBy(l => l.url))
         sb.Append($"<li><a href='{url}'>{name}</a></li>");
     sb.Append("</ul>");
     sb.Append("<hr>");
