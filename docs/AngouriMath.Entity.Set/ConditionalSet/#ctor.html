@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Entity.Set/ConditionalSet/#ctor</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="/themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+   ym(72666283, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>   
+<noscript><div><img src="https://mc.yandex.ru/watch/72666283" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
+    
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PPHNLWBV0F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-PPHNLWBV0F');
+</script>
+    <!-- /Google Analytics -->
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+<img class="logo pc" src="/img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="/" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="/quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="/wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="/docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="/research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="/whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="/demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="/#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="/img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="/">Home</a>
+<a href="/quickstart">Quick start</a>
+<a href="/wiki">Wiki</a>
+<a href="/docs/namespaces.html">Almanac</a>
+<a href="/research">Research</a>
+<a href="/whatsnew">What's new</a>
+<a href="/demo">Try</a>
+<a href="/why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="/#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<p class="yadg-p "><a href="../AngouriMath.Entity.Set_ConditionalSet.html">&#8592; Back to list of classes</a></p><p class="yadg-p ">Method <h1 class="yadg-h1 ">#ctor</h1><p class="yadg-p "><h3 class="yadg-h3 ">#ctor (AngouriMath. Entity, AngouriMath. Entity)</h3> Method</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This is the most abstract set. Technically, you can describe<br>            any set within this one. Formally, you can define set A of<br>            a condition F(x) in the following way: for each element x in <br>            the Universal x belongs to A if and only if F(x).<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using AngouriMath;
+using System;
+using static AngouriMath.Entity.Set;
+using static AngouriMath.MathS;
+using static AngouriMath.MathS.Sets;
+
+var set1 = Finite(1, 2, 3);
+var set2 = Finite(2, 3, 4);
+var set3 = MathS.Interval(-6, 2);
+var set4 = new ConditionalSet("x", "100 &gt; x2 &gt; 81");
+Console.WriteLine(Union(set1, set2));
+Console.WriteLine(Union(set1, set2).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Union(set1, set3));
+Console.WriteLine(Union(set1, set3).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Union(set1, set4));
+Console.WriteLine(ElementInSet(3, Union(set1, set4)));
+Console.WriteLine(ElementInSet(3, Union(set1, set4)).Simplify());
+Console.WriteLine(ElementInSet(4, Union(set1, set4)));
+Console.WriteLine(ElementInSet(4, Union(set1, set4)).Simplify());
+Console.WriteLine(ElementInSet(9.5, Union(set1, set4)));
+Console.WriteLine(ElementInSet(9.5, Union(set1, set4)).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(set1, set2));
+Console.WriteLine(Intersection(set1, set2).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(set2, set3));
+Console.WriteLine(Intersection(set2, set3).Simplify());
+Console.WriteLine("----------------------");
+var set5 = MathS.Interval(-3, 11);
+Console.WriteLine(Intersection(set3, set5));
+Console.WriteLine(Intersection(set3, set5).Simplify());
+Console.WriteLine(Union(set3, set5));
+Console.WriteLine(Union(set3, set5).Simplify());
+Console.WriteLine(SetSubtraction(set3, set5));
+Console.WriteLine(SetSubtraction(set3, set5).Simplify());
+Console.WriteLine("----------------------");
+Entity syntax1 = @"{ 1, 2, 3 } /\ { 2, 3, 4 }";
+Console.WriteLine(syntax1);
+Console.WriteLine(syntax1.Simplify());
+Console.WriteLine("----------------------");
+Entity syntax2 = @"5 in ([1; +oo) \/ { x : x &lt; -4 })";
+Console.WriteLine(syntax2);
+Console.WriteLine(syntax2.Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q).Simplify());
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R).Simplify());
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C).Simplify());</code></pre><br>            Prints<br>            <pre><code>{ 1, 2, 3 } \/ { 2, 3, 4 }
+{ 1, 2, 3, 4 }
+----------------------
+{ 1, 2, 3 } \/ [-6; 2]
+{ 3 } \/ [-6; 2]
+----------------------
+{ 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+3 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+True
+4 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+False
+19/2 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+True
+----------------------
+{ 1, 2, 3 } /\ { 2, 3, 4 }
+{ 2, 3 }
+----------------------
+{ 2, 3, 4 } /\ [-6; 2]
+{ 2 }
+----------------------
+[-6; 2] /\ [-3; 11]
+[-3; 2]
+[-6; 2] \/ [-3; 11]
+[-6; 11]
+[-6; 2] \ [-3; 11]
+[-6; -3)
+----------------------
+{ 1, 2, 3 } /\ { 2, 3, 4 }
+{ 2, 3 }
+----------------------
+5 in [1; +oo) \/ { x : x &lt; -4 }
+True
+----------------------
+{ pi, e, 6, 11/2, 1 + 3i } /\ QQ
+{ 6, 11/2 }
+{ pi, e, 6, 11/2, 1 + 3i } /\ RR
+{ pi, e, 6, 11/2 }
+{ pi, e, 6, 11/2, 1 + 3i } /\ CC
+{ pi, e, 6, 11/2, 1 + 3i }</code></pre></div></p></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2022 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a>
+</div>
+</body>
+
+
+
+
+</html>

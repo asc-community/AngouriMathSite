@@ -109,7 +109,96 @@
 
 <!--Top end-->
 
-<h2 class="yadg-h2 centered">AngouriMath.Entity.Set</h2><hr/><p class="yadg-p "><a href="namespaces.html">&#8592; Back to list of namespaces</a></p><p class="yadg-p ">Classes within the AngouriMath.Entity.Set namespace</p><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Entity.Set/ConditionalSet.html">ConditionalSet</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This is the most abstract set. Technically, you can describe<br>            any set within this one. Formally, you can define set A of<br>            a condition F(x) in the following way: for each element x in <br>            the Universal x belongs to A if and only if F(x).<br>            </div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Entity.Set/FiniteSet.html">FiniteSet</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            A finite set is a set whose elements can be counted and enumerated<br>            </div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Entity.Set/Inf.html">Inf</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This node represents whether the given element is in the set<br>            </div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Entity.Set/Intersectionf.html">Intersectionf</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Finds the intersection of two sets<br>            It is true that an entity is in an intersection if it is in both of intersection's operands<br>            </div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Entity.Set/Interval.html">Interval</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            An interval represents all numbres in between two Entities<br>            <a href="AngouriMath.Entity.Set/Interval.html#LeftClosed">LeftClosed</a> stands for whether <a href="AngouriMath.Entity.Set/Interval.html#Left">Left</a> is included<br>            <a href="AngouriMath.Entity.Set/Interval.html#RightClosed">RightClosed</a> stands for whether <a href="AngouriMath.Entity.Set/Interval.html#Right">Right</a> is included<br>            </div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Entity.Set/SetMinusf.html">SetMinusf</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Finds A &amp; !B<br>            It is true that an entity is in SetMinus if it is in Left but not in Right<br>            </div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Entity.Set/SpecialSet.html">SpecialSet</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Special set is something that cannot be easily expressed in other<br>            types of sets.<br>            </div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Entity.Set/Unionf.html">Unionf</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Unites two sets<br>            It is true that an entity is in a union if it is at least in one of union's operands<br>            </div></li></ul></p>
+<h2 class="yadg-h2 centered">AngouriMath.Entity.Set</h2><hr/><p class="yadg-p "><a href="namespaces.html">&#8592; Back to list of namespaces</a></p><p class="yadg-p ">Classes within the AngouriMath.Entity.Set namespace</p><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Entity.Set/ConditionalSet.html">ConditionalSet</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This is the most abstract set. Technically, you can describe<br>            any set within this one. Formally, you can define set A of<br>            a condition F(x) in the following way: for each element x in <br>            the Universal x belongs to A if and only if F(x).<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using AngouriMath;
+using System;
+using static AngouriMath.Entity.Set;
+using static AngouriMath.MathS;
+using static AngouriMath.MathS.Sets;
+
+var set1 = Finite(1, 2, 3);
+var set2 = Finite(2, 3, 4);
+var set3 = MathS.Interval(-6, 2);
+var set4 = new ConditionalSet("x", "100 &gt; x2 &gt; 81");
+Console.WriteLine(Union(set1, set2));
+Console.WriteLine(Union(set1, set2).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Union(set1, set3));
+Console.WriteLine(Union(set1, set3).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Union(set1, set4));
+Console.WriteLine(ElementInSet(3, Union(set1, set4)));
+Console.WriteLine(ElementInSet(3, Union(set1, set4)).Simplify());
+Console.WriteLine(ElementInSet(4, Union(set1, set4)));
+Console.WriteLine(ElementInSet(4, Union(set1, set4)).Simplify());
+Console.WriteLine(ElementInSet(9.5, Union(set1, set4)));
+Console.WriteLine(ElementInSet(9.5, Union(set1, set4)).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(set1, set2));
+Console.WriteLine(Intersection(set1, set2).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(set2, set3));
+Console.WriteLine(Intersection(set2, set3).Simplify());
+Console.WriteLine("----------------------");
+var set5 = MathS.Interval(-3, 11);
+Console.WriteLine(Intersection(set3, set5));
+Console.WriteLine(Intersection(set3, set5).Simplify());
+Console.WriteLine(Union(set3, set5));
+Console.WriteLine(Union(set3, set5).Simplify());
+Console.WriteLine(SetSubtraction(set3, set5));
+Console.WriteLine(SetSubtraction(set3, set5).Simplify());
+Console.WriteLine("----------------------");
+Entity syntax1 = @"{ 1, 2, 3 } /\ { 2, 3, 4 }";
+Console.WriteLine(syntax1);
+Console.WriteLine(syntax1.Simplify());
+Console.WriteLine("----------------------");
+Entity syntax2 = @"5 in ([1; +oo) \/ { x : x &lt; -4 })";
+Console.WriteLine(syntax2);
+Console.WriteLine(syntax2.Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q).Simplify());
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R).Simplify());
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C).Simplify());</code></pre><br>            Prints<br>            <pre><code>{ 1, 2, 3 } \/ { 2, 3, 4 }
+{ 1, 2, 3, 4 }
+----------------------
+{ 1, 2, 3 } \/ [-6; 2]
+{ 3 } \/ [-6; 2]
+----------------------
+{ 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+3 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+True
+4 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+False
+19/2 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+True
+----------------------
+{ 1, 2, 3 } /\ { 2, 3, 4 }
+{ 2, 3 }
+----------------------
+{ 2, 3, 4 } /\ [-6; 2]
+{ 2 }
+----------------------
+[-6; 2] /\ [-3; 11]
+[-3; 2]
+[-6; 2] \/ [-3; 11]
+[-6; 11]
+[-6; 2] \ [-3; 11]
+[-6; -3)
+----------------------
+{ 1, 2, 3 } /\ { 2, 3, 4 }
+{ 2, 3 }
+----------------------
+5 in [1; +oo) \/ { x : x &lt; -4 }
+True
+----------------------
+{ pi, e, 6, 11/2, 1 + 3i } /\ QQ
+{ 6, 11/2 }
+{ pi, e, 6, 11/2, 1 + 3i } /\ RR
+{ pi, e, 6, 11/2 }
+{ pi, e, 6, 11/2, 1 + 3i } /\ CC
+{ pi, e, 6, 11/2, 1 + 3i }</code></pre></div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Entity.Set/FiniteSet.html">FiniteSet</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            A finite set is a set whose elements can be counted and enumerated<br>            </div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Entity.Set/Inf.html">Inf</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This node represents whether the given element is in the set<br>            </div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Entity.Set/Intersectionf.html">Intersectionf</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Finds the intersection of two sets<br>            It is true that an entity is in an intersection if it is in both of intersection's operands<br>            </div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Entity.Set/Interval.html">Interval</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            An interval represents all numbres in between two Entities<br>            <a href="AngouriMath.Entity.Set/Interval.html#LeftClosed">LeftClosed</a> stands for whether <a href="AngouriMath.Entity.Set/Interval.html#Left">Left</a> is included<br>            <a href="AngouriMath.Entity.Set/Interval.html#RightClosed">RightClosed</a> stands for whether <a href="AngouriMath.Entity.Set/Interval.html#Right">Right</a> is included<br>            </div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Entity.Set/SetMinusf.html">SetMinusf</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Finds A &amp; !B<br>            It is true that an entity is in SetMinus if it is in Left but not in Right<br>            </div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Entity.Set/SpecialSet.html">SpecialSet</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Special set is something that cannot be easily expressed in other<br>            types of sets.<br>            </div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Entity.Set/Unionf.html">Unionf</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Unites two sets<br>            It is true that an entity is in a union if it is at least in one of union's operands<br>            </div></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

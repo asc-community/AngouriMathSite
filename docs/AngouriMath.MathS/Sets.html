@@ -109,7 +109,452 @@
 
 <!--Top end-->
 
-<h2 class="yadg-h2 centered">Sets</h2><hr/><p class="yadg-p "><a href="../AngouriMath.MathS.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Functions and classes related to sets defined here<br>            <br>            Class <a href="../AngouriMath.Entity/Set.html">Set</a> defines true mathematical sets<br>            It supports intersection, union, subtraction<br>                        <br>            <a href="../AngouriMath.Entity/Set.html">Set</a></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><a name='C'></a><p class="yadg-p "><h3 class="yadg-h3 ">C</h3> Property</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A set of all Complexes/&gt;s</div></p></li><li class="yadg-li yadg-member yadg-list"><a name='ElementInSet'></a><p class="yadg-p "><h3 class="yadg-h3 ">ElementInSet (AngouriMath. Entity, AngouriMath. Entity)</h3> Method</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Creates a node of whether the given element belongs to the given set<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A node</div></p></li><li class="yadg-li yadg-member yadg-list"><a name='Empty'></a><p class="yadg-p "><h3 class="yadg-h3 ">Empty</h3> Property</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Creates an instance of an empty <a href="../AngouriMath.Entity/Set.html">Set</a></div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A <a href="../AngouriMath.Entity/Set.html">Set</a> with no elements</div></p></li><li class="yadg-li yadg-member yadg-list"><a name='Finite'></a><p class="yadg-p "><h3 class="yadg-h3 ">Finite</h3> Method and its overloads</p><ul class="yadg-ul "><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Finite (AngouriMath. Entity[])</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Creates a <a href="../AngouriMath.Entity.Set/FiniteSet.html">FiniteSet</a> with given elements<br>            </div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Finite (System. Collections. Generic. List{AngouriMath. Entity})</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Creates a <a href="../AngouriMath.Entity.Set/FiniteSet.html">FiniteSet</a> with given elements<br>            </div></p></li></ul></li><li class="yadg-li yadg-member yadg-list"><a name='Interval'></a><p class="yadg-p "><h3 class="yadg-h3 ">Interval</h3> Method and its overloads</p><ul class="yadg-ul "><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Interval (AngouriMath. Entity, AngouriMath. Entity)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Creates a closed interval<br>            </div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Interval (AngouriMath. Entity, System. Boolean, AngouriMath. Entity, System. Boolean)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Creates an interval where <text class="yadg-text cw">leftClosed</text> shows whether <text class="yadg-text cw">from</text> is included,<br>            <text class="yadg-text cw">rightClosed</text> shows whether <text class="yadg-text cw">to</text> included.<br>            </div></p></li></ul></li><li class="yadg-li yadg-member yadg-list"><a name='Q'></a><p class="yadg-p "><h3 class="yadg-h3 ">Q</h3> Property</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A set of all Rationals/&gt;s</div></p></li><li class="yadg-li yadg-member yadg-list"><a name='R'></a><p class="yadg-p "><h3 class="yadg-h3 ">R</h3> Property</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A set of all Reals/&gt;s</div></p></li><li class="yadg-li yadg-member yadg-list"><a name='Z'></a><p class="yadg-p "><h3 class="yadg-h3 ">Z</h3> Property</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A set of all Integers/&gt;</div></p></li></ul></p>
+<h2 class="yadg-h2 centered">Sets</h2><hr/><p class="yadg-p "><a href="../AngouriMath.MathS.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Functions and classes related to sets defined here<br>            <br>            Class <a href="../AngouriMath.Entity/Set.html">Set</a> defines true mathematical sets<br>            It supports intersection, union, subtraction<br>                        <br>            <a href="../AngouriMath.Entity/Set.html">Set</a></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><a name='C'></a><p class="yadg-p "><h3 class="yadg-h3 ">C</h3> Property</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A set of all Complexes/&gt;s</div></p></li><li class="yadg-li yadg-member yadg-list"><a name='ElementInSet'></a><p class="yadg-p "><h3 class="yadg-h3 ">ElementInSet (AngouriMath. Entity, AngouriMath. Entity)</h3> Method</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Creates a node of whether the given element belongs to the given set<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A node</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using AngouriMath;
+using System;
+using static AngouriMath.Entity.Set;
+using static AngouriMath.MathS;
+using static AngouriMath.MathS.Sets;
+
+var set1 = Finite(1, 2, 3);
+var set2 = Finite(2, 3, 4);
+var set3 = MathS.Interval(-6, 2);
+var set4 = new ConditionalSet("x", "100 &gt; x2 &gt; 81");
+Console.WriteLine(Union(set1, set2));
+Console.WriteLine(Union(set1, set2).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Union(set1, set3));
+Console.WriteLine(Union(set1, set3).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Union(set1, set4));
+Console.WriteLine(ElementInSet(3, Union(set1, set4)));
+Console.WriteLine(ElementInSet(3, Union(set1, set4)).Simplify());
+Console.WriteLine(ElementInSet(4, Union(set1, set4)));
+Console.WriteLine(ElementInSet(4, Union(set1, set4)).Simplify());
+Console.WriteLine(ElementInSet(9.5, Union(set1, set4)));
+Console.WriteLine(ElementInSet(9.5, Union(set1, set4)).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(set1, set2));
+Console.WriteLine(Intersection(set1, set2).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(set2, set3));
+Console.WriteLine(Intersection(set2, set3).Simplify());
+Console.WriteLine("----------------------");
+var set5 = MathS.Interval(-3, 11);
+Console.WriteLine(Intersection(set3, set5));
+Console.WriteLine(Intersection(set3, set5).Simplify());
+Console.WriteLine(Union(set3, set5));
+Console.WriteLine(Union(set3, set5).Simplify());
+Console.WriteLine(SetSubtraction(set3, set5));
+Console.WriteLine(SetSubtraction(set3, set5).Simplify());
+Console.WriteLine("----------------------");
+Entity syntax1 = @"{ 1, 2, 3 } /\ { 2, 3, 4 }";
+Console.WriteLine(syntax1);
+Console.WriteLine(syntax1.Simplify());
+Console.WriteLine("----------------------");
+Entity syntax2 = @"5 in ([1; +oo) \/ { x : x &lt; -4 })";
+Console.WriteLine(syntax2);
+Console.WriteLine(syntax2.Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q).Simplify());
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R).Simplify());
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C).Simplify());</code></pre><br>            Prints<br>            <pre><code>{ 1, 2, 3 } \/ { 2, 3, 4 }
+{ 1, 2, 3, 4 }
+----------------------
+{ 1, 2, 3 } \/ [-6; 2]
+{ 3 } \/ [-6; 2]
+----------------------
+{ 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+3 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+True
+4 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+False
+19/2 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+True
+----------------------
+{ 1, 2, 3 } /\ { 2, 3, 4 }
+{ 2, 3 }
+----------------------
+{ 2, 3, 4 } /\ [-6; 2]
+{ 2 }
+----------------------
+[-6; 2] /\ [-3; 11]
+[-3; 2]
+[-6; 2] \/ [-3; 11]
+[-6; 11]
+[-6; 2] \ [-3; 11]
+[-6; -3)
+----------------------
+{ 1, 2, 3 } /\ { 2, 3, 4 }
+{ 2, 3 }
+----------------------
+5 in [1; +oo) \/ { x : x &lt; -4 }
+True
+----------------------
+{ pi, e, 6, 11/2, 1 + 3i } /\ QQ
+{ 6, 11/2 }
+{ pi, e, 6, 11/2, 1 + 3i } /\ RR
+{ pi, e, 6, 11/2 }
+{ pi, e, 6, 11/2, 1 + 3i } /\ CC
+{ pi, e, 6, 11/2, 1 + 3i }</code></pre></div></p></li><li class="yadg-li yadg-member yadg-list"><a name='Empty'></a><p class="yadg-p "><h3 class="yadg-h3 ">Empty</h3> Property</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Creates an instance of an empty <a href="../AngouriMath.Entity/Set.html">Set</a></div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A <a href="../AngouriMath.Entity/Set.html">Set</a> with no elements</div></p></li><li class="yadg-li yadg-member yadg-list"><a name='Finite'></a><p class="yadg-p "><h3 class="yadg-h3 ">Finite</h3> Method and its overloads</p><ul class="yadg-ul "><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Finite (AngouriMath. Entity[])</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Creates a <a href="../AngouriMath.Entity.Set/FiniteSet.html">FiniteSet</a> with given elements<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using AngouriMath;
+using System;
+using static AngouriMath.Entity.Set;
+using static AngouriMath.MathS;
+using static AngouriMath.MathS.Sets;
+
+var set1 = Finite(1, 2, 3);
+var set2 = Finite(2, 3, 4);
+var set3 = MathS.Interval(-6, 2);
+var set4 = new ConditionalSet("x", "100 &gt; x2 &gt; 81");
+Console.WriteLine(Union(set1, set2));
+Console.WriteLine(Union(set1, set2).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Union(set1, set3));
+Console.WriteLine(Union(set1, set3).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Union(set1, set4));
+Console.WriteLine(ElementInSet(3, Union(set1, set4)));
+Console.WriteLine(ElementInSet(3, Union(set1, set4)).Simplify());
+Console.WriteLine(ElementInSet(4, Union(set1, set4)));
+Console.WriteLine(ElementInSet(4, Union(set1, set4)).Simplify());
+Console.WriteLine(ElementInSet(9.5, Union(set1, set4)));
+Console.WriteLine(ElementInSet(9.5, Union(set1, set4)).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(set1, set2));
+Console.WriteLine(Intersection(set1, set2).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(set2, set3));
+Console.WriteLine(Intersection(set2, set3).Simplify());
+Console.WriteLine("----------------------");
+var set5 = MathS.Interval(-3, 11);
+Console.WriteLine(Intersection(set3, set5));
+Console.WriteLine(Intersection(set3, set5).Simplify());
+Console.WriteLine(Union(set3, set5));
+Console.WriteLine(Union(set3, set5).Simplify());
+Console.WriteLine(SetSubtraction(set3, set5));
+Console.WriteLine(SetSubtraction(set3, set5).Simplify());
+Console.WriteLine("----------------------");
+Entity syntax1 = @"{ 1, 2, 3 } /\ { 2, 3, 4 }";
+Console.WriteLine(syntax1);
+Console.WriteLine(syntax1.Simplify());
+Console.WriteLine("----------------------");
+Entity syntax2 = @"5 in ([1; +oo) \/ { x : x &lt; -4 })";
+Console.WriteLine(syntax2);
+Console.WriteLine(syntax2.Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q).Simplify());
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R).Simplify());
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C).Simplify());</code></pre><br>            Prints<br>            <pre><code>{ 1, 2, 3 } \/ { 2, 3, 4 }
+{ 1, 2, 3, 4 }
+----------------------
+{ 1, 2, 3 } \/ [-6; 2]
+{ 3 } \/ [-6; 2]
+----------------------
+{ 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+3 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+True
+4 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+False
+19/2 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+True
+----------------------
+{ 1, 2, 3 } /\ { 2, 3, 4 }
+{ 2, 3 }
+----------------------
+{ 2, 3, 4 } /\ [-6; 2]
+{ 2 }
+----------------------
+[-6; 2] /\ [-3; 11]
+[-3; 2]
+[-6; 2] \/ [-3; 11]
+[-6; 11]
+[-6; 2] \ [-3; 11]
+[-6; -3)
+----------------------
+{ 1, 2, 3 } /\ { 2, 3, 4 }
+{ 2, 3 }
+----------------------
+5 in [1; +oo) \/ { x : x &lt; -4 }
+True
+----------------------
+{ pi, e, 6, 11/2, 1 + 3i } /\ QQ
+{ 6, 11/2 }
+{ pi, e, 6, 11/2, 1 + 3i } /\ RR
+{ pi, e, 6, 11/2 }
+{ pi, e, 6, 11/2, 1 + 3i } /\ CC
+{ pi, e, 6, 11/2, 1 + 3i }</code></pre></div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Finite (System. Collections. Generic. List{AngouriMath. Entity})</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Creates a <a href="../AngouriMath.Entity.Set/FiniteSet.html">FiniteSet</a> with given elements. See<br>            <a href="../AngouriMath.MathS/Sets.html#Finite">Finite(AngouriMath.Entity[])</a>.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using AngouriMath;
+using System;
+using static AngouriMath.Entity.Set;
+using static AngouriMath.MathS;
+using static AngouriMath.MathS.Sets;
+
+var set1 = Finite(1, 2, 3);
+var set2 = Finite(2, 3, 4);
+var set3 = MathS.Interval(-6, 2);
+var set4 = new ConditionalSet("x", "100 &gt; x2 &gt; 81");
+Console.WriteLine(Union(set1, set2));
+Console.WriteLine(Union(set1, set2).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Union(set1, set3));
+Console.WriteLine(Union(set1, set3).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Union(set1, set4));
+Console.WriteLine(ElementInSet(3, Union(set1, set4)));
+Console.WriteLine(ElementInSet(3, Union(set1, set4)).Simplify());
+Console.WriteLine(ElementInSet(4, Union(set1, set4)));
+Console.WriteLine(ElementInSet(4, Union(set1, set4)).Simplify());
+Console.WriteLine(ElementInSet(9.5, Union(set1, set4)));
+Console.WriteLine(ElementInSet(9.5, Union(set1, set4)).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(set1, set2));
+Console.WriteLine(Intersection(set1, set2).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(set2, set3));
+Console.WriteLine(Intersection(set2, set3).Simplify());
+Console.WriteLine("----------------------");
+var set5 = MathS.Interval(-3, 11);
+Console.WriteLine(Intersection(set3, set5));
+Console.WriteLine(Intersection(set3, set5).Simplify());
+Console.WriteLine(Union(set3, set5));
+Console.WriteLine(Union(set3, set5).Simplify());
+Console.WriteLine(SetSubtraction(set3, set5));
+Console.WriteLine(SetSubtraction(set3, set5).Simplify());
+Console.WriteLine("----------------------");
+Entity syntax1 = @"{ 1, 2, 3 } /\ { 2, 3, 4 }";
+Console.WriteLine(syntax1);
+Console.WriteLine(syntax1.Simplify());
+Console.WriteLine("----------------------");
+Entity syntax2 = @"5 in ([1; +oo) \/ { x : x &lt; -4 })";
+Console.WriteLine(syntax2);
+Console.WriteLine(syntax2.Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q).Simplify());
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R).Simplify());
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C).Simplify());</code></pre><br>            Prints<br>            <pre><code>{ 1, 2, 3 } \/ { 2, 3, 4 }
+{ 1, 2, 3, 4 }
+----------------------
+{ 1, 2, 3 } \/ [-6; 2]
+{ 3 } \/ [-6; 2]
+----------------------
+{ 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+3 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+True
+4 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+False
+19/2 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+True
+----------------------
+{ 1, 2, 3 } /\ { 2, 3, 4 }
+{ 2, 3 }
+----------------------
+{ 2, 3, 4 } /\ [-6; 2]
+{ 2 }
+----------------------
+[-6; 2] /\ [-3; 11]
+[-3; 2]
+[-6; 2] \/ [-3; 11]
+[-6; 11]
+[-6; 2] \ [-3; 11]
+[-6; -3)
+----------------------
+{ 1, 2, 3 } /\ { 2, 3, 4 }
+{ 2, 3 }
+----------------------
+5 in [1; +oo) \/ { x : x &lt; -4 }
+True
+----------------------
+{ pi, e, 6, 11/2, 1 + 3i } /\ QQ
+{ 6, 11/2 }
+{ pi, e, 6, 11/2, 1 + 3i } /\ RR
+{ pi, e, 6, 11/2 }
+{ pi, e, 6, 11/2, 1 + 3i } /\ CC
+{ pi, e, 6, 11/2, 1 + 3i }</code></pre></div></p></li></ul></li><li class="yadg-li yadg-member yadg-list"><a name='Interval'></a><p class="yadg-p "><h3 class="yadg-h3 ">Interval</h3> Method and its overloads</p><ul class="yadg-ul "><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Interval (AngouriMath. Entity, AngouriMath. Entity)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Creates a closed interval<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using AngouriMath;
+using System;
+using static AngouriMath.Entity.Set;
+using static AngouriMath.MathS;
+using static AngouriMath.MathS.Sets;
+
+var set1 = Finite(1, 2, 3);
+var set2 = Finite(2, 3, 4);
+var set3 = MathS.Interval(-6, 2);
+var set4 = new ConditionalSet("x", "100 &gt; x2 &gt; 81");
+Console.WriteLine(Union(set1, set2));
+Console.WriteLine(Union(set1, set2).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Union(set1, set3));
+Console.WriteLine(Union(set1, set3).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Union(set1, set4));
+Console.WriteLine(ElementInSet(3, Union(set1, set4)));
+Console.WriteLine(ElementInSet(3, Union(set1, set4)).Simplify());
+Console.WriteLine(ElementInSet(4, Union(set1, set4)));
+Console.WriteLine(ElementInSet(4, Union(set1, set4)).Simplify());
+Console.WriteLine(ElementInSet(9.5, Union(set1, set4)));
+Console.WriteLine(ElementInSet(9.5, Union(set1, set4)).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(set1, set2));
+Console.WriteLine(Intersection(set1, set2).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(set2, set3));
+Console.WriteLine(Intersection(set2, set3).Simplify());
+Console.WriteLine("----------------------");
+var set5 = MathS.Interval(-3, 11);
+Console.WriteLine(Intersection(set3, set5));
+Console.WriteLine(Intersection(set3, set5).Simplify());
+Console.WriteLine(Union(set3, set5));
+Console.WriteLine(Union(set3, set5).Simplify());
+Console.WriteLine(SetSubtraction(set3, set5));
+Console.WriteLine(SetSubtraction(set3, set5).Simplify());
+Console.WriteLine("----------------------");
+Entity syntax1 = @"{ 1, 2, 3 } /\ { 2, 3, 4 }";
+Console.WriteLine(syntax1);
+Console.WriteLine(syntax1.Simplify());
+Console.WriteLine("----------------------");
+Entity syntax2 = @"5 in ([1; +oo) \/ { x : x &lt; -4 })";
+Console.WriteLine(syntax2);
+Console.WriteLine(syntax2.Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q).Simplify());
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R).Simplify());
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C).Simplify());</code></pre><br>            Prints<br>            <pre><code>{ 1, 2, 3 } \/ { 2, 3, 4 }
+{ 1, 2, 3, 4 }
+----------------------
+{ 1, 2, 3 } \/ [-6; 2]
+{ 3 } \/ [-6; 2]
+----------------------
+{ 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+3 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+True
+4 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+False
+19/2 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+True
+----------------------
+{ 1, 2, 3 } /\ { 2, 3, 4 }
+{ 2, 3 }
+----------------------
+{ 2, 3, 4 } /\ [-6; 2]
+{ 2 }
+----------------------
+[-6; 2] /\ [-3; 11]
+[-3; 2]
+[-6; 2] \/ [-3; 11]
+[-6; 11]
+[-6; 2] \ [-3; 11]
+[-6; -3)
+----------------------
+{ 1, 2, 3 } /\ { 2, 3, 4 }
+{ 2, 3 }
+----------------------
+5 in [1; +oo) \/ { x : x &lt; -4 }
+True
+----------------------
+{ pi, e, 6, 11/2, 1 + 3i } /\ QQ
+{ 6, 11/2 }
+{ pi, e, 6, 11/2, 1 + 3i } /\ RR
+{ pi, e, 6, 11/2 }
+{ pi, e, 6, 11/2, 1 + 3i } /\ CC
+{ pi, e, 6, 11/2, 1 + 3i }</code></pre></div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Interval (AngouriMath. Entity, System. Boolean, AngouriMath. Entity, System. Boolean)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Creates an interval where <text class="yadg-text cw">leftClosed</text> shows whether <text class="yadg-text cw">from</text> is included,<br>            <text class="yadg-text cw">rightClosed</text> shows whether <text class="yadg-text cw">to</text> included.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using AngouriMath;
+using System;
+using static AngouriMath.Entity.Set;
+using static AngouriMath.MathS;
+using static AngouriMath.MathS.Sets;
+
+var set1 = Finite(1, 2, 3);
+var set2 = Finite(2, 3, 4);
+var set3 = MathS.Interval(-6, 2);
+var set4 = new ConditionalSet("x", "100 &gt; x2 &gt; 81");
+Console.WriteLine(Union(set1, set2));
+Console.WriteLine(Union(set1, set2).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Union(set1, set3));
+Console.WriteLine(Union(set1, set3).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Union(set1, set4));
+Console.WriteLine(ElementInSet(3, Union(set1, set4)));
+Console.WriteLine(ElementInSet(3, Union(set1, set4)).Simplify());
+Console.WriteLine(ElementInSet(4, Union(set1, set4)));
+Console.WriteLine(ElementInSet(4, Union(set1, set4)).Simplify());
+Console.WriteLine(ElementInSet(9.5, Union(set1, set4)));
+Console.WriteLine(ElementInSet(9.5, Union(set1, set4)).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(set1, set2));
+Console.WriteLine(Intersection(set1, set2).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(set2, set3));
+Console.WriteLine(Intersection(set2, set3).Simplify());
+Console.WriteLine("----------------------");
+var set5 = MathS.Interval(-3, 11);
+Console.WriteLine(Intersection(set3, set5));
+Console.WriteLine(Intersection(set3, set5).Simplify());
+Console.WriteLine(Union(set3, set5));
+Console.WriteLine(Union(set3, set5).Simplify());
+Console.WriteLine(SetSubtraction(set3, set5));
+Console.WriteLine(SetSubtraction(set3, set5).Simplify());
+Console.WriteLine("----------------------");
+Entity syntax1 = @"{ 1, 2, 3 } /\ { 2, 3, 4 }";
+Console.WriteLine(syntax1);
+Console.WriteLine(syntax1.Simplify());
+Console.WriteLine("----------------------");
+Entity syntax2 = @"5 in ([1; +oo) \/ { x : x &lt; -4 })";
+Console.WriteLine(syntax2);
+Console.WriteLine(syntax2.Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q).Simplify());
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R).Simplify());
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C).Simplify());</code></pre><br>            Prints<br>            <pre><code>{ 1, 2, 3 } \/ { 2, 3, 4 }
+{ 1, 2, 3, 4 }
+----------------------
+{ 1, 2, 3 } \/ [-6; 2]
+{ 3 } \/ [-6; 2]
+----------------------
+{ 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+3 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+True
+4 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+False
+19/2 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+True
+----------------------
+{ 1, 2, 3 } /\ { 2, 3, 4 }
+{ 2, 3 }
+----------------------
+{ 2, 3, 4 } /\ [-6; 2]
+{ 2 }
+----------------------
+[-6; 2] /\ [-3; 11]
+[-3; 2]
+[-6; 2] \/ [-3; 11]
+[-6; 11]
+[-6; 2] \ [-3; 11]
+[-6; -3)
+----------------------
+{ 1, 2, 3 } /\ { 2, 3, 4 }
+{ 2, 3 }
+----------------------
+5 in [1; +oo) \/ { x : x &lt; -4 }
+True
+----------------------
+{ pi, e, 6, 11/2, 1 + 3i } /\ QQ
+{ 6, 11/2 }
+{ pi, e, 6, 11/2, 1 + 3i } /\ RR
+{ pi, e, 6, 11/2 }
+{ pi, e, 6, 11/2, 1 + 3i } /\ CC
+{ pi, e, 6, 11/2, 1 + 3i }</code></pre></div></p></li></ul></li><li class="yadg-li yadg-member yadg-list"><a name='Q'></a><p class="yadg-p "><h3 class="yadg-h3 ">Q</h3> Property</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A set of all Rationals/&gt;s</div></p></li><li class="yadg-li yadg-member yadg-list"><a name='R'></a><p class="yadg-p "><h3 class="yadg-h3 ">R</h3> Property</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A set of all Reals/&gt;s</div></p></li><li class="yadg-li yadg-member yadg-list"><a name='Z'></a><p class="yadg-p "><h3 class="yadg-h3 ">Z</h3> Property</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A set of all Integers/&gt;</div></p></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

@@ -109,7 +109,185 @@
 
 <!--Top end-->
 
-<h2 class="yadg-h2 centered">ConditionalSet</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Entity.Set.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This is the most abstract set. Technically, you can describe<br>            any set within this one. Formally, you can define set A of<br>            a condition F(x) in the following way: for each element x in <br>            the Universal x belongs to A if and only if F(x).<br>            </div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><a name='#ctor'></a><p class="yadg-p "><h3 class="yadg-h3 ">#ctor (AngouriMath. Entity, AngouriMath. Entity)</h3> Method</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This is the most abstract set. Technically, you can describe<br>            any set within this one. Formally, you can define set A of<br>            a condition F(x) in the following way: for each element x in <br>            the Universal x belongs to A if and only if F(x).<br>            </div></p></li><li class="yadg-li yadg-member yadg-list"><a name='Codomain'></a><p class="yadg-p "><h3 class="yadg-h3 ">Codomain</h3> Property</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='Equals'></a><p class="yadg-p "><h3 class="yadg-h3 ">Equals (AngouriMath. Entity. Set. ConditionalSet)</h3> Method</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Compares two ConditionalSets<br>            If one is not CSet, false is returned<br>            </div></p></li><li class="yadg-li yadg-member yadg-list"><a name='Filter'></a><p class="yadg-p "><h3 class="yadg-h3 ">Filter (AngouriMath. Entity, AngouriMath. Entity. Variable)</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='GetHashCode'></a><p class="yadg-p "><h3 class="yadg-h3 ">GetHashCode</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='InitDirectChildren'></a><p class="yadg-p "><h3 class="yadg-h3 ">InitDirectChildren</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='InnerEval'></a><p class="yadg-p "><h3 class="yadg-h3 ">InnerEval</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='InnerSimplify'></a><p class="yadg-p "><h3 class="yadg-h3 ">InnerSimplify</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='IsSetEmpty'></a><p class="yadg-p "><h3 class="yadg-h3 ">IsSetEmpty</h3> Property</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='IsSetFinite'></a><p class="yadg-p "><h3 class="yadg-h3 ">IsSetFinite</h3> Property</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='Latexise'></a><p class="yadg-p "><h3 class="yadg-h3 ">Latexise</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='Replace'></a><p class="yadg-p "><h3 class="yadg-h3 ">Replace (System. Func{AngouriMath. Entity, AngouriMath. Entity})</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='Stringize'></a><p class="yadg-p "><h3 class="yadg-h3 ">Stringize</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='Substitute'></a><p class="yadg-p "><h3 class="yadg-h3 ">Substitute (AngouriMath. Entity, AngouriMath. Entity)</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='ToString'></a><p class="yadg-p "><h3 class="yadg-h3 ">ToString</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='TryContains'></a><p class="yadg-p "><h3 class="yadg-h3 ">TryContains (AngouriMath. Entity, System. Boolean@)</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li></ul></p>
+<h2 class="yadg-h2 centered">ConditionalSet</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Entity.Set.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This is the most abstract set. Technically, you can describe<br>            any set within this one. Formally, you can define set A of<br>            a condition F(x) in the following way: for each element x in <br>            the Universal x belongs to A if and only if F(x).<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using AngouriMath;
+using System;
+using static AngouriMath.Entity.Set;
+using static AngouriMath.MathS;
+using static AngouriMath.MathS.Sets;
+
+var set1 = Finite(1, 2, 3);
+var set2 = Finite(2, 3, 4);
+var set3 = MathS.Interval(-6, 2);
+var set4 = new ConditionalSet("x", "100 &gt; x2 &gt; 81");
+Console.WriteLine(Union(set1, set2));
+Console.WriteLine(Union(set1, set2).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Union(set1, set3));
+Console.WriteLine(Union(set1, set3).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Union(set1, set4));
+Console.WriteLine(ElementInSet(3, Union(set1, set4)));
+Console.WriteLine(ElementInSet(3, Union(set1, set4)).Simplify());
+Console.WriteLine(ElementInSet(4, Union(set1, set4)));
+Console.WriteLine(ElementInSet(4, Union(set1, set4)).Simplify());
+Console.WriteLine(ElementInSet(9.5, Union(set1, set4)));
+Console.WriteLine(ElementInSet(9.5, Union(set1, set4)).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(set1, set2));
+Console.WriteLine(Intersection(set1, set2).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(set2, set3));
+Console.WriteLine(Intersection(set2, set3).Simplify());
+Console.WriteLine("----------------------");
+var set5 = MathS.Interval(-3, 11);
+Console.WriteLine(Intersection(set3, set5));
+Console.WriteLine(Intersection(set3, set5).Simplify());
+Console.WriteLine(Union(set3, set5));
+Console.WriteLine(Union(set3, set5).Simplify());
+Console.WriteLine(SetSubtraction(set3, set5));
+Console.WriteLine(SetSubtraction(set3, set5).Simplify());
+Console.WriteLine("----------------------");
+Entity syntax1 = @"{ 1, 2, 3 } /\ { 2, 3, 4 }";
+Console.WriteLine(syntax1);
+Console.WriteLine(syntax1.Simplify());
+Console.WriteLine("----------------------");
+Entity syntax2 = @"5 in ([1; +oo) \/ { x : x &lt; -4 })";
+Console.WriteLine(syntax2);
+Console.WriteLine(syntax2.Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q).Simplify());
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R).Simplify());
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C).Simplify());</code></pre><br>            Prints<br>            <pre><code>{ 1, 2, 3 } \/ { 2, 3, 4 }
+{ 1, 2, 3, 4 }
+----------------------
+{ 1, 2, 3 } \/ [-6; 2]
+{ 3 } \/ [-6; 2]
+----------------------
+{ 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+3 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+True
+4 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+False
+19/2 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+True
+----------------------
+{ 1, 2, 3 } /\ { 2, 3, 4 }
+{ 2, 3 }
+----------------------
+{ 2, 3, 4 } /\ [-6; 2]
+{ 2 }
+----------------------
+[-6; 2] /\ [-3; 11]
+[-3; 2]
+[-6; 2] \/ [-3; 11]
+[-6; 11]
+[-6; 2] \ [-3; 11]
+[-6; -3)
+----------------------
+{ 1, 2, 3 } /\ { 2, 3, 4 }
+{ 2, 3 }
+----------------------
+5 in [1; +oo) \/ { x : x &lt; -4 }
+True
+----------------------
+{ pi, e, 6, 11/2, 1 + 3i } /\ QQ
+{ 6, 11/2 }
+{ pi, e, 6, 11/2, 1 + 3i } /\ RR
+{ pi, e, 6, 11/2 }
+{ pi, e, 6, 11/2, 1 + 3i } /\ CC
+{ pi, e, 6, 11/2, 1 + 3i }</code></pre></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><a name='#ctor'></a><p class="yadg-p "><h3 class="yadg-h3 ">#ctor (AngouriMath. Entity, AngouriMath. Entity)</h3> Method</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This is the most abstract set. Technically, you can describe<br>            any set within this one. Formally, you can define set A of<br>            a condition F(x) in the following way: for each element x in <br>            the Universal x belongs to A if and only if F(x).<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using AngouriMath;
+using System;
+using static AngouriMath.Entity.Set;
+using static AngouriMath.MathS;
+using static AngouriMath.MathS.Sets;
+
+var set1 = Finite(1, 2, 3);
+var set2 = Finite(2, 3, 4);
+var set3 = MathS.Interval(-6, 2);
+var set4 = new ConditionalSet("x", "100 &gt; x2 &gt; 81");
+Console.WriteLine(Union(set1, set2));
+Console.WriteLine(Union(set1, set2).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Union(set1, set3));
+Console.WriteLine(Union(set1, set3).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Union(set1, set4));
+Console.WriteLine(ElementInSet(3, Union(set1, set4)));
+Console.WriteLine(ElementInSet(3, Union(set1, set4)).Simplify());
+Console.WriteLine(ElementInSet(4, Union(set1, set4)));
+Console.WriteLine(ElementInSet(4, Union(set1, set4)).Simplify());
+Console.WriteLine(ElementInSet(9.5, Union(set1, set4)));
+Console.WriteLine(ElementInSet(9.5, Union(set1, set4)).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(set1, set2));
+Console.WriteLine(Intersection(set1, set2).Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(set2, set3));
+Console.WriteLine(Intersection(set2, set3).Simplify());
+Console.WriteLine("----------------------");
+var set5 = MathS.Interval(-3, 11);
+Console.WriteLine(Intersection(set3, set5));
+Console.WriteLine(Intersection(set3, set5).Simplify());
+Console.WriteLine(Union(set3, set5));
+Console.WriteLine(Union(set3, set5).Simplify());
+Console.WriteLine(SetSubtraction(set3, set5));
+Console.WriteLine(SetSubtraction(set3, set5).Simplify());
+Console.WriteLine("----------------------");
+Entity syntax1 = @"{ 1, 2, 3 } /\ { 2, 3, 4 }";
+Console.WriteLine(syntax1);
+Console.WriteLine(syntax1.Simplify());
+Console.WriteLine("----------------------");
+Entity syntax2 = @"5 in ([1; +oo) \/ { x : x &lt; -4 })";
+Console.WriteLine(syntax2);
+Console.WriteLine(syntax2.Simplify());
+Console.WriteLine("----------------------");
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q).Simplify());
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R).Simplify());
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C));
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C).Simplify());</code></pre><br>            Prints<br>            <pre><code>{ 1, 2, 3 } \/ { 2, 3, 4 }
+{ 1, 2, 3, 4 }
+----------------------
+{ 1, 2, 3 } \/ [-6; 2]
+{ 3 } \/ [-6; 2]
+----------------------
+{ 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+3 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+True
+4 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+False
+19/2 in { 1, 2, 3 } \/ { x : 100 &gt; x ^ 2 and x ^ 2 &gt; 81 }
+True
+----------------------
+{ 1, 2, 3 } /\ { 2, 3, 4 }
+{ 2, 3 }
+----------------------
+{ 2, 3, 4 } /\ [-6; 2]
+{ 2 }
+----------------------
+[-6; 2] /\ [-3; 11]
+[-3; 2]
+[-6; 2] \/ [-3; 11]
+[-6; 11]
+[-6; 2] \ [-3; 11]
+[-6; -3)
+----------------------
+{ 1, 2, 3 } /\ { 2, 3, 4 }
+{ 2, 3 }
+----------------------
+5 in [1; +oo) \/ { x : x &lt; -4 }
+True
+----------------------
+{ pi, e, 6, 11/2, 1 + 3i } /\ QQ
+{ 6, 11/2 }
+{ pi, e, 6, 11/2, 1 + 3i } /\ RR
+{ pi, e, 6, 11/2 }
+{ pi, e, 6, 11/2, 1 + 3i } /\ CC
+{ pi, e, 6, 11/2, 1 + 3i }</code></pre></div></p></li><li class="yadg-li yadg-member yadg-list"><a name='Codomain'></a><p class="yadg-p "><h3 class="yadg-h3 ">Codomain</h3> Property</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='Equals'></a><p class="yadg-p "><h3 class="yadg-h3 ">Equals (AngouriMath. Entity. Set. ConditionalSet)</h3> Method</p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Compares two ConditionalSets<br>            If one is not CSet, false is returned<br>            </div></p></li><li class="yadg-li yadg-member yadg-list"><a name='Filter'></a><p class="yadg-p "><h3 class="yadg-h3 ">Filter (AngouriMath. Entity, AngouriMath. Entity. Variable)</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='GetHashCode'></a><p class="yadg-p "><h3 class="yadg-h3 ">GetHashCode</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='InitDirectChildren'></a><p class="yadg-p "><h3 class="yadg-h3 ">InitDirectChildren</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='InnerEval'></a><p class="yadg-p "><h3 class="yadg-h3 ">InnerEval</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='InnerSimplify'></a><p class="yadg-p "><h3 class="yadg-h3 ">InnerSimplify</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='IsSetEmpty'></a><p class="yadg-p "><h3 class="yadg-h3 ">IsSetEmpty</h3> Property</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='IsSetFinite'></a><p class="yadg-p "><h3 class="yadg-h3 ">IsSetFinite</h3> Property</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='Latexise'></a><p class="yadg-p "><h3 class="yadg-h3 ">Latexise</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='Replace'></a><p class="yadg-p "><h3 class="yadg-h3 ">Replace (System. Func{AngouriMath. Entity, AngouriMath. Entity})</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='Stringize'></a><p class="yadg-p "><h3 class="yadg-h3 ">Stringize</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='Substitute'></a><p class="yadg-p "><h3 class="yadg-h3 ">Substitute (AngouriMath. Entity, AngouriMath. Entity)</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='ToString'></a><p class="yadg-p "><h3 class="yadg-h3 ">ToString</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li><li class="yadg-li yadg-member yadg-list"><a name='TryContains'></a><p class="yadg-p "><h3 class="yadg-h3 ">TryContains (AngouriMath. Entity, System. Boolean@)</h3> Method</p><p class="yadg-p "><inheritdoc /></p></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
