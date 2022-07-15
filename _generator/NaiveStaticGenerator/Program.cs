@@ -154,6 +154,10 @@ void GenerateFinalWebsite()
 
     var id = 0;
     var allFiles = Files.GatherFilesFromDir(dirName);
+    var count = allFiles.Count();
+
+    bottom = bottom.Replace("<!--PAGE_COUNT-->", $"{count} pages online");
+    
     foreach (var file in allFiles)
     {
         id++;
@@ -184,7 +188,7 @@ void GenerateFinalWebsite()
         newContent = newContent.Replace("<tbody>", "<pre>");
 
         var newFilePath = Path.Combine(rootName, relativeName);
-        var n = $"[{id} / {allFiles.Count()}]";
+        var n = $"[{id} / {count}]";
         Console.WriteLine($"{n} Read from  {file}");
         Console.WriteLine($"{n} Writing to {newFilePath}");
 
