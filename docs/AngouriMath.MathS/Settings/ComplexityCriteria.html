@@ -125,7 +125,7 @@ Console.WriteLine("a / b + b / c".ToEntity().Simplify());
 );
 
 Console.WriteLine("a / b + b / c".ToEntity().Simplify());</code></pre><br>            The output:<br>            <pre><code>a / b + b / c
-(a * c + b ^ 2) / (b * c)</code></pre><br>            Note that in the second case, this expression is simpler, because our complexity<br>            criteria gets lower when there's fewer division operators. Let's check the<br>            property <a href="../AngouriMath/Entity.html#SimplifiedRate">SimplifiedRate</a>:<br>            <pre><code>using System;
+(a * c + b ^ 2) / (b * c)</code></pre><br>            Note that in the second case, this expression is simpler, because our complexity<br>            criteria gets lower when there's fewer division operators. Let's check the<br>            property <a href="../AngouriMath/Entity/SimplifiedRate.html">SimplifiedRate</a>:<br>            <pre><code>using System;
 using System.Linq;
 using AngouriMath;
 using AngouriMath.Extensions;
