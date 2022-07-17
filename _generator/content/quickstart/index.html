@@ -16,7 +16,10 @@ also need to address the following resources:
 <hr>
 <p>
     <details><summary>How to install from NuGet?</summary>
-    Here are a few instructions how to use NuGet:
+    We recommend using [**.NET Command Line Interface**](https://docs.microsoft.com/en-us/dotnet/core/tools/), whose syntax for packages is
+    <pre><code>dotnet add package MyPackage</code></pre>.
+        
+    Also here are a few instructions how to use NuGet from IDEs:
     <ul>
     <li>
         <a href="https://docs.microsoft.com/en-us/nuget/quickstart/install-and-use-a-package-in-visual-studio">Visual Studio</a>
@@ -27,55 +30,51 @@ also need to address the following resources:
     </ul>
     </details>
     <br>
-    Packages you may want to install:
-    <ul>
-    <li>
-        <a href="https://www.nuget.org/packages/AngouriMath">AngouriMath</a> (for C#)
-    </li>
-    <li>
-        <a href="https://www.nuget.org/packages/AngouriMath.FSharp/">AngouriMath.FSharp</a> (for F# and C#)
-    </li>
-    </ul>
-
-    AngouriMath targets <a href="https://docs.microsoft.com/en-us/dotnet/standard/net-standard">netstandard2.0</a>, which implies that it will work for almost any target.
-
-    <br><br>
-    <div class="attention importance">
-        <b>IMPORTANT</b><br>
-        It is recommended to include prereleases to install the last version, even if it is
-        a pre-release one.
-    </div>
-    <br><br>
+    <p>
+        <h5>Install for C#</h5>
+        <pre><code>dotnet add package AngouriMath --prerelease</code></pre>
+    </p>
+    <p>
+        <h5>Install for F#</h5>
+        <pre><code>dotnet add package AngouriMath.FSharp --prerelease</code></pre>
+    </p>
+    <p>
+        <h5>Install nightly build</h5>
     If you want to use the last version, pushed to master, you will need to add MyGet as a nuget package source:
     <pre><code>https://www.myget.org/F/angourimath/api/v3/index.json</code></pre>
-    Here is what you can add to your nuget.config file:
-    <pre><code>&lt;add key="myget" value="https://www.myget.org/F/angourimath/api/v3/index.json" /&gt;</code></pre>
-    <b>Alternatively</b>, run
+    To add it, run
     <pre><code>dotnet new nugetconfig
 dotnet nuget add source https://www.myget.org/F/angourimath/api/v3/index.json
 dotnet add package AngouriMath --prerelease</code></pre>
+    </p>
     
 </p>
 
 <br>
 <br>
-<h3 class="centered"><a name="jupyter" href="#jupyter" class="anchor">Install for Jupyter</a></h3>
+<h3 class="centered"><a name="jupyter" href="#jupyter" class="anchor">Install for Notebooks</a></h3>
 <hr>
 <p>
     First, make sure to have installed Interactive for .NET: follow the instructions from
     the <a href="https://github.com/dotnet/interactive">official repository</a>.
     <br><br>
-    The package to install is here:
-    <ul>
-    <li>
-        <a href="https://www.nuget.org/packages/AngouriMath.Interactive">AngouriMath.Interactive</a> (for Jupyter)
-    </li>
-    </ul>
-    To install it, we recommend .NET Interactive's syntax, as follows:
-    <pre><code>#r "nuget:AngouriMath.Interactive, *-*"</code></pre>
-    If you want to install the last vesion, pushed to master, you can install it in the following way:
-    <pre><code>#i "https://www.myget.org/F/angourimath/api/v3/index.json"
-#r "nuget:AngouriMath.Interactive, *-*"</pre></code>
+    Now you need to run a special command right in your notebook:
+    <p>
+        <h5>For F#</h5>
+        <pre><code>#r "nuget:AngouriMath.Interactive, *-*"</code></pre>
+    </p>
+    <p>
+        <h5>For C#</h5>
+        <pre><code>#r "nuget:AngouriMath, *-*"</code></pre>
+    </p>
+    <p>
+        <h5>Nightly builds</h5>
+        First, run this command:
+        <pre><code>#i "https://www.myget.org/F/angourimath/api/v3/index.json"</code></pre>
+        Then you can run the command to install the F# or C# version.
+    </p>
+    
+    Note, that plotting API is only available in AngouriMath.Interactive.
 </p>
 
 
