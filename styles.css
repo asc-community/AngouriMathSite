@@ -1,6 +1,7 @@
 body {
     font-family: "Overpass Mono";
     font-size: 14pt;
+    line-height: 1.5;
     overflow-x: hidden;
 }
 
