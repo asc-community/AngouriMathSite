@@ -117,45 +117,81 @@
 
 <h2 class='centered'>Expressions</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Any expression in AngouriMath is a tree. It may include numbers, variables, operators, functions, vectors, and more.
 The main class, representing the library, is called <text class='cw'>Entity</text>. It is an abstract record, so every expression is a derived
-type of <text class='cw'>Entity</text>.<br><br><h2>The very basics of creating an expression</h2><br><br>Include the main namespace of the library:
+type of <text class='cw'>Entity</text>.
+
+<h2>The very basics of creating an expression</h2>
+
+Include the main namespace of the library:
 using AngouriMath;
-Now, let us create a simple arithmetic expression. <br><br>
+Now, let us create a simple arithmetic expression. 
+
+
 To build a tree we use overriden operators, for example,
 <pre><code>var (x, y) = MathS.Var("x", "y");
 var expr = x + 4 * MathS.Sin(x / y);</code></pre>
-<text class='cw'>expr</text> has the type of <text class='cw'>Entity.Sumf</text>, which is a derived type of <text class='cw'>Entity</text>.<br><br>Now, let us see another way of doing the same thing:
+<text class='cw'>expr</text> has the type of <text class='cw'>Entity.Sumf</text>, which is a derived type of <text class='cw'>Entity</text>.
+
+Now, let us see another way of doing the same thing:
 <pre><code>using static AngouriMath.MathS;
-using static AngouriMath.Entity;<br><br>Variable x = "x";  // implicit conversation
+using static AngouriMath.Entity;
+
+Variable x = "x";  // implicit conversation
 Variable y = "y";
 var expr = x + 4 * Sin(x / y);</code></pre>
-The first two <text class='cw'>using</text>s are implied by default in all other code snippets provided in Wiki.<br><br>AngouriMath internally uses <a href="https://github.com/peteroupc/Numbers">PeterO.Numbers</a>, so here
+The first two <text class='cw'>using</text>s are implied by default in all other code snippets provided in Wiki.
+
+AngouriMath internally uses <a href="https://github.com/peteroupc/Numbers">PeterO.Numbers</a>, so here
 are how numbers in AM could be created:
 <pre><code>using static AngouriMath.Entity.Number;
-using PeterO.Numbers;<br><br>var a01 = Integer.Create(3);
+using PeterO.Numbers;
+
+var a01 = Integer.Create(3);
 var a02 = Integer.Create(EInteger.FromInt32(3));
 var a03 = Rational.Create(3.4);
 var a04 = Rational.Create(ERational.FromDouble(3.4));
 var a05 = Real.Create(1.3234m);
 var a06 = Real.Create(EDecimal.FromDouble(3.4535));
 var a07 = Complex.Create(32.4m, 434);
-var a08 = Complex.Create(EDecimal.FromDecimal(32.4m), EDecimal.FromInt32(434));</code></pre><br><br><h2>Easy way to create an expression</h2><br><br>Now, let us shorten the creation of an expression and parse it from an expression. Here are two
+var a08 = Complex.Create(EDecimal.FromDecimal(32.4m), EDecimal.FromInt32(434));</code></pre>
+
+<h2>Easy way to create an expression</h2>
+
+Now, let us shorten the creation of an expression and parse it from an expression. Here are two
 lines of the equivalent code:
 <pre><code>Entity a = "x^2 + x + 4 / 5 + sqrt(5)";
 var a = FromString("x^2 + x + 4 / 5 + sqrt(5)");</code></pre>
 In some cases we can omit operators, for example, here are equivalent lines:
 <pre><code>Entity a = "x2 + 4y";
-Entity a = "x^2 + 4*y";</code></pre><br><br>Most operators and functions have a fixed number of arguments, for instance, plus operator cannot have three or more arguments. Here are
+Entity a = "x^2 + 4*y";</code></pre>
+
+Most operators and functions have a fixed number of arguments, for instance, plus operator cannot have three or more arguments. Here are
 two lines of the equivalent code:
 <pre><code>Entity a = "x + 2";
 Entity b = "y";
 var theirSum1 = new Sumf(a, b);
-var theirSum2 = a + b;</code></pre><br><br>In most code snippets in the rest of the wiki we will use implicit conversations.<br><br>[Here](https://am.angouri.org/docs/AngouriMath/MathS/FromString.html) more on different ways to parse.<br><br><h2>Variable substitution</h2><br><br>To substitute a particular value instead of a variable, use method <text class='cw'>Substitute</text>:
+var theirSum2 = a + b;</code></pre>
+
+In most code snippets in the rest of the wiki we will use implicit conversations.
+
+[Here](https://am.angouri.org/docs/AngouriMath/MathS/FromString.html) more on different ways to parse.
+
+<h2>Variable substitution</h2>
+
+To substitute a particular value instead of a variable, use method <text class='cw'>Substitute</text>:
 <pre><code>Entity expr = "x + 2";
 var newExpr = expr.Substitute("x", 3);</code></pre>
 It is the same as
-<pre><code>Entity newExpr = "3 + 2";</code></pre><br><br>It does not change the initial expression. Moreover, all subtypes of <text class='cw'>Entity</text> are immutable and cannot be changed by any method or function.
+<pre><code>Entity newExpr = "3 + 2";</code></pre>
+
+It does not change the initial expression. Moreover, all subtypes of <text class='cw'>Entity</text> are immutable and cannot be changed by any method or function.
 This allows to safely pass any expression to any functions being sure that it will not change. As a result, any operation will create a
-new expression.<br><br>[Here](https://am.angouri.org/docs/AngouriMath/Entity/Substitute.html) info on using method <text class='cw'>Substitute</text>.<br><br><h2>Nodes and pattern matching</h2><br><br><text class='cw'>Nodes</text> is a property of every expression. This property contains all possible subnodes of a node including itself. Let us consider an example:
+new expression.
+
+[Here](https://am.angouri.org/docs/AngouriMath/Entity/Substitute.html) info on using method <text class='cw'>Substitute</text>.
+
+<h2>Nodes and pattern matching</h2>
+
+<text class='cw'>Nodes</text> is a property of every expression. This property contains all possible subnodes of a node including itself. Let us consider an example:
 <pre><code>Entity expr = "a * x + 2";
 foreach (var subExpr in expr.Nodes)
     Console.WriteLine(subExpr);</code></pre>
@@ -164,7 +200,9 @@ The output will be the following:
 a * x
 a
 x
-2</code></pre><br><br>We can also analyze a given expression through patterns. Let us implement a naive differentiating:
+2</code></pre>
+
+We can also analyze a given expression through patterns. Let us implement a naive differentiating:
 <pre><code>static Entity Diff(Entity expr, Variable var)
     => expr switch
     {
@@ -181,19 +219,31 @@ Let us run the given function:
 <pre><code>Console.WriteLine(Diff("a x + 3sin(x + c)", "x"));</code></pre>
 The output will be the following:
 <pre><code>0 * x + 1 * a + 0 * sin(x + c) + cos(x + c) * (1 + 0) * 3</code></pre>
-When building an expression, no automatic simplification occurs.<br><br><h2>Method Replace</h2><br><br>Now let's assume we want our custom domain-specific simplification, where we assume that <text class='cw'>cos</text> is <text class='cw'>sin</text> and that sum of powers of two expressions is power of sum.<br><br><pre><code>using static AngouriMath.MathS;
-using static AngouriMath.Entity;<br><br>Entity SomeSimplify(Entity expr) => expr switch
+When building an expression, no automatic simplification occurs.
+
+<h2>Method Replace</h2>
+
+Now let's assume we want our custom domain-specific simplification, where we assume that <text class='cw'>cos</text> is <text class='cw'>sin</text> and that sum of powers of two expressions is power of sum.
+
+<pre><code>using static AngouriMath.MathS;
+using static AngouriMath.Entity;
+
+Entity SomeSimplify(Entity expr) => expr switch
 {
     Cosf(var e) => Sin(e),
     Sumf(Powf(var e1, var p1), Powf(var e2, var p2))
         when p1 == p2 => Pow(e1 + e2, p1),
     var other => other
-};<br><br>var (x, y) = Var("x", "y");
+};
+
+var (x, y) = Var("x", "y");
 var expr = Sin(Cos(Sqr(x + y) + Sqr(x)));
 var newExpr = expr.Replace(SomeSimplify);
 Console.WriteLine(newExpr);</code></pre>
 Should print:
-<pre><code>sin(sin((x + y + x) ^ 2))</code></pre><br><br><a href="https://am.angouri.org/docs/AngouriMath/Entity/Replace.html">Here</a> more info on <text class='cw'>Replace</text> method.
+<pre><code>sin(sin((x + y + x) ^ 2))</code></pre>
+
+<a href="https://am.angouri.org/docs/AngouriMath/Entity/Replace.html">Here</a> more info on <text class='cw'>Replace</text> method.
 <!--Bottom begin-->
 
 <br><br><br><br>
