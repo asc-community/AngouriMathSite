@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,12 +115,12 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath.MathS/Utils.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">SmartExpandOver&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Performs the expansion operation over the given variable<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using System;
+<p class="yadg-p "><a href="../../AngouriMath.MathS/Utils.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">SmartExpandOver&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Performs the expansion operation over the given variable<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
 using AngouriMath;
 using static AngouriMath.MathS.Utils;
 
 Entity expr = "(x + 2)(a + b + 2x) + x + sin(x)";
-Console.WriteLine(SmartExpandOver(expr, "x"));</code></pre><br>            Prints<br>            <pre><code>x * 2 * x + x * (a + b) + 2 * 2 * x + 2 * (a + b) + x + sin(x)</code></pre></div></p></p>
+Console.WriteLine(SmartExpandOver(expr, "x"));</code></pre><br>            Prints<br>            <pre><code class="language-cs">x * 2 * x + x * (a + b) + 2 * 2 * x + 2 * (a + b) + x + sin(x)</code></pre></div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Vector&#8203;(AngouriMath.&#8203;Entity[])</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Creates an instance of <a href="../AngouriMath.Entity/Matrix.html">Matrix</a> that has one column.</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "values"</strong></p><div class="yadg-div yadg-param">The cells of the <a href="../AngouriMath.Entity/Matrix.html">Matrix</a></div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A one-dimensional <a href="../AngouriMath.Entity/Matrix.html">Matrix</a> which is a vector</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using System;
+<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Vector&#8203;(AngouriMath.&#8203;Entity[])</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Creates an instance of <a href="../AngouriMath.Entity/Matrix.html">Matrix</a> that has one column.</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "values"</strong></p><div class="yadg-div yadg-param">The cells of the <a href="../AngouriMath.Entity/Matrix.html">Matrix</a></div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A one-dimensional <a href="../AngouriMath.Entity/Matrix.html">Matrix</a> which is a vector</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
 using AngouriMath;
 using static AngouriMath.Entity;
 using static AngouriMath.MathS;
@@ -133,7 +139,7 @@ Matrix C = @"
 Console.WriteLine(C.ToString(multilineFormat: true));
 
 Matrix D = "[1, 2, 3, 4]";
-Console.WriteLine(D.ToString(multilineFormat: true));</code></pre><br>            Prints<br>            <pre><code>Matrix[2 x 3]
+Console.WriteLine(D.ToString(multilineFormat: true));</code></pre><br>            Prints<br>            <pre><code class="language-cs">Matrix[2 x 3]
 1   2   3   
 4   5   6   
 Matrix[4 x 1]

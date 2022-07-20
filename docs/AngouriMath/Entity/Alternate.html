@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,19 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Alternate&#8203;(System.&#8203;Int32)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Finds all alternative forms of an expression sorted by their complexity</div></p></p>
+<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Alternate&#8203;(System.&#8203;Int32)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Finds all alternative forms of an expression sorted by their complexity</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
+using static AngouriMath.MathS;
+
+var (x, y, a) = Var("x", "y", "a");
+var expr = x * y + y + x + x / y + a * (x + y);
+foreach (var alt in expr.Alternate(level: 3))
+    Console.WriteLine(alt);</code></pre><pre><code class="language-cs">a * y + (1 + a + 1 / y + y) * x + y
+a * (x + y) + x + x * (y + 1 / y) + y
+a * (x + y) + x + x * (1 / y + y) + y
+x * y + y + x + x / y + a * (x + y)
+a * (x + y) + x + x * y + x / y + y
+(x + y) * a + x + x * y + x / y + y
+a * (x + y) + x + x * 1 / y + x * y + y</code></pre></div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

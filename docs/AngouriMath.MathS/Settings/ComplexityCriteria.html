@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,10 +115,10 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath.MathS/Settings.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">ComplexityCriteria</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Criteria for simplifier so you could control which expressions are considered easier by you.<br>            The higher the value - the more complicated an expression is.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            Consider a situation, when we simplify this simple expression:<br>            <pre><code>using System;
+<p class="yadg-p "><a href="../../AngouriMath.MathS/Settings.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">ComplexityCriteria</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Criteria for simplifier so you could control which expressions are considered easier by you.<br>            The higher the value - the more complicated an expression is.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            Consider a situation, when we simplify this simple expression:<br>            <pre><code class="language-cs">using System;
 using AngouriMath.Extensions;
 
-Console.WriteLine("a / b + b / c".ToEntity().Simplify());</code></pre><br>            The output is<br>            <pre><code>a / b + b / c</code></pre><br>            Assume we now hate division operators. For simplicity, our new complexity criteria<br>            equals to how many division operators are there. Basically, the more of them there are in<br>            expression, the more complicated it is. Now we add it:<br>            <pre><code>using System;
+Console.WriteLine("a / b + b / c".ToEntity().Simplify());</code></pre><br>            The output is<br>            <pre><code class="language-cs">a / b + b / c</code></pre><br>            Assume we now hate division operators. For simplicity, our new complexity criteria<br>            equals to how many division operators are there. Basically, the more of them there are in<br>            expression, the more complicated it is. Now we add it:<br>            <pre><code class="language-cs">using System;
 using System.Linq;
 using AngouriMath;
 using AngouriMath.Extensions;
@@ -124,8 +130,8 @@ Console.WriteLine("a / b + b / c".ToEntity().Simplify());
     expr =&gt; expr.Nodes.Count(node =&gt; node is Entity.Divf)
 );
 
-Console.WriteLine("a / b + b / c".ToEntity().Simplify());</code></pre><br>            The output:<br>            <pre><code>a / b + b / c
-(a * c + b ^ 2) / (b * c)</code></pre><br>            Note that in the second case, this expression is simpler, because our complexity<br>            criteria gets lower when there's fewer division operators. Let's check the<br>            property <a href="../AngouriMath/Entity/SimplifiedRate.html">SimplifiedRate</a>:<br>            <pre><code>using System;
+Console.WriteLine("a / b + b / c".ToEntity().Simplify());</code></pre><br>            The output:<br>            <pre><code class="language-cs">a / b + b / c
+(a * c + b ^ 2) / (b * c)</code></pre><br>            Note that in the second case, this expression is simpler, because our complexity<br>            criteria gets lower when there's fewer division operators. Let's check the<br>            property <a href="../AngouriMath/Entity/SimplifiedRate.html">SimplifiedRate</a>:<br>            <pre><code class="language-cs">using System;
 using System.Linq;
 using AngouriMath;
 using AngouriMath.Extensions;
@@ -140,7 +146,7 @@ using var _ = Settings.ComplexityCriteria.Set(
 );
 
 Console.WriteLine(FromString("a / b + b / c", useCache: false).SimplifiedRate);
-Console.WriteLine(FromString("a / b + b / c", useCache: false).Simplify().SimplifiedRate);</code></pre><br>            Prints<br>            <pre><code>24
+Console.WriteLine(FromString("a / b + b / c", useCache: false).Simplify().SimplifiedRate);</code></pre><br>            Prints<br>            <pre><code class="language-cs">24
 24
 2
 1</code></pre><br>            By default criteria it cannot simplify it further, however, the custom one<br>            it simplified from 2 to 1. <br>            </div></p></p>

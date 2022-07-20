@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath.MathS/Settings.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">NewtonSolver</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Settings for the Newton-Raphson's root-search method<br>            e.g.<br>            <pre><code>using var _ = MathS.Settings.NewtonSolver.Set(new NewtonSetting {
+<p class="yadg-p "><a href="../../AngouriMath.MathS/Settings.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">NewtonSolver</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Settings for the Newton-Raphson's root-search method<br>            e.g.<br>            <pre><code class="language-cs">using var _ = MathS.Settings.NewtonSolver.Set(new NewtonSetting {
     From = (-10, -10),
     To = (10, 10),
     StepCount = (10, 10),

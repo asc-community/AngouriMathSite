@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,26 @@
 
 <!--Top end-->
 
-<h2 class="yadg-h2 centered">MatrixBuilder</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Core.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Use this class for solvers and other places when a matrix needs to be built without<br>            recreating an instance multiple times. It builds an instance of <a href="../AngouriMath.Entity/Matrix.html">Matrix</a>.<br>            It enables to build a tensor row-by-row.<br>            </div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatrixBuilder/#ctor.html"><h3 class="yadg-h3 ">#ctor</h3></a>Method and its overloads</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatrixBuilder/Add.html"><h3 class="yadg-h3 ">Add</h3></a>Method and its overloads</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatrixBuilder/ToMatrix.html"><h3 class="yadg-h3 ">ToMatrix</h3></a>Method</p></li></ul></p>
+<h2 class="yadg-h2 centered">MatrixBuilder</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Core.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Use this class for solvers and other places when a matrix needs to be built without<br>            recreating an instance multiple times. It builds an instance of <a href="../AngouriMath.Entity/Matrix.html">Matrix</a>.<br>            It enables to build a tensor row-by-row.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
+using AngouriMath;
+using AngouriMath.Core;
+
+var mb = new MatrixBuilder(3);
+Console.WriteLine(mb.ToMatrix() is null);
+Console.WriteLine("-------------------------");
+
+mb.Add(new Entity[] { 1, 2, 3 } );
+mb.Add(new Entity[] { "x", "sqrt(y)", 5 } );
+Console.WriteLine(mb.ToMatrix().ToString(multilineFormat: true));
+Console.WriteLine("-------------------------");
+
+mb.Add(new Entity[] { 1 } ); // throws</code></pre><br>            Prints<br>            <pre><code class="language-cs">True
+-------------------------
+Matrix[2 x 3]
+1         2         3         
+x         sqrt(y)   5         
+-------------------------
+Unhandled exception. AngouriMath.Core.Exceptions.InvalidMatrixOperationException: Incorrect usage of MatrixBuilder</code></pre></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatrixBuilder/#ctor.html"><h3 class="yadg-h3 ">#ctor</h3></a>Method and its overloads</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatrixBuilder/Add.html"><h3 class="yadg-h3 ">Add</h3></a>Method and its overloads</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatrixBuilder/ToMatrix.html"><h3 class="yadg-h3 ">ToMatrix</h3></a>Method</p></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

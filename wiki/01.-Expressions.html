@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -175,7 +181,19 @@ Let us run the given function:
 <pre><code>Console.WriteLine(Diff("a x + 3sin(x + c)", "x"));</code></pre>
 The output will be the following:
 <pre><code>0 * x + 1 * a + 0 * sin(x + c) + cos(x + c) * (1 + 0) * 3</code></pre>
-When building an expression, no automatic simplification occurs.<br><br>[Here](https://am.angouri.org/docs/AngouriMath/Entity/Replace.html) more info on <text class='cw'>Replace</text> method.
+When building an expression, no automatic simplification occurs.<br><br><h2>Method Replace</h2><br><br>Now let's assume we want our custom domain-specific simplification, where we assume that <text class='cw'>cos</text> is <text class='cw'>sin</text> and that sum of powers of two expressions is power of sum.<br><br><pre><code>using static AngouriMath.MathS;
+using static AngouriMath.Entity;<br><br>Entity SomeSimplify(Entity expr) => expr switch
+{
+    Cosf(var e) => Sin(e),
+    Sumf(Powf(var e1, var p1), Powf(var e2, var p2))
+        when p1 == p2 => Pow(e1 + e2, p1),
+    var other => other
+};<br><br>var (x, y) = Var("x", "y");
+var expr = Sin(Cos(Sqr(x + y) + Sqr(x)));
+var newExpr = expr.Replace(SomeSimplify);
+Console.WriteLine(newExpr);</code></pre>
+Should print:
+<pre><code>sin(sin((x + y + x) ^ 2))</code></pre><br><br><a href="https://am.angouri.org/docs/AngouriMath/Entity/Replace.html">Here</a> more info on <text class='cw'>Replace</text> method.
 <!--Bottom begin-->
 
 <br><br><br><br>

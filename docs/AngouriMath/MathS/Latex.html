@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Latex&#8203;(AngouriMath.&#8203;Core.&#8203;ILatexiseable)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>            The <a href="https://en.wikipedia.org/wiki/LaTeX">LaTeX</a> representation of the argument<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "latexiseable"</strong></p><div class="yadg-div yadg-param">            Any element (<a href="../AngouriMath/Entity.html">Entity</a>, <a href="../AngouriMath.Entity/Set.html">Set</a>, etc.) that can be represented in LaTeX<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using System;
+<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Latex&#8203;(AngouriMath.&#8203;Core.&#8203;ILatexiseable)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>            The <a href="https://en.wikipedia.org/wiki/LaTeX">LaTeX</a> representation of the argument<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "latexiseable"</strong></p><div class="yadg-div yadg-param">            Any element (<a href="../AngouriMath/Entity.html">Entity</a>, <a href="../AngouriMath.Entity/Set.html">Set</a>, etc.) that can be represented in LaTeX<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
 using AngouriMath;
 using static AngouriMath.MathS;
 
@@ -118,7 +124,7 @@ Console.WriteLine(expr);
 Console.WriteLine(Latex(expr));
 Entity expr2 = "a / b ^ limit(sin(x) - cosh(y), x, +oo)";
 Console.WriteLine(expr2);
-Console.WriteLine(Latex(expr2));</code></pre><br>            Prints<br>            <pre><code>sqrt(a) + integral(sin(x), x)
+Console.WriteLine(Latex(expr2));</code></pre><br>            Prints<br>            <pre><code class="language-cs">sqrt(a) + integral(sin(x), x)
 \sqrt{a}+\int \left[\sin\left(x\right)\right] dx
 a / b ^ limit(sin(x) - (e ^ y + e ^ (-y)) / 2, x, +oo)
 \frac{a}{{b}^{\lim_{x\to \infty } \left[\sin\left(x\right)-\frac{{e}^{y}+{e}^{-y}}{2}\right]}}</code></pre></div></p></p>

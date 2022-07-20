@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,36 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Evaled</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Represents the evaluated value of the given expression<br>            Unlike the result of <a href="../AngouriMath/Entity/EvalNumerical.html">EvalNumerical</a> and<br>            <a href="../AngouriMath/Entity/EvalBoolean.html">EvalBoolean</a>            this is not constrained by any type.<br>            <br>            It only performs an active operation in the first call,<br>            next time it is free to call it in terms of CPU usage. For<br>            consistency's sake, consider the call of this property<br>            as free as the addressing of a field.<br>            </div></p></p>
+<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Evaled</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Represents the evaluated value of the given expression<br>            Unlike the result of <a href="../AngouriMath/Entity/EvalNumerical.html">EvalNumerical</a> and<br>            <a href="../AngouriMath/Entity/EvalBoolean.html">EvalBoolean</a>            this is not constrained by any type.<br>            <br>            It only performs an active operation in the first call,<br>            next time it is free to call it in terms of CPU usage. For<br>            consistency's sake, consider the call of this property<br>            as free as the addressing of a field.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
+using static AngouriMath.MathS;
+
+var (x, y) = Var("x", "y");
+var expr1 = x + y;
+Console.WriteLine(expr1);
+Console.WriteLine(expr1.Evaled);
+Console.WriteLine(expr1.Evaled.GetType());
+Console.WriteLine("-----------------------------");
+var expr2 = 5 + x * i;
+Console.WriteLine(expr2);
+Console.WriteLine(expr2.Evaled);
+Console.WriteLine(expr2.Substitute(x, 3).Evaled);
+Console.WriteLine(expr2.Substitute(x, 3).Evaled.GetType());
+Console.WriteLine("-----------------------------");
+var expr3 = GreaterThan(5, 3);
+Console.WriteLine(expr3);
+Console.WriteLine(expr3.Evaled);
+Console.WriteLine(expr3.Evaled.GetType());</code></pre><br>            Prints<br>            <pre><code class="language-cs">x + y
+x + y
+AngouriMath.Entity+Sumf
+-----------------------------
+5 + x * i
+5 + x * i
+5 + 3i
+AngouriMath.Entity+Number+Complex
+-----------------------------
+5 &gt; 3
+True
+AngouriMath.Entity+Boolean</code></pre></div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

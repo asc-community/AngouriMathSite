@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
 
 <!--Top end-->
 
-<h2 class="yadg-h2 centered">ConditionalSet</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Entity.Set.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This is the most abstract set. Technically, you can describe<br>            any set within this one. Formally, you can define set A of<br>            a condition F(x) in the following way: for each element x in <br>            the Universal x belongs to A if and only if F(x).<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using AngouriMath;
+<h2 class="yadg-h2 centered">ConditionalSet</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Entity.Set.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This is the most abstract set. Technically, you can describe<br>            any set within this one. Formally, you can define set A of<br>            a condition F(x) in the following way: for each element x in <br>            the Universal x belongs to A if and only if F(x).<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using AngouriMath;
 using System;
 using static AngouriMath.Entity.Set;
 using static AngouriMath.MathS;
@@ -160,7 +166,7 @@ Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), Q).Simplify())
 Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R));
 Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), R).Simplify());
 Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C));
-Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C).Simplify());</code></pre><br>            Prints<br>            <pre><code>{ 1, 2, 3 } \/ { 2, 3, 4 }
+Console.WriteLine(Intersection(Finite(pi, e, 6, 5.5m, 1 + 3 * i), C).Simplify());</code></pre><br>            Prints<br>            <pre><code class="language-cs">{ 1, 2, 3 } \/ { 2, 3, 4 }
 { 1, 2, 3, 4 }
 ----------------------
 { 1, 2, 3 } \/ [-6; 2]

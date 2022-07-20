@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Piecewise</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method with 2 overloads</p></p><ul class="yadg-ul "><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Piecewise&#8203;(System.&#8203;Collections.&#8203;Generic.&#8203;IEnumerable{AngouriMath.&#8203;Entity.&#8203;Providedf},&#8203;AngouriMath.&#8203;Entity)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This is a piecewisely defined function, which turns into a particular definition<br>            once there exists a case number N such that case[N].Predicate is turned into true and<br>            for all i less than N : case[i].Predicate is turned into false.<br>            <br>            For example, Piecewise(new Providedf(a, b), new Providedf(d, false), new Providedf(f, true))<br>            will remain unchanged, because the first case is uncertain.<br>            <br>            Piecewise(new Providedf(a, false), new Providedf(d, false), new Providedf(f, true))<br>            will turn into f<br>            <br>            Piecewise(new Providedf(a, false), new Providedf(d, false), new Providedf(f, false))<br>            will turn into NaN<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "cases"</strong></p><div class="yadg-div yadg-param">            Cases, each of type Provided.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "otherwise"</strong></p><div class="yadg-div yadg-param">            An otherwise case. Will be intepreted as otherwise.Provided(true). Optional.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using System;
+<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Piecewise</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method with 2 overloads</p></p><ul class="yadg-ul "><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Piecewise&#8203;(System.&#8203;Collections.&#8203;Generic.&#8203;IEnumerable{AngouriMath.&#8203;Entity.&#8203;Providedf},&#8203;AngouriMath.&#8203;Entity)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This is a piecewisely defined function, which turns into a particular definition<br>            once there exists a case number N such that case[N].Predicate is turned into true and<br>            for all i less than N : case[i].Predicate is turned into false.<br>            <br>            For example, Piecewise(new Providedf(a, b), new Providedf(d, false), new Providedf(f, true))<br>            will remain unchanged, because the first case is uncertain.<br>            <br>            Piecewise(new Providedf(a, false), new Providedf(d, false), new Providedf(f, true))<br>            will turn into f<br>            <br>            Piecewise(new Providedf(a, false), new Providedf(d, false), new Providedf(f, false))<br>            will turn into NaN<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "cases"</strong></p><div class="yadg-div yadg-param">            Cases, each of type Provided.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "otherwise"</strong></p><div class="yadg-div yadg-param">            An otherwise case. Will be intepreted as otherwise.Provided(true). Optional.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
 using static AngouriMath.MathS;
 
 var expr = Piecewise(
@@ -143,7 +149,7 @@ var thousandVisualizer = Piecewise(
 Console.WriteLine(thousandVisualizer.Substitute("a", 19301).Evaled);
 Console.WriteLine(thousandVisualizer.Substitute("a", 19301123).Evaled);
 Console.WriteLine(thousandVisualizer.Substitute("a", 32).Evaled);
-Console.WriteLine(thousandVisualizer.Substitute("a", -24).Evaled);</code></pre><br>            Prints<br>            <pre><code>(-1 if x &lt; 0, 0 if x = 0, 1 if True)
+Console.WriteLine(thousandVisualizer.Substitute("a", -24).Evaled);</code></pre><br>            Prints<br>            <pre><code class="language-cs">(-1 if x &lt; 0, 0 if x = 0, 1 if True)
 1
 0
 -1
@@ -155,7 +161,7 @@ Console.WriteLine(thousandVisualizer.Substitute("a", -24).Evaled);</code></pre><
 19301/1000 * thousand
 19301123/1000000 * million
 32
-NaN</code></pre></div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Piecewise&#8203;(System.&#8203;ValueTuple{AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity}[])</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This is a piecewisely defined function, which turns into a particular definition<br>            once there exists a case number N such that case[N].Predicate is turned into true and<br>            for all i less than N : case[i].Predicate is turned into false.<br>            <br>            For example, Piecewise((a, b), (d, false), (f, true))<br>            will remain unchanged, because the first case is uncertain.<br>            <br>            Piecewise((a, false), (d, false), (f, true))<br>            will turn into f<br>            <br>            Piecewise((a, false), (d, false), (f, false))<br>            will turn into NaN<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "cases"</strong></p><div class="yadg-div yadg-param">            Tuples of two expressions: an expression and a predicate<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using System;
+NaN</code></pre></div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Piecewise&#8203;(System.&#8203;ValueTuple{AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity}[])</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This is a piecewisely defined function, which turns into a particular definition<br>            once there exists a case number N such that case[N].Predicate is turned into true and<br>            for all i less than N : case[i].Predicate is turned into false.<br>            <br>            For example, Piecewise((a, b), (d, false), (f, true))<br>            will remain unchanged, because the first case is uncertain.<br>            <br>            Piecewise((a, false), (d, false), (f, true))<br>            will turn into f<br>            <br>            Piecewise((a, false), (d, false), (f, false))<br>            will turn into NaN<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "cases"</strong></p><div class="yadg-div yadg-param">            Tuples of two expressions: an expression and a predicate<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
 using static AngouriMath.MathS;
 
 var expr = Piecewise(
@@ -189,7 +195,7 @@ var thousandVisualizer = Piecewise(
 Console.WriteLine(thousandVisualizer.Substitute("a", 19301).Evaled);
 Console.WriteLine(thousandVisualizer.Substitute("a", 19301123).Evaled);
 Console.WriteLine(thousandVisualizer.Substitute("a", 32).Evaled);
-Console.WriteLine(thousandVisualizer.Substitute("a", -24).Evaled);</code></pre><br>            Prints<br>            <pre><code>(-1 if x &lt; 0, 0 if x = 0, 1 if True)
+Console.WriteLine(thousandVisualizer.Substitute("a", -24).Evaled);</code></pre><br>            Prints<br>            <pre><code class="language-cs">(-1 if x &lt; 0, 0 if x = 0, 1 if True)
 1
 0
 -1

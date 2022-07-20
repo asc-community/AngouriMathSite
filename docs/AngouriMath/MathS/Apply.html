@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Apply&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity[])</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Applies the list of arguments to the given expression<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'><a href="../AngouriMath.Entity/Application.html">Application</a></div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>Entity expr = "sin";
+<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Apply&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity[])</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Applies the list of arguments to the given expression<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'><a href="../AngouriMath.Entity/Application.html">Application</a></div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">Entity expr = "sin";
 Console.WriteLine(expr);
 var applied = expr.Apply(pi / 3);
 Console.WriteLine(applied);
@@ -136,7 +142,7 @@ Console.WriteLine(lambda3.Apply(5).Apply(10).Simplify());
 Console.WriteLine(lambda3.Apply(5, 10));
 Console.WriteLine(lambda3.Apply(5, 10).Simplify());
 Console.WriteLine(lambda3.Apply(5, 10, 7));
-Console.WriteLine(lambda3.Apply(5, 10, 7).Simplify());</code></pre><br>            Prints<br>            <pre><code>sin
+Console.WriteLine(lambda3.Apply(5, 10, 7).Simplify());</code></pre><br>            Prints<br>            <pre><code class="language-cs">sin
 sin (pi / 3)
 sqrt(3) / 2
 1/2 * sqrt(3)

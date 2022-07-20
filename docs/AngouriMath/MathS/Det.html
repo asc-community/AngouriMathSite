@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Det&#8203;(AngouriMath.&#8203;Entity.&#8203;Matrix)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Finds the determinant of the given matrix. If<br>            the matrix is non-square, returns null<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using System;
+<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Det&#8203;(AngouriMath.&#8203;Entity.&#8203;Matrix)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Finds the determinant of the given matrix. If<br>            the matrix is non-square, returns null<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
 using static AngouriMath.Entity;
 using static AngouriMath.MathS;
 
@@ -130,7 +136,7 @@ Matrix C = @"
  [3, 6],
  [7, 8]]
 ";
-Console.WriteLine(Det(C) is null);</code></pre><br>            Prints<br>            <pre><code>-2
+Console.WriteLine(Det(C) is null);</code></pre><br>            Prints<br>            <pre><code class="language-cs">-2
 0
 True</code></pre></div></p></p>
 <!--Bottom begin-->

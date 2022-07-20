@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,14 +115,14 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Factorial&#8203;(AngouriMath.&#8203;Entity)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'><a href="https://en.wikipedia.org/wiki/Factorial">https://en.wikipedia.org/wiki/Factorial</a></div><p class="yadg-p "><strong class="yadg-strong ">Parameter "a"</strong></p><div class="yadg-div yadg-param">Argument node of which factorial will be taken</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>Factorial node</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using System;
+<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Factorial&#8203;(AngouriMath.&#8203;Entity)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'><a href="https://en.wikipedia.org/wiki/Factorial">https://en.wikipedia.org/wiki/Factorial</a></div><p class="yadg-p "><strong class="yadg-strong ">Parameter "a"</strong></p><div class="yadg-div yadg-param">Argument node of which factorial will be taken</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>Factorial node</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
 using static AngouriMath.MathS;
 var expr = Factorial(5);
 Console.WriteLine(expr);
 Console.WriteLine(expr.Evaled);
 var expr2 = Gamma(4);
 Console.WriteLine(expr2);
-Console.WriteLine(expr2.Evaled);</code></pre><br>            Prints<br>            <pre><code>5!
+Console.WriteLine(expr2.Evaled);</code></pre><br>            Prints<br>            <pre><code class="language-cs">5!
 120
 (4 + 1)!
 120</code></pre></div></p></p>

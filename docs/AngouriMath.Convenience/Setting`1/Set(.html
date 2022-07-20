@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath.Convenience/Setting`1.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Set&#8203;(&#8203;(`0)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Sets the new value for the setting<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "value"</strong></p><div class="yadg-div yadg-param">            New value of a setting<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>            An IDisposable struct. Make sure to use operator `using` before, so that it auto-disposes<br>            once the method is over.<br>            Example:<br>            <pre><code>using var _ = MathS.Settings.SomeSetting.Set(4);
+<p class="yadg-p "><a href="../../AngouriMath.Convenience/Setting`1.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Set&#8203;(&#8203;(`0)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Sets the new value for the setting<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "value"</strong></p><div class="yadg-div yadg-param">            New value of a setting<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>            An IDisposable struct. Make sure to use operator `using` before, so that it auto-disposes<br>            once the method is over.<br>            Example:<br>            <pre><code class="language-cs">using var _ = MathS.Settings.SomeSetting.Set(4);
 // do something, once the method is ended, the setting is automatically returned to the initial statement</code></pre></div></p></p>
 <!--Bottom begin-->
 

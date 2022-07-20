@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,18 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">IsSymbolic</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Checks whether the given expression contains variable</div></p></p>
+<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">IsSymbolic</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Checks whether the given expression contains variable</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
+using static AngouriMath.MathS;
+
+var (x, y) = Var("x", "y");
+var expr1 = Sin(x + y) - Sqr(x);
+Console.WriteLine(expr1.IsSymbolic);
+var expr2 = Sin(5) - 22;
+Console.WriteLine(expr2.IsSymbolic);
+var expr3 = Sin(5) - 22 / x;
+Console.WriteLine(expr3.IsSymbolic);</code></pre><br>            Prints<br>            <pre><code class="language-cs">True
+False
+True</code></pre></div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

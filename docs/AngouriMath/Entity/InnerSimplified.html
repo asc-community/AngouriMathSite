@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,16 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">InnerSimplified</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This is the result of naive simplifications. In other <br>            symbolic algebra systems it is called "Automatic simplification".<br>            It only performs an active operation in the first call,<br>            next time it is free to call it in terms of CPU usage. For<br>            consistency's sake, consider the call of this property<br>            as free as the addressing of a field.<br>            </div></p></p>
+<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">InnerSimplified</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This is the result of naive simplifications. In other <br>            symbolic algebra systems it is called "Automatic simplification".<br>            It only performs an active operation in the first call,<br>            next time it is free to call it in terms of CPU usage. For<br>            consistency's sake, consider the call of this property<br>            as free as the addressing of a field.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
+using static AngouriMath.MathS;
+
+var x = Var("x");
+var expr = Sqr(Sin(x + 0)) + Sqr(Cos(x / 1));
+Console.WriteLine(expr);
+Console.WriteLine(expr.InnerSimplified);
+Console.WriteLine(expr.Simplify());</code></pre><br>            Prints<br>            <pre><code class="language-cs">sin(x + 0) ^ 2 + cos(x / 1) ^ 2
+sin(x) ^ 2 + cos(x) ^ 2
+1</code></pre></div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

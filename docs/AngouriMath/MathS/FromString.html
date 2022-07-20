@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">FromString</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method with 2 overloads</p></p><ul class="yadg-ul "><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">FromString&#8203;(System.&#8203;String,&#8203;System.&#8203;Boolean)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Converts a String to an expression</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "expr"</strong></p><div class="yadg-div yadg-param">String expression, for example, <pre><code>"2 * x + 3 + sqrt(x)"</code></pre></div><p class="yadg-p "><strong class="yadg-strong ">Parameter "useCache"</strong></p><div class="yadg-div yadg-param">By default is true, it boosts performance if you have multiple uses of the same string,<br>            for example, <br>            Entity expr = (Entity)"+oo" + "x".Limit("x", "+oo") * "+oo";<br>            First occurance will be parsed, others will be replaced with the cached entity<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>The parsed expression</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            Multiple ways to parse an expression.<br>            <pre><code>Entity expr1 = "a + b";
+<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">FromString</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method with 2 overloads</p></p><ul class="yadg-ul "><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">FromString&#8203;(System.&#8203;String,&#8203;System.&#8203;Boolean)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Converts a String to an expression</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "expr"</strong></p><div class="yadg-div yadg-param">String expression, for example, <pre><code class="language-cs">"2 * x + 3 + sqrt(x)"</code></pre></div><p class="yadg-p "><strong class="yadg-strong ">Parameter "useCache"</strong></p><div class="yadg-div yadg-param">By default is true, it boosts performance if you have multiple uses of the same string,<br>            for example, <br>            Entity expr = (Entity)"+oo" + "x".Limit("x", "+oo") * "+oo";<br>            First occurance will be parsed, others will be replaced with the cached entity<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>The parsed expression</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            Multiple ways to parse an expression.<br>            <pre><code class="language-cs">Entity expr1 = "a + b";
 var expr2 = FromString("a + b");
 var expr3 = FromString("a + b", useCache: false);
 var expr4 = (Entity)"a + b";
@@ -120,7 +126,7 @@ var expr5 = Parse("a + b").Switch(
         missingOp =&gt; throw new("Missing operator"),
         internalError =&gt; throw new("Internal error") 
     )
-);</code></pre></div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">FromString&#8203;(System.&#8203;String)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Converts a String to an expression</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "expr"</strong></p><div class="yadg-div yadg-param">String expression, for example, <pre><code>"2 * x + 3 + sqrt(x)"</code></pre></div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>The parsed expression</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            Multiple ways to parse an expression.<br>            <pre><code>Entity expr1 = "a + b";
+);</code></pre></div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">FromString&#8203;(System.&#8203;String)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Converts a String to an expression</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "expr"</strong></p><div class="yadg-div yadg-param">String expression, for example, <pre><code class="language-cs">"2 * x + 3 + sqrt(x)"</code></pre></div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>The parsed expression</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            Multiple ways to parse an expression.<br>            <pre><code class="language-cs">Entity expr1 = "a + b";
 var expr2 = FromString("a + b");
 var expr3 = FromString("a + b", useCache: false);
 var expr4 = (Entity)"a + b";

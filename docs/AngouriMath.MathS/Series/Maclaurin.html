@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath.MathS/Series.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Maclaurin&#8203;(AngouriMath.&#8203;Entity,&#8203;System.&#8203;Int32,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable[])</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Finds the symbolic expression of terms of the Maclaurin expansion of the given function,<br>            <a href="https://en.wikipedia.org/wiki/Taylor_series">Wikipedia</a></div><p class="yadg-p "><strong class="yadg-strong ">Parameter "expr"</strong></p><div class="yadg-div yadg-param">            The function to find the Maclaurin expansion of<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "degree"</strong></p><div class="yadg-div yadg-param">            The degree of the resulting Maclaurin polynomial (and the variable in the resulting series)<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "exprVariables"</strong></p><div class="yadg-div yadg-param">            The variable/s to take the series over (and the variable the series will be over)<br>            (e. g. if you have expr = Sin("t"), then you may want to use "t" for this argument)<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>            An expression in the polynomial form over the expression variables given in <text class="yadg-text cw">exprVariables</text></div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using AngouriMath;
+<p class="yadg-p "><a href="../../AngouriMath.MathS/Series.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Maclaurin&#8203;(AngouriMath.&#8203;Entity,&#8203;System.&#8203;Int32,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable[])</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Finds the symbolic expression of terms of the Maclaurin expansion of the given function,<br>            <a href="https://en.wikipedia.org/wiki/Taylor_series">Wikipedia</a></div><p class="yadg-p "><strong class="yadg-strong ">Parameter "expr"</strong></p><div class="yadg-div yadg-param">            The function to find the Maclaurin expansion of<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "degree"</strong></p><div class="yadg-div yadg-param">            The degree of the resulting Maclaurin polynomial (and the variable in the resulting series)<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "exprVariables"</strong></p><div class="yadg-div yadg-param">            The variable/s to take the series over (and the variable the series will be over)<br>            (e. g. if you have expr = Sin("t"), then you may want to use "t" for this argument)<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>            An expression in the polynomial form over the expression variables given in <text class="yadg-text cw">exprVariables</text></div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using AngouriMath;
 using System;
 using System.Linq;
 using static AngouriMath.MathS;
@@ -143,7 +149,7 @@ var first6Terms =
     TaylorTerms(expr, (x, x, 0), (y, y, 1))
     .Take(6);
 foreach (var term in first6Terms)
-    Console.WriteLine($"Received {term}");</code></pre><br>            Prints<br>            <pre><code>sin(x)
+    Console.WriteLine($"Received {term}");</code></pre><br>            Prints<br>            <pre><code class="language-cs">sin(x)
 0
 0 + x
 0 + x + 0

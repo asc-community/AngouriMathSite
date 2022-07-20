@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,29 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Var</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method with 3 overloads</p></p><ul class="yadg-ul "><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Var&#8203;(System.&#8203;String,&#8203;System.&#8203;String,&#8203;System.&#8203;String)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Creates three instances of <a href="../AngouriMath.Entity/Variable.html">Variable</a>.</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A tuple of 3 corresponding variable nodes</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            Here are multiple ways to create variables:<br>            <pre><code>Entity.Variable x = "x";
+<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Var</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method with 5 overloads</p></p><ul class="yadg-ul "><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Var&#8203;(System.&#8203;String,&#8203;System.&#8203;String,&#8203;System.&#8203;String,&#8203;System.&#8203;String,&#8203;System.&#8203;String)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Creates three instances of <a href="../AngouriMath.Entity/Variable.html">Variable</a>.</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A tuple of 3 corresponding variable nodes</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            Here are multiple ways to create variables:<br>            <pre><code class="language-cs">Entity.Variable x = "x";
+var y = Var("y");
+var (a, b) = Var("x", "y");
+var (c, d, e) = Var("a", "b", "c");
+var (c1, d1, e1, f1) = Var("c_1", "d_1", "e_1", "f_1");
+var (c1, d1, e1, f1, g1) = Var("c_1", "d_1", "e_1", "f_1", "g_1");
+var f = Var("f_1");
+var alpha = Var("alpha");
+var alphaPhi = Var("alpha_phi");
+var alpha1 = Var("alpha_1");
+var inGreek = Var("βγδεζη_кΨеВеТкΩ");
+var inCyrillic = Var("Абаваола");</code></pre><br>            Underscore "_" allows indexing. Greek letter names (e. g.<br>            "alpha") will be latexised as Greek letter (but other than that,<br>            will appear as "alpha" in other places).<br>            </div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Var&#8203;(System.&#8203;String,&#8203;System.&#8203;String,&#8203;System.&#8203;String,&#8203;System.&#8203;String)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Creates three instances of <a href="../AngouriMath.Entity/Variable.html">Variable</a>.</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A tuple of 3 corresponding variable nodes</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            Here are multiple ways to create variables:<br>            <pre><code class="language-cs">Entity.Variable x = "x";
+var y = Var("y");
+var (a, b) = Var("x", "y");
+var (c, d, e) = Var("a", "b", "c");
+var (c1, d1, e1, f1) = Var("c_1", "d_1", "e_1", "f_1");
+var (c1, d1, e1, f1, g1) = Var("c_1", "d_1", "e_1", "f_1", "g_1");
+var f = Var("f_1");
+var alpha = Var("alpha");
+var alphaPhi = Var("alpha_phi");
+var alpha1 = Var("alpha_1");
+var inGreek = Var("βγδεζη_кΨеВеТкΩ");
+var inCyrillic = Var("Абаваола");</code></pre><br>            Underscore "_" allows indexing. Greek letter names (e. g.<br>            "alpha") will be latexised as Greek letter (but other than that,<br>            will appear as "alpha" in other places).<br>            </div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Var&#8203;(System.&#8203;String,&#8203;System.&#8203;String,&#8203;System.&#8203;String)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Creates three instances of <a href="../AngouriMath.Entity/Variable.html">Variable</a>.</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A tuple of 3 corresponding variable nodes</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            Here are multiple ways to create variables:<br>            <pre><code class="language-cs">Entity.Variable x = "x";
 var y = Var("y");
 var (a, b) = Var("x", "y");
 var (c, d, e) = Var("a", "b", "c");
@@ -118,7 +146,7 @@ var alpha = Var("alpha");
 var alphaPhi = Var("alpha_phi");
 var alpha1 = Var("alpha_1");
 var inGreek = Var("βγδεζη_кΨеВеТкΩ");
-var inCyrillic = Var("Абаваола");</code></pre><br>            Underscore "_" allows indexing. Greek letter names (e. g.<br>            "alpha") will be latexised as Greek letter (but other than that,<br>            will appear as "alpha" in other places).<br>            </div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Var&#8203;(System.&#8203;String,&#8203;System.&#8203;String)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Creates two instances of <a href="../AngouriMath.Entity/Variable.html">Variable</a>.</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A tuple of 2 corresponding variable nodes</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            Here are multiple ways to create variables:<br>            <pre><code>Entity.Variable x = "x";
+var inCyrillic = Var("Абаваола");</code></pre><br>            Underscore "_" allows indexing. Greek letter names (e. g.<br>            "alpha") will be latexised as Greek letter (but other than that,<br>            will appear as "alpha" in other places).<br>            </div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Var&#8203;(System.&#8203;String,&#8203;System.&#8203;String)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Creates two instances of <a href="../AngouriMath.Entity/Variable.html">Variable</a>.</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>A tuple of 2 corresponding variable nodes</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            Here are multiple ways to create variables:<br>            <pre><code class="language-cs">Entity.Variable x = "x";
 var y = Var("y");
 var (a, b) = Var("x", "y");
 var (c, d, e) = Var("a", "b", "c");
@@ -127,7 +155,7 @@ var alpha = Var("alpha");
 var alphaPhi = Var("alpha_phi");
 var alpha1 = Var("alpha_1");
 var inGreek = Var("βγδεζη_кΨеВеТкΩ");
-var inCyrillic = Var("Абаваола");</code></pre><br>            Underscore "_" allows indexing. Greek letter names (e. g.<br>            "alpha") will be latexised as Greek letter (but other than that,<br>            will appear as "alpha" in other places).<br>            </div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Var&#8203;(System.&#8203;String)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Creates an instance of <a href="../AngouriMath.Entity/Variable.html">Variable</a>.</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "name"</strong></p><div class="yadg-div yadg-param">The name of the <a href="../AngouriMath.Entity/Variable.html">Variable</a> which equality is based on.</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>Variable node</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            Here are multiple ways to create variables:<br>            <pre><code>Entity.Variable x = "x";
+var inCyrillic = Var("Абаваола");</code></pre><br>            Underscore "_" allows indexing. Greek letter names (e. g.<br>            "alpha") will be latexised as Greek letter (but other than that,<br>            will appear as "alpha" in other places).<br>            </div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Var&#8203;(System.&#8203;String)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Creates an instance of <a href="../AngouriMath.Entity/Variable.html">Variable</a>.</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "name"</strong></p><div class="yadg-div yadg-param">The name of the <a href="../AngouriMath.Entity/Variable.html">Variable</a> which equality is based on.</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>Variable node</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            Here are multiple ways to create variables:<br>            <pre><code class="language-cs">Entity.Variable x = "x";
 var y = Var("y");
 var (a, b) = Var("x", "y");
 var (c, d, e) = Var("a", "b", "c");

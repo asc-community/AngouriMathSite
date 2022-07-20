@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Log</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method with 2 overloads</p></p><ul class="yadg-ul "><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Log&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'><a href="https://en.wikipedia.org/wiki/Logarithm">https://en.wikipedia.org/wiki/Logarithm</a></div><p class="yadg-p "><strong class="yadg-strong ">Parameter "base"</strong></p><div class="yadg-div yadg-param">Base node of logarithm</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "x"</strong></p><div class="yadg-div yadg-param">Argument node of logarithm</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>Logarithm node</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using System;
+<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Log</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method with 2 overloads</p></p><ul class="yadg-ul "><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Log&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'><a href="https://en.wikipedia.org/wiki/Logarithm">https://en.wikipedia.org/wiki/Logarithm</a></div><p class="yadg-p "><strong class="yadg-strong ">Parameter "base"</strong></p><div class="yadg-div yadg-param">Base node of logarithm</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "x"</strong></p><div class="yadg-div yadg-param">Argument node of logarithm</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>Logarithm node</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
 using static AngouriMath.MathS;
 Console.WriteLine(Log(2, 16));
 Console.WriteLine(Log(2, 16).Evaled);
@@ -120,7 +126,7 @@ Console.WriteLine(Log(10, 1000).Evaled);
 Console.WriteLine(Log(1000));
 Console.WriteLine(Log(1000).Evaled);
 Console.WriteLine(Ln(e.Pow(16)));
-Console.WriteLine(Ln(e.Pow(16)).Evaled);</code></pre><br>            Prints<br>            <pre><code>log(2, 16)
+Console.WriteLine(Ln(e.Pow(16)).Evaled);</code></pre><br>            Prints<br>            <pre><code class="language-cs">log(2, 16)
 4
 log(3, 81)
 4
@@ -129,7 +135,7 @@ log(10, 1000)
 log(10, 1000)
 3
 ln(e ^ 16)
-16</code></pre></div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Log&#8203;(AngouriMath.&#8203;Entity)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This is 10-based logarithm.<br>            <a href="https://en.wikipedia.org/wiki/Logarithm">https://en.wikipedia.org/wiki/Logarithm</a></div><p class="yadg-p "><strong class="yadg-strong ">Parameter "x"</strong></p><div class="yadg-div yadg-param">Argument node of logarithm</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>Logarithm node</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using System;
+16</code></pre></div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Log&#8203;(AngouriMath.&#8203;Entity)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This is 10-based logarithm.<br>            <a href="https://en.wikipedia.org/wiki/Logarithm">https://en.wikipedia.org/wiki/Logarithm</a></div><p class="yadg-p "><strong class="yadg-strong ">Parameter "x"</strong></p><div class="yadg-div yadg-param">Argument node of logarithm</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>Logarithm node</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
 using static AngouriMath.MathS;
 Console.WriteLine(Log(2, 16));
 Console.WriteLine(Log(2, 16).Evaled);
@@ -140,7 +146,7 @@ Console.WriteLine(Log(10, 1000).Evaled);
 Console.WriteLine(Log(1000));
 Console.WriteLine(Log(1000).Evaled);
 Console.WriteLine(Ln(e.Pow(16)));
-Console.WriteLine(Ln(e.Pow(16)).Evaled);</code></pre><br>            Prints<br>            <pre><code>log(2, 16)
+Console.WriteLine(Ln(e.Pow(16)).Evaled);</code></pre><br>            Prints<br>            <pre><code class="language-cs">log(2, 16)
 4
 log(3, 81)
 4

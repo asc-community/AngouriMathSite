@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,35 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Limit</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method with 2 overloads</p></p><ul class="yadg-ul "><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Limit&#8203;(AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Core.&#8203;ApproachFrom)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Finds the limit of the given expression over the given variable<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "x"</strong></p><div class="yadg-div yadg-param">            The variable to be approaching<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "destination"</strong></p><div class="yadg-div yadg-param">            A value where the variable approaches. It might be a symbolic<br>            expression, a finite number, or an infinite number, for example,<br>            "sqrt(x2 + x) / (3x + 3)".Limit("x", "+oo", ApproachFrom.BothSides)<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "side"</strong></p><div class="yadg-div yadg-param">            From where to approach it: from the left, from the right,<br>            or BothSides, implying that if limits from either are not<br>            equal, there is no limit<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>            A result or the <a href="../AngouriMath.Entity/Limitf.html">Limitf</a> node if the limit<br>            cannot be determined<br>            </div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Limit&#8203;(AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Finds the limit of the given expression over the given variable<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "x"</strong></p><div class="yadg-div yadg-param">            The variable to be approaching<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "destination"</strong></p><div class="yadg-div yadg-param">            A value where the variable approaches. It might be a symbolic<br>            expression, a finite number, or an infinite number, for example,<br>            "sqrt(x2 + x) / (3x + 3)".Limit("x", "+oo")<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>            A result or the <a href="../AngouriMath.Entity/Limitf.html">Limitf</a> node if the limit<br>            cannot be determined<br>            </div></p></li></ul></p>
+<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Limit</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method with 2 overloads</p></p><ul class="yadg-ul "><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Limit&#8203;(AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Core.&#8203;ApproachFrom)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Finds the limit of the given expression over the given variable<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "x"</strong></p><div class="yadg-div yadg-param">            The variable to be approaching<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "destination"</strong></p><div class="yadg-div yadg-param">            A value where the variable approaches. It might be a symbolic<br>            expression, a finite number, or an infinite number, for example,<br>            "sqrt(x2 + x) / (3x + 3)".Limit("x", "+oo", ApproachFrom.BothSides)<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "side"</strong></p><div class="yadg-div yadg-param">            From where to approach it: from the left, from the right,<br>            or BothSides, implying that if limits from either are not<br>            equal, there is no limit<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>            A result or the <a href="../AngouriMath.Entity/Limitf.html">Limitf</a> node if the limit<br>            cannot be determined<br>            </div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Limit&#8203;(AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Finds the limit of the given expression over the given variable<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "x"</strong></p><div class="yadg-div yadg-param">            The variable to be approaching<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "destination"</strong></p><div class="yadg-div yadg-param">            A value where the variable approaches. It might be a symbolic<br>            expression, a finite number, or an infinite number, for example,<br>            "sqrt(x2 + x) / (3x + 3)".Limit("x", "+oo")<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>            A result or the <a href="../AngouriMath.Entity/Limitf.html">Limitf</a> node if the limit<br>            cannot be determined<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
+using static AngouriMath.MathS;
+
+var (x, a) = Var("x", "a");
+var expr = (1 + a / x).Pow(x);
+Console.WriteLine(expr);
+Console.WriteLine(expr.Limit(x, +oo));
+Console.WriteLine("----------------------");
+var expr1 = Sin(x * a) / x;
+Console.WriteLine(expr1);
+Console.WriteLine(expr1.Limit(x, +oo));
+Console.WriteLine("----------------------");
+var expr2 = (a * Sqr(x) + x + Sqr(a)) / (3 * x + 5 * Sqr(x) + 9);
+Console.WriteLine(expr2);
+Console.WriteLine(expr2.Limit(x, 0));
+Console.WriteLine("----------------------");
+var expr3 = (a * Sqr(x) + x + Sqr(a)) / (3 * x + 5 * Sqr(x) + 9);
+Console.WriteLine(expr3);
+Console.WriteLine(expr3.Limit(x, +oo));</code></pre><br>            Prints<br>            <pre><code class="language-cs">(1 + a / x) ^ x
+e ^ a
+----------------------
+sin(x * a) / x
+limit(sin(x * a) / x, x, +oo)
+----------------------
+(a * x ^ 2 + x + a ^ 2) / (3 * x + 5 * x ^ 2 + 9)
+a ^ 2 / 9
+----------------------
+(a * x ^ 2 + x + a ^ 2) / (3 * x + 5 * x ^ 2 + 9)
+a / 5</code></pre></div></p></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

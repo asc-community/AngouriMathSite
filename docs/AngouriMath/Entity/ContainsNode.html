@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,16 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">ContainsNode&#8203;(AngouriMath.&#8203;Entity)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Checks if <text class="yadg-text cw">x</text> is a subnode inside this <a href="../AngouriMath/Entity.html">Entity</a> tree.<br>            Optimized for <a href="../AngouriMath.Entity/Variable.html">Variable</a>.</div></p></p>
+<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">ContainsNode&#8203;(AngouriMath.&#8203;Entity)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Checks if <text class="yadg-text cw">x</text> is a subnode inside this <a href="../AngouriMath/Entity.html">Entity</a> tree.<br>            Optimized for <a href="../AngouriMath.Entity/Variable.html">Variable</a>.</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
+using static AngouriMath.MathS;
+
+var (x, y) = Var("x", "y");
+var expr1 = Sin(x + y) - Sqr(x);
+Console.WriteLine(expr1);
+Console.WriteLine(expr1.ContainsNode(y + x));
+Console.WriteLine(expr1.ContainsNode(x + y));</code></pre><br>            Prints<br>            <pre><code class="language-cs">sin(x + y) - x ^ 2
+False
+True</code></pre></div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

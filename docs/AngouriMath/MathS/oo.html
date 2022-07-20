@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,38 +115,52 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">oo</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Field</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Infinity. Recommended to use with a plus or minus trailing.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            There are multiple constants available. Examples:<br>            <pre><code>var x = Var("x");
-Console.WriteLine(e);
-Console.WriteLine(e.Evaled);
-Console.WriteLine(Limit((1 + 1 / x).Pow(x), x, +oo));
-Console.WriteLine(Limit((1 + 1 / x).Pow(x), x, +oo).Simplify());
-Console.WriteLine(Limit((1 + 1 / x).Pow(x), x, +oo).Simplify() == e);
-Console.WriteLine("-----------------------");
-Console.WriteLine(pi);
-Console.WriteLine(pi.Evaled);
-Console.WriteLine(Sin(pi / 3).Simplify());
-Console.WriteLine(Cos(pi / 3).Simplify());
-Console.WriteLine("-----------------------");
-Console.WriteLine(i);
-Console.WriteLine(4 + 3 * i);
-Console.WriteLine("-----------------------");
-Console.WriteLine(e.Pow(i * pi));
-Console.WriteLine(e.Pow(i * pi).Simplify());</code></pre><br>            Prints<br>            <pre><code>e
-2.718281828459045235360287471352662497757247093699959574966967627724076630353547594571382178525166427
-limit((1 + 1 / x) ^ x, x, +oo)
-e
+<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">oo</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Field</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Infinity. Recommended to use with a plus or minus trailing.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            Let's consider <a href="../AngouriMath/MathS/oo.html">oo</a> and <a href="../AngouriMath/MathS/NaN.html">NaN</a>.<br>            <pre><code class="language-cs">using System;
+using static AngouriMath.MathS;
+
+var (x, y) = Var("x", "y");
+var expr1 = Sin(x) / y;
+Console.WriteLine(expr1);
+Console.WriteLine(expr1.Substitute(y, 0));
+Console.WriteLine(expr1.Substitute(y, 0).Evaled);
+Console.WriteLine(expr1.Substitute(y, 0).Evaled == NaN);
+Console.WriteLine("--------------------------------");
+var expr2 = 5 + NaN;
+Console.WriteLine(expr2);
+Console.WriteLine(expr2.Evaled);
+Console.WriteLine("--------------------------------");
+var expr3 = Sin(NaN) / Cos(x) + y;
+Console.WriteLine(expr3);
+Console.WriteLine(expr3.Evaled);
+Console.WriteLine("--------------------------------");
+var expr4 = 10 * +oo;
+Console.WriteLine(expr4);
+Console.WriteLine("--------------------------------");
+var expr5 = -oo * +oo;
+Console.WriteLine(expr5);
+Console.WriteLine("--------------------------------");
+var expr6 = -oo / +oo;
+Console.WriteLine(expr6);
+Console.WriteLine("--------------------------------");
+var expr7 = 50 / -oo;
+Console.WriteLine(expr7);</code></pre><br>            Prints<br>            <pre><code class="language-cs">sin(x) / y
+sin(x) / 0
+NaN
 True
------------------------
-pi
-3.141592653589793238462643383279502884197169399375105820974944592307816406286208998628034825342117068
-sqrt(3) / 2
-1/2
------------------------
-i
-4 + 3i
------------------------
-e ^ (i * pi)
--1</code></pre></div></p></p>
+--------------------------------
+5 + NaN
+NaN
+--------------------------------
+sin(NaN) / cos(x) + y
+NaN
+--------------------------------
++oo
+--------------------------------
+-oo
+--------------------------------
+NaN
+--------------------------------
+0</code></pre><br>            See <a href="../AngouriMath/Entity/IsFinite.html">IsFinite</a> for determining<br>            if there are NaNs or infinities inside an expression.<br>            </div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

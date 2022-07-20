@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath.MathS/Settings.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">AllowNewton</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            If you only need analytical solutions and an empty set if no analytical solutions were found, disable Newton's method<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using System;
+<p class="yadg-p "><a href="../../AngouriMath.MathS/Settings.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">AllowNewton</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            If you only need analytical solutions and an empty set if no analytical solutions were found, disable Newton's method<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
 using AngouriMath.Extensions;
 using static AngouriMath.MathS;
 
@@ -117,7 +123,7 @@ Console.WriteLine("x5 + 3x + 1 = 0".ToEntity().Solve("x"));
 
 using var _ = Settings.AllowNewton.Set(false);
 
-Console.WriteLine("x5 + 3x + 1 = 0".ToEntity().Solve("x"));</code></pre><br>            Prints<br>            <pre><code>{ 1.0050669478588620808778841819730587303638458251953125 + 0.93725915669289194820379407246946357190608978271484375i,
+Console.WriteLine("x5 + 3x + 1 = 0".ToEntity().Solve("x"));</code></pre><br>            Prints<br>            <pre><code class="language-cs">{ 1.0050669478588620808778841819730587303638458251953125 + 0.93725915669289194820379407246946357190608978271484375i,
 ... omitting here most of the output, because it's huge
 }
 {  } // nothing was found for 5-degree polynomial without numeric solution</code></pre></div></p></p>

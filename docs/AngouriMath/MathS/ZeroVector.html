@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">ZeroVector&#8203;(System.&#8203;Int32)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Creates a zero vector<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using System;
+<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">ZeroVector&#8203;(System.&#8203;Int32)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Creates a zero vector<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
 using AngouriMath.Extensions;
 using static AngouriMath.MathS;
 
@@ -123,7 +129,7 @@ Console.WriteLine(A.ToString(multilineFormat: true));
 
 Console.WriteLine(ZeroMatrix(3));
 Console.WriteLine(ZeroMatrix(3, 4));
-Console.WriteLine(ZeroVector(3));</code></pre><br>            Prints<br>            <pre><code>Matrix[2 x 2]
+Console.WriteLine(ZeroVector(3));</code></pre><br>            Prints<br>            <pre><code class="language-cs">Matrix[2 x 2]
 -sin(x)   0         
 0         -cos(y)   
 [[0, 0, 0], [0, 0, 0], [0, 0, 0]]

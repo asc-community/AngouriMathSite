@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">i</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Field</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            The imaginary one<br>            <a href="https://en.wikipedia.org/wiki/Imaginary_unit">https://en.wikipedia.org/wiki/Imaginary_unit</a></div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            There are multiple constants available. Examples:<br>            <pre><code>var x = Var("x");
+<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">i</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Field</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            The imaginary one<br>            <a href="https://en.wikipedia.org/wiki/Imaginary_unit">https://en.wikipedia.org/wiki/Imaginary_unit</a></div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            There are multiple constants available. Examples:<br>            <pre><code class="language-cs">var x = Var("x");
 Console.WriteLine(e);
 Console.WriteLine(e.Evaled);
 Console.WriteLine(Limit((1 + 1 / x).Pow(x), x, +oo));
@@ -125,7 +131,7 @@ Console.WriteLine(i);
 Console.WriteLine(4 + 3 * i);
 Console.WriteLine("-----------------------");
 Console.WriteLine(e.Pow(i * pi));
-Console.WriteLine(e.Pow(i * pi).Simplify());</code></pre><br>            Prints<br>            <pre><code>e
+Console.WriteLine(e.Pow(i * pi).Simplify());</code></pre><br>            Prints<br>            <pre><code class="language-cs">e
 2.718281828459045235360287471352662497757247093699959574966967627724076630353547594571382178525166427
 limit((1 + 1 / x) ^ x, x, +oo)
 e

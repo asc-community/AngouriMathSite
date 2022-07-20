@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,8 +115,8 @@
 
 <!--Top end-->
 
-<h2 class="yadg-h2 centered">Numbers</h2><hr/><p class="yadg-p "><a href="../AngouriMath.MathS.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'><para>All operations for <a href="../AngouriMath.Entity/Number.html">Number</a> and its derived classes are available from here.</para>            <br>             These methods represent the only possible way to explicitly create numeric instances.<br>             It will automatically downcast the result for you,<br>             so <pre><code>Number.Create(1.0);</code></pre> is an <a href="../AngouriMath.Entity.Number/Integer.html">Integer</a>.<br>             To avoid it, you may temporarily disable it<br>             <pre><code>using var _ = MathS.Settings.DowncastingEnabled.Set(false);
-var yourNum = Number.Create(1.0);</code></pre><br>             and the result will be a <a href="../AngouriMath.Entity.Number/Real.html">Real</a>.<br>             </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using System;
+<h2 class="yadg-h2 centered">Numbers</h2><hr/><p class="yadg-p "><a href="../AngouriMath.MathS.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'><para>All operations for <a href="../AngouriMath.Entity/Number.html">Number</a> and its derived classes are available from here.</para>            <br>             These methods represent the only possible way to explicitly create numeric instances.<br>             It will automatically downcast the result for you,<br>             so <pre><code class="language-cs">Number.Create(1.0);</code></pre> is an <a href="../AngouriMath.Entity.Number/Integer.html">Integer</a>.<br>             To avoid it, you may temporarily disable it<br>             <pre><code class="language-cs">using var _ = MathS.Settings.DowncastingEnabled.Set(false);
+var yourNum = Number.Create(1.0);</code></pre><br>             and the result will be a <a href="../AngouriMath.Entity.Number/Real.html">Real</a>.<br>             </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
 using System.Numerics;
 using AngouriMath;
 using PeterO.Numbers;

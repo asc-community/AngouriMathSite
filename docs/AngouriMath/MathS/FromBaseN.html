@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">FromBaseN&#8203;(System.&#8203;String,&#8203;System.&#8203;Int32)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Translates a number in base <text class="yadg-text cw">N</text> into base 10</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "num"</strong></p><div class="yadg-div yadg-param">A <a href="../AngouriMath.Entity.Number/Real.html">Real</a> in base <text class="yadg-text cw">N</text> to be translated into base 10</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "N"</strong></p><div class="yadg-div yadg-param">The base to translate the number from</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>The <a href="../AngouriMath.Entity.Number/Real.html">Real</a> in base 10</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using System;
+<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">FromBaseN&#8203;(System.&#8203;String,&#8203;System.&#8203;Int32)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Translates a number in base <text class="yadg-text cw">N</text> into base 10</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "num"</strong></p><div class="yadg-div yadg-param">A <a href="../AngouriMath.Entity.Number/Real.html">Real</a> in base <text class="yadg-text cw">N</text> to be translated into base 10</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "N"</strong></p><div class="yadg-div yadg-param">The base to translate the number from</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>The <a href="../AngouriMath.Entity.Number/Real.html">Real</a> in base 10</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
 using static AngouriMath.MathS;
 
 using var _ = Settings.DowncastingEnabled.Set(false);
@@ -129,7 +135,7 @@ Console.WriteLine(FromBaseN("FF", 16));
 Console.WriteLine(FromBaseN("77", 8));
 Console.WriteLine(FromBaseN("1.1", 2));
 Console.WriteLine(FromBaseN("1.01", 2));
-Console.WriteLine(FromBaseN("1.05", 6));        </code></pre><br>            Prints<br>            <pre><code>1.1
+Console.WriteLine(FromBaseN("1.05", 6));        </code></pre><br>            Prints<br>            <pre><code class="language-cs">1.1
 11.11
 1101.001
 13.125

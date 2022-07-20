@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath.MathS/Settings.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">DowncastingEnabled</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Enables downcasting. Not recommended to turn off, disabling might be only useful for some calculations<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using System;
+<p class="yadg-p "><a href="../../AngouriMath.MathS/Settings.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">DowncastingEnabled</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Enables downcasting. Not recommended to turn off, disabling might be only useful for some calculations<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
 using AngouriMath;
 using static AngouriMath.MathS;
 
@@ -119,7 +125,7 @@ Console.WriteLine(expr.GetType());
 using var _ = Settings.DowncastingEnabled.Set(false);
 
 Entity expr2 = (Entity.Number.Real)5.5m;
-Console.WriteLine(expr2.GetType());</code></pre><br>            Prints<br>            <pre><code>AngouriMath.Entity+Number+Rational
+Console.WriteLine(expr2.GetType());</code></pre><br>            Prints<br>            <pre><code class="language-cs">AngouriMath.Entity+Number+Rational
 AngouriMath.Entity+Number+Real</code></pre></div></p></p>
 <!--Bottom begin-->
 

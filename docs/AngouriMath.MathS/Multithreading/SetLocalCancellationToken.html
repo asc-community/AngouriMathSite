@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath.MathS/Multithreading.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">SetLocalCancellationToken&#8203;(System.&#8203;Threading.&#8203;CancellationToken)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Sets the thread-local cancellation token<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "token"</strong></p><div class="yadg-div yadg-param"></div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>Entity eq = "a e sin(x ^ 14 + 3)3 + a b c d sin(x ^ 14 + 2)4 - k d sin(x ^ 14 + 3)2 + sin(x ^ 14 + 3) + e = 0";
+<p class="yadg-p "><a href="../../AngouriMath.MathS/Multithreading.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">SetLocalCancellationToken&#8203;(System.&#8203;Threading.&#8203;CancellationToken)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Sets the thread-local cancellation token<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "token"</strong></p><div class="yadg-div yadg-param"></div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">Entity eq = "a e sin(x ^ 14 + 3)3 + a b c d sin(x ^ 14 + 2)4 - k d sin(x ^ 14 + 3)2 + sin(x ^ 14 + 3) + e = 0";
 
 using var tokenSource = new CancellationTokenSource();
 tokenSource.CancelAfter(millisecondsDelay: 1000);
@@ -132,7 +138,7 @@ catch (AggregateException e)
         Console.WriteLine("Operation cancelled");
     else
         throw;
-}</code></pre><br>            Prints<br>            <pre><code>Not completed yet. Waiting 100 ms...
+}</code></pre><br>            Prints<br>            <pre><code class="language-cs">Not completed yet. Waiting 100 ms...
 Not completed yet. Waiting 100 ms...
 Not completed yet. Waiting 100 ms...
 Not completed yet. Waiting 100 ms...

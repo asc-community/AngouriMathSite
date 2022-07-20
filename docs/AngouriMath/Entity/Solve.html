@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,65 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Solve&#8203;(AngouriMath.&#8203;Entity.&#8203;Variable)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Solves a <a href="../AngouriMath.Entity/Statement.html">Statement</a>            Statement is an Entity such that its value is true for<br>            any x in X, where X is the result of this method.<br>            See more about <a href="../AngouriMath.Entity/Set.html">Set</a></div><p class="yadg-p "><strong class="yadg-strong ">Parameter "var"</strong></p><div class="yadg-div yadg-param">Over which variable to solve</div></p></p>
+<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Solve&#8203;(AngouriMath.&#8203;Entity.&#8203;Variable)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Solves a <a href="../AngouriMath.Entity/Statement.html">Statement</a>            Statement is an Entity such that its value is true for<br>            any x in X, where X is the result of this method.<br>            See more about <a href="../AngouriMath.Entity/Set.html">Set</a></div><p class="yadg-p "><strong class="yadg-strong ">Parameter "var"</strong></p><div class="yadg-div yadg-param">Over which variable to solve</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
+using static AngouriMath.MathS;
+
+var (x, y) = Var("x", "y");
+var eq = Sin(x).Equalizes(0.5);
+Console.WriteLine(eq);
+Console.WriteLine(eq.Solve(x));
+Console.WriteLine("-----------------");
+var eq2 = (Sqr(x) + 2 * x * y - y).Equalizes(0);
+Console.WriteLine(eq2);
+Console.WriteLine(eq2.Solve(x));
+Console.WriteLine("-----------------");
+var eq3 = ((x - 3) * (x - 6)).Equalizes(0) &amp; ((x - 3) * (x - 7)).Equalizes(0);
+Console.WriteLine(eq3);
+Console.WriteLine(eq3.Solve(x));
+Console.WriteLine("-----------------");
+var eq4 = ((x - 3) * (x - 6)).Equalizes(0) | ((x - 3) * (x - 7)).Equalizes(0);
+Console.WriteLine(eq4);
+Console.WriteLine(eq4.Solve(x));
+Console.WriteLine("-----------------");
+var eq6 = GreaterThan((x - 3) * (x + 6), 0);
+Console.WriteLine(eq6);
+Console.WriteLine(eq6.Solve(x));
+Console.WriteLine("-----------------");
+var eq7 = LessThan((x - 3) * (x + 6), 0);
+Console.WriteLine(eq7);
+Console.WriteLine(eq7.Solve(x));
+Console.WriteLine("-----------------");
+var eq8 = (Sin(x) * x - 3).Equalizes(0);
+Console.WriteLine(eq8);
+Console.WriteLine(eq8.Solve(x));
+Console.WriteLine("-----------------");
+using var _ = Settings.AllowNewton.Set(false);
+var eq9 = (Sin(x) * x - 3).Equalizes(0);
+Console.WriteLine(eq9);
+Console.WriteLine(eq9.Solve(x));
+</code></pre><br>            Prints<br>            <pre><code class="language-cs">sin(x) = 1/2
+{ arcsin(1/2) + 2 * pi * n_1, pi - arcsin(1/2) + 2 * pi * n_1 }
+-----------------
+x ^ 2 + 2 * x * y - y = 0
+{ (-2 * y - sqrt((2 * y) ^ 2 - 4 * -y)) / 2, (-2 * y + sqrt((2 * y) ^ 2 - 4 * -y)) / 2 }
+-----------------
+(x - 3) * (x - 6) = 0 and (x - 3) * (x - 7) = 0
+{ 3 }
+-----------------
+(x - 3) * (x - 6) = 0 or (x - 3) * (x - 7) = 0
+{ 3, 6, 7 }
+-----------------
+(x - 3) * (x + 6) &gt; 0
+(-oo; -6) \/ (3; +oo)
+-----------------
+(x - 3) * (x + 6) &lt; 0
+(-6; 3)
+-----------------
+sin(x) * x - 3 = 0
+{ 9.08837698687877... }
+-----------------
+sin(x) * x - 3 = 0
+{  }</code></pre></div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

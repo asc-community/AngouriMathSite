@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,39 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">IsFinite</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><value>            Whether both parts of the complex number are finite<br>            meaning that it could be safely used for calculations<br>            </value></p></p>
+<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">IsFinite</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><value>            Whether both parts of the complex number are finite<br>            meaning that it could be safely used for calculations.<br>            By finite we mean that it is not a <a href="../AngouriMath/MathS/NaN.html">NaN</a>            and it is not positive or negative infinity.<br>            </value><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
+using static AngouriMath.MathS;
+
+var x = Var("x");
+var expr1 = Sin(x);
+Console.WriteLine($"{expr1}, IsFinite: {expr1.IsFinite}");
+var expr2 = Sin(x + 5) + 5;
+Console.WriteLine($"{expr2}, IsFinite: {expr2.IsFinite}");
+var expr3 = Sin(x + 3) / 0;
+Console.WriteLine($"{expr3}, IsFinite: {expr3.IsFinite}");
+var expr4 = expr3.Evaled;
+Console.WriteLine($"{expr4}, IsFinite: {expr4.IsFinite}");
+var expr5 = Sin(x / 0);
+Console.WriteLine($"{expr5}, IsFinite: {expr5.IsFinite}");
+var expr6 = x + +oo;
+Console.WriteLine($"{expr6}, IsFinite: {expr6.IsFinite}");
+var expr7 = x + +oo * i;
+Console.WriteLine($"{expr7}, IsFinite: {expr7.IsFinite}");
+var expr8 = -oo + 6 * i;
+Console.WriteLine($"{expr8}, IsFinite: {expr8.IsFinite}");
+var expr9 = Sin(+oo) - Cos(pi / 3);
+Console.WriteLine($"{expr9}, IsFinite: {expr9.IsFinite}");
+var expr10 = Hyperbolic.Tanh(NaN + 3);
+Console.WriteLine($"{expr10}, IsFinite: {expr10.IsFinite}");</code></pre><br>            Prints<br>            <pre><code class="language-cs">sin(x), IsFinite: True
+sin(x + 5) + 5, IsFinite: True
+sin(x + 3) / 0, IsFinite: True
+NaN, IsFinite: False
+sin(x / 0), IsFinite: True
+x + +oo, IsFinite: False
+x + +ooi, IsFinite: False
+-oo + 6i, IsFinite: False
+sin(+oo) - cos(pi / 3), IsFinite: False
+(e ^ (2 * (NaN + 3)) - 1) / (e ^ (2 * (NaN + 3)) + 1), IsFinite: False</code></pre></div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>

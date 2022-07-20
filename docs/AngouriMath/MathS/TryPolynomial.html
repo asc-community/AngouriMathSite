@@ -39,6 +39,12 @@
 <script src="https://buttons.github.io/buttons.js"></script>
 
 <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
 </head>
 
 <body>
@@ -109,7 +115,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">TryPolynomial&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity@)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Returns an <a href="../AngouriMath/Entity.html">Entity</a> in polynomial order if possible</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "expr"</strong></p><div class="yadg-div yadg-param">The unordered <a href="../AngouriMath/Entity.html">Entity</a></div><p class="yadg-p "><strong class="yadg-strong ">Parameter "variable"</strong></p><div class="yadg-div yadg-param">The variable of the polynomial</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "dst"</strong></p><div class="yadg-div yadg-param">The ordered result</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'><text class="yadg-text cw">true</text> if success,<br>            <text class="yadg-text cw">false</text> otherwise (<text class="yadg-text cw">dst</text> will be <text class="yadg-text cw">null</text>)<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code>using System;
+<p class="yadg-p "><a href="../../AngouriMath/MathS.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">TryPolynomial&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity@)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Returns an <a href="../AngouriMath/Entity.html">Entity</a> in polynomial order if possible</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "expr"</strong></p><div class="yadg-div yadg-param">The unordered <a href="../AngouriMath/Entity.html">Entity</a></div><p class="yadg-p "><strong class="yadg-strong ">Parameter "variable"</strong></p><div class="yadg-div yadg-param">The variable of the polynomial</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "dst"</strong></p><div class="yadg-div yadg-param">The ordered result</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'><text class="yadg-text cw">true</text> if success,<br>            <text class="yadg-text cw">false</text> otherwise (<text class="yadg-text cw">dst</text> will be <text class="yadg-text cw">null</text>)<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
 using AngouriMath;
 using static AngouriMath.MathS;
 
@@ -123,7 +129,7 @@ Entity expr2 = "sin(x) + cos(x)";
 if (TryPolynomial(expr2, "x", out var res2))
     Console.WriteLine(res2);
 else
-    Console.WriteLine("Cannot get polynomial :((");</code></pre><br>            Prints<br>            <pre><code>x ^ 2 + (a + b + 3 + 2) * x + b * 3 + 6
+    Console.WriteLine("Cannot get polynomial :((");</code></pre><br>            Prints<br>            <pre><code class="language-cs">x ^ 2 + (a + b + 3 + 2) * x + b * 3 + 6
 Cannot get polynomial :((</code></pre></div></p></p>
 <!--Bottom begin-->
 
