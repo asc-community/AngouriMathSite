@@ -90,7 +90,7 @@ void GenerateWikiToPages()
         sb.Append("<p><a href='index.html'>&#8592; Back to the main page</a></p>");
         sb.Append($"{md}");
         sb.Replace("\r", "");
-        sb.Replace("\n\n", "<br><br>");
+        // sb.Replace("\n\n", "<br><br>");
         sb.Replace("<img ", "<img style='width: 100%'");
         return 
             Wrap("`", "`", "<text class='cw'>", "</text>",
