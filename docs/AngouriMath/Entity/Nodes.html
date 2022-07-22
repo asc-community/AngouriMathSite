@@ -115,8 +115,15 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Nodes</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>A depth-first enumeration is required by<br>            <a href="../AngouriMath.Functions/TreeAnalyzer/GetMinimumSubtree.html">GetMinimumSubtree(AngouriMath.Entity,AngouriMath.Entity.Variable)</a></div><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            The list of all nodes of the given expression<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">Entity expr = "a + b / 2 ^ 3";
-Console.WriteLine(string.Join(", ", expr.Nodes));</code></pre><br>            Output:<br>            <pre><code class="language-cs">a + b / 2 ^ 3, a, b / 2 ^ 3, b, 2 ^ 3, 2, 3</code></pre></div></p></p>
+<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Nodes</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>A depth-first enumeration is required by<br>            <a href="../AngouriMath.Functions/TreeAnalyzer/GetMinimumSubtree.html">GetMinimumSubtree(AngouriMath.Entity,AngouriMath.Entity.Variable)</a></div><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            The list of all subnodes of the given expression, including its own. Traverses<br>            the tree the following order:<br>            <ol><li>The node itself</li><li>All nodes from all children</li></ol></div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">Entity expr = "a + b / 2 ^ 3";
+for (var node in expr.Nodes)
+    Console.WriteLine(node);</code></pre><br>            Output:<br>            <pre><code class="language-cs">a + b / 2 ^ 3
+a
+b / 2 ^ 3
+b
+2 ^ 3
+2
+3</code></pre></div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
