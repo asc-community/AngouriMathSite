@@ -20,7 +20,7 @@ let dirExists path =
         log $"Issue accessing {path}"
         raise e
 
-let deleteDir path =
+let dirDelete path =
     try
         Directory.Delete(path, true)
     with
