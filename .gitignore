@@ -364,3 +364,6 @@ FodyWeavers.xsd
 */.idea/*
 
 generated
+_generator/AngouriMath
+_generator/Yadg.NET
+_generator/content/_wiki
