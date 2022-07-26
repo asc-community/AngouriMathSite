@@ -51,17 +51,17 @@ let uninit () =
     if Directory.Exists("." / generatorP / "AngouriMath") |> not then
         log "Skipping deleting AngouriMath..."
     else
-        Directory.Delete("." / generatorP / "AngouriMath") 
+        Directory.Delete("." / generatorP / "AngouriMath", true) 
 
     if Directory.Exists("." / generatorP / "Yadg.NET") |> not then
         log "Skipping deleting Yadg.NET..."
     else
-        Directory.Delete("." / generatorP / "Yadg.NET")
+        Directory.Delete("." / generatorP / "Yadg.NET", true)
 
     if Directory.Exists("." / generatorP / contentP / "_wiki") |> not then
         log "Skipping deleting wiki..."
     else
-        Directory.Delete("." / generatorP / contentP / "_wiki") 
+        Directory.Delete("." / generatorP / contentP / "_wiki", true) 
 
 let build () =
     dotnet (generatorP / "NaiveStaticGenerator") "run"
@@ -75,7 +75,7 @@ let run () =
         runProgram "xdg-open" "." ("." / outputP / "index.html")
 
 let clean () =
-    Directory.Delete ("." / outputP)
+    Directory.Delete ("." / outputP, true)
 
 match cliArgs with
 | [ _; _; "init" ] -> init ()
