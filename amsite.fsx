@@ -68,17 +68,17 @@ let uninit () =
     if dirExists("." / generatorP / "AngouriMath") |> not then
         log "Skipping deleting AngouriMath..."
     else
-        dirDelete("." / generatorP / "AngouriMath", true) 
+        dirDelete("." / generatorP / "AngouriMath") 
 
     if dirExists("." / generatorP / "Yadg.NET") |> not then
         log "Skipping deleting Yadg.NET..."
     else
-        dirDelete("." / generatorP / "Yadg.NET", true)
+        dirDelete("." / generatorP / "Yadg.NET")
 
     if dirExists("." / generatorP / contentP / "_wiki") |> not then
         log "Skipping deleting wiki..."
     else
-        dirDelete("." / generatorP / contentP / "_wiki", true) 
+        dirDelete("." / generatorP / contentP / "_wiki") 
 
 let build () =
     dotnet (generatorP / "NaiveStaticGenerator") "run"
@@ -92,7 +92,7 @@ let run () =
         runProgram "xdg-open" "." ("." / outputP / "index.html")
 
 let clean () =
-    dirDelete ("." / outputP, true)
+    dirDelete ("." / outputP)
 
 match cliArgs with
 | [ _; _; "init" ] -> init ()
