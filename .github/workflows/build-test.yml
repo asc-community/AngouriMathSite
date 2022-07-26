@@ -6,7 +6,8 @@ on:
 jobs:
   RunJobs:
     strategy:
-      matrix: [ windows-latest, ubuntu-latest, macos-latest ]
+      matrix:
+        os: [ windows-latest, ubuntu-latest, macos-latest ]
 
     runs-on: ${{ matrix.os }}
 
