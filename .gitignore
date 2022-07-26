@@ -361,9 +361,10 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-*/.idea/*
+**/.idea/
 
-generated
-_generator/AngouriMath
-_generator/Yadg.NET
-_generator/content/_wiki
+.output
+src/AngouriMath
+src/Yadg.NET
+src/content/_wiki
+

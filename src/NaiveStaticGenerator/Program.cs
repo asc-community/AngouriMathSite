@@ -13,7 +13,7 @@ using System.Linq;
 #pragma warning restore CS0105 // Using directive appeared previously in this namespace
 
 var GeneratorPath = GetNearestRoot("_generator", Directory.GetCurrentDirectory());
-const string GeneratedPath = "generated";
+const string GeneratedPath = ".output";
 
 
 GenerateWikiToPages();

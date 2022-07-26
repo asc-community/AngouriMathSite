@@ -8,8 +8,8 @@ let (/) a b = Path.Combine(a, b)
 let log msg =
     printfn $"Log: {msg}"
 
-let generatorP = "_generator"
-let outputP = "generated"
+let generatorP = "src"
+let outputP = ".output"
 let contentP = "content"
 
 let dirExists path =
