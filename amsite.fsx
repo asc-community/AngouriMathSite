@@ -51,7 +51,7 @@ let init () =
     else
         git ("." / generatorP) "clone https://github.com/asc-community/AngouriMath AngouriMath" 
 
-    //dotnet ("." / generatorP / "AngouriMath" / "Sources" / "AngouriMath" / "AngouriMath") "build -c release"
+    dotnet ("." / generatorP / "AngouriMath" / "Sources" / "AngouriMath" / "AngouriMath") "build -c release"
 
     if dirExists("." / generatorP / "Yadg.NET") then
         log "Skipping Yadg.NET cloning..."

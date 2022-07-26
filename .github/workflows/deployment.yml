@@ -21,11 +21,11 @@ jobs:
       
     - name: Initialize
       run: |
-        ./init.sh
+         dotnet fsi amsite.fsx init
    
     - name: Generate
       run: |
-        ./run.sh
+         dotnet fsi amsite.fsx build
       
     - uses: JamesIves/github-pages-deploy-action@4.1.4
       name: Publish on Github Pages
