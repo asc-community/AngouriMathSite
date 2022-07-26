@@ -12,8 +12,13 @@ using System.IO;
 using System.Linq;
 #pragma warning restore CS0105 // Using directive appeared previously in this namespace
 
-var GeneratorPath = GetNearestRoot("src", Directory.GetCurrentDirectory());
-const string GeneratedPath = ".output";
+var RootP = Path.GetDirectoryName(GetNearestRoot("src", Directory.GetCurrentDirectory()));
+var GeneratorP = RootP._("src");
+var OutputP = RootP._(".output");
+var FinalOutputP = OutputP._("final");
+var PreOutputP = OutputP._("pre");
+var ContentP = GeneratorP._("content");
+// const string 
 
 
 GenerateWikiToPages();
@@ -31,10 +36,10 @@ static string GetNearestRoot(string name, string current)
 
 void GenerateWikiToPages()
 {
-    var contentFolder = Path.Combine(GeneratorPath, "content");
-    var allFiles = Directory.GetFiles(Path.Combine(contentFolder, "_wiki"));
-    var destFolder = Path.Combine(contentFolder, "wiki");
+    var allFiles = Directory.GetFiles(ContentP._("_wiki"));
+    var destFolder = PreOutputP._("wiki");
     Directory.CreateDirectory(destFolder);
+    
     var links = new List<(string url, string name)>();
 
     foreach (var file in allFiles)
@@ -44,21 +49,21 @@ void GenerateWikiToPages()
         if (file.ToLower().EndsWith(".png"))
         {
             Console.WriteLine($"W: Image {file} copied");
-            var newDest = Path.Combine(Path.GetDirectoryName(GeneratorPath), "wiki", Path.GetFileName(file));
+            var newDest = Path.GetDirectoryName(GeneratorP)._("wiki")._(file);
             if (File.Exists(newDest))
                 File.Delete(newDest);
             File.Copy(file, newDest);
         }
         else if (file.EndsWith(".md"))
         {
-            var nameOnly = fileName[..(fileName.Length - 3)];
+            var nameOnly = fileName[..^3];
             if (nameOnly.StartsWith("_"))
                 continue;
 
             var rawTitle = nameOnly[(nameOnly.IndexOf('-') + 1)..];
             var title = rawTitle.Replace('-', ' ');
 
-            var altName = destPath[..(destPath.Length - 2)] + "html";
+            var altName = destPath[..^2] + "html";
             links.Add((url: nameOnly.Replace("#", "%23") + ".html", name: title));
             Console.WriteLine($"W: {file} processing");
             File.WriteAllText(
@@ -69,9 +74,7 @@ void GenerateWikiToPages()
         }
     }
 
-
-
-    var sb = new StringBuilder(File.ReadAllText(Path.Combine(contentFolder, "_templates", "wiki.html")));
+    var sb = new StringBuilder(File.ReadAllText(ContentP._("_templates")._("wiki.html")));
     sb.Append("<ul class='wiki-ul-main'>");
     foreach (var (url, name) in links.OrderBy(l => l.url))
         sb.Append($"<li><a href='{url}'>{name}</a></li>");
@@ -79,7 +82,7 @@ void GenerateWikiToPages()
     sb.Append("<hr>");
     sb.Append($"Last update: [{DateTime.Now.ToUniversalTime().ToString("yyyy-MM-dd HH:mm")} UTC]");
     sb.Append("</div>"); // this tag is opened in the template
-    File.WriteAllText(Path.Combine(contentFolder, "wiki", "index.html"), sb.ToString());
+    File.WriteAllText(destFolder._("index.html"), sb.ToString());
 
 
     static string MdToHtml(string md, string title)
@@ -117,7 +120,7 @@ void GenerateWikiToPages()
 
 void GeneratePagesFromDocs()
 {
-    var saver = new PageSaverAndCounter(Path.Combine(GeneratorPath, "content", "docs"));
+    var saver = new PageSaverAndCounter(PreOutputP._("docs"));
     new WebsiteBuilder(saver)
     {
         MainPageName = "AngouriMath Almanac",
@@ -130,7 +133,7 @@ Please, consider these pages as those made for reference for particular members,
     }
     .Build(
         DocsParser.Parse(
-            Path.Combine(GeneratorPath, "AngouriMath", "Sources", "AngouriMath", "AngouriMath", "bin", "release", "netstandard2.0", "AngouriMath.xml")
+            Path.Combine(GeneratorP, "AngouriMath", "Sources", "AngouriMath", "AngouriMath", "bin", "release", "netstandard2.0", "AngouriMath.xml")
         ).Build()
     );
     Console.WriteLine($"The number of generated doc pages: {saver.PageSavedCount}");
@@ -140,20 +143,15 @@ Please, consider these pages as those made for reference for particular members,
 
 void GenerateFinalWebsite()
 {
-    var contentName = GeneratorPath;
+    DirectoryCopy(ContentP, PreOutputP, copySubDirs: true, _ => true);
 
-    var rootName = Path.Combine(Path.GetDirectoryName(contentName), GeneratedPath);
-
-    var dirName = Path.Combine(contentName, "content");
-
-    Console.WriteLine(dirName);
-    var files = Directory.GetFiles(dirName);
+    var files = Directory.GetFiles(PreOutputP);
     
-    var top = File.ReadAllText(Path.Combine(dirName, "_templates", "top.html"));
-    var bottom = File.ReadAllText(Path.Combine(dirName, "_templates", "bottom.html"));
+    var top = File.ReadAllText(ContentP._("_templates")._("top.html"));
+    var bottom = File.ReadAllText(ContentP._("_templates")._("bottom.html"));
 
     var id = 0;
-    var allFiles = Files.GatherFilesFromDir(dirName);
+    var allFiles = Files.GatherFilesFromDir(PreOutputP);
     var count = allFiles.Count();
 
     bottom = bottom.Replace("<!--PAGE_COUNT-->", $"{count} pages online");
@@ -166,7 +164,7 @@ void GenerateFinalWebsite()
         if (!file.EndsWith(".html"))
             continue;
         var content = File.ReadAllText(file);
-        var relativeName = file.Substring(dirName.Length + 1);
+        var relativeName = file.Substring(PreOutputP.Length + 1);
         var relativePathName = Path.GetDirectoryName(relativeName)
             .Replace('\\', '_')
             .Replace('/', '_');
@@ -187,7 +185,7 @@ void GenerateFinalWebsite()
             newContent = newContent.Replace($"li><!--active_docs-->", "li class=\"active-link\">");
         newContent = newContent.Replace("<tbody>", "<pre>");
 
-        var newFilePath = Path.Combine(rootName, relativeName);
+        var newFilePath = Path.Combine(FinalOutputP, relativeName);
         var n = $"[{id} / {count}]";
         Console.WriteLine($"{n} Read from  {file}");
         Console.WriteLine($"{n} Writing to {newFilePath}");
@@ -246,30 +244,30 @@ static void DirectoryCopy(string sourceDirName, string destDirName, bool copySub
 
 void CopyWikiImagesToFinalWebsite()
 {
-    var root = Path.GetDirectoryName(GeneratorPath);
+    var root = Path.GetDirectoryName(GeneratorP);
     var wikiImgPath = Path.Combine(root, "wiki");
-    var wikiDestination = Path.Combine(root, GeneratedPath, "wiki");
+    var wikiDestination = Path.Combine(root, OutputP, "wiki");
     DirectoryCopy(wikiImgPath, wikiDestination, copySubDirs: false, _ => true);    
 }
 
 void CopyCssFilesToFinalWebsite()
 {
-    var root = Path.GetDirectoryName(GeneratorPath);
-    var destination = Path.Combine(root, GeneratedPath);
+    var root = Path.GetDirectoryName(GeneratorP);
+    var destination = Path.Combine(root, OutputP);
     DirectoryCopy(root, destination, copySubDirs: false, f => Path.GetExtension(f) is ".css");
 }
 
 void CopyImgFolderToFinalWebsite()
 {
-    var root = Path.GetDirectoryName(GeneratorPath);
-    var destination = Path.Combine(root, GeneratedPath, "img");
+    var root = Path.GetDirectoryName(GeneratorP);
+    var destination = Path.Combine(root, OutputP, "img");
     DirectoryCopy(Path.Combine(root, "img"), destination, copySubDirs: false, _ => true);
 }
 
 void CopyCName()
 {
-    var root = Path.GetDirectoryName(GeneratorPath);
-    File.Copy(Path.Combine(root, "CNAME"), Path.Combine(root, GeneratedPath, "CNAME"), true);
+    var root = Path.GetDirectoryName(GeneratorP);
+    File.Copy(Path.Combine(root, "CNAME"), Path.Combine(root, OutputP, "CNAME"), true);
 }
 
 
@@ -290,4 +288,9 @@ public sealed class PageSaverAndCounter : IPageSave
         Console.WriteLine($"Writing to {finalPath}");
         PageSavedCount++;
     }
+}
+
+public static class Extensions
+{
+    public static string _(this string a, string b) => Path.Combine(a, b);
 }
