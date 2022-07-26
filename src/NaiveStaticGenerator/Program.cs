@@ -26,7 +26,7 @@ GeneratePagesFromDocs();
 
 GenerateFinalWebsite();
 
-CopyWikiImagesToFinalWebsite();
+// CopyWikiImagesToFinalWebsite();
 CopyCssFilesToFinalWebsite();
 CopyImgFolderToFinalWebsite();
 CopyCName();
@@ -49,10 +49,9 @@ void GenerateWikiToPages()
         if (file.ToLower().EndsWith(".png"))
         {
             Console.WriteLine($"W: Image {file} copied");
-            var newDest = Path.GetDirectoryName(GeneratorP)._("wiki")._(file);
-            if (File.Exists(newDest))
-                File.Delete(newDest);
-            File.Copy(file, newDest);
+            if (File.Exists(destPath))
+                File.Delete(destPath);
+            File.Copy(file, destPath);
         }
         else if (file.EndsWith(".md"))
         {
@@ -143,7 +142,7 @@ Please, consider these pages as those made for reference for particular members,
 
 void GenerateFinalWebsite()
 {
-    DirectoryCopy(ContentP, PreOutputP, copySubDirs: true, _ => true);
+    DirectoryCopy(ContentP, PreOutputP, copySubDirs: true, file => !file.FullFileName.Contains("_wiki"));
 
     var files = Directory.GetFiles(PreOutputP);
     
@@ -204,7 +203,7 @@ void GenerateFinalWebsite()
 
 // Source:
 // https://docs.microsoft.com/en-us/dotnet/standard/io/how-to-copy-directories
-static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs, Func<string, bool> fileToCopy)
+static void DirectoryCopy(string sourceDirName, string destDirName, bool copySubDirs, Func<(string Filename, string FullFileName), bool> fileToCopy)
 {
     // Get the subdirectories for the specified directory.
     DirectoryInfo dir = new DirectoryInfo(sourceDirName);
@@ -225,7 +224,7 @@ static void DirectoryCopy(string sourceDirName, string destDirName, bool copySub
     FileInfo[] files = dir.GetFiles();
     foreach (FileInfo file in files)
     {
-        if (!fileToCopy(file.Name))
+        if (!fileToCopy((file.Name, file.FullName)))
             continue;
         string tempPath = Path.Combine(destDirName, file.Name);
         file.CopyTo(tempPath, true);
@@ -244,30 +243,22 @@ static void DirectoryCopy(string sourceDirName, string destDirName, bool copySub
 
 void CopyWikiImagesToFinalWebsite()
 {
-    var root = Path.GetDirectoryName(GeneratorP);
-    var wikiImgPath = Path.Combine(root, "wiki");
-    var wikiDestination = Path.Combine(root, OutputP, "wiki");
-    DirectoryCopy(wikiImgPath, wikiDestination, copySubDirs: false, _ => true);    
+    DirectoryCopy(RootP._("wiki"), FinalOutputP._("wiki"), copySubDirs: false, _ => true);    
 }
 
 void CopyCssFilesToFinalWebsite()
 {
-    var root = Path.GetDirectoryName(GeneratorP);
-    var destination = Path.Combine(root, OutputP);
-    DirectoryCopy(root, destination, copySubDirs: false, f => Path.GetExtension(f) is ".css");
+    DirectoryCopy(RootP, FinalOutputP, copySubDirs: false, f => Path.GetExtension(f.Filename) is ".css");
 }
 
 void CopyImgFolderToFinalWebsite()
 {
-    var root = Path.GetDirectoryName(GeneratorP);
-    var destination = Path.Combine(root, OutputP, "img");
-    DirectoryCopy(Path.Combine(root, "img"), destination, copySubDirs: false, _ => true);
+    DirectoryCopy(RootP._("img"), FinalOutputP._("img"), copySubDirs: false, _ => true);
 }
 
 void CopyCName()
 {
-    var root = Path.GetDirectoryName(GeneratorP);
-    File.Copy(Path.Combine(root, "CNAME"), Path.Combine(root, OutputP, "CNAME"), true);
+    File.Copy(RootP._("CNAME"), FinalOutputP._("CNAME"), true);
 }
 
 
