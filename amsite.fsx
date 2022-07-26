@@ -12,6 +12,14 @@ let generatorP = "_generator"
 let outputP = "generated"
 let contentP = "content"
 
+let dirExists path =
+    try
+        Directory.Exists(path)
+    with
+    | :? Exception e ->
+        log $"Issue accessing {path}"
+        raise e
+
 let runProgram name activeDir args =
     let startInfo = ProcessStartInfo()
     startInfo.FileName <- name
@@ -29,36 +37,36 @@ let dotnet = runProgram "dotnet"
 let cliArgs = Environment.GetCommandLineArgs() |> List.ofArray
 
 let init () =
-    if Directory.Exists("." / generatorP / "AngouriMath") then
+    if dirExists("." / generatorP / "AngouriMath") then
         log "Skipping AngouriMath cloning..."
     else
         git ("." / generatorP) "clone https://github.com/asc-community/AngouriMath AngouriMath" 
 
     dotnet ("." / generatorP / "AngouriMath" / "Sources" / "AngouriMath" / "AngouriMath") "build -c release"
 
-    if Directory.Exists("." / generatorP / "Yadg.NET") then
+    if dirExists("." / generatorP / "Yadg.NET") then
         log "Skipping Yadg.NET cloning..."
     else
         git ("." / generatorP) "clone https://github.com/WhiteBlackGoose/Yadg.NET Yadg.NET"
 
-    if Directory.Exists("." / generatorP / contentP / "_wiki") then
+    if dirExists("." / generatorP / contentP / "_wiki") then
         log "Skipping wiki cloning..."
     else
         git ("." / generatorP / contentP) "clone https://github.com/asc-community/AngouriMath.wiki.git _wiki"
 
 
 let uninit () =
-    if Directory.Exists("." / generatorP / "AngouriMath") |> not then
+    if dirExists("." / generatorP / "AngouriMath") |> not then
         log "Skipping deleting AngouriMath..."
     else
         Directory.Delete("." / generatorP / "AngouriMath", true) 
 
-    if Directory.Exists("." / generatorP / "Yadg.NET") |> not then
+    if dirExists("." / generatorP / "Yadg.NET") |> not then
         log "Skipping deleting Yadg.NET..."
     else
         Directory.Delete("." / generatorP / "Yadg.NET", true)
 
-    if Directory.Exists("." / generatorP / contentP / "_wiki") |> not then
+    if dirExists("." / generatorP / contentP / "_wiki") |> not then
         log "Skipping deleting wiki..."
     else
         Directory.Delete("." / generatorP / contentP / "_wiki", true) 
