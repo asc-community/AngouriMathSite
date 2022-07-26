@@ -20,11 +20,11 @@ jobs:
     - name: 'Init'
       run: dotnet fsi amsite.fsx init
 
-    - name: 'Build'
-      run: dotnet fsi amsite.fsx build
+    #- name: 'Build'
+    #  run: dotnet fsi amsite.fsx build
 
-    - name: 'Clean'
-      run: dotnet fsi amsite.fsx clean
+    #- name: 'Clean'
+    #  run: dotnet fsi amsite.fsx clean
 
     - name: 'Uninit'
       run: dotnet fsi amsite.fsx uninit
