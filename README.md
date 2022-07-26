@@ -18,18 +18,23 @@ cd AngouriMathSite
 
 Now run
 ```
-./init.sh
+dotnet fsi amsite.fsx init
 ```
 
-Once it's finished, you can generate the website by running
+Once it's finished, you can run the website by doing
 ```
-./run.sh
+dotnet fsi amsite.fsx run
 ```
 
-Or, to make it open automatically,
-```
-./runAndOpen.sh
-```
+### Full docs on `amsite.fsx`
+
+| Command  | Syntax                         | Description                                                             |
+|:---------|:-------------------------------|:------------------------------------------------------------------------|
+| `init`   | `dotnet fsi amsite.fsx init`   | Initializes the modules (clones the AM's repo, wiki repo, and Yadg.NET) |
+| `uninit` | `dotnet fsi amsite.fsx uninit` | Uninitializes modules (just deletes those folders)                      |
+| `build`  | `dotnet fsi amsite.fsx build`  | Runs the generator, assuming the modules are already initialized.       |
+| `run`    | `dotnet fsi amsite.fsx run`    | This does `build` plus opens the main page                              |
+| `clean`  | `dotnet fsi amsite.fsx clean`  | Cleans the output directory                                             |
 
 ## Transparency
 
