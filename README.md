@@ -28,13 +28,13 @@ dotnet fsi amsite.fsx run
 
 ### Full docs on `amsite.fsx`
 
-| Command  | Syntax                         | Description                                                             |
-|:---------|:-------------------------------|:------------------------------------------------------------------------|
-| `init`   | `dotnet fsi amsite.fsx init`   | Initializes the modules (clones the AM's repo, wiki repo, and Yadg.NET) |
-| `uninit` | `dotnet fsi amsite.fsx uninit` | Uninitializes modules (just deletes those folders)                      |
-| `build`  | `dotnet fsi amsite.fsx build`  | Runs the generator, assuming the modules are already initialized.       |
-| `run`    | `dotnet fsi amsite.fsx run`    | This does `build` plus opens the main page                              |
-| `clean`  | `dotnet fsi amsite.fsx clean`  | Cleans the output directory                                             |
+| Command                        | Description                                                             |
+|:-------------------------------|:------------------------------------------------------------------------|
+| `dotnet fsi amsite.fsx init`   | Initializes the modules (clones the AM's repo, wiki repo, and Yadg.NET) |
+| `dotnet fsi amsite.fsx uninit` | Uninitializes modules (just deletes those folders)                      |
+| `dotnet fsi amsite.fsx build`  | Runs the generator, assuming the modules are already initialized.       |
+| `dotnet fsi amsite.fsx run`    | This does `build` plus opens the main page                              |
+| `dotnet fsi amsite.fsx clean`  | Cleans the output directory                                             |
 
 ## Transparency
 
