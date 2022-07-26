@@ -12,7 +12,7 @@ using System.IO;
 using System.Linq;
 #pragma warning restore CS0105 // Using directive appeared previously in this namespace
 
-var GeneratorPath = GetNearestRoot("_generator", Directory.GetCurrentDirectory());
+var GeneratorPath = GetNearestRoot("src", Directory.GetCurrentDirectory());
 const string GeneratedPath = ".output";
 
 
