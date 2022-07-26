@@ -9,7 +9,7 @@ let log msg =
     printfn $"Log: {msg}"
 
 let generatorP = "src"
-let outputP = ".output"
+let outputP = ".output" / "final"
 let contentP = "content"
 
 let dirExists path =

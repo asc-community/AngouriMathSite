@@ -170,7 +170,15 @@ void GenerateFinalWebsite()
 
         var relativeNameSimple = relativeName.Replace(".html", "");
 
-        var localTop = top.Replace("##page_title##", $"AngouriMath | {relativeNameSimple}");
+        var depthUpPath = string.Join("/", Enumerable.Range(0, relativeName.Count(c => c is '/')).Select(_ => ".."));
+        if (depthUpPath is "")
+            depthUpPath = ".";
+
+        var localTop = top
+            .Replace("##page_title##", $"AngouriMath | {relativeNameSimple}")
+            .Replace("{{RELATIVE_PATH}}", depthUpPath)
+            ;
+            
         var newContent = localTop + "\n" + content + "\n" + bottom;
 
        //  #if DEBUG
