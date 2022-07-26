@@ -20,6 +20,15 @@ let dirExists path =
         log $"Issue accessing {path}"
         raise e
 
+let deleteDir path =
+    try
+        Directory.Delete(path, true)
+    with
+    | :? Exception as e ->
+        log $"Issue deleting {path}"
+        raise e
+
+
 let runProgram name activeDir args =
     let startInfo = ProcessStartInfo()
     startInfo.FileName <- name
@@ -59,17 +68,17 @@ let uninit () =
     if dirExists("." / generatorP / "AngouriMath") |> not then
         log "Skipping deleting AngouriMath..."
     else
-        Directory.Delete("." / generatorP / "AngouriMath", true) 
+        dirDelete("." / generatorP / "AngouriMath", true) 
 
     if dirExists("." / generatorP / "Yadg.NET") |> not then
         log "Skipping deleting Yadg.NET..."
     else
-        Directory.Delete("." / generatorP / "Yadg.NET", true)
+        dirDelete("." / generatorP / "Yadg.NET", true)
 
     if dirExists("." / generatorP / contentP / "_wiki") |> not then
         log "Skipping deleting wiki..."
     else
-        Directory.Delete("." / generatorP / contentP / "_wiki", true) 
+        dirDelete("." / generatorP / contentP / "_wiki", true) 
 
 let build () =
     dotnet (generatorP / "NaiveStaticGenerator") "run"
@@ -83,7 +92,7 @@ let run () =
         runProgram "xdg-open" "." ("." / outputP / "index.html")
 
 let clean () =
-    Directory.Delete ("." / outputP, true)
+    dirDelete ("." / outputP, true)
 
 match cliArgs with
 | [ _; _; "init" ] -> init ()
