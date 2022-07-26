@@ -16,7 +16,7 @@ let dirExists path =
     try
         Directory.Exists(path)
     with
-    | :? Exception e ->
+    | :? Exception as e ->
         log $"Issue accessing {path}"
         raise e
 
