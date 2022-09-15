@@ -5,6 +5,12 @@ body {
     overflow-x: hidden;
 }
 
+.regular-table table, .regular-table tbody tr th, .regular-table tr td {
+    border: 1px solid gray;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
 .main {
     width: 44%;
     margin-top: 10vh;
