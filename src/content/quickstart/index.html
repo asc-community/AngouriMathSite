@@ -79,11 +79,11 @@ dotnet add package AngouriMath --prerelease</code></pre>
 
 <br>
 <br>
-<h3 class="centered"><a name="terminal" href="#terminal" class="anchor">Install AngouriMath.Terminal</a></h3>
+<h3 class="centered"><a name="terminal" href="#terminal" class="anchor">AngouriMath Terminal</a></h3>
 <hr>
 <p>
     AngouriMath.Terminal is a TUI program to interact with AngouriMath without creating project/opening IDE/etc.,
-    basically using it as your own calculator. Choose the right link for your OS:
+    basically using it as your own calculator. Choose the right link for your OS to down it:
     <table class="regular-table">
         <tr>
             <th>OS</th><th>x86 32-bit</th><th>x86 64-bit</th><th>ARM 32-bit</th><th>ARM 64-bit</th>
@@ -117,6 +117,21 @@ dotnet add package AngouriMath --prerelease</code></pre>
             <td></td>
         </tr>
     </table>
+    <a href="https://github.com/asc-community/AngouriMathLab/releases">[ All options ]</a>
+    <p>
+    Run it:
+    <h4>For Debian/Ubuntu users</h4>
+    Go to the folder with the deb file you downloaded and run
+<pre><code>sudo apt install ./angourimath-terminal-your-arch.deb</code></pre>
+    Now you can invoke it with `angourimath-terminal` or from your start up menu / application launcher.
+    <h4>For all others</h4>
+    Unzip the file you downloaded. Inside, there's an executable called <code>AngouriMath.Terminal</code> for Linux/macOS users and <code>AngouriMath.Terminal.exe</code> for Windows users.
+    </p>
+    <p>
+        Wben it's running, it may take some time to start the kernel. Once started, you can type in F#. To verify it works, type:
+<pre><code>solutions "x" "sin(x) = 1/2"</code></pre>
+        and type enter.
+    </p>
 </p>
 
 <br>
