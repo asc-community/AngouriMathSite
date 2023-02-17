@@ -27,6 +27,8 @@ jobs:
       run: |
          dotnet fsi amsite.fsx build
          ls -la
+         ls -la .output
+         ls -la .output/final
       
     - uses: JamesIves/github-pages-deploy-action@4.1.4
       name: Publish on Github Pages
