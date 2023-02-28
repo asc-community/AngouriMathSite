@@ -30,7 +30,4 @@ For more details, see [CONTRIBUTING.md](./CONTRIBUTING.md)
 
 ## Transparency
 
-There's some telemetry to see what pages are most visited, so that we could understand what AngouriMath is being used for, and alike stuff. I'm trying to be transparent, that's why
-- [**Here**](https://github.com/asc-community/AngouriMathSite/blob/master/src/content/_templates/top.html#L13) is the source for telemetry services (which are **google.analytics** and **yandex.metrica**).
-- [**Here**](https://metrica.yandex.com/stat/traffic?group=month&period=year&accuracy=1&id=72666283) is the public data for the telemetry collected by **yandex.metrica**.
-- Unfortunately I didn't find a way to open the **google.analytics**'s data, please notify, if you know how.
+Telemetry removed, there's no tracking anymore.
