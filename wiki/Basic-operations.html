@@ -1,38 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>AngouriMath | wiki/06.-Integration</title>    
+    <title>AngouriMath | wiki/Basic-operations</title>    
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-   ym(72666283, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>   
-<noscript><div><img src="https://mc.yandex.ru/watch/72666283" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-    
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PPHNLWBV0F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PPHNLWBV0F');
-</script>
-    <!-- /Google Analytics -->
-
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -115,32 +89,43 @@
 
 <!--Top end-->
 
-<h2 class='centered'>Integration</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Analytical integration is available in AngouriMath.
+<h2 class='centered'>operations</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Many of functions are MathS' methods where MathS is a public static class. All its methods are documented in the code.
 
-<h2>Integration</h2>
+<h2>MathS</h2>
 
-Similarly to differentation, here you call method <text class='cw'>Integrate</text>:
-<pre><code>Entity expr = "a x2 + b x";
-Console.WriteLine(expr.Integrate("x"));</code></pre>
+It is the main static class for functions. Some of them create new nodes, like <text class='cw'>MathS.Sin</text>, <text class='cw'>MathS.Var</text>, and others.
+Functions like <text class='cw'>MathS.Hyperbolic.Sinh</text> create an expression according to its symbolic definition.
+
+Method <text class='cw'>FromString</text> parses a string and returns an expression. For example,
+<pre><code>using static AngouriMath.MathS;
+var expr = FromString("x + 2");</code></pre>
+Would return the same result as
+<pre><code>Entity expr = "x + 2";</code></pre>
+Method <text class='cw'>FromString</text> uses caching by string. If you need to save memory or confident that
+expressions will never repeat, then you may want to disable it like this:
+<pre><code>var expr = FromString("a + x", useCache: false);</code></pre>
+Then it will not look up for cache neither it will cache the result. The implicit operator
+from string does use the cache.
+Note, that this method, as well as the implicit operator, will not simplify the result.
+
+Method <text class='cw'>ToString</text> returns a mathematical representation of the given expression.
+Although in most cases it will return an expression that can be parsed from string
+back into an <text class='cw'>Entity</text>, there is no guarantee so far that it will not change.
+Example:
+<pre><code>Entity expr = "a x + b";
+Console.WriteLine(expr);</code></pre>
 Output:
-<pre><code>a * x ^ 3 / 3 + b * x ^ 2 / 2</code></pre>
+<pre><code>a * x + b</code></pre>
 
-If no integral can be found, it will return a node of integral. Example:
-<pre><code>Entity expr = "{ x, a }";
-Console.WriteLine(expr.Integrate("x"));</code></pre>
+Method <text class='cw'>Latexise</text> returns a <a href="https://en.wikipedia.org/wiki/LaTeX">LaTeX</a>
+code that can be then rendered into an image.
+Example:
+<pre><code>Entity expr = "a / b + sqrt(c)";
+Console.WriteLine(expr.Latexise());</code></pre>
 Output:
-<pre><code>integral({ x, a }, x)</code></pre>
+<pre><code>\frac{a}{b}+\sqrt{c}</code></pre>
 
-Same way as with derivative, you can use node <text class='cw'>Entity.Integralf</text> inside an expression:
-<pre><code>Entity expr = "integral(x2 + sin(x), x)";
-Console.WriteLine(expr.Simplify());</code></pre>
-Output:
-<pre><code>x ^ 3 / 3 - cos(x)</code></pre>
-
-Extension: <text class='cw'>string.Integrate(Variable)</text>.
-
-As for now, 17.03.2021, AM does not support advanced algorithms of integration. Make sure
-to stay on the most recent version to track updates.
+Extensions: <text class='cw'>string.Latexise()</text>, <text class='cw'>string.ToEntity()</text>.
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -149,12 +134,12 @@ to stay on the most recent version to track updates.
 <br><br><br><br>
 <br><br><br><br>
 <br><br><br><br>
-<a href="https://angouri.org">Angouri</a> © 2019-2022 &middot; 
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
 <a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1533 pages online
+1534 pages online
 </div>
 </body>
 

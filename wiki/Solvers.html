@@ -1,38 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>AngouriMath | wiki/04.-Simplification</title>    
+    <title>AngouriMath | wiki/Solvers</title>    
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-   ym(72666283, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>   
-<noscript><div><img src="https://mc.yandex.ru/watch/72666283" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-    
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PPHNLWBV0F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PPHNLWBV0F');
-</script>
-    <!-- /Google Analytics -->
-
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -115,63 +89,100 @@
 
 <!--Top end-->
 
-<h2 class='centered'>Simplification</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Here we alternate the given expression into different possible forms.
+<h2 class='centered'>Solvers</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Here we shall review different ways to solve equations, inequalities, statements, systems.
 
-<h2>Alternate</h2>
+<h2>Solving a classic equation</h2>
 
-The main method for Simplification is method <text class='cw'>Alternate</text>. It finds alternative
-forms of the given expression and returns a sorted IEnumerable, from the simplest
-to the most complicated. Example:
-<pre><code>Entity expr = "sin(x / a) + cos(3) + sqrt(e - x)";
-foreach (var alt in expr.Alternate(5))
-    Console.WriteLine(alt);</code></pre>
+The method to solve a classic equation over a single variable in AM is <text class='cw'>SolveEquation</text>.
+Since an equation generally has a form of <text class='cw'>f(x) = g(x)</text>, the method <text class='cw'>SolveEquation</text> expects
+your expression to be <text class='cw'>f(x) - g(x)</text>, that is, it should be a function. Example:
+<pre><code>Entity expr = "2sin(a x) - b";
+Console.WriteLine(expr.SolveEquation("x"));</code></pre>
 Output:
-<pre><code>sin(x / a) + cos(3) + sqrt(e - x)
-cos(3) + sin(x / a) + sqrt(e - x)
-sin(x / a) + cos(3) + sqrt(e - x)
-cos(3) + sin(1 / a * x) + sqrt(e + -x)</code></pre>	
-The only argument of this method is responsible for the number of iterations
-the simplification will go through.
+<pre><code>{ (arcsin(b / 2) + 2 * pi * n_1) / a, (pi - arcsin(b / 2) + 2 * pi * n_1) / a }</code></pre>
 
-The measure of the complexity of an expression is <text class='cw'>Entity</text>'s property <text class='cw'>SimplifiedRate</text>.
-It has a type of <text class='cw'>double</text>. The higher its value is, the more complicated the expression
-is. That is the number by which method <text class='cw'>Alternate</text> sorts expressions. Example:
-<pre><code>Entity expr = "sin(x / a) + cos(3) + sqrt(e - x)";
-foreach (var alt in expr.Alternate(5))
-    Console.WriteLine(alt.SimplifiedRate);</code></pre>
+Nonetheless, AM allows you to solve <text class='cw'>Statement</text>s, be that equalities, inequalities, and more advanced cases.
+
+Extension: <text class='cw'>string.SolveEquation(Variable)</text>.
+
+<h2>Solving a statement</h2>
+
+A <text class='cw'>Statement</text> is an expression, that is considered to be true or false.
+For example, <text class='cw'>a and b</text> is a statement, as well as <text class='cw'>x2 = 4</text>, or <text class='cw'>x > a and x2 = b</text>.
+
+Let us start from a simple example:
+<pre><code>Entity expr = "x2 = 16";
+Console.WriteLine(expr.Solve("x"));</code></pre>
 Output:
-<pre><code>37
-37
-37
-49</code></pre>
-The user's algorithms should not rely on the number, produced by <text class='cw'>SimplifiedRate</text>, as
-it might vary from version to version.
+<pre><code>{ 4, -4 }</code></pre>
 
-Method <text class='cw'>Simplify</text> simply returns the first expression of all those returned
-by <text class='cw'>Alternate</text>, that is, the one with the lowest <text class='cw'>SimplifiedRate</text>.
+Here is a more advanced example:
+<pre><code>Entity expr = "x4 = 16 and x in RR and x > 0";
+Console.WriteLine(expr.Solve("x"));</code></pre>
+Output:
+<pre><code>{ 2 }</code></pre>
 
-<h2>Critera of complexity and other methods</h2>
+Adding another condition:
+<pre><code>Entity expr = "x4 = 16 and x in RR and x > 0 or x^a = 6";
+Console.WriteLine(expr.Solve("x"));</code></pre>
+Output:
+<pre><code>{ 2, 6 ^ (1 / a) }</code></pre>
 
-To change the critera by which an expression's complexity is computed, you may want
-to change setting <text class='cw'>MathS.Settings.ComplexityCriteria</text> (dicussed in further chapters).
-The higher value for the given expression you return - the worse it appears for the AM's
-simplification algorithm.
+Example with inequalities:
+<pre><code>Entity expr = "2x2 - 3 > 0 and x > 0";
+Console.WriteLine(expr.Solve("x").Simplify());
+Entity expr2 = "2x2 - 3 > 0 or x > 0";
+Console.WriteLine(expr2.Solve("x").Simplify());</code></pre>
+Output:
+<pre><code>((-oo; -sqrt(24) / 4) \/ (sqrt(24) / 4; +oo)) /\ (0; +oo)
+(-oo; -sqrt(24) / 4) \/ (sqrt(24) / 4; +oo) \/ (0; +oo)</code></pre>
 
-<text class='cw'>Simplify</text> is an active and expensive operation. <text class='cw'>Entity</text> has also property <text class='cw'>InnerSimplified</text>,
-which is usually called as "automatic simplification". Since there exists no automatic
-simplification in AM, you can address this property to get a naively simplified result.
-For example, it will cancel out zeros in sums, ones in products, and other basic operations.
-Example:
-<pre><code>Entity expr1 = "a + 0";
-Console.WriteLine(expr1.InnerSimplified); // a
-Entity expr2 = "sin(x)2 + cos(x)2";
-Console.WriteLine(expr2.InnerSimplified); // sin(x) ^ 2 + cos(x) ^ 2</code></pre>
-As it could be seen, it will not simplify cases which require applying patterns.
-To simplify the latter case, call <text class='cw'>Simplify</text>.
+Extension: <text class='cw'>string.Solve(Variable)</text>.
 
-Same way as with <text class='cw'>Evaled</text>, consider <text class='cw'>InnerSimplified</text> as a free-to-call property.
 
-Extension: <text class='cw'>string.Simplify()</text>.
+The returned value is a <text class='cw'>Set</text>, which could be of four types: <text class='cw'>FiniteSet</text>, <text class='cw'>Interval</text>, <text class='cw'>SpecialSet</text>, <text class='cw'>ConditionalSet</text>. Let us consider
+a basic example:
+<pre><code>Entity expr = "a x2 + b x + c = 0";
+var solutions = expr.Solve("x");
+if (solutions is Entity.Set.FiniteSet finiteSet)
+{
+    foreach (var root in finiteSet)
+        Console.WriteLine($"Root: {root}");
+}</code></pre>
+Output:
+<pre><code>Root: (-b - sqrt(b ^ 2 - 4 * a * c)) / (2 * a)
+Root: (-b + sqrt(b ^ 2 - 4 * a * c)) / (2 * a)</code></pre>
+
+<h2>Solving system of equations</h2>
+
+Every equation of the system should be written as a simple equation
+(as in the first part of the article). The method of <text class='cw'>MathS</text> named <text class='cw'>Equations</text>:
+<pre><code>var system = Equations(
+    "x2 + a y3",
+    "y - x - b"
+);</code></pre>
+This creates an instance of <text class='cw'>EquationSystem</text>. Let us print it out:
+<pre><code>Console.WriteLine(system);</code></pre>
+Output:
+<pre><code>x ^ 2 + a * y ^ 3 = 0
+y - x - b = 0</code></pre>
+
+The method <text class='cw'>Solve()</text> of instance <text class='cw'>EquationSystem</text> takes variables in the same order,
+as their values are then written to a solution matrix.
+Let us consider a very simple example:
+<pre><code>var system = Equations(
+    "x2 + y",
+    "y - x - 3"
+);
+Console.WriteLine(system.Solve("x", "y"));</code></pre>
+Output:
+<pre><code>Matrix[2 x 2]
+(1 - sqrt(-11)) / (-2)          -((1 - sqrt(-11)) / (-2)) ^ 2
+(1 + sqrt(-11)) / (-2)          -((1 + sqrt(-11)) / (-2)) ^ 2</code></pre>
+The first (left) column are values for <text class='cw'>x</text>, the right one for <text class='cw'>y</text>. The first row
+is the first solution set, the second row is the second one.
+
+Extensions: <text class='cw'>(string, string).Solve(Variable, Variable)</text>, <text class='cw'>(string, string, string).Solve(Variable, Variable, Variable)</text>, etc.
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -180,12 +191,12 @@ Extension: <text class='cw'>string.Simplify()</text>.
 <br><br><br><br>
 <br><br><br><br>
 <br><br><br><br>
-<a href="https://angouri.org">Angouri</a> © 2019-2022 &middot; 
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
 <a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1533 pages online
+1534 pages online
 </div>
 </body>
 

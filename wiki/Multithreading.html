@@ -1,38 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>AngouriMath | wiki/14.-F#-language</title>    
+    <title>AngouriMath | wiki/Multithreading</title>    
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-   ym(72666283, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>   
-<noscript><div><img src="https://mc.yandex.ru/watch/72666283" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-    
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PPHNLWBV0F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PPHNLWBV0F');
-</script>
-    <!-- /Google Analytics -->
-
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -115,30 +89,49 @@
 
 <!--Top end-->
 
-<h2 class='centered'>F# language</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Here we will cover usage of the library for research purposes.
+<h2 class='centered'>Multithreading</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Here we will cover using AngouriMath in multithreaded systems and realtime software.
 
-<h2>Usage</h2>
+<h2>Thread safety</h2>
 
-The library has its <a href="https://www.nuget.org/packages/AngouriMath.FSharp/">wrapper</a> 
-for the F# language. This makes it easier to use the library for projects, written in
-F#. Example:
-<pre><code>open Functions
-open AngouriMath
-open Core
+Immutability allows us to guarantee, that any operations with an expression is thread-safe. It is
+also true that all methods and settings are thread-safe.
 
-printfn "%O" (asNumber "2 + 3")
-printfn "%O" (<text class='cw'></text>dy/dx<text class='cw'></text> "x2 + a x")
-printfn "%O" (<text class='cw'></text>int [dx]<text class='cw'></text> "x2 + e")
-printfn "%O" (<text class='cw'></text>lim x->0<text class='cw'></text> "sin(a x) / x")</code></pre>
-Output:
-<pre><code>5
-2 * x + a
-x ^ 3 / 3 + e * x
-a</code></pre>
+To add to it, there exists no method in AngouriMath which would create a new thread. All methods
+are intentionally made single-threaded.
 
+<h2>Interruption of a method</h2>
 
-Nonetheless, you still can call methods from the C# library itself in your code.
+It is a known problem that sometimes you do not want to wait until a procedure finishes. Symbolic algebra
+systems might take a while to execute the required command, not to mention bugs leading to infinite
+executions. At this point, you are offered an ability to interrupt such methods as <text class='cw'>Limit</text>,
+<text class='cw'>Simplify</text>, and <text class='cw'>Solve</text>.
 
+Like it is classic for .NET, you need to create a <text class='cw'>CancellationToken</text> which will be then
+read by those methods and checked for interruption. However, we wanted to make the API
+as obvious and convenient as possible, and could not afford passing this token throughout
+all methods in the library.
+
+The solution is to set your token to a local threading context. We use <text class='cw'>AsyncLocal<T></text>
+internally. Here is a sample code which shows how to interrupt a method:
+<pre><code>var cancellationTokenSource = new CancellationTokenSource();
+
+// That goes instead of passing your token to methods
+MathS.Multithreading.SetLocalCancellationToken(
+    cancellationTokenSource.Token);
+    
+// Then you normally run your task
+var currTask = Task.Run(() => InputText.Text.Solve("x"),
+    cancellationTokenSource.Token);
+    
+try
+{
+    await currTask;
+    LabelState.Text = currTask.Result.ToString();
+}
+catch (OperationCanceledException)
+{
+    LabelState.Text = "Operation canceled";
+}</code></pre>
 
 <!--Bottom begin-->
 
@@ -148,12 +141,12 @@ Nonetheless, you still can call methods from the C# library itself in your code.
 <br><br><br><br>
 <br><br><br><br>
 <br><br><br><br>
-<a href="https://angouri.org">Angouri</a> © 2019-2022 &middot; 
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
 <a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1533 pages online
+1534 pages online
 </div>
 </body>
 

@@ -1,38 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>AngouriMath | wiki/11.-Exceptions</title>    
+    <title>AngouriMath | wiki/Parsing-expression-from-string</title>    
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-   ym(72666283, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>   
-<noscript><div><img src="https://mc.yandex.ru/watch/72666283" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-    
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PPHNLWBV0F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PPHNLWBV0F');
-</script>
-    <!-- /Google Analytics -->
-
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -115,25 +89,36 @@
 
 <!--Top end-->
 
-<h2 class='centered'>Exceptions</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Here we will cover using AngouriMath in real projects, where it is important to provide safety and security.
+<h2 class='centered'>expression from string</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>There are a few ways to parse an expression from string.
 
-<h2>Exceptions</h2>
+## With FromString
 
-Every exception thrown by AngouriMath is derived from <text class='cw'>AngouriMathBaseException</text>. Although we still
-recommend catching particular exceptions rather than catching this one, it is important to be able
-to catch all exceptions thrown by a library.
+<pre><code>using AngouriMath;
 
-<text class='cw'>AngouriBugException</text> is thrown when an internal error occured in AngouriMath. It is almost certainly
-that the error happened on AM's side, so we ask you to report about it to the official repository if it
-happens. It will help us fix it quickly and release an update sooner.
+var expr = MathS.FromString("1 + 1");</code></pre>
 
-<text class='cw'>FutureReleaseException</text> is thrown when the required feature is not implemented yet. If you encoutered
-this exception, make sure that you are on the latest version. If you are, probably it only remains to
-wait for the feature. Nonetheless, feel free to make a feature request to let us know that it is needed.
+It will throw an exception if input is bad.
 
-All exceptions are documented, so if encountered an unknown one, we recommend you checking it on the
-Almanac or documentation in-code.
+## With implicit cast
 
+<pre><code>using AngouriMath;
+
+Entity expr = "1 + 1";</code></pre>
+
+It will also throw an exception in case of bad input.
+
+## With method Parse
+
+Unlike others, this one won't throw. However, it returns an object which requries validation:
+
+<pre><code>var expr5 = Parse("a + b").Switch(
+    res => res,
+    failure => failure.Reason.Switch<object>(
+        unknown => throw new("Unknown reason"),
+        missingOp => throw new("Missing operator"),
+        internalError => throw new("Internal error") 
+    )
+);</code></pre>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -142,12 +127,12 @@ Almanac or documentation in-code.
 <br><br><br><br>
 <br><br><br><br>
 <br><br><br><br>
-<a href="https://angouri.org">Angouri</a> © 2019-2022 &middot; 
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
 <a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1533 pages online
+1534 pages online
 </div>
 </body>
 

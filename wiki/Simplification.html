@@ -1,38 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>AngouriMath | wiki/13.-Settings</title>    
+    <title>AngouriMath | wiki/Simplification</title>    
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-   ym(72666283, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>   
-<noscript><div><img src="https://mc.yandex.ru/watch/72666283" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-    
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PPHNLWBV0F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PPHNLWBV0F');
-</script>
-    <!-- /Google Analytics -->
-
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -115,59 +89,63 @@
 
 <!--Top end-->
 
-<h2 class='centered'>Settings</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Here we will cover the way you can manipulate global settings of the library.
+<h2 class='centered'>Simplification</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Here we alternate the given expression into different possible forms.
 
-<h2>Introduction</h2>
+<h2>Alternate</h2>
 
-There are a lot of points at which we cannot trust our choice, and you might want
-to change the behaviour. That is why we introduced global settings. There is no need
-to create additional files, and those settings are static properties.
-
-The settings are, although static, thread-safe. Every setting is set for one thread only
-(via <text class='cw'>[ThreadStatic]</text>), so setting in one thread will not affect the same setting in another
-thread.
-
-<h2>Using Settings</h2>
-
-Let us consider a particular example. When AM cannot solve an equation analytically, it would
-apply numerical methods to solve it, for example, that of Newton.
-Example:
-<pre><code>Entity expr = "x + sin(x) = 0";
-Console.WriteLine(expr.Solve("x"));</code></pre>
-Will print:
-<pre><code>{ 10.712... + 3.103...i, ... }</code></pre>
-(Major share of the result was omitted under "...")
-
-This equation does not have a elementary roots (except for 0). We want to restrict it to solving
-only analytically, and if it cannot solve it so, it should not apply Newton's method. Let us
-set this setting:
-<pre><code>using var _ = MathS.Settings.AllowNewton.Set(false);
-
-Entity expr = "x + sin(x) = 0";
-Console.WriteLine(expr.Solve("x"));</code></pre>
+The main method for Simplification is method <text class='cw'>Alternate</text>. It finds alternative
+forms of the given expression and returns a sorted IEnumerable, from the simplest
+to the most complicated. Example:
+<pre><code>Entity expr = "sin(x / a) + cos(3) + sqrt(e - x)";
+foreach (var alt in expr.Alternate(5))
+    Console.WriteLine(alt);</code></pre>
 Output:
-<pre><code>{  }</code></pre>
+<pre><code>sin(x / a) + cos(3) + sqrt(e - x)
+cos(3) + sin(x / a) + sqrt(e - x)
+sin(x / a) + cos(3) + sqrt(e - x)
+cos(3) + sin(1 / a * x) + sqrt(e + -x)</code></pre>	
+The only argument of this method is responsible for the number of iterations
+the simplification will go through.
 
-As it can be seen, it does not apply the Newton's method when solving, even if no analytical 
-solution was found.
+The measure of the complexity of an expression is <text class='cw'>Entity</text>'s property <text class='cw'>SimplifiedRate</text>.
+It has a type of <text class='cw'>double</text>. The higher its value is, the more complicated the expression
+is. That is the number by which method <text class='cw'>Alternate</text> sorts expressions. Example:
+<pre><code>Entity expr = "sin(x / a) + cos(3) + sqrt(e - x)";
+foreach (var alt in expr.Alternate(5))
+    Console.WriteLine(alt.SimplifiedRate);</code></pre>
+Output:
+<pre><code>37
+37
+37
+49</code></pre>
+The user's algorithms should not rely on the number, produced by <text class='cw'>SimplifiedRate</text>, as
+it might vary from version to version.
 
-Summing up, the syntax has two options.
+Method <text class='cw'>Simplify</text> simply returns the first expression of all those returned
+by <text class='cw'>Alternate</text>, that is, the one with the lowest <text class='cw'>SimplifiedRate</text>.
 
-The first one is more convenient:
-<pre><code>using var _ = MathS.Settings.SomeSetting.Set(SomeValue);
-// code</code></pre>
+<h2>Critera of complexity and other methods</h2>
 
-The second one might be useful for parts, when the setting should be reverted before the method ends:
-<pre><code>using (var _ = MathS.Settings.SomeSetting.Set(SomeValue))
-{
-    // code
-}</code></pre>
+To change the critera by which an expression's complexity is computed, you may want
+to change setting <text class='cw'>MathS.Settings.ComplexityCriteria</text> (dicussed in further chapters).
+The higher value for the given expression you return - the worse it appears for the AM's
+simplification algorithm.
 
-<h2>Explanation</h2>
+<text class='cw'>Simplify</text> is an active and expensive operation. <text class='cw'>Entity</text> has also property <text class='cw'>InnerSimplified</text>,
+which is usually called as "automatic simplification". Since there exists no automatic
+simplification in AM, you can address this property to get a naively simplified result.
+For example, it will cancel out zeros in sums, ones in products, and other basic operations.
+Example:
+<pre><code>Entity expr1 = "a + 0";
+Console.WriteLine(expr1.InnerSimplified); // a
+Entity expr2 = "sin(x)2 + cos(x)2";
+Console.WriteLine(expr2.InnerSimplified); // sin(x) ^ 2 + cos(x) ^ 2</code></pre>
+As it could be seen, it will not simplify cases which require applying patterns.
+To simplify the latter case, call <text class='cw'>Simplify</text>.
 
-This <text class='cw'>using var _ =</text> syntactical detail might not be appealing, but it allows to revert the value of
-the setting back to normal at the end of the scope. Make sure that you write exactly like this, otherwise
-the value will not be reverted back and you might get undesired results.
+Same way as with <text class='cw'>Evaled</text>, consider <text class='cw'>InnerSimplified</text> as a free-to-call property.
+
+Extension: <text class='cw'>string.Simplify()</text>.
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -176,12 +154,12 @@ the value will not be reverted back and you might get undesired results.
 <br><br><br><br>
 <br><br><br><br>
 <br><br><br><br>
-<a href="https://angouri.org">Angouri</a> © 2019-2022 &middot; 
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
 <a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1533 pages online
+1534 pages online
 </div>
 </body>
 

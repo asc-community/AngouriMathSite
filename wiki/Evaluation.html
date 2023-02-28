@@ -1,38 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>AngouriMath | wiki/05.-Differentiation</title>    
+    <title>AngouriMath | wiki/Evaluation</title>    
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-   ym(72666283, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>   
-<noscript><div><img src="https://mc.yandex.ru/watch/72666283" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-    
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PPHNLWBV0F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PPHNLWBV0F');
-</script>
-    <!-- /Google Analytics -->
-
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -115,50 +89,70 @@
 
 <!--Top end-->
 
-<h2 class='centered'>Differentiation</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Analytical differentation is available in AngouriMath.
+<h2 class='centered'>Evaluation</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Let us consider approaches to compute an expression.
 
-<h2>Differentiation</h2>
+<h2>Evaluation</h2>
 
-This is fairly simple process of analytical computations of a derivative of an
-expression over one variable. To perform it, call method <text class='cw'>Differentiate</text>. Example:
-<pre><code>Entity expr = "a x ^ 2 + b sin(x) + c";
-Console.WriteLine(expr.Differentiate("x"));</code></pre>
-Output:
-<pre><code>2 * x * a + cos(x) * b</code></pre>
+All constant types, such as booleans and numbers, have their own types
+in the AM's type hierarchy. When evaluating, you will also get a result 
+in one of these types.
 
-If no derivative can be found, it will return node <text class='cw'>Entity.Derivativef</text>. It might
-happen if the differentiated expression is not numerical, for example:
-<pre><code>Entity expr = "a and x";
-Console.WriteLine(expr.Differentiate("x"));</code></pre>
-Output:
-<pre><code>derivative(a and x, x)</code></pre>
-It will also happen with subexpressions when they cannot be evaluated. For example,
-<pre><code>Entity expr = "{ 1, 2 } + sin(x)";
-Console.WriteLine(expr.Differentiate("x"));</code></pre>
-Output:
-<pre><code>derivative({ 1, 2 }, x) + cos(x)</code></pre>
-
-You can also use this node in your expressions, and if the first argument of this node
-is a numerical node, then <text class='cw'>InnerSimplified</text> and <text class='cw'>Simplify</text> will execute differentiation.
+To evaluate an <text class='cw'>Entity</text> you need to call its method <text class='cw'>EvalNumerical</text> to
+evaluate it into a <text class='cw'>Complex</text> and <text class='cw'>EvalBoolean</text> to evaluate it into a <text class='cw'>Boolean</text>.
 Example:
-<pre><code>Entity expr = "x derivative(sin(x) + a x, x) + 16";
-Console.WriteLine(expr.Simplify());</code></pre>
-Output:
-<pre><code>16 + (cos(x) + a) * x</code></pre>
+<pre><code>Entity expr = "2 + 3";
+Console.WriteLine(expr.EvalNumerical()); // 5
+Entity expr2 = "true implies false";
+Console.WriteLine(expr2.EvalBoolean()); // false</code></pre>
 
-You can also pass the third argument. It reflects the number of sequential differentiation
-of the same expression. Example:
-<pre><code>Entity expr = "derivative(sin(x), x, 2)";
-Console.WriteLine(expr.Simplify());
-Entity expr2 = "derivative(derivative(sin(x), x), x)";
-Console.WriteLine(expr2.Simplify().InnerSimplified);</code></pre>
-Output:
-<pre><code>-sin(x)
--sin(x)</code></pre>
-In other words, <text class='cw'>derivative(sin(x), x, 2)</text> is the second derivative of sin(x) or derivative of sin(x)
-of order 2.
+If the given expression cannot be represented as the requested type, for example,
+the result is a set, or the expression contains unresolved variables, exception
+<text class='cw'>CannotEvalException</text>. Example:
+<pre><code>Entity expr = "2 + 3 + a";
+Console.WriteLine(expr.EvalNumerical()); // throws, as "a" is unknown
+Entity expr2 = "{ 1, 3 }";
+Console.WriteLine(expr2.EvalNumerical()); // throws, as the result is not a number
+Entity expr3 = "true implies b";
+Console.WriteLine(expr3.EvalBoolean()); // throws, as "b" is unknown</code></pre>
 
-Extension: <text class='cw'>string.Differentiate(Variable)</text>.
+Properties <text class='cw'>EvaluableBoolean</text> and <text class='cw'>EvaluableNumerical</text> show whether the expression
+can be expressed as a single boolean or a single numerical value. For example,
+do not call <text class='cw'>EvalNumerical()</text> if <text class='cw'>EvaluableNumerical</text> is false.
+
+Once evaluated, the result might be converted into a primitive via explicit cast.
+Example:
+<pre><code>Entity expr = "3 / 5";
+double evalDouble = (double)expr.EvalNumerical();
+Console.WriteLine(evalDouble);
+Complex evalComplex = (Complex)expr.EvalNumerical();
+Console.WriteLine(evalComplex);
+int evalInt = (int)expr.EvalNumerical();
+Console.WriteLine(evalInt);</code></pre>
+Output:
+<pre><code>0.6
+(0.6, 0)
+0</code></pre>
+If a number cannot be converted into the given primitive, a <text class='cw'>NumberCastException</text>
+will be thrown. Example:
+<pre><code>Entity expr = "3 / 5 + i";
+double evalDouble = (double)expr.EvalNumerical(); // throws NumberCastException</code></pre>
+
+However, if you do not need the final number, but instead, the "most" evaluated
+expression, you may address property <text class='cw'>Evaled</text>. Example:
+<pre><code>Entity expr = "2 + 3";
+Console.WriteLine(expr.Evaled);
+Entity expr2 = "2 + 3 + a";
+Console.WriteLine(expr2.Evaled);</code></pre>
+Output:
+<pre><code>5
+5 + a</code></pre>
+
+It is recommended to consider <text class='cw'>Evaled</text> as a free-to-access property. It is
+a so-called <a href="https://habr.com/en/post/545936/">lazy property</a>.
+Nonetheless, it should be pointed out that the first address of this property
+executes computations and puts into cache.
+
+Extensions: <text class='cw'>string.EvalNumerical()</text>, <text class='cw'>string.EvalBoolean()</text>.
 
 <!--Bottom begin-->
 
@@ -168,12 +162,12 @@ Extension: <text class='cw'>string.Differentiate(Variable)</text>.
 <br><br><br><br>
 <br><br><br><br>
 <br><br><br><br>
-<a href="https://angouri.org">Angouri</a> © 2019-2022 &middot; 
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
 <a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1533 pages online
+1534 pages online
 </div>
 </body>
 

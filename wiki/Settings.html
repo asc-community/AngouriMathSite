@@ -1,38 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>AngouriMath | wiki/02.-Basic-operations</title>    
+    <title>AngouriMath | wiki/Settings</title>    
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-   ym(72666283, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>   
-<noscript><div><img src="https://mc.yandex.ru/watch/72666283" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-    
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PPHNLWBV0F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PPHNLWBV0F');
-</script>
-    <!-- /Google Analytics -->
-
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -115,43 +89,59 @@
 
 <!--Top end-->
 
-<h2 class='centered'>Basic operations</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Many of functions are MathS' methods where MathS is a public static class. All its methods are documented in the code.
+<h2 class='centered'>Settings</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Here we will cover the way you can manipulate global settings of the library.
 
-<h2>MathS</h2>
+<h2>Introduction</h2>
 
-It is the main static class for functions. Some of them create new nodes, like <text class='cw'>MathS.Sin</text>, <text class='cw'>MathS.Var</text>, and others.
-Functions like <text class='cw'>MathS.Hyperbolic.Sinh</text> create an expression according to its symbolic definition.
+There are a lot of points at which we cannot trust our choice, and you might want
+to change the behaviour. That is why we introduced global settings. There is no need
+to create additional files, and those settings are static properties.
 
-Method <text class='cw'>FromString</text> parses a string and returns an expression. For example,
-<pre><code>using static AngouriMath.MathS;
-var expr = FromString("x + 2");</code></pre>
-Would return the same result as
-<pre><code>Entity expr = "x + 2";</code></pre>
-Method <text class='cw'>FromString</text> uses caching by string. If you need to save memory or confident that
-expressions will never repeat, then you may want to disable it like this:
-<pre><code>var expr = FromString("a + x", useCache: false);</code></pre>
-Then it will not look up for cache neither it will cache the result. The implicit operator
-from string does use the cache.
-Note, that this method, as well as the implicit operator, will not simplify the result.
+The settings are, although static, thread-safe. Every setting is set for one thread only
+(via <text class='cw'>[ThreadStatic]</text>), so setting in one thread will not affect the same setting in another
+thread.
 
-Method <text class='cw'>ToString</text> returns a mathematical representation of the given expression.
-Although in most cases it will return an expression that can be parsed from string
-back into an <text class='cw'>Entity</text>, there is no guarantee so far that it will not change.
+<h2>Using Settings</h2>
+
+Let us consider a particular example. When AM cannot solve an equation analytically, it would
+apply numerical methods to solve it, for example, that of Newton.
 Example:
-<pre><code>Entity expr = "a x + b";
-Console.WriteLine(expr);</code></pre>
-Output:
-<pre><code>a * x + b</code></pre>
+<pre><code>Entity expr = "x + sin(x) = 0";
+Console.WriteLine(expr.Solve("x"));</code></pre>
+Will print:
+<pre><code>{ 10.712... + 3.103...i, ... }</code></pre>
+(Major share of the result was omitted under "...")
 
-Method <text class='cw'>Latexise</text> returns a <a href="https://en.wikipedia.org/wiki/LaTeX">LaTeX</a>
-code that can be then rendered into an image.
-Example:
-<pre><code>Entity expr = "a / b + sqrt(c)";
-Console.WriteLine(expr.Latexise());</code></pre>
-Output:
-<pre><code>\frac{a}{b}+\sqrt{c}</code></pre>
+This equation does not have a elementary roots (except for 0). We want to restrict it to solving
+only analytically, and if it cannot solve it so, it should not apply Newton's method. Let us
+set this setting:
+<pre><code>using var _ = MathS.Settings.AllowNewton.Set(false);
 
-Extensions: <text class='cw'>string.Latexise()</text>, <text class='cw'>string.ToEntity()</text>.
+Entity expr = "x + sin(x) = 0";
+Console.WriteLine(expr.Solve("x"));</code></pre>
+Output:
+<pre><code>{  }</code></pre>
+
+As it can be seen, it does not apply the Newton's method when solving, even if no analytical 
+solution was found.
+
+Summing up, the syntax has two options.
+
+The first one is more convenient:
+<pre><code>using var _ = MathS.Settings.SomeSetting.Set(SomeValue);
+// code</code></pre>
+
+The second one might be useful for parts, when the setting should be reverted before the method ends:
+<pre><code>using (var _ = MathS.Settings.SomeSetting.Set(SomeValue))
+{
+    // code
+}</code></pre>
+
+<h2>Explanation</h2>
+
+This <text class='cw'>using var _ =</text> syntactical detail might not be appealing, but it allows to revert the value of
+the setting back to normal at the end of the scope. Make sure that you write exactly like this, otherwise
+the value will not be reverted back and you might get undesired results.
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -160,12 +150,12 @@ Extensions: <text class='cw'>string.Latexise()</text>, <text class='cw'>string.T
 <br><br><br><br>
 <br><br><br><br>
 <br><br><br><br>
-<a href="https://angouri.org">Angouri</a> © 2019-2022 &middot; 
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
 <a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1533 pages online
+1534 pages online
 </div>
 </body>
 

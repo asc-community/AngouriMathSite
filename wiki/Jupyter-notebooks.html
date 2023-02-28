@@ -1,38 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>AngouriMath | wiki/03.-Evaluation</title>    
+    <title>AngouriMath | wiki/Jupyter-notebooks</title>    
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-   ym(72666283, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>   
-<noscript><div><img src="https://mc.yandex.ru/watch/72666283" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-    
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PPHNLWBV0F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PPHNLWBV0F');
-</script>
-    <!-- /Google Analytics -->
-
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -115,71 +89,20 @@
 
 <!--Top end-->
 
-<h2 class='centered'>Evaluation</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Let us consider approaches to compute an expression.
+<h2 class='centered'>notebooks</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Here we will cover usage of the library for research purposes.
 
-<h2>Evaluation</h2>
+<h2>Installation</h2>
 
-All constant types, such as booleans and numbers, have their own types
-in the AM's type hierarchy. When evaluating, you will also get a result 
-in one of these types.
+Thanks to <a href="https://github.com/dotnet/interactive">dotnet/interactive</a>, AM
+is now convenient to use in Jupyter notebooks. Provided that you already installed
+both Jupyter and dotnet/interactive, this is the way you enable Jupyter's features
+for AM:
 
-To evaluate an <text class='cw'>Entity</text> you need to call its method <text class='cw'>EvalNumerical</text> to
-evaluate it into a <text class='cw'>Complex</text> and <text class='cw'>EvalBoolean</text> to evaluate it into a <text class='cw'>Boolean</text>.
-Example:
-<pre><code>Entity expr = "2 + 3";
-Console.WriteLine(expr.EvalNumerical()); // 5
-Entity expr2 = "true implies false";
-Console.WriteLine(expr2.EvalBoolean()); // false</code></pre>
+<pre><code>#r "nuget:AngouriMath.Interactive, *-*"</code></pre>
 
-If the given expression cannot be represented as the requested type, for example,
-the result is a set, or the expression contains unresolved variables, exception
-<text class='cw'>CannotEvalException</text>. Example:
-<pre><code>Entity expr = "2 + 3 + a";
-Console.WriteLine(expr.EvalNumerical()); // throws, as "a" is unknown
-Entity expr2 = "{ 1, 3 }";
-Console.WriteLine(expr2.EvalNumerical()); // throws, as the result is not a number
-Entity expr3 = "true implies b";
-Console.WriteLine(expr3.EvalBoolean()); // throws, as "b" is unknown</code></pre>
+It is highly likely that there will be more features specific for Jupyter in AM.
 
-Properties <text class='cw'>EvaluableBoolean</text> and <text class='cw'>EvaluableNumerical</text> show whether the expression
-can be expressed as a single boolean or a single numerical value. For example,
-do not call <text class='cw'>EvalNumerical()</text> if <text class='cw'>EvaluableNumerical</text> is false.
-
-Once evaluated, the result might be converted into a primitive via explicit cast.
-Example:
-<pre><code>Entity expr = "3 / 5";
-double evalDouble = (double)expr.EvalNumerical();
-Console.WriteLine(evalDouble);
-Complex evalComplex = (Complex)expr.EvalNumerical();
-Console.WriteLine(evalComplex);
-int evalInt = (int)expr.EvalNumerical();
-Console.WriteLine(evalInt);</code></pre>
-Output:
-<pre><code>0.6
-(0.6, 0)
-0</code></pre>
-If a number cannot be converted into the given primitive, a <text class='cw'>NumberCastException</text>
-will be thrown. Example:
-<pre><code>Entity expr = "3 / 5 + i";
-double evalDouble = (double)expr.EvalNumerical(); // throws NumberCastException</code></pre>
-
-However, if you do not need the final number, but instead, the "most" evaluated
-expression, you may address property <text class='cw'>Evaled</text>. Example:
-<pre><code>Entity expr = "2 + 3";
-Console.WriteLine(expr.Evaled);
-Entity expr2 = "2 + 3 + a";
-Console.WriteLine(expr2.Evaled);</code></pre>
-Output:
-<pre><code>5
-5 + a</code></pre>
-
-It is recommended to consider <text class='cw'>Evaled</text> as a free-to-access property. It is
-a so-called <a href="https://habr.com/en/post/545936/">lazy property</a>.
-Nonetheless, it should be pointed out that the first address of this property
-executes computations and puts into cache.
-
-Extensions: <text class='cw'>string.EvalNumerical()</text>, <text class='cw'>string.EvalBoolean()</text>.
-
+Try online: <a href="https://mybinder.org/v2/gh/asc-community/Try/main?filepath=HelloBook.AngouriMath.Interactive.ipynb"><img style='width: 100%'src="https://img.shields.io/static/v1?label=Jupyter&message=Try%21&color=purple&style=flat&logo=Jupyter&labelColor=646"></a>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -188,12 +111,12 @@ Extensions: <text class='cw'>string.EvalNumerical()</text>, <text class='cw'>str
 <br><br><br><br>
 <br><br><br><br>
 <br><br><br><br>
-<a href="https://angouri.org">Angouri</a> © 2019-2022 &middot; 
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
 <a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1533 pages online
+1534 pages online
 </div>
 </body>
 

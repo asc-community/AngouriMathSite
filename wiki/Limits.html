@@ -1,38 +1,12 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>AngouriMath | wiki/12.-Multithreading</title>    
+    <title>AngouriMath | wiki/Limits</title>    
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-    <!-- Yandex.Metrika counter -->
-<script type="text/javascript" >
-   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-   ym(72666283, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true
-   });
-</script>   
-<noscript><div><img src="https://mc.yandex.ru/watch/72666283" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
-    <!-- /Yandex.Metrika counter -->
-    
-    
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-PPHNLWBV0F"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-PPHNLWBV0F');
-</script>
-    <!-- /Google Analytics -->
-
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
@@ -115,50 +89,71 @@
 
 <!--Top end-->
 
-<h2 class='centered'>Multithreading</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Here we will cover using AngouriMath in multithreaded systems and realtime software.
+<h2 class='centered'>Limits</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Another topic of basic calculus are limits, both one- and two-sided.
 
-<h2>Thread safety</h2>
+<h2>Two-sided limits</h2>
 
-Immutability allows us to guarantee, that any operations with an expression is thread-safe. It is
-also true that all methods and settings are thread-safe.
+The first method to find limits is method <text class='cw'>Limit(Variable, Entity)</text>. Example:
+<pre><code>Entity expr = "(a x3 + b x2 + c) / (h x3 - b x - 1)";
+Console.WriteLine(expr.Limit("x", "+oo"));</code></pre>
+Output:
+<pre><code>a / h</code></pre>
+That is, as the first argument a variable should be passed, and its destination - as the second argument.
 
-To add to it, there exists no method in AngouriMath which would create a new thread. All methods
-are intentionally made single-threaded.
+Symbols <text class='cw'>+oo</text> and <text class='cw'>-oo</text> are parsed as real positive and real negative infinities respectively.
 
-<h2>Interruption of a method</h2>
+Not only it works with rational functions, here are a few examples of more advanced cases.
+Example:
+<pre><code>// First remarkable
+Entity expr = "sin(a x) / x";
+Console.WriteLine(expr.Limit("x", "0"));
 
-It is a known problem that sometimes you do not want to wait until a procedure finishes. Symbolic algebra
-systems might take a while to execute the required command, not to mention bugs leading to infinite
-executions. At this point, you are offered an ability to interrupt such methods as <text class='cw'>Limit</text>,
-<text class='cw'>Simplify</text>, and <text class='cw'>Solve</text>.
+// First remarkable
+Entity expr2 = "sin(a x) / tan(b x)";
+Console.WriteLine(expr2.Limit("x", "0"));
 
-Like it is classic for .NET, you need to create a <text class='cw'>CancellationToken</text> which will be then
-read by those methods and checked for interruption. However, we wanted to make the API
-as obvious and convenient as possible, and could not afford passing this token throughout
-all methods in the library.
+// Second remarkable
+Entity expr3 = "(1 + a / x)^(d x)";
+Console.WriteLine(expr3.Limit("x", "+oo"));
 
-The solution is to set your token to a local threading context. We use <text class='cw'>AsyncLocal<T></text>
-internally. Here is a sample code which shows how to interrupt a method:
-<pre><code>var cancellationTokenSource = new CancellationTokenSource();
+// l'Hopital's rule
+Entity expr4 = "(tan(t) - sin(t)) / t3";
+Console.WriteLine(expr4.Limit("t", "0"));</code></pre>
+Output:
+<pre><code>a
+a / b
+e ^ (a * d)
+1/2</code></pre>
 
-// That goes instead of passing your token to methods
-MathS.Multithreading.SetLocalCancellationToken(
-    cancellationTokenSource.Token);
-    
-// Then you normally run your task
-var currTask = Task.Run(() => InputText.Text.Solve("x"),
-    cancellationTokenSource.Token);
-    
-try
-{
-    await currTask;
-    LabelState.Text = currTask.Result.ToString();
-}
-catch (OperationCanceledException)
-{
-    LabelState.Text = "Operation canceled";
-}</code></pre>
+If a limit cannot be found, a note of <text class='cw'>Entity.Limitf</text> is returned:
+<pre><code>Entity expr = "(sin(t) - tan(t)) / t";
+Console.WriteLine(expr.Limit("t", "+oo"));</code></pre>
+Output:
+<pre><code>limit((sin(t) - tan(t)) / t, t, +oo)</code></pre>
 
+Extension: <text class='cw'>string.Limit(Variable, Entity)</text>
+
+<h2>One-sided limits</h2>
+
+The method is <text class='cw'>Limit(Variable, Entity, AngouriMath.Core.ApproachFrom)</text>,
+where <text class='cw'>ApproachFrom</text> is a <text class='cw'>enum</text> of three possible values: <text class='cw'>BothSides</text>, <text class='cw'>Left</text>, <text class='cw'>Right</text>.
+If <text class='cw'>BothSided</text> is passed, it will work same as <text class='cw'>Limit(Variable, Entity)</text>.
+Otherwise, we shall consider now. Simple example:
+<pre><code>Entity expr = "(a x2 + b) / (c x2 + d)";
+Console.WriteLine(expr.Limit("x", "3", AngouriMath.Core.ApproachFrom.Left));</code></pre>
+Output:
+<pre><code>(a * 9 + b) / (c * 9 + d)</code></pre>
+
+Another example:
+<pre><code>Entity expr = "(a x2 + b) / (c x2 + d)";
+Console.WriteLine(expr.Limit("x", "0", AngouriMath.Core.ApproachFrom.Left));</code></pre>
+Output:
+<pre><code>b / d</code></pre>
+
+Extension: <text class='cw'>string.Limit(Variable, Entity, ApproachFrom)</text>.
+
+As for now, 17.03.2021, AM does not support advanced algorithms of finding limits. Make sure
+to stay on the most recent version to track updates.
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -167,12 +162,12 @@ catch (OperationCanceledException)
 <br><br><br><br>
 <br><br><br><br>
 <br><br><br><br>
-<a href="https://angouri.org">Angouri</a> © 2019-2022 &middot; 
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
 <a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1533 pages online
+1534 pages online
 </div>
 </body>
 
