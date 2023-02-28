@@ -132,7 +132,7 @@ Please, consider these pages as those made for reference for particular members,
     }
     .Build(
         DocsParser.Parse(
-            Path.Combine(GeneratorP, "AngouriMath", "Sources", "AngouriMath", "AngouriMath", "bin", "release", "netstandard2.0", "AngouriMath.xml")
+            Path.Combine(GeneratorP, "AngouriMath", "Sources", "AngouriMath", "AngouriMath", "publish-output", "AngouriMath.xml")
         ).Build()
     );
     Console.WriteLine($"The number of generated doc pages: {saver.PageSavedCount}");

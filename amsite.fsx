@@ -40,6 +40,8 @@ let runProgram name activeDir args =
     if proc.Start() |> not then
         raise (Exception $"Failure to start process {name}. Report this bug, please.")
     proc.WaitForExit()
+    if proc.ExitCode <> 0 then
+        raise (Exception $"Error of command {name}. Exit code: {proc.ExitCode}.")
 
 let git = runProgram "git"
 let dotnet = runProgram "dotnet"
@@ -52,7 +54,7 @@ let init () =
     else
         git ("." / generatorP) "clone https://github.com/asc-community/AngouriMath AngouriMath" 
 
-    dotnet ("." / generatorP / "AngouriMath" / "Sources" / "AngouriMath" / "AngouriMath") "build -c release"
+    dotnet ("." / generatorP / "AngouriMath" / "Sources" / "AngouriMath" / "AngouriMath") "publish -c release -o publish-output --framework netstandard2.0"
 
     if dirExists("." / generatorP / "Yadg.NET") then
         log "Skipping Yadg.NET cloning..."
