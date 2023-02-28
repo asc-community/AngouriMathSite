@@ -34,6 +34,7 @@ let runProgram name activeDir args =
     startInfo.FileName <- name
     startInfo.Arguments <- args
     startInfo.WorkingDirectory <- activeDir
+    startInfo.UseShellExecute <- false
     use proc = new Process()
     proc.StartInfo <- startInfo
     if proc.Start() |> not then

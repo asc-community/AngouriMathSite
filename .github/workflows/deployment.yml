@@ -26,15 +26,15 @@ jobs:
     - name: Generate
       run: |
         dotnet fsi amsite.fsx build
-        ls /home/runner/work/AngouriMathSite/AngouriMathSite
-        ls /home/runner/work/AngouriMathSite/AngouriMathSite/src
-        ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath
-        ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath/Sources
-        ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath/Sources/AngouriMath
-        ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath/Sources/AngouriMath/AngouriMath
-        ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath/Sources/AngouriMath/AngouriMath/bin
-        ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath/Sources/AngouriMath/AngouriMath/bin/release
-        ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath/Sources/AngouriMath/AngouriMath/bin/release/netstandard2.0
+        echo 1 && ls /home/runner/work/AngouriMathSite/AngouriMathSite
+        echo 2 && ls /home/runner/work/AngouriMathSite/AngouriMathSite/src
+        echo 3 && ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath
+        echo 4 && ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath/Sources
+        echo 5 && ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath/Sources/AngouriMath
+        echo 6 && ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath/Sources/AngouriMath/AngouriMath
+        echo 7 && ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath/Sources/AngouriMath/AngouriMath/bin
+        echo 8 && ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath/Sources/AngouriMath/AngouriMath/bin/release
+        echo 9 && ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath/Sources/AngouriMath/AngouriMath/bin/release/netstandard2.0
       
     - uses: JamesIves/github-pages-deploy-action@4.1.4
       name: Publish on Github Pages
