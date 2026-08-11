@@ -22,6 +22,12 @@ let dirExists path =
 
 let dirDelete path =
     try
+        // What `uninit` deletes are git clones, and git marks the files under
+        // .git/objects/pack read-only. Directory.Delete refuses a read-only file on
+        // Windows, so the attribute has to come off first -- otherwise uninit fails with
+        // UnauthorizedAccessException on a pack .idx, which is what it did.
+        for file in Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories) do
+            File.SetAttributes(file, FileAttributes.Normal)
         Directory.Delete(path, true)
     with
     | :? Exception as e ->
