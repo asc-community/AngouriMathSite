@@ -127,11 +127,15 @@ Output:
 
 The supported types are: <text class='cw'>int</text>, <text class='cw'>long</text>, <text class='cw'>float</text>, <text class='cw'>double</text>, <text class='cw'>Complex</text>, <text class='cw'>BigInteger</text>. Let us consider
 an example, where <text class='cw'>int</text> is upcasted to a <text class='cw'>Complex</text>:
-<pre><code>Entity expr = "x + y";
+<pre><code>using System.Numerics;
+
+Entity expr = "x + y";
 var f = expr.Compile<Complex, int, Complex>("x", "y");
 Console.WriteLine(f(new(4, 5), 5));</code></pre>
 Output:
-<pre><code>(9, 5)</code></pre>
+<pre><code><9; 5></code></pre>
+<text class='cw'>Complex</text> here is <text class='cw'>System.Numerics.Complex</text>, and the printed form is that type's own —
+it was <text class='cw'>(9, 5)</text> before .NET 8 changed it.
 
 You can pass up to 8 type parameters excluding the one for output.
 
@@ -156,6 +160,7 @@ expression of type <text class='cw'>Entity</text> into a Linq.Expression.
 <text class='cw'>Entity</text>. Although allowed, it is not recommended to rely on the third argument's value. Instead,
 we encourage to use it as a type holder and switch over it when looking for a good node. For example,
 that is a fragment of code for this ruleset:
+<!-- amcheck:skip a fragment, not a whole sample -->
 <pre><code>...
 return typeHolder switch
 {
@@ -193,7 +198,7 @@ It does not accept any arguments, as it unconditionally work with <text class='c
 var f = expr.Compile("x", "y");
 Console.WriteLine(f.Call(4, 5));</code></pre>
 Output:
-<pre><code>(9, 0)</code></pre>
+<pre><code><9; 0></code></pre>
 
 It is not as fast and flexible as <text class='cw'>Compile<></text>.
 <!--Bottom begin-->
@@ -209,7 +214,7 @@ It is not as fast and flexible as <text class='cw'>Compile<></text>.
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1534 pages online
+1947 pages online
 </div>
 </body>
 

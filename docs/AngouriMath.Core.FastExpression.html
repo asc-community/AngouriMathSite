@@ -89,7 +89,7 @@
 
 <!--Top end-->
 
-<h2 class="yadg-h2 centered">AngouriMath.Core.FastExpression</h2><hr/><p class="yadg-p "><a href="namespaces.html">&#8592; Back to list of namespaces</a></p><p class="yadg-p ">Classes within the AngouriMath.Core.FastExpression namespace</p><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Core.FastExpression/Compiler.html">Compiler</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>The <ref name="Cache"/> stores the saved cache number if zero/positive,<br>            or the bitwise complement of the unsaved cache number if negative.</div></li></ul></p>
+<h2 class="yadg-h2 centered">AngouriMath.Core.FastExpression</h2><hr/><p class="yadg-p "><a href="namespaces.html">&#8592; Back to list of namespaces</a></p><p class="yadg-p ">Classes within the AngouriMath.Core.FastExpression namespace</p><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Core.FastExpression/Compiler.html">Compiler</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>The <ref name="Cache"/> stores the saved cache number if zero/positive,<br>            or the bitwise complement of the unsaved cache number if negative.</div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 ">Scratch</h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            The working stack and the cache of repeated subexpressions, one set per thread<br>            rather than one per compiled expression.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>            They used to be instance fields, which made a compiled expression unsafe to call<br>            from more than one thread at a time: two calls interleaved their pushes and pops<br>            and the second to finish found the stack in a state it did not put it in. Worse,<br>            the damage was permanent -- the count check throws before anything is popped, so<br>            one racing call left the leftovers behind and every later call failed too, on one<br>            thread or many. See https://github.com/asc-community/AngouriMath/issues/637.<br>            <para />            Per thread rather than per call so that calling a compiled expression still<br>            allocates nothing, which is the point of compiling it. Neither buffer carries<br>            anything from one call to the next: the stack is emptied on the way in, and the<br>            cache is only ever read at a slot the same call has already written.<br>            </div></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -103,7 +103,7 @@
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1534 pages online
+1947 pages online
 </div>
 </body>
 

@@ -97,13 +97,28 @@ Every exception thrown by AngouriMath is derived from <text class='cw'>AngouriMa
 recommend catching particular exceptions rather than catching this one, it is important to be able
 to catch all exceptions thrown by a library.
 
+Under it there are three groups:
+
+<text class='cw'>MathSException</text> and its descendants say that the input was not something the library can work
+with — <text class='cw'>CannotEvalException</text> when an expression cannot be reduced to the type asked for,
+<text class='cw'>NumberCastException</text> when a number does not fit the primitive it is cast to,
+<text class='cw'>UncompilableNodeException</text> when a node has no compiled form, <text class='cw'>WrongNumberOfArgumentsException</text>,
+<text class='cw'>BadMatrixShapeException</text>, and others. <text class='cw'>ParseException</text> is a <text class='cw'>MathSException</text> too, with
+<text class='cw'>UnrecognizedFunctionParseException</text>, <text class='cw'>MissingOperatorParseException</text>,
+<text class='cw'>UnhandledParseException</text> and the rest under it.
+
+<text class='cw'>NotSufficientlySupportedException</text> is thrown where the library knows the answer exists and has
+no method for it — a cubic inequality, for instance. It marks a gap in coverage, so it is worth
+opening a feature request if you meet one, but it is not a defect.
+
 <text class='cw'>AngouriBugException</text> is thrown when an internal error occured in AngouriMath. It is almost certainly
 that the error happened on AM's side, so we ask you to report about it to the official repository if it
 happens. It will help us fix it quickly and release an update sooner.
 
-<text class='cw'>FutureReleaseException</text> is thrown when the required feature is not implemented yet. If you encoutered
-this exception, make sure that you are on the latest version. If you are, probably it only remains to
-wait for the feature. Nonetheless, feel free to make a feature request to let us know that it is needed.
+The distinction between the last two matters, and it changed in 2.0. <text class='cw'>AngouriBugException</text> used to
+be thrown for known gaps as well, so a reader was asked to file a bug for something nobody had
+written yet; those now throw <text class='cw'>NotSufficientlySupportedException</text>. <text class='cw'>FutureReleaseException</text>, which
+2.0 removed, was a third spelling of the same thing.
 
 All exceptions are documented, so if encountered an unknown one, we recommend you checking it on the
 Almanac or documentation in-code.
@@ -121,7 +136,7 @@ Almanac or documentation in-code.
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1534 pages online
+1947 pages online
 </div>
 </body>
 

@@ -96,19 +96,24 @@
 The library has its <a href="https://www.nuget.org/packages/AngouriMath.FSharp/">wrapper</a> 
 for the F# language. This makes it easier to use the library for projects, written in
 F#. Example:
-<pre><code>open Functions
-open AngouriMath
-open Core
+<pre><code>open AngouriMath.FSharp.Core
+open AngouriMath.FSharp.Functions
+open AngouriMath.FSharp.Shortcuts
 
 printfn "%O" (asNumber "2 + 3")
-printfn "%O" (<text class='cw'></text>dy/dx<text class='cw'></text> "x2 + a x")
+printfn "%O" (<text class='cw'></text>d/dx<text class='cw'></text> "x2 + a x")
 printfn "%O" (<text class='cw'></text>int [dx]<text class='cw'></text> "x2 + e")
 printfn "%O" (<text class='cw'></text>lim x->0<text class='cw'></text> "sin(a x) / x")</code></pre>
 Output:
 <pre><code>5
 2 * x + a
-x ^ 3 / 3 + e * x
+x ^ 3 / 3 + e * x + C
 a</code></pre>
+
+The three modules divide up like this: <text class='cw'>Core</text> converts to and from <text class='cw'>Entity</text>, <text class='cw'>Functions</text>
+carries the operations with every argument given, and <text class='cw'>Shortcuts</text> holds the forms that
+fix <text class='cw'>x</text> as the variable — <text class='cw'></text> <text class='cw'>d/dx</text> <text class='cw'></text>, <text class='cw'></text> <text class='cw'>int [dx]</text> <text class='cw'></text>, <text class='cw'></text> <text class='cw'>lim x->0</text> <text class='cw'></text>,
+<text class='cw'></text> <text class='cw'>lim x->+oo</text> <text class='cw'></text> and the rest.
 
 
 Nonetheless, you still can call methods from the C# library itself in your code.
@@ -127,7 +132,7 @@ Nonetheless, you still can call methods from the C# library itself in your code.
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1534 pages online
+1947 pages online
 </div>
 </body>
 

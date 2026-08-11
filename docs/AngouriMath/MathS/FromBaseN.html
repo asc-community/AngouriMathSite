@@ -99,9 +99,9 @@ Console.WriteLine(ToBaseN(3.75m, 2));
 Console.WriteLine(ToBaseN(13.125m, 2));
 Console.WriteLine(ToBaseN(13.125m, 10));
 
-// uncomment when https://github.com/asc-community/AngouriMath/issues/584
-// is fixed
-// Console.WriteLine(ToBaseN(13.125m, 5));
+// A repeating expansion is cut off at the configured decimal precision
+// instead of hanging; see issue 584.
+Console.WriteLine(ToBaseN(13.125m, 5).Substring(0, 12) + "...");
 
 Console.WriteLine(ToBaseN(13.125m, 8));
 Console.WriteLine("-----------------------");
@@ -113,6 +113,7 @@ Console.WriteLine(FromBaseN("1.05", 6));        </code></pre><br>            Pri
 11.11
 1101.001
 13.125
+23.030303030...
 15.1
 -----------------------
 255
@@ -133,7 +134,7 @@ Console.WriteLine(FromBaseN("1.05", 6));        </code></pre><br>            Pri
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1534 pages online
+1947 pages online
 </div>
 </body>
 

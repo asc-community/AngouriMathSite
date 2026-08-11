@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Core.Transformations/RewriteRules</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">RewriteRules</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Core.Transformations.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            The rewrite rule sets this library ships, as data: named, described, attributed with<br>            what they claim, and enumerable through <a href="../AngouriMath.Core.Transformations/RewriteRules/All.html">All</a>.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            Registration is explicit and static — there is no assembly scanning and no<br>            <c>Activator</c>, so the registry survives trimming and NativeAOT, and<br>            <a href="../AngouriMath.Core.Transformations/RewriteRules/All.html">All</a> is in a fixed order that does not depend on hashing, reflection or<br>            which type happened to be loaded first.<br>            </para><para>            Every rule set the simplifier applies is registered here, and the simplifier reaches<br>            them through this registry rather than through <c>Patterns</c> directly. That is what<br>            lets an account of what the simplifier did to an expression be a complete one: a set<br>            reachable only by its method has no name to report and nothing to attribute a step to,<br>            so a derivation built while some sets were still unregistered would quietly omit<br>            whatever they had done.<br>            </para><para>            Every entry is declared <a href="../AngouriMath.Core.Transformations/Soundness/SoundUnderAssumptions.html">SoundUnderAssumptions</a>. That is a claim<br>            about what has been argued, not about what is true — nothing here checks a tier, so<br>            the registry starts conservative and promoting an entry means making the case for it.<br>            </para></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/All.html"><h3 class="yadg-h3 ">All</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/Boolean.html"><h3 class="yadg-h3 ">Boolean</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/CanonicalOrder.html"><h3 class="yadg-h3 ">CanonicalOrder</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/CanonicalOrderAt.html"><h3 class="yadg-h3 ">CanonicalOrderAt&#8203;(AngouriMath.&#8203;Functions.&#8203;TreeAnalyzer.&#8203;SortLevel)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/CanonicalOrderCountingConstants.html"><h3 class="yadg-h3 ">CanonicalOrderCountingConstants</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/CanonicalOrderExact.html"><h3 class="yadg-h3 ">CanonicalOrderExact</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/CollapseMultipleFractions.html"><h3 class="yadg-h3 ">CollapseMultipleFractions</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/CollapseTrigonometricFunctions.html"><h3 class="yadg-h3 ">CollapseTrigonometricFunctions</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/Common.html"><h3 class="yadg-h3 ">Common</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/CommonDenominator.html"><h3 class="yadg-h3 ">CommonDenominator</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/CommonDenominatorAt.html"><h3 class="yadg-h3 ">CommonDenominatorAt&#8203;(AngouriMath.&#8203;Functions.&#8203;TreeAnalyzer.&#8203;SortLevel)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/CommonDenominatorCountingConstants.html"><h3 class="yadg-h3 ">CommonDenominatorCountingConstants</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/CommonDenominatorExact.html"><h3 class="yadg-h3 ">CommonDenominatorExact</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/DivisionPreparing.html"><h3 class="yadg-h3 ">DivisionPreparing</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/ExpandFactorialDivisions.html"><h3 class="yadg-h3 ">ExpandFactorialDivisions</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/ExpandMultipleAngle.html"><h3 class="yadg-h3 ">ExpandMultipleAngle</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/ExpandTrigonometric.html"><h3 class="yadg-h3 ">ExpandTrigonometric</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/Expansion.html"><h3 class="yadg-h3 ">Expansion</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/Factorization.html"><h3 class="yadg-h3 ">Factorization</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/FactorizeFactorialMultiplications.html"><h3 class="yadg-h3 ">FactorizeFactorialMultiplications</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/InequalityEquality.html"><h3 class="yadg-h3 ">InequalityEquality</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/InvertNegativeMultipliers.html"><h3 class="yadg-h3 ">InvertNegativeMultipliers</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/InvertNegativePowers.html"><h3 class="yadg-h3 ">InvertNegativePowers</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/NormalTrigonometricForm.html"><h3 class="yadg-h3 ">NormalTrigonometricForm</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/NumericNeat.html"><h3 class="yadg-h3 ">NumericNeat</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/PerfectSquare.html"><h3 class="yadg-h3 ">PerfectSquare</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/PhiFunction.html"><h3 class="yadg-h3 ">PhiFunction</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/PolynomialGcdCancellation.html"><h3 class="yadg-h3 ">PolynomialGcdCancellation</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/PolynomialLongDivision.html"><h3 class="yadg-h3 ">PolynomialLongDivision</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/Power.html"><h3 class="yadg-h3 ">Power</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/RationaliseDenominator.html"><h3 class="yadg-h3 ">RationaliseDenominator</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/SetOperator.html"><h3 class="yadg-h3 ">SetOperator</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RewriteRules/Trigonometric.html"><h3 class="yadg-h3 ">Trigonometric</h3></a>Property</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+1947 pages online
+</div>
+</body>
+
+
+
+
+</html>

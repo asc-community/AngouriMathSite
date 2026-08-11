@@ -106,11 +106,12 @@ happen if the differentiated expression is not numerical, for example:
 Console.WriteLine(expr.Differentiate("x"));</code></pre>
 Output:
 <pre><code>derivative(a and x, x)</code></pre>
-It will also happen with subexpressions when they cannot be evaluated. For example,
+Adding a number to a set adds it to every element, so differentiating one differentiates
+every element — and the two derivatives here coincide, leaving a one-element set:
 <pre><code>Entity expr = "{ 1, 2 } + sin(x)";
 Console.WriteLine(expr.Differentiate("x"));</code></pre>
 Output:
-<pre><code>derivative({ 1, 2 }, x) + cos(x)</code></pre>
+<pre><code>{ cos(x) }</code></pre>
 
 You can also use this node in your expressions, and if the first argument of this node
 is a numerical node, then <text class='cw'>InnerSimplified</text> and <text class='cw'>Simplify</text> will execute differentiation.
@@ -147,7 +148,7 @@ Extension: <text class='cw'>string.Differentiate(Variable)</text>.
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1534 pages online
+1947 pages online
 </div>
 </body>
 

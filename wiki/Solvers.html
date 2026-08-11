@@ -134,8 +134,12 @@ Console.WriteLine(expr.Solve("x").Simplify());
 Entity expr2 = "2x2 - 3 > 0 or x > 0";
 Console.WriteLine(expr2.Solve("x").Simplify());</code></pre>
 Output:
-<pre><code>((-oo; -sqrt(24) / 4) \/ (sqrt(24) / 4; +oo)) /\ (0; +oo)
-(-oo; -sqrt(24) / 4) \/ (sqrt(24) / 4; +oo) \/ (0; +oo)</code></pre>
+<pre><code>(abs(-sqrt(6)) / 2; +oo)
+(-oo; -1/2 * abs(-sqrt(6))) \/ (abs(-sqrt(6)) / 2; +oo) \/ (0; +oo)</code></pre>
+The endpoints of a quadratic inequality are written as <text class='cw'>|a|</text>, which is right for either
+sign of a symbolic coefficient. Here the coefficients are concrete and <text class='cw'>abs(-sqrt(6))</text>
+ought to have folded to <text class='cw'>sqrt(6)</text>; that it does not is
+<a href="https://github.com/asc-community/AngouriMath/issues/881">#881</a>.
 
 Extension: <text class='cw'>string.Solve(Variable)</text>.
 
@@ -162,6 +166,7 @@ Every equation of the system should be written as a simple equation
     "y - x - b"
 );</code></pre>
 This creates an instance of <text class='cw'>EquationSystem</text>. Let us print it out:
+<!-- amcheck:continues -->
 <pre><code>Console.WriteLine(system);</code></pre>
 Output:
 <pre><code>x ^ 2 + a * y ^ 3 = 0
@@ -176,11 +181,26 @@ Let us consider a very simple example:
 );
 Console.WriteLine(system.Solve("x", "y"));</code></pre>
 Output:
-<pre><code>Matrix[2 x 2]
-(1 - sqrt(-11)) / (-2)          -((1 - sqrt(-11)) / (-2)) ^ 2
-(1 + sqrt(-11)) / (-2)          -((1 + sqrt(-11)) / (-2)) ^ 2</code></pre>
+<pre><code>[[-(-(5 - sqrt(-11)) / 2 + 3), (5 - sqrt(-11)) / 2], [-(-(5 + sqrt(-11)) / 2 + 3), (5 + sqrt(-11)) / 2]]</code></pre>
 The first (left) column are values for <text class='cw'>x</text>, the right one for <text class='cw'>y</text>. The first row
 is the first solution set, the second row is the second one.
+
+Every entry here is <text class='cw'>x = (-1 ± sqrt(-11)) / 2</text> and <text class='cw'>y = x + 3</text> written the long way round.
+<text class='cw'>ToString(multilineFormat: true)</text> lays the matrix out as a grid, which is easier to read:
+<pre><code>var system = Equations(
+    "x2 + y",
+    "y - x - 3"
+);
+var solutions = (Entity.Matrix)system.Solve("x", "y");
+Console.WriteLine(solutions.ToString(multilineFormat: true));</code></pre>
+Output:
+<pre><code>Matrix[2 x 2]
+-(-(5 - sqrt(-11)) / 2 + 3)   (5 - sqrt(-11)) / 2           
+-(-(5 + sqrt(-11)) / 2 + 3)   (5 + sqrt(-11)) / 2</code></pre>
+<text class='cw'>Simplify()</text> on the matrix does not shorten these, because <text class='cw'>Simplify</text> rewrites the node it
+is given and not the entries inside it —
+<a href="https://github.com/asc-community/AngouriMath/issues/882">#882</a>. Simplifying an
+entry on its own does work, so read the entries out and simplify each.
 
 Extensions: <text class='cw'>(string, string).Solve(Variable, Variable)</text>, <text class='cw'>(string, string, string).Solve(Variable, Variable, Variable)</text>, etc.
 <!--Bottom begin-->
@@ -196,7 +216,7 @@ Extensions: <text class='cw'>(string, string).Solve(Variable, Variable)</text>, 
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1534 pages online
+1947 pages online
 </div>
 </body>
 

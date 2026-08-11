@@ -101,11 +101,13 @@ First of all, a vector is a one-column matrix. A row vector is a one-row matrix.
     });</code></pre>
 It has two rows and three columns. You can access them by normal indexing, where the first index
 is the number of row, and the second one is the number of column:
+<!-- amcheck:continues -->
 <pre><code>Console.WriteLine(m[0, 2]); // prints the second element of the zero-th row</code></pre>
 Output:
 <pre><code>3</code></pre>
 
 Let us print a matrix:
+<!-- amcheck:continues -->
 <pre><code>Console.WriteLine(m);</code></pre>
 Output:
 <pre><code>[[1, 2, 3], [4, 5, 6]]</code></pre>
@@ -124,6 +126,7 @@ Output:
 
 This creates a column vector. We can verify it by addressing <text class='cw'>RowCount</text> and <text class='cw'>ColumnCount</text> properties of 
 the vector:
+<!-- amcheck:continues -->
 <pre><code>Console.WriteLine(v.RowCount + " " + v.ColumnCount);</code></pre>
 Output:
 <pre><code>4 1</code></pre>
@@ -341,7 +344,9 @@ AngouriMath.Entity+Matrix
 AngouriMath.Entity+Number+Integer</code></pre>
 
 Applying <text class='cw'>Abs</text> onto a vector will compute its absolute length, as a sum of squares of its elements:
-<pre><code>Console.WriteLine("(| [ a, b, c ] |)".Simplify());
+<pre><code>using AngouriMath.Extensions;
+
+Console.WriteLine("(| [ a, b, c ] |)".Simplify());
 Console.WriteLine("(| [ 2, 3, 6 ] |)".EvalNumerical());</code></pre>
 Output:
 <pre><code>sqrt(a ^ 2 + b ^ 2 + c ^ 2)
@@ -371,7 +376,7 @@ Output:
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1534 pages online
+1947 pages online
 </div>
 </body>
 

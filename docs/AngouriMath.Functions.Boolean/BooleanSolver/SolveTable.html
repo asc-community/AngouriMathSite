@@ -89,7 +89,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath.Functions.Boolean/BooleanSolver.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">SolveTable&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable[])</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Returns a tensor of solutions over <text class="yadg-text cw">variables</text> so that<br>            the expression turns into a True when evaled. Computes the roots by<br>            compiling the truth table<br>            </div><exception cref="T:AngouriMath.Core.Exceptions.WrongNumberOfArgumentsException"/></p></p>
+<p class="yadg-p "><a href="../../AngouriMath.Functions.Boolean/BooleanSolver.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">SolveTable&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable[])</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Returns a tensor of solutions over <text class="yadg-text cw">variables</text> so that<br>            the expression turns into a True when evaled.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            Assigns the variables one at a time and asks after each what the expression<br>            already is. A prefix that makes it false rules out every completion of itself at<br>            once, and a prefix that makes it true admits all of them, so neither has to be<br>            walked. Only a prefix that settles nothing is branched on. Enumerating all<br>            <c>2^n</c> rows and testing each — which is what this did — is the case where no<br>            prefix ever settles anything, and is now the worst case rather than the only one.<br>            </para><para>            The order of the rows is unchanged: assigning false before true, with the last<br>            variable moving fastest, is the same order counting through the table produced.<br>            </para><para>            This enumerates models, not satisfiability, so the result can still be<br>            exponentially large — a tautology over n variables has 2^n solutions and they all<br>            have to be written down. What is gone is paying that price for the search when the<br>            answer is small.<br>            </para></div><exception cref="T:AngouriMath.Core.Exceptions.WrongNumberOfArgumentsException"/></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -103,7 +103,7 @@
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1534 pages online
+1947 pages online
 </div>
 </body>
 

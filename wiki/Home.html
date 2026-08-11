@@ -89,7 +89,66 @@
 
 <!--Top end-->
 
-<h2 class='centered'>Home</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Welcome to the AngouriMath wiki!
+<h2 class='centered'>Home</h2><hr><p><a href='index.html'>&#8592; Back to the main page</a></p>Welcome to the AngouriMath wiki. These pages are the guide; the
+<a href="https://am.angouri.org/docs/namespaces.html">almanac</a> is the per-member reference.
+
+**Getting started**
+[Parsing an expression from string](Parsing-expression-from-string) ·
+[Expressions](Expressions) ·
+[Basic operations](Basic-operations) ·
+[Evaluation](Evaluation)
+
+**Doing mathematics**
+[Simplification](Simplification) ·
+[Solvers](Solvers) ·
+[Differentiation](Differentiation) ·
+[Integration](Integration) ·
+[Limits](Limits) ·
+[Matrices](Matrices)
+
+**Using it in a program**
+[Compilation](Compilation) ·
+[Settings](Settings) ·
+[Multithreading](Multithreading) ·
+[Exceptions](Exceptions)
+
+**Other surfaces**
+[AngouriMath in F#](AngouriMath-in-F%23) ·
+[Jupyter notebooks](Jupyter-notebooks) ·
+[Terminal](Terminal)
+
+The pages describe **2.0.0**. Several answers changed between 1.x and 2.0 because the old
+ones were wrong, and every one of them is listed with both values in
+<a href="https://github.com/asc-community/AngouriMath/blob/master/BREAKING-CHANGES.md">BREAKING-CHANGES.md</a>.
+
+---
+
+### For anyone editing these pages
+
+Every <text class='cw'><pre><code></text> and <text class='cw'><pre><code></text> block here is compiled against a build of the library, run, and
+its stated output compared with the one produced, by a harness that reports a page and line
+for anything that does not hold. So a sample that names a member the library no longer has
+is caught here rather than by a reader.
+
+Two conventions make that work, and both are worth keeping for the reader's sake anyway:
+
+- **<text class='cw'>using AngouriMath;</text>, <text class='cw'>using static AngouriMath.MathS;</text> and <text class='cw'>using static
+  AngouriMath.Entity;</text> are implied** in every sample, along with <text class='cw'>using System;</text>. Anything
+  else a sample needs, it states — <text class='cw'>using System.Numerics;</text> for <text class='cw'>Complex</text>,
+  <text class='cw'>using AngouriMath.Extensions;</text> for the <text class='cw'>string</text> extensions.
+- **What a sample prints goes in a bare fence introduced by <text class='cw'>Output:</text>**, on its own line.
+  Not <text class='cw'></code></pre>cs</text>, which marks code. Short outputs may instead be trailing comments on the
+  <text class='cw'>Console.WriteLine</text> lines, and then every printing line needs one.
+
+A block that cannot be a whole program — a fragment, pseudo-code, something written against
+a UI, something that throws on purpose — says so in an HTML comment before the fence, which
+does not render:</code></pre>
+<!-- amcheck:skip a fragment, not a whole sample -->
+<!-- amcheck:compile throws on purpose -->
+<!-- amcheck:continues -->
+<!-- amcheck:nooutput the printed set is abbreviated on purpose -->
+<text class='cw'></text><text class='cw'></text>continues` appends the block to the sample before it, which is how a page can build a value
+in one block and print it in the next.
 
 <!--Bottom begin-->
 
@@ -104,7 +163,7 @@
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1534 pages online
+1947 pages online
 </div>
 </body>
 

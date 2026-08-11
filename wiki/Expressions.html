@@ -96,7 +96,7 @@ type of <text class='cw'>Entity</text>.
 <h2>The very basics of creating an expression</h2>
 
 Include the main namespace of the library:
-using AngouriMath;
+<pre><code>using AngouriMath;</code></pre>
 Now, let us create a simple arithmetic expression. 
 
 
@@ -130,13 +130,13 @@ var a08 = Complex.Create(EDecimal.FromDecimal(32.4m), EDecimal.FromInt32(434));<
 
 <h2>Easy way to create an expression</h2>
 
-Now, let us shorten the creation of an expression and parse it from an expression. Here are two
-lines of the equivalent code:
-<pre><code>Entity a = "x^2 + x + 4 / 5 + sqrt(5)";
-var a = FromString("x^2 + x + 4 / 5 + sqrt(5)");</code></pre>
-In some cases we can omit operators, for example, here are equivalent lines:
-<pre><code>Entity a = "x2 + 4y";
-Entity a = "x^2 + 4*y";</code></pre>
+Now, let us shorten the creation of an expression and parse it from an expression. These two
+lines are equivalent:
+<pre><code>Entity a = "x^2 + x + 4 / 5 + sqrt(5)";</code></pre>
+<pre><code>var a = FromString("x^2 + x + 4 / 5 + sqrt(5)");</code></pre>
+In some cases we can omit operators, so these two are equivalent as well:
+<pre><code>Entity a = "x2 + 4y";</code></pre>
+<pre><code>Entity a = "x^2 + 4*y";</code></pre>
 
 Most operators and functions have a fixed number of arguments, for instance, plus operator cannot have three or more arguments. Here are
 two lines of the equivalent code:
@@ -169,7 +169,7 @@ new expression.
 <pre><code>Entity expr = "a * x + 2";
 foreach (var subExpr in expr.Nodes)
     Console.WriteLine(subExpr);</code></pre>
-The output will be the following:
+Output:
 <pre><code>a * x + 2
 a * x
 a
@@ -190,8 +190,9 @@ We can also analyze a given expression through patterns. Let us implement a naiv
     };</code></pre>
 Thanks to C#9's pattern matching, now we can this easily switch over different types of an expression.
 Let us run the given function:
+<!-- amcheck:continues -->
 <pre><code>Console.WriteLine(Diff("a x + 3sin(x + c)", "x"));</code></pre>
-The output will be the following:
+Output:
 <pre><code>0 * x + 1 * a + 0 * sin(x + c) + cos(x + c) * (1 + 0) * 3</code></pre>
 When building an expression, no automatic simplification occurs.
 
@@ -231,7 +232,7 @@ Should print:
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1534 pages online
+1947 pages online
 </div>
 </body>
 

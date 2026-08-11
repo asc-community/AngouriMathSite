@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Core.Transformations</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../">Home</a>
+<a href="../quickstart">Quick start</a>
+<a href="../wiki">Wiki</a>
+<a href="../docs/namespaces.html">Almanac</a>
+<a href="../research">Research</a>
+<a href="../whatsnew">What's new</a>
+<a href="../demo">Try</a>
+<a href="../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">AngouriMath.Core.Transformations</h2><hr/><p class="yadg-p "><a href="namespaces.html">&#8592; Back to list of namespaces</a></p><p class="yadg-p ">Classes within the AngouriMath.Core.Transformations namespace</p><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Core.Transformations/RewriteRecording.html">RewriteRecording</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>             Collects the rewrites that fire while it is open, so that an answer can be asked how<br>             it was reached rather than only what it is.<br>             </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>             Off unless asked for, and off is free: with no recording open, applying a rule set<br>             costs one ambient read more than it did before — per rule set, not per node — and<br>             allocates nothing. That is the condition<br>             <a href="https://github.com/asc-community/AngouriMath/issues/746">#746</a> puts on<br>             every layer above the tree, and it is why this is a scope rather than a setting that<br>             something might leave on.<br>             </para><para>             Per flow, like <a href="AngouriMath.MathS/Settings.html">Settings</a>: the recording belongs to the call rather<br>             than to the thread running it. It survives an <text class="yadg-text cw">await</text>, and work<br>             started under it — including on another thread — reports to it. A recording opened<br>             inside a task is invisible to that task's siblings and to whatever started it.<br>             </para><para><b>Order is not guaranteed once work is parallel.</b> Steps from one flow keep the<br>             order they fired in, but two flows recording into the same open recording interleave<br>             however they happen to run. The single-threaded case — which is what<br>             <a href="AngouriMath/Entity/Simplify.html">Simplify(System.Int32)</a> is — is unaffected.<br>             </para><para><b>What this is not.</b> It records rewrites — which is what<br>             <a href="https://github.com/asc-community/AngouriMath/issues/28">#28</a> asks for —<br>             and not everything <a href="AngouriMath/Entity/Simplify.html">Simplify(System.Int32)</a> does. Simplification also<br>             expands, factorises, divides polynomials, minimises boolean expressions and then<br>             *chooses* among the candidates by a complexity metric; the steps below are the<br>             rewrites, in the order they fired, across every candidate that was generated,<br>             including the ones that lost. Reading them as a route from the input to the returned<br>             answer would be reading in something that is not there.<br>             </para></div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using AngouriMath;
+using AngouriMath.Core.Transformations;
+            
+using var recording = RewriteRecording.Start();
+var simplified = ((Entity)"a / (b / c)").Simplify();
+foreach (var step in recording.Steps)
+    Console.WriteLine(step);</code></pre></div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Core.Transformations/RewriteRules.html">RewriteRules</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            The rewrite rule sets this library ships, as data: named, described, attributed with<br>            what they claim, and enumerable through <a href="AngouriMath.Core.Transformations/RewriteRules/All.html">All</a>.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            Registration is explicit and static — there is no assembly scanning and no<br>            <c>Activator</c>, so the registry survives trimming and NativeAOT, and<br>            <a href="AngouriMath.Core.Transformations/RewriteRules/All.html">All</a> is in a fixed order that does not depend on hashing, reflection or<br>            which type happened to be loaded first.<br>            </para><para>            Every rule set the simplifier applies is registered here, and the simplifier reaches<br>            them through this registry rather than through <c>Patterns</c> directly. That is what<br>            lets an account of what the simplifier did to an expression be a complete one: a set<br>            reachable only by its method has no name to report and nothing to attribute a step to,<br>            so a derivation built while some sets were still unregistered would quietly omit<br>            whatever they had done.<br>            </para><para>            Every entry is declared <a href="AngouriMath.Core.Transformations/Soundness/SoundUnderAssumptions.html">SoundUnderAssumptions</a>. That is a claim<br>            about what has been argued, not about what is true — nothing here checks a tier, so<br>            the registry starts conservative and promoting an entry means making the case for it.<br>            </para></div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Core.Transformations/RewriteRuleSet.html">RewriteRuleSet</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            A named, attributable group of rewrites — the unit this library has always written<br>            them in — carrying what it is called, what it claims and how well justified the<br>            claim is, so that the set can be enumerated, tested and referred to by name instead<br>            of only being called.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            The set, rather than the single <c>pattern -&gt; replacement</c> line, is the unit<br>            here because that is what has been built so far — <b>not</b> because the finer grain<br>            is too expensive. It was asserted here that it would be, on the grounds that each<br>            rule would cost a delegate call per node; measuring it found the opposite, and the<br>            measurement is in<br>            <a href="https://github.com/asc-community/AngouriMath/issues/825">#825</a>: rules<br>            bucketed by the node type they match run as fast as the hand-written <c>switch</c>            at realistic set sizes and faster at small ones, because a large <c>switch</c> over<br>            distinct node types is compiled into that same dispatch anyway.<br>            </para><para>            What actually stands in the way is transcription: splitting forty <c>switch</c> arms<br>            by hand is forty chances to change a pattern silently. That points at a source<br>            generator over the existing bodies rather than at leaving the rewrites unnamed. See<br>            <a href="https://github.com/asc-community/AngouriMath/issues/746">#746</a> item 50,<br>            and note that nothing here forecloses it: a set whose rewrites become individually<br>            addressable keeps the same name and the same entry in the registry.<br>            </para></div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Core.Transformations/RewriteRuleSetExtensions.html">RewriteRuleSetExtensions</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Reading order for <a href="AngouriMath.Core.Transformations/RewriteRuleSet/ApplyOnce.html">ApplyOnce(AngouriMath.Entity)</a>.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>            The simplifier applies a dozen rule sets in sequence, and written as calls the<br>            sequence reads inside out. This is the same operation with the expression in front,<br>            so that a pipeline still reads in the order it runs.<br>            </div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Core.Transformations/RewriteStep.html">RewriteStep</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            One rewrite that actually fired: which rule set did it, the subexpression it matched,<br>            and what it put there instead.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>            The subexpression, not the whole expression. A rewrite pass walks the tree bottom-up<br>            and rewrites nodes as it goes, so there is no moment at which a partly-rewritten<br>            whole expression exists to be photographed — reporting one would mean building it,<br>            and it would be a picture of something the engine never held.<br>            </div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Core.Transformations/Soundness.html">Soundness</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            How well justified the relation a <a href="AngouriMath.Core.Transformations/Transformation.html">Transformation</a> claims between its<br>            input and its output is. The three tiers are never blurred: a heuristic labelled as<br>            a proof is a wrong answer with a friendly face.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>            The tier is <b>declared</b> by whoever wrote the transformation, not derived from it.<br>            Nothing in the library checks a declaration today, so a tier is a claim to be argued<br>            with rather than a guarantee to be relied on, and the registry starts conservative<br>            on purpose: tightening a label needs an argument, loosening one does not.<br>            </div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Core.Transformations/Transformation.html">Transformation</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>             A named mathematical operation that consumes an <a href="AngouriMath/Entity.html">Entity</a> and produces<br>             one, together with enough about itself — what it claims, how well justified the<br>             claim is — to be inspected and composed rather than only invoked.<br>             </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>             This is the layer the 1.x entry points sit on:<br>             <a href="AngouriMath/Entity/Simplify.html">Simplify(System.Int32)</a>, <a href="AngouriMath/Entity/Expand.html">Expand(System.Int32)</a> and<br>             <a href="AngouriMath/Entity/Factorize.html">Factorize(System.Int32)</a> are adapters over the transformations named<br>             below, and the algorithms underneath are unchanged. Callers who only want an answer<br>             should keep using those methods; this type is for callers who want to know which<br>             operation produced it, or to build an operation out of others.<br>             </para><para>             Deterministic: the same transformation applied to the same expression under the same<br>             <a href="AngouriMath.MathS/Settings.html">Settings</a> gives the same result. Composition is by explicit<br>             ordering — there is no registry that decides what to run next, and nothing here<br>             consults reflection, so the layer stays trimmable and AOT-publishable.<br>             </para><para><b>Experimental.</b> The three concepts — a transformation, its relation, its<br>             soundness tier — are meant to last; the catalogue of factories will grow and the<br>             signatures here may still move. The stable surface is <a href="AngouriMath/MathS.html">MathS</a> and the<br>             methods on <a href="AngouriMath/Entity.html">Entity</a>.<br>             </para></div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using System;
+using AngouriMath;
+using AngouriMath.Core.Transformations;
+            
+Entity expr = "(x + 1) ^ 2";
+var result = Transformation.Expansion.Apply(expr);
+Console.WriteLine(result.Output);
+Console.WriteLine(result.Relation);
+Console.WriteLine(result.Soundness);</code></pre><br>             Prints<br>             <pre><code class="language-cs">1 + 2 * x + x ^ 2
+Equivalence
+SoundUnderAssumptions</code></pre></div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Core.Transformations/TransformationRelation.html">TransformationRelation</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            What a <a href="AngouriMath.Core.Transformations/Transformation.html">Transformation</a> claims about its output relative to its input.<br>            Without this, <a href="AngouriMath.Core.Transformations/Soundness.html">Soundness</a> would be meaningless: "sound" is only a<br>            statement about some relation, and the relation is not the same one for every<br>            operation.<br>            </div></li><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Core.Transformations/TransformationResult.html">TransformationResult</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            What one application of a <a href="AngouriMath.Core.Transformations/TransformationResult/Transformation.html">Transformation</a> produced: the input, the<br>            output if there was one, and which transformation was asked.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>            A struct, so that routing an ordinary <c>Simplify</c> or <c>Differentiate</c> call<br>            through this layer costs no allocation.<br>            </div></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+1947 pages online
+</div>
+</body>
+
+
+
+
+</html>

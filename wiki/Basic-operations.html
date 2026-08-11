@@ -117,15 +117,18 @@ Console.WriteLine(expr);</code></pre>
 Output:
 <pre><code>a * x + b</code></pre>
 
-Method <text class='cw'>Latexise</text> returns a <a href="https://en.wikipedia.org/wiki/LaTeX">LaTeX</a>
+Method <text class='cw'>Latexize</text> returns a <a href="https://en.wikipedia.org/wiki/LaTeX">LaTeX</a>
 code that can be then rendered into an image.
 Example:
 <pre><code>Entity expr = "a / b + sqrt(c)";
-Console.WriteLine(expr.Latexise());</code></pre>
+Console.WriteLine(expr.Latexize());</code></pre>
 Output:
 <pre><code>\frac{a}{b}+\sqrt{c}</code></pre>
 
-Extensions: <text class='cw'>string.Latexise()</text>, <text class='cw'>string.ToEntity()</text>.
+It was spelled <text class='cw'>Latexise</text> before 2.0; see
+<a href="https://github.com/asc-community/AngouriMath/blob/master/BREAKING-CHANGES.md">BREAKING-CHANGES.md</a>.
+
+Extensions: <text class='cw'>string.Latexize()</text>, <text class='cw'>string.ToEntity()</text>, in namespace <text class='cw'>AngouriMath.Extensions</text>.
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -139,7 +142,7 @@ Extensions: <text class='cw'>string.Latexise()</text>, <text class='cw'>string.T
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1534 pages online
+1947 pages online
 </div>
 </body>
 

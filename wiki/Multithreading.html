@@ -112,7 +112,9 @@ as obvious and convenient as possible, and could not afford passing this token t
 all methods in the library.
 
 The solution is to set your token to a local threading context. We use <text class='cw'>AsyncLocal<T></text>
-internally. Here is a sample code which shows how to interrupt a method:
+internally. Here is a sample code which shows how to interrupt a method — it is written
+against a UI, so <text class='cw'>InputText</text> and <text class='cw'>LabelState</text> are that application's controls:
+<!-- amcheck:skip written against a UI's controls -->
 <pre><code>var cancellationTokenSource = new CancellationTokenSource();
 
 // That goes instead of passing your token to methods
@@ -146,7 +148,7 @@ catch (OperationCanceledException)
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1534 pages online
+1947 pages online
 </div>
 </body>
 

@@ -89,7 +89,7 @@
 
 <!--Top end-->
 
-<h2 class="yadg-h2 centered">AngouriMath.Convenience</h2><hr/><p class="yadg-p "><a href="namespaces.html">&#8592; Back to list of namespaces</a></p><p class="yadg-p ">Classes within the AngouriMath.Convenience namespace</p><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Convenience/Setting`1.html">Setting`1</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This class for configuring some internal mechanisms from outside<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Type parameter "T"</strong></p><div class="yadg-div yadg-typeparam">            Those configurations can be of different types<br>            </div></li></ul></p>
+<h2 class="yadg-h2 centered">AngouriMath.Convenience</h2><hr/><p class="yadg-p "><a href="namespaces.html">&#8592; Back to list of namespaces</a></p><p class="yadg-p ">Classes within the AngouriMath.Convenience namespace</p><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-class yadg-list"><h3 class="yadg-h3 "><a href="AngouriMath.Convenience/Setting`1.html">Setting`1</a></h3><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            This class for configuring some internal mechanisms from outside<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Type parameter "T"</strong></p><div class="yadg-div yadg-typeparam">            Those configurations can be of different types<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            A setting is one object for the whole process, and what it holds is per *flow*, not<br>            per thread: the stack of values lives in an AsyncLocal`1. A scope<br>            opened before an <text class="yadg-text cw">await</text> is therefore still in force after it, and a<br>            scope opened inside a task is invisible to that task's siblings and to whatever<br>            started it. Backing the field with <c>[ThreadStatic]</c> gave neither: a continuation<br>            resumed on a pool thread saw the defaults, and a thread returned to the pool carried<br>            whatever scope was left on it into the next caller.<br>            </para><para>            The frames are immutable, which is what makes the reference safe to share. An<br>            AsyncLocal`1 copies on assignment to Value            and on nothing else, so if a frame could be mutated in place, two flows holding the<br>            same chain would write over each other. Pushing and popping therefore build a new<br>            chain and assign it, rather than editing one.<br>            </para></div></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -103,7 +103,7 @@
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1534 pages online
+1947 pages online
 </div>
 </body>
 

@@ -97,6 +97,12 @@ Similarly to differentation, here you call method <text class='cw'>Integrate</te
 <pre><code>Entity expr = "a x2 + b x";
 Console.WriteLine(expr.Integrate("x"));</code></pre>
 Output:
+<pre><code>a * x ^ 3 / 3 + b * x ^ 2 / 2 + C</code></pre>
+An antiderivative is only defined up to a constant, and <text class='cw'>C</text> is that constant. It is an
+ordinary variable, so substituting zero for it picks the antiderivative through the origin:
+<pre><code>Entity expr = "a x2 + b x";
+Console.WriteLine(expr.Integrate("x").Substitute("C", 0).InnerSimplified);</code></pre>
+Output:
 <pre><code>a * x ^ 3 / 3 + b * x ^ 2 / 2</code></pre>
 
 If no integral can be found, it will return a node of integral. Example:
@@ -109,12 +115,15 @@ Same way as with derivative, you can use node <text class='cw'>Entity.Integralf<
 <pre><code>Entity expr = "integral(x2 + sin(x), x)";
 Console.WriteLine(expr.Simplify());</code></pre>
 Output:
-<pre><code>x ^ 3 / 3 - cos(x)</code></pre>
+<pre><code>C - cos(x) + x ^ 3 / 3</code></pre>
 
-Extension: <text class='cw'>string.Integrate(Variable)</text>.
+Extension: <text class='cw'>string.Integrate(Variable)</text>, in namespace <text class='cw'>AngouriMath.Extensions</text>.
 
-As for now, 17.03.2021, AM does not support advanced algorithms of integration. Make sure
-to stay on the most recent version to track updates.
+What the integrator does: a table of standard forms, splitting a sum, partial fractions
+over a denominator with a rational root, integration by parts, and trigonometric
+substitution. It is not a decision procedure — there is no Risch implementation — so
+plenty of integrands come back as an unevaluated <text class='cw'>integral</text> node. That is the honest
+answer and not an error: <text class='cw'>NaN</text> would mean the integral does not exist.
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -128,7 +137,7 @@ to stay on the most recent version to track updates.
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1534 pages online
+1947 pages online
 </div>
 </body>
 
