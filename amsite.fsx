@@ -54,7 +54,10 @@ let init () =
     else
         git ("." / generatorP) "clone https://github.com/asc-community/AngouriMath AngouriMath" 
 
-    dotnet ("." / generatorP / "AngouriMath" / "Sources" / "AngouriMath" / "AngouriMath") "publish -c release -o publish-output --framework netstandard2.0"
+    // The library moved up a folder in asc-community/AngouriMath@f0db3eef (2026-01-03), so
+    // this was `Sources/AngouriMath/AngouriMath` and had stopped existing. Keep it in step
+    // with the path NaiveStaticGenerator reads AngouriMath.xml from.
+    dotnet ("." / generatorP / "AngouriMath" / "Sources" / "AngouriMath") "publish -c release -o publish-output --framework netstandard2.0"
 
     if dirExists("." / generatorP / "Yadg.NET") then
         log "Skipping Yadg.NET cloning..."

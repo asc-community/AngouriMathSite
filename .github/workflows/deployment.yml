@@ -9,40 +9,25 @@ on:
 jobs:
   deployment:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
-      
-    - name: Get .NET 6
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: '6.0.x'
-        include-prerelease: true
+      uses: actions/checkout@v4
 
-    - name: Get .NET 7
-      uses: actions/setup-dotnet@v1
+    - name: Get .NET
+      uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: '7.0.x'
-        include-prerelease: true
-      
+        dotnet-version: '10.x'
+        dotnet-quality: 'preview'
+
     - name: Initialize
-      run: |
-         dotnet fsi amsite.fsx init
-   
+      run: dotnet fsi amsite.fsx init
+
     - name: Generate
-      run: |
-        dotnet fsi amsite.fsx build
-        echo 1 && ls /home/runner/work/AngouriMathSite/AngouriMathSite
-        echo 2 && ls /home/runner/work/AngouriMathSite/AngouriMathSite/src
-        echo 3 && ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath
-        echo 4 && ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath/Sources
-        echo 5 && ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath/Sources/AngouriMath
-        echo 6 && ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath/Sources/AngouriMath/AngouriMath
-        echo 7 && ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath/Sources/AngouriMath/AngouriMath/bin
-        echo 8 && ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath/Sources/AngouriMath/AngouriMath/bin/release
-        echo 9 && ls /home/runner/work/AngouriMathSite/AngouriMathSite/src/AngouriMath/Sources/AngouriMath/AngouriMath/bin/release/netstandard2.0
-      
-    - uses: JamesIves/github-pages-deploy-action@4.1.4
+      run: dotnet fsi amsite.fsx build
+
+    - uses: JamesIves/github-pages-deploy-action@v4
       name: Publish on Github Pages
       with:
         branch: gh-pages

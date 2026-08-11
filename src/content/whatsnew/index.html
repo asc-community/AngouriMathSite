@@ -34,7 +34,53 @@ THIS IS A TEMPLATE {
 
 -->
     
-<details><summary><strong>1.4-preview.4 [in development]</strong></summary>
+<details open><summary><strong>2.0.0</strong></summary>
+<p>
+    A major version, so it takes the breaking decisions 1.x could not. Mathematical correctness
+    comes ahead of backward compatibility here: several of the changes below are a wrong answer
+    becoming a right one, which still breaks code that depended on the wrong one.
+    <b>Every input whose result is now different is listed, with both values and why, in
+    <a href="https://github.com/asc-community/AngouriMath/blob/master/BREAKING-CHANGES.md">BREAKING-CHANGES.md</a>
+    — read that before upgrading.</b>
+    <br><br>
+    <strong>Renames and removals:</strong>
+    <ul>
+        <li><code>Latexise</code> is <code>Latexize</code>, <code>ILatexiseable</code> is <code>ILatexizeable</code>. British spelling is gone from the API.</li>
+        <li><code>MathS.Quantum.Factorise</code> is <code>TensorFactorize</code>, one letter away from the unrelated <code>Entity.Factorize</code> before; <code>IsNormalised</code> is <code>IsNormalized</code>.</li>
+        <li>The 28 members that carried <code>[Obsolete]</code> through 1.x are removed. Each obsolete message named its replacement.</li>
+        <li>The implicit conversions from <code>Entity[]</code>, <code>List&lt;Entity&gt;</code> and <code>(Entity, Entity)</code> to <code>Entity</code> are removed. The list one made every <code>params Entity[]</code> overload in the library uncallable with a list.</li>
+        <li><code>Minusf</code>'s fields are named for the right operands at last: it was <code>Subtrahend - Minuend</code>.</li>
+        <li>Target frameworks are <code>netstandard2.0</code>, <code>net8.0</code> and <code>net10.0</code>; <code>net7.0</code> is gone.</li>
+    </ul>
+    <strong>Answers that changed because they were wrong:</strong>
+    <ul>
+        <li><code>sqrt(x^2)</code> and <code>sqrt(-x)</code> are left as written rather than becoming <code>x</code> and <code>i*sqrt(x)</code>, which were wrong for negative <code>x</code>.</li>
+        <li>Numbers below <code>1e-16</code> are kept instead of being rounded to <code>0</code>.</li>
+        <li><code>-7 % 3</code> is <code>2</code>: <code>mod</code> takes the sign of the divisor, as mathematicians, SymPy, Mathematica and Maxima all have it.</li>
+        <li><code>abs(x) = -1</code> is the empty set, not a set of numbers that do not satisfy it.</li>
+        <li>An identity equation solves to all of <code>CC</code>; a numeric root set has one root per root rather than one per starting point.</li>
+        <li>A quadratic inequality with a symbolic coefficient is right for either sign of it.</li>
+        <li>Many limits that answered <code>NaN</code> — "this does not exist" — now give the value, or say honestly that they could not settle it.</li>
+        <li>What <code>Stringize</code> prints parses back into the expression it printed. It did not for powers, lambdas, applications, piecewises, or complex numbers with a fractional imaginary part.</li>
+    </ul>
+    <strong>New:</strong>
+    <ul>
+        <li><code>floor</code>, <code>ceil</code>, <code>round</code>, <code>min</code>, <code>max</code> and <code>gcd</code> are functions rather than parse errors. <code>round</code> is half to even.</li>
+        <li>A transformation layer: <code>Simplify</code>, <code>Expand</code>, <code>Factorize</code>, <code>Differentiate</code>, <code>Integrate</code> and <code>Limit</code> are adapters over a <code>Transformation</code> that carries what it claims about its output and how well justified the claim is. Rewrites can be recorded.</li>
+        <li>Boolean minimisation, quantum states with tensor factorisation, and a much stronger limit and integration pipeline.</li>
+        <li>A syntax reference and an exception reference in the repository.</li>
+        <li>Assembly version is pinned at <code>2.0.0.0</code> for the whole of 2.x, so every 2.x release is a drop-in replacement for a signed-assembly consumer.</li>
+    </ul>
+    <strong>Gone:</strong>
+    <ul>
+        <li>The MyGet per-push feed. Releases publish to NuGet; remove the feed from your <code>NuGet.Config</code> if you had it.</li>
+    </ul>
+</p>
+</details>
+
+<br>
+
+<details><summary><strong>1.4-preview.4</strong></summary>
 <p>
     <strong>Kernel functional and C#:</strong>
     <ul>
