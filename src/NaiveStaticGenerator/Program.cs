@@ -132,7 +132,9 @@ Please, consider these pages as those made for reference for particular members,
     }
     .Build(
         DocsParser.Parse(
-            Path.Combine(GeneratorP, "AngouriMath", "Sources", "AngouriMath", "AngouriMath", "publish-output", "AngouriMath.xml")
+            // Kept in step with the publish path in amsite.fsx; the library moved up a
+            // folder in asc-community/AngouriMath@f0db3eef and this had a stale segment.
+            Path.Combine(GeneratorP, "AngouriMath", "Sources", "AngouriMath", "publish-output", "AngouriMath.xml")
         ).Build()
     );
     Console.WriteLine($"The number of generated doc pages: {saver.PageSavedCount}");

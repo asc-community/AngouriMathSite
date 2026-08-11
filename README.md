@@ -10,7 +10,7 @@ There's a custom generator which wraps the content files with the given template
 
 ## Local running
 
-To run the website locally, get [.NET 6](https://dotnet.microsoft.com/download/dotnet/6.0) and clone it:
+To run the website locally, get [.NET 10](https://dotnet.microsoft.com/download/dotnet/10.0) and clone it:
 ```
 git clone https://github.com/asc-community/AngouriMathSite
 cd AngouriMathSite

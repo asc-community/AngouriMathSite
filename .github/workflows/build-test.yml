@@ -12,10 +12,11 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-dotnet@v1
+    - uses: actions/checkout@v4
+    - uses: actions/setup-dotnet@v4
       with:
-        dotnet-version: "6.0.x"
+        dotnet-version: '10.x'
+        dotnet-quality: 'preview'
 
     - name: 'Init'
       run: dotnet fsi amsite.fsx init

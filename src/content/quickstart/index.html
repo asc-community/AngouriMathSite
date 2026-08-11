@@ -32,22 +32,23 @@ also need to address the following resources:
     <br>
     <p>
         <h4>Install for C#</h4>
-        <pre><code>dotnet add package AngouriMath --prerelease</code></pre>
+        <pre><code>dotnet add package AngouriMath</code></pre>
     </p>
     <p>
         <h4>Install for F#</h4>
-        <pre><code>dotnet add package AngouriMath.FSharp --prerelease</code></pre>
+        <pre><code>dotnet add package AngouriMath.FSharp</code></pre>
     </p>
     <p>
-        <h4>Install nightly build</h4>
-    If you want to use the last version, pushed to master, you will need to add MyGet as a nuget package source:
-    <pre><code>https://www.myget.org/F/angourimath/api/v3/index.json</code></pre>
-    To add it, run
-    <pre><code>dotnet new nugetconfig
-dotnet nuget add source https://www.myget.org/F/angourimath/api/v3/index.json
-dotnet add package AngouriMath --prerelease</code></pre>
+        The current release is <b>2.0.0</b>, and it changes answers that 1.x got wrong. If you are
+        coming from 1.3.0 or 1.4.0, read
+        <a href="https://github.com/asc-community/AngouriMath/blob/master/BREAKING-CHANGES.md">BREAKING-CHANGES.md</a>
+        first: it lists every input whose result is now different, with the old value and the new one.
     </p>
-    
+    <p>
+        The library targets <code>netstandard2.0</code>, <code>net8.0</code> and <code>net10.0</code>.
+        A project on <code>net7.0</code> resolves the <code>netstandard2.0</code> asset and loses the
+        generic-math surface with it, so move to <code>net8.0</code> or later.
+    </p>
 </p>
 
 <br>
@@ -61,19 +62,13 @@ dotnet add package AngouriMath --prerelease</code></pre>
     Now you need to run a special command right in your notebook:
     <p>
         <h4>For F#</h4>
-        <pre><code>#r "nuget:AngouriMath.Interactive, *-*"</code></pre>
+        <pre><code>#r "nuget:AngouriMath.Interactive"</code></pre>
     </p>
     <p>
         <h4>For C#</h4>
-        <pre><code>#r "nuget:AngouriMath, *-*"</code></pre>
+        <pre><code>#r "nuget:AngouriMath"</code></pre>
     </p>
-    <p>
-        <h4>Nightly builds</h4>
-        First, run this command:
-        <pre><code>#i "https://www.myget.org/F/angourimath/api/v3/index.json"</code></pre>
-        Then you can run the command to install the F# or C# version.
-    </p>
-    
+
     Note, that plotting API is only available in AngouriMath.Interactive.
 </p>
 
@@ -229,28 +224,31 @@ FetchContent_MakeAvailable(AngouriMath)</code></pre>
     To verify you have everything installed correctly, let us write a simple program, computing
     a derivative:
     <h5>C# code:</h5>
+    <!-- amcheck:cs -->
     <pre><code>using AngouriMath;
 using System;
 Entity expr = "x + sin(y x)";
 Console.WriteLine(expr);
 Console.WriteLine(expr.Differentiate("x"));</code></pre>
     <h5>F# code:</h5>
-    <pre><code>open Core
-open Functions
-let expr = parse "x + sin(y x)"
+    <!-- amcheck:fs -->
+    <pre><code>open AngouriMath.FSharp.Core
+open AngouriMath.FSharp.Functions
+let expr = parsed "x + sin(y x)"
 printf "%O" expr
 printf "\n"
-printf "%O" (differentiate "x" expr)</code></pre>
+printf "%O" (derivative "x" expr)</code></pre>
     <h5>Jupyter:</h5>
-    <pre><code>#r "nuget:AngouriMath.Interactive, *-*"
-open Core
-open Functions
-let expr = parse "x + sin(y x)"
-differentiate "x" expr</code></pre>
+    <pre><code>#r "nuget:AngouriMath.Interactive"
+open AngouriMath.FSharp.Core
+open AngouriMath.FSharp.Functions
+let expr = parsed "x + sin(y x)"
+derivative "x" expr</code></pre>
     <h5>C++ code:</h5>
-    <pre><code>#include &lt;AngouriMath.h&gt;;
+    <pre><code>#include &lt;iostream&gt;
+#include &lt;AngouriMath.h&gt;
 AngouriMath::Entity expr = "x + sin(y x)";
-std::cout << expr.Differentiate("x");</code></pre>
+std::cout &lt;&lt; expr.Differentiate("x");</code></pre>
 </p>
 <br>
 

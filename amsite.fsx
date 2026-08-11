@@ -22,6 +22,12 @@ let dirExists path =
 
 let dirDelete path =
     try
+        // What `uninit` deletes are git clones, and git marks the files under
+        // .git/objects/pack read-only. Directory.Delete refuses a read-only file on
+        // Windows, so the attribute has to come off first -- otherwise uninit fails with
+        // UnauthorizedAccessException on a pack .idx, which is what it did.
+        for file in Directory.EnumerateFiles(path, "*", SearchOption.AllDirectories) do
+            File.SetAttributes(file, FileAttributes.Normal)
         Directory.Delete(path, true)
     with
     | :? Exception as e ->
@@ -54,7 +60,10 @@ let init () =
     else
         git ("." / generatorP) "clone https://github.com/asc-community/AngouriMath AngouriMath" 
 
-    dotnet ("." / generatorP / "AngouriMath" / "Sources" / "AngouriMath" / "AngouriMath") "publish -c release -o publish-output --framework netstandard2.0"
+    // The library moved up a folder in asc-community/AngouriMath@f0db3eef (2026-01-03), so
+    // this was `Sources/AngouriMath/AngouriMath` and had stopped existing. Keep it in step
+    // with the path NaiveStaticGenerator reads AngouriMath.xml from.
+    dotnet ("." / generatorP / "AngouriMath" / "Sources" / "AngouriMath") "publish -c release -o publish-output --framework netstandard2.0"
 
     if dirExists("." / generatorP / "Yadg.NET") then
         log "Skipping Yadg.NET cloning..."
