@@ -125,7 +125,54 @@ THIS IS A TEMPLATE {
 
 -->
     
-<details open><summary><strong>2.0.0</strong></summary>
+<details open><summary><strong>2.1.0</strong></summary>
+<p>
+    A correctness release. Almost everything below is a wrong answer becoming a right one, and most of
+    it was found by harnesses rather than reported — boundary points where a rule's assumption fails,
+    one child process per case so a stack overflow is a result rather than the end of the run, every
+    documented code sample compiled and run, and the generated SymPy code executed rather than read.
+    <b>Every input whose result is now different is listed, with both values and why, in
+    <a href="https://github.com/asc-community/AngouriMath/blob/master/BREAKING-CHANGES.md">BREAKING-CHANGES.md</a>
+    under <code>2.1.0 — since 2.0.0</code> — read that before upgrading.</b>
+    Assembly version stays <code>2.0.0.0</code>, so this is a drop-in replacement for 2.0.0.
+    <br><br>
+    <strong>Answers that changed because they were wrong:</strong>
+    <ul>
+        <li><code>arcsin(sin(x))</code> and three siblings no longer cancel off the principal branch: <code>arcsin(sin(3))</code> was <code>3</code> and is <code>pi - 3</code>. Four rules had been wrong since 2020.</li>
+        <li><code>arctan(x) + arccotan(x)</code> is not always <code>pi/2</code> — this library's <code>arccotan</code> has range <code>(-pi/2, pi/2]</code>, so the sum is <code>-pi/2</code> for negative <code>x</code>.</li>
+        <li><code>ln(e^x)</code> is no longer <code>x</code>, which is wrong wherever <code>Im x</code> leaves <code>(-pi, pi]</code>: at <code>x = 3*pi*i</code> the expression is <code>pi*i</code>.</li>
+        <li><code>log(1, 1)</code> was <code>0</code> and is <code>NaN</code> — it is <code>0/0</code>; <code>log(1, 2)</code> was <code>+oo</code>.</li>
+        <li><code>abs(sgn(x))</code> and <code>sgn(abs(x))</code> were <code>1</code>, and both are <code>0</code> at <code>x = 0</code>.</li>
+        <li>A logical connective is no longer strict in <code>NaN</code>: <code>False and u</code> is <code>False</code> for an operand with no truth value, which is what <code>Simplify</code> already answered while evaluation said <code>NaN</code>.</li>
+        <li>A connective over a <em>number</em> now declines instead of reporting the same type error three different ways. A number is not a truth value.</li>
+        <li>A conditional set's bound variable was named from a hash of its predicate, which could spell <code>true</code> and throw — an intermittent CI failure that would not reproduce.</li>
+    </ul>
+    <strong>Better answers:</strong>
+    <ul>
+        <li><code>abs</code> folds where the sign of its argument is known: <code>abs(-sqrt(6))</code> is <code>sqrt(6)</code>, so a concrete quadratic inequality no longer answers with <code>abs(-sqrt(6)) / 2</code> as an endpoint.</li>
+        <li><code>-(a - b)</code> is turned round wherever it sits — inside a power, a function's argument or a matrix, not only at the root — and <code>Expand</code> descends into a matrix. A solved system's entries are shorter for it.</li>
+        <li><code>NaN</code> is a literal. It printed as <code>NaN</code> and parsed back as a <em>variable</em> of that name, so <code>NaN - NaN</code> was <code>0</code>.</li>
+        <li><code>MathS.ToSympyCode</code> emits Python that runs and stays exact. Any non-integer rational produced a <code>SyntaxError</code>, <code>NaN</code> and the infinities were unbound names, and <code>1/2</code> arrived in SymPy as the float <code>0.5</code>.</li>
+    </ul>
+    <strong>Two answers withdrawn on purpose:</strong>
+    <ul>
+        <li><code>lim x-&gt;+oo (x^2)^x / e^(2*x*ln(x))</code> and <code>lim x-&gt;+oo x^x / e^(x*ln(x) - ln(x))</code> are <em>unevaluated</em> where they used to be answered. They need <code>ln(a^c) = c*ln(a)</code>, which is false in general; on the way to <code>+oo</code> the base really is positive, and there is currently no way to tell the simplifier so. Unevaluated rather than <code>NaN</code>, so a caller is told nothing was settled rather than told the limit does not exist.</li>
+        <li><code>false and 0</code> and <code>true or 0</code> were <code>False</code> and <code>True</code> by short-circuit. Whether an operand is admissible cannot depend on whether the operator happened to need it.</li>
+    </ul>
+    <strong>One word reserved:</strong>
+    <ul>
+        <li><code>NaN</code> is a keyword, so it can no longer be a variable name — the same trade <code>mod</code> took in 2.0. Only the exact spelling: <code>NaNx</code> and <code>NaN_1</code> are still variables.</li>
+    </ul>
+    <strong>Performance:</strong>
+    <ul>
+        <li>Measured rather than hoped for: 2.0.0 and 2.1.0 benchmarked minutes apart on one machine and published as a pair. No regression — the largest real move is <code>SolveMedium</code> at +4.6%, the rest inside ±3%, and allocation is flat with three rows byte-identical.</li>
+    </ul>
+</p>
+</details>
+
+<br>
+
+<details><summary><strong>2.0.0</strong></summary>
 <p>
     A major version, so it takes the breaking decisions 1.x could not. Mathematical correctness
     comes ahead of backward compatibility here: several of the changes below are a wrong answer
@@ -874,7 +921,7 @@ Added Tensor, system of equations, polynom divisions, periodic roots for solvers
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1947 pages online
+1953 pages online
 </div>
 </body>
 

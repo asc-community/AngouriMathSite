@@ -134,12 +134,11 @@ Console.WriteLine(expr.Solve("x").Simplify());
 Entity expr2 = "2x2 - 3 > 0 or x > 0";
 Console.WriteLine(expr2.Solve("x").Simplify());</code></pre>
 Output:
-<pre><code>(abs(-sqrt(6)) / 2; +oo)
-(-oo; -1/2 * abs(-sqrt(6))) \/ (abs(-sqrt(6)) / 2; +oo) \/ (0; +oo)</code></pre>
-The endpoints of a quadratic inequality are written as <text class='cw'>|a|</text>, which is right for either
-sign of a symbolic coefficient. Here the coefficients are concrete and <text class='cw'>abs(-sqrt(6))</text>
-ought to have folded to <text class='cw'>sqrt(6)</text>; that it does not is
-<a href="https://github.com/asc-community/AngouriMath/issues/881">#881</a>.
+<pre><code>(sqrt(6) / 2; +oo)
+(-oo; -1/2 * sqrt(6)) \/ (sqrt(6) / 2; +oo) \/ (0; +oo)</code></pre>
+The endpoints of a quadratic inequality are written as <text class='cw'>|a|</text>, which is the form that is right
+for either sign of a symbolic coefficient. Where the coefficient is concrete, as here, the
+absolute value folds away.
 
 Extension: <text class='cw'>string.Solve(Variable)</text>.
 
@@ -216,7 +215,7 @@ Extensions: <text class='cw'>(string, string).Solve(Variable, Variable)</text>, 
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1947 pages online
+1953 pages online
 </div>
 </body>
 

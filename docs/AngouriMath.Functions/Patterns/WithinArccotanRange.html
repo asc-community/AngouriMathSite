@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>AngouriMath | docs/AngouriMath.Functions/Patterns/Decompose</title>    
+    <title>AngouriMath | docs/AngouriMath.Functions/Patterns/WithinArccotanRange</title>    
     <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="../../../styles.css">
     <link rel="stylesheet" href="../../../themes.css">
@@ -89,7 +89,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath.Functions/Patterns.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Decompose&#8203;(AngouriMath.&#8203;Entity)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Reads a factor of a product as a base and an exponent.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>            The nested case is not cosmetic: <a href="../AngouriMath.Entity/Mulf/LinearChildren.html">LinearChildren(AngouriMath.Entity)</a> writes a<br>            divisor as <c>(...)^(-1)</c>, so <c>x^3 / x^2</c> arrives as<br>            <c>x^3 * (x^2)^(-1)</c>, whose second factor has base <c>x^2</c> rather than<br>            <c>x</c> and would be read as an unrelated base. Unwrapping it is<br>            <c>(a^b)^n = a^(b*n)</c>, which holds for a whole <c>n</c> whatever the sign of<br>            <c>a</c> -- the same guard the <c>({}^{})^{}</c> rule above carries, and for the<br>            same reason. https://github.com/asc-community/AngouriMath/issues/752<br>            </div></p></p>
+<p class="yadg-p "><a href="../../AngouriMath.Functions/Patterns.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">WithinArccotanRange&#8203;(AngouriMath.&#8203;Entity)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Whether the argument lies in the range <c>arccotan</c> answers in, which is<br>            <c>(-pi/2, pi/2]</c> without zero.</div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>            This library's <c>arccotan</c> is <c>arctan(1/x)</c> extended by<br>            <c>arccotan(0) = pi/2</c>, so its range is that half-open interval and **not** the<br>            <c>(0, pi)</c> that many texts use — <c>arccotan(-1)</c> is <c>-pi/4</c>. Zero is<br>            excluded because <c>cotan</c> has no value there, so the composition has none either<br>            and rewriting it to <c>x</c> would invent one.<br>            https://github.com/asc-community/AngouriMath/issues/887<br>            </div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -103,7 +103,7 @@
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1947 pages online
+1953 pages online
 </div>
 </body>
 
