@@ -39,12 +39,14 @@ also need to address the following resources:
         <pre><code>dotnet add package AngouriMath.FSharp</code></pre>
     </p>
     <p>
-        The current release is <b>2.1.0</b>, and both it and 2.0.0 change answers that earlier versions
+        The current release is <b>2.5.0</b>, and every 2.x release changes answers that earlier versions
         got wrong. Whichever version you are coming from, read
         <a href="https://github.com/asc-community/AngouriMath/blob/master/BREAKING-CHANGES.md">BREAKING-CHANGES.md</a>
         first: it lists every input whose result is now different, with the old value and the new one,
-        under a heading per release. 2.1.0 is a drop-in replacement for 2.0.0 — the assembly version is
-        pinned at <code>2.0.0.0</code> for the whole of 2.x.
+        under a heading per release. The assembly version is pinned at <code>2.0.0.0</code> for the whole
+        of 2.x, so 2.5.0 binds wherever a 2.x release did. One rename needs a recompile: 2.2.0 spelled
+        <code>Transformation.Rationalisation</code> and <code>RewriteRules.RationaliseDenominator</code>
+        with a <code>z</code>, and code calling either throws <code>MissingMethodException</code> until it is rebuilt.
     </p>
     <p>
         The library targets <code>netstandard2.0</code>, <code>net8.0</code> and <code>net10.0</code>.

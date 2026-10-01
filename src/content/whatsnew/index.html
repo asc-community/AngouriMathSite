@@ -34,7 +34,214 @@ THIS IS A TEMPLATE {
 
 -->
     
-<details open><summary><strong>2.1.0</strong></summary>
+<details open><summary><strong>2.5.0</strong></summary>
+<p>
+    Tier 2 of the <a href="https://github.com/asc-community/AngouriMath/issues/746">Math OS roadmap</a> — <b>the rewrite graph</b> — is finished in this release. An e-graph now lives in the kernel rather than in a measurement harness, every one of the thirty registered rule sets runs as <b>data</b> through a real e-matcher, and each rule declares its own soundness tier and how much it grows what it matches. The honest result of that work is the part worth reading: <code>Simplify</code> still does <b>not</b> run on the graph, because the tier asked for equality saturation to be evaluated against memory cost on real expressions and the evaluation came back negative. A measurement that says "not by default" is the deliverable, not a substitute for it.
+    <br><br>
+    <b>Every changed answer is in <a href="https://github.com/asc-community/AngouriMath/blob/v2.5.0/BREAKING-CHANGES.md">BREAKING-CHANGES.md</a> under <code>2.5.0 — since 2.4.0</code></b>, with the old value, the new one and why, each measured on a build of both sides. Read that first if you have code depending on an answer. Seventy-six entries at a glance and thirty-seven worked sections; <b>twenty-nine are marked Silent</b> — the call still succeeds and quietly returns something else — and two are Loud, where input that parsed now raises.
+    <br><br>
+    <code>AssemblyVersion</code> stays <code>2.0.0.0</code>. The recorded public surface has <b>136 additions and no removals</b>, so this is source- and binary-compatible: nothing that compiled against 2.4.0 stops compiling, and nothing bound against it stops binding.
+    <br><br>
+    <strong>Wrong answers fixed:</strong><br>
+    <ul>
+        <li><b><code>Integrate</code> could recurse without bound and take the process down.</b> A stack overflow is not an exception a caller can handle — the process aborts. Caught by running Rubi's independent test suites against the release candidate, where the run died with <code>SIGABRT</code>; v2.4.0 on the same corpus and the same machine ran past that point, so this was introduced in this release rather than a standing limitation. Two changes: the descent is bounded (<a href="https://github.com/asc-community/AngouriMath/issues/1233">#1233</a>), and an integral already being worked out is recognised as a cycle and declined at once (<a href="https://github.com/asc-community/AngouriMath/issues/1234">#1234</a>). The memo added in <a href="https://github.com/asc-community/AngouriMath/issues/1157">#1157</a> could not have caught it, and neither could a set of visited shapes — <code>SolveBySubstitution</code> names its variable with <code>Variable.CreateUnique</code>, so every level is <em>alpha-equivalent</em> to the one before rather than equal to it, and the cycle guard has to rename before it compares (<a href="https://github.com/asc-community/AngouriMath/issues/1232">#1232</a>).</li>
+        <li><b>Matrix operations answered wrongly on more than one thread.</b> <code>MathS.Multithreading</code> documents concurrent use as supported. Forty 4×4 symbolic matrices, computed once sequentially and then rebuilt and recomputed in parallel: <b>38 of 40 determinants</b>, 18 of 40 inverses and 11 of 40 adjugates came back carrying another computation's values, and the elementwise operators threw on a corrupted dictionary. Two of the three causes were AngouriMath's own caches, grown under a lock and read outside one (<a href="https://github.com/asc-community/AngouriMath/issues/1227">#1227</a>, <a href="https://github.com/asc-community/AngouriMath/issues/1229">#1229</a>). The third is not ours — GenericTensor 1.0.4 hands <b>every caller the same scratch matrix</b> for a given size and then writes into it, reported as <a href="https://github.com/asc-community/GenericTensor/issues/40">GenericTensor#40</a> with a fix offered in <a href="https://github.com/asc-community/GenericTensor/pull/41">#41</a>, and guarded here meanwhile (<a href="https://github.com/asc-community/AngouriMath/issues/1230">#1230</a>).</li>
+        <li><b>A negation was answered with the empty set.</b> The empty set is a positive claim, so saying it for something never settled is a wrong answer rather than a missing one (<a href="https://github.com/asc-community/AngouriMath/issues/1127">#1127</a>, <a href="https://github.com/asc-community/AngouriMath/issues/1131">#1131</a>).</li>
+        <li><b><code>Domain.Any</code> was treated as the universal set</b> when it is a codomain, so membership questions got an answer that was not asked (<a href="https://github.com/asc-community/AngouriMath/issues/996">#996</a>, <a href="https://github.com/asc-community/AngouriMath/issues/1126">#1126</a>).</li>
+        <li><b>A negative <code>arccotan</code> was not negative.</b> This library's <code>arccotan</code> has range <code>(-π/2, π/2]</code>, not the textbook <code>(0, π)</code>, and a guard written from the textbook shipped wrong (<a href="https://github.com/asc-community/AngouriMath/issues/1113">#1113</a>).</li>
+        <li><b>The limit of <code>z / |z|</code> lost the phase of <code>z</code></b>, coming back with a real-line answer for something that approaches a different value along every ray (<a href="https://github.com/asc-community/AngouriMath/issues/1208">#1208</a>).</li>
+        <li><b>A factor of <code>−1</code> was taken out as though it were a factor</b> rather than read as a sign (<a href="https://github.com/asc-community/AngouriMath/issues/1172">#1172</a>).</li>
+        <li><b>A saturation check compared two things that have no value</b>, so it passed on inputs it could not have decided (<a href="https://github.com/asc-community/AngouriMath/issues/1166">#1166</a>).</li>
+    </ul>
+    <strong>The rewrite graph:</strong><br>
+    The e-graph moved out of the harness and into the kernel behind an explicit opt-in (<a href="https://github.com/asc-community/AngouriMath/issues/1101">#1101</a>), and what matches against it is a genuine e-matcher — a pattern against an e-class, not against a term (<a href="https://github.com/asc-community/AngouriMath/issues/1103">#1103</a>). A cost model is a <code>record</code> taken as a parameter rather than read from an ambient setting (<a href="https://github.com/asc-community/AngouriMath/issues/1102">#1102</a>), so <code>SmallestTree</code>, <code>FewestDivisions</code> and <code>FewestRadicals</code> are things you pass rather than things you set. Canonicalisation runs over the graph (<a href="https://github.com/asc-community/AngouriMath/issues/1105">#1105</a>), rule priorities are computed from the patterns instead of typed by hand (<a href="https://github.com/asc-community/AngouriMath/issues/1106">#1106</a>), and all thirty registered sets run as data (<a href="https://github.com/asc-community/AngouriMath/issues/1192">#1192</a>).
+    <br><br>
+    The parts that make that safe are tests rather than assertions by an author: a rule's declared growth is checked against a corpus (<a href="https://github.com/asc-community/AngouriMath/issues/1158">#1158</a>), a set that rewrites back to where it started is caught (<a href="https://github.com/asc-community/AngouriMath/issues/1165">#1165</a>), and so is one that never settles over a whole tree (<a href="https://github.com/asc-community/AngouriMath/issues/1168">#1168</a>). The runaway that used to be blamed on a whole soundness tier turned out to be <b>one inverse pair across two sets</b> (<a href="https://github.com/asc-community/AngouriMath/issues/1193">#1193</a>), and the growth ceiling turned out to already be the scheduling policy the documents kept deferring (<a href="https://github.com/asc-community/AngouriMath/issues/1194">#1194</a>, <a href="https://github.com/asc-community/AngouriMath/issues/1203">#1203</a>).
+    <br><br>
+    <strong>Speed:</strong><br>
+    Five changes, each measured at the entry point rather than in a microbenchmark, and each answer-identical:
+    <br><br>
+    <table>
+        <tr><th></th><th></th></tr>
+        <tr><td><code>SolveHard</code></td><td><b>−98.6% allocation</b> — the solver now tries the equation as written before asking for its alternatives (<a href="https://github.com/asc-community/AngouriMath/issues/1209">#1209</a>)</td></tr>
+        <tr><td><code>SimplifyHard</code></td><td><b>−64%</b> — a candidate already registered is not registered again (<a href="https://github.com/asc-community/AngouriMath/issues/1207">#1207</a>)</td></tr>
+        <tr><td><code>SimplifyHard</code></td><td><b>−44%</b> — a candidate is registered once and a subtree costed once (<a href="https://github.com/asc-community/AngouriMath/issues/1205">#1205</a>)</td></tr>
+        <tr><td><code>SimplifyHard</code></td><td><b>−35%</b> — the sort key of a node is spelt once (<a href="https://github.com/asc-community/AngouriMath/issues/1210">#1210</a>)</td></tr>
+        <tr><td><code>SimplifyHard</code></td><td><b>−25%</b> — a candidate is re-simplified at the default level whatever level it was offered at (<a href="https://github.com/asc-community/AngouriMath/issues/1211">#1211</a>)</td></tr>
+    </table>
+    Extraction from the graph became a fixed point computed from the leaves up rather than a top-down walk whose cycle guard defeated its own memo: 1,918 ms to 4 ms on the case that exposed it, and a budget now honoured to the millisecond (<a href="https://github.com/asc-community/AngouriMath/issues/1202">#1202</a>).
+    <br><br>
+    <strong>New notation:</strong><br>
+    <ul>
+        <li><b><code>a divides b</code></b> is a statement node, printing as <code>a \mid b</code> in LaTeX (<a href="https://github.com/asc-community/AngouriMath/issues/1220">#1220</a>). <code>divides</code> is now a keyword, so a variable of that name no longer parses — one of the two Loud entries.</li>
+        <li><b><code>#S</code></b> is the number of elements of a set, with <code>card(S)</code> still accepted on input (<a href="https://github.com/asc-community/AngouriMath/issues/1221">#1221</a>).</li>
+        <li><b>The extremum of an expression over a set</b>, as a binder (<a href="https://github.com/asc-community/AngouriMath/issues/1222">#1222</a>).</li>
+        <li><b>A lambda is written with an arrow</b> as well as a call: <code>x =&gt; x + 1</code> beside <code>lambda(x, x + 1)</code>. Nothing that parsed before parses differently — <code>=</code> followed by <code>&gt;</code> was not a token (<a href="https://github.com/asc-community/AngouriMath/issues/1151">#1151</a>).</li>
+    </ul>
+    <strong>Closed forms:</strong><br>
+    A summation with a closed form now has one, and each carries the condition it holds under rather than asserting it unconditionally:
+    <br><br>
+    <pre><code>sum(k, k, 1, n)              →  (n + n^2)/2, with the condition on n
+sum(x^k, k, 0, +oo)          →  1 / (1 - x) provided abs(x) &lt; 1
+sum(2^k, k, 0, +oo)          →  +oo, by the nth-term test, where it used to be left as written</code></pre>
+    Polynomial summands (<a href="https://github.com/asc-community/AngouriMath/issues/1152">#1152</a>), monomial products (<a href="https://github.com/asc-community/AngouriMath/issues/1153">#1153</a>), a power over a factorial (<a href="https://github.com/asc-community/AngouriMath/issues/1213">#1213</a>), binomial sums with a power or trigonometric weight (<a href="https://github.com/asc-community/AngouriMath/issues/1214">#1214</a>), geometric series (<a href="https://github.com/asc-community/AngouriMath/issues/1218">#1218</a>) and divergent ones (<a href="https://github.com/asc-community/AngouriMath/issues/1224">#1224</a>).
+    <br><br>
+    Integration reached further too: a biquadratic denominator decomposed over the reals (<a href="https://github.com/asc-community/AngouriMath/issues/1145">#1145</a>), fractional powers and the tangent as substitutions (<a href="https://github.com/asc-community/AngouriMath/issues/1146">#1146</a>), improper quotients divided out before decomposition (<a href="https://github.com/asc-community/AngouriMath/issues/1147">#1147</a>), repeated quadratic denominators (<a href="https://github.com/asc-community/AngouriMath/issues/1155">#1155</a>), and an integral across a jump split <b>at</b> the jumps rather than taken through an antiderivative that treats a floor as a constant (<a href="https://github.com/asc-community/AngouriMath/issues/1215">#1215</a>). There is also an analytical solver for first-order linear ODEs (<a href="https://github.com/asc-community/AngouriMath/issues/1137">#1137</a>).
+    <br><br>
+    <strong>Integration speed, and a correction to an earlier version of these notes:</strong><br>
+    An earlier version of this page said the integrator was left much slower than 2.4.0 on hard integrands. <b>That was wrong, and it was my measurement error</b>: the figures behind it came from a corpus run that had the full unit suite running beside it on the same machine, which inflated the sections being compared. Measured properly — the seventeen hardest integrands from that part of the corpus, one process, nothing else running, two runs of each arm — 2.5.0 is about <b>30% faster</b>: 72,017 and 71,390 ms for 2.4.0 against 53,159 and 47,996 ms here. Several individual integrands halve. The details are on <a href="https://github.com/asc-community/AngouriMath/issues/1232">#1232</a>, which is closed.
+    <br><br>
+    The honest caveat that survives the correction: partial fractions over repeated factors with high powers is slow in <b>both</b> versions — <code>1/((2+x)^3*(3+x)^4)</code> takes about half a minute either way. That is a standing limitation rather than anything new.
+    <br><br>
+    No Rubi coverage figure is claimed for 2.5.0, because that run was never completed on a quiet machine. The last complete one is 2.4.0's, taken the same day: 599 of 1774, 0 wrong.
+    <br><br>
+    <strong>Documentation that is checked:</strong><br>
+    254 worked examples in the XML documentation say what they print, and nothing checked any of them; 67 were wrong — 56 printed something else and 11 did not compile or threw. They are compiled and run against what they claim now (<a href="https://github.com/asc-community/AngouriMath/issues/1184">#1184</a>), so a changed answer fails a test instead of leaving a wrong promise standing in the docs a user reads.
+</p>
+</details>
+
+<details><summary><strong>2.4.0</strong></summary>
+<p>
+    Tier 1 of the <a href="https://github.com/asc-community/AngouriMath/issues/746">Math OS roadmap</a> is finished, and the thing that finished it kept finding wrong answers. Writing a rewrite rule out as <b>data</b> — a pattern and a replacement, rather than an arm of a <code>switch</code> — makes the correspondence between the two something you have to state. Four times this cycle, a rule did not survive stating it.
+    <br><br>
+    <b>Every changed answer is in <a href="https://github.com/asc-community/AngouriMath/blob/v2.4.0/BREAKING-CHANGES.md">BREAKING-CHANGES.md</a> under <code>2.4.0 — since 2.3.0</code></b>, with the old value, the new one and why, each measured on a build of both sides. Read that first if you have code depending on an answer. Twenty-seven entries, and more than half are marked <b>Silent</b> — the call still succeeds and quietly returns something else.
+    <br><br>
+    <code>AssemblyVersion</code> stays <code>2.0.0.0</code>. The recorded public surface shows 68 additions and 130 removals, and <b>none of the removals is one a caller can hit</b>: <code>Stringize()</code> and <code>Latexize()</code> stopped being <code>abstract</code> on <code>Entity</code> and each node's <code>override</code> became a private helper, so the member is still public on <code>Entity</code> and inherited by every node. Source- and binary-compatible.
+    <br><br>
+    <strong>Wrong answers fixed:</strong><br>
+    <ul>
+        <li><b>A factorisation that was not equal to what it factored.</b> <code>Factor(&quot;4x² − 4y²&quot;, &quot;x&quot;)</code> returned <code>(x + y)(x − y)</code> — the <code>4</code> simply gone, the difference from the input <code>−3x² + 3y²</code>. Every candidate in the polynomial layer is checked by exact division, but that check is on the individual <em>factors</em>; nothing compared the assembled product against the input, so a constant lost during assembly was lost silently. (<a href="https://github.com/asc-community/AngouriMath/issues/1092">#1092</a>)</li>
+        <li><b><code>(y &lt; x) or (x = y)</code> simplified to <code>x &lt;= y</code></b> — its own negation off the diagonal. Four of the eight <code>or</code>-with-equality rules carried their neighbour's comparison. Only reachable with both operands symbolic: with a number on one side, <code>2 &lt; x</code> is rewritten to <code>x &gt; 2</code> earlier in the same pass and one of the four <em>correct</em> rules matches. A test written with a numeric operand would have passed on the defect. (<a href="https://github.com/asc-community/AngouriMath/issues/1077">#1077</a>)</li>
+        <li><b><code>x! = 0</code> was answered <code>False</code> everywhere</b>, including at the negative integers where the factorial has a pole and the statement is <code>NaN</code>. The rule read a property pattern on the factorial's <em>argument</em> rather than on the factorial. It took <code>x! / x!</code> → <code>1</code> with it, and three recorded test verdicts had been recording that. (<a href="https://github.com/asc-community/AngouriMath/issues/1081">#1081</a>)</li>
+        <li><b><code>ln(1/b) = −ln(b)</code> was applied unconditionally</b>, which is false on the negative reals — at <code>b = −0.63</code> the two differ by the full turn of the argument the principal branch discards. Three rules gained the guard their neighbours ten lines below already had. (<a href="https://github.com/asc-community/AngouriMath/issues/1062">#1062</a>)</li>
+    </ul>
+    <strong>Factorisation:</strong><br>
+    <code>Factorize</code> was built entirely out of rewrite rules, so it factored what someone had written a rule for and handed everything else back whole — while square-free decomposition, Zassenhaus over ℚ and the multivariate GCD sat in the tree unused by it.
+    <br><br>
+    <pre><code>&quot;x3 - 1&quot;.Factorize()          x ^ 3 - 1              →  (x - 1) * (x ^ 2 + x + 1)
+&quot;x4 - 5x2 + 4&quot;.Factorize()    unchanged              →  (x + 1) * (x + 2) * (x - 2) * (x - 1)
+&quot;x2 + 2x + 1&quot;.Factorize()     unchanged              →  (x + 1) ^ 2</code></pre>
+    The layer speaks only where the rules said nothing, so every answer they already gave is unchanged — the order two factors come out in is arbitrary and theirs is the one on record. (<a href="https://github.com/asc-community/AngouriMath/issues/1018">#1018</a>)
+    <br><br>
+    And the layer itself reaches further. <b>Hensel lifting along an evaluation homomorphism</b> (<a href="https://github.com/asc-community/AngouriMath/issues/1088">#1088</a>, <a href="https://github.com/asc-community/AngouriMath/issues/1089">#1089</a>) factors bivariate polynomials that Kronecker's substitution refuses — not because its image is too large but because it <em>over-factors</em>: <code>x⁷ − y⁷</code> maps to <code>t⁷(1 − t⁴⁹)</code>, whose factors are cyclotomic. An evaluation image inflates nothing.
+    <br><br>
+    <pre><code>Factor(&quot;x12 - y12&quot;, &quot;x&quot;)      null                   →  six factors, the full cyclotomic split
+Factor(&quot;x7 - y7&quot;,   &quot;x&quot;)      null                   →  (x - y)(x⁶ + x⁵y + ⋯ + y⁶)</code></pre>
+    Where the substitution gives up entirely, an evaluation image can still prove a polynomial <em>irreducible</em> — which since <a href="https://github.com/asc-community/AngouriMath/issues/1059">#1059</a> is an answer rather than a refusal, so <code>Factor(&quot;x2 + y2 + z2 + w2 + 1&quot;, &quot;x&quot;)</code> returns the polynomial instead of <code>null</code>. (<a href="https://github.com/asc-community/AngouriMath/issues/1087">#1087</a>)
+    <br><br>
+    <strong>The rule sets are data:</strong><br>
+    Thirty of thirty rule sets now have a form in which each rule is a value — a pattern, a replacement, a soundness tier and a direction — proven to agree with the <code>switch</code> it replaces over thousands of generated expressions. Twenty-seven run it. The three that do not are the canonical orders, and that is a measurement rather than an omission.
+    <br><br>
+    It buys: every rule individually addressable (407 entries), per-rule soundness where only the set had a tier before (181 <code>Sound</code>, 141 <code>SoundUnderAssumptions</code>), and 26 rules that can be read backwards.
+    <br><br>
+    <strong>Performance, honestly:</strong><br>
+    <b><code>SimplifyEasy</code> is about 13% slower than before the exchange</b> — 82,676 ns to 93,732 ns on one desktop, both arms, standard deviation under half a per cent. Every conversion was measured against the commit in front of it and every one came back free or better; nothing was measured against the start, and the sum of a run of free steps is +13%.
+    <br><br>
+    It would have been worse. Indexing each set's rules by node type recovered most of it, and a bounded pattern is now walked by index rather than enumerated — 165.05 MB to 163.40 MB of <code>SolveMediumHard</code> on its own.
+    <br><br>
+    The work shape is unchanged: 4,914 rule-set invocations on that input at both ends, so this is per-operation overhead rather than extra work. <code>version_performance_control.md</code> records where it goes, what three attempts to remove it measured, and the roughly 40% still unattributed.
+    <br><br>
+    That file also gained a measurement worth more than the column: <b>the Kernel Benchmark run twice on one commit is 30–57% apart on every benchmark</b>, while allocation over the same pair agrees to 0.03%. Timing comparisons between its columns are evidence only above about 50%.
+</p>
+</details>
+
+<details><summary><strong>2.3.0</strong></summary>
+<p>
+    Correctness release, and the first one whose claim to that is measured on an outside corpus rather than only on our own tests. Against <b>Rubi's integration suite</b> — 1774 problems that each carry an antiderivative known to exist — this version answers <b>604 where 2.2.0-era master answered 536</b>, and gets <b>0 wrong where that answered 7</b>. Six of those seven were <code>NaN</code>: a definite claim that no value exists, made about integrals that have one.
+    <br><br>
+    <b>Every changed answer is in <a href="https://github.com/asc-community/AngouriMath/blob/v2.3.0/BREAKING-CHANGES.md">BREAKING-CHANGES.md</a> under <code>2.3.0 — since 2.2.0</code></b>, with the old value, the new one and why, each measured on a build of both sides. Read that first if you have code depending on an answer.
+    <br><br>
+    <code>AssemblyVersion</code> stays <code>2.0.0.0</code>. This release <b>removes and renames nothing</b> — 103 additions and 0 removals against the 2.2.0 public API baseline — so it is a drop-in replacement in both the binding and the source sense, which 2.2.0 was not.
+    <br><br>
+    <strong>Wrong answers fixed:</strong><br>
+    <ul>
+        <li><b>The symbolic determinant was <code>NaN</code> for ordinary matrices.</b> Gaussian elimination left the pivots as literal divisions, so the expression was undefined wherever a pivot vanishes. Two of four ordinary 3×3 matrices came back <code>NaN</code>, one of them the singular example every linear-algebra course opens with. It is Laplace expansion now, which never divides — and is <em>faster</em>, dramatically so on numeric matrices. (<a href="https://github.com/asc-community/AngouriMath/issues/992">#992</a>)</li>
+        <li><b>A matrix was a member of every special set at once</b> — <code>BB</code>, <code>ZZ</code>, <code>QQ</code>, <code>RR</code>, <code>CC</code> and their intersections — because membership was answered with a guard that is deliberately permissive about what it has not ruled out. Asking "might this be a member" and reporting it as "is a member" are different questions. (<a href="https://github.com/asc-community/AngouriMath/issues/995">#995</a>)</li>
+        <li><b>Differentiating over <code>pi</code> or <code>e</code> behaved as though they varied.</b> <code>sin(pi)</code> differentiated by <code>MathS.pi</code> was <code>-1</code>, which is <code>cos(pi)</code>: the chain rule run over a symbol that cannot change. It is <code>0</code>. (<a href="https://github.com/asc-community/AngouriMath/issues/993">#993</a>)</li>
+        <li><b><code>Differentiate(x, n)</code> returned raw chain-rule output</b> for <code>n &gt;= 1</code>, and because each pass differentiated the unsimplified result of the last, the expression compounded — <code>x^4</code> three times was a screenful where differentiating three times by hand is <code>2 * x * 3 * 4</code>. Same value, and only one of them is an answer. (<a href="https://github.com/asc-community/AngouriMath/issues/1002">#1002</a>)</li>
+        <li><b>A bound <code>pi</code> or <code>e</code> still carried the constant's value</b>, so a binder could not bind them and <code>derivative(e^2, e)</code> was <code>0</code>. A name a binder declares is a variable, whatever it is spelled. (<a href="https://github.com/asc-community/AngouriMath/issues/984">#984</a>)</li>
+        <li><b>Differentiating or integrating over something that cannot vary</b> — a number in the variable position — renamed it and answered the derivative of a question nobody asked. (<a href="https://github.com/asc-community/AngouriMath/issues/964">#964</a>)</li>
+    </ul>
+    <strong>Interoperability:</strong><br>
+    <ul>
+        <li><b><code>ToSympyCode</code> emitted Python that does not run</b>, for every set, every lambda, every <code>piecewise</code> and every non-vector matrix: unqualified <code>FiniteSet</code>, <code>Interval</code>, <code>Union</code> and <code>S</code> against a preamble of only <code>import sympy</code>; a lambda with no body; a set builder that threw out of the exporter; and <code>Interval</code>, <code>Piecewise</code> and <code>Matrix</code> writing their children as this library spells them rather than as SymPy does. Measured by executing the generated program rather than reading it: <b>24 of 45 ran before, 45 of 45 run now.</b> (<a href="https://github.com/asc-community/AngouriMath/issues/985">#985</a>)</li>
+    </ul>
+    <strong>Names and reporting:</strong><br>
+    <ul>
+        <li><b>A set builder leaked its internal placeholder.</b> <code>&quot;{ k : k &gt; 0 }&quot;.FreeVariables</code> was <code>{ %1 }</code> — a name in no expression, not typeable, and different for a different predicate. It also broke <code>Vars</code>' own promise in both directions at once: the name that occurs was missing and the one that does not was there. (<a href="https://github.com/asc-community/AngouriMath/issues/989">#989</a>)</li>
+        <li><b><code>Stringize</code> of a <code>Rational</code> read back as a <code>Divf</code></b>, so the round trip was not an identity. Fixed by the parser change below rather than by anything aimed at it. (<a href="https://github.com/asc-community/AngouriMath/issues/873">#873</a>)</li>
+        <li><b>A quotient of two integer literals now parses as the <code>Rational</code> it denotes</b> rather than as a division.</li>
+    </ul>
+    <strong>Under the hood:</strong><br>
+    The rule registry grew to cover every addressable rule set, with confluence and termination checked by tooling rather than asserted — <a href="https://github.com/asc-community/AngouriMath/issues/746">#746</a> tier 2 asks for exactly that. <code>Core.Binding</code> makes binder resolution happen at construction, which is what let <code>i</code>, <code>pi</code> and <code>e</code> become bindable names.
+    <br><br>
+    <strong>Performance:</strong><br>
+    The 1769th column of <a href="https://github.com/asc-community/AngouriMath/blob/v2.3.0/Sources/AngouriMath/Docs/WhatsNew/version_performance_control.md">version_performance_control.md</a>, taken on the same runner class as the 1620th and 1671st so the three are comparable. <b>Every row faster or flat.</b> <code>SolveEasy</code> is 21.3 ms to 8.5 ms — a 2.5× speedup with a 2.3× allocation drop beside it, which is how you tell work from machine noise.
+    <br><br>
+    <strong>What this release is not:</strong><br>
+    It does not complete a <a href="https://github.com/asc-community/AngouriMath/issues/746">#746</a> tier. It advances tier 1 and tier 2 and finishes neither, which is why it is a minor version. The rewrite graph that v2.0 is reserved for is still ahead.
+</p>
+</details>
+
+<details><summary><strong>2.2.0</strong></summary>
+<p>
+    Infrastructure release. 2.1.0 was mostly wrong answers becoming right ones; this one is mostly the layer underneath them — <b>a real polynomial layer</b>, and a <b>written specification of what canonical form means here</b> with both halves implemented. The corrected answers in it are largely consequences of those two rather than separate fixes.
+    <br><br>
+    <b>Every changed answer is in <a href="https://github.com/asc-community/AngouriMath/blob/v2.2.0/BREAKING-CHANGES.md">BREAKING-CHANGES.md</a> under <code>2.2.0 — since 2.1.0</code></b>, with the old value, the new one, and why, measured on a build of each version. Read that first if you have code depending on an answer.
+    <br><br>
+    <code>AssemblyVersion</code> stays <code>2.0.0.0</code>. See the rename note at the bottom before dropping the DLL in without recompiling.
+    <br><br>
+    <strong>A polynomial layer:</strong><br>
+    The single item that <a href="https://github.com/asc-community/AngouriMath/issues/746">#746</a> names as unblocking a large fraction of the tracker. Multivariate GCD, resultants, square-free decomposition, and factorisation over ℚ and finite fields. (<a href="https://github.com/asc-community/AngouriMath/issues/918">#918</a>, <a href="https://github.com/asc-community/AngouriMath/issues/920">#920</a>/<a href="https://github.com/asc-community/AngouriMath/issues/923">#923</a>, <a href="https://github.com/asc-community/AngouriMath/issues/921">#921</a>/<a href="https://github.com/asc-community/AngouriMath/issues/927">#927</a>)
+    <br><br>
+    It is not shipped for its own sake — three things in this release are consequences of having it:
+    <br><br>
+    <ul>
+        <li><b>A polynomial equation that factors is solved through its factors.</b> <code>x^5 + 2x^3 - 2x^2 - 4</code> returned three of its five roots, one of them a float; it returns all five, exact. <code>x^4 + x^2 + 1</code> loses a nested radical. (<a href="https://github.com/asc-community/AngouriMath/issues/918">#918</a>)</li>
+        <li><b>A rational function is decomposed over the <em>factors</em> of its denominator, not only its roots</b>, so <code>1/(x^4 + 3x^2 + 2)</code> and <code>1/(x^4 + 4)</code> now integrate instead of coming back unevaluated. (<a href="https://github.com/asc-community/AngouriMath/issues/926">#926</a>)</li>
+        <li><b>A resultant is bounded by measured work</b> rather than by a reasoned size limit, which raised the ceiling from a Sylvester matrix of 24 to one of 40 without risking the blow-up the old bound was guessing at. (<a href="https://github.com/asc-community/AngouriMath/issues/921">#921</a>/<a href="https://github.com/asc-community/AngouriMath/issues/927">#927</a>)</li>
+    </ul>
+    <strong>Canonical form: specified, measured, and offered:</strong><br>
+    <code>Docs/Contributing/CanonicalForm.md</code> states the position rather than leaving it to be inferred: <b>canonical is about identity, simplest is about presentation</b>, and there is <em>no</em> canonical form for the whole language — zero-equivalence is undecidable once <code>pi</code>, <code>exp</code>, the trigonometric functions and <code>abs</code> are in play (Richardson 1968). So the specification is a canonical form on a decidable sublanguage, a normalisation elsewhere that must not be mistaken for one, and a search that is not required to be canonical at all. (<a href="https://github.com/asc-community/AngouriMath/issues/928">#928</a>)
+    <br><br>
+    Both halves are now reachable from <code>Entity</code>, beside <code>Simplify</code> and <code>Factorize</code>:
+    <br><br>
+    <pre><code>Entity Canonicalize()                     // the commutative structure: 0 idempotence and
+                                          // 0 order-independence failures over 834 expressions
+Entity? CanonicalizeAsRationalFunction()  // rational functions over Q -- or null, which is the
+                                          // library saying it has no answer rather than guessing</code></pre>
+    <code>x/x</code> canonicalises to <code>1 provided not x = 0</code> and is deliberately <em>not</em> equal to the canonical form of <code>1</code>: the quotient is undefined where the polynomial is not. (<a href="https://github.com/asc-community/AngouriMath/issues/933">#933</a>, <a href="https://github.com/asc-community/AngouriMath/issues/935">#935</a>, <a href="https://github.com/asc-community/AngouriMath/issues/940">#940</a>)
+    <br><br>
+    <b>Nothing applies either by default.</b> <code>Simplify</code> and <code>InnerSimplified</code> return exactly what they returned before. Turning canonical ordering on by default would change every commutative operand order in every printed answer, and that is a decision for a release that says so.
+    <br><br>
+    <strong>Wrong answers fixed:</strong><br>
+    <ul>
+        <li><b><code>sin(-x) + sin(x)</code></b> was left as written and is <code>0</code> — the parity identities were not being applied. <code>cos(-x)</code> and <code>abs(-x)</code> fold too. (<a href="https://github.com/asc-community/AngouriMath/issues/929">#929</a>/<a href="https://github.com/asc-community/AngouriMath/issues/931">#931</a>)</li>
+        <li><b><code>InnerSimplified</code> is idempotent again.</b> An exact trigonometric value reached through a half turn came back as <code>-(-1)</code> where it should have been <code>1</code>. The value was never wrong, but applying <code>InnerSimplified</code> twice gave a different tree from applying it once, and much of the library treats what it returns as settled. (<a href="https://github.com/asc-community/AngouriMath/issues/930">#930</a>/<a href="https://github.com/asc-community/AngouriMath/issues/932">#932</a>)</li>
+        <li><b>A negative pair keeps its sign.</b> (<a href="https://github.com/asc-community/AngouriMath/issues/936">#936</a>/<a href="https://github.com/asc-community/AngouriMath/issues/937">#937</a>)</li>
+        <li><b>The logarithm's domain follows the reading</b>, as every other node's already did, so <code>log(-3, -3)</code> is no longer declared undefined while evaluating to <code>1</code>. (<a href="https://github.com/asc-community/AngouriMath/issues/721">#721</a>/<a href="https://github.com/asc-community/AngouriMath/issues/890">#890</a>, <a href="https://github.com/asc-community/AngouriMath/issues/916">#916</a>)</li>
+        <li><b><code>log(x, x)</code></b> was <code>1 provided x &gt; 0</code> — <code>NaN</code> at every negative <code>x</code>, and <code>1</code> at <code>x = 1</code> where the logarithm is <code>NaN</code>. (<a href="https://github.com/asc-community/AngouriMath/issues/916">#916</a>)</li>
+        <li><b><code>d/dx x^n</code></b> carried <code>provided x &gt; 0</code>, a condition it never needed, making the derivative undefined at every negative <code>x</code>. (<a href="https://github.com/asc-community/AngouriMath/issues/916">#916</a>)</li>
+        <li><b>A sum of logarithms is no longer gathered unless that is exact</b> — <code>ln(a) + ln(b) -&gt; ln(a*b)</code> is wrong by <code>2*pi*i</code> off the positive reals. Two limits lost to that guard in 2.1.0 are back, via an ambient scope rather than a new pass. (<a href="https://github.com/asc-community/AngouriMath/issues/922">#922</a>, <a href="https://github.com/asc-community/AngouriMath/issues/925">#925</a>)</li>
+    </ul>
+    <strong>Under the hood:</strong><br>
+    <ul>
+        <li><b>A rewrite rule's left-hand side can be data.</b> <code>MatchPattern</code> matches by enumerating solutions, so commutative operands backtrack properly, and three rule sets are expressed as data and proved equivalent to the <code>switch</code> they mirror. Internal for now — it is a prerequisite for <a href="https://github.com/asc-community/AngouriMath/issues/746">#746</a>'s rewrite graph, and for a rule being able to carry its own justification. (<a href="https://github.com/asc-community/AngouriMath/issues/248">#248</a>, <a href="https://github.com/asc-community/AngouriMath/issues/938">#938</a>)</li>
+        <li><b>A measured performance pair</b> is published in <code>Docs/WhatsNew/version_performance_control.md</code>, both columns re-measured on one machine. It caught four solver benchmarks 7–21% slower with allocation up 10–20%, isolated to the polynomial layer by bisecting on allocation. That is <b>the price of the factoring solver, recorded rather than quietly absorbed</b> — and the same document notes that none of the ten solver benchmarks factors, so the suite measures that change's cost and none of its benefit.</li>
+    </ul>
+    <strong>One rename:</strong><br>
+    Five members were spelled <code>-ise</code> on a surface that is otherwise <code>Factorize</code>, <code>Latexize</code>, <code>Normalization</code>. Three had not shipped; two had:
+    <br><br>
+    <table>
+        <tr><th>Was (2.1.0)</th><th>Is</th></tr>
+        <tr><td><code>Transformation.Rationalisation</code></td><td><code>Transformation.Rationalization</code></td></tr>
+        <tr><td><code>RewriteRules.RationaliseDenominator</code></td><td><code>RewriteRules.RationalizeDenominator</code></td></tr>
+    </table>
+    Recompiling turns a stale reference into a compile error. <b>Swapping the DLL without recompiling does not</b> — <code>AssemblyVersion</code> is pinned at <code>2.0.0.0</code> so the assembly still binds, and the call throws <code>MissingMethodException</code> when it is reached. Documentation prose keeps British spelling; the convention is about identifiers. (<a href="https://github.com/asc-community/AngouriMath/issues/940">#940</a>)
+</p>
+</details>
+
+<details><summary><strong>2.1.0</strong></summary>
 <p>
     A correctness release. Almost everything below is a wrong answer becoming a right one, and most of
     it was found by harnesses rather than reported — boundary points where a rule's assumption fails,
