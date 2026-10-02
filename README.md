@@ -4,7 +4,7 @@
 
 This repo contains all the files for <a href="https://am.angouri.org">the website</a> of [AngouriMath](https://github.com/asc-community/AngouriMath).
 
-The master branch only contains files necessary for the generation itself. The generation happens automatically on every push to gh-pages branch. The content of the website is located at `src/content`.
+The master branch only contains files necessary for the generation itself. Every push to master generates the website and publishes it to the gh-pages branch, which GitHub Pages serves. The content of the website is located at `src/content`.
 
 There's a custom generator which wraps the content files with the given templates, which are located at `src/content/_templates`.
 
