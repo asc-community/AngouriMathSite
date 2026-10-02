@@ -34,7 +34,165 @@ THIS IS A TEMPLATE {
 
 -->
     
-<details open><summary><strong>2.1.0</strong></summary>
+<details open><summary><strong>2.5.0</strong></summary>
+<p>
+    Tier 2 of the <a href="https://github.com/asc-community/AngouriMath/issues/746">Math OS roadmap</a> —
+    <b>the rewrite graph</b> — is finished. An e-graph lives in the kernel rather than in a measurement
+    harness, every one of the thirty registered rule sets runs as data through a real e-matcher, and each
+    rule declares its own soundness tier and how much it grows what it matches. The honest result is the
+    part worth reading: <code>Simplify</code> still does <em>not</em> run on the graph, because the tier
+    asked for equality saturation to be evaluated against memory cost on real expressions and the
+    evaluation came back negative. A measurement that says "not by default" is the deliverable.
+    <b>Every changed answer is in
+    <a href="https://github.com/asc-community/AngouriMath/blob/v2.5.0/BREAKING-CHANGES.md">BREAKING-CHANGES.md</a>
+    under <code>2.5.0 — since 2.4.0</code></b> — seventy-six entries, twenty-nine of them <em>silent</em>
+    (the call still succeeds and quietly returns something else) and two <em>loud</em>, where input that
+    parsed now raises. The recorded public surface has 136 additions and no removals, and
+    <code>AssemblyVersion</code> stays <code>2.0.0.0</code>: source- and binary-compatible with 2.4.0.
+    <br><br>
+    <strong>Wrong answers fixed:</strong>
+    <ul>
+        <li><code>Integrate</code> could recurse without bound and take the process down — a stack overflow is not an exception a caller can handle. Caught by running Rubi's independent suites against the release candidate; the descent is bounded now, and an integral already being worked out is recognised as a cycle, after renaming, and declined at once.</li>
+        <li>Matrix operations answered wrongly on more than one thread: 38 of 40 determinants computed in parallel carried another computation's values. Two of the three causes were caches grown under a lock and read outside one; the third is GenericTensor handing every caller the same scratch matrix, reported upstream and guarded here meanwhile.</li>
+        <li>A negation was answered with the empty set, which is a positive claim, for something never settled.</li>
+        <li><code>Domain.Any</code> was treated as the universal set when it is a codomain.</li>
+        <li>A negative <code>arccotan</code> was not negative — this library's <code>arccotan</code> has range <code>(-pi/2, pi/2]</code>, and a guard written from the textbook range shipped wrong.</li>
+        <li>The limit of <code>z / abs(z)</code> lost the phase of <code>z</code>, and a factor of <code>-1</code> was taken out as though it were a factor rather than read as a sign.</li>
+    </ul>
+    <strong>The rewrite graph:</strong>
+    <ul>
+        <li>The e-graph is in the kernel behind an explicit opt-in, matched by a genuine e-matcher — a pattern against an e-class, not a term. A cost model is a <code>record</code> you pass (<code>SmallestTree</code>, <code>FewestDivisions</code>, <code>FewestRadicals</code>) rather than a setting you set.</li>
+        <li>What makes that safe is tests rather than an author's assertion: a rule's declared growth is checked against a corpus, a set that rewrites back to where it started is caught, and so is one that never settles over a whole tree. The runaway once blamed on a whole soundness tier was one inverse pair across two sets.</li>
+    </ul>
+    <strong>Speed</strong> — each measured at the entry point and answer-identical:
+    <ul>
+        <li><code>SolveHard</code> allocates <b>98.6% less</b>: the solver tries the equation as written before asking for its alternatives.</li>
+        <li><code>SimplifyHard</code> −64%, −44%, −35% and −25% over four changes: a candidate registered once, a subtree costed once, a sort key spelt once, and a candidate re-simplified at the default level whatever level it was offered at.</li>
+        <li>Extraction from the graph is a fixed point computed from the leaves up: 1,918 ms to 4 ms on the case that exposed it.</li>
+        <li>The integrator is about 30% faster than 2.4.0 on the seventeen hardest integrands of Rubi's corpus, measured alone on a quiet machine — an earlier version of the release notes said the opposite, from a run with the test suite beside it, and was corrected.</li>
+    </ul>
+    <strong>New notation:</strong>
+    <ul>
+        <li><code>a divides b</code> is a statement node (<code>a \mid b</code> in LaTeX) — <code>divides</code> is a keyword now, so a variable of that name no longer parses.</li>
+        <li><code>#S</code> is the number of elements of a set, with <code>card(S)</code> still accepted; the extremum of an expression over a set is a binder; and a lambda is written with an arrow, <code>x =&gt; x + 1</code> beside <code>lambda(x, x + 1)</code>.</li>
+    </ul>
+    <strong>Closed forms:</strong>
+    <ul>
+        <li><code>sum(k, k, 1, n)</code> is <code>(n + n^2)/2</code> with its condition on <code>n</code>; <code>sum(x^k, k, 0, +oo)</code> is <code>1 / (1 - x) provided abs(x) &lt; 1</code>; <code>sum(2^k, k, 0, +oo)</code> is <code>+oo</code> by the nth-term test. Polynomial summands, monomial products, a power over a factorial, binomial sums, geometric and divergent series.</li>
+        <li>Integration reaches a biquadratic denominator over the reals, fractional powers and the tangent as substitutions, improper quotients divided out first, repeated quadratic denominators, and an integral across a jump split <em>at</em> the jumps. There is an analytical solver for first-order linear ODEs.</li>
+    </ul>
+    <strong>Documentation that is checked:</strong>
+    <ul>
+        <li>254 worked examples in the XML documentation say what they print, and 67 were wrong. They are compiled and run against what they claim now, so a changed answer fails a test instead of leaving a wrong promise in the docs.</li>
+    </ul>
+</p>
+</details>
+
+<details><summary><strong>2.4.0</strong></summary>
+<p>
+    Tier 1 of the <a href="https://github.com/asc-community/AngouriMath/issues/746">Math OS roadmap</a>
+    is finished, and the thing that finished it kept finding wrong answers: writing a rewrite rule out
+    as <b>data</b> — a pattern and a replacement, rather than an arm of a <code>switch</code> — makes
+    the correspondence between the two something you have to state, and four times this cycle a rule
+    did not survive stating it.
+    <b>Every changed answer is in
+    <a href="https://github.com/asc-community/AngouriMath/blob/v2.4.0/BREAKING-CHANGES.md">BREAKING-CHANGES.md</a>
+    under <code>2.4.0 — since 2.3.0</code></b> — twenty-seven entries, more than half of them silent.
+    <code>AssemblyVersion</code> stays <code>2.0.0.0</code>; the 130 recorded removals are
+    <code>Stringize()</code> and <code>Latexize()</code> ceasing to be <code>abstract</code> per node,
+    still public on <code>Entity</code> and inherited by every node, so nothing a caller can hit.
+    <br><br>
+    <strong>Wrong answers fixed:</strong>
+    <ul>
+        <li><code>Factor("4x² − 4y²", "x")</code> returned <code>(x + y)(x − y)</code>, the <code>4</code> simply gone: every candidate factor was checked by exact division, but nothing compared the assembled product against the input.</li>
+        <li><code>(y &lt; x) or (x = y)</code> simplified to <code>x &lt;= y</code>, its own negation off the diagonal — four of the eight <code>or</code>-with-equality rules carried their neighbour's comparison, reachable only with both operands symbolic.</li>
+        <li><code>x! = 0</code> was <code>False</code> everywhere, including at the negative integers where the factorial has a pole and the statement is <code>NaN</code>; <code>x! / x!</code> → <code>1</code> went with it.</li>
+        <li><code>ln(1/b) = −ln(b)</code> was applied unconditionally, and is false on the negative reals by a full turn of the argument.</li>
+    </ul>
+    <strong>Factorisation:</strong>
+    <ul>
+        <li><code>Factorize</code> was built entirely out of rewrite rules while square-free decomposition, Zassenhaus over ℚ and the multivariate GCD sat unused. Now <code>x^3 - 1</code> is <code>(x - 1) * (x^2 + x + 1)</code>, <code>x^4 - 5x^2 + 4</code> is <code>(x + 1) * (x + 2) * (x - 2) * (x - 1)</code> and <code>x^2 + 2x + 1</code> is <code>(x + 1)^2</code>; every answer the rules already gave is unchanged.</li>
+        <li>Hensel lifting along an evaluation homomorphism factors bivariate polynomials that Kronecker's substitution over-factors: <code>x^12 - y^12</code> gives its full cyclotomic split, <code>x^7 - y^7</code> its two factors, and a polynomial the layer can prove irreducible is returned rather than refused.</li>
+    </ul>
+    <strong>The rule sets are data:</strong>
+    <ul>
+        <li>Thirty of thirty rule sets have a form in which each rule is a value — pattern, replacement, soundness tier, direction — proven to agree with the <code>switch</code> it replaces over thousands of generated expressions; twenty-seven run it, and the three that do not are the canonical orders. 407 individually addressable rules, 181 <code>Sound</code>, 141 <code>SoundUnderAssumptions</code>, 26 readable backwards.</li>
+    </ul>
+    <strong>Performance, honestly:</strong>
+    <ul>
+        <li><code>SimplifyEasy</code> is about 13% slower than before the exchange, 82,676 ns to 93,732 ns on one desktop: every conversion measured free against the commit in front of it, nothing measured against the start, and the sum of a run of free steps was +13%. Indexing each set's rules by node type recovered most of it. The same document records that the CI kernel benchmark run twice on one commit is 30–57% apart on every row, while allocation agrees to 0.03% — so its timing columns are evidence only above about 50%.</li>
+    </ul>
+</p>
+</details>
+
+<details><summary><strong>2.3.0</strong></summary>
+<p>
+    A correctness release, and the first whose claim to that is measured on an outside corpus:
+    against <b>Rubi's integration suite</b> — 1774 problems that each carry an antiderivative known to
+    exist — it answers 604 where 2.2.0-era master answered 536, and gets 0 wrong where that answered 7,
+    six of the seven being <code>NaN</code>, a definite claim that no value exists made about integrals
+    that have one.
+    <b>Every changed answer is in
+    <a href="https://github.com/asc-community/AngouriMath/blob/v2.3.0/BREAKING-CHANGES.md">BREAKING-CHANGES.md</a>
+    under <code>2.3.0 — since 2.2.0</code>.</b> This release removes and renames nothing — 103 additions
+    and 0 removals against the 2.2.0 public API — so it is a drop-in replacement in both the binding and
+    the source sense, which 2.2.0 was not.
+    <br><br>
+    <strong>Wrong answers fixed:</strong>
+    <ul>
+        <li>The symbolic determinant was <code>NaN</code> for ordinary matrices: Gaussian elimination left the pivots as literal divisions, undefined wherever a pivot vanishes. It is Laplace expansion now, which never divides, and is faster.</li>
+        <li>A matrix was a member of every special set at once — <code>BB</code>, <code>ZZ</code>, <code>QQ</code>, <code>RR</code>, <code>CC</code> — because "might this be a member" was reported as "is a member".</li>
+        <li>Differentiating over <code>pi</code> or <code>e</code> behaved as though they varied: <code>sin(pi)</code> by <code>MathS.pi</code> was <code>-1</code>, and is <code>0</code>. And a bound <code>pi</code> or <code>e</code> still carried the constant's value, so <code>derivative(e^2, e)</code> was <code>0</code> — a name a binder declares is a variable.</li>
+        <li><code>Differentiate(x, n)</code> returned raw, compounding chain-rule output for <code>n &gt;= 1</code>; differentiating or integrating over a number renamed it and answered a question nobody asked.</li>
+    </ul>
+    <strong>Interoperability and names:</strong>
+    <ul>
+        <li><code>ToSympyCode</code> emitted Python that does not run for every set, lambda, <code>piecewise</code> and non-vector matrix. Measured by executing the generated program: 24 of 45 ran before, 45 of 45 run now.</li>
+        <li>A set builder leaked its internal placeholder: <code>"{ k : k &gt; 0 }".FreeVariables</code> was <code>{ %1 }</code>.</li>
+        <li>A quotient of two integer literals parses as the <code>Rational</code> it denotes, so <code>Stringize</code> of a <code>Rational</code> round-trips.</li>
+    </ul>
+    <strong>Performance:</strong>
+    <ul>
+        <li>Every row faster or flat against 2.2.0 on the same runner class; <code>SolveEasy</code> is 21.3 ms to 8.5 ms with a 2.3× allocation drop beside it, which is how you tell work from machine noise.</li>
+    </ul>
+</p>
+</details>
+
+<details><summary><strong>2.2.0</strong></summary>
+<p>
+    An infrastructure release: <b>a real polynomial layer</b>, and <b>a written specification of what
+    canonical form means here</b> with both halves implemented. The corrected answers in it are mostly
+    consequences of those two.
+    <b>Every changed answer is in
+    <a href="https://github.com/asc-community/AngouriMath/blob/v2.2.0/BREAKING-CHANGES.md">BREAKING-CHANGES.md</a>
+    under <code>2.2.0 — since 2.1.0</code>.</b> <code>AssemblyVersion</code> stays <code>2.0.0.0</code>;
+    see the rename at the bottom before dropping the DLL in without recompiling.
+    <br><br>
+    <strong>A polynomial layer:</strong>
+    <ul>
+        <li>Multivariate GCD, resultants, square-free decomposition, and factorisation over ℚ and finite fields — the single item <a href="https://github.com/asc-community/AngouriMath/issues/746">#746</a> names as unblocking a large fraction of the tracker.</li>
+        <li>A polynomial equation that factors is solved through its factors: <code>x^5 + 2x^3 - 2x^2 - 4</code> returned three of its five roots, one a float, and returns all five, exact.</li>
+        <li>A rational function is decomposed over the <em>factors</em> of its denominator, so <code>1/(x^4 + 3x^2 + 2)</code> and <code>1/(x^4 + 4)</code> integrate instead of coming back unevaluated.</li>
+    </ul>
+    <strong>Canonical form, specified and offered:</strong>
+    <ul>
+        <li><code>Docs/Contributing/CanonicalForm.md</code> states the position: canonical is about identity, simplest is about presentation, and there is no canonical form for the whole language, since zero-equivalence is undecidable once <code>pi</code>, <code>exp</code>, the trigonometric functions and <code>abs</code> are in play.</li>
+        <li><code>Entity.Canonicalize()</code> (the commutative structure: 0 idempotence and 0 order-independence failures over 834 expressions) and <code>Entity.CanonicalizeAsRationalFunction()</code> (rational functions over ℚ, or <code>null</code> — the library saying it has no answer rather than guessing). Nothing applies by default: <code>Simplify</code> returns exactly what it returned before.</li>
+    </ul>
+    <strong>Wrong answers fixed:</strong>
+    <ul>
+        <li><code>sin(-x) + sin(x)</code> was left as written and is <code>0</code>; <code>cos(-x)</code> and <code>abs(-x)</code> fold too.</li>
+        <li><code>InnerSimplified</code> is idempotent again: an exact trigonometric value reached through a half turn came back as <code>-(-1)</code>.</li>
+        <li><code>log(x, x)</code> was <code>1 provided x &gt; 0</code>, <code>NaN</code> at every negative <code>x</code>; <code>d/dx x^n</code> carried a <code>provided x &gt; 0</code> it never needed; a sum of logarithms is gathered only where that is exact, and the two limits lost to that guard in 2.1.0 are back.</li>
+    </ul>
+    <strong>One rename:</strong>
+    <ul>
+        <li><code>Transformation.Rationalisation</code> is <code>Rationalization</code> and <code>RewriteRules.RationaliseDenominator</code> is <code>RationalizeDenominator</code>, on a surface that is otherwise <code>Factorize</code>, <code>Latexize</code>. Recompiling turns a stale reference into a compile error; swapping the DLL without recompiling throws <code>MissingMethodException</code> when the call is reached.</li>
+    </ul>
+</p>
+</details>
+
+<details><summary><strong>2.1.0</strong></summary>
 <p>
     A correctness release. Almost everything below is a wrong answer becoming a right one, and most of
     it was found by harnesses rather than reported — boundary points where a rule's assumption fails,
