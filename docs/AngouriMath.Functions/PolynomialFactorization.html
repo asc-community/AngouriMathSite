@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Functions/PolynomialFactorization</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">PolynomialFactorization</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Functions.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Factors a polynomial in one variable over the rationals into irreducibles:<br>            <c>x^4 + 3x^2 + 2</c> becomes <c>(x^2 + 1)(x^2 + 2)</c>, which no search for roots can<br>            find because it has none.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            This is what <a href="../AngouriMath.Functions/PolynomialFactoring.html">PolynomialFactoring</a> is not. That one tries the candidates of<br>            the rational root theorem and divides out the linear factors it finds, which answers<br>            the question only when the polynomial splits into linear pieces. A factor of degree two<br>            or more with no rational root is invisible to it, and those are the common case above<br>            degree three.<br>            </para><para>            The route is Zassenhaus's, in four steps. Clear denominators and take the primitive<br>            part, so the problem is over <c>Z</c>. Split off the repeated factors with<br>            <a href="../AngouriMath.Functions/SquareFreeDecomposition.html">SquareFreeDecomposition</a>, so every remaining problem is square-free.<br>            Factor what is left modulo a small prime, where<br>            <see cref="T:AngouriMath.Functions.PrimeFieldFactorization">Berlekamp</see> answers completely and cheaply.<br>            Then lift that factorisation from <c>p</c> to <c>p^k</c> by Hensel's construction and<br>            try products of the lifted pieces against the original, which is where the true<br>            factors are recovered — an irreducible factor over <c>Z</c> may well split further<br>            modulo <c>p</c>, so the modular factors have to be recombined rather than read off.<br>            Zassenhaus, <i>On Hensel factorization I</i>, J. Number Theory 1 (1969); von zur Gathen<br>            and Gerhard, <i>Modern Computer Algebra</i>, ch. 15.<br>            </para><para>            Two things bound the cost, and both are refusals rather than approximations. The<br>            recombination is exponential in the number of modular factors, so it is given a budget<br>            and declines past it. And <c>k</c> is chosen from Mignotte's bound so that a<br>            coefficient in the symmetric range modulo <c>p^k</c> is the coefficient itself; a<br>            smaller <c>k</c> would not make an answer wrong, since every candidate is confirmed by<br>            exact division over <c>Z</c> before it is accepted, but it would make the search miss<br>            factors and call a reducible polynomial irreducible.<br>            </para><para>            Nothing here is trusted. Every candidate factor is divided out exactly over <c>Z</c>,<br>            and the factors are multiplied back and compared with what they came from before the<br>            answer is returned. The failure mode that survives all of that is an incomplete<br>            factorisation, never a wrong one.<br>            </para></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialFactorization/Factor.html"><h3 class="yadg-h3 ">Factor&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialFactorization/FactorComplete.html"><h3 class="yadg-h3 ">FactorComplete&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialFactorization/FactorMonic.html"><h3 class="yadg-h3 ">FactorMonic&#8203;(AngouriMath.&#8203;Functions.&#8203;IntegerPolynomial)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialFactorization/FactorPrimitive.html"><h3 class="yadg-h3 ">FactorPrimitive&#8203;(AngouriMath.&#8203;Functions.&#8203;IntegerPolynomial)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialFactorization/FactorSquareFree.html"><h3 class="yadg-h3 ">FactorSquareFree&#8203;(AngouriMath.&#8203;Functions.&#8203;IntegerPolynomial)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialFactorization/HenselLift.html"><h3 class="yadg-h3 ">HenselLift&#8203;(AngouriMath.&#8203;Functions.&#8203;IntegerPolynomial,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;IReadOnlyList{AngouriMath.&#8203;Functions.&#8203;PrimeFieldPolynomial},&#8203;System.&#8203;Int64,&#8203;PeterO.&#8203;Numbers.&#8203;EInteger)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialFactorization/IsWorthFactoringToSolve.html"><h3 class="yadg-h3 ">IsWorthFactoringToSolve&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialFactorization/LiftPair.html"><h3 class="yadg-h3 ">LiftPair&#8203;(AngouriMath.&#8203;Functions.&#8203;IntegerPolynomial,&#8203;AngouriMath.&#8203;Functions.&#8203;PrimeFieldPolynomial,&#8203;AngouriMath.&#8203;Functions.&#8203;PrimeFieldPolynomial,&#8203;System.&#8203;Int64,&#8203;PeterO.&#8203;Numbers.&#8203;EInteger,&#8203;AngouriMath.&#8203;Functions.&#8203;IntegerPolynomial@,&#8203;AngouriMath.&#8203;Functions.&#8203;IntegerPolynomial@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialFactorization/MaxMonicScale.html"><h3 class="yadg-h3 ">MaxMonicScale</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialFactorization/MaxPrimeAttempts.html"><h3 class="yadg-h3 ">MaxPrimeAttempts</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialFactorization/MaxRecombinationCandidates.html"><h3 class="yadg-h3 ">MaxRecombinationCandidates</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialFactorization/NextCombination.html"><h3 class="yadg-h3 ">NextCombination&#8203;(System.&#8203;Int32[],&#8203;System.&#8203;Int32)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialFactorization/Primes.html"><h3 class="yadg-h3 ">Primes</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialFactorization/Recombine.html"><h3 class="yadg-h3 ">Recombine&#8203;(AngouriMath.&#8203;Functions.&#8203;IntegerPolynomial,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;IReadOnlyList{AngouriMath.&#8203;Functions.&#8203;IntegerPolynomial},&#8203;PeterO.&#8203;Numbers.&#8203;EInteger)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialFactorization/TryBezout.html"><h3 class="yadg-h3 ">TryBezout&#8203;(AngouriMath.&#8203;Functions.&#8203;PrimeFieldPolynomial,&#8203;AngouriMath.&#8203;Functions.&#8203;PrimeFieldPolynomial,&#8203;AngouriMath.&#8203;Functions.&#8203;PrimeFieldPolynomial@,&#8203;AngouriMath.&#8203;Functions.&#8203;PrimeFieldPolynomial@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialFactorization/TryFactorIntoIrreducibles.html"><h3 class="yadg-h3 ">TryFactorIntoIrreducibles&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity@)</h3></a>Method</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

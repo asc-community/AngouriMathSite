@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Functions/EvaluationHomomorphism</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">EvaluationHomomorphism</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Functions.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Deciding that a polynomial in several variables <b>does not factor</b>, by evaluating<br>            every variable but one at an integer point and asking the one-variable factoriser.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            Substituting integers for variables is a ring homomorphism, so a factorisation survives<br>            it: if <c>f = g·h</c> then <c>f(x, a) = g(x, a)·h(x, a)</c>. Degrees survive it too, as<br>            long as the leading coefficient in <c>x</c> does not vanish at the point — and degrees in<br>            <c>x</c> add, so if the total is preserved then neither part can have lost any. So <b>an<br>            image that is irreducible, of the same degree in <c>x</c>, is a proof that the polynomial<br>            it came from is irreducible</b>.<br>            </para><para>            The converse is not true and is not claimed. An image factors more readily than its<br>            source — <c>x^2 + y</c> at <c>y = 4</c> is <c>x^2 + 4</c>, still irreducible, but at<br>            <c>y = -4</c> it is <c>(x-2)(x+2)</c> — so a reducible image says nothing at all, and<br>            several points are tried before giving up. This decides one direction and declines the<br>            other, which is why it can be asked first and cheaply.<br>            </para><para><b>Why it is worth having next to <a href="../AngouriMath.Functions/KroneckerFactorization.html">KroneckerFactorization</a>.</b> The<br>            substitution's image has degree <c>Π (d_i + 1) - 1</c>, a product, so it leaves the<br>            one-variable factoriser's reach after very few variables and the answer is a refusal —<br>            <c>x^2 + y^2 + z^2 + w^2 + 1</c> is past it. An evaluation image has degree <c>d_main</c>            and does not grow with the variable count at all, so the polynomials this settles are<br>            exactly the ones the substitution cannot reach. It answers only "it does not factor", but<br>            since <a href="https://github.com/asc-community/AngouriMath/pull/1059">#1059</a> that is<br>            an answer rather than a refusal.<br>            </para><para><b>The precondition is checked and not assumed.</b> The argument above is about factors<br>            of positive degree in <c>x</c>; a factor that is free of <c>x</c> — the content — is<br>            invisible to it, and <c>y·(x + 1)</c> would be certified irreducible on an image of<br>            <c>2x + 2</c> whose primitive part is <c>x + 1</c>. So the content in the main variable is<br>            computed, and anything but a constant declines. The caller has a path that takes the<br>            content out and asks again.<br>            </para><para><b>This is not Hensel lifting</b>, and does not pretend to be the piece of<br>            <a href="https://github.com/asc-community/AngouriMath/issues/746">#746</a> tier 1 that is<br>            still outstanding. It is the first step of that algorithm — choosing an evaluation point<br>            whose image keeps the degree and stays square-free — used for the one conclusion that<br>            needs no lifting. Lifting a *reducible* image back to a factorisation of the source is the<br>            rest of it, and is a different piece of work.<br>            </para></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EvaluationHomomorphism/CertifiesIrreducible.html"><h3 class="yadg-h3 ">CertifiesIrreducible&#8203;(AngouriMath.&#8203;Functions.&#8203;MultivariatePolynomial,&#8203;System.&#8203;Int32)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EvaluationHomomorphism/Evaluate.html"><h3 class="yadg-h3 ">Evaluate&#8203;(AngouriMath.&#8203;Functions.&#8203;MultivariatePolynomial,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;IReadOnlyList{System.&#8203;Int32},&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;IReadOnlyList{System.&#8203;Int32},&#8203;System.&#8203;Int32)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EvaluationHomomorphism/MaxAttempts.html"><h3 class="yadg-h3 ">MaxAttempts</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EvaluationHomomorphism/NextPoint.html"><h3 class="yadg-h3 ">NextPoint&#8203;(System.&#8203;Int32[],&#8203;System.&#8203;Int32,&#8203;System.&#8203;Int32)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EvaluationHomomorphism/Points.html"><h3 class="yadg-h3 ">Points</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EvaluationHomomorphism/ToImage.html"><h3 class="yadg-h3 ">ToImage&#8203;(AngouriMath.&#8203;Functions.&#8203;MultivariatePolynomial,&#8203;System.&#8203;Int32,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;IReadOnlyList{System.&#8203;Int32},&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;IReadOnlyList{System.&#8203;Int32})</h3></a>Method</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

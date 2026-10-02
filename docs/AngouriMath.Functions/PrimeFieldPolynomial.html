@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Functions/PrimeFieldPolynomial</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">PrimeFieldPolynomial</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Functions.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            A univariate polynomial over the prime field <c>F_p</c>, stored densely as its<br>            coefficients with the constant term first.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            The point of a prime field is that it is a field with no growth in it. Over the<br>            rationals the Euclidean algorithm is unusable directly because the coefficients of<br>            the remainder sequence explode — which is why <a href="../AngouriMath.Functions/PolynomialGcd.html">PolynomialGcd</a> has to<br>            carry the whole subresultant apparatus. Here every coefficient is one machine word<br>            no matter how long the computation runs, so the textbook algorithms are the ones<br>            that are actually used: plain Euclid for the greatest common divisor, plain long<br>            division, square-and-multiply for powers.<br>            </para><para>            That is what makes the field the working surface for factorisation. A polynomial<br>            over the integers is factored by factoring it modulo a prime, where the problem is<br>            finite, and lifting the result back — von zur Gathen and Gerhard,<br>            <i>Modern Computer Algebra</i>, ch. 14, and Knuth, <i>TAOCP</i> vol. 2, §4.6.2.<br>            <a href="../AngouriMath.Functions/PrimeFieldFactorization.html">PrimeFieldFactorization</a> is the first half of that.<br>            </para><para>            Arithmetic is Int64 throughout, and every product of two reduced<br>            coefficients has to fit without overflow. A reduced coefficient is at most<br>            <c>p - 1</c>, an accumulator holds at most another <c>p - 1</c> before the next<br>            reduction, so the largest intermediate is <c>p(p - 1)</c> and the field is bounded<br>            by <a href="../AngouriMath.Functions/PrimeFieldPolynomial/MaxPrime.html">MaxPrime</a> accordingly. Nothing here uses a wider type, because<br>            factorisation moduli are three digits and paying <a href="../PeterO.Numbers/EInteger.html">EInteger</a> for them on<br>            the inner loop would be the wrong trade.<br>            </para><para>            Instances are immutable, and the coefficient array of a live instance is never<br>            written to after construction; the operations all build a fresh array. That is what<br>            lets <a href="../AngouriMath.Functions/PrimeFieldPolynomial/Coefficients.html">Coefficients</a> hand the array out rather than copying it.<br>            </para><para>            The modulus is required to be prime and this does not check it, because a check<br>            costs <c>O(sqrt p)</c> on every construction and every caller inside the library<br>            knows its own modulus. Where a composite one does reach the arithmetic it surfaces<br>            as a failure to invert rather than as a wrong answer, and<br>            <a href="../AngouriMath.Functions/PrimeFieldFactorization/Factor.html">Factor(AngouriMath.Functions.PrimeFieldPolynomial)</a> — the one entry point a modulus could<br>            arrive at from outside — checks primality itself.<br>            </para></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/coefficients.html"><h3 class="yadg-h3 ">coefficients</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/Coefficients.html"><h3 class="yadg-h3 ">Coefficients</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/Create.html"><h3 class="yadg-h3 ">Create&#8203;(System.&#8203;Collections.&#8203;Generic.&#8203;IReadOnlyList{System.&#8203;Int64},&#8203;System.&#8203;Int64)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/Degree.html"><h3 class="yadg-h3 ">Degree</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/Derivative.html"><h3 class="yadg-h3 ">Derivative</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/Divide.html"><h3 class="yadg-h3 ">Divide&#8203;(AngouriMath.&#8203;Functions.&#8203;PrimeFieldPolynomial,&#8203;System.&#8203;Int64[]@,&#8203;System.&#8203;Int64[]@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/Gcd.html"><h3 class="yadg-h3 ">Gcd&#8203;(AngouriMath.&#8203;Functions.&#8203;PrimeFieldPolynomial)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/Inverse.html"><h3 class="yadg-h3 ">Inverse&#8203;(System.&#8203;Int64,&#8203;System.&#8203;Int64)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/IsMonic.html"><h3 class="yadg-h3 ">IsMonic</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/IsSquareFree.html"><h3 class="yadg-h3 ">IsSquareFree</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/MakeMonic.html"><h3 class="yadg-h3 ">MakeMonic</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/MaxPrime.html"><h3 class="yadg-h3 ">MaxPrime</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/Monomial.html"><h3 class="yadg-h3 ">Monomial&#8203;(System.&#8203;Int32,&#8203;System.&#8203;Int64)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/PowMod.html"><h3 class="yadg-h3 ">PowMod&#8203;(PeterO.&#8203;Numbers.&#8203;EInteger,&#8203;AngouriMath.&#8203;Functions.&#8203;PrimeFieldPolynomial)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/Prime.html"><h3 class="yadg-h3 ">Prime</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/Quotient.html"><h3 class="yadg-h3 ">Quotient&#8203;(AngouriMath.&#8203;Functions.&#8203;PrimeFieldPolynomial)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/Remainder.html"><h3 class="yadg-h3 ">Remainder&#8203;(AngouriMath.&#8203;Functions.&#8203;PrimeFieldPolynomial)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/SameAs.html"><h3 class="yadg-h3 ">SameAs&#8203;(AngouriMath.&#8203;Functions.&#8203;PrimeFieldPolynomial)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PrimeFieldPolynomial/Trim.html"><h3 class="yadg-h3 ">Trim&#8203;(System.&#8203;Int64[])</h3></a>Method</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

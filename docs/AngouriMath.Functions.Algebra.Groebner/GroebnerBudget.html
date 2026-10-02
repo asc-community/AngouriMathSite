@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script src="https://buttons.github.io/buttons.js"></script>
@@ -89,7 +88,7 @@
 
 <!--Top end-->
 
-<h2 class="yadg-h2 centered">GroebnerBudget</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Functions.Algebra.Groebner.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            What a Gröbner computation is allowed to spend before it gives up.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>            Buchberger is doubly exponential in the worst case, so declining has to be reachable:<br>            a caller waiting forever is a worse answer than "not this one". Four separate<br>            ceilings because the ways it runs away are not the same — a system can blow up in the<br>            number of pairs, in the size of one polynomial, in the width of the rationals while<br>            everything else stays small, or in none of those while simply taking too long.<br>            Coefficient width is here because it is the one that actually fires: a system has<br>            been seen to give up with 53 pairs and 64 terms and coefficients 188 digits wide,<br>            which no count of pairs or terms would have caught.<br>            </div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "></ul></p>
+<h2 class="yadg-h2 centered">GroebnerBudget</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Functions.Algebra.Groebner.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            What a Gröbner computation is allowed to spend before it gives up.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            Buchberger is doubly exponential in the worst case, so declining has to be reachable:<br>            a caller waiting forever is a worse answer than "not this one". Several separate<br>            ceilings because the ways it runs away are not the same — a system can blow up in the<br>            number of pairs, in the size of one polynomial, in the width of the rationals while<br>            everything else stays small, or in none of those while simply taking too long.<br>            Coefficient width is here because it is the one that actually fires: a system has<br>            been seen to give up with 53 pairs and 64 terms and coefficients 188 digits wide,<br>            which no count of pairs or terms would have caught.<br>            </para><para>            The ceilings below are this algorithm's; the accounting is<br>            <a href="../AngouriMath.Core.Budgets/BudgetLedger.html">BudgetLedger</a>, which every bounded computation shares. That is what<br>            lets the reason survive: a ledger names which ceiling fired and hands that to<br>            <a href="../AngouriMath.Core.Budgets/BudgetRecording.html">BudgetRecording</a>, where the old private budget recorded the same string<br>            and nothing ever read it<br>            (<a href="https://github.com/asc-community/AngouriMath/issues/896">#896</a>).<br>            </para></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./GroebnerBudget/Allow.html"><h3 class="yadg-h3 ">Allow&#8203;(System.&#8203;Boolean,&#8203;System.&#8203;String)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./GroebnerBudget/Default.html"><h3 class="yadg-h3 ">Default</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./GroebnerBudget/Report.html"><h3 class="yadg-h3 ">Report</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./GroebnerBudget/Spend.html"><h3 class="yadg-h3 ">Spend</h3></a>Method</p></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -103,7 +102,7 @@
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1953 pages online
+4377 pages online
 </div>
 </body>
 

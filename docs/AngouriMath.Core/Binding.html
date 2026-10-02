@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Core/Binding</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">Binding</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Core.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            The name a binder is handed, and what that name means inside it.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            Two kinds of name need reading rather than taking as they arrive, and they arrive from<br>            opposite directions. <c>i</c> is the imaginary unit and that is decided in the lexer —<br>            <c>NUMBER: ... | 'i'</c> — so it never reaches the rule that makes variables and is a<br>            number in the name position. <c>e</c> and <c>pi</c> are <a href="../AngouriMath.Entity/Constant.html">Constant</a>s,<br>            which are <a href="../AngouriMath.Entity/Variable.html">Variable</a>s by inheritance and separate objects by identity, so the<br>            name position holds a constant and what is bound must be the variable of that name.<br>            Either way the answer is the same: the binder decides what its name means, once, here.<br>            <a href="https://github.com/asc-community/AngouriMath/issues/976">#976</a>,<br>            <a href="https://github.com/asc-community/AngouriMath/issues/984">#984</a></para><para>            Naming <c>i</c> as the bound name says something about the whole binder, so it is<br>            honoured throughout it — through the summand and the bounds, not only in the name<br>            position. Doing it in the name position alone would be worse than not doing it at all:<br>            the index would become a variable while every <c>i</c> beside it stayed the imaginary<br>            unit, nothing would substitute, and <c>sum(i, i, 1, 10)</c> would answer <c>10i</c>            instead of 55 — a wrong answer in place of an unevaluated one.<br>            </para><para>            Only inside the binder that declares it. <c>sum(i * k, k, 1, 3)</c> is <c>6i</c>, and the<br>            <c>i</c> outside the sum in <c>sum(i, i, 1, 3) + i</c> is still the imaginary unit.<br>            </para><para>            This is a <text class="yadg-text cw">struct</text> holding two fields and it is the whole cost of the<br>            feature where nothing is shadowed: <a href="../AngouriMath.Core/Binding/Of.html">Of(AngouriMath.Entity)</a> is two type tests that both<br>            fail, and <a href="../AngouriMath.Core/Binding/In.html">In(AngouriMath.Entity)</a> hands the expression straight back without walking it.<br>            </para></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./Binding/CanBeWritten.html"><h3 class="yadg-h3 ">CanBeWritten&#8203;(AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./Binding/In.html"><h3 class="yadg-h3 ">In&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./Binding/index.html"><h3 class="yadg-h3 ">index</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./Binding/Name.html"><h3 class="yadg-h3 ">Name</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./Binding/Of.html"><h3 class="yadg-h3 ">Of&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./Binding/Rename.html"><h3 class="yadg-h3 ">Rename&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./Binding/Written.html"><h3 class="yadg-h3 ">Written&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

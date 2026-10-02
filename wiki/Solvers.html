@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script src="https://buttons.github.io/buttons.js"></script>
@@ -135,7 +134,7 @@ Entity expr2 = "2x2 - 3 > 0 or x > 0";
 Console.WriteLine(expr2.Solve("x").Simplify());</code></pre>
 Output:
 <pre><code>(sqrt(6) / 2; +oo)
-(-oo; -1/2 * sqrt(6)) \/ (sqrt(6) / 2; +oo) \/ (0; +oo)</code></pre>
+(-oo; -1/2 * sqrt(6)) \/ (0; +oo)</code></pre>
 The endpoints of a quadratic inequality are written as <text class='cw'>|a|</text>, which is the form that is right
 for either sign of a symbolic coefficient. Where the coefficient is concrete, as here, the
 absolute value folds away.
@@ -215,7 +214,7 @@ Extensions: <text class='cw'>(string, string).Solve(Variable, Variable)</text>, 
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1953 pages online
+4377 pages online
 </div>
 </body>
 

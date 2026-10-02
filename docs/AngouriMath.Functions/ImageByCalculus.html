@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Functions/ImageByCalculus</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">ImageByCalculus</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Functions.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            The image of a set of reals under a quotient of polynomials, <c>{ f(x) : x in S }</c>, read<br>            off the function's critical points and its limits: Sullivan and Mackey's §7.3.5 Try 1,<br>            <c>x/(1 + x)</c> over <c>RR \ {-1}</c>, is <c>RR \ {1}</c>, and Prob 7.8.8's<br>            <c>(2x - 1)/(2x (1 - x))</c> over <c>(0, 1)</c> is <c>RR</c>.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            A continuous function maps an interval onto an interval, and a differentiable one is<br>            monotone between the zeros of its derivative, so the image of an interval without a pole is<br>            the interval between the least and the greatest of the values at the critical points inside<br>            it, the values at its closed ends and the one-sided limits at its open ones. An end of the<br>            image is closed where the value is taken, at a critical point or a closed end, and open<br>            where it is only approached. The set is cut into such intervals first: at the points a<br>            difference removes, and at the poles, where the function is not defined.<br>            </para><para>            The derivative's zeros have to be all of them, or a turning point is missed and the image<br>            comes out too small. So the numerator of the derivative, and the denominator whose zeros<br>            are the poles, have to be polynomials of degree four or less, which the solver answers in<br>            radicals completely; the coefficients have to be rational, so that a coefficient which<br>            cancels is zero rather than a residue; and every root has to evaluate, a real one to a<br>            candidate and a non-real one to nothing. A real root can come out of the radicals with an<br>            imaginary residue near <c>1e-99</c>, which is read as zero below the downcasting tolerance<br>            whether downcasting is on or not.<br>            </para>            https://github.com/asc-community/AngouriMath/issues/1409<br>            </div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/AsReal.html"><h3 class="yadg-h3 ">AsReal&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/At.html"><h3 class="yadg-h3 ">At&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity,&#8203;System.&#8203;Boolean,&#8203;AngouriMath.&#8203;Core.&#8203;ApproachFrom)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/Between.html"><h3 class="yadg-h3 ">Between&#8203;(AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/CutAt.html"><h3 class="yadg-h3 ">CutAt&#8203;(AngouriMath.&#8203;Entity.&#8203;Set.&#8203;Interval,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;List{System.&#8203;ValueTuple{AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real}})</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/End.html"><h3 class="yadg-h3 ">End&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real,&#8203;System.&#8203;Boolean,&#8203;AngouriMath.&#8203;Core.&#8203;ApproachFrom)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/Extremes.html"><h3 class="yadg-h3 ">Extremes&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity.&#8203;Set.&#8203;Interval)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/Family.html"><h3 class="yadg-h3 ">Family&#8203;(System.&#8203;Boolean,&#8203;AngouriMath.&#8203;Entity.&#8203;Set.&#8203;Interval,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/IsRational.html"><h3 class="yadg-h3 ">IsRational&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/Lowest.html"><h3 class="yadg-h3 ">Lowest&#8203;(AngouriMath.&#8203;Entity.&#8203;Set)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/MaxDegree.html"><h3 class="yadg-h3 ">MaxDegree</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/MaxExponent.html"><h3 class="yadg-h3 ">MaxExponent</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/Monotone.html"><h3 class="yadg-h3 ">Monotone&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/NeverEmpty.html"><h3 class="yadg-h3 ">NeverEmpty&#8203;(AngouriMath.&#8203;Entity.&#8203;Set.&#8203;Interval,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity.&#8203;Set.&#8203;Interval)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/Of.html"><h3 class="yadg-h3 ">Of&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity.&#8203;Set.&#8203;Interval,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;List{System.&#8203;ValueTuple{AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real}})</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/OneToOne.html"><h3 class="yadg-h3 ">OneToOne&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/Pieces.html"><h3 class="yadg-h3 ">Pieces&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/Polynomial.html"><h3 class="yadg-h3 ">Polynomial&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/Range.html"><h3 class="yadg-h3 ">Range&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/RealRoots.html"><h3 class="yadg-h3 ">RealRoots&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./ImageByCalculus/Same.html"><h3 class="yadg-h3 ">Same&#8203;(AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real)</h3></a>Method</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

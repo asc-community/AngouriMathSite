@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Core.Compilation.IntoLinq/TensorCompilation</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">TensorCompilation</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Core.Compilation.IntoLinq.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            How a matrix and the arithmetic on it compile: a <a href="../AngouriMath.Entity/Matrix.html">Matrix</a> node becomes<br>            a <a href="../GenericTensor.Core/GenTensor`2.html">GenTensor`2</a> over its elements' common type, filled element by<br>            element from the compiled elements, and a sum, difference, product, quotient or power<br>            with a matrix in it becomes the tensor operation of the same name -- <c>PiecewiseAdd</c>,<br>            <c>MatrixMultiply</c>, <c>PiecewiseMultiply</c> by a scalar, <c>MatrixPower</c> -- so<br>            that the compiled delegate runs GenericTensor's arithmetic rather than a tree of scalar<br>            operations.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>            The methods the compiled tree calls are the public generic ones below, closed over each<br>            element type at compile time in the kit for that type and named through expression<br>            trees, the way <a href="../AngouriMath.Core.Compilation.IntoLinq/CompilationProtocol.html">CompilationProtocol</a> keeps its own tables: no generic type or<br>            method is constructed at run time, which a trimmed or NativeAOT build could not do.<br>            https://github.com/asc-community/AngouriMath/issues/363<br>            https://github.com/asc-community/AngouriMath/issues/526<br>            </div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./TensorCompilation/Add.html"><h3 class="yadg-h3 ">Add&#8203;(GenericTensor.&#8203;Core.&#8203;GenTensor{``0,&#8203;``1},&#8203;GenericTensor.&#8203;Core.&#8203;GenTensor{``0,&#8203;``1})</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./TensorCompilation/AddScalar.html"><h3 class="yadg-h3 ">AddScalar&#8203;(GenericTensor.&#8203;Core.&#8203;GenTensor{``0,&#8203;``1},&#8203;``0)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./TensorCompilation/Binary.html"><h3 class="yadg-h3 ">Binary&#8203;(AngouriMath.&#8203;Entity,&#8203;System.&#8203;Linq.&#8203;Expressions.&#8203;Expression,&#8203;System.&#8203;Linq.&#8203;Expressions.&#8203;Expression,&#8203;System.&#8203;Func{System.&#8203;Linq.&#8203;Expressions.&#8203;Expression,&#8203;System.&#8203;Type,&#8203;System.&#8203;Linq.&#8203;Expressions.&#8203;Expression})</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./TensorCompilation/Build.html"><h3 class="yadg-h3 ">Build&#8203;(AngouriMath.&#8203;Entity.&#8203;Matrix,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;IReadOnlyList{System.&#8203;Linq.&#8203;Expressions.&#8203;Expression})</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./TensorCompilation/DivideFromScalar.html"><h3 class="yadg-h3 ">DivideFromScalar&#8203;(``0,&#8203;GenericTensor.&#8203;Core.&#8203;GenTensor{``0,&#8203;``1})</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./TensorCompilation/DivideScalar.html"><h3 class="yadg-h3 ">DivideScalar&#8203;(GenericTensor.&#8203;Core.&#8203;GenTensor{``0,&#8203;``1},&#8203;``0)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./TensorCompilation/Empty.html"><h3 class="yadg-h3 ">Empty&#8203;(System.&#8203;Int32,&#8203;System.&#8203;Int32)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./TensorCompilation/Multiply.html"><h3 class="yadg-h3 ">Multiply&#8203;(GenericTensor.&#8203;Core.&#8203;GenTensor{``0,&#8203;``1},&#8203;GenericTensor.&#8203;Core.&#8203;GenTensor{``0,&#8203;``1})</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./TensorCompilation/MultiplyScalar.html"><h3 class="yadg-h3 ">MultiplyScalar&#8203;(GenericTensor.&#8203;Core.&#8203;GenTensor{``0,&#8203;``1},&#8203;``0)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./TensorCompilation/Power.html"><h3 class="yadg-h3 ">Power&#8203;(GenericTensor.&#8203;Core.&#8203;GenTensor{``0,&#8203;``1},&#8203;System.&#8203;Int32)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./TensorCompilation/Set.html"><h3 class="yadg-h3 ">Set&#8203;(GenericTensor.&#8203;Core.&#8203;GenTensor{``0,&#8203;``1},&#8203;System.&#8203;Int32,&#8203;``0)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./TensorCompilation/Subtract.html"><h3 class="yadg-h3 ">Subtract&#8203;(GenericTensor.&#8203;Core.&#8203;GenTensor{``0,&#8203;``1},&#8203;GenericTensor.&#8203;Core.&#8203;GenTensor{``0,&#8203;``1})</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./TensorCompilation/SubtractFromScalar.html"><h3 class="yadg-h3 ">SubtractFromScalar&#8203;(``0,&#8203;GenericTensor.&#8203;Core.&#8203;GenTensor{``0,&#8203;``1})</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./TensorCompilation/SubtractScalar.html"><h3 class="yadg-h3 ">SubtractScalar&#8203;(GenericTensor.&#8203;Core.&#8203;GenTensor{``0,&#8203;``1},&#8203;``0)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./TensorCompilation/TensorTypeOf.html"><h3 class="yadg-h3 ">TensorTypeOf&#8203;(System.&#8203;Type)</h3></a>Method</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

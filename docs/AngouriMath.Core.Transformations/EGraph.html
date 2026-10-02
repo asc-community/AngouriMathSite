@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Core.Transformations/EGraph</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">EGraph</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Core.Transformations.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            An e-graph: e-classes over a union-find, e-nodes keyed by operator, child class and<br>            non-default codomain, hash-consed. The codomain is in the key because an e-class is an<br>            equality claim and a codomain is something two unequal entities can differ in.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><a href="https://github.com/asc-community/AngouriMath/issues/746">#746</a> tier 2's e-graph,<br>            moved from the <c>work/egraph</c> measurement harness into the library once the harness had<br>            answered what it was built to answer — see that harness's own report for the measurement<br>            this design rests on.<br>            </div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/Add.html"><h3 class="yadg-h3 ">Add&#8203;(System.&#8203;String,&#8203;System.&#8203;Int32[])</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/AddEntity.html"><h3 class="yadg-h3 ">AddEntity&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/ClassCount.html"><h3 class="yadg-h3 ">ClassCount</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/Classes.html"><h3 class="yadg-h3 ">Classes</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/ConstantClass.html"><h3 class="yadg-h3 ">ConstantClass&#8203;(AngouriMath.&#8203;Core.&#8203;Transformations.&#8203;ENode)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/ContainsLeaf.html"><h3 class="yadg-h3 ">ContainsLeaf&#8203;(System.&#8203;Int32,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/EulerIntrinsicKey.html"><h3 class="yadg-h3 ">EulerIntrinsicKey</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/Extract.html"><h3 class="yadg-h3 ">Extract&#8203;(System.&#8203;Int32,&#8203;System.&#8203;Func{AngouriMath.&#8203;Entity,&#8203;System.&#8203;Double})</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/ExtractAll.html"><h3 class="yadg-h3 ">ExtractAll&#8203;(``0)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/ExtractLeast.html"><h3 class="yadg-h3 ">ExtractLeast&#8203;(System.&#8203;Int32,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;IComparer{AngouriMath.&#8203;Entity})</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/Find.html"><h3 class="yadg-h3 ">Find&#8203;(System.&#8203;Int32)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/FoldableOps.html"><h3 class="yadg-h3 ">FoldableOps</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/Key.html"><h3 class="yadg-h3 ">Key&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/LargestFoldedExponent.html"><h3 class="yadg-h3 ">LargestFoldedExponent</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/Leaf.html"><h3 class="yadg-h3 ">Leaf&#8203;(System.&#8203;String)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/leafEntities.html"><h3 class="yadg-h3 ">leafEntities</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/NeutralClass.html"><h3 class="yadg-h3 ">NeutralClass&#8203;(AngouriMath.&#8203;Core.&#8203;Transformations.&#8203;ENode)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/neutralFolds.html"><h3 class="yadg-h3 ">neutralFolds</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/NeutralFolds.html"><h3 class="yadg-h3 ">NeutralFolds</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/NeutralLeaves.html"><h3 class="yadg-h3 ">NeutralLeaves</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/NodeCount.html"><h3 class="yadg-h3 ">NodeCount</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/NodesOf.html"><h3 class="yadg-h3 ">NodesOf&#8203;(System.&#8203;Int32)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/OperatorType.html"><h3 class="yadg-h3 ">OperatorType&#8203;(System.&#8203;String)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/ParseLeaf.html"><h3 class="yadg-h3 ">ParseLeaf&#8203;(System.&#8203;String)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/RationalOf.html"><h3 class="yadg-h3 ">RationalOf&#8203;(System.&#8203;Int32)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/Rebuild.html"><h3 class="yadg-h3 ">Rebuild</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/RuntimeType.html"><h3 class="yadg-h3 ">RuntimeType&#8203;(AngouriMath.&#8203;Core.&#8203;Transformations.&#8203;ENode)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./EGraph/Union.html"><h3 class="yadg-h3 ">Union&#8203;(System.&#8203;Int32,&#8203;System.&#8203;Int32)</h3></a>Method</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

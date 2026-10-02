@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Numerics/SpecialFunctions</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">SpecialFunctions</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Numerics.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            The special functions in double precision: <c>erf</c>, <c>erfc</c>, <c>erfi</c>, <c>Ei</c>,<br>            <c>li</c>, <c>Si</c>, <c>Ci</c>, <c>Shi</c> and <c>Chi</c>. Both compilers call them, and they<br>            sit beside the numerical evaluation so that its fast tier can take them up too.<br>            The interpreter's kernels, <a href="../AngouriMath.Entity/Number/Erf.html">Erf(AngouriMath.Entity.Number.Complex)</a> and the<br>            others, work in arbitrary precision. At 20 digits they take 0.7 to 5.5 ms a call. Newton's<br>            method makes thousands of calls. These take a microsecond or two.<br>            https://github.com/asc-community/AngouriMath/issues/1607<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            Each is the kernel's function, with the kernel's branch cuts and the kernel's values on the<br>            axes. They were measured against the kernels at 30 digits on some ten thousand points: a<br>            grid of <c>[-14, 14]^2</c>, both axes out to 40 and down to <c>1e-4</c>, either side of the<br>            negative real axis, and circles out to 300. The integrals agree to within <c>6e-14</c> of the<br>            value. The error functions agree to within <c>3e-13</c>, which is the rounding of<br>            <c>z^2</c> in their <c>e^(-z^2)</c> where <c>|z|</c> is large. An imaginary part of<br>            either sign of zero is read as the axis, as the kernels read it.<br>            </para><para>            The error functions come from the Faddeeva function<br>            <c>w(z) = e^(-z^2) erfc(-i z)</c>, by Weideman's rational approximation with 40 terms<br>            (J. A. C. Weideman, <i>Computation of the complex error function</i>, SIAM J. Numer. Anal.<br>            31, 1994), and near the origin from the Taylor series of <c>erf</c>.<br>            </para><para><c>Ei</c> is summed as its series where the terms cancel little, which is where<br>            <c>|z| - Re z</c> is at most 3 or <c>|z|</c> at most 2. Out to <c>|z| = 40</c> it is<br>            <c>-E1(-z)</c> otherwise, by <c>E1</c>'s continued fraction, plus the branch term. From<br>            40 on it is the asymptotic series. <c>li</c> is <c>Ei</c> of the logarithm. <c>Shi</c> and<br>            <c>Chi</c> are summed as their own series by the same rule with <c>|Re z|</c>, and<br>            otherwise come from <c>Ei(z)</c> and <c>Ei(-z)</c>. <c>Si</c> and <c>Ci</c> are those at<br>            <c>i z</c>. Every relation is one the kernels state.<br>            </para></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/Branch.html"><h3 class="yadg-h3 ">Branch&#8203;(System.&#8203;Numerics.&#8203;Complex)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/E1ByTheContinuedFraction.html"><h3 class="yadg-h3 ">E1ByTheContinuedFraction&#8203;(System.&#8203;Numerics.&#8203;Complex)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/Ei.html"><h3 class="yadg-h3 ">Ei&#8203;(System.&#8203;Numerics.&#8203;Complex)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/EiByTheAsymptoticSeries.html"><h3 class="yadg-h3 ">EiByTheAsymptoticSeries&#8203;(System.&#8203;Numerics.&#8203;Complex)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/ErfByTheSeries.html"><h3 class="yadg-h3 ">ErfByTheSeries&#8203;(System.&#8203;Numerics.&#8203;Complex)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/Erfi.html"><h3 class="yadg-h3 ">Erfi&#8203;(System.&#8203;Numerics.&#8203;Complex)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/ExponentialSeries.html"><h3 class="yadg-h3 ">ExponentialSeries&#8203;(System.&#8203;Numerics.&#8203;Complex)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/ExpTimes.html"><h3 class="yadg-h3 ">ExpTimes&#8203;(System.&#8203;Numerics.&#8203;Complex,&#8203;System.&#8203;Numerics.&#8203;Complex)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/Factorial.html"><h3 class="yadg-h3 ">Factorial&#8203;(System.&#8203;Numerics.&#8203;Complex)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/factorials.html"><h3 class="yadg-h3 ">factorials</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/Faddeeva.html"><h3 class="yadg-h3 ">Faddeeva&#8203;(System.&#8203;Numerics.&#8203;Complex)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/Gamma.html"><h3 class="yadg-h3 ">Gamma&#8203;(System.&#8203;Numerics.&#8203;Complex)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/Half.html"><h3 class="yadg-h3 ">Half&#8203;(System.&#8203;Numerics.&#8203;Complex)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/HalfOfTheExponentialSeries.html"><h3 class="yadg-h3 ">HalfOfTheExponentialSeries&#8203;(System.&#8203;Numerics.&#8203;Complex,&#8203;System.&#8203;Boolean)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/HyperbolicIntegral.html"><h3 class="yadg-h3 ">HyperbolicIntegral&#8203;(System.&#8203;Numerics.&#8203;Complex,&#8203;System.&#8203;Boolean)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/Li.html"><h3 class="yadg-h3 ">Li&#8203;(System.&#8203;Numerics.&#8203;Complex)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/Ln.html"><h3 class="yadg-h3 ">Ln&#8203;(System.&#8203;Numerics.&#8203;Complex)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/LogGamma.html"><h3 class="yadg-h3 ">LogGamma&#8203;(System.&#8203;Numerics.&#8203;Complex)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/LogSine.html"><h3 class="yadg-h3 ">LogSine&#8203;(System.&#8203;Numerics.&#8203;Complex)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/OnTheAxes.html"><h3 class="yadg-h3 ">OnTheAxes&#8203;(System.&#8203;Numerics.&#8203;Complex,&#8203;System.&#8203;Numerics.&#8203;Complex,&#8203;System.&#8203;Boolean)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/Phi.html"><h3 class="yadg-h3 ">Phi&#8203;(System.&#8203;Numerics.&#8203;Complex)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/RealOrNaN.html"><h3 class="yadg-h3 ">RealOrNaN&#8203;(System.&#8203;Numerics.&#8203;Complex)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./SpecialFunctions/weideman.html"><h3 class="yadg-h3 ">weideman</h3></a>Field</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

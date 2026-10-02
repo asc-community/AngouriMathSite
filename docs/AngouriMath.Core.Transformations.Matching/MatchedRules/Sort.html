@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Core.Transformations.Matching/MatchedRules/Sort</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../../">Home</a>
+<a href="../../../quickstart">Quick start</a>
+<a href="../../../wiki">Wiki</a>
+<a href="../../../docs/namespaces.html">Almanac</a>
+<a href="../../../research">Research</a>
+<a href="../../../whatsnew">What's new</a>
+<a href="../../../demo">Try</a>
+<a href="../../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<p class="yadg-p "><a href="../../AngouriMath.Core.Transformations.Matching/MatchedRules.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Sort&#8203;(AngouriMath.&#8203;Functions.&#8203;TreeAnalyzer.&#8203;SortLevel)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'><a href="../AngouriMath.Functions/Patterns/SortRules.html">SortRules(AngouriMath.Functions.TreeAnalyzer.SortLevel)</a>, as data — one set per sort level.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para><b>The first set here that is parameterised by something other than the expression.</b>            A <c>switch</c> takes that as a second argument and closes over it; a set of rules<br>            closes over it too, but the set itself then has to be built per value rather than<br>            declared once.<br>            </para><para><b>And it is not wired, because the exchange is not free here — measured, and<br>            re-measured.</b> The three canonical orders are the <i>normalisation</i>: they run on<br>            every node of every simplification pass, where every other set fires on a shape.<br>            </para><para>            The figure first recorded here was <b>+48% of <c>SimplifyEasy</c></b>, which the<br>            kernel gate reported as 4.14x on a shared runner. <b>That number has since stopped<br>            being true</b>, and it was only ever a statement about the matcher of the day: with<br>            bounded matching (<a href="https://github.com/asc-community/AngouriMath/issues/1079">#1079</a>)<br>            and rules indexed by node type (#1085) the same wiring measures <b>+13.3%</b> —<br>            97,048 ns to 109,968 ns on the repository's own benchmark, with allocation +0.28% and<br>            inside the gate's band. The decision is unchanged and the reason for it is a third of<br>            what it was.<br>            </para><para>            What is left is not dispatch across the rules. Every rule here is typed —<br>            <c>Any&lt;Sumf&gt;</c>, <c>Any&lt;Mulf&gt;</c> — so the index tries one or two of them<br>            at a node, not seven. It is the layer itself: a rule is a match that binds a name and<br>            a delegate that reads it back, where a <c>switch</c> arm is a type test and a call.<br>            Everywhere else that layer buys something — a pattern that says what the rewrite is,<br>            reversible, addressable. Here every rule is <i>a type test and a call already</i>, so<br>            there is nothing for it to buy. <b>That is the boundary, and it is about what a rule<br>            is rather than about where it runs.</b></para><para>            Giving each rule a concrete root type instead of a predicate over<br>            <c>Any&lt;Entity&gt;</c> was tried when the figure was 48%, on the reading that a hole<br>            typed <c>Entity</c> matches every node before its predicate is consulted. It moved<br>            +52% to +48%, so that was not the cost either.<br>            </para><para>            So this stays here, proven to agree with the <c>switch</c> at every level, and the<br>            <c>switch</c> keeps running. It is the one set where the answer to "should this be<br>            data?" is no, and the reason is a number rather than a preference — a number that has<br>            to be re-measured when the matcher changes, since it already has been once.<br>            </para><para>            Every rule is a bare type test with the whole node bound, which is a typed hole — and<br>            two of the seven test <i>two</i> types, a sum being either <c>Sumf</c> or<br>            <c>Minusf</c> and a product either <c>Mulf</c> or <c>Divf</c>, which is the predicate<br>            on a hole again. All seven replacements are code: sorting a chain is not a tree<br>            written down.<br>            </para></div></p></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

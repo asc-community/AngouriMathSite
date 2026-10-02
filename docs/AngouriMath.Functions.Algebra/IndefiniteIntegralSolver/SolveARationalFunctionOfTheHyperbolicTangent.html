@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveARationalFunctionOfTheHyperbolicTangent</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../../">Home</a>
+<a href="../../../quickstart">Quick start</a>
+<a href="../../../wiki">Wiki</a>
+<a href="../../../docs/namespaces.html">Almanac</a>
+<a href="../../../research">Research</a>
+<a href="../../../whatsnew">What's new</a>
+<a href="../../../demo">Try</a>
+<a href="../../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<p class="yadg-p "><a href="../../AngouriMath.Functions.Algebra/IndefiniteIntegralSolver.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">SolveARationalFunctionOfTheHyperbolicTangent&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;System.&#8203;Boolean)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            An integrand that is a rational function of <c>tanh(y)</c> -- of <c>e^(2y)</c>, that<br>            is, even as a function of <c>v = e^y</c> -- with a symbol among its coefficients,<br>            integrated by <c>u = tanh(y)</c>: <c>e^(2y)</c> is <c>(1 + u)/(1 - u)</c> exactly and<br>            <c>dx</c> is <c>du/((1 - u^2) d)</c>, so the integrand is a rational function of<br>            <c>u</c> with the written factors kept -- <c>a + b coth(y)^2</c> is<br>            <c>(b + a u^2)/u^2</c> -- and roots of such functions are admitted as they are.<br>            Failing evenness, the half of <c>y</c>: every <c>e^(k y)</c> is <c>v^(2k)</c> for<br>            <c>v = e^(y/2)</c>, and the substitution is <c>u = tanh(y/2)</c>, the hyperbolic<br>            half-angle.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            Under <c>u = e^x</c>, Rubi's <c>1/(a + b coth(x)^2)^2</c> is a rational function of the<br>            palindromic quartic <c>(a + b) u^4 + 2(b - a) u^2 + (a + b)</c> squared, whose roots<br>            are what the budget went on -- fifty-seven of the four hundred and seventeen in the<br>            hyperbolic sample were this; here it is <c>u^4/((b + a u^2)^2 (1 - u^2))</c>, which<br>            the symbolic partial fractions answer. Rubi's route for the hyperbolic tangent,<br>            cotangent, secant and cosecant families. With rational coefficients the exponential<br>            substitution's quartics are factored over the rationals and answered, and are left<br>            to it. Before the substitution search, which with a symbolic slope spends the whole<br>            budget on <c>u = c + d x</c> and never returns here.<br>            </para><para><b>How the written factors survive.</b> Each maximal rational function of <c>v</c>            among the factors, powers and radicands -- and not the whole quotient -- is read as<br>            <c>v^m R(s)</c> with <c>s = v^2</c> and <c>m</c> either 0 or 1, which every rational<br>            function even or odd in <c>v</c> is, and homogenised on its own: <c>P(s)/Q(s)</c> as<br>            the polynomials <c>sum p_i (1 + u)^i (1 - u)^(d - i)</c> over the same for <c>Q</c>,<br>            with the powers of <c>1 - u</c> and <c>1 + u</c> both share divided out; the<br>            conjugate that <a href="../AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByHyperbolicTangentSubstitution.html">SolveByHyperbolicTangentSubstitution(AngouriMath.Entity,AngouriMath.Entity.Variable,System.Boolean)</a> clears its root<br>            with squares every degree, and left this integrand a quotient of degree sixteen<br>            whose common factor only a gcd over the symbols would find. The stray <c>v</c>'s<br>            cancel in an even integrand -- <c>sech(x)^4</c> is <c>(2v/(s + 1))^4</c> -- and one<br>            left over at the top is an odd integrand, which the half of <c>y</c> takes.<br>            </para>            https://github.com/asc-community/AngouriMath/issues/718<br>            </div></p></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

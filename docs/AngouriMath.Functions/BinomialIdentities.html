@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Functions/BinomialIdentities</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">BinomialIdentities</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Functions.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            The binomial sums of chapter 8 of Sullivan and Mackey's <i>An Introduction to Proofs</i>            that are not the binomial theorem itself, in closed form: a polynomial in the index<br>            beside the coefficient (Prop 8.4.4, <c>sum(k binomial(n, k), k, 0, n)</c> is<br>            <c>n 2^(n - 1)</c>), Vandermonde's convolution (Prob 8.9.16,<br>            <c>sum(binomial(a, i) binomial(b, k - i), i, 0, k)</c> is <c>binomial(a + b, k)</c>) and<br>            its square case (Prob 8.9.34, <c>sum(binomial(n, k)^2, k, 0, n)</c> is<br>            <c>binomial(2n, n)</c>), the summation identity (Thm 8.4.6,<br>            <c>sum(binomial(i, k), i, 0, n)</c> is <c>binomial(n + 1, k + 1)</c>), the sums over<br>            the even or the odd indices (Ex 8.3.11, each <c>2^(n - 1)</c> for <c>n &gt;= 1</c>), the<br>            trinomial revision summed (Prob 8.9.15, <c>sum(binomial(n, i) binomial(n - i, k - i), i, 0, k)</c>            is <c>2^k binomial(n, k)</c>, and §8.4.5's <c>sum(binomial(n, i) binomial(i, k), i, k, n)</c>,<br>            <c>2^(n - k) binomial(n, k)</c>), the parallel summation (Prob 8.9.19,<br>            <c>sum(binomial(r + i, i), i, 0, n)</c> is <c>binomial(r + n + 1, n)</c>) and Vandermonde along<br>            the upper indices (Prob 8.9.18, <c>sum(binomial(j, a) binomial(m - j, b), j, 0, m)</c> is<br>            <c>binomial(m + 1, a + b + 1)</c>).<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para><b>A polynomial beside the coefficient</b> is read in the falling factorial basis,<br>            <c>k^m = sum_j S(m, j) k (k - 1) ... (k - j + 1)</c> with the Stirling numbers of the second<br>            kind, because <c>k (k - 1) ... (k - j + 1) binomial(n, k)</c> is<br>            <c>n (n - 1) ... (n - j + 1) binomial(n - j, k - j)</c> -- the chairperson identity<br>            applied <c>j</c> times -- so <c>sum_k k^(j falling) binomial(n, k) x^k y^(n - k)</c> is<br>            <c>n^(j falling) x^j (x + y)^(n - j)</c> by the binomial theorem on what is left. Exact for<br>            every whole <c>n &gt;= 0</c> and every <c>x</c>, <c>y</c>; the empty range below zero is<br>            the piecewise <a href="../AngouriMath.Functions/PolynomialSummation.html">PolynomialSummation</a> attaches.<br>            </para><para><b>Vandermonde</b> holds as an identity in <c>a</c> and <c>b</c> for whole <c>a, b &gt;= 0</c>            and a whole <c>k &gt;= 0</c>, the terms outside <c>0 &lt;= i &lt;= min(a, k)</c> being zero, so the<br>            range may be written to <c>k</c>, to <c>a</c>, or to <c>b</c> where the second coefficient<br>            is <c>binomial(b, k - i)</c>. The square is the case <c>a = b = k = n</c> with<br>            <c>binomial(n, k) = binomial(n, n - k)</c>. The summation identity is Pascal's rule<br>            telescoped. Part of <a href="https://github.com/asc-community/AngouriMath/issues/1409">#1409</a>.<br>            </para></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BinomialIdentities/Linear.html"><h3 class="yadg-h3 ">Linear&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;System.&#8203;Int32@,&#8203;AngouriMath.&#8203;Entity@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BinomialIdentities/OverTheEvenOrTheOddIndices.html"><h3 class="yadg-h3 ">OverTheEvenOrTheOddIndices&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BinomialIdentities/ParallelSummation.html"><h3 class="yadg-h3 ">ParallelSummation&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BinomialIdentities/PolynomialBesideTheCoefficient.html"><h3 class="yadg-h3 ">PolynomialBesideTheCoefficient&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BinomialIdentities/Ranged.html"><h3 class="yadg-h3 ">Ranged&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BinomialIdentities/Same.html"><h3 class="yadg-h3 ">Same&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BinomialIdentities/StirlingSecondKind.html"><h3 class="yadg-h3 ">StirlingSecondKind&#8203;(System.&#8203;Int32)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BinomialIdentities/SubsetsOfASubset.html"><h3 class="yadg-h3 ">SubsetsOfASubset&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BinomialIdentities/SummationIdentity.html"><h3 class="yadg-h3 ">SummationIdentity&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BinomialIdentities/Tidy.html"><h3 class="yadg-h3 ">Tidy&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BinomialIdentities/TrinomialRevision.html"><h3 class="yadg-h3 ">TrinomialRevision&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BinomialIdentities/UpperVandermonde.html"><h3 class="yadg-h3 ">UpperVandermonde&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BinomialIdentities/Vandermonde.html"><h3 class="yadg-h3 ">Vandermonde&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Core.Budgets/BudgetLedger</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">BudgetLedger</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Core.Budgets.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            The accounting side of a <a href="../AngouriMath.Core.Budgets/WorkBudget.html">WorkBudget</a>: what has been spent so far, and<br>            what stopped the computation if anything has.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para><b>Mutable, and single-flow, on purpose.</b> The limits are an immutable value so<br>            that they can be shared; the drawing-down is one object mutated in program order.<br>            The alternative — threading a remaining count through as an immutable value — has to<br>            <i>split</i> the count at every branch of a search, and there is no right split: an<br>            even one starves the branch that needed the work, giving it all to the first starves<br>            the rest, and a branch that fails then needs a protocol for handing back what it did<br>            not spend. A single ledger drawn down in program order needs none of that, is exactly<br>            reproducible as long as the algorithm's own order is defined — which<br>            <a href="https://github.com/asc-community/AngouriMath/issues/746">#746</a>'s third<br>            design principle requires anyway — and bounds the search as a whole rather than each<br>            branch of it, which is the difference between a bound and a suggestion.<br>            </para><para><b>A subgoal inherits the ledger rather than getting one.</b> Passing the same object<br>            down is what makes a call bounded end to end. Giving each stage a budget of its own<br>            bounds each stage and leaves the whole unbounded, which is how<br>            <a href="https://github.com/asc-community/AngouriMath/issues/896">#896</a> arose:<br>            the same call is bounded or not depending on which internal path accepted it, and<br>            that is worse to debug than either extreme.<br>            </para><para><b>Honouring is cooperative, so no thread is involved.</b> The algorithm asks —<br>            <a href="../AngouriMath.Core.Budgets/BudgetLedger/Spend.html">Spend(System.Int64)</a> before doing a unit of work, <a href="../AngouriMath.Core.Budgets/BudgetLedger/Require.html">Require(System.Boolean,System.String)</a> before letting<br>            a structure grow — and declines when told to. Nothing is interrupted, nothing is<br>            aborted, and there is no second thread to make the answer depend on scheduling. The<br>            cost is that an algorithm which does not ask cannot be bounded, which is the honest<br>            trade: a bound that is enforced from outside is a thread abort, and a thread abort in<br>            the middle of a rewrite leaves no answer worth having.<br>            </para><para><b>The first ceiling to fire is the one reported.</b> Once one has, every subsequent<br>            question answers "no" without re-testing, so the reason cannot be overwritten by<br>            whatever the algorithm happened to ask next on its way out.<br>            </para></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BudgetLedger/Exhausted.html"><h3 class="yadg-h3 ">Exhausted</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BudgetLedger/For.html"><h3 class="yadg-h3 ">For&#8203;(System.&#8203;String,&#8203;AngouriMath.&#8203;Core.&#8203;Budgets.&#8203;WorkBudget)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BudgetLedger/Outcome.html"><h3 class="yadg-h3 ">Outcome</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BudgetLedger/Report.html"><h3 class="yadg-h3 ">Report</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BudgetLedger/Require.html"><h3 class="yadg-h3 ">Require&#8203;(System.&#8203;Boolean,&#8203;System.&#8203;String)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BudgetLedger/Spend.html"><h3 class="yadg-h3 ">Spend&#8203;(System.&#8203;Int64)</h3></a>Method</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

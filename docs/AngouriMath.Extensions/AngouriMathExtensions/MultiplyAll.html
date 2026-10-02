@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script src="https://buttons.github.io/buttons.js"></script>
@@ -89,7 +88,10 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath.Extensions/AngouriMathExtensions.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">MultiplyAll&#8203;(System.&#8203;Collections.&#8203;Generic.&#8203;IEnumerable{AngouriMath.&#8203;Entity})</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Multiplies all the given terms and returns the resulting expression<br>            new Entity[]{ 1, 2, 3 }.MultiplyAll() -&gt; "1 * 2 * 3"<br>            </div></p></p>
+<p class="yadg-p "><a href="../../AngouriMath.Extensions/AngouriMathExtensions.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">MultiplyAll&#8203;(System.&#8203;Collections.&#8203;Generic.&#8203;IEnumerable{AngouriMath.&#8203;Entity})</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Multiplies all the given terms and returns the resulting expression<br>            new Entity[]{ 1, 2, 3 }.MultiplyAll() -&gt; "1 * 2 * 3"<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">var factorial = Enumerable.Range(1, 5).Select(i =&gt; (Entity)i).MultiplyAll();
+Console.WriteLine(factorial);
+Console.WriteLine(factorial.EvalNumerical());</code></pre><br>            Prints<br>            <pre><code class="language-cs">1 * 2 * 3 * 4 * 5
+120</code></pre></div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>            The empty product is <c>1</c>, for the reason the empty sum is <c>0</c> — see<br>            <a href="../AngouriMath.Extensions/AngouriMathExtensions/SumAll.html">SumAll(System.Collections.Generic.IEnumerable{AngouriMath.Entity})</a>.<br>            </div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -103,7 +105,7 @@
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1953 pages online
+4377 pages online
 </div>
 </body>
 

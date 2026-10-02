@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Core/CostModel/#ctor</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../../">Home</a>
+<a href="../../../quickstart">Quick start</a>
+<a href="../../../wiki">Wiki</a>
+<a href="../../../docs/namespaces.html">Almanac</a>
+<a href="../../../research">Research</a>
+<a href="../../../whatsnew">What's new</a>
+<a href="../../../demo">Try</a>
+<a href="../../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<p class="yadg-p "><a href="../../AngouriMath.Core/CostModel.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">#ctor&#8203;(System.&#8203;String,&#8203;System.&#8203;String,&#8203;System.&#8203;Func{AngouriMath.&#8203;Entity,&#8203;System.&#8203;Double})</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            What "simpler" means, as a named value rather than as an anonymous function.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para><a href="../AngouriMath.MathS/Settings/ComplexityCriteria.html">ComplexityCriteria</a> has always accepted any<br>            Func`2, so the cost of an expression was already the caller's<br>            to choose. What it could not do is be <i>named</i>: two callers wanting "the smallest tree"<br>            each wrote the same lambda, neither could say which one they used, and nothing could list<br>            what the alternatives are. <a href="https://github.com/asc-community/AngouriMath/issues/746">#746</a>            v2.0 asks for a cost model that is data for exactly that reason, and names the examples —<br>            smallest tree, fewest radicals — that <a href="../AngouriMath.Core/CostModel/All.html">All</a> now holds.<br>            </para><para><b>A model counts one of two things, and which one decides what it may read.</b><a href="../AngouriMath.Core/CostModel/SmallestTree.html">SmallestTree</a> and <a href="../AngouriMath.Core/CostModel/Default.html">Default</a> count <i>how the expression is<br>            written</i>: <c>y ^ (1 * (-1)) * x</c> really is a bigger tree than <c>x / y</c>, so<br>            reading the node as written is not an approximation, it is the question. The others count a<br>            <i>mathematical feature</i> — is there a division here, is there a radical — which is a<br>            property of the value and not of the spelling, so they ask what an exponent<br>            <a href="../AngouriMath/Entity/Evaled.html">Evaled</a> to rather than what it was typed as.<br>            </para><para>            The distinction is worth stating because getting it wrong is silent and backwards:<br>            <a href="../AngouriMath.Core/CostModel/FewestDivisions.html">FewestDivisions</a> used to test the exponent's node, so<br>            <c>y ^ (1 * (-1)) * x</c> — a division written where the test could not see it — scored<br>            <i>cheaper</i> than <c>x / y</c>, under the one criterion whose whole job is to remove<br>            divisions. That is<br>            <a href="https://github.com/asc-community/AngouriMath/issues/950">#950</a>. <b>A caller<br>            writing their own model wants to decide which of the two kinds it is</b>, because nothing<br>            here can decide it for them: an expression handed to a cost model has not necessarily been<br>            evaluated, and on an e-graph — where every writing of a value is a member of one class at<br>            once — it certainly has not.<br>            </para><para><b>Every model here counts nodes a little, even the ones that are about something else.</b>            A criterion that counts only its own feature ties constantly, and a tie is settled by<br>            whichever candidate the search happened to generate first — which is an accident rather<br>            than a preference. The node term is small enough not to overturn the feature it is added to<br>            and large enough to decide between candidates the feature cannot separate.<br>            </para><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'><pre><code class="language-cs">using var _ = MathS.Settings.ComplexityCriteria.Set(CostModel.FewestDivisions.Cost);
+Console.WriteLine("a / b + b / c".ToEntity().Simplify());   // (a * c + b ^ 2) / (b * c)</code></pre></div></div><p class="yadg-p "><strong class="yadg-strong ">Parameter "Name"</strong></p><div class="yadg-div yadg-param">A short name, so a report can say which model produced an answer.</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "Description"</strong></p><div class="yadg-div yadg-param">What this model prefers, in a sentence.</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "Cost"</strong></p><div class="yadg-div yadg-param">            The cost of an expression; lower is simpler. Pass this to<br>            <a href="../AngouriMath.MathS/Settings/ComplexityCriteria.html">ComplexityCriteria</a>.<br>            </div></p></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

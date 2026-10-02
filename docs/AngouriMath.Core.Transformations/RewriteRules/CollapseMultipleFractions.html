@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script src="https://buttons.github.io/buttons.js"></script>
@@ -89,7 +88,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath.Core.Transformations/RewriteRules.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">CollapseMultipleFractions</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Brings a quotient of quotients down to a single one.<br>            </div></p></p>
+<p class="yadg-p "><a href="../../AngouriMath.Core.Transformations/RewriteRules.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">CollapseMultipleFractions</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Brings a quotient of quotients down to a single one.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para><b>Run by the matcher rather than by the <c>switch</c></b> —<br>            <a href="../AngouriMath.Core.Transformations.Matching/MatchedRules/CollapseMultipleFractions.html">CollapseMultipleFractions</a>. This and<br>            <a href="../AngouriMath.Core.Transformations/RewriteRules/DivisionPreparing.html">DivisionPreparing</a> are the two sets whose data form is proven to agree<br>            with the <c>switch</c> it mirrors over generated expressions<br>            (<c>MatchedRulesAgreeWithTheSwitchTest</c>), which is the precondition for running one<br>            instead of the other.<br>            </para><para><b>What it costs.</b> Measured against <c>Simplify</c> itself, both arms in<br>            one process with a third arm that is the <c>switch</c> again as a control: the data form<br>            is −0.6% where the control differs from its own source by −1.1%, so the change is<br>            smaller than this machine's disagreement with itself, and allocation is +0.04%. That<br>            number used to be +5% for <a href="../AngouriMath.Core.Transformations/RewriteRules/DivisionPreparing.html">DivisionPreparing</a> alone, and what closed it was<br>            settling a pattern's determinism once rather than on every attempt<br>            (<a href="https://github.com/asc-community/AngouriMath/pull/1050">#1050</a>).<br>            </para><para><b>The <c>switch</c> is still what describes them.</b><a href="../AngouriMath.Core.Transformations/RewriteRule.html">RewriteRule</a> carries<br>            a <a href="../AngouriMath.Core.Transformations/RewriteRule/PatternSource.html">PatternSource</a> and a <a href="../AngouriMath.Core.Transformations/RewriteRule/SourceLine.html">SourceLine</a>,<br>            which <c>RuleRegistryGenerator</c> reads off the arms of a <c>switch</c>; it has no way<br>            yet to read a rule written as data. So the addressable rules of these two sets still come<br>            from <c>Patterns</c>, and the arms they describe are the ones the agreement test holds<br>            the matcher to rather than dead code. Teaching the generator to read<br>            <a href="../AngouriMath.Core.Transformations.Matching/MatchedRules.html">MatchedRules</a> is what would let the <c>switch</c> go, and is<br>            <a href="https://github.com/asc-community/AngouriMath/issues/825">#825</a>.<br>            </para></div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -103,7 +102,7 @@
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1953 pages online
+4377 pages online
 </div>
 </body>
 

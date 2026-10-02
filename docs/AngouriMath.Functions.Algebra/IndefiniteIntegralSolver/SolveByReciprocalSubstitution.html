@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByReciprocalSubstitution</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../../">Home</a>
+<a href="../../../quickstart">Quick start</a>
+<a href="../../../wiki">Wiki</a>
+<a href="../../../docs/namespaces.html">Almanac</a>
+<a href="../../../research">Research</a>
+<a href="../../../whatsnew">What's new</a>
+<a href="../../../demo">Try</a>
+<a href="../../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<p class="yadg-p "><a href="../../AngouriMath.Functions.Algebra/IndefiniteIntegralSolver.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">SolveByReciprocalSubstitution&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;System.&#8203;Boolean)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            A rational function of <c>x</c> and one square root of a <b>palindromic quartic</b><c>a x^4 + d x^3 + b x^2 + s d x + a</c>, integrated by <c>u = x - 1/x</c> or<br>            <c>u = x + 1/x</c> as <c>s</c> is <c>-1</c> or <c>+1</c>: the quartic is <c>x^2</c>            times a quadratic in <c>u</c>, and the rest becomes a rational function of <c>u</c>            where it is one.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            Charlwood's <c>(1 + x^2)/((1 - x^2) sqrt(1 + x^4))</c> had no antiderivative. A root of<br>            a quartic is nothing Euler's substitutions or the trigonometric ones read, and it is<br>            not a binomial. But <c>1 + x^4 = x^2 (x^2 + 1/x^2) = x^2 ((x - 1/x)^2 + 2)</c>, and with<br>            <c>u = x - 1/x</c>, <c>du = (1 + 1/x^2) dx</c>, the integrand is <c>-du/(u sqrt(u^2 + 2))</c>            -- a root of a quadratic over a rational function, which Euler answers. Its<br>            companion <c>(1 - x^2)/((1 + x^2) sqrt(1 + x^4))</c> wants <c>u = x + 1/x</c>, under<br>            which <c>x^2 + 1/x^2</c> is <c>u^2 - 2</c>. Both are tried.<br>            </para><para><b>The algebra.</b> With <c>u = x + s/x</c> for <c>s = -1</c> or <c>+1</c>:<br>            <c>x^2 + 1/x^2 = u^2 - 2s</c> and <c>x + s/x = u</c>, so<br>            <c>Q = a x^4 + d x^3 + b x^2 + s d x + a = x^2 (a u^2 + d u + b - 2 a s)</c>;<br>            and <c>dx = x^2 du/(x^2 - s)</c>. For <c>N/(D sqrt(Q))</c> the integrand is then<br>            <c>[N x/(D (x^2 - s))] du/sqrt(a u^2 + d u + b - 2as)</c>, and for <c>N sqrt(Q)/D</c> it<br>            is <c>[N x^3/(D (x^2 - s))] sqrt(a u^2 + d u + b - 2as) du</c>. Odd terms fix the<br>            sign: Timofeev's <c>(1 - x^2)/((1 + 2ax + x^2) sqrt(1 + 2ax + 2bx^2 + 2ax^3 + x^4))</c>            is one of <c>u = x + 1/x</c> only, <c>-du/((u + 2a) sqrt(u^2 + 2au + 2b - 2))</c>, and<br>            its coefficients are symbols. The bracket is a rational<br>            function of <c>x</c>; the rule asks whether it is one of <c>u</c>, by undetermined<br>            coefficients on <c>P(u)/S(u)</c> and a check at sampled points, and declines where<br>            it is not -- which is the only way this can fail, and is exact.<br>            </para><para><b>The sign of <c>x</c>.</b><c>sqrt(Q) = |x| sqrt(a u^2 + d u + b - 2as)</c>, and the<br>            rule takes <c>|x| = x</c>: what comes out is an antiderivative for <c>x &gt; 0</c>. It<br>            is made one everywhere by parity where the integrand has one, which is exact: an<br>            odd integrand has an even antiderivative, so <c>F(|x|)</c> serves on both sides, and<br>            an even one has an odd antiderivative, <c>sgn(x) F(|x|)</c>. An integrand of neither<br>            parity -- every one with odd terms under the root -- is answered by the sign of<br>            <c>x</c> instead: the integrand in <c>u</c> is <c>sgn(x) R(u) du/sqrt(q(u))</c> on both<br>            sides, so <c>sgn(x) G(x + s/x)</c> is an antiderivative on both, and is what is<br>            returned. A caller that knows its variable is positive, as the exponential<br>            substitution does of <c>u = e^x</c>, says so and gets <c>G(x + s/x)</c> bare.<br>            </para><para>            A half-odd power of the quartic, <c>Q^(3/2)</c>, is <c>Q sqrt(Q)</c>, a whole power<br>            beside the root, and is read as that: <c>sinh(x)^2 sinh(2x)/(1 - sinh(x)^2)^(3/2)</c>            under <c>u = e^x</c> is a rational function over <c>(6u^2 - u^4 - 1)^(3/2)</c>.<br>            </para>            https://github.com/asc-community/AngouriMath/issues/718<br>            </div></p></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

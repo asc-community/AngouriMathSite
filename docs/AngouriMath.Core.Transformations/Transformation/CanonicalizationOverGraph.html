@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Core.Transformations/Transformation/CanonicalizationOverGraph</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../../">Home</a>
+<a href="../../../quickstart">Quick start</a>
+<a href="../../../wiki">Wiki</a>
+<a href="../../../docs/namespaces.html">Almanac</a>
+<a href="../../../research">Research</a>
+<a href="../../../whatsnew">What's new</a>
+<a href="../../../demo">Try</a>
+<a href="../../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<p class="yadg-p "><a href="../../AngouriMath.Core.Transformations/Transformation.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">CanonicalizationOverGraph</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method with 2 overloads</p></p><ul class="yadg-ul "><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">CanonicalizationOverGraph&#8203;(AngouriMath.&#8203;Core.&#8203;Budgets.&#8203;WorkBudget,&#8203;AngouriMath.&#8203;Core.&#8203;Transformations.&#8203;RewriteRuleGrowth)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Brings an expression to the least of the forms the rules can reach from it, over an<br>            e-graph — <a href="https://github.com/asc-community/AngouriMath/issues/746">#746</a>            tier 2's "canonicalisation framework built on" the rewrite graph.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "budget"</strong></p><div class="yadg-div yadg-param">What bounds the search. See <a href="../AngouriMath.Core.Transformations/Transformation/EqualitySaturation.html">EqualitySaturation(AngouriMath.Core.Budgets.WorkBudget,AngouriMath.Core.CostModel)</a>.</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "widest"</strong></p><div class="yadg-div yadg-param">            The widest <a href="../AngouriMath.Core.Transformations/RewriteRuleGrowth.html">RewriteRuleGrowth</a> admitted, as a ceiling over<br>            <a href="../AngouriMath.Core.Transformations/RewriteRuleGrowth/Collects.html">Collects</a>, <a href="../AngouriMath.Core.Transformations/RewriteRuleGrowth/Rearranges.html">Rearranges</a>,<br>            <a href="../AngouriMath.Core.Transformations/RewriteRuleGrowth/Expands.html">Expands</a>. This is the knob that matters — see the<br>            measurement below.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para><b>How this differs from <a href="../AngouriMath.Core.Transformations/Transformation/Canonicalization.html">Canonicalization</a>, which is a rule pass.</b> A<br>            pass rewrites and commits: having applied a rule it is standing on the result, and if<br>            recognising an equality needed a <i>larger</i> intermediate form, the pass cannot get<br>            there and back. A graph does not commit — it holds every form at once and chooses at<br>            the end — so it can pass through a bigger writing to reach a smaller one.<br>            </para><para><b>That difference is measured, and the measurement says the ceiling matters less than<br>            it looks.</b> Two rewrite chains run from each of 1458 generated expressions produced<br>            <b>no divergent pair at all</b> under <a href="../AngouriMath.Core.Transformations/RewriteRuleGrowth/Collects.html">Collects</a> ∪<br>            <a href="../AngouriMath.Core.Transformations/RewriteRuleGrowth/Rearranges.html">Rearranges</a>: those rules are confluent on that corpus,<br>            so a pass already reaches the same form a graph would, and over that ceiling this<br>            earns nothing at all. Widening it barely helps — over six expression pairs equal only<br>            through a larger intermediate form, <a href="../AngouriMath.Core.Transformations/RewriteRuleGrowth/Rearranges.html">Rearranges</a> proved<br>            two and <a href="../AngouriMath.Core.Transformations/RewriteRuleGrowth/Expands.html">Expands</a>, all nine expanding rules added, proved<br>            <i>the same two</i>. Only <a href="../AngouriMath.Core.Transformations/RewriteRuleGrowth/Unknown.html">Unknown</a> — which admits the<br>            270 rules whose growth nobody judged, against 52 that were — proved a third.<br>            </para><para><b>Why the default is nonetheless the narrow ceiling.</b> Because the widest one is<br>            where the risk is, not merely where the rules are: the <c>work/egraph</c> harness<br>            measured a 7,147× blow-up over the undirected rule set — a different mechanism (term<br>            enumeration, no budget, no pre-filter) on the same question. Six pairs completing<br>            inside their budget is not evidence against that. So each step up is offered and none<br>            is assumed, and the caller who takes one is the caller who sets the budget.<br>            </para><para><b>What this is not.</b> Not a canonical form <i>for the language</i> — no such thing<br>            exists here, since zero-equivalence is undecidable, and<br>            <c>Docs/Contributing/CanonicalForm.md</c> states that boundary. It is a canonical form<br>            <i>modulo these rules, this budget, and the answer having settled</i>: equal trees mean<br>            the rules proved the two expressions equal, different trees mean they did not, and a<br>            budget that ran out is reported rather than hidden. The run stops once the least<br>            member of the input's class has survived two passes unchanged, which is the fixed<br>            point that matters to an extraction and comes where the graph's own may never — on<br>            a rational coefficient beside a variable the regrouping rules add a member on every<br>            pass for as long as they are allowed (<a href="https://github.com/asc-community/AngouriMath/issues/1200">#1200</a>),<br>            and the answer was settled on the third. Measured on the corpus and on those inputs,<br>            no answer moved and the nine of them went from two seconds to milliseconds. Nothing<br>            in the library calls this — like <a href="../AngouriMath.Core.Transformations/Transformation/Canonicalization.html">Canonicalization</a> it is offered, not<br>            applied.<br>            </para></div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para><b>Built on <a href="../AngouriMath.Core.Transformations/Transformation/Canonicalization.html">Canonicalization</a> rather than beside it.</b> The graph does<br>            not sort a commutative operand pair: the rules that do build their replacement in code,<br>            so their <a href="../AngouriMath.Core.Transformations/RewriteRuleGrowth.html">RewriteRuleGrowth</a> is <a href="../AngouriMath.Core.Transformations/RewriteRuleGrowth/Unknown.html">Unknown</a> and<br>            no ceiling admits them — measured, by <c>x + y</c> and <c>y + x</c> canonicalising to<br>            themselves. Nor does it flatten <c>(x + y) + a</c> against <c>x + (y + a)</c>, which<br>            are different trees that print alike. The rule pass does both, is already measured<br>            idempotent and order-independent, and is not improved by being written again — so it<br>            runs on each side of the graph step: once so that equal inputs enter the graph as one<br>            tree, and once so that what extraction rebuilt leaves as one.<br>            </para></div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">CanonicalizationOverGraph&#8203;(AngouriMath.&#8203;Core.&#8203;Budgets.&#8203;WorkBudget)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'><a href="../AngouriMath.Core.Transformations/Transformation/CanonicalizationOverGraph.html">CanonicalizationOverGraph(AngouriMath.Core.Budgets.WorkBudget,AngouriMath.Core.Transformations.RewriteRuleGrowth)</a> over the rules<br>            that do not expand, which is the ceiling<br>            <a href="../AngouriMath.Core.Transformations/Transformation/EqualitySaturation.html">EqualitySaturation(AngouriMath.Core.Budgets.WorkBudget,AngouriMath.Core.CostModel)</a> also draws from.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "budget"</strong></p><div class="yadg-div yadg-param">What bounds the search.</div></p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

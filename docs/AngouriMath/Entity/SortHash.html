@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script src="https://buttons.github.io/buttons.js"></script>
@@ -89,7 +88,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">SortHash&#8203;(AngouriMath.&#8203;Functions.&#8203;TreeAnalyzer.&#8203;SortLevel)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Hash that is convenient to sort with</div></p></p>
+<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">SortHash&#8203;(AngouriMath.&#8203;Functions.&#8203;TreeAnalyzer.&#8203;SortLevel)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Hash that is convenient to sort with</div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>            Spelt once per instance and level, as <a href="../AngouriMath/Entity/InnerSimplified.html">InnerSimplified</a> and<br>            <a href="../AngouriMath/Entity/SimplifiedRate.html">SimplifiedRate</a> are computed once. The key of a node is built out of the<br>            keys of every node below it, and the sort asks for the key of every operand of every<br>            chain it orders, so without the memo one sort of a tree walked and re-spelt each<br>            subtree once per ancestor -- and the simplifier sorts what it registers at every pass.<br>            On <c>SimplifyHard</c> that was 174 MB of one run's 735, some 2.6 MB per sort of a<br>            tree a few hundred nodes wide. A candidate shares most of its subtrees with the<br>            candidates before it, and a shared subtree's key is now spelt once.<br>            <para />            Three things about the shape of the memo, each measured. It is one reference per node<br>            and an array made on the first sort, not a lazy slot per level: three slots cost<br>            every node some fifty bytes, which the gate saw as +4-6% on every solve and derivative<br>            entry for a saving only the sort ever sees. It is on the instance and not in a<br>            dictionary kept for the run: keyed by reference the dictionary saved the same bytes<br>            and cost a lookup per node per sort, 369 ms against 266 for the same input. And the<br>            array names its owner, because a <c>with</c> copy -- <a href="../AngouriMath/Entity/WithCodomain.html">WithCodomain(AngouriMath.Core.Domain)</a>, a<br>            re-differentiation -- carries the original's fields while a number's key spells its<br>            codomain: a copy finds an array that is not its own and starts one of its own.<br>            https://github.com/asc-community/AngouriMath/issues/746<br>            </div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -103,7 +102,7 @@
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1953 pages online
+4377 pages online
 </div>
 </body>
 

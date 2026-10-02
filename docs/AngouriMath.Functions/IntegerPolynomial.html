@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Functions/IntegerPolynomial</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">IntegerPolynomial</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Functions.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            A polynomial in one variable over the integers, stored densely.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            A second polynomial representation next to <a href="../AngouriMath.Functions/MultivariatePolynomial.html">MultivariatePolynomial</a>, and<br>            deliberately so. That one is sparse, packs eight exponents into a <c>ulong</c> and<br>            carries coefficients over <c>Q</c>, which is what a multivariate greatest common<br>            divisor wants. Factoring wants the opposite of all three: one variable, dense<br>            coefficient access by degree, and coefficients over <c>Z</c>, because every bound the<br>            algorithm relies on — Mignotte's on the size of a factor, the modulus a Hensel lift<br>            has to reach — is a statement about integers. Sharing one type between the two would<br>            mean paying a dictionary lookup per coefficient in the inner loop of the lift and<br>            re-deriving a denominator that is known to be one.<br>            </para><para>            Trailing zero coefficients are never stored, so <a href="../AngouriMath.Functions/IntegerPolynomial/Degree.html">Degree</a> is<br>            <c>coefficients.Length - 1</c> and the zero polynomial is the empty array with degree<br>            <c>-1</c>. Coefficients are ordered lowest power first, which is the order the rest of<br>            <c>Functions/Algebra/Polynomials</c> already uses.<br>            </para></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./IntegerPolynomial/coefficients.html"><h3 class="yadg-h3 ">coefficients</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./IntegerPolynomial/Content.html"><h3 class="yadg-h3 ">Content</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./IntegerPolynomial/Degree.html"><h3 class="yadg-h3 ">Degree</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./IntegerPolynomial/DivideByInteger.html"><h3 class="yadg-h3 ">DivideByInteger&#8203;(PeterO.&#8203;Numbers.&#8203;EInteger)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./IntegerPolynomial/DivideExact.html"><h3 class="yadg-h3 ">DivideExact&#8203;(AngouriMath.&#8203;Functions.&#8203;IntegerPolynomial)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./IntegerPolynomial/FactorCoefficientBound.html"><h3 class="yadg-h3 ">FactorCoefficientBound</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./IntegerPolynomial/Gcd.html"><h3 class="yadg-h3 ">Gcd&#8203;(AngouriMath.&#8203;Functions.&#8203;IntegerPolynomial,&#8203;AngouriMath.&#8203;Functions.&#8203;IntegerPolynomial)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./IntegerPolynomial/MaxDegree.html"><h3 class="yadg-h3 ">MaxDegree</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./IntegerPolynomial/Modulo.html"><h3 class="yadg-h3 ">Modulo&#8203;(PeterO.&#8203;Numbers.&#8203;EInteger)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./IntegerPolynomial/PrimitivePart.html"><h3 class="yadg-h3 ">PrimitivePart</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./IntegerPolynomial/PseudoRemainder.html"><h3 class="yadg-h3 ">PseudoRemainder&#8203;(AngouriMath.&#8203;Functions.&#8203;IntegerPolynomial,&#8203;AngouriMath.&#8203;Functions.&#8203;IntegerPolynomial)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./IntegerPolynomial/ReduceModuloPrime.html"><h3 class="yadg-h3 ">ReduceModuloPrime&#8203;(System.&#8203;Int64)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./IntegerPolynomial/ShiftedBy.html"><h3 class="yadg-h3 ">ShiftedBy&#8203;(System.&#8203;Int32)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./IntegerPolynomial/SymmetricModulo.html"><h3 class="yadg-h3 ">SymmetricModulo&#8203;(PeterO.&#8203;Numbers.&#8203;EInteger)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./IntegerPolynomial/ToEntity.html"><h3 class="yadg-h3 ">ToEntity&#8203;(AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./IntegerPolynomial/ToPrimeField.html"><h3 class="yadg-h3 ">ToPrimeField&#8203;(System.&#8203;Int64)</h3></a>Method</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

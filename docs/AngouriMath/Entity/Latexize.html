@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script src="https://buttons.github.io/buttons.js"></script>
@@ -102,7 +101,7 @@ Console.WriteLine(expr2);
 Console.WriteLine(expr2.Latexize());</code></pre><br>            Prints<br>            <pre><code class="language-cs">sqrt(a) + integral(sin(x), x)
 \sqrt{a}+\int \left[\sin\left(x\right)\right] dx
 a / b ^ limit(sin(x) - (e ^ y + e ^ (-y)) / 2, x, +oo)
-\frac{a}{{b}^{\lim_{x\to \infty } \left[\sin\left(x\right)-\frac{{e}^{y}+{e}^{-y}}{2}\right]}}</code></pre></div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Latexize&#8203;(System.&#8203;Boolean)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Returns the expression in LaTeX (for example, a / b -&gt; \frac{a}{b})</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "parenthesesRequired"</strong></p><div class="yadg-div yadg-param">Whether to wrap it with parentheses</div></p></li></ul></p>
+\frac{a}{{b}^{\lim_{x\to \infty } \left[\sin\left(x\right)-\frac{{e}^{y}+{e}^{-y}}{2}\right]}}</code></pre></div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>            A node whose <a href="../AngouriMath/Entity/Codomain.html">Codomain</a> is not its type's default is rendered as the node<br>            subscripted with the set, <c>{\left(x\right)}_{\mathbb{Z}}</c>. The parentheses are<br>            unconditional: a <a href="../AngouriMath.Entity/Variable.html">Variable</a> already renders its own index as a subscript,<br>            so <c>x_{\mathbb{Z}}</c> would be indistinguishable from a variable named that way.<br>            <a href="https://github.com/asc-community/AngouriMath/issues/1022">#1022</a></div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">Latexize&#8203;(System.&#8203;Boolean)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>Returns the expression in LaTeX (for example, a / b -&gt; \frac{a}{b})</div><p class="yadg-p "><strong class="yadg-strong ">Parameter "parenthesesRequired"</strong></p><div class="yadg-div yadg-param">Whether to wrap it with parentheses</div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>            A node that renders its codomain needs no brackets: the subscript already applies to a<br>            parenthesised group, so anything around it would be a second pair.<br>            </div></p></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -116,7 +115,7 @@ a / b ^ limit(sin(x) - (e ^ y + e ^ (-y)) / 2, x, +oo)
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1953 pages online
+4377 pages online
 </div>
 </body>
 

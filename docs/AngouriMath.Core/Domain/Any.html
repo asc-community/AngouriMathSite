@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script src="https://buttons.github.io/buttons.js"></script>
@@ -89,7 +88,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath.Core/Domain.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Any</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Field</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            The domain of all values (might be removed in the future)<br>            </div></p></p>
+<p class="yadg-p "><a href="../../AngouriMath.Core/Domain.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Any</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Field</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            No constraint: this node is not declared over any narrower codomain, so whatever<br>            reading the question is asked in applies to it.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para><b>Not a set, and not the universal set.</b> It is the widest member of the order<br>            above and the one <a href="../AngouriMath.Entity.Set/SpecialSet/Create.html">Create(AngouriMath.Core.Domain)</a> has no set for,<br>            on purpose: it says that a node imposes no restriction, which is a statement about the<br>            node rather than a claim that some collection contains every value. Nothing may read<br>            it as "the set of everything" — the solution set of an equation is never this, and a<br>            code path that needs a set has to name one.<br>            </para><para>            A mathematical set that constrains nothing is already expressible, as a set-builder<br>            whose predicate holds everywhere: <c>{ x : True }</c> parses, prints, round-trips,<br>            compares and answers membership. That is why there is no <c>AA</c>/<c>UU</c><a href="../AngouriMath.Entity.Set/SpecialSet.html">SpecialSet</a> and why this member is staying.<br>            <a href="https://github.com/asc-community/AngouriMath/issues/996">#996</a></para><para>            It is the default codomain of a <a href="../AngouriMath.Entity/Variable.html">Variable</a>, a<br>            <a href="../AngouriMath.Entity/Matrix.html">Matrix</a>, a <a href="../AngouriMath.Entity.Set/ConditionalSet.html">ConditionalSet</a>, a<br>            <a href="../AngouriMath.Entity/Lambda.html">Lambda</a> and the set operators — every node whose value is not<br>            confined to numbers. It is written as <c>domain(x, Any)</c>, which is a keyword in<br>            that one position and not a set literal.<br>            <a href="https://github.com/asc-community/AngouriMath/issues/1048">#1048</a></para></div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -103,7 +102,7 @@
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1953 pages online
+4377 pages online
 </div>
 </body>
 

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Functions/PartialFractions</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">PartialFractions</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Functions.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            One step of a partial fraction decomposition, at a coprime pair of factors of the<br>            denominator rather than at a root of it.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            The sibling step, <a href="../AngouriMath.Functions/PolynomialFactoring/TrySplitOffRationalRoot.html">TrySplitOffRationalRoot(AngouriMath.Entity,AngouriMath.Entity,AngouriMath.Entity.Variable,AngouriMath.Entity@,AngouriMath.Entity@,AngouriMath.Entity@)</a>, splits at a<br>            rational root, which is all the decomposition there was: a denominator with no rational<br>            root was left whole, so <c>1/(x^4 + 3x^2 + 2)</c> had no antiderivative even though it<br>            is <c>(x^2 + 1)(x^2 + 2)</c> and both of those are integrated by the rule for a linear<br>            numerator over a quadratic. Nothing was missing but the split.<br>            https://github.com/asc-community/AngouriMath/issues/919<br>            </para><para>            One step and not the whole decomposition, for the same reason as the sibling: what comes<br>            out is two strictly smaller problems of the same kind, and the integrator recurses into<br>            them. Splitting <c>D</c> into coprime <c>A</c> and <c>B</c>, the extended Euclidean<br>            algorithm gives <c>U*A + V*B = 1</c>, so <c>N = N*V*B + N*U*A</c> and<br>            <c>N/(A*B) = N*V/A + N*U/B</c>. Each numerator is then reduced modulo its own<br>            denominator; the polynomial parts that come off cannot survive, since a proper fraction<br>            minus two proper fractions is a polynomial that vanishes at infinity.<br>            </para><para><b>No condition is owed.</b><c>A</c> and <c>B</c> being coprime, <c>A*B</c> is zero<br>            exactly where one of them is, so the two sides are undefined at the same points and the<br>            domain neither widens nor narrows. That is what makes this different from cancelling a<br>            shared factor, which is where a decomposition usually loses a singularity.<br>            </para><para>            The decomposition is produced only where every piece of it is a shape an integration<br>            rule reads — see the guard below, which is what keeps declining cheap. A denominator<br>            that is a power of one irreducible is declined for the further reason that it has no<br>            coprime pair to split into at all. The ladder that decomposes that one — <c>N/f^k</c>            as terms over <c>f^k</c>, <c>f^(k-1)</c>, ... — is deliberately not built here: for<br>            <c>f</c> linear the sibling step already does it, and for <c>f</c> quadratic every term<br>            it produces is over <c>(x^2 + c)^k</c>, which nothing reads, so the decomposition would<br>            end in the same unevaluated integral it started from.<br>            </para></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/Added.html"><h3 class="yadg-h3 ">Added&#8203;(AngouriMath.&#8203;Entity[],&#8203;AngouriMath.&#8203;Entity[])</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/Agree.html"><h3 class="yadg-h3 ">Agree&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;System.&#8203;Double,&#8203;System.&#8203;Lazy{AngouriMath.&#8203;Numerics.&#8203;PreciseEvaluation}[])</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/AnIntegrationRuleReadsIt.html"><h3 class="yadg-h3 ">AnIntegrationRuleReadsIt&#8203;(AngouriMath.&#8203;Functions.&#8203;IntegerPolynomial,&#8203;System.&#8203;Int32)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/AsFraction.html"><h3 class="yadg-h3 ">AsFraction&#8203;(AngouriMath.&#8203;Functions.&#8203;RationalPolynomial,&#8203;AngouriMath.&#8203;Functions.&#8203;RationalPolynomial,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/Bare.html"><h3 class="yadg-h3 ">Bare&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/CancelledByTheWrittenFactors.html"><h3 class="yadg-h3 ">CancelledByTheWrittenFactors&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/Coefficients.html"><h3 class="yadg-h3 ">Coefficients&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/DerivativeDiffersWhereReal.html"><h3 class="yadg-h3 ">DerivativeDiffersWhereReal&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/DerivativeHoldsAtSampledPoints.html"><h3 class="yadg-h3 ">DerivativeHoldsAtSampledPoints&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/DiffersWhereReal.html"><h3 class="yadg-h3 ">DiffersWhereReal&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/DigitsInPowersOfTheQuadratic.html"><h3 class="yadg-h3 ">DigitsInPowersOfTheQuadratic&#8203;(AngouriMath.&#8203;Entity[],&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;System.&#8203;Int32)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/DividedByTheMonicQuadratic.html"><h3 class="yadg-h3 ">DividedByTheMonicQuadratic&#8203;(AngouriMath.&#8203;Entity[],&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/GatheredByPower.html"><h3 class="yadg-h3 ">GatheredByPower&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/HoldsAtSampledPoints.html"><h3 class="yadg-h3 ">HoldsAtSampledPoints&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;System.&#8203;String[])</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/InLowestTermsOverTheSymbols.html"><h3 class="yadg-h3 ">InLowestTermsOverTheSymbols&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/InverseModuloTheQuadratic.html"><h3 class="yadg-h3 ">InverseModuloTheQuadratic&#8203;(System.&#8203;ValueTuple{AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity},&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/IsBiquadratic.html"><h3 class="yadg-h3 ">IsBiquadratic&#8203;(AngouriMath.&#8203;Functions.&#8203;IntegerPolynomial)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/IsLinear.html"><h3 class="yadg-h3 ">IsLinear&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/IsZero.html"><h3 class="yadg-h3 ">IsZero&#8203;(AngouriMath.&#8203;Entity,&#8203;System.&#8203;Boolean)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/IsZeroAsAValue.html"><h3 class="yadg-h3 ">IsZeroAsAValue&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/IsZeroAtPinnedSymbols.html"><h3 class="yadg-h3 ">IsZeroAtPinnedSymbols&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/LargestDecompositionHandedOn.html"><h3 class="yadg-h3 ">LargestDecompositionHandedOn</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/LargestValuePutInLowestTerms.html"><h3 class="yadg-h3 ">LargestValuePutInLowestTerms</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/LiftFrom.html"><h3 class="yadg-h3 ">LiftFrom</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/LiftingPrime.html"><h3 class="yadg-h3 ">LiftingPrime</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/Multiplied.html"><h3 class="yadg-h3 ">Multiplied&#8203;(AngouriMath.&#8203;Entity[],&#8203;AngouriMath.&#8203;Entity[])</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/Pinned.html"><h3 class="yadg-h3 ">Pinned&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/ProductModuloTheQuadratic.html"><h3 class="yadg-h3 ">ProductModuloTheQuadratic&#8203;(System.&#8203;ValueTuple{AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity},&#8203;System.&#8203;ValueTuple{AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity},&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/ResidueModuloTheQuadratic.html"><h3 class="yadg-h3 ">ResidueModuloTheQuadratic&#8203;(AngouriMath.&#8203;Entity[],&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/TaylorCoefficientsAtTheRoot.html"><h3 class="yadg-h3 ">TaylorCoefficientsAtTheRoot&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;System.&#8203;Int32,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/TruncatedInPowersOfTheQuadratic.html"><h3 class="yadg-h3 ">TruncatedInPowersOfTheQuadratic&#8203;(AngouriMath.&#8203;Entity[],&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;System.&#8203;Int32)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/TryReadLinear.html"><h3 class="yadg-h3 ">TryReadLinear&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity@,&#8203;AngouriMath.&#8203;Entity@,&#8203;System.&#8203;Int32@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/TryReconstructRational.html"><h3 class="yadg-h3 ">TryReconstructRational&#8203;(PeterO.&#8203;Numbers.&#8203;EInteger,&#8203;PeterO.&#8203;Numbers.&#8203;EInteger,&#8203;PeterO.&#8203;Numbers.&#8203;ERational@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/TrySolveByLifting.html"><h3 class="yadg-h3 ">TrySolveByLifting&#8203;(PeterO.&#8203;Numbers.&#8203;ERational[][],&#8203;System.&#8203;Int32,&#8203;System.&#8203;Int32,&#8203;AngouriMath.&#8203;Entity[]@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/TrySolveLinear.html"><h3 class="yadg-h3 ">TrySolveLinear</h3></a>Method and its overloads</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/TrySolveLinearWithSymbols.html"><h3 class="yadg-h3 ">TrySolveLinearWithSymbols&#8203;(AngouriMath.&#8203;Entity[][],&#8203;AngouriMath.&#8203;Entity[],&#8203;AngouriMath.&#8203;Entity[]@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/TrySolveOverPolynomials.html"><h3 class="yadg-h3 ">TrySolveOverPolynomials&#8203;(AngouriMath.&#8203;Entity[][],&#8203;AngouriMath.&#8203;Entity[],&#8203;AngouriMath.&#8203;Entity[]@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/TrySolveOverRationals.html"><h3 class="yadg-h3 ">TrySolveOverRationals&#8203;(AngouriMath.&#8203;Entity[][],&#8203;AngouriMath.&#8203;Entity[],&#8203;AngouriMath.&#8203;Entity[]@,&#8203;System.&#8203;Boolean@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/TrySolveSquare.html"><h3 class="yadg-h3 ">TrySolveSquare&#8203;(AngouriMath.&#8203;Entity[][],&#8203;AngouriMath.&#8203;Entity[],&#8203;AngouriMath.&#8203;Entity[]@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/TrySplitBiquadraticOverTheReals.html"><h3 class="yadg-h3 ">TrySplitBiquadraticOverTheReals&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity@,&#8203;AngouriMath.&#8203;Entity@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/TrySplitIntoCoprimeParts.html"><h3 class="yadg-h3 ">TrySplitIntoCoprimeParts&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity@,&#8203;AngouriMath.&#8203;Entity@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/TrySplitOverSymbolicLinearFactors.html"><h3 class="yadg-h3 ">TrySplitOverSymbolicLinearFactors&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;List{System.&#8203;ValueTuple{AngouriMath.&#8203;Entity,&#8203;System.&#8203;Int32}},&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/TrySplitOverWrittenFactors.html"><h3 class="yadg-h3 ">TrySplitOverWrittenFactors&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/WithTheAtomsAsSymbols.html"><h3 class="yadg-h3 ">WithTheAtomsAsSymbols&#8203;(AngouriMath.&#8203;Entity[][],&#8203;AngouriMath.&#8203;Entity[],&#8203;System.&#8203;Boolean,&#8203;AngouriMath.&#8203;Entity[]@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/WithThePrimitiveDenominator.html"><h3 class="yadg-h3 ">WithThePrimitiveDenominator&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PartialFractions/WithWholePowersOfPowersMultiplied.html"><h3 class="yadg-h3 ">WithWholePowersOfPowersMultiplied&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script src="https://buttons.github.io/buttons.js"></script>
@@ -89,7 +88,16 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath.Extensions/AngouriMathExtensions.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">ToEntity</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method with 2 overloads</p></p><ul class="yadg-ul "><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">ToEntity&#8203;(System.&#8203;String)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Parses the expression into <a href="../AngouriMath/Entity.html">Entity</a>.<br>            Synonymical to <a href="../AngouriMath/MathS/FromString.html">FromString(System.String)</a></div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>Expression</div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">ToEntity&#8203;(System.&#8203;ValueTuple{AngouriMath.&#8203;Entity,&#8203;System.&#8203;Boolean,&#8203;AngouriMath.&#8203;Entity,&#8203;System.&#8203;Boolean})</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Takes a tuple of four and builds an interval<br>            </div></p></li></ul></p>
+<p class="yadg-p "><a href="../../AngouriMath.Extensions/AngouriMathExtensions.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">ToEntity</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method with 2 overloads</p></p><ul class="yadg-ul "><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">ToEntity&#8203;(System.&#8203;String)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Parses the expression into <a href="../AngouriMath/Entity.html">Entity</a>.<br>            Synonymical to <a href="../AngouriMath/MathS/FromString.html">FromString(System.String)</a></div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>Expression</div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            Parsing builds the tree and computes nothing; note also that juxtaposition of a<br>            variable and a number is a power, so <c>x2</c> is <c>x ^ 2</c>:<br>            <pre><code class="language-cs">Console.WriteLine("2 + 3".ToEntity());
+Console.WriteLine("2 + 3".ToEntity().Evaled);
+Console.WriteLine("x2".ToEntity());</code></pre><br>            Prints<br>            <pre><code class="language-cs">2 + 3
+5
+x ^ 2</code></pre></div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">ToEntity&#8203;(System.&#8203;ValueTuple{AngouriMath.&#8203;Entity,&#8203;System.&#8203;Boolean,&#8203;AngouriMath.&#8203;Entity,&#8203;System.&#8203;Boolean})</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Takes a tuple of four and builds an interval<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Example</strong></p><div class='yadg-example'>            The two flags say whether each end belongs to the interval:<br>            <pre><code class="language-cs">var iv = ((Entity)0, false, (Entity)"pi", true).ToEntity();
+Console.WriteLine(iv);
+Console.WriteLine(iv.Contains(0));
+Console.WriteLine(iv.Contains("pi"));</code></pre><br>            Prints<br>            <pre><code class="language-cs">(0; pi]
+False
+True</code></pre></div></p></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -103,7 +111,7 @@
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1953 pages online
+4377 pages online
 </div>
 </body>
 

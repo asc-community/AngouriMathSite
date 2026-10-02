@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script src="https://buttons.github.io/buttons.js"></script>
@@ -89,7 +88,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath.Functions/TreeAnalyzer.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">PolynomialLongDivision&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Divides one polynomial over another one:<br>            <a href="https://en.wikipedia.org/wiki/Polynomial_long_division">https://en.wikipedia.org/wiki/Polynomial_long_division</a></div></p></p>
+<p class="yadg-p "><a href="../../AngouriMath.Functions/TreeAnalyzer.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">PolynomialLongDivision&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;System.&#8203;Boolean,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Divides one polynomial over another one:<br>            <a href="https://en.wikipedia.org/wiki/Polynomial_long_division">https://en.wikipedia.org/wiki/Polynomial_long_division</a></div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para><b>As written first, and only then with the variables replaced.</b> The replacement<br>            exists for a base that is not a variable — <c>sin(x)^2 / sin(x)</c>, where the thing<br>            the division is in is <c>sin(x)</c> — and it works by swapping each variable's<br>            smallest enclosing subtree for a fresh symbol. With one variable that is harmless,<br>            because nothing in the pair contains the whole expression. With <b>two</b> it is<br>            destructive: for <c>x / (a + b x)</c> the smallest subtree holding <c>a</c> is<br>            <c>a + b x</c>, so the divisor is replaced wholesale by one opaque symbol, the<br>            dividend keeps its <c>x</c>, and the two no longer share a variable to divide in.<br>            The division then reports that it cannot be done.<br>            </para><para>            What that cost: <c>int x/(a + b x) dx</c> was unanswered while<br>            <c>int x/(2 + 3 x) dx</c> came out, and the same for every improper fraction with a<br>            symbolic coefficient — including the one <c>int x ln(b + a x) dx</c> is left with<br>            after integration by parts. A numeric coefficient hid the defect, which is the usual<br>            way this one hides.<br>            https://github.com/asc-community/AngouriMath/issues/718<br>            </para><para>            Trying the unreplaced form first keeps both: a pair that divides as written divides<br>            the same way it always did, and one that does not falls through to the replacement,<br>            which is the only thing that ever answered <c>sin(x)^2 / sin(x)</c>.<br>            </para><para><b><text class="yadg-text cw">genericCase</text> says which of two callers is asking.</b> Dividing by<br>            the divisor's leading coefficient loses the value of the parameter that makes it zero:<br>            <c>x / (a + b x)</c> divided out is undefined at <c>b = 0</c>, where the quotient is<br>            <c>x / a</c> and perfectly ordinary. For the simplifier that is a rewrite which is not<br>            an equivalence, so it is declined; for the integrator it is the answer every<br>            neighbouring rule already gives, since <c>int 1/(a x + b) dx</c> is<br>            <c>ln(a x + b) / a</c> and loses <c>a = 0</c> on every call. The default is the<br>            simplifier's, and nothing about the general pass changes by adding this.<br>            </para></div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -103,7 +102,7 @@
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1953 pages online
+4377 pages online
 </div>
 </body>
 

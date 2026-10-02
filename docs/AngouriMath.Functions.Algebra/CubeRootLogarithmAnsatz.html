@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Functions.Algebra/CubeRootLogarithmAnsatz</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">CubeRootLogarithmAnsatz</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Functions.Algebra.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            A rational function of <c>x</c> and one cube root <c>y = P(x)^(1/3)</c> of a polynomial,<br>            integrated by an ansatz over logarithms of <c>L - y</c> for linear <c>L</c>, their<br>            conjugates, and a rational part in <c>y</c> and <c>y^2</c>.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            The curve <c>y^3 = P(x)</c> has no rational parametrisation for a cubic <c>P</c>, so no<br>            substitution makes these rational; the ones that are elementary at all -- Welz's<br>            <c>x/((1 + x)(1 - x^3)^(1/3))</c>, <c>1/(x^3 - 3x^2 + 7x - 5)^(1/3)</c>,<br>            <c>(x - 1)/((x + 1)(2 + x^3)^(1/3))</c> -- are integrated by logarithms of<br>            <c>L(x) - y</c>, with <c>L</c> linear, and of their conjugates <c>L - w y</c> for the<br>            cube roots of unity <c>w</c>, which pair into <c>ln(L^2 + L y + y^2)</c> and<br>            <c>arctan((2L + y)/(sqrt(3) y))</c>. The norm <c>(L - y)(L - wy)(L - w^2 y) = L^3 - P</c>            is where the logarithm has its poles, so the <c>L</c> that can occur are the ones<br>            whose cube agrees with <c>P</c> at the places the integrand has poles: the linear<br>            function through two points of the curve, or tangent to it at one. Each of those is<br>            a candidate here -- the tangent at a rational pole, at infinity, and at a root of<br>            <c>P</c>; the line through a pole and a root, or two poles -- and for an irreducible<br>            quadratic factor <c>Q</c> of the denominator with <c>P</c> constant modulo <c>Q</c>,<br>            the cube roots of that constant times a cube root of unity of <c>Q[x]/(Q)</c>, which<br>            is where <c>ln(2^(1/3) - y)</c>, <c>ln(2^(1/3) x + y)</c> and<br>            <c>ln(2^(1/3)(x - 1) - y)</c> in Welz's answers over <c>1 - x + x^2</c> come from.<br>            </para><para>            The constants those bring in are cube roots of rationals, <c>2^(1/3)</c> most often,<br>            so the coefficients live in <c>Q(c)</c> with <c>c^3</c> rational; the linear system is<br>            solved in that field exactly, as polynomials in <c>c</c> reduced modulo <c>c^3 - m</c>,<br>            rather than numerically -- a symbol for <c>c</c> would not be told from zero at<br>            <c>c^3 - 2</c>, and a floating <c>c</c> would give floating coefficients. One such<br>            constant per integrand; two independent ones would need their compositum and are<br>            declined. With symbols in the coefficients and every constant rational, the general<br>            symbolic solver is used instead.<br>            </para><para>            The identity <c>sum c_k g_k' = f</c> is an identity in the function field<br>            <c>Q(x)[y]/(y^3 - P)</c>: everything is brought over one denominator in <c>x</c>, the<br>            numerators reduced by <c>y^3 = P</c> to <c>A + B y + C y^2</c>, and the three<br>            coefficient polynomials in <c>x</c> matched term by term. The answer is checked against<br>            the integrand at sampled points before it is returned.<br>            https://github.com/asc-community/AngouriMath/issues/718<br>            </para></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./CubeRootLogarithmAnsatz/LinesOverAQuadraticFactor.html"><h3 class="yadg-h3 ">LinesOverAQuadraticFactor&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Functions.&#8203;Algebra.&#8203;CubeRootLogarithmAnsatz.&#8203;Constants)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./CubeRootLogarithmAnsatz/MaxDenominatorDegree.html"><h3 class="yadg-h3 ">MaxDenominatorDegree</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./CubeRootLogarithmAnsatz/MaxRadicandDegree.html"><h3 class="yadg-h3 ">MaxRadicandDegree</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./CubeRootLogarithmAnsatz/Pin.html"><h3 class="yadg-h3 ">Pin&#8203;(AngouriMath.&#8203;Entity,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;List{AngouriMath.&#8203;Entity.&#8203;Variable},&#8203;System.&#8203;Int32)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./CubeRootLogarithmAnsatz/RationalRoots.html"><h3 class="yadg-h3 ">RationalRoots&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;List{AngouriMath.&#8203;Entity}@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./CubeRootLogarithmAnsatz/TryReadOverThePolynomialDenominator.html"><h3 class="yadg-h3 ">TryReadOverThePolynomialDenominator</h3></a>Method and its overloads</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./CubeRootLogarithmAnsatz/TrySolveOverTheExtension.html"><h3 class="yadg-h3 ">TrySolveOverTheExtension</h3></a>Method and its overloads</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./CubeRootLogarithmAnsatz/TrySolveWithSymbols.html"><h3 class="yadg-h3 ">TrySolveWithSymbols&#8203;(AngouriMath.&#8203;Entity[][],&#8203;AngouriMath.&#8203;Entity[],&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity[]@)</h3></a>Method</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

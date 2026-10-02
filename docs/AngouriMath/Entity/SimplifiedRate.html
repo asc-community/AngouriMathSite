@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script src="https://buttons.github.io/buttons.js"></script>
@@ -89,7 +88,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">SimplifiedRate</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Shows how simple the given expression is. The lower - the simpler the expression is.<br>            You might need it to pick the best expression to represent something. Unlike <br>            <a href="../AngouriMath/Entity/Complexity.html">Complexity</a>, which shows the number of nodes, <a href="../AngouriMath/Entity/SimplifiedRate.html">SimplifiedRate</a> <br>            shows how convenient it is to view the expression. This depends on <br>            <a href="../AngouriMath.MathS/Settings/ComplexityCriteria.html">ComplexityCriteria</a> which can be changed by user.<br>            See <a href="../AngouriMath.MathS/Settings/ComplexityCriteria.html">ComplexityCriteria</a> for more details.<br>            </div></p></p>
+<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">SimplifiedRate</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Property</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Shows how simple the given expression is. The lower - the simpler the expression is.<br>            You might need it to pick the best expression to represent something. Unlike <br>            <a href="../AngouriMath/Entity/Complexity.html">Complexity</a>, which shows the number of nodes, <a href="../AngouriMath/Entity/SimplifiedRate.html">SimplifiedRate</a> <br>            shows how convenient it is to view the expression. This depends on <br>            <a href="../AngouriMath.MathS/Settings/ComplexityCriteria.html">ComplexityCriteria</a> which can be changed by user.<br>            See <a href="../AngouriMath.MathS/Settings/ComplexityCriteria.html">ComplexityCriteria</a> for more details.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para><b>Cached for the default criteria only, and computed afresh for any other.</b> The<br>            cache is one slot per <a href="../AngouriMath/Entity.html">Entity</a> instance and the criteria is an ambient<br>            setting, so the two do not agree about what the cached number is a rate <i>of</i>: a<br>            rate computed under one cost model was answered with under the next, and<br>            <c>Simplificator.PickSimplest</c> compares candidates by this property — so it would<br>            weigh one model's cached rate against another's freshly computed one and choose on the<br>            strength of it, with nothing anywhere to say the comparison was meaningless.<br>            </para><para>            The unset path keeps the cache, which is what nearly every call takes and what the<br>            slot was there for. A criteria anybody has scoped computes without caching, so it can<br>            neither be answered with somebody else's number nor leave one behind for them. The<br>            test is <c>IsOverriden</c> — the setting's own "nobody expressed an opinion", which is<br>            what <c>BudgetLedger.For</c> already asks of <a href="../AngouriMath.MathS/Settings/Budget.html">Budget</a> — and<br>            not an equality against the default function: it is one ambient read rather than a<br>            read plus a delegate comparison, on a property <c>Simplificator.PickSimplest</c> reads<br>            once per candidate. A caller who scopes the default function explicitly gets the same<br>            number by the uncached route.<br>            </para></div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -103,7 +102,7 @@
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1953 pages online
+4377 pages online
 </div>
 </body>
 

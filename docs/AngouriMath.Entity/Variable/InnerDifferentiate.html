@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script src="https://buttons.github.io/buttons.js"></script>
@@ -89,7 +88,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath.Entity/Variable.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">InnerDifferentiate&#8203;(AngouriMath.&#8203;Entity.&#8203;Variable)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><inheritdoc /></p></p>
+<p class="yadg-p "><a href="../../AngouriMath.Entity/Variable.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">InnerDifferentiate&#8203;(AngouriMath.&#8203;Entity.&#8203;Variable)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><inheritdoc /><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>             A name that cannot vary contributes nothing to any derivative, so<br>             <c>d(anything)/d(pi)</c> is <c>0</c> and not <c>1</c> even where the name<br>             matches, which is what<br>             <a href="https://github.com/asc-community/AngouriMath/issues/993">#993</a> is<br>             about. The test is whether the name evaluates to a number, not whether it is<br>             spelled like a constant: a name a binder declares can vary even when it is<br>             spelled <c>pi</c>, and it evaluates to itself.<br>            <br>             And where it does vary, the comparison is of the node, not its name. A<br>             <a href="../AngouriMath.Entity/Constant.html">Constant</a> and a <a href="../AngouriMath.Entity/Variable.html">Variable</a> can share a spelling — that<br>             is what a binder over <c>pi</c> produces — and comparing the spelling made<br>             <c>derivative(arccos(0) * pi, pi)</c> differentiate the <c>pi / 2</c> that<br>             <c>arccos(0)</c> simplifies to as though it were the index.<br>             <a href="https://github.com/asc-community/AngouriMath/issues/984">#984</a></div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -103,7 +102,7 @@
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1953 pages online
+4377 pages online
 </div>
 </body>
 

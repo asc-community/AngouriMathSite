@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script src="https://buttons.github.io/buttons.js"></script>
@@ -89,7 +88,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/InternalAMExtensions.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Arctan2&#8203;(PeterO.&#8203;Numbers.&#8203;EDecimal,&#8203;PeterO.&#8203;Numbers.&#8203;EDecimal,&#8203;PeterO.&#8203;Numbers.&#8203;EContext)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Analogy of Atan2(System.Double,System.Double) for more see this<br>            <img src="http://i.imgur.com/TRLjs8R.png"/></div></p></p>
+<p class="yadg-p "><a href="../../AngouriMath/InternalAMExtensions.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Arctan2&#8203;(PeterO.&#8203;Numbers.&#8203;EDecimal,&#8203;PeterO.&#8203;Numbers.&#8203;EDecimal,&#8203;PeterO.&#8203;Numbers.&#8203;EContext)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Analogy of Atan2(System.Double,System.Double) for more see this<br>            <img src="http://i.imgur.com/TRLjs8R.png"/></div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><b>A zero is a zero, whatever its sign.</b><c>Math.Atan2</c> reads a negative zero<br>            as a limit from below and answers <c>-pi</c> on the negative axis for it, and this<br>            did the same. A decimal's negative zero is not a limit: it is what<br>            <c>0E-100 * -0.43</c> multiplies to, an artefact of the exponent arithmetic, and<br>            reading <c>-pi</c> off it put <c>-1.54 - 0i</c> a hair below the negative axis, so<br>            that <c>(-1.54)^(-1/2)</c> came back <c>+0.80 i</c> with the downcasting off and<br>            <c>-0.80 i</c> with it on -- the setting deciding a branch. A number on the negative<br>            axis has argument <c>pi</c>. <c>EDecimal.Sign</c> is 0 for either zero, and is what<br>            is read here. https://github.com/asc-community/AngouriMath/issues/1378<br>            </div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -103,7 +102,7 @@
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1953 pages online
+4377 pages online
 </div>
 </body>
 

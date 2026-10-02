@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Core.Transformations/Transformation/EqualitySaturation</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../../">Home</a>
+<a href="../../../quickstart">Quick start</a>
+<a href="../../../wiki">Wiki</a>
+<a href="../../../docs/namespaces.html">Almanac</a>
+<a href="../../../research">Research</a>
+<a href="../../../whatsnew">What's new</a>
+<a href="../../../demo">Try</a>
+<a href="../../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<p class="yadg-p "><a href="../../AngouriMath.Core.Transformations/Transformation.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">EqualitySaturation&#8203;(AngouriMath.&#8203;Core.&#8203;Budgets.&#8203;WorkBudget,&#8203;AngouriMath.&#8203;Core.&#8203;CostModel)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Explores the equalities the whole registry's rules reach from an expression at once,<br>            over an e-graph, and extracts the cheapest under <text class="yadg-text cw">costModel</text>.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "budget"</strong></p><div class="yadg-div yadg-param">            What this call may spend before it settles for the best it has found so far.<br>            <a href="../AngouriMath.Core.Budgets/WorkBudget/Steps.html">Steps</a> is charged once per e-node the graph actually creates;<br>            <a href="../AngouriMath.Core.Budgets/WorkBudget/Time.html">Time</a> is the wall-clock backstop. A caller who sets<br>            <a href="../AngouriMath.MathS/Settings/Budget.html">Budget</a> overrides this, the same as every other bounded<br>            computation in the library.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "costModel"</strong></p><div class="yadg-div yadg-param">Which candidate counts as cheapest once exploration stops.</div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para><b>Nothing runs this by default</b> — the same standing as<br>            <a href="../AngouriMath.Core.Transformations/Transformation/RationalCanonicalization.html">RationalCanonicalization</a> and <a href="../AngouriMath.Core.Transformations/Transformation/Canonicalization.html">Canonicalization</a>, and for a<br>            sharper reason: <c>Simplify</c> applies a rule set once, keeps a candidate and moves on,<br>            so an expanding rule and a collecting one never meet — the order they run in decides<br>            which wins. Equality saturation deletes that order and keeps every result, which is<br>            why it needs a budget rather than a pass count, and why only the rules a scheduler can<br>            prove will not run away are offered to it — see the next paragraph.<br>            </para><para><b>Only rules whose <a href="../AngouriMath.Core.Transformations.Matching/MatchedRule/Growth.html">Growth</a> is exactly<br>            <a href="../AngouriMath.Core.Transformations/RewriteRuleGrowth/Collects.html">Collects</a> or <a href="../AngouriMath.Core.Transformations/RewriteRuleGrowth/Rearranges.html">Rearranges</a>,<br>            and whose <a href="../AngouriMath.Core.Transformations.Matching/MatchedRule/Soundness.html">Soundness</a> is at least<br>            <a href="../AngouriMath.Core.Transformations/Soundness/SoundUnderAssumptions.html">SoundUnderAssumptions</a>, are used</b> — the population is<br>            <a href="../AngouriMath.Core.Transformations.Matching/MatchedRules/All.html">All</a>, not the public registry. Growth is derived<br>            from the pattern tree for a rule whose replacement is itself a pattern, and declared<br>            explicitly by the rule's own author for a rule whose replacement is code, which is what<br>            let a further batch of code-built rules earn a place here without being able to lie<br>            about it. <a href="../AngouriMath.Core.Transformations/RewriteRuleGrowth/Unknown.html">Unknown</a> is withheld either way: a rule nobody<br>            has justified is not proven safe, and not proven safe is not the same as safe. This is<br>            <a href="https://github.com/asc-community/AngouriMath/issues/746">#746</a> tier 2's<br>            e-graph. As of this writing the filter passes 43 rules.<br>            </para><para><b>Real e-matching now runs wherever a rule's pattern supports it, and this only falls<br>            back to materialising a term where it cannot.</b> A rule's<br>            <a href="../AngouriMath.Core.Transformations.Matching/MatchPattern/CanEMatch.html">CanEMatch</a> on its <a href="../AngouriMath.Core.Transformations.Matching/MatchedRule/Left.html">Left</a>            decides per rule: where it is true this asks the e-graph directly, which is what a<br>            production e-matcher over <a href="../AngouriMath.Core.Transformations.Matching/MatchPattern.html">MatchPattern</a> is supposed to do; where<br>            it is false this falls back to extracting a term and rewriting that instead — slower,<br>            and the only path the harness this is built from ever took. Of the 43 rules the filter<br>            above passes, roughly 27-28 can actually build a replacement today; the remaining ~15<br>            each build a boolean connective or a turned-around equality (<c>and</c>, <c>or</c>,<br>            <c>not</c>, <c>xor</c>, <c>implies</c>, <c>=</c>) and are correctly classified as safe,<br>            but cannot fire, because <a href="../AngouriMath.Core.Transformations/EGraph.html">EGraph</a>'s reconstruction whitelist has no entry<br>            for any of those node types yet and <c>EGraph.Extract</c> returns nothing for a<br>            class that needs one. That is a separate, already-known limitation of<br>            <a href="../AngouriMath.Core.Transformations/EGraph.html">EGraph</a> itself — see <c>Docs/Contributing/EqualitySaturationReviewFindings.md</c>            — not a defect in how these 15 rules were classified. The day the whitelist widens to<br>            cover those six node types, all 15 go live at once, which is the moment to re-run<br>            <c>work/egraph</c>, not before.<br>            </para><para><b>What generalises and what does not.</b> The <c>work/egraph</c> harness's original<br>            measurement — a textbook corpus of 16 expressions, all of which saturated — was made<br>            under a much <i>larger</i> rule set (313 rules, off the public registry's string-length<br>            <a href="../AngouriMath.Core.Transformations/RewriteRuleGrowth.html">RewriteRuleGrowth</a> proxy), before the <a href="../AngouriMath.Core.Transformations/Transformation/Soundness.html">Soundness</a> filter existed<br>            and before any rule here could e-match at all, so it does not describe this population —<br>            a different source, a different filter, a different matcher — and should not be cited as<br>            though it still does without being re-run. Even re-run, a corpus<br>            saturating says the graph stopped growing on those inputs; it did not and could not say<br>            that of every expression <c>Simplify</c> is asked to handle. Pass a budget that reflects<br>            that this is still being found out, not one sized for how much the caller can afford to<br>            lose.<br>            </para></div></p></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

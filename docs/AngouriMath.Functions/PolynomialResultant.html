@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Functions/PolynomialResultant</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">PolynomialResultant</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Functions.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            The resultant of two polynomials in several variables over the rationals, and the<br>            discriminant that follows from it. Eliminating a variable between two equations is<br>            what these are for: <c>Res(f, g)</c> taken in <c>y</c> vanishes exactly where<br>            <c>f</c> and <c>g</c> have a common <c>y</c>, so it is the condition on the<br>            remaining variables that the pair be solvable.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            The resultant is defined here as the determinant of the Sylvester matrix, and it is<br>            computed as one. That is deliberate. The remainder-sequence formulations are faster,<br>            but each carries a factor <c>(-1)^k</c> and a power of a leading coefficient that has<br>            to be tracked through every step, and a sign convention got wrong there is a wrong<br>            answer that looks entirely plausible. Taken as a determinant, the sign convention is<br>            the one property that cannot be got wrong: <c>Res(f, g) = (-1)^(deg f * deg g)<br>            Res(g, f)</c> and <c>Res(f, g) = lc(f)^deg g * lc(g)^deg f * prod (a_i - b_j)</c>            both fall out of the matrix rather than being imposed on it.<br>            </para><para>            The determinant is taken by one-step fraction-free elimination, which is the same<br>            idea as the subresultant remainder sequence in <a href="../AngouriMath.Functions/PolynomialGcd.html">PolynomialGcd</a> and for<br>            the same reason: every intermediate entry is a minor of the original matrix, so the<br>            division at each step comes out exact and the coefficients stay the size of those<br>            minors instead of compounding. Bareiss, <i>Sylvester's identity and multistep<br>            integer-preserving Gaussian elimination</i>, Math. Comp. 22 (1968); Geddes, Czapor<br>            and Labahn, <i>Algorithms for Computer Algebra</i>, §9.3; Knuth, <i>TAOCP</i> vol. 2,<br>            §4.6.1.<br>            </para><para>            The degenerate cases are the ones implementations usually differ on, and these were<br>            measured against SymPy 1.14 rather than recalled: a zero argument gives zero whatever<br>            the other side is, two arguments free of the main variable give one, and<br>            <c>Res(f, c) = c^deg f</c>. All three are what the Sylvester matrix already says once<br>            a polynomial free of the main variable is read as having degree zero — the matrix is<br>            then diagonal, or empty, and an empty determinant is one.<br>            </para><para>            Part of the polynomial layer of<br>            <a href="https://github.com/asc-community/AngouriMath/issues/746">#746</a>, item 43.<br>            </para></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialResultant/ContentOrOne.html"><h3 class="yadg-h3 ">ContentOrOne&#8203;(AngouriMath.&#8203;Functions.&#8203;MultivariatePolynomial,&#8203;System.&#8203;Int32,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;IReadOnlyList{System.&#8203;Int32})</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialResultant/Discriminant.html"><h3 class="yadg-h3 ">Discriminant&#8203;(AngouriMath.&#8203;Functions.&#8203;MultivariatePolynomial,&#8203;System.&#8203;Int32,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;IReadOnlyList{System.&#8203;Int32})</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialResultant/MaxEliminationWork.html"><h3 class="yadg-h3 ">MaxEliminationWork</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialResultant/MaxSylvesterSize.html"><h3 class="yadg-h3 ">MaxSylvesterSize</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialResultant/Resultant.html"><h3 class="yadg-h3 ">Resultant&#8203;(AngouriMath.&#8203;Functions.&#8203;MultivariatePolynomial,&#8203;AngouriMath.&#8203;Functions.&#8203;MultivariatePolynomial,&#8203;System.&#8203;Int32,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;IReadOnlyList{System.&#8203;Int32})</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialResultant/SylvesterDeterminant.html"><h3 class="yadg-h3 ">SylvesterDeterminant&#8203;(AngouriMath.&#8203;Functions.&#8203;MultivariatePolynomial,&#8203;AngouriMath.&#8203;Functions.&#8203;MultivariatePolynomial,&#8203;System.&#8203;Int32)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./PolynomialResultant/TryDivideOut.html"><h3 class="yadg-h3 ">TryDivideOut&#8203;(AngouriMath.&#8203;Functions.&#8203;MultivariatePolynomial,&#8203;AngouriMath.&#8203;Functions.&#8203;MultivariatePolynomial,&#8203;AngouriMath.&#8203;Functions.&#8203;MultivariatePolynomial@)</h3></a>Method</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

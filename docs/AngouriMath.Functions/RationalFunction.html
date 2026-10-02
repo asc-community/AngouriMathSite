@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Functions/RationalFunction</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">RationalFunction</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Functions.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            A canonical form for rational functions over <c>Q</c>: two expressions denoting the<br>            same quotient of polynomials become the identical tree, so that deciding whether they<br>            are equal is a structural comparison rather than a search.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            This is the part of the language where a canonical form is <i>possible</i>. There is<br>            none for the whole of it — zero-equivalence is undecidable once <c>pi</c>, the<br>            exponential, the trigonometric functions and <c>abs</c> are in play (Richardson, 1968)<br>            — so the boundary is in the signature: a refusal means "not a rational function over<br>            <c>Q</c>, and no canonical form is claimed", never a normalisation that resembles one.<br>            <c>Docs/Contributing/CanonicalForm.md</c> is the specification.<br>            <a href="https://github.com/asc-community/AngouriMath/issues/934">#934</a>.<br>            </para><para>            Four steps, and only the first is new. The expression is gathered into a single<br>            quotient — nothing else in the library does that, and without it <c>1/x + 1/y</c> and<br>            <c>(x + y)/(x*y)</c> could never meet. Then the numerator and denominator are divided<br>            by their multivariate greatest common divisor, which<br>            <a href="../AngouriMath.Functions/PolynomialGcd.html">PolynomialGcd</a> computes and verifies. Then both are scaled so that the<br>            denominator's leading coefficient is one, which is what makes <c>2x/(4y)</c> and<br>            <c>x/(2y)</c> the same tree. Coefficients are in lowest terms throughout.<br>            </para><para><b>The domain is preserved rather than assumed away.</b> Cancelling a common factor<br>            widens the domain — <c>x/x</c> is not <c>1</c> — so where a factor of positive degree<br>            is cancelled the answer carries the condition that it is nonzero, which is what the<br>            library already does elsewhere and what keeps "equal trees means equal expressions"<br>            true rather than nearly true. Gathering over a common denominator does not widen<br>            anything: a sum is defined exactly where its terms are, and the product of the<br>            denominators vanishes exactly where one of them does.<br>            </para></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RationalFunction/MaxComplexity.html"><h3 class="yadg-h3 ">MaxComplexity</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RationalFunction/MaxExponent.html"><h3 class="yadg-h3 ">MaxExponent</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RationalFunction/TryCanonicalize.html"><h3 class="yadg-h3 ">TryCanonicalize&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RationalFunction/TryCombine.html"><h3 class="yadg-h3 ">TryCombine&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;System.&#8203;Boolean,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;IReadOnlyDictionary{AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;System.&#8203;Int32},&#8203;System.&#8203;Int32,&#8203;AngouriMath.&#8203;Functions.&#8203;MultivariatePolynomial@,&#8203;AngouriMath.&#8203;Functions.&#8203;MultivariatePolynomial@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./RationalFunction/TryGather.html"><h3 class="yadg-h3 ">TryGather&#8203;(AngouriMath.&#8203;Entity,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;IReadOnlyDictionary{AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;System.&#8203;Int32},&#8203;System.&#8203;Int32,&#8203;AngouriMath.&#8203;Functions.&#8203;MultivariatePolynomial@,&#8203;AngouriMath.&#8203;Functions.&#8203;MultivariatePolynomial@)</h3></a>Method</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

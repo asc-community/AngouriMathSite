@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByHyperbolicTangentSubstitution</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../../">Home</a>
+<a href="../../../quickstart">Quick start</a>
+<a href="../../../wiki">Wiki</a>
+<a href="../../../docs/namespaces.html">Almanac</a>
+<a href="../../../research">Research</a>
+<a href="../../../whatsnew">What's new</a>
+<a href="../../../demo">Try</a>
+<a href="../../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<p class="yadg-p "><a href="../../AngouriMath.Functions.Algebra/IndefiniteIntegralSolver.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">SolveByHyperbolicTangentSubstitution&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;System.&#8203;Boolean)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            An integrand that is a function of <c>e^x</c> with a root in it, integrated by the<br>            substitution <c>u = tanh(x)</c>, the hyperbolic counterpart of the tangent's.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            The library writes the hyperbolic functions as exponentials, and a root of one of<br>            them -- Timofeev's <c>cosh(x)(tanh(x) - cosh(2x))/((sinh(x)^2 + sinh(2x)) sqrt(sinh(2x)))</c>            -- is under <c>u = e^x</c> a root of <c>(u^4 - 1)/u^2</c>, a quartic that nothing<br>            rationalises, where its trigonometric twin is a rational function of the tangent<br>            with <c>sqrt(2u/(1 - u^2))</c> in it and is answered. Under <c>u = tanh(x)</c> the<br>            hyperbolic functions are the same shapes: <c>cosh(x)</c> is <c>(1 - u^2)^(-1/2)</c>            and <c>sinh(x)</c> is <c>u (1 - u^2)^(-1/2)</c>, exactly and for every real <c>x</c>,<br>            since the hyperbolic cosine is positive -- no sign to carry, where the tangent<br>            substitution carries <c>sgn(cos(x))</c>. So <c>e^x</c> is <c>(1 + u)/w</c> and<br>            <c>e^-x</c> is <c>(1 - u)/w</c> for <c>w = sqrt(1 - u^2)</c>, the integrand is<br>            rational in <c>u</c> and <c>w</c> apart from its own roots, and <c>dx = du/(1 - u^2)</c>.<br>            Every quotient -- each radicand, and the whole -- is brought over one bar with<br>            <c>w^2 = 1 - u^2</c> reduced and the denominator cleared of <c>w</c> by its<br>            conjugate, and the polynomials cancelled by their greatest common divisor, so that<br>            <c>e^x + e^-x</c> comes out as <c>2/w</c> and <c>sinh(2x)</c> as <c>2u/(1 - u^2)</c>;<br>            a radicand over a power of <c>1 - u^2</c> gives that power up to <c>w</c>, where it<br>            meets the rest, and a radicand that is a power of <c>1 - u^2</c> and <c>w</c> alone<br>            is a root of <c>1 - u^2</c> of another index -- <c>sech(x)^(3/4)</c> is<br>            <c>(1 - u^2)^(3/8)</c>.<br>            </para><para>            With a root in the integrand whose radicand holds exponentials of both signs<br>            -- as a Laurent polynomial in <c>e^x</c>, a polynomial over a power with a power on<br>            either side of it, or a rational function over anything else -- which is where<br>            <c>u = e^x</c> leaves a root of a quartic or of a quotient; with one sign only,<br>            <c>sqrt(e^x - 1)</c> or <c>sqrt(1 + tanh(x))</c>, the exponential substitution answers<br>            with a root of a linear, and is left to. And, with a symbol among the coefficients,<br>            for an integrand that is a rational function of <c>tanh(x)</c> -- one in which<br>            <c>w</c> cancels out -- with its roots, if any, of rational functions of it too:<br>            <c>1/(a + b coth(x)^2)^2</c> is <c>u^4/((b + a u^2)^2 (1 - u^2))</c> here, where under<br>            <c>u = e^x</c> it is a rational function of a symbolic palindromic quartic<br>            <c>(a + b) u^4 + 2(b - a) u^2 + (a + b)</c> squared, whose roots are what the budget<br>            went on; Rubi's route for the hyperbolic tangent, cotangent, secant and cosecant<br>            families. With rational coefficients the exponential substitution's quartics are<br>            factored over the rationals and answered, and are left to it.<br>            </para>            https://github.com/asc-community/AngouriMath/issues/718<br>            </div></p></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

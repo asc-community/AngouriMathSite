@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script src="https://buttons.github.io/buttons.js"></script>
@@ -119,11 +118,11 @@ using var _ = Settings.ComplexityCriteria.Set(
     expr =&gt; expr.Nodes.Count(node =&gt; node is Entity.Divf)
 );
 
-Console.WriteLine(FromString("a / b + b / c", useCache: false).SimplifiedRate);
-Console.WriteLine(FromString("a / b + b / c", useCache: false).Simplify().SimplifiedRate);</code></pre><br>            Prints<br>            <pre><code class="language-cs">24
+Console.WriteLine("a / b + b / c".ToEntity().SimplifiedRate);
+Console.WriteLine("a / b + b / c".ToEntity().Simplify().SimplifiedRate);</code></pre><br>            Prints<br>            <pre><code class="language-cs">24
 24
 2
-1</code></pre><br>            By default criteria it cannot simplify it further, however, the custom one<br>            it simplified from 2 to 1. <br>            </div></p></p>
+1</code></pre><br>            By default criteria it cannot simplify it further, however, the custom one<br>            it simplified from 2 to 1.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            The function itself lives on <a href="../AngouriMath.Core/CostModel/Default.html">Default</a>, with the named<br>            alternatives beside it — <a href="../AngouriMath.Core/CostModel/SmallestTree.html">SmallestTree</a>,<br>            <a href="../AngouriMath.Core/CostModel/FewestDivisions.html">FewestDivisions</a>, <a href="../AngouriMath.Core/CostModel/FewestRadicals.html">FewestRadicals</a>.<br>            It is referenced rather than repeated so the setting's default and the model<br>            cannot drift apart.<br>            </para><para>            The second half of the example above used to need<br>            <c>FromString(expr, useCache: false)</c>, because a parsed expression is cached by<br>            its text and <a href="../AngouriMath/Entity/SimplifiedRate.html">SimplifiedRate</a> cached one rate per instance —<br>            so the number computed under the default criteria was handed back under this one.<br>            That is fixed: a rate is cached only while nobody has scoped this setting, and a<br>            scoped criteria is computed afresh. Reading a rate under a criteria of your own no<br>            longer needs the parser cache defeated to be right.<br>            </para></div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -137,7 +136,7 @@ Console.WriteLine(FromString("a / b + b / c", useCache: false).Simplify().Simpli
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1953 pages online
+4377 pages online
 </div>
 </body>
 

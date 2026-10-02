@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script src="https://buttons.github.io/buttons.js"></script>
@@ -89,7 +88,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">InnerDifferentiate&#8203;(AngouriMath.&#8203;Entity.&#8203;Variable)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Internal differentiation function<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "variable"</strong></p><div class="yadg-div yadg-param">To derive over</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>The differentiated expressoin or the Derivative node</div></p></p>
+<p class="yadg-p "><a href="../../AngouriMath/Entity.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">InnerDifferentiate</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method with 2 overloads</p></p><ul class="yadg-ul "><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">InnerDifferentiate&#8203;(AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;System.&#8203;Int32)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'><text class="yadg-text cw">power</text> raw passes, with nothing simplified in between.<br>            <a href="../AngouriMath.Entity/Derivativef.html">Derivativef</a>'s simplification needs exactly this and not the public<br>            overload: it asks for the derivative and keeps the node when what comes back is<br>            still a <a href="../AngouriMath.Entity/Derivativef.html">Derivativef</a>, so a simplification anywhere inside would ask<br>            that same node to simplify, which asks for the derivative again, without end.<br>            </div></p></li><li class="yadg-li yadg-list-2"><h3 class="yadg-h3 ">InnerDifferentiate&#8203;(AngouriMath.&#8203;Entity.&#8203;Variable)</h3><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Internal differentiation function<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Parameter "variable"</strong></p><div class="yadg-div yadg-param">To derive over</div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'>            The differentiated expression, or the Derivative node -- and zero for a node with no<br>            rule of its own that does not mention the variable: it is a constant in it, and the<br>            derivative of a constant is not an open question. A set is not a constant, whatever<br>            it mentions: <c>{ 1, 2 } + sin(x)</c> is the set <c>{ 1 + sin(x), 2 + sin(x) }</c>, and<br>            its derivative is <c>{ cos(x) }</c>, which the derivative node reaches elementwise and<br>            a zero would flatten to the number <c>cos(x)</c>.<br>            </div></p></li></ul></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -103,7 +102,7 @@
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1953 pages online
+4377 pages online
 </div>
 </body>
 

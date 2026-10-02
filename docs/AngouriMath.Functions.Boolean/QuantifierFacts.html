@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Functions.Boolean/QuantifierFacts</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">QuantifierFacts</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Functions.Boolean.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            What the quantifiers around a statement establish while they decide it: each bound name<br>            is a member of the set it ranges over, and a claim made under a hypothesis is made where<br>            the hypothesis holds. A rule that needs one of those facts, such as that <c>p</c> is prime<br>            or that <c>0 &lt; k &lt; p</c>, asks here.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            A node has no parent, so a rule inside a body cannot walk up to the quantifier that binds<br>            its names. The quantifier hands the facts down instead, for as long as it takes to decide:<br>            the set its name ranges over, and for <c>forall x in S : H implies C</c> -- or<br>            <c>C or not H</c>, which says the same -- the conjuncts of <c>H</c> while <c>C</c> is<br>            simplified. They are never in scope while <c>H</c> itself is simplified, or<br>            <c>H implies C</c> would lose its hypothesis. For <c>exists</c> and<br>            <c>exists!</c> each conjunct of the body is simplified with the ones before it in scope.<br>            Scopes nest, so the inner quantifier of <c>forall p in PP : forall k in ZZ : ...</c> knows<br>            that <c>p</c> is prime. Nothing leaves a scope: a verdict reached with the facts is the<br>            verdict on the quantified statement, which states them, and it carries no condition.<br>            </para><para>            The bound name is renamed first, to a name no other expression has, and every fact is<br>            about a renamed name. That is what keeps a verdict from escaping through a cache. A node<br>            that caches its simplification can only have read a fact if it mentions a renamed name,<br>            and every such node is built during this decision and is reachable from nothing else. A<br>            cache keyed on the structure of an expression cannot serve it elsewhere either, since no<br>            other expression has the name. For the same reason a conjunct of the hypothesis about the<br>            free names alone is not recorded: a rule reading it could simplify a node that is shared.<br>            A substitution stops at a binder, so an inner quantifier that binds the same name again<br>            is not renamed through, and the outer facts about the name do not reach it.<br>            </para><para>            Only a body in which a rule reads the facts is renamed and decided this way. Every other<br>            statement is decided as it was, under its own names.<br>            </para>            https://github.com/asc-community/AngouriMath/issues/1409<br>            </div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/Decide.html"><h3 class="yadg-h3 ">Decide&#8203;(AngouriMath.&#8203;Functions.&#8203;Boolean.&#8203;Quantifiers.&#8203;Kind,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;System.&#8203;Boolean)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/Establish.html"><h3 class="yadg-h3 ">Establish&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/Gap.html"><h3 class="yadg-h3 ">Gap&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/IsIn.html"><h3 class="yadg-h3 ">IsIn&#8203;(AngouriMath.&#8203;Entity,&#8203;System.&#8203;Int32)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/IsNotWholeNumber.html"><h3 class="yadg-h3 ">IsNotWholeNumber&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/IsPositive.html"><h3 class="yadg-h3 ">IsPositive&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/IsReal.html"><h3 class="yadg-h3 ">IsReal&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/IsRealNumber.html"><h3 class="yadg-h3 ">IsRealNumber&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/IsWholeNumber.html"><h3 class="yadg-h3 ">IsWholeNumber&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/IsWholePolynomial.html"><h3 class="yadg-h3 ">IsWholePolynomial&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/lastRenamed.html"><h3 class="yadg-h3 ">lastRenamed</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/MembershipAsComparison.html"><h3 class="yadg-h3 ">MembershipAsComparison&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Set)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/MembershipFacts.html"><h3 class="yadg-h3 ">MembershipFacts&#8203;(AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity.&#8203;Set)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/PowersOfTheTerms.html"><h3 class="yadg-h3 ">PowersOfTheTerms&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/PrimeDividesByTheBinomialTheorem.html"><h3 class="yadg-h3 ">PrimeDividesByTheBinomialTheorem&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/PrimeDividesItsBinomial.html"><h3 class="yadg-h3 ">PrimeDividesItsBinomial&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/Rank.html"><h3 class="yadg-h3 ">Rank&#8203;(AngouriMath.&#8203;Entity.&#8203;Set.&#8203;SpecialSet)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/Reads.html"><h3 class="yadg-h3 ">Reads&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/Recorded.html"><h3 class="yadg-h3 ">Recorded&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;System.&#8203;String,&#8203;System.&#8203;String)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/Renamed.html"><h3 class="yadg-h3 ">Renamed&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/Rounded.html"><h3 class="yadg-h3 ">Rounded&#8203;(AngouriMath.&#8203;Entity,&#8203;System.&#8203;Boolean,&#8203;System.&#8203;Boolean)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/Simplified.html"><h3 class="yadg-h3 ">Simplified&#8203;(AngouriMath.&#8203;Functions.&#8203;Boolean.&#8203;Quantifiers.&#8203;Kind,&#8203;AngouriMath.&#8203;Entity,&#8203;System.&#8203;Boolean)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./QuantifierFacts/WholeOverAWholeNumber.html"><h3 class="yadg-h3 ">WholeOverAWholeNumber&#8203;(AngouriMath.&#8203;Entity)</h3></a>Method</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

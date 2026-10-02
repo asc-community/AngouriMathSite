@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Functions.Algebra/BreakpointIntegration</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">BreakpointIntegration</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Functions.Algebra.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            A definite integral whose integrand can jump inside the range, split at the jumps. A<br>            piecewise breaks where a case's condition changes truth; <c>floor(x)</c> and<br>            <c>ceil(x)</c> break at every whole number. Between two breakpoints the piecewise is one<br>            of its cases and the step is one constant, so the pieces integrate through an<br>            antiderivative and add.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para><c>F(b) - F(a)</c> is the integral only where <c>F</c> is continuous on <c>[a, b]</c>, and<br>            an antiderivative found with the piecewise's cases or the floor taken as constants is<br>            continuous between two jumps and not across one. Taken across one it answered<br>            <c>integral(x - floor(x), x, 0, 3)</c> with <c>0</c> and the tent map's integral over<br>            <c>[0, 1]</c> with <c>1</c>, where they are <c>3/2</c> and <c>1/2</c>; with a symbolic<br>            bound it answered <c>(n - floor(n))^3 / 3</c>, and with a piecewise it handed back a<br>            piecewise that still mentioned the integration variable. None of that happens here: an<br>            integrand with a break never goes through an antiderivative between two bounds.<br>            </para><para><b>Finitely many breakpoints</b> -- a piecewise whose conditions compare the variable with<br>            numbers -- are collected, the range is cut at the ones inside it, and on each piece the<br>            piecewise is replaced by the case that holds at the piece's midpoint, which is exact<br>            because the condition has no other place to change. A condition that compares the<br>            variable with something symbolic, or a bound that is symbolic, is declined: the pieces<br>            depend on where the jumps fall, and answering across them is what this exists to stop.<br>            A piecewise whose conditions do not mention the variable is a constant here and goes<br>            through the antiderivative as one.<br>            </para><para><b>Infinitely many, evenly spaced</b> -- a floor or a ceiling of the variable -- are the<br>            same split written as a sum: on <c>[n, n + 1)</c> the floor is <c>n</c>, the ceiling<br>            <c>n + 1</c>, <c>x</c> is <c>n + t</c> with <c>t</c> over <c>[0, 1)</c>, and the integral<br>            over whole bounds is a sum over <c>n</c> of an integral over <c>t</c> with no step in it,<br>            which the summation's closed forms answer; <c>+oo</c> is allowed as the upper bound. A<br>            numeric bound that is not whole contributes the piece up to the nearest whole number,<br>            on which the step is one constant. The fractional part <c>x - floor(x)</c> is substituted<br>            as a unit, since written out it arrives as <c>n + t - n</c>, and a term subtracted from<br>            itself simplifies to a conditional zero rather than to nothing<br>            (<a href="https://github.com/asc-community/AngouriMath/issues/1174">#1174</a>).<br>            </para><para>            Offered only where every piece then resolves; an integral rewritten as an unevaluated sum<br>            of unevaluated integrals is not an answer. Question I.2 of<br>            <a href="https://github.com/asc-community/AngouriMath/issues/1212">#1212</a>, and the<br>            review of <a href="https://github.com/asc-community/AngouriMath/pull/1215">#1215</a>,<br>            which asked for the general mechanism rather than the floor's special case.<br>            </para></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BreakpointIntegration/CollectThresholds.html"><h3 class="yadg-h3 ">CollectThresholds&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;List{AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real})</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BreakpointIntegration/HasABreak.html"><h3 class="yadg-h3 ">HasABreak&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BreakpointIntegration/OnAPiece.html"><h3 class="yadg-h3 ">OnAPiece&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;PeterO.&#8203;Numbers.&#8203;EInteger)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./BreakpointIntegration/ResolvedAt.html"><h3 class="yadg-h3 ">ResolvedAt&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real)</h3></a>Method</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

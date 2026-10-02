@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script src="https://buttons.github.io/buttons.js"></script>
@@ -89,7 +88,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath.Functions/Patterns.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">CollectCommonFactors&#8203;(AngouriMath.&#8203;Entity)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Pulls a shared factor out of the terms of a sum: <c>a*c + a*d + b*c + b*d</c>            becomes <c>a*(c + d) + b*(c + d)</c>, which the pairwise rules above close to<br>            <c>(a + b) * (c + d)</c> on the next pass.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>            The pairwise rules only ever see two adjacent terms of the sum tree, so a sum of<br>            four was left half-factored at <c>a*(c + d) + b*c + b*d</c> -- that is<br>            https://github.com/asc-community/AngouriMath/issues/531. Sums<br>            of two are left to those rules, which are older and better tested.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'><text class="yadg-text cw">null</text> when no factor is shared, so the rule does not fire.</div></p></p>
+<p class="yadg-p "><a href="../../AngouriMath.Functions/Patterns.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">CollectCommonFactors&#8203;(AngouriMath.&#8203;Entity)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Pulls a shared factor out of the terms of a sum: <c>a*c + a*d + b*c + b*d</c>            becomes <c>a*(c + d) + b*(c + d)</c>, which the pairwise rules above close to<br>            <c>(a + b) * (c + d)</c> on the next pass.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>            The pairwise rules only ever see two adjacent terms of the sum tree, so a sum of<br>            four was left half-factored at <c>a*(c + d) + b*c + b*d</c> -- that is<br>            https://github.com/asc-community/AngouriMath/issues/531. Sums<br>            of two are left to those rules, which are older and better tested.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Returns</strong></p><div class='yadg-returns'><text class="yadg-text cw">null</text> when no factor is shared, so the rule does not fire.</div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'>Internal so the data form of this set calls it rather than repeating it.</div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -103,7 +102,7 @@
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1953 pages online
+4377 pages online
 </div>
 </body>
 

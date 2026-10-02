@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Functions.Algebra/AntiderivativeBreaks</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">AntiderivativeBreaks</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Functions.Algebra.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            The points strictly inside a numeric range where an antiderivative can stop being<br>            continuous, so that a definite integral is taken through it piece by piece.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para><c>F(b) - F(a)</c> is the integral only where <c>F</c> is continuous on <c>[a, b]</c>. A pole<br>            of the integrand between the bounds is a point where <c>F</c> is not even defined: the<br>            integral of <c>1/x^2</c> over <c>[-1, 1]</c> came back as <c>-1/x</c> at 1 less <c>-1/x</c>            at -1, which is <c>-2</c>, a negative answer for a positive integrand whose integral<br>            diverges. An antiderivative can also jump where the integrand is continuous, and the<br>            answer through it is then wrong by the jump: <c>arccot(x)</c> jumps at 0 in this library's<br>            convention, and a half-angle substitution writes <c>tan(x/2)</c>.<br>            </para><para>            The places read are where a node of the antiderivative stops being continuous: the zeros<br>            of a denominator, of a base raised to a negative power, of a logarithm's argument, of the<br>            argument of <c>sgn</c>, <c>arccot</c>, <c>arcsec</c> and <c>arccsc</c>, and the zeros of the<br>            cosine or the sine under a tangent, secant, cotangent or cosecant of a linear argument.<br>            Where one of them cannot be listed -- a root with a symbol in it, a periodic argument<br>            that is not linear, more breaks than <a href="../AngouriMath.Functions.Algebra/AntiderivativeBreaks/MostBreaks.html">MostBreaks</a> -- the caller is told so,<br>            and integrates as it did before.<br>            </para><para>            A break is carried as its exact point, where the one-sided limits are taken, and its<br>            decimal value, which only orders the breaks and places them in the range.<br>            https://github.com/asc-community/AngouriMath/issues/1508<br>            </para></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./AntiderivativeBreaks/Coincide.html"><h3 class="yadg-h3 ">Coincide&#8203;(AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./AntiderivativeBreaks/Inside.html"><h3 class="yadg-h3 ">Inside&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./AntiderivativeBreaks/MostBreaks.html"><h3 class="yadg-h3 ">MostBreaks</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./AntiderivativeBreaks/PeriodicZeros.html"><h3 class="yadg-h3 ">PeriodicZeros&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real,&#8203;System.&#8203;Boolean,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;List{System.&#8203;ValueTuple{AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real}})</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./AntiderivativeBreaks/SolvedZeros.html"><h3 class="yadg-h3 ">SolvedZeros&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;List{System.&#8203;ValueTuple{AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real}})</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./AntiderivativeBreaks/ZerosOf.html"><h3 class="yadg-h3 ">ZerosOf&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real,&#8203;System.&#8203;Collections.&#8203;Generic.&#8203;List{System.&#8203;ValueTuple{AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Real}})</h3></a>Method</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

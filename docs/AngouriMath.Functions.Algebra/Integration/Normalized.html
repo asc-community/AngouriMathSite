@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../../../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script src="https://buttons.github.io/buttons.js"></script>
@@ -89,7 +88,7 @@
 
 <!--Top end-->
 
-<p class="yadg-p "><a href="../../AngouriMath.Functions.Algebra/Integration.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Normalized&#8203;(AngouriMath.&#8203;Entity)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Brings the two powers of one base in a product together, so that an integrand<br>            which is a power in disguise is recognised as one.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            This has to happen on every recursive call rather than once on the way in. The<br>            shape is produced by the integrator itself -- distributing a product over a sum<br>            turns <c>sin(x)^4 * (5 - 6*sin(x)^2)</c> into a term <c>sin(x)^4 * (-6) * sin(x)^2</c>            -- so normalising only the caller's input would miss every case the integrator<br>            generates for itself. https://github.com/asc-community/AngouriMath/issues/781<br>            </para><para>            Deliberately not followed by <c>InnerSimplified</c>: that rewrites <c>x^(-2)</c>            back into <c>1/x^2</c>, and <a href="../AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveAsPolynomialTerm.html">SolveAsPolynomialTerm(AngouriMath.Entity,AngouriMath.Entity.Variable,System.Boolean)</a>            rewrites a <c>1/x^n</c> it is handed into <c>Pow(x, -n)</c>, so the pair recurse<br>            into each other until the stack runs out. The gathering folds the exponents it<br>            builds and leaves the rest of the tree alone.<br>            </para></div></p></p>
+<p class="yadg-p "><a href="../../AngouriMath.Functions.Algebra/Integration.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">Normalized&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Brings the two powers of one base in a product together, so that an integrand<br>            which is a power in disguise is recognised as one.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            This has to happen on every recursive call rather than once on the way in. The<br>            shape is produced by the integrator itself -- distributing a product over a sum<br>            turns <c>sin(x)^4 * (5 - 6*sin(x)^2)</c> into a term <c>sin(x)^4 * (-6) * sin(x)^2</c>            -- so normalising only the caller's input would miss every case the integrator<br>            generates for itself. https://github.com/asc-community/AngouriMath/issues/781<br>            </para><para>            Deliberately not followed by <c>InnerSimplified</c>: that rewrites <c>x^(-2)</c>            back into <c>1/x^2</c>, and <a href="../AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveAsPolynomialTerm.html">SolveAsPolynomialTerm(AngouriMath.Entity,AngouriMath.Entity.Variable,System.Boolean)</a>            rewrites a <c>1/x^n</c> it is handed into <c>Pow(x, -n)</c>, so the pair recurse<br>            into each other until the stack runs out. The gathering folds the exponents it<br>            builds and leaves the rest of the tree alone.<br>            </para></div></p></p>
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -103,7 +102,7 @@
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1953 pages online
+4377 pages online
 </div>
 </body>
 

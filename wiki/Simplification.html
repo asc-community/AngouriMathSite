@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../themes.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
     
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 <script src="https://buttons.github.io/buttons.js"></script>
@@ -146,6 +145,39 @@ To simplify the latter case, call <text class='cw'>Simplify</text>.
 Same way as with <text class='cw'>Evaled</text>, consider <text class='cw'>InnerSimplified</text> as a free-to-call property.
 
 Extension: <text class='cw'>string.Simplify()</text>.
+
+<h2>Conditions on the answer: <text class='cw'>provided</text></h2>
+
+A rewrite that removes a singularity carries a condition, so that the answer does not claim a
+value the input never had. <text class='cw'>x/x</text> has no value at zero; <text class='cw'>1</text> has one; so the simplified form says
+where it stands for the input:
+<pre><code>Entity expr = "x / x";
+Console.WriteLine(expr.Simplify());</code></pre>
+Output:
+<pre><code>1 provided not x = 0</code></pre>
+<text class='cw'>a provided c</text> is <text class='cw'>a</text> where <text class='cw'>c</text> holds and has no value where it does not. A condition the answer
+already states on its own is not written twice: the derivative of <text class='cw'>x ^ x</text> is <text class='cw'>0 ^ 0</text> at zero and
+the derivative of <text class='cw'>ln(x) / x</text> is a quotient by <text class='cw'>x ^ 2</text>, and each excludes zero by its own domain
+condition, so a <text class='cw'>provided not x = 0</text> beside either says nothing and is dropped.
+<pre><code>Entity expr = "x ^ x";
+Console.WriteLine(expr.Differentiate("x").Simplify());
+Entity expr2 = "ln(x) / x";
+Console.WriteLine(expr2.Differentiate("x").Simplify());</code></pre>
+Output:
+<pre><code>x ^ x * (1 + ln(x))
+(1 - ln(x)) / x ^ 2</code></pre>
+What decides it is the expression's own domain condition, read in the codomain the question is
+asked in (<text class='cw'>Entity.DomainConditionIn</text>, under <text class='cw'>MathS.Settings.Codomain</text>): a quotient accepts a
+nonzero divisor, a power a nonzero base or a positive exponent, a tangent an argument whose
+cosine is nonzero, and so on. A condition that only excludes points that domain condition
+already excludes is redundant, whatever shape the expression has:
+<pre><code>Entity expr = "tan(x) provided not cos(x) = 0";
+Console.WriteLine(expr.Simplify());</code></pre>
+Output:
+<pre><code>tan(x)</code></pre>
+A condition the expression does not state stays — <text class='cw'>1 / (1 + x ^ 2) provided not x = 0</text> keeps
+its clause, since the quotient is defined at zero and the condition takes that point away.
+
 <!--Bottom begin-->
 
 <br><br><br><br>
@@ -159,7 +191,7 @@ Extension: <text class='cw'>string.Simplify()</text>.
 <a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
 <a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
 <a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
-1953 pages online
+4377 pages online
 </div>
 </body>
 

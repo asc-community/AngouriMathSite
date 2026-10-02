@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Functions/DivergentSeries</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">DivergentSeries</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Functions.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            A summation to <c>+oo</c> whose terms do not tend to zero, which therefore has no finite<br>            value: <c>sum(2^k, k, 0, +oo)</c> and <c>sum(n^n, n, 1, +oo)</c> are <c>+oo</c>.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            The <b>nth-term test</b>: if the terms do not tend to zero the series diverges. That alone<br>            says a series has no sum; it does not say what to answer instead. What settles the answer is<br>            the <em>sign</em> of the limit — where the terms tend to a positive <c>L</c>, they are<br>            eventually all above <c>L / 2</c>, so the partial sums pass every bound and the value is<br>            <c>+oo</c>; a negative limit gives <c>-oo</c> the same way. The finitely many terms before<br>            that point are finite and cannot change it.<br>            </para><para><b>A limit of zero is declined, and that is the whole difficulty of the test.</b> It is<br>            exactly the case the nth-term test says nothing about: <c>sum(1/k)</c> diverges and<br>            <c>sum(1/k^2)</c> converges, and their terms both tend to 0. Answering either from this<br>            reader would be a guess. So would a limit that does not exist — <c>sum((-1)^k)</c> has no<br>            value rather than an infinite one — and that is left as written too, since telling "the<br>            limit does not exist" apart from "the limit was not computed" is not something to infer<br>            from a failed computation.<br>            </para><para><b>The summand must have no pole in the index, and this is checked before the limit is<br>            asked for.</b> A single undefined term makes the whole sum undefined, not infinite:<br>            <c>sum(k / (k - 5), k, 0, +oo)</c> has terms tending to 1, and answering <c>+oo</c> would<br>            be wrong because the term at <c>k = 5</c> does not exist. Rather than hunt for poles, the<br>            index is allowed to occur only where none can arise — under <c>+</c>, <c>-</c>, <c>*</c>,<br>            and powers of the three shapes <a href="../AngouriMath.Functions/DivergentSeries/HasNoPoleInTheIndex.html">HasNoPoleInTheIndex(AngouriMath.Entity,AngouriMath.Entity.Variable,AngouriMath.Entity.Number.Integer)</a> lists. Division by<br>            anything containing the index, a factorial of it, a logarithm of it and the rest are<br>            declined outright. That check is also what keeps this cheap: it runs first, so a summand<br>            this cannot speak about never reaches the limit engine.<br>            </para><para>            Last in the chain, after every closed form, so that a series which <em>does</em> converge is<br>            summed rather than tested. Asked for on the review of<br>            <a href="https://github.com/asc-community/AngouriMath/pull/1218">#1218</a>, where<br>            <c>integral(floor(x)^floor(x), x, 1, +oo)</c> splits into <c>sum(n^n, n, 1, +oo)</c> and was<br>            left as written for want of this; part of<br>            <a href="https://github.com/asc-community/AngouriMath/issues/1212">#1212</a>.<br>            </para></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./DivergentSeries/ClosedForm.html"><h3 class="yadg-h3 ">ClosedForm&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./DivergentSeries/HasNoPoleInTheIndex.html"><h3 class="yadg-h3 ">HasNoPoleInTheIndex&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity.&#8203;Number.&#8203;Integer)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./DivergentSeries/HoldsOverTheRange.html"><h3 class="yadg-h3 ">HoldsOverTheRange&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;System.&#8203;Int32)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./DivergentSeries/TryReadShift.html"><h3 class="yadg-h3 ">TryReadShift&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;System.&#8203;Int32@)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./DivergentSeries/WithoutConditionsThatHold.html"><h3 class="yadg-h3 ">WithoutConditionsThatHold&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;System.&#8203;Int32)</h3></a>Method</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>

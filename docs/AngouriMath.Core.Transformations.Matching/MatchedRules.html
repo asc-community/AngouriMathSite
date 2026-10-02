@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>AngouriMath | docs/AngouriMath.Core.Transformations.Matching/MatchedRules</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" href="../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../">Home</a>
+<a href="../../quickstart">Quick start</a>
+<a href="../../wiki">Wiki</a>
+<a href="../../docs/namespaces.html">Almanac</a>
+<a href="../../research">Research</a>
+<a href="../../whatsnew">What's new</a>
+<a href="../../demo">Try</a>
+<a href="../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<h2 class="yadg-h2 centered">MatchedRules</h2><hr/><p class="yadg-p "><a href="../AngouriMath.Core.Transformations.Matching.html">&#8592; Back to list of classes</a></p><h2 class="yadg-h2 ">Description</h2><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            Rule sets written as data, a few at a time and deliberately so: the value of this file is<br>            that a set expressed here can be checked against the <c>switch</c> that already expresses<br>            it, so the migration is proven one set at a time rather than asserted wholesale.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para><c>MatchedRulesAgreeWithTheSwitchTest</c> is that check. It runs both forms over<br>            generated expressions and requires them to agree on every one, which is what makes<br>            replacing the <c>switch</c> a mechanical step rather than a leap.<br>            </para><para><a href="../AngouriMath.Core.Transformations.Matching/MatchedRules/PythagoreanIdentity.html">PythagoreanIdentity</a> is the exception, and is here for the opposite reason:<br>            there is nothing for it to agree with. It uses n-ary matching to say something the<br>            <c>switch</c> has no way of saying, so it is checked against the mathematics rather than<br>            against the code it would replace.<br>            </para><para><b>Both sides of every rule here are patterns</b>, so thirteen of the fourteen can be read<br>            backwards — <a href="../AngouriMath.Core.Transformations.Matching/MatchedRule/Reversed.html">Reversed</a>, and<br>            <c>Docs/Contributing/ReversibleRules.md</c> for what that requires and what it does not<br>            claim. The fourteenth is the Pythagorean identity, which cannot, for a reason that is about<br>            the mathematics rather than about the encoding.<br>            </para><para><b>What it costs to use one of these has been measured end to end, and the first answer<br>            was wrong about the reason.</b> The first exchange cost about <b>5% of<br>            <c>Simplify</c>'s time</b> for one set, which was recorded here as the price of the idea<br>            and as the argument against doing it wholesale. It was not the idea: <c>NodePattern</c>            recomputed <a href="../AngouriMath.Core.Transformations.Matching/MatchPattern/IsDeterministic.html">IsDeterministic</a> on <i>every attempt</i>, walking the<br>            whole pattern tree behind a delegate before any matching began, so the case that does the<br>            least work — a rule that does not fire — paid the most for it. Settled once instead, a<br>            miss goes 29.99 ns → 13.48 ns and a whole pass 1182.9 ns → 659.9 ns at identical<br>            allocation.<br>            </para><para>            Re-measured against <c>Simplify</c> itself, three arms in one process with the third a<br>            second copy of the first, the exchange is <b>inside the noise floor on time</b> — six<br>            samples each, medians +0.12% apart where the same binary spreads 1.90% — and<br>            <b>+0.14% on allocation</b>, which is the one figure that reproduces: two copies of the<br>            same assembly agree to 5 bytes in 45.6 MB. So a set is exchanged when its rules want to<br>            be data, and the cost is no longer the reason not to.<br>            </para></div><h2 class="yadg-h2 ">Members</h2><p class="yadg-p "><ul class="yadg-ul "><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/All.html"><h3 class="yadg-h3 ">All</h3></a>Field</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/Boolean.html"><h3 class="yadg-h3 ">Boolean</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/CollapseMultipleFractions.html"><h3 class="yadg-h3 ">CollapseMultipleFractions</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/CollapseTrigonometricFunctions.html"><h3 class="yadg-h3 ">CollapseTrigonometricFunctions</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/Common.html"><h3 class="yadg-h3 ">Common</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/CommonDenominator.html"><h3 class="yadg-h3 ">CommonDenominator&#8203;(AngouriMath.&#8203;Functions.&#8203;TreeAnalyzer.&#8203;SortLevel)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/DivisionPreparing.html"><h3 class="yadg-h3 ">DivisionPreparing</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/ExpandFactorialDivisions.html"><h3 class="yadg-h3 ">ExpandFactorialDivisions</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/ExpandMultipleAngle.html"><h3 class="yadg-h3 ">ExpandMultipleAngle</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/ExpandTrigonometric.html"><h3 class="yadg-h3 ">ExpandTrigonometric</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/Expansion.html"><h3 class="yadg-h3 ">Expansion</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/Factorization.html"><h3 class="yadg-h3 ">Factorization</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/FactorizeFactorialMultiplications.html"><h3 class="yadg-h3 ">FactorizeFactorialMultiplications</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/InequalityEquality.html"><h3 class="yadg-h3 ">InequalityEquality</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/InvertNegativeMultipliers.html"><h3 class="yadg-h3 ">InvertNegativeMultipliers</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/InvertNegativePowers.html"><h3 class="yadg-h3 ">InvertNegativePowers</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/NormalTrigonometricForm.html"><h3 class="yadg-h3 ">NormalTrigonometricForm</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/NumericNeat.html"><h3 class="yadg-h3 ">NumericNeat</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/PerfectSquare.html"><h3 class="yadg-h3 ">PerfectSquare</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/PhiFunction.html"><h3 class="yadg-h3 ">PhiFunction</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/PolynomialGcdCancellation.html"><h3 class="yadg-h3 ">PolynomialGcdCancellation</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/PolynomialLongDivision.html"><h3 class="yadg-h3 ">PolynomialLongDivision</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/Power.html"><h3 class="yadg-h3 ">Power</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/PowerOfPower.html"><h3 class="yadg-h3 ">PowerOfPower</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/PythagoreanIdentity.html"><h3 class="yadg-h3 ">PythagoreanIdentity</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/RationalizeDenominator.html"><h3 class="yadg-h3 ">RationalizeDenominator</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/SetOperator.html"><h3 class="yadg-h3 ">SetOperator</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/SharedFactor.html"><h3 class="yadg-h3 ">SharedFactor</h3></a>Property</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/Sort.html"><h3 class="yadg-h3 ">Sort&#8203;(AngouriMath.&#8203;Functions.&#8203;TreeAnalyzer.&#8203;SortLevel)</h3></a>Method</p></li><li class="yadg-li yadg-member yadg-list"><p class="yadg-p "><a href="./MatchedRules/Trigonometric.html"><h3 class="yadg-h3 ">Trigonometric</h3></a>Property</p></li></ul></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4377 pages online
+</div>
+</body>
+
+
+
+
+</html>
