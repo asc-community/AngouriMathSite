@@ -30,6 +30,8 @@ GenerateFinalWebsite();
 CopyCssFilesToFinalWebsite();
 CopyImgFolderToFinalWebsite();
 CopyCName();
+CopyRobots();
+GenerateSitemap();
 
 static string GetNearestRoot(string name, string current)
     => Path.GetFileName(current) == name ? current : GetNearestRoot(name, Path.GetDirectoryName(current));
@@ -269,6 +271,33 @@ void CopyImgFolderToFinalWebsite()
 void CopyCName()
 {
     File.Copy(RootP._("CNAME"), FinalOutputP._("CNAME"), true);
+}
+
+void CopyRobots()
+{
+    File.Copy(RootP._("robots.txt"), FinalOutputP._("robots.txt"), true);
+}
+
+// Every page of the website, for search engines, which robots.txt points to. A page that is a
+// folder's index.html is served at the folder, so it is listed as the folder.
+void GenerateSitemap()
+{
+    var host = File.ReadAllText(RootP._("CNAME")).Trim();
+    var sitemap = new StringBuilder();
+    sitemap.AppendLine("<?xml version=\"1.0\" encoding=\"UTF-8\"?>");
+    sitemap.AppendLine("<urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">");
+    foreach (var page in Directory.EnumerateFiles(FinalOutputP, "*.html", SearchOption.AllDirectories).OrderBy(p => p, StringComparer.Ordinal))
+    {
+        var relative = Path.GetRelativePath(FinalOutputP, page).Replace(Path.DirectorySeparatorChar, '/');
+        if (relative == "index.html")
+            relative = "";
+        else if (relative.EndsWith("/index.html", StringComparison.Ordinal))
+            relative = relative[..^"index.html".Length];
+        var path = string.Join("/", relative.Split('/').Select(Uri.EscapeDataString));
+        sitemap.AppendLine($"  <url><loc>{System.Security.SecurityElement.Escape($"https://{host}/{path}")}</loc></url>");
+    }
+    sitemap.AppendLine("</urlset>");
+    File.WriteAllText(FinalOutputP._("sitemap.xml"), sitemap.ToString());
 }
 
 
