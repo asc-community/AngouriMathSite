@@ -2712,6 +2712,7 @@
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/InAFractionalPowerOfX.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/InTermsOf.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/InTheBaseWritten.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/InTheVariableThatDepressesIt.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/InU.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateABinomialDifferentialInTheSecondCase.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateAPolynomialOverABinomial.html</loc></url>
@@ -2835,6 +2836,7 @@
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveARationalFunctionOfASineOverASymbolicQuadratic.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveARationalFunctionOfTheHyperbolicTangent.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveARationalFunctionTimesAPowerOfALogarithm.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveARationalFunctionWithComplexCoefficients.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveAReciprocalOfAnInverseTrigonometricFunction.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveATrigonometricOfALinearOverAPowerOfALinear.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveAnEllipticLookingQuotientOfBinomials.html</loc></url>
@@ -2983,6 +2985,7 @@
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/WithTheComplementInEvenPowers.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/WithTheComplementSquared.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/WithTheContentOutOfEachSumFactor.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/WithTheFactorsWrittenOnBothSidesCancelled.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/WithTheOddRootOnEachFactor.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/WithThePowersOfXCollected.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/WithTheQuadraticAsItsRoot.html</loc></url>
