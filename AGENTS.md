@@ -12,8 +12,8 @@ sets the working practice for both. When there is nothing to do here, it goes ba
   `build` runs `src/NaiveStaticGenerator`, which wraps every page in `src/content` in
   `src/content/_templates/top.html` and `bottom.html` and writes `.output/final`. `run` builds and
   opens the home page.
-- `.output/final` also gets the stylesheets, `img/`, `CNAME`, `robots.txt` and a `sitemap.xml` that
-  the generator writes from the pages it produced.
+- `.output/final` also gets the stylesheets, `img/`, `CNAME`, `robots.txt`, and a `sitemap.xml` and an
+  `llms.txt` that the generator writes from the pages it produced.
 - A pull request builds the site on Windows, Linux and macOS (`build-test.yml`).
 - **A merge to master is live.** `deployment.yml` builds the site and pushes `.output/final` to the
   `gh-pages` branch, and GitHub Pages publishes it a few minutes later. Check the live page after a
