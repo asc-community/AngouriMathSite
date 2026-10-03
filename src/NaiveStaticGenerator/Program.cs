@@ -32,6 +32,7 @@ CopyImgFolderToFinalWebsite();
 CopyCName();
 CopyRobots();
 GenerateSitemap();
+GenerateLlmsTxt();
 
 static string GetNearestRoot(string name, string current)
     => Path.GetFileName(current) == name ? current : GetNearestRoot(name, Path.GetDirectoryName(current));
@@ -298,6 +299,63 @@ void GenerateSitemap()
     }
     sitemap.AppendLine("</urlset>");
     File.WriteAllText(FinalOutputP._("sitemap.xml"), sitemap.ToString());
+}
+
+// The website for language models, as llmstxt.org proposes it: the library's name and description,
+// a link to each page, and the documentation of the types and members, thousands of pages, as one
+// link to its index. The description is the one the pages give search engines, so it is said once.
+void GenerateLlmsTxt()
+{
+    var host = File.ReadAllText(RootP._("CNAME")).Trim();
+    var top = File.ReadAllText(ContentP._("_templates")._("top.html"));
+    var description = System.Text.RegularExpressions.Regex.Match(top, "<meta name=\"description\" content=\"([^\"]*)\"").Groups[1].Value;
+    var named = new Dictionary<string, string>
+    {
+        [""] = "Home", ["quickstart/"] = "Quickstart", ["whatsnew/"] = "What's new",
+        ["why/"] = "Why AngouriMath", ["research/"] = "Research", ["demo/"] = "Demo", ["wiki/"] = "Wiki",
+    };
+    var pages = new List<(string Path, string Url)>();
+    var wiki = new List<string>();
+    foreach (var page in Directory.EnumerateFiles(FinalOutputP, "*.html", SearchOption.AllDirectories).OrderBy(p => p, StringComparer.Ordinal))
+    {
+        var relative = Path.GetRelativePath(FinalOutputP, page).Replace(Path.DirectorySeparatorChar, '/');
+        if (relative.StartsWith("docs/", StringComparison.Ordinal))
+            continue;
+        if (relative == "index.html")
+            relative = "";
+        else if (relative.EndsWith("/index.html", StringComparison.Ordinal))
+            relative = relative[..^"index.html".Length];
+        var url = $"https://{host}/{string.Join("/", relative.Split('/').Select(Uri.EscapeDataString))}";
+        // A page of the wiki by its name; `_Footer` and `_Sidebar` are parts of the wiki's pages.
+        if (relative.StartsWith("wiki/", StringComparison.Ordinal) && relative != "wiki/")
+        {
+            var name = Path.GetFileNameWithoutExtension(relative);
+            if (!name.StartsWith("_", StringComparison.Ordinal))
+                wiki.Add($"- [{name.Replace('-', ' ')}]({url})");
+        }
+        else
+            pages.Add((relative, url));
+    }
+    var llms = new StringBuilder();
+    llms.AppendLine("# AngouriMath");
+    llms.AppendLine();
+    llms.AppendLine($"> {System.Net.WebUtility.HtmlDecode(description)}");
+    llms.AppendLine();
+    llms.AppendLine("## Pages");
+    llms.AppendLine();
+    // The pages in the order the map names them, any other after them.
+    var order = named.Keys.ToList();
+    foreach (var (path, url) in pages.OrderBy(page => order.IndexOf(page.Path) is var at && at >= 0 ? at : order.Count))
+        llms.AppendLine($"- [{(named.TryGetValue(path, out var name) ? name : path.TrimEnd('/'))}]({url})");
+    llms.AppendLine();
+    llms.AppendLine("## Wiki");
+    llms.AppendLine();
+    wiki.ForEach(line => llms.AppendLine(line));
+    llms.AppendLine();
+    llms.AppendLine("## Optional");
+    llms.AppendLine();
+    llms.AppendLine($"- [Almanac](https://{host}/docs/namespaces.html): every namespace, type and member, from the library's XML documentation");
+    File.WriteAllText(FinalOutputP._("llms.txt"), llms.ToString());
 }
 
 
