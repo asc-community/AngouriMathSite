@@ -1,8 +1,8 @@
 # Working in this repository
 
 This is the source of [am.angouri.org](https://am.angouri.org), the website of
-[AngouriMath](https://github.com/asc-community/AngouriMath). An agent maintaining it works as it does
-in the library's repository, whose [AGENTS.md](https://github.com/asc-community/AngouriMath/blob/master/AGENTS.md)
+[AngouriMath](https://github.com/AngouriMath/AngouriMath). An agent maintaining it works as it does
+in the library's repository, whose [AGENTS.md](https://github.com/AngouriMath/AngouriMath/blob/master/AGENTS.md)
 sets the working practice for both. When there is nothing to do here, it goes back to the library.
 
 ## How the site is built and published
