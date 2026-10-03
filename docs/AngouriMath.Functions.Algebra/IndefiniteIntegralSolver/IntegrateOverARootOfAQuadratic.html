@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="AngouriMath, an open-source symbolic algebra library for .NET: solve equations and systems, simplify, differentiate, integrate, take limits, and compile expressions.">
+    <title>AngouriMath | docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateOverARootOfAQuadratic</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../../">Home</a>
+<a href="../../../quickstart">Quick start</a>
+<a href="../../../wiki">Wiki</a>
+<a href="../../../docs/namespaces.html">Almanac</a>
+<a href="../../../research">Research</a>
+<a href="../../../whatsnew">What's new</a>
+<a href="../../../demo">Try</a>
+<a href="../../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<p class="yadg-p "><a href="../../AngouriMath.Functions.Algebra/IndefiniteIntegralSolver.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">IntegrateOverARootOfAQuadratic&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable,&#8203;AngouriMath.&#8203;Entity[],&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity,&#8203;System.&#8203;Func{AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity},&#8203;AngouriMath.&#8203;Functions.&#8203;Algebra.&#8203;IndefiniteIntegralSolver.&#8203;ALinearBesideTheRoot,&#8203;AngouriMath.&#8203;Entity,&#8203;System.&#8203;Nullable{System.&#8203;Int32},&#8203;System.&#8203;Int32)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            The integral of <c>T(x)/((g + h x)^k S)</c>, <c>T</c> a polynomial with the coefficients<br>            <text class="yadg-text cw">t</text> and <c>S</c> a square root of <c>Q = q0 + q1 x + q2 x^2</c>, by<br>            undetermined coefficients: the algebraic terms, which the caller multiplies by<br>            <c>S</c>; a multiple of <c>int 1/S</c>; and with the linear, a multiple of<br>            <c>int 1/((g + h x) S)</c>. Null where a coefficient is not written back in the<br>            symbols.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            All this uses of <c>S</c> is <c>S' = Q'/(2 S)</c>, which holds because<br>            <c>sqrt(z)^2 = z</c> for every complex <c>z</c>, so <c>S</c> may be the root of <c>Q</c> or<br>            a product of the roots of its factors.<br>            </para><para><b>The polynomial part.</b> In powers of <c>y = g + h x</c>, the terms of <c>T</c> from<br>            <c>y^k</c> up leave a polynomial <c>R(x)</c>, and<br>            <c>int R/S = U S + lambda int 1/S</c>. The derivative of <c>U S</c> is<br>            <c>(U' Q + U Q'/2)/S</c>, so <c>R = U' Q + U Q'/2 + lambda</c>, which for <c>U</c> of one<br>            degree less than <c>R</c> is triangular. The coefficient of <c>x^j</c> on the right is<br>            <c>(j + 1) q0 u_(j+1) + (j + 1/2) q1 u_j + j q2 u_(j-1)</c>. That is solved for<br>            <c>u_(j-1)</c> from the top down, and <c>lambda</c> is what is left at <c>x^0</c>.<br>            </para><para><b>The terms over powers of <c>y</c>.</b> With <c>xi = -g/h</c> and <c>s = x - xi</c>, write<br>            <c>Q = alpha + beta s + gamma s^2</c>. The derivative of <c>S s^(1-j)</c> is<br>            <c>(2 (1 - j) alpha s^(-j) + (3 - 2j) beta s^(1-j) + (4 - 2j) gamma s^(2-j)) / (2 S)</c>.<br>            So for <c>j &gt;= 2</c>, <c>I_j = int 1/(s^j S)</c> is given by <c>S s^(1-j)</c> and the two<br>            integrals before it, and all the way down it is algebraic terms and a multiple of<br>            <c>I_1</c>, where <c>alpha</c>, the value of <c>Q</c> at the root of <c>y</c>, is not zero.<br>            Where it is, the linear shares a root with <c>Q</c>, and the derivative of<br>            <c>S s^(-j)</c> is <c>((1 - 2j) beta s^(-j) + (2 - 2j) gamma s^(1-j)) / (2 S)</c>: then<br>            every <c>I_j</c> is algebraic, from <c>I_1 = -2 S/(beta s)</c> up, and there is no<br>            third integral.<br>            </para><para><b>A power of <c>Q</c> below the bar too.</b><c>T/((g + h x)^k Q^n S)</c> for<br>            <text class="yadg-text cw">belowTheRoot</text><c>n &gt;= 1</c>, where <c>alpha</c> is not zero: the<br>            terms over powers of <c>y</c> are those of the series of <c>T/Q^n</c> at the linear's root<br>            below <c>s^k</c>, and what is left is <c>V/Q^n</c> with <c>V</c> a polynomial. Divided by<br>            <c>Q</c><c>n</c> times, <c>V</c> is a polynomial part, which goes as above, and a<br>            linear <c>r0 + r1 x</c> over each power <c>Q^p</c>. And<br>            <c>int (r0 + r1 x)/Q^(p + 1/2)</c> is <c>(A + B x)/Q^(p - 1/2)</c> and<br>            <c>(2p - 2) B int 1/Q^(p - 1/2)</c>, with <c>A</c> and <c>B</c> from two equations whose<br>            determinant is <c>q1^2 - 4 q0 q2</c>: algebraic all the way down, since at <c>p = 1</c>            there is nothing left.<br>            </para><para><b>Back in the symbols.</b> A symbol stands for <c>xi</c> until the end, so that what<br>            is computed is polynomial in it, and <c>alpha^(k-1)</c>, or <c>beta^k</c> beside a shared<br>            root, is divided by once. Each coefficient is then written homogeneous in <c>g</c> and<br>            <c>h</c>, with the powers of <c>h</c> counted, over the factors the caller writes<br>            <c>h^2 alpha</c> or <c>h beta</c> as: <text class="yadg-text cw">pole</text>'s <c>AtThePole</c>. The multiple of <c>int 1/S</c> is divided by<br>            <text class="yadg-text cw">firstKindOver</text> first, where there is one, and the multiple of<br>            <c>int 1/(y S)</c> by the factor <text class="yadg-text cw">thirdKindAlsoOver</text> names: the<br>            caller's closed forms have them below the bar.<br>            </para></div></p></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4401 pages online
+</div>
+</body>
+
+
+
+
+</html>

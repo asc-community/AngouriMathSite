@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="AngouriMath, an open-source symbolic algebra library for .NET: solve equations and systems, simplify, differentiate, integrate, take limits, and compile expressions.">
+    <title>AngouriMath | docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveAPolynomialOverAPowerOfALinearBesideARootOfAQuadratic</title>    
+    <link rel="shortcut icon" href="/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="../../../styles.css">
+    <link rel="stylesheet" href="../../../themes.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Overpass+Mono">
+    
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+<script src="https://buttons.github.io/buttons.js"></script>
+
+<script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+<link rel="stylesheet"
+      href="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/styles/rainbow.min.css">
+<script src="https://unpkg.com/@highlightjs/cdn-assets@11.6.0/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
+
+</head>
+
+<body>
+
+
+<div class="nav-left pc">
+<div class="centered nav-top">
+<div>
+
+<div class="centered">
+    <img class="logo pc" src="../../../img/icon_cropped.png" width="120wh" height="120wh"/>
+</div>
+
+<h3>AngouriMath</h3>
+<p class="slogan pc" style="color: gray">Symbolics for .NET</p>
+</div>
+<br>
+</div>
+
+<h5>Table of contents</h5>
+<ul class='table-of-contents'>
+    <li><!--active_-->          <span class="iconify" data-icon="octicon:home-16" data-inline="true"></span><a href="../../../" alt="Main page with all key points">Home page</a>                                              </li>
+    <li><!--active_quickstart--><span class="iconify" data-icon="octicon:zap-16" data-inline="true"></span><a href="../../../quickstart">Quick start</a>                                                    </li>
+    <li><!--active_wiki-->      <span class="iconify" data-icon="octicon:book-16" data-inline="true"></span><a href="../../../wiki">Wiki</a>                                                               </li>
+    <li class="active-link">      <span class="iconify" data-icon="octicon:database-16" data-inline="true"></span><a href="../../../docs/namespaces.html">Almanac</a>                                                    </li>
+    <li><!--active_research-->         <span class="iconify" data-icon="octicon:beaker-16" data-inline="true"></span><a href="../../../research">Research</a>
+    <li><!--active_whatsnew-->  <span class="iconify" data-icon="octicon:flame-16" data-inline="true"></span><a href="../../../whatsnew">What's new</a>                                                    </li>
+    <li><!--active_demo-->      <span class="iconify" data-icon="octicon:code-review-16" data-inline="true"></span><a href="../../../demo">Try online</a>                                                               </li>
+    <li><span class="iconify" data-icon="octicon:mark-github-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>     </li>
+    <li><span class="iconify" data-icon="octicon:bug-16" data-inline="true"></span><a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a></li>
+    <li><span class="iconify" data-icon="octicon:heart-16" data-inline="true"></span><a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a></li>
+    <li><span class="iconify" data-icon="octicon:comment-discussion-16" data-inline="true"></span><a href="../../../#contacts">Contacts</a>    </li>
+</ul>
+
+</div>
+
+<div class="main">
+<div class="head-of-page">
+
+<!--Head of page for mobiles-->
+<div class="centered phone">
+<img class="logo" src="../../../img/icon_cropped.png" width="100wh"/>
+<h2>AngouriMath</h2>
+</div>
+<!--End-->
+
+<!--For mobiles-->
+<details class="phone"><summary>Navigation</summary>
+<div class="centered link-block-mob">
+<a href="../../../">Home</a>
+<a href="../../../quickstart">Quick start</a>
+<a href="../../../wiki">Wiki</a>
+<a href="../../../docs/namespaces.html">Almanac</a>
+<a href="../../../research">Research</a>
+<a href="../../../whatsnew">What's new</a>
+<a href="../../../demo">Try</a>
+<a href="../../../why">Use</a>
+<a href="https://angouri.org" target="_blank">Angouri.org</a>
+<a href="https://github.com/asc-community/AngouriMath" target="_blank">GitHub</a>
+<a href="https://github.com/asc-community/AngouriMath/issues/new/choose" target="_blank">Report a bug</a>
+<a href="https://www.patreon.com/AngouriMath" target="_blank"><s>Donate</s></a>
+<a href="../../../#contacts">Contacts</a>
+</div>
+</details>
+<!--End-->
+
+</div>
+
+<!--Top end-->
+
+<p class="yadg-p "><a href="../../AngouriMath.Functions.Algebra/IndefiniteIntegralSolver.html">&#8592; Back to list of members</a></p><p class="yadg-p "><p class="yadg-p "><h1 class="yadg-h1 ">SolveAPolynomialOverAPowerOfALinearBesideARootOfAQuadratic&#8203;(AngouriMath.&#8203;Entity,&#8203;AngouriMath.&#8203;Entity.&#8203;Variable)</h1><p class="yadg-p "><span class="iconify" data-icon="octicon:diamond-16"></span>&nbsp;Method (no overloads)</p></p><p class="yadg-p "><p class="yadg-p "><strong class="yadg-strong ">Summary</strong></p><div class='yadg-summary'>            A polynomial over a power of a linear beside a half-odd power of a quadratic,<br>            <c>P(x) Q^(m/2) / (g + h x)^k</c> with <c>m</c> odd and <c>k &gt;= 1</c>, by undetermined<br>            coefficients: algebraic terms times <c>sqrt(Q)</c>, and a multiple of each of two<br>            integrals that are not algebraic.<br>            </div><p class="yadg-p "><strong class="yadg-strong ">Remarks</strong></p><div class='yadg-remarks'><para>            Over <c>S = sqrt(Q)</c> the integrand is <c>T(x)/((g + h x)^k S)</c>, where<br>            <c>T = P Q^((m + 1)/2)</c> is a polynomial, or below <c>m = -1</c>,<br>            <c>P/((g + h x)^k Q^n S)</c> with <c>n = -(m + 1)/2</c>; and<br>            <a href="../AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateOverARootOfAQuadratic.html">IntegrateOverARootOfAQuadratic(AngouriMath.Entity,AngouriMath.Entity.Variable,AngouriMath.Entity[],AngouriMath.Entity,AngouriMath.Entity,AngouriMath.Entity,System.Func{AngouriMath.Entity,AngouriMath.Entity},AngouriMath.Functions.Algebra.IndefiniteIntegralSolver.ALinearBesideTheRoot,AngouriMath.Entity,System.Nullable{System.Int32},System.Int32)</a> takes either to algebraic terms and two<br>            integrals.<br>            </para><para><b>The two integrals left.</b> With <c>Q = q0 + q1 x + q2 x^2</c>, <c>int 1/S</c> is<br>            <c>ln(2 sqrt(q2) S + 2 q2 x + q1)/sqrt(q2)</c>, and<br>            <c>-arcsin((2 q2 x + q1)/sqrt(q1^2 - 4 q0 q2))/sqrt(-q2)</c>, real where <c>q2 &lt; 0</c>,<br>            as the root of a quadratic alone is answered. With <c>y = g + h x</c>,<br>            <c>H = q0 h^2 - q1 g h + q2 g^2</c>, which is <c>h^2 Q</c> at the root of <c>y</c>, and<br>            <c>Z = 2 q0 h - q1 g + (q1 h - 2 q2 g) x</c>, <c>int 1/(y S)</c> is<br>            <c>-artanh(Z/(2 sqrt(H) S))/sqrt(H)</c>, written as the logarithm the library writes it<br>            as, and <c>arctan(Z/(2 sqrt(-H) S))/sqrt(-H)</c>, real where <c>H &lt; 0</c>. The<br>            derivative of each of those two needs only <c>sqrt(z)^2 = z</c>. Each pair is given by<br>            the sign of its quantity, as for the roots of two linears. And since<br>            <c>Z^2 - 4 H Q</c> is <c>(q1^2 - 4 q0 q2) y^2</c>, the artanh is of a number less than<br>            1 in size where <c>Q</c> has no real root, and of one more than 1 where it has two:<br>            there it is written as the logarithm of <c>(z + 1)/(z - 1)</c>, which differs from<br>            that of <c>(1 + z)/(1 - z)</c> by a constant and is the real one.<br>            </para><para><b>Where it is asked.</b> Only with the linear below the bar. A polynomial beside the<br>            root alone is <a href="../AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveAPolynomialTimesAnOddHalfPowerOfAQuadratic.html">SolveAPolynomialTimesAnOddHalfPowerOfAQuadratic(AngouriMath.Entity,AngouriMath.Entity.Variable)</a>'s, which also<br>            answers a leading coefficient that is zero. A first power of the linear with numbers in<br>            it and in <c>Q</c> is <a href="../AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveALinearBesideTheRootOfAQuadratic.html">SolveALinearBesideTheRootOfAQuadratic(AngouriMath.Entity,AngouriMath.Entity.Variable)</a>'s, whose answer<br>            is real on both sides of the linear's root, and<br>            <a href="../AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveARationalFunctionBesideTheRootOfAQuadratic.html">SolveARationalFunctionBesideTheRootOfAQuadratic(AngouriMath.Entity,AngouriMath.Entity.Variable)</a> takes distinct linears<br>            apart into it. A power past the first is this rule's, and so is a first power with a<br>            symbol in it, which those decline: <c>1/((g + h x) sqrt(a + c x^2))</c> was declined.<br>            </para><para>            Rubi's 1.2.1.9, <c>(d + e x + f x^2) sqrt(a + c x^2)/(g + h x)^4</c> and its like, was<br>            declined or ran past its budget, where this is a triangular system and a recurrence.<br>            https://github.com/asc-community/AngouriMath/issues/718<br>            </para></div></p></p>
+<!--Bottom begin-->
+
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<br><br><br><br>
+<a href="https://angouri.org">Angouri</a> © 2019-2023 &middot; 
+<a href="https://github.com/asc-community/AngouriMath">Project's repo</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite">Site's repo</a> &middot; 
+<a href="https://iconify.design/icon-sets/octicon/" target="_blank">Octicons</a> &middot; 
+<a href="https://github.com/asc-community/AngouriMathSite#transparency">Transparency</a> &middot; 
+4401 pages online
+</div>
+</body>
+
+
+
+
+</html>

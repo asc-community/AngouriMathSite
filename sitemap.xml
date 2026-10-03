@@ -2535,6 +2535,8 @@
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra.Groebner/GroebnerSystemSolver/Satisfies.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra.Groebner/GroebnerSystemSolver/TrySolve.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra.IndefiniteIntegralSolver.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra.IndefiniteIntegralSolver/ALinearBesideTheRoot.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra.IndefiniteIntegralSolver/ALinearBesideTheRoot/%23ctor.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra.IndefiniteIntegralSolver/TrigonometricPolynomial.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra.IndefiniteIntegralSolver/TrigonometricPolynomial/Derivative.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra.IndefiniteIntegralSolver/TrigonometricPolynomial/TryRead.html</loc></url>
@@ -2675,6 +2677,7 @@
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/CancelEqualSumFactors.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/CancelledWithFunctionsAsIndeterminates.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/CandidateDenominators.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/CoefficientsBesideARoot.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/CombineRadicalsIn.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/CombineRadicalsInAQuotient.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/CombinedAsAQuotient.html</loc></url>
@@ -2698,6 +2701,7 @@
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/HasASumOfExponentials.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/HasAnEvenPowerOfATrigonometricFunction.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/HasTheSameRatioAtTwoPoints.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/HasTheVariableBelowABar.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/HighestDifferentiatedPower.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/HoldsARepeatedSymbolicFactor.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/HoldsAnEvenRootBesides.html</loc></url>
@@ -2711,12 +2715,18 @@
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/InU.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateABinomialDifferentialInTheSecondCase.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateAPolynomialOverABinomial.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateAPolynomialOverAPowerOfABinomial.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateAPolynomialOverAPowerOfALinear.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateAPolynomialOverAPowerOfATrinomial.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateAPolynomialTimesAnExponentialTimesOneTrigonometric.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateAPowerOfSineTimesAPowerOfCosine.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateAPowerOfTheVariable.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateAPowerTimesARadicalQuadratic.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateByAnsatz.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateOverAPowerOfALinearBesideABlock.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateOverAPowerOfXBesideABlock.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateOverARootOfAQuadratic.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateOverBlocksInAPowerOfX.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegrateSineCosineByReduction.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IntegratedTermByTerm.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/IrreducibleFactorsWithTheSignPlaced.html</loc></url>
@@ -2756,7 +2766,10 @@
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/MaximumAnsatzDegree.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/MaximumBinomialDegree.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/MaximumByPartsSteps.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/MaximumDegreeBesideARoot.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/MaximumEulerDegree.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/MaximumPowerOfABinomial.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/MaximumPowerOfXBesideABlock.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/MaximumReciprocalDegree.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/MaximumTowerDegree.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/MaximumTrigonometricPower.html</loc></url>
@@ -2782,6 +2795,7 @@
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/ReadAnExponentialTerm.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/ReadAnInverseHyperbolic.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/ReadAsOnePlusMinusAFunction.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/ReadBesideSquareRoots.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/ReadOneExponentialTimesTheRest.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/ReadTheHyperbolicFunctions.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/RewriteOneProduct.html</loc></url>
@@ -2800,7 +2814,9 @@
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveALogarithmicDerivativeOfARadicalSum.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveALogarithmicDerivativeWithASymbolicExponent.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveAPairOfHyperbolicPowersTwoApart.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveAPolynomialOverAPowerOfALinearBesideARootOfAQuadratic.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveAPolynomialOverAPowerOfALinearBesideTheRoot.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveAPolynomialOverAPowerOfALinearBesideTwoRoots.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveAPolynomialOverAPowerOfAQuadraticBesideTheRootOfAnother.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveAPolynomialOverAPowerOfXTimesAnOddHalfPowerOfAQuadratic.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveAPolynomialTimesARationalFunctionOfAnExponential.html</loc></url>
@@ -2820,6 +2836,7 @@
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveARationalFunctionTimesAPowerOfALogarithm.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveAReciprocalOfAnInverseTrigonometricFunction.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveATrigonometricOfALinearOverAPowerOfALinear.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveAnEllipticLookingQuotientOfBinomials.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveAnEvenPolynomialOverASymbolicBiquadratic.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveAnExponentialOfALinearOverAPowerOfALinear.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveAnExponentialOverSeveralLinears.html</loc></url>
@@ -2840,6 +2857,7 @@
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByDividingByTheRoot.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByEulerSubstitution.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByExpandingAPower.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByExpandingAProductOfSums.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByExpandingATrigonometricPhaseBesideAnExponential.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByExponentialAnsatz.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByExponentialHalfAngleAnsatz.html</loc></url>
@@ -2855,6 +2873,7 @@
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByLogarithmSubstitution.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByLogarithmTowerAnsatz.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByNamingALogarithmLinearInTheVariable.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByOneBlockInAPowerOfXAtItsRoots.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByPartialFractions.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByProductToSum.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByRationalisingASumOfRoots.html</loc></url>
@@ -2869,6 +2888,7 @@
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveBySubstitutingTheSumOfTwoRootsOfLinears.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByTakingAConstantOutOfAFractionalPower.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByTakingAFunctionOutOfAPowerOfItsEvenPower.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByTakingAPowerOfXOutOfAFractionalPower.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByTakingARootOfAPerfectSquare.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByTakingASignOut.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByTakingASquareFactorOutOfARoot.html</loc></url>
@@ -2885,8 +2905,10 @@
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByTrigonometricTowerAnsatz.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByUnifyingTrigonometricArguments.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByWritingAConstantMultipleOfARadicandOverIt.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByWritingAFunctionOfOneShiftedLinear.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByWritingALinearBelowTheBarOverTheRadicand.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByWritingAPowerOfAQuotientApart.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByWritingAPowerOfASquareAsAPowerOfItsRoot.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByWritingAnExponentialOfAnInverseAlgebraically.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByWritingAnImaginarySumOfACosineAndASineAsAnExponential.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/SolveByWritingAnImaginaryTangentAsAnExponential.html</loc></url>
@@ -2964,6 +2986,7 @@
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/WithThePowersOfXCollected.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/WithTheQuadraticAsItsRoot.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/WithWholePowersOfProductsDistributed.html</loc></url>
+  <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/WithoutACommonPowerOfX.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/WriteOutAPowerOfASumOfRadicals.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/WrittenWithAnEvenFactor.html</loc></url>
   <url><loc>https://am.angouri.org/docs/AngouriMath.Functions.Algebra/IndefiniteIntegralSolver/askingTheTermsOfARemainder.html</loc></url>

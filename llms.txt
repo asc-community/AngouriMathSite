@@ -1,0 +1,38 @@
+# AngouriMath
+
+> AngouriMath, an open-source symbolic algebra library for .NET: solve equations and systems, simplify, differentiate, integrate, take limits, and compile expressions.
+
+## Pages
+
+- [Home](https://am.angouri.org/)
+- [Quickstart](https://am.angouri.org/quickstart/)
+- [What's new](https://am.angouri.org/whatsnew/)
+- [Why AngouriMath](https://am.angouri.org/why/)
+- [Research](https://am.angouri.org/research/)
+- [Demo](https://am.angouri.org/demo/)
+- [Wiki](https://am.angouri.org/wiki/)
+
+## Wiki
+
+- [AngouriMath in F#](https://am.angouri.org/wiki/AngouriMath-in-F%23.html)
+- [Basic operations](https://am.angouri.org/wiki/Basic-operations.html)
+- [Compilation](https://am.angouri.org/wiki/Compilation.html)
+- [Differentiation](https://am.angouri.org/wiki/Differentiation.html)
+- [Evaluation](https://am.angouri.org/wiki/Evaluation.html)
+- [Exceptions](https://am.angouri.org/wiki/Exceptions.html)
+- [Expressions](https://am.angouri.org/wiki/Expressions.html)
+- [Home](https://am.angouri.org/wiki/Home.html)
+- [Integration](https://am.angouri.org/wiki/Integration.html)
+- [Jupyter notebooks](https://am.angouri.org/wiki/Jupyter-notebooks.html)
+- [Limits](https://am.angouri.org/wiki/Limits.html)
+- [Matrices](https://am.angouri.org/wiki/Matrices.html)
+- [Multithreading](https://am.angouri.org/wiki/Multithreading.html)
+- [Parsing expression from string](https://am.angouri.org/wiki/Parsing-expression-from-string.html)
+- [Settings](https://am.angouri.org/wiki/Settings.html)
+- [Simplification](https://am.angouri.org/wiki/Simplification.html)
+- [Solvers](https://am.angouri.org/wiki/Solvers.html)
+- [Terminal](https://am.angouri.org/wiki/Terminal.html)
+
+## Optional
+
+- [Almanac](https://am.angouri.org/docs/namespaces.html): every namespace, type and member, from the library's XML documentation
