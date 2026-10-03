@@ -58,9 +58,9 @@ let init () =
     if dirExists("." / generatorP / "AngouriMath") then
         log "Skipping AngouriMath cloning..."
     else
-        git ("." / generatorP) "clone https://github.com/AngouriMath/AngouriMath AngouriMath" 
+        git ("." / generatorP) "clone https://github.com/asc-community/AngouriMath AngouriMath" 
 
-    // The library moved up a folder in AngouriMath/AngouriMath@f0db3eef (2026-01-03), so
+    // The library moved up a folder in asc-community/AngouriMath@f0db3eef (2026-01-03), so
     // this was `Sources/AngouriMath/AngouriMath` and had stopped existing. Keep it in step
     // with the path NaiveStaticGenerator reads AngouriMath.xml from.
     dotnet ("." / generatorP / "AngouriMath" / "Sources" / "AngouriMath") "publish -c release -o publish-output --framework netstandard2.0"
@@ -73,7 +73,7 @@ let init () =
     if dirExists("." / generatorP / contentP / "_wiki") then
         log "Skipping wiki cloning..."
     else
-        git ("." / generatorP / contentP) "clone https://github.com/AngouriMath/AngouriMath.wiki.git _wiki"
+        git ("." / generatorP / contentP) "clone https://github.com/asc-community/AngouriMath.wiki.git _wiki"
 
 
 let uninit () =

@@ -10,18 +10,18 @@ This website is automatically generated based on a few things
 ### 1. The main branch of this repository.
 
 That's where the templates reside, as well as themes, static pages (like `/why` and `/research` and the main page). So if you noticed a typo or bad wording or broken link in static pages, you're welcome to fix it.
-- If this is related to static page, go to [`src/content`](https://github.com/AngouriMath/AngouriMathSite/tree/master/src/content)
-- If this is related to footer/header/something common among all pages, go to [`src/content/_templates`](https://github.com/AngouriMath/AngouriMathSite/tree/master/src/content/_templates)
-- If the generator is working wrong, there is [`src/NaiveStaticGenerator`](https://github.com/AngouriMath/AngouriMathSite/tree/master/src/NaiveStaticGenerator)
+- If this is related to static page, go to [`src/content`](https://github.com/asc-community/AngouriMathSite/tree/master/src/content)
+- If this is related to footer/header/something common among all pages, go to [`src/content/_templates`](https://github.com/asc-community/AngouriMathSite/tree/master/src/content/_templates)
+- If the generator is working wrong, there is [`src/NaiveStaticGenerator`](https://github.com/asc-community/AngouriMathSite/tree/master/src/NaiveStaticGenerator)
 
-### 2. The [AngouriMath](https://github.com/AngouriMath/AngouriMath/) repo.
+### 2. The [AngouriMath](https://github.com/asc-community/AngouriMath/) repo.
 
 Why? Because that's where it takes the documentation. It clones this repo when you do `init` and then builds and extracts the documentation. That's how `/docs/namespaces.html` is made, so if there's an issue with it, you have to
 - Fix the xml comments in the source code in the AngouriMath repo if there's something bad with a particular documentation page.
 - Fix [Yadg.NET](https://github.com/WhiteBlackGoose/Yadg.NET) which generates html pages for documentation if there's something wrong with all of docs (e. g. code doesn't get highlighted or something like this)
 
 
-### 3. The [wiki](https://github.com/AngouriMath/AngouriMath/wiki) repo.
+### 3. The [wiki](https://github.com/asc-community/AngouriMath/wiki) repo.
 
 That's how `/wiki` is made. Making changes to wiki is less trivial, so just open an issue for it. If it ever gets opened, then to trigger a new website build you need to open an issue / ping maintainers / do something that we see and trigger it.
 
